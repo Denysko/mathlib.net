@@ -1,0 +1,13 @@
+MathLib
+Original work Copyright 2003-2014 Apache Commons Math v. 3.3
+Modified work Copyright 2014 MathLib Community
+
+
+===============================================================================
+
+===============================================================================
+
+
+The complete text of licenses and disclaimers associated with the the original
+sources enumerated above at the time of code translation are in the LICENSE.txt
+file.
