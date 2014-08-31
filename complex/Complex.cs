@@ -18,7 +18,7 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.complex
+namespace mathlib.complex
 {
 
 

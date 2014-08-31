@@ -14,10 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/// 
 /// <summary>
-/// Common classes used throughout the commons-math library.
+///     Complex number type and implementations of complex transcendental
+///     functions.
+/// 
 /// </summary>
-namespace org.apache.commons.math3
+namespace mathlib.complex
 {
 
 }

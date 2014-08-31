@@ -14,13 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/// 
 /// <summary>
-///     Complex number type and implementations of complex transcendental
-///     functions.
-/// 
+/// Common classes used throughout the math library on C#.
 /// </summary>
-namespace org.apache.commons.math3.complex
+namespace mathlib
 {
 
 }

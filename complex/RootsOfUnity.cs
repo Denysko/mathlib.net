@@ -16,7 +16,7 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.complex
+namespace mathlib.complex
 {
 
 	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
