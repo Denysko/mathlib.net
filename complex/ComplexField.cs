@@ -20,8 +20,8 @@ using System;
 namespace mathlib.complex
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
+    using mathlib;
+    using mathlib;
 
 	/// <summary>
 	/// Representation of the complex numbers field.

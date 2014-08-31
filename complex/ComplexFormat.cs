@@ -21,12 +21,12 @@ namespace mathlib.complex
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using CompositeFormat = org.apache.commons.math3.util.CompositeFormat;
+    using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+    using MathParseException = mathlib.exception.MathParseException;
+    using NoDataException = mathlib.exception.NoDataException;
+    using NullArgumentException = mathlib.exception.NullArgumentException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using CompositeFormat = mathlib.util.CompositeFormat;
 
 	/// <summary>
 	/// Formats a Complex number in cartesian format "Re(c) + Im(c)i".  'i' can
@@ -67,8 +67,6 @@ namespace mathlib.complex
 		/// imaginary parts. </summary>
 		/// <param name="format"> the custom format for both real and imaginary parts. </param>
 		/// <exception cref="NullArgumentException"> if {@code realFormat} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ComplexFormat(java.text.NumberFormat format) throws org.apache.commons.math3.exception.NullArgumentException
 		public ComplexFormat(NumberFormat format)
 		{
 			if (format == null)
@@ -87,8 +85,6 @@ namespace mathlib.complex
 		/// <param name="imaginaryFormat"> the custom format for the imaginary part. </param>
 		/// <exception cref="NullArgumentException"> if {@code imaginaryFormat} is {@code null}. </exception>
 		/// <exception cref="NullArgumentException"> if {@code realFormat} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ComplexFormat(java.text.NumberFormat realFormat, java.text.NumberFormat imaginaryFormat) throws org.apache.commons.math3.exception.NullArgumentException
 		public ComplexFormat(NumberFormat realFormat, NumberFormat imaginaryFormat)
 		{
 			if (imaginaryFormat == null)
@@ -113,8 +109,6 @@ namespace mathlib.complex
 		/// {@code null}. </exception>
 		/// <exception cref="NoDataException"> if {@code imaginaryCharacter} is an
 		/// empty string. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ComplexFormat(String imaginaryCharacter) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
 		public ComplexFormat(string imaginaryCharacter) : this(imaginaryCharacter, CompositeFormat.DefaultNumberFormat)
 		{
 		}
@@ -129,8 +123,6 @@ namespace mathlib.complex
 		/// <exception cref="NoDataException"> if {@code imaginaryCharacter} is an
 		/// empty string. </exception>
 		/// <exception cref="NullArgumentException"> if {@code format} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ComplexFormat(String imaginaryCharacter, java.text.NumberFormat format) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
 		public ComplexFormat(string imaginaryCharacter, NumberFormat format) : this(imaginaryCharacter, format, format)
 		{
 		}
@@ -149,8 +141,6 @@ namespace mathlib.complex
 		/// empty string. </exception>
 		/// <exception cref="NullArgumentException"> if {@code imaginaryFormat} is {@code null}. </exception>
 		/// <exception cref="NullArgumentException"> if {@code realFormat} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ComplexFormat(String imaginaryCharacter, java.text.NumberFormat realFormat, java.text.NumberFormat imaginaryFormat) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
 		public ComplexFormat(string imaginaryCharacter, NumberFormat realFormat, NumberFormat imaginaryFormat)
 		{
 			if (imaginaryCharacter == null)
@@ -280,8 +270,6 @@ namespace mathlib.complex
 		/// <returns> the value passed in as toAppendTo. </returns>
 		/// <seealso cref= java.text.Format#format(java.lang.Object, java.lang.StringBuffer, java.text.FieldPosition) </seealso>
 		/// <exception cref="MathIllegalArgumentException"> is {@code obj} is not a valid type. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public StringBuffer format(Object obj, StringBuffer toAppendTo, java.text.FieldPosition pos) throws org.apache.commons.math3.exception.MathIllegalArgumentException
 		public virtual StringBuilder format(object obj, StringBuilder toAppendTo, FieldPosition pos)
 		{
 
@@ -355,8 +343,6 @@ namespace mathlib.complex
 		/// {@code null}. </exception>
 		/// <exception cref="NoDataException"> if {@code imaginaryCharacter} is an
 		/// empty string. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static ComplexFormat getInstance(String imaginaryCharacter, java.util.Locale locale) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
 		public static ComplexFormat getInstance(string imaginaryCharacter, Locale locale)
 		{
 			NumberFormat f = CompositeFormat.getDefaultNumberFormat(locale);
@@ -381,8 +367,6 @@ namespace mathlib.complex
 		/// <returns> the parsed <seealso cref="Complex"/> object. </returns>
 		/// <exception cref="MathParseException"> if the beginning of the specified string
 		/// cannot be parsed. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Complex parse(String source) throws org.apache.commons.math3.exception.MathParseException
 		public virtual Complex parse(string source)
 		{
 			ParsePosition parsePosition = new ParsePosition(0);

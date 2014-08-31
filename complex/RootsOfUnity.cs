@@ -19,12 +19,12 @@ using System;
 namespace mathlib.complex
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+    using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+    using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+    using OutOfRangeException = mathlib.exception.OutOfRangeException;
+    using ZeroException = mathlib.exception.ZeroException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// A helper class for the computation and caching of the {@code n}-th roots of
@@ -91,8 +91,6 @@ namespace mathlib.complex
 		/// counter-clockwise order </returns>
 		/// <exception cref="MathIllegalStateException"> if no roots of unity have been computed
 		/// yet </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized boolean isCounterClockWise() throws org.apache.commons.math3.exception.MathIllegalStateException
 		public virtual bool CounterClockWise
 		{
 			get
@@ -127,8 +125,6 @@ namespace mathlib.complex
 		/// </summary>
 		/// <param name="n"> the (signed) number of roots of unity to be computed </param>
 		/// <exception cref="ZeroException"> if {@code n = 0} </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized void computeRoots(int n) throws org.apache.commons.math3.exception.ZeroException
 		public virtual void computeRoots(int n)
 		{
 			lock (this)
@@ -185,8 +181,6 @@ namespace mathlib.complex
 		/// <exception cref="MathIllegalStateException"> if no roots of unity have been
 		/// computed yet </exception>
 		/// <exception cref="MathIllegalArgumentException"> if {@code k} is out of range </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized double getReal(int k) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.MathIllegalArgumentException
 		public virtual double getReal(int k)
 		{
 			lock (this)
@@ -213,8 +207,6 @@ namespace mathlib.complex
 		/// <exception cref="MathIllegalStateException"> if no roots of unity have been
 		/// computed yet </exception>
 		/// <exception cref="OutOfRangeException"> if {@code k} is out of range </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized double getImaginary(int k) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.OutOfRangeException
 		public virtual double getImaginary(int k)
 		{
 			lock (this)

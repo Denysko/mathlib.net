@@ -22,13 +22,13 @@ namespace mathlib.complex
 {
 
 
-	using org.apache.commons.math3;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using mathlib;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+    using NullArgumentException = mathlib.exception.NullArgumentException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using FastMath = mathlib.util.FastMath;
+    using MathUtils = mathlib.util.MathUtils;
+    using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Representation of a Complex number, i.e. a number which has both a
@@ -173,8 +173,6 @@ namespace mathlib.complex
 		/// <param name="addend"> Value to be added to this {@code Complex}. </param>
 		/// <returns> {@code this + addend}. </returns>
 		/// <exception cref="NullArgumentException"> if {@code addend} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Complex add(Complex addend) throws org.apache.commons.math3.exception.NullArgumentException
 		public virtual Complex add(Complex addend)
 		{
 			MathUtils.checkNotNull(addend);
@@ -267,8 +265,6 @@ namespace mathlib.complex
 		/// <param name="divisor"> Value by which this {@code Complex} is to be divided. </param>
 		/// <returns> {@code this / divisor}. </returns>
 		/// <exception cref="NullArgumentException"> if {@code divisor} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Complex divide(Complex divisor) throws org.apache.commons.math3.exception.NullArgumentException
 		public virtual Complex divide(Complex divisor)
 		{
 			MathUtils.checkNotNull(divisor);
@@ -573,8 +569,6 @@ namespace mathlib.complex
 		/// <param name="factor"> value to be multiplied by this {@code Complex}. </param>
 		/// <returns> {@code this * factor}. </returns>
 		/// <exception cref="NullArgumentException"> if {@code factor} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Complex multiply(Complex factor) throws org.apache.commons.math3.exception.NullArgumentException
 		public virtual Complex multiply(Complex factor)
 		{
 			MathUtils.checkNotNull(factor);
@@ -666,8 +660,6 @@ namespace mathlib.complex
 		/// <param name="subtrahend"> value to be subtracted from this {@code Complex}. </param>
 		/// <returns> {@code this - subtrahend}. </returns>
 		/// <exception cref="NullArgumentException"> if {@code subtrahend} is {@code null}. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Complex subtract(Complex subtrahend) throws org.apache.commons.math3.exception.NullArgumentException
 		public virtual Complex subtract(Complex subtrahend)
 		{
 			MathUtils.checkNotNull(subtrahend);
@@ -956,8 +948,6 @@ namespace mathlib.complex
 		/// <returns> <code> this<sup>{@code x}</sup></code>. </returns>
 		/// <exception cref="NullArgumentException"> if x is {@code null}.
 		/// @since 1.2 </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Complex pow(Complex x) throws org.apache.commons.math3.exception.NullArgumentException
 		public virtual Complex pow(Complex x)
 		{
 			MathUtils.checkNotNull(x);
@@ -1285,8 +1275,6 @@ namespace mathlib.complex
 		/// <returns> a List<Complex> of all {@code n}-th roots of {@code this}. </returns>
 		/// <exception cref="NotPositiveException"> if {@code n <= 0}.
 		/// @since 2.0 </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public java.util.List<Complex> nthRoot(int n) throws org.apache.commons.math3.exception.NotPositiveException
 		public virtual IList<Complex> nthRoot(int n)
 		{
 

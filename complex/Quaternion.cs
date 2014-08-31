@@ -21,12 +21,12 @@ using System.Text;
 namespace mathlib.complex
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using FastMath = mathlib.util.FastMath;
+    using MathUtils = mathlib.util.MathUtils;
+    using Precision = mathlib.util.Precision;
+    using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+    using ZeroException = mathlib.exception.ZeroException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// This class implements <a href="http://mathworld.wolfram.com/Quaternion.html">
@@ -97,8 +97,6 @@ namespace mathlib.complex
 		/// <param name="v"> Components of the vector part of the quaternion.
 		/// </param>
 		/// <exception cref="DimensionMismatchException"> if the array length is not 3. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Quaternion(final double scalar, final double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Quaternion(double scalar, double[] v)
 		{

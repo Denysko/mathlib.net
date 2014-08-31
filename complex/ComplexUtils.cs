@@ -18,9 +18,9 @@
 namespace mathlib.complex
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+    using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Static implementations of common
@@ -62,8 +62,6 @@ namespace mathlib.complex
 		/// <returns> <code>r&middot;e<sup>i&middot;theta</sup></code> </returns>
 		/// <exception cref="MathIllegalArgumentException"> if {@code r} is negative.
 		/// @since 1.1 </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static Complex polar2Complex(double r, double theta) throws org.apache.commons.math3.exception.MathIllegalArgumentException
 		public static Complex polar2Complex(double r, double theta)
 		{
 			if (r < 0)
