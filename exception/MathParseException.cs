@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using ExceptionContextProvider = org.apache.commons.math3.exception.util.ExceptionContextProvider;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using ExceptionContextProvider = mathlib.exception.util.ExceptionContextProvider;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Class to signal parse failures.

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
+    using Localizable = mathlib.exception.util.Localizable;
 
 	/// <summary>
 	/// Exception to be thrown when the argument is negative.

@@ -20,7 +20,7 @@
 ///     using simple java properties.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
 }

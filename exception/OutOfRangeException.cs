@@ -14,70 +14,72 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using Localizable = mathlib.exception.util.Localizable;
 
-	/// <summary>
-	/// Exception to be thrown when some argument is out of range.
-	/// 
-	/// @since 2.2
-	/// @version $Id: OutOfRangeException.java 1364378 2012-07-22 17:42:38Z tn $
-	/// </summary>
-	public class OutOfRangeException : MathIllegalNumberException
-	{
-		/// <summary>
-		/// Serializable version Id. </summary>
-		private const long serialVersionUID = 111601815794403609L;
-		/// <summary>
-		/// Lower bound. </summary>
-		private readonly Number lo;
-		/// <summary>
-		/// Higher bound. </summary>
-		private readonly Number hi;
+    /// <summary>
+    /// Exception to be thrown when some argument is out of range.
+    /// 
+    /// @since 2.2
+    /// @version $Id: OutOfRangeException.java 1364378 2012-07-22 17:42:38Z tn $
+    /// </summary>
+    public class OutOfRangeException : MathIllegalNumberException
+    {
+        /// <summary>
+        /// Serializable version Id. </summary>
+        private const long serialVersionUID = 111601815794403609L;
+        /// <summary>
+        /// Lower bound. </summary>
+        private readonly Number lo;
+        /// <summary>
+        /// Higher bound. </summary>
+        private readonly Number hi;
 
-		/// <summary>
-		/// Construct an exception from the mismatched dimensions.
-		/// </summary>
-		/// <param name="wrong"> Requested value. </param>
-		/// <param name="lo"> Lower bound. </param>
-		/// <param name="hi"> Higher bound. </param>
-		public OutOfRangeException(Number wrong, Number lo, Number hi) : this(LocalizedFormats.OUT_OF_RANGE_SIMPLE, wrong, lo, hi)
-		{
-		}
+        /// <summary>
+        /// Construct an exception from the mismatched dimensions.
+        /// </summary>
+        /// <param name="wrong"> Requested value. </param>
+        /// <param name="lo"> Lower bound. </param>
+        /// <param name="hi"> Higher bound. </param>
+        public OutOfRangeException(Number wrong, Number lo, Number hi)
+            : this(LocalizedFormats.OUT_OF_RANGE_SIMPLE, wrong, lo, hi)
+        {
+        }
 
-		/// <summary>
-		/// Construct an exception from the mismatched dimensions with a
-		/// specific context information.
-		/// </summary>
-		/// <param name="specific"> Context information. </param>
-		/// <param name="wrong"> Requested value. </param>
-		/// <param name="lo"> Lower bound. </param>
-		/// <param name="hi"> Higher bound. </param>
-		public OutOfRangeException(Localizable specific, Number wrong, Number lo, Number hi) : base(specific, wrong, lo, hi)
-		{
-			this.lo = lo;
-			this.hi = hi;
-		}
+        /// <summary>
+        /// Construct an exception from the mismatched dimensions with a
+        /// specific context information.
+        /// </summary>
+        /// <param name="specific"> Context information. </param>
+        /// <param name="wrong"> Requested value. </param>
+        /// <param name="lo"> Lower bound. </param>
+        /// <param name="hi"> Higher bound. </param>
+        public OutOfRangeException(Localizable specific, Number wrong, Number lo, Number hi)
+            : base(specific, wrong, lo, hi)
+        {
+            this.lo = lo;
+            this.hi = hi;
+        }
 
-		/// <returns> the lower bound. </returns>
-		public virtual Number Lo
-		{
-			get
-			{
-				return lo;
-			}
-		}
-		/// <returns> the higher bound. </returns>
-		public virtual Number Hi
-		{
-			get
-			{
-				return hi;
-			}
-		}
-	}
+        /// <returns> the lower bound. </returns>
+        public virtual Number Lo
+        {
+            get
+            {
+                return lo;
+            }
+        }
+        /// <returns> the higher bound. </returns>
+        public virtual Number Hi
+        {
+            get
+            {
+                return hi;
+            }
+        }
+    }
 
 }
