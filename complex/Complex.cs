@@ -30,6 +30,12 @@ namespace mathlib.complex
     using MathUtils = mathlib.util.MathUtils;
     using Precision = mathlib.util.Precision;
 
+    /** <remark>
+     “ут додаЇмо коментар опис про клас
+    </remark>
+    */
+
+
     /// <summary>
     /// Representation of a Complex number, i.e. a number which has both a
     /// real and imaginary part.
