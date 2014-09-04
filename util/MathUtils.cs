@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotFiniteNumberException = org.apache.commons.math3.exception.NotFiniteNumberException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using MathArithmeticException = mathlib.exception.MathArithmeticException;
+    using NotFiniteNumberException = mathlib.exception.NotFiniteNumberException;
+    using NullArgumentException = mathlib.exception.NullArgumentException;
+    using Localizable = mathlib.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Miscellaneous utility functions.
@@ -31,7 +31,7 @@ namespace org.apache.commons.math3.util
 	/// <seealso cref= Precision </seealso>
 	/// <seealso cref= MathArrays
 	/// 
-	/// @version $Id: MathUtils.java 1591835 2014-05-02 09:04:01Z tn $ </seealso>
+	/// @version $Id: MathUtils.cs 1591835 2014-05-02 09:04:01Z tn $ </seealso>
 	public sealed class MathUtils
 	{
 		/// <summary>
@@ -53,7 +53,7 @@ namespace org.apache.commons.math3.util
 		/// </summary>
 		/// <param name="value"> the value to be hashed </param>
 		/// <returns> the hash code </returns>
-		public static int hash(double value)
+		public static int Hash(double value)
 		{
 			return (new double?(value)).GetHashCode();
 		}
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.util
 		/// <param name="value"> the value to be hashed (may be null) </param>
 		/// <returns> the hash code
 		/// @since 1.2 </returns>
-		public static int hash(double[] value)
+		public static int Hash(double[] value)
 		{
 			return Arrays.GetHashCode(value);
 		}
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.util
 		/// <param name="center"> center of the desired 2&pi; interval for the result </param>
 		/// <returns> a-2k&pi; with integer k and center-&pi; &lt;= a-2k&pi; &lt;= center+&pi;
 		/// @since 1.2 </returns>
-		 public static double normalizeAngle(double a, double center)
+		 public static double NormalizeAngle(double a, double center)
 		 {
 			 return a - TWO_PI * FastMath.floor((a + FastMath.PI - center) / TWO_PI);
 		 }
@@ -119,7 +119,7 @@ namespace org.apache.commons.math3.util
 		/// <param name="offset"> Value that will be mapped to {@code 0}. </param>
 		/// <returns> the value, within the interval {@code [0 |period|)},
 		/// that corresponds to {@code a}. </returns>
-		public static double reduce(double a, double period, double offset)
+		public static double Reduce(double a, double period, double offset)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double p = FastMath.abs(period);
@@ -138,7 +138,7 @@ namespace org.apache.commons.math3.util
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static byte copySign(byte magnitude, byte sign) throws org.apache.commons.math3.exception.MathArithmeticException
-		public static sbyte copySign(sbyte magnitude, sbyte sign)
+		public static sbyte CopySign(sbyte magnitude, sbyte sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
 			{
@@ -165,7 +165,7 @@ namespace org.apache.commons.math3.util
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static short copySign(short magnitude, short sign) throws org.apache.commons.math3.exception.MathArithmeticException
-		public static short copySign(short magnitude, short sign)
+		public static short CopySign(short magnitude, short sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
 			{
@@ -192,7 +192,7 @@ namespace org.apache.commons.math3.util
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static int copySign(int magnitude, int sign) throws org.apache.commons.math3.exception.MathArithmeticException
-		public static int copySign(int magnitude, int sign)
+		public static int CopySign(int magnitude, int sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
 			{
@@ -219,7 +219,7 @@ namespace org.apache.commons.math3.util
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static long copySign(long magnitude, long sign) throws org.apache.commons.math3.exception.MathArithmeticException
-		public static long copySign(long magnitude, long sign)
+		public static long CopySign(long magnitude, long sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
 			{
@@ -243,7 +243,7 @@ namespace org.apache.commons.math3.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static void checkFinite(final double x) throws org.apache.commons.math3.exception.NotFiniteNumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static void checkFinite(double x)
+		public static void CheckFinite(double x)
 		{
 			if (double.IsInfinity(x) || double.IsNaN(x))
 			{
@@ -260,7 +260,7 @@ namespace org.apache.commons.math3.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static void checkFinite(final double[] val) throws org.apache.commons.math3.exception.NotFiniteNumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static void checkFinite(double[] val)
+		public static void CheckFinite(double[] val)
 		{
 			for (int i = 0; i < val.Length; i++)
 			{
@@ -283,7 +283,7 @@ namespace org.apache.commons.math3.util
 		/// <exception cref="NullArgumentException"> if {@code o} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static void checkNotNull(Object o, org.apache.commons.math3.exception.util.Localizable pattern, Object... args) throws org.apache.commons.math3.exception.NullArgumentException
-		public static void checkNotNull(object o, Localizable pattern, params object[] args)
+		public static void CheckNotNull(object o, Localizable pattern, params object[] args)
 		{
 			if (o == null)
 			{
@@ -298,7 +298,7 @@ namespace org.apache.commons.math3.util
 		/// <exception cref="NullArgumentException"> if {@code o} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public static void checkNotNull(Object o) throws org.apache.commons.math3.exception.NullArgumentException
-		public static void checkNotNull(object o)
+		public static void CheckNotNull(object o)
 		{
 			if (o == null)
 			{

@@ -126,7 +126,7 @@ namespace mathlib.complex
         /// but at least one part is infinite.
         /// </summary>
         /// <returns> the absolute value. </returns>
-        public virtual double abs()
+        public virtual double Abs()
         {
             if (isNaN)
             {
