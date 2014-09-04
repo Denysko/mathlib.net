@@ -32,7 +32,7 @@ namespace mathlib.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -8415396756375798143L;
+		private const long SerialVersionUID = -8415396756375798143L;
 		/// <summary>
 		/// Correct dimension. </summary>
 		private readonly int dimension;

@@ -32,7 +32,7 @@ namespace mathlib.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -6276776513966934846L;
+		private const long SerialVersionUID = -6276776513966934846L;
 		/// <summary>
 		/// URL for reporting problems. </summary>
         private const string REPORT_URL = "https://github.com/khnu-dpi/MathLib/issues";

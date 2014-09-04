@@ -31,7 +31,7 @@ namespace mathlib.exception
 
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -2629324471511903359L;
+		private const long SerialVersionUID = -2629324471511903359L;
 
 		/// <summary>
 		/// Construct the exception.
