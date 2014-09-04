@@ -62,13 +62,13 @@ namespace mathlib.complex
 		/// <returns> <code>r&middot;e<sup>i&middot;theta</sup></code> </returns>
 		/// <exception cref="MathIllegalArgumentException"> if {@code r} is negative.
 		/// @since 1.1 </exception>
-		public static Complex polar2Complex(double r, double theta)
+		public static Complex Polar2Complex(double r, double theta)
 		{
 			if (r < 0)
 			{
 				throw new MathIllegalArgumentException(LocalizedFormats.NEGATIVE_COMPLEX_MODULE, r);
 			}
-			return new Complex(r * FastMath.cos(theta), r * FastMath.sin(theta));
+			return new Complex(r * FastMath.Cos(theta), r * FastMath.Sin(theta));
 		}
 
 		/// <summary>
@@ -79,7 +79,7 @@ namespace mathlib.complex
 		/// <returns> an array of {@code Complex} objects.
 		/// 
 		/// @since 3.1 </returns>
-		public static Complex[] convertToComplex(double[] real)
+		public static Complex[] ConvertToComplex(double[] real)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Complex c[] = new Complex[real.length];
