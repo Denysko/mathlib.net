@@ -14,31 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception.util
+namespace mathlib.exception.util
 {
 
 
-	/// <summary>
-	/// Interface for localizable strings.
-	/// 
-	/// @version $Id: Localizable.java 1416643 2012-12-03 19:37:14Z tn $
-	/// @since 2.2
-	/// </summary>
-	public interface Localizable : Serializable
-	{
-		/// <summary>
-		/// Gets the source (non-localized) string.
-		/// </summary>
-		/// <returns> the source string. </returns>
-		string SourceString {get;}
+    /// <summary>
+    /// Interface for localizable strings.
+    /// 
+    /// @version $Id: Localizable.java 1416643 2012-12-03 19:37:14Z tn $
+    /// @since 2.2
+    /// </summary>
+    public interface Localizable : Serializable
+    {
+        /// <summary>
+        /// Gets the source (non-localized) string.
+        /// </summary>
+        /// <returns> the source string. </returns>
+        string SourceString { get; }
 
-		/// <summary>
-		/// Gets the localized string.
-		/// </summary>
-		/// <param name="locale"> locale into which to get the string. </param>
-		/// <returns> the localized string or the source string if no
-		/// localized version is available. </returns>
-		string getLocalizedString(Locale locale);
-	}
+        /// <summary>
+        /// Gets the localized string.
+        /// </summary>
+        /// <param name="locale"> locale into which to get the string. </param>
+        /// <returns> the localized string or the source string if no
+        /// localized version is available. </returns>
+        string GetLocalizedString(Locale locale);
+    }
 
 }

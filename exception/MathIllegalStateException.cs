@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ExceptionContext = org.apache.commons.math3.exception.util.ExceptionContext;
-	using ExceptionContextProvider = org.apache.commons.math3.exception.util.ExceptionContextProvider;
+    using Localizable = mathlib.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using ExceptionContext = mathlib.exception.util.ExceptionContext;
+    using ExceptionContextProvider = mathlib.exception.util.ExceptionContextProvider;
 
 	/// <summary>
 	/// Base class for all exceptions that signal a mismatch between the
@@ -35,7 +35,7 @@ namespace org.apache.commons.math3.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -6024911025449780478L;
+		private const long SerialVersionUID = -6024911025449780478L;
 		/// <summary>
 		/// Context. </summary>
 		private readonly ExceptionContext context;

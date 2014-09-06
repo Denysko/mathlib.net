@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using ExceptionContextProvider = org.apache.commons.math3.exception.util.ExceptionContextProvider;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using ExceptionContextProvider = mathlib.exception.util.ExceptionContextProvider;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Class to signal parse failures.
@@ -32,7 +32,7 @@ namespace org.apache.commons.math3.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -6024911025449780478L;
+		private const long SerialVersionUID = -6024911025449780478L;
 
 		/// <param name="wrong"> Bad string representation of the object. </param>
 		/// <param name="position"> Index, in the {@code wrong} string, that caused the

@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using Localizable = mathlib.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Exception triggered when something that shouldn't happen does happen.
@@ -32,10 +32,10 @@ namespace org.apache.commons.math3.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -6276776513966934846L;
+		private const long SerialVersionUID = -6276776513966934846L;
 		/// <summary>
 		/// URL for reporting problems. </summary>
-		private const string REPORT_URL = "https://issues.apache.org/jira/browse/MATH";
+        private const string REPORT_URL = "https://github.com/khnu-dpi/MathLib/issues";
 
 		/// <summary>
 		/// Simple constructor.

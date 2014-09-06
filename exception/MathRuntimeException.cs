@@ -16,12 +16,12 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
-	using ExceptionContext = org.apache.commons.math3.exception.util.ExceptionContext;
-	using ExceptionContextProvider = org.apache.commons.math3.exception.util.ExceptionContextProvider;
+    using Localizable = mathlib.exception.util.Localizable;
+    using ExceptionContext = mathlib.exception.util.ExceptionContext;
+    using ExceptionContextProvider = mathlib.exception.util.ExceptionContextProvider;
 
 	/// <summary>
 	/// As of release 4.0, all exceptions thrown by the Commons Math code (except
@@ -37,7 +37,7 @@ namespace org.apache.commons.math3.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = 20120926L;
+		private const long SerialVersionUID = 20120926L;
 		/// <summary>
 		/// Context. </summary>
 		private readonly ExceptionContext context;

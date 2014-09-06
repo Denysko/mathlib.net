@@ -16,55 +16,55 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception.util
+namespace mathlib.exception.util
 {
 
 
-	/// <summary>
-	/// Utility class for transforming the list of arguments passed to
-	/// constructors of exceptions.
-	/// 
-	/// @version $Id: ArgUtils.java 1364388 2012-07-22 18:16:43Z tn $
-	/// </summary>
-	public class ArgUtils
-	{
-		/// <summary>
-		/// Class contains only static methods.
-		/// </summary>
-		private ArgUtils()
-		{
-		}
+    /// <summary>
+    /// Utility class for transforming the list of arguments passed to
+    /// constructors of exceptions.
+    /// 
+    /// @version $Id: ArgUtils.java 1364388 2012-07-22 18:16:43Z tn $
+    /// </summary>
+    public class ArgUtils
+    {
+        /// <summary>
+        /// Class contains only static methods.
+        /// </summary>
+        private ArgUtils()
+        {
+        }
 
-		/// <summary>
-		/// Transform a multidimensional array into a one-dimensional list.
-		/// </summary>
-		/// <param name="array"> Array (possibly multidimensional). </param>
-		/// <returns> a list of all the {@code Object} instances contained in
-		/// {@code array}. </returns>
-		public static object[] flatten(object[] array)
-		{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<Object> list = new java.util.ArrayList<Object>();
-			IList<object> list = new List<object>();
-			if (array != null)
-			{
-				foreach (object o in array)
-				{
-					if (o is object[])
-					{
-						foreach (object oR in flatten((object[]) o))
-						{
-							list.Add(oR);
-						}
-					}
-					else
-					{
-						list.Add(o);
-					}
-				}
-			}
-			return list.ToArray();
-		}
-	}
+        /// <summary>
+        /// Transform a multidimensional array into a one-dimensional list.
+        /// </summary>
+        /// <param name="array"> Array (possibly multidimensional). </param>
+        /// <returns> a list of all the {@code Object} instances contained in
+        /// {@code array}. </returns>
+        public static object[] flatten(object[] array)
+        {
+            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+            //ORIGINAL LINE: final java.util.List<Object> list = new java.util.ArrayList<Object>();
+            IList<object> list = new List<object>();
+            if (array != null)
+            {
+                foreach (object o in array)
+                {
+                    if (o is object[])
+                    {
+                        foreach (object oR in flatten((object[])o))
+                        {
+                            list.Add(oR);
+                        }
+                    }
+                    else
+                    {
+                        list.Add(o);
+                    }
+                }
+            }
+            return list.ToArray();
+        }
+    }
 
 }

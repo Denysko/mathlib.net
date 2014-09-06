@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using Localizable = mathlib.exception.util.Localizable;
 
 	/// <summary>
 	/// Exception to be thrown when two dimensions differ.
@@ -32,7 +32,7 @@ namespace org.apache.commons.math3.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -8415396756375798143L;
+		private const long SerialVersionUID = -8415396756375798143L;
 		/// <summary>
 		/// Correct dimension. </summary>
 		private readonly int dimension;

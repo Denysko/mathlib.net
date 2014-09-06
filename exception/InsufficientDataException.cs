@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using Localizable = mathlib.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Exception to be thrown when there is insufficient data to perform a computation.
@@ -31,7 +31,7 @@ namespace org.apache.commons.math3.exception
 
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -2629324471511903359L;
+		private const long SerialVersionUID = -2629324471511903359L;
 
 		/// <summary>
 		/// Construct the exception.

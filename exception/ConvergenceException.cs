@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using Localizable = mathlib.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Error thrown when a numerical computation can not be performed because the
@@ -31,7 +31,7 @@ namespace org.apache.commons.math3.exception
 	{
 		/// <summary>
 		/// Serializable version Id. </summary>
-		private const long serialVersionUID = 4330003017885151975L;
+		private const long SerialVersionUID = 4330003017885151975L;
 
 		/// <summary>
 		/// Construct the exception.

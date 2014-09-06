@@ -19,7 +19,7 @@
 ///    Classes supporting exception localization.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.exception.util
+namespace mathlib.exception.util
 {
 
 }

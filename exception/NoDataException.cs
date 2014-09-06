@@ -14,38 +14,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.exception
+namespace mathlib.exception
 {
 
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using Localizable = mathlib.exception.util.Localizable;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
-	/// <summary>
-	/// Exception to be thrown when the required data is missing.
-	/// 
-	/// @since 2.2
-	/// @version $Id: NoDataException.java 1364378 2012-07-22 17:42:38Z tn $
-	/// </summary>
-	public class NoDataException : MathIllegalArgumentException
-	{
+    /// <summary>
+    /// Exception to be thrown when the required data is missing.
+    /// 
+    /// @since 2.2
+    /// @version $Id: NoDataException.java 1364378 2012-07-22 17:42:38Z tn $
+    /// </summary>
+    public class NoDataException : MathIllegalArgumentException
+    {
 
-		/// <summary>
-		/// Serializable version Id. </summary>
-		private const long serialVersionUID = -3629324471511904459L;
+        /// <summary>
+        /// Serializable version Id. </summary>
+        private const long serialVersionUID = -3629324471511904459L;
 
-		/// <summary>
-		/// Construct the exception.
-		/// </summary>
-		public NoDataException() : this(LocalizedFormats.NO_DATA)
-		{
-		}
-		/// <summary>
-		/// Construct the exception with a specific context.
-		/// </summary>
-		/// <param name="specific"> Contextual information on what caused the exception. </param>
-		public NoDataException(Localizable specific) : base(specific)
-		{
-		}
-	}
+        /// <summary>
+        /// Construct the exception.
+        /// </summary>
+        public NoDataException()
+            : this(LocalizedFormats.NO_DATA)
+        {
+        }
+        /// <summary>
+        /// Construct the exception with a specific context.
+        /// </summary>
+        /// <param name="specific"> Contextual information on what caused the exception. </param>
+        public NoDataException(Localizable specific)
+            : base(specific)
+        {
+        }
+    }
 
 }
