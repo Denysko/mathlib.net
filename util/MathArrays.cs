@@ -18,25 +18,25 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
 
-	using org.apache.commons.math3;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
-	using UniformIntegerDistribution = org.apache.commons.math3.distribution.UniformIntegerDistribution;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using mathlib;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
+	using UniformIntegerDistribution = mathlib.distribution.UniformIntegerDistribution;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Arrays utilities.

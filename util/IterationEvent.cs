@@ -14,49 +14,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
-	/// <summary>
-	/// The root class from which all events occurring while running an
-	/// <seealso cref="IterationManager"/> should be derived.
-	/// 
-	/// @version $Id: IterationEvent.java 1416643 2012-12-03 19:37:14Z tn $
-	/// </summary>
-	public class IterationEvent : EventObject
-	{
-		private const long serialVersionUID = 20120128L;
+    /// <summary>
+    /// The root class from which all events occurring while running an
+    /// <seealso cref="IterationManager"/> should be derived.
+    /// 
+    /// @version $Id: IterationEvent.java 1416643 2012-12-03 19:37:14Z tn $
+    /// </summary>
+    public class IterationEvent : EventObject
+    {
+        private const long serialVersionUID = 20120128L;
 
-		/// <summary>
-		/// The number of iterations performed so far. </summary>
-		private readonly int iterations;
+        /// <summary>
+        /// The number of iterations performed so far. </summary>
+        private readonly int iterations;
 
-		/// <summary>
-		/// Creates a new instance of this class.
-		/// </summary>
-		/// <param name="source"> the iterative algorithm on which the event initially
-		/// occurred </param>
-		/// <param name="iterations"> the number of iterations performed at the time
-		/// {@code this} event is created </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public IterationEvent(final Object source, final int iterations)
-		public IterationEvent(object source, int iterations) : base(source)
-		{
-			this.iterations = iterations;
-		}
+        /// <summary>
+        /// Creates a new instance of this class.
+        /// </summary>
+        /// <param name="source"> the iterative algorithm on which the event initially
+        /// occurred </param>
+        /// <param name="iterations"> the number of iterations performed at the time
+        /// {@code this} event is created </param>
+        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
+        //ORIGINAL LINE: public IterationEvent(final Object source, final int iterations)
+        public IterationEvent(object source, int iterations)
+            : base(source)
+        {
+            this.iterations = iterations;
+        }
 
-		/// <summary>
-		/// Returns the number of iterations performed at the time {@code this} event
-		/// is created.
-		/// </summary>
-		/// <returns> the number of iterations performed </returns>
-		public virtual int Iterations
-		{
-			get
-			{
-				return iterations;
-			}
-		}
-	}
+        /// <summary>
+        /// Returns the number of iterations performed at the time {@code this} event
+        /// is created.
+        /// </summary>
+        /// <returns> the number of iterations performed </returns>
+        public virtual int Iterations
+        {
+            get
+            {
+                return iterations;
+            }
+        }
+    }
 
 }

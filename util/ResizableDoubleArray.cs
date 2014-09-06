@@ -16,17 +16,17 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// <p>

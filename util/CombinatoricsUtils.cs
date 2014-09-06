@@ -16,14 +16,14 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using MathArithmeticException = mathlib.exception.MathArithmeticException;
+    using NotPositiveException = mathlib.exception.NotPositiveException;
+    using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Combinatorial utilities.

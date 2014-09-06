@@ -20,8 +20,8 @@ using System;
 namespace mathlib.complex
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
+    using mathlib;
+    using mathlib;
 
 	/// <summary>
 	/// Representation of the complex numbers field.
@@ -103,7 +103,7 @@ namespace mathlib.complex
 		/// <summary>
 		/// Handle deserialization of the singleton. </summary>
 		/// <returns> the singleton instance </returns>
-		private object readResolve()
+		private object ReadResolve()
 		{
 			// return the singleton instance
 			return LazyHolder.INSTANCE;

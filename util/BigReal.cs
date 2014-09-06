@@ -16,15 +16,15 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
 
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using mathlib;
+    using mathlib;
+    using MathArithmeticException = mathlib.exception.MathArithmeticException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Arbitrary precision decimal number.

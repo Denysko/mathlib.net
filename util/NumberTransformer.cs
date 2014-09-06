@@ -14,31 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+    using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
-	/// <summary>
-	/// Subclasses implementing this interface can transform Objects to doubles.
-	/// @version $Id: NumberTransformer.java 1416643 2012-12-03 19:37:14Z tn $
-	/// 
-	/// No longer extends Serializable since 2.0
-	/// 
-	/// </summary>
-	public interface NumberTransformer
-	{
+    /// <summary>
+    /// Subclasses implementing this interface can transform Objects to doubles.
+    /// @version $Id: NumberTransformer.java 1416643 2012-12-03 19:37:14Z tn $
+    /// 
+    /// No longer extends Serializable since 2.0
+    /// 
+    /// </summary>
+    public interface NumberTransformer
+    {
 
-		/// <summary>
-		/// Implementing this interface provides a facility to transform
-		/// from Object to Double.
-		/// </summary>
-		/// <param name="o"> the Object to be transformed. </param>
-		/// <returns> the double value of the Object. </returns>
-		/// <exception cref="MathIllegalArgumentException"> if the Object can not be transformed into a Double. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double transform(Object o) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
-		double transform(object o);
-	}
+        /// <summary>
+        /// Implementing this interface provides a facility to transform
+        /// from Object to Double.
+        /// </summary>
+        /// <param name="o"> the Object to be transformed. </param>
+        /// <returns> the double value of the Object. </returns>
+        /// <exception cref="MathIllegalArgumentException"> if the Object can not be transformed into a Double. </exception>
+        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
+        //ORIGINAL LINE: double transform(Object o) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+        double transform(object o);
+    }
 
 }
