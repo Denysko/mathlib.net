@@ -17,12 +17,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
+    using MathInternalError = mathlib.exception.MathInternalError;
+    using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+    using OutOfRangeException = mathlib.exception.OutOfRangeException;
 
 	/// <summary>
 	/// Utility to create <a href="http://en.wikipedia.org/wiki/Combination">

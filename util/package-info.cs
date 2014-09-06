@@ -17,7 +17,7 @@
 /// <summary>
 /// Convenience routines and common data structures used throughout the commons-math library.
 /// </summary>
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
 }

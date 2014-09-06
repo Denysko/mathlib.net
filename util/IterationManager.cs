@@ -16,11 +16,11 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+    using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// This abstract class provides a general framework for managing iterative

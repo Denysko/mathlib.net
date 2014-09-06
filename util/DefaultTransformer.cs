@@ -17,12 +17,12 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+    using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+    using NullArgumentException = mathlib.exception.NullArgumentException;
 
 	/// <summary>
 	/// A Default NumberTransformer for java.lang.Numbers and Numeric Strings. This

@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.util
+namespace mathlib.util
 {
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+    using ConvergenceException = mathlib.exception.ConvergenceException;
+    using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+    using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Provides a generic means to evaluate continued fractions.  Subclasses simply
