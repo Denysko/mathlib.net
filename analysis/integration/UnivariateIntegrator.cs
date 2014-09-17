@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace mathlib.integration
+namespace mathlib.analyis.integration
 {
 
     using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
