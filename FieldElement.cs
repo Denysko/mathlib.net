@@ -17,8 +17,8 @@
 namespace mathlib
 {
 
-    using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-    using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
+    using MathArithmeticException = mathlib.exception.MathArithmeticException;
+    using NullArgumentException = mathlib.exception.NullArgumentException;
 
 
     /// <summary>
