@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace mathlib.analyis.integration
+namespace mathlib.analysis.integration
 {
 
     using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
@@ -69,8 +69,6 @@ namespace mathlib.analyis.integration
         /// <exception cref="MathIllegalArgumentException"> if min > max or the endpoints do not
         /// satisfy the requirements specified by the integrator </exception>
         /// <exception cref="NullArgumentException"> if {@code f} is {@code null}. </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: double integrate(int maxEval, org.apache.commons.math3.analysis.UnivariateFunction f, double min, double max) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.NullArgumentException;
         double integrate(int maxEval, UnivariateFunction f, double min, double max);
 
         /// <summary>
