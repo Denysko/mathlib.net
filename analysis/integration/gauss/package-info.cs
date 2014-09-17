@@ -19,7 +19,7 @@
 /// Gauss family of quadrature schemes.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.analysis.integration.gauss
+namespace mathlib.analysis.integration.gauss
 {
 
 }
