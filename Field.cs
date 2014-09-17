@@ -16,48 +16,48 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3
+namespace mathlib
 {
 
-	/// <summary>
-	/// Interface representing a <a href="http://mathworld.wolfram.com/Field.html">field</a>.
-	/// <p>
-	/// Classes implementing this interface will often be singletons.
-	/// </p> </summary>
-	/// @param <T> the type of the field elements </param>
-	/// <seealso cref= FieldElement
-	/// @version $Id: Field.java 1416643 2012-12-03 19:37:14Z tn $
-	/// @since 2.0 </seealso>
-	public interface Field<T>
-	{
+    /// <summary>
+    /// Interface representing a <a href="http://mathworld.wolfram.com/Field.html">field</a>.
+    /// <p>
+    /// Classes implementing this interface will often be singletons.
+    /// </p> </summary>
+    /// @param <T> the type of the field elements </param>
+    /// <seealso cref= FieldElement
+    /// @version $Id: Field.java 1416643 2012-12-03 19:37:14Z tn $
+    /// @since 2.0 </seealso>
+    public interface Field<T>
+    {
 
-		/// <summary>
-		/// Get the additive identity of the field.
-		/// <p>
-		/// The additive identity is the element e<sub>0</sub> of the field such that
-		/// for all elements a of the field, the equalities a + e<sub>0</sub> =
-		/// e<sub>0</sub> + a = a hold.
-		/// </p> </summary>
-		/// <returns> additive identity of the field </returns>
-		T Zero {get;}
+        /// <summary>
+        /// Get the additive identity of the field.
+        /// <p>
+        /// The additive identity is the element e<sub>0</sub> of the field such that
+        /// for all elements a of the field, the equalities a + e<sub>0</sub> =
+        /// e<sub>0</sub> + a = a hold.
+        /// </p> </summary>
+        /// <returns> additive identity of the field </returns>
+        T Zero { get; }
 
-		/// <summary>
-		/// Get the multiplicative identity of the field.
-		/// <p>
-		/// The multiplicative identity is the element e<sub>1</sub> of the field such that
-		/// for all elements a of the field, the equalities a &times; e<sub>1</sub> =
-		/// e<sub>1</sub> &times; a = a hold.
-		/// </p> </summary>
-		/// <returns> multiplicative identity of the field </returns>
-		T One {get;}
+        /// <summary>
+        /// Get the multiplicative identity of the field.
+        /// <p>
+        /// The multiplicative identity is the element e<sub>1</sub> of the field such that
+        /// for all elements a of the field, the equalities a &times; e<sub>1</sub> =
+        /// e<sub>1</sub> &times; a = a hold.
+        /// </p> </summary>
+        /// <returns> multiplicative identity of the field </returns>
+        T One { get; }
 
-		/// <summary>
-		/// Returns the runtime class of the FieldElement.
-		/// </summary>
-		/// <returns> The {@code Class} object that represents the runtime
-		///         class of this object. </returns>
-		Type RuntimeClass {get;}
+        /// <summary>
+        /// Returns the runtime class of the FieldElement.
+        /// </summary>
+        /// <returns> The {@code Class} object that represents the runtime
+        ///         class of this object. </returns>
+        Type RuntimeClass { get; }
 
-	}
+    }
 
 }
