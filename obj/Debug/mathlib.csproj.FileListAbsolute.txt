@@ -1,0 +1,3 @@
+C:\Users\sasha\Documents\GitHub\MathLib\obj\Debug\mathlib.csprojResolveAssemblyReference.cache
+C:\Users\sasha\Documents\GitHub\MathLib\obj\Debug\mathlib.Properties.Resources.resources
+C:\Users\sasha\Documents\GitHub\MathLib\obj\Debug\mathlib.csproj.GenerateResource.Cache
