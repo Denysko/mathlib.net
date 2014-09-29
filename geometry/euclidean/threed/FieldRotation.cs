@@ -17,16 +17,16 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using mathlib;
+	using mathlib;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// This class is a re-implementation of <seealso cref="Rotation"/> using <seealso cref="RealFieldElement"/>.
@@ -39,7 +39,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 	/// @since 3.2 </seealso>
 
 	[Serializable]
-	public class FieldRotation<T> where T : org.apache.commons.math3.RealFieldElement<T>
+	public class FieldRotation<T> where T : mathlib.RealFieldElement<T>
 	{
 
 		/// <summary>
@@ -128,7 +128,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="angle"> rotation angle. </param>
 		/// <exception cref="MathIllegalArgumentException"> if the axis norm is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldRotation(final FieldVector3D<T> axis, final T angle) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public FieldRotation(final FieldVector3D<T> axis, final T angle) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FieldRotation(FieldVector3D<T> axis, T angle)
 		{
@@ -250,7 +250,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathArithmeticException"> if the norm of one of the vectors is zero,
 		/// or if one of the pair is degenerated (i.e. the vectors of the pair are colinear) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldRotation(FieldVector3D<T> u1, FieldVector3D<T> u2, FieldVector3D<T> v1, FieldVector3D<T> v2) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldRotation(FieldVector3D<T> u1, FieldVector3D<T> u2, FieldVector3D<T> v1, FieldVector3D<T> v2) throws mathlib.exception.MathArithmeticException
 		public FieldRotation(FieldVector3D<T> u1, FieldVector3D<T> u2, FieldVector3D<T> v1, FieldVector3D<T> v2)
 		{
 
@@ -272,7 +272,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 
 			// buid a matrix transforming the first base into the second one
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] array = org.apache.commons.math3.util.MathArrays.buildArray(u1.getX().getField(), 3, 3);
+//ORIGINAL LINE: final T[][] array = mathlib.util.MathArrays.buildArray(u1.getX().getField(), 3, 3);
 			T[][] array = MathArrays.buildArray(u1.X.Field, 3, 3);
 			array[0][0] = u1.X.multiply(v1.X).add(u2.X.multiply(v2.X)).add(u3.X.multiply(v3.X));
 			array[0][1] = u1.Y.multiply(v1.X).add(u2.Y.multiply(v2.X)).add(u3.Y.multiply(v3.X));
@@ -306,7 +306,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="v"> desired image of u by the rotation </param>
 		/// <exception cref="MathArithmeticException"> if the norm of one of the vectors is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldRotation(final FieldVector3D<T> u, final FieldVector3D<T> v) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldRotation(final FieldVector3D<T> u, final FieldVector3D<T> v) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FieldRotation(FieldVector3D<T> u, FieldVector3D<T> v)
 		{
@@ -407,7 +407,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] quat = org.apache.commons.math3.util.MathArrays.buildArray(ort[0][0].getField(), 4);
+//ORIGINAL LINE: final T[] quat = mathlib.util.MathArrays.buildArray(ort[0][0].getField(), 4);
 			T[] quat = MathArrays.buildArray(ort[0][0].Field, 4);
 
 			// There are different ways to compute the quaternions elements
@@ -542,7 +542,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 				if (squaredSine.Real == 0)
 				{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.Field<T> field = squaredSine.getField();
+	//ORIGINAL LINE: final mathlib.Field<T> field = squaredSine.getField();
 					Field<T> field = squaredSine.Field;
 					return new FieldVector3D<T>(field.One, field.Zero, field.Zero);
 				}
@@ -884,7 +884,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		private T[] buildArray(T a0, T a1, T a2)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] array = org.apache.commons.math3.util.MathArrays.buildArray(a0.getField(), 3);
+//ORIGINAL LINE: final T[] array = mathlib.util.MathArrays.buildArray(a0.getField(), 3);
 			T[] array = MathArrays.buildArray(a0.Field, 3);
 			array[0] = a0;
 			array[1] = a1;
@@ -950,7 +950,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
     
 				// create the matrix
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final T[][] m = org.apache.commons.math3.util.MathArrays.buildArray(q0.getField(), 3, 3);
+	//ORIGINAL LINE: final T[][] m = mathlib.util.MathArrays.buildArray(q0.getField(), 3, 3);
 				T[][] m = MathArrays.buildArray(q0.Field, 3, 3);
     
 				m [0][0] = q0q0.add(q1q1).multiply(2).subtract(1);
@@ -1098,8 +1098,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> a new vector which is the image of u by the rotation </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> FieldVector3D<T> applyTo(final Rotation r, final FieldVector3D<T> u)
-		public static FieldVector3D<T> applyTo<T>(Rotation r, FieldVector3D<T> u) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> FieldVector3D<T> applyTo(final Rotation r, final FieldVector3D<T> u)
+		public static FieldVector3D<T> applyTo<T>(Rotation r, FieldVector3D<T> u) where T : mathlib.RealFieldElement<T>
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1252,8 +1252,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> a new vector which such that u is its image by the rotation </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> FieldVector3D<T> applyInverseTo(final Rotation r, final FieldVector3D<T> u)
-		public static FieldVector3D<T> applyInverseTo<T>(Rotation r, FieldVector3D<T> u) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> FieldVector3D<T> applyInverseTo(final Rotation r, final FieldVector3D<T> u)
+		public static FieldVector3D<T> applyInverseTo<T>(Rotation r, FieldVector3D<T> u) where T : mathlib.RealFieldElement<T>
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1321,8 +1321,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> a new rotation which is the composition of r by the instance </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> FieldRotation<T> applyTo(final Rotation r1, final FieldRotation<T> rInner)
-		public static FieldRotation<T> applyTo<T>(Rotation r1, FieldRotation<T> rInner) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> FieldRotation<T> applyTo(final Rotation r1, final FieldRotation<T> rInner)
+		public static FieldRotation<T> applyTo<T>(Rotation r1, FieldRotation<T> rInner) where T : mathlib.RealFieldElement<T>
 		{
 			return new FieldRotation<T>(rInner.q0.multiply(r1.Q0).subtract(rInner.q1.multiply(r1.Q1).add(rInner.q2.multiply(r1.Q2)).add(rInner.q3.multiply(r1.Q3))), rInner.q1.multiply(r1.Q0).add(rInner.q0.multiply(r1.Q1)).add(rInner.q2.multiply(r1.Q3).subtract(rInner.q3.multiply(r1.Q2))), rInner.q2.multiply(r1.Q0).add(rInner.q0.multiply(r1.Q2)).add(rInner.q3.multiply(r1.Q1).subtract(rInner.q1.multiply(r1.Q3))), rInner.q3.multiply(r1.Q0).add(rInner.q0.multiply(r1.Q3)).add(rInner.q1.multiply(r1.Q2).subtract(rInner.q2.multiply(r1.Q1))), false);
 		}
@@ -1377,8 +1377,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> a new rotation which is the composition of r by the inverse
 		/// of the instance </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> FieldRotation<T> applyInverseTo(final Rotation rOuter, final FieldRotation<T> rInner)
-		public static FieldRotation<T> applyInverseTo<T>(Rotation rOuter, FieldRotation<T> rInner) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> FieldRotation<T> applyInverseTo(final Rotation rOuter, final FieldRotation<T> rInner)
+		public static FieldRotation<T> applyInverseTo<T>(Rotation rOuter, FieldRotation<T> rInner) where T : mathlib.RealFieldElement<T>
 		{
 			return new FieldRotation<T>(rInner.q0.multiply(rOuter.Q0).add(rInner.q1.multiply(rOuter.Q1).add(rInner.q2.multiply(rOuter.Q2)).add(rInner.q3.multiply(rOuter.Q3))).negate(), rInner.q0.multiply(rOuter.Q1).add(rInner.q2.multiply(rOuter.Q3).subtract(rInner.q3.multiply(rOuter.Q2))).subtract(rInner.q1.multiply(rOuter.Q0)), rInner.q0.multiply(rOuter.Q2).add(rInner.q3.multiply(rOuter.Q1).subtract(rInner.q1.multiply(rOuter.Q3))).subtract(rInner.q2.multiply(rOuter.Q0)), rInner.q0.multiply(rOuter.Q3).add(rInner.q1.multiply(rOuter.Q2).subtract(rInner.q2.multiply(rOuter.Q1))).subtract(rInner.q3.multiply(rOuter.Q0)), false);
 		}
@@ -1412,7 +1412,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			double fn1;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] o = org.apache.commons.math3.util.MathArrays.buildArray(m[0][0].getField(), 3, 3);
+//ORIGINAL LINE: final T[][] o = mathlib.util.MathArrays.buildArray(m[0][0].getField(), 3, 3);
 			T[][] o = MathArrays.buildArray(m[0][0].Field, 3, 3);
 
 			// iterative correction: Xn+1 = Xn - 0.5 * (Xn.Mt.Xn - M)
@@ -1543,8 +1543,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> <i>distance</i> between r1 and r2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distance(final FieldRotation<T> r1, final FieldRotation<T> r2)
-		public static T distance<T>(FieldRotation<T> r1, FieldRotation<T> r2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distance(final FieldRotation<T> r1, final FieldRotation<T> r2)
+		public static T distance<T>(FieldRotation<T> r1, FieldRotation<T> r2) where T : mathlib.RealFieldElement<T>
 		{
 			return r1.applyInverseTo(r2).Angle;
 		}

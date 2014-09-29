@@ -17,12 +17,12 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	///  Value object representing the results of a univariate statistical summary.

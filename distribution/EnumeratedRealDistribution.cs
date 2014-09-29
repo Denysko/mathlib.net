@@ -16,19 +16,19 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotANumberException = org.apache.commons.math3.exception.NotANumberException;
-	using NotFiniteNumberException = org.apache.commons.math3.exception.NotFiniteNumberException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
-	using org.apache.commons.math3.util;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NotANumberException = mathlib.exception.NotANumberException;
+	using NotFiniteNumberException = mathlib.exception.NotFiniteNumberException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
+	using mathlib.util;
 
 	/// <summary>
 	/// <p>Implementation of a real-valued <seealso cref="EnumeratedDistribution"/>.
@@ -67,7 +67,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotANumberException"> if any of the probabilities are NaN. </exception>
 		/// <exception cref="MathArithmeticException"> all of the probabilities are 0. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public EnumeratedRealDistribution(final double[] singletons, final double[] probabilities) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public EnumeratedRealDistribution(final double[] singletons, final double[] probabilities) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public EnumeratedRealDistribution(double[] singletons, double[] probabilities) : this(new Well19937c(), singletons, probabilities)
 		{
@@ -87,7 +87,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotANumberException"> if any of the probabilities are NaN. </exception>
 		/// <exception cref="MathArithmeticException"> all of the probabilities are 0. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public EnumeratedRealDistribution(final org.apache.commons.math3.random.RandomGenerator rng, final double[] singletons, final double[] probabilities) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public EnumeratedRealDistribution(final mathlib.random.RandomGenerator rng, final double[] singletons, final double[] probabilities) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public EnumeratedRealDistribution(RandomGenerator rng, double[] singletons, double[] probabilities) : base(rng)
 		{
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double inverseCumulativeProbability(double p)
 		{

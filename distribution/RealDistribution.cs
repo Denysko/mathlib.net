@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
 
 	/// <summary>
 	/// Base interface for distributions on the reals.
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.distribution
 		/// @deprecated As of 3.1. In 4.0, this method will be renamed
 		/// {@code probability(double x0, double x1)}. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. In 4.0, this method will be renamed") double cumulativeProbability(double x0, double x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException;
+//ORIGINAL LINE: @Deprecated("As of 3.1. In 4.0, this method will be renamed") double cumulativeProbability(double x0, double x1) throws mathlib.exception.NumberIsTooLargeException;
 		[Obsolete("As of 3.1. In 4.0, this method will be renamed")]
 		double cumulativeProbability(double x0, double x1);
 
@@ -96,7 +96,7 @@ namespace org.apache.commons.math3.distribution
 		/// (largest 0-quantile for {@code p = 0}) </returns>
 		/// <exception cref="OutOfRangeException"> if {@code p < 0} or {@code p > 1} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double inverseCumulativeProbability(double p) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: double inverseCumulativeProbability(double p) throws mathlib.exception.OutOfRangeException;
 		double inverseCumulativeProbability(double p);
 
 		/// <summary>
@@ -184,7 +184,7 @@ namespace org.apache.commons.math3.distribution
 		/// </summary>
 		/// <param name="sampleSize"> the number of random values to generate </param>
 		/// <returns> an array representing the random sample </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code sampleSize} is not positive </exception>
 		double[] sample(int sampleSize);
 	}

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.special
+namespace mathlib.special
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This is a utility class that provides computation methods related to the
@@ -63,7 +63,7 @@ namespace org.apache.commons.math3.special
 		/// </summary>
 		/// <param name="x"> the value. </param>
 		/// <returns> the error function erf(x) </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if the algorithm fails to converge. </exception>
 		/// <seealso cref= Gamma#regularizedGammaP(double, double, double, int) </seealso>
 		public static double erf(double x)
@@ -96,7 +96,7 @@ namespace org.apache.commons.math3.special
 		/// </summary>
 		/// <param name="x"> the value </param>
 		/// <returns> the complementary error function erfc(x) </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if the algorithm fails to converge. </exception>
 		/// <seealso cref= Gamma#regularizedGammaQ(double, double, double, int)
 		/// @since 2.2 </seealso>

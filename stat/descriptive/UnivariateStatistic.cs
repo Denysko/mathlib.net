@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathArrays = mathlib.util.MathArrays;
 
 
 	/// <summary>
@@ -35,7 +35,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <returns> the value of the statistic applied to the input array </returns>
 		/// <exception cref="MathIllegalArgumentException">  if values is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double evaluate(double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: double evaluate(double[] values) throws mathlib.exception.MathIllegalArgumentException;
 		double evaluate(double[] values);
 
 		/// <summary>
@@ -48,7 +48,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <returns> the value of the statistic applied to the included array entries </returns>
 		/// <exception cref="MathIllegalArgumentException"> if values is null or the indices are invalid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double evaluate(double[] values, int begin, int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: double evaluate(double[] values, int begin, int length) throws mathlib.exception.MathIllegalArgumentException;
 		double evaluate(double[] values, int begin, int length);
 
 		/// <summary>

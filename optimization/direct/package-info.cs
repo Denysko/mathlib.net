@@ -21,7 +21,7 @@
 /// </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
 }

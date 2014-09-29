@@ -17,17 +17,17 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using org.apache.commons.math3.optimization;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// Special implementation of the <seealso cref="UnivariateOptimizer"/> interface
@@ -43,7 +43,7 @@ namespace org.apache.commons.math3.optimization.univariate
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 3.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public class UnivariateMultiStartOptimizer<FUNC> : BaseUnivariateOptimizer<FUNC> where FUNC : org.apache.commons.math3.analysis.UnivariateFunction
+	public class UnivariateMultiStartOptimizer<FUNC> : BaseUnivariateOptimizer<FUNC> where FUNC : mathlib.analysis.UnivariateFunction
 	{
 		/// <summary>
 		/// Underlying classical optimizer. </summary>
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.optimization.univariate
 		/// is {@code null}. </exception>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code starts < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public UnivariateMultiStartOptimizer(final BaseUnivariateOptimizer<FUNC> optimizer, final int starts, final org.apache.commons.math3.random.RandomGenerator generator)
+//ORIGINAL LINE: public UnivariateMultiStartOptimizer(final BaseUnivariateOptimizer<FUNC> optimizer, final int starts, final mathlib.random.RandomGenerator generator)
 		public UnivariateMultiStartOptimizer(BaseUnivariateOptimizer<FUNC> optimizer, int starts, RandomGenerator generator)
 		{
 			if (optimizer == null || generator == null)
@@ -165,7 +165,7 @@ namespace org.apache.commons.math3.optimization.univariate
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public UnivariatePointValuePair optimize(int maxEval, final FUNC f, final org.apache.commons.math3.optimization.GoalType goal, final double min, final double max)
+//ORIGINAL LINE: public UnivariatePointValuePair optimize(int maxEval, final FUNC f, final mathlib.optimization.GoalType goal, final double min, final double max)
 		public virtual UnivariatePointValuePair optimize(int maxEval, FUNC f, GoalType goal, double min, double max)
 		{
 			return optimize(maxEval, f, goal, min, max, min + 0.5 * (max - min));
@@ -174,7 +174,7 @@ namespace org.apache.commons.math3.optimization.univariate
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public UnivariatePointValuePair optimize(int maxEval, final FUNC f, final org.apache.commons.math3.optimization.GoalType goal, final double min, final double max, final double startValue)
+//ORIGINAL LINE: public UnivariatePointValuePair optimize(int maxEval, final FUNC f, final mathlib.optimization.GoalType goal, final double min, final double max, final double startValue)
 		public virtual UnivariatePointValuePair optimize(int maxEval, FUNC f, GoalType goal, double min, double max, double startValue)
 		{
 			Exception lastException = null;
@@ -218,7 +218,7 @@ namespace org.apache.commons.math3.optimization.univariate
 		/// </summary>
 		/// <param name="goal"> Goal type. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void sortPairs(final org.apache.commons.math3.optimization.GoalType goal)
+//ORIGINAL LINE: private void sortPairs(final mathlib.optimization.GoalType goal)
 		private void sortPairs(GoalType goal)
 		{
 			Arrays.sort(optima, new ComparatorAnonymousInnerClassHelper(this, goal));

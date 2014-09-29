@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements a normalized uniform random generator.

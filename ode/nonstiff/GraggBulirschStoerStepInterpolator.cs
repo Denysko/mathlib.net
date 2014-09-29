@@ -17,13 +17,13 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
 
-	using AbstractStepInterpolator = org.apache.commons.math3.ode.sampling.AbstractStepInterpolator;
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using AbstractStepInterpolator = mathlib.ode.sampling.AbstractStepInterpolator;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements an interpolator for the Gragg-Bulirsch-Stoer
@@ -139,7 +139,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <param name="primaryMapper"> equations mapper for the primary equations set </param>
 	  /// <param name="secondaryMappers"> equations mappers for the secondary equations sets </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public GraggBulirschStoerStepInterpolator(final double[] y, final double[] y0Dot, final double[] y1, final double[] y1Dot, final double[][] yMidDots, final boolean forward, final org.apache.commons.math3.ode.EquationsMapper primaryMapper, final org.apache.commons.math3.ode.EquationsMapper[] secondaryMappers)
+//ORIGINAL LINE: public GraggBulirschStoerStepInterpolator(final double[] y, final double[] y0Dot, final double[] y1, final double[] y1Dot, final double[][] yMidDots, final boolean forward, final mathlib.ode.EquationsMapper primaryMapper, final mathlib.ode.EquationsMapper[] secondaryMappers)
 	  public GraggBulirschStoerStepInterpolator(double[] y, double[] y0Dot, double[] y1, double[] y1Dot, double[][] yMidDots, bool forward, EquationsMapper primaryMapper, EquationsMapper[] secondaryMappers) : base(y, forward, primaryMapper, secondaryMappers)
 	  {
 
@@ -247,7 +247,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 			  int ip5 = i + 5;
 			  errfac[i] = 1.0 / (ip5 * ip5);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double e = 0.5 * org.apache.commons.math3.util.FastMath.sqrt(((double)(i + 1)) / ip5);
+//ORIGINAL LINE: final double e = 0.5 * mathlib.util.FastMath.sqrt(((double)(i + 1)) / ip5);
 			  double e = 0.5 * FastMath.sqrt(((double)(i + 1)) / ip5);
 			  for (int j = 0; j <= i; ++j)
 			  {

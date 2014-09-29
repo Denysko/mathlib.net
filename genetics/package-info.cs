@@ -17,7 +17,7 @@
 /// <summary>
 /// This package provides Genetic Algorithms components and implementations.
 /// </summary>
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 }

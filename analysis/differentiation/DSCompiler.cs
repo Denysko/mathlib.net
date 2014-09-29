@@ -17,18 +17,18 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using CombinatoricsUtils = org.apache.commons.math3.util.CombinatoricsUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using CombinatoricsUtils = mathlib.util.CombinatoricsUtils;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Class holding "compiled" computation rules for derivative structures.
@@ -168,7 +168,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <param name="derivativeCompiler"> compiler for the derivative part </param>
 		/// <exception cref="NumberIsTooLargeException"> if order is too large </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private DSCompiler(final int parameters, final int order, final DSCompiler valueCompiler, final DSCompiler derivativeCompiler) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private DSCompiler(final int parameters, final int order, final DSCompiler valueCompiler, final DSCompiler derivativeCompiler) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private DSCompiler(int parameters, int order, DSCompiler valueCompiler, DSCompiler derivativeCompiler)
 		{
@@ -190,7 +190,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <returns> cached rules set </returns>
 		/// <exception cref="NumberIsTooLargeException"> if order is too large </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static DSCompiler getCompiler(int parameters, int order) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public static DSCompiler getCompiler(int parameters, int order) throws mathlib.exception.NumberIsTooLargeException
 		public static DSCompiler getCompiler(int parameters, int order)
 		{
 
@@ -206,10 +206,10 @@ namespace org.apache.commons.math3.analysis.differentiation
 
 			// we need to create more compilers
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int maxParameters = org.apache.commons.math3.util.FastMath.max(parameters, cache == null ? 0 : cache.length);
+//ORIGINAL LINE: final int maxParameters = mathlib.util.FastMath.max(parameters, cache == null ? 0 : cache.length);
 			int maxParameters = FastMath.max(parameters, cache == null ? 0 : cache.Length);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int maxOrder = org.apache.commons.math3.util.FastMath.max(order, cache == null ? 0 : cache[0].length);
+//ORIGINAL LINE: final int maxOrder = mathlib.util.FastMath.max(order, cache == null ? 0 : cache[0].length);
 			int maxOrder = FastMath.max(order, cache == null ? 0 : cache[0].Length);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final DSCompiler[][] newCache = new DSCompiler[maxParameters + 1][maxOrder + 1];
@@ -483,7 +483,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <returns> multiplication indirection array </returns>
 		/// <exception cref="NumberIsTooLargeException"> if order is too large </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static int[][][] compileCompositionIndirection(final int parameters, final int order, final DSCompiler valueCompiler, final DSCompiler derivativeCompiler, final int[][] sizes, final int[][] derivativesIndirection) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private static int[][][] compileCompositionIndirection(final int parameters, final int order, final DSCompiler valueCompiler, final DSCompiler derivativeCompiler, final int[][] sizes, final int[][] derivativesIndirection) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static int[][][] compileCompositionIndirection(int parameters, int order, DSCompiler valueCompiler, DSCompiler derivativeCompiler, int[][] sizes, int[][] derivativesIndirection)
 		{
@@ -633,7 +633,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// than the instance limits </exception>
 		/// <seealso cref= #getPartialDerivativeOrders(int) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int getPartialDerivativeIndex(final int... orders) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public int getPartialDerivativeIndex(final int... orders) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual int getPartialDerivativeIndex(params int[] orders)
 		{
@@ -659,7 +659,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="NumberIsTooLargeException"> if sum of derivation orders is larger
 		/// than the instance limits </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static int getPartialDerivativeIndex(final int parameters, final int order, final int[][] sizes, final int... orders) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private static int getPartialDerivativeIndex(final int parameters, final int order, final int[][] sizes, final int... orders) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static int getPartialDerivativeIndex(int parameters, int order, int[][] sizes, params int[] orders)
 		{
@@ -709,7 +709,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// in destination derivative structure </returns>
 		/// <exception cref="NumberIsTooLargeException"> if order is too large </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static int convertIndex(final int index, final int srcP, final int[][] srcDerivativesIndirection, final int destP, final int destO, final int[][] destSizes) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private static int convertIndex(final int index, final int srcP, final int[][] srcDerivativesIndirection, final int destP, final int destO, final int[][] destSizes) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static int convertIndex(int index, int srcP, int[][] srcDerivativesIndirection, int destP, int destO, int[][] destSizes)
 		{
@@ -947,10 +947,10 @@ namespace org.apache.commons.math3.analysis.differentiation
 
 			// compute k such that lhs % rhs = lhs - k rhs
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double rem = org.apache.commons.math3.util.FastMath.IEEEremainder(lhs[lhsOffset], rhs[rhsOffset]);
+//ORIGINAL LINE: final double rem = mathlib.util.FastMath.IEEEremainder(lhs[lhsOffset], rhs[rhsOffset]);
 			double rem = FastMath.IEEEremainder(lhs[lhsOffset], rhs[rhsOffset]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double k = org.apache.commons.math3.util.FastMath.rint((lhs[lhsOffset] - rem) / rhs[rhsOffset]);
+//ORIGINAL LINE: final double k = mathlib.util.FastMath.rint((lhs[lhsOffset] - rem) / rhs[rhsOffset]);
 			double k = FastMath.rint((lhs[lhsOffset] - rem) / rhs[rhsOffset]);
 
 			// set up value
@@ -1005,7 +1005,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			{
 				function[0] = FastMath.pow(a, operand[operandOffset]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double lnA = org.apache.commons.math3.util.FastMath.log(a);
+//ORIGINAL LINE: final double lnA = mathlib.util.FastMath.log(a);
 				double lnA = FastMath.log(a);
 				for (int i = 1; i < function.Length; ++i)
 				{
@@ -1085,7 +1085,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			{
 				// strictly positive power
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int maxOrder = org.apache.commons.math3.util.FastMath.min(order, n);
+//ORIGINAL LINE: final int maxOrder = mathlib.util.FastMath.min(order, n);
 				int maxOrder = FastMath.min(order, n);
 				double xk = FastMath.pow(operand[operandOffset], n - maxOrder);
 				for (int i = maxOrder; i > 0; --i)
@@ -1413,7 +1413,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 //ORIGINAL LINE: final double[] function = new double[1 + order];
 			double[] function = new double[1 + order];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = org.apache.commons.math3.util.FastMath.tan(operand[operandOffset]);
+//ORIGINAL LINE: final double t = mathlib.util.FastMath.tan(operand[operandOffset]);
 			double t = FastMath.tan(operand[operandOffset]);
 			function[0] = t;
 
@@ -1823,7 +1823,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 //ORIGINAL LINE: final double[] function = new double[1 + order];
 			double[] function = new double[1 + order];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = org.apache.commons.math3.util.FastMath.tanh(operand[operandOffset]);
+//ORIGINAL LINE: final double t = mathlib.util.FastMath.tanh(operand[operandOffset]);
 			double t = FastMath.tanh(operand[operandOffset]);
 			function[0] = t;
 
@@ -2143,7 +2143,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <returns> value of the Taylor expansion at x + &Delta;x, y + &Delta;y, ... </returns>
 		/// <exception cref="MathArithmeticException"> if factorials becomes too large </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double taylor(final double[] ds, final int dsOffset, final double... delta) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public double taylor(final double[] ds, final int dsOffset, final double... delta) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double taylor(double[] ds, int dsOffset, params double[] delta)
 		{
@@ -2179,7 +2179,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <param name="compiler"> other compiler to check against instance </param>
 		/// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void checkCompatibility(final DSCompiler compiler) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void checkCompatibility(final DSCompiler compiler) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void checkCompatibility(DSCompiler compiler)
 		{

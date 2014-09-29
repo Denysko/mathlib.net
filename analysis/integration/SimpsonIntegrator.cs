@@ -57,7 +57,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="NumberIsTooLargeException"> if maximal number of iterations
         /// is greater than <seealso cref="#SIMPSON_MAX_ITERATIONS_COUNT"/> </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public SimpsonIntegrator(final double relativeAccuracy, final double absoluteAccuracy, final int minimalIterationCount, final int maximalIterationCount) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NumberIsTooLargeException
+        //ORIGINAL LINE: public SimpsonIntegrator(final double relativeAccuracy, final double absoluteAccuracy, final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NumberIsTooLargeException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public SimpsonIntegrator(double relativeAccuracy, double absoluteAccuracy, int minimalIterationCount, int maximalIterationCount)
             : base(relativeAccuracy, absoluteAccuracy, minimalIterationCount, maximalIterationCount)
@@ -80,7 +80,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="NumberIsTooLargeException"> if maximal number of iterations
         /// is greater than <seealso cref="#SIMPSON_MAX_ITERATIONS_COUNT"/> </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public SimpsonIntegrator(final int minimalIterationCount, final int maximalIterationCount) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NumberIsTooLargeException
+        //ORIGINAL LINE: public SimpsonIntegrator(final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NumberIsTooLargeException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public SimpsonIntegrator(int minimalIterationCount, int maximalIterationCount)
             : base(minimalIterationCount, maximalIterationCount)
@@ -103,7 +103,7 @@ namespace mathlib.analysis.integration
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected double doIntegrate() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.MaxCountExceededException
+        //ORIGINAL LINE: @Override protected double doIntegrate() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.MaxCountExceededException
         protected internal override double doIntegrate()
         {
 
@@ -128,10 +128,10 @@ namespace mathlib.analysis.integration
                 if (iterations.Count >= MinimalIterationCount)
                 {
                     //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double delta = org.apache.commons.math3.util.FastMath.abs(s - olds);
+                    //ORIGINAL LINE: final double delta = mathlib.util.FastMath.abs(s - olds);
                     double delta = FastMath.abs(s - olds);
                     //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double rLimit = getRelativeAccuracy() * (org.apache.commons.math3.util.FastMath.abs(olds) + org.apache.commons.math3.util.FastMath.abs(s)) * 0.5;
+                    //ORIGINAL LINE: final double rLimit = getRelativeAccuracy() * (mathlib.util.FastMath.abs(olds) + mathlib.util.FastMath.abs(s)) * 0.5;
                     double rLimit = RelativeAccuracy * (FastMath.abs(olds) + FastMath.abs(s)) * 0.5;
                     if ((delta <= rLimit) || (delta <= AbsoluteAccuracy))
                     {

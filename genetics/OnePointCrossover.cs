@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 
 	/// <summary>
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.genetics
 		///   not an instance of <seealso cref="AbstractListChromosome"/> </exception>
 		/// <exception cref="DimensionMismatchException"> if the length of the two chromosomes is different </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public ChromosomePair crossover(final Chromosome first, final Chromosome second) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public ChromosomePair crossover(final Chromosome first, final Chromosome second) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual ChromosomePair crossover(Chromosome first, Chromosome second) // OK because of instanceof checks
@@ -100,7 +100,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the pair of new chromosomes that resulted from the crossover. </returns>
 		/// <exception cref="DimensionMismatchException"> if the length of the two chromosomes is different </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private ChromosomePair crossover(final AbstractListChromosome<T> first, final AbstractListChromosome<T> second) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private ChromosomePair crossover(final AbstractListChromosome<T> first, final AbstractListChromosome<T> second) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private ChromosomePair crossover(AbstractListChromosome<T> first, AbstractListChromosome<T> second)
 		{

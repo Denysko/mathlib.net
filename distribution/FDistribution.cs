@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Beta = org.apache.commons.math3.special.Beta;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Beta = mathlib.special.Beta;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the F-distribution.
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code numeratorDegreesOfFreedom <= 0} or
 		/// {@code denominatorDegreesOfFreedom <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FDistribution(double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public FDistribution(double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom) throws mathlib.exception.NotStrictlyPositiveException
 		public FDistribution(double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom) : this(numeratorDegreesOfFreedom, denominatorDegreesOfFreedom, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -84,7 +84,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code denominatorDegreesOfFreedom <= 0}.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FDistribution(double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public FDistribution(double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public FDistribution(double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom, double inverseCumAccuracy) : this(new Well19937c(), numeratorDegreesOfFreedom, denominatorDegreesOfFreedom, inverseCumAccuracy)
 		{
 		}
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code denominatorDegreesOfFreedom <= 0}.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FDistribution(org.apache.commons.math3.random.RandomGenerator rng, double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public FDistribution(mathlib.random.RandomGenerator rng, double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom) throws mathlib.exception.NotStrictlyPositiveException
 		public FDistribution(RandomGenerator rng, double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom) : this(rng, numeratorDegreesOfFreedom, denominatorDegreesOfFreedom, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -116,7 +116,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code denominatorDegreesOfFreedom <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FDistribution(org.apache.commons.math3.random.RandomGenerator rng, double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public FDistribution(mathlib.random.RandomGenerator rng, double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public FDistribution(RandomGenerator rng, double numeratorDegreesOfFreedom, double denominatorDegreesOfFreedom, double inverseCumAccuracy) : base(rng)
 		{
 
@@ -154,16 +154,16 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double mhalf = denominatorDegreesOfFreedom / 2;
 			double mhalf = denominatorDegreesOfFreedom / 2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double logx = org.apache.commons.math3.util.FastMath.log(x);
+//ORIGINAL LINE: final double logx = mathlib.util.FastMath.log(x);
 			double logx = FastMath.log(x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double logn = org.apache.commons.math3.util.FastMath.log(numeratorDegreesOfFreedom);
+//ORIGINAL LINE: final double logn = mathlib.util.FastMath.log(numeratorDegreesOfFreedom);
 			double logn = FastMath.log(numeratorDegreesOfFreedom);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double logm = org.apache.commons.math3.util.FastMath.log(denominatorDegreesOfFreedom);
+//ORIGINAL LINE: final double logm = mathlib.util.FastMath.log(denominatorDegreesOfFreedom);
 			double logm = FastMath.log(denominatorDegreesOfFreedom);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double lognxm = org.apache.commons.math3.util.FastMath.log(numeratorDegreesOfFreedom * x + denominatorDegreesOfFreedom);
+//ORIGINAL LINE: final double lognxm = mathlib.util.FastMath.log(numeratorDegreesOfFreedom * x + denominatorDegreesOfFreedom);
 			double lognxm = FastMath.log(numeratorDegreesOfFreedom * x + denominatorDegreesOfFreedom);
 			return nhalf * logn + nhalf * logx - logx + mhalf * logm - nhalf * lognxm - mhalf * lognxm - Beta.logBeta(nhalf, mhalf);
 		}

@@ -17,7 +17,7 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.fitting
+namespace mathlib.optimization.fitting
 {
 
 	/// <summary>

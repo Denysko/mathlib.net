@@ -16,25 +16,25 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting
+namespace mathlib.fitting
 {
 
 
-	using Gaussian = org.apache.commons.math3.analysis.function.Gaussian;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using LeastSquaresBuilder = org.apache.commons.math3.fitting.leastsquares.LeastSquaresBuilder;
-	using LeastSquaresProblem = org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem;
-	using DiagonalMatrix = org.apache.commons.math3.linear.DiagonalMatrix;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using Gaussian = mathlib.analysis.function.Gaussian;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using LeastSquaresBuilder = mathlib.fitting.leastsquares.LeastSquaresBuilder;
+	using LeastSquaresProblem = mathlib.fitting.leastsquares.LeastSquaresProblem;
+	using DiagonalMatrix = mathlib.linear.DiagonalMatrix;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Fits points to a {@link
-	/// org.apache.commons.math3.analysis.function.Gaussian.Parametric Gaussian}
+	/// mathlib.analysis.function.Gaussian.Parametric Gaussian}
 	/// function.
 	/// <br/>
 	/// The <seealso cref="#withStartPoint(double[]) initial guess values"/> must be passed
@@ -201,7 +201,7 @@ namespace org.apache.commons.math3.fitting
 
 		/// <summary>
 		/// Guesses the parameters {@code norm}, {@code mean}, and {@code sigma}
-		/// of a <seealso cref="org.apache.commons.math3.analysis.function.Gaussian.Parametric"/>
+		/// of a <seealso cref="mathlib.analysis.function.Gaussian.Parametric"/>
 		/// based on the specified observed points.
 		/// </summary>
 		public class ParameterGuesser
@@ -370,7 +370,7 @@ namespace org.apache.commons.math3.fitting
 					fwhmApprox = points[points.Length - 1].X - points[0].X;
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double s = fwhmApprox / (2 * org.apache.commons.math3.util.FastMath.sqrt(2 * org.apache.commons.math3.util.FastMath.log(2)));
+//ORIGINAL LINE: final double s = fwhmApprox / (2 * mathlib.util.FastMath.sqrt(2 * mathlib.util.FastMath.log(2)));
 				double s = fwhmApprox / (2 * FastMath.sqrt(2 * FastMath.log(2)));
 
 				return new double[] {n, m, s};
@@ -408,7 +408,7 @@ namespace org.apache.commons.math3.fitting
 			/// <exception cref="OutOfRangeException"> if specified {@code y} is not within the
 			/// range of the specified {@code points}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double interpolateXAtY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private double interpolateXAtY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws mathlib.exception.OutOfRangeException
 			internal virtual double interpolateXAtY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y)
 			{
 				if (idxStep == 0)
@@ -450,7 +450,7 @@ namespace org.apache.commons.math3.fitting
 			/// <exception cref="OutOfRangeException"> if specified {@code y} is not within the
 			/// range of the specified {@code points}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws mathlib.exception.OutOfRangeException
 			internal virtual WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y)
 			{
 				if (idxStep == 0)

@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet.sofm
+namespace mathlib.ml.neuralnet.sofm
 {
 
-	using ExponentialDecayFunction = org.apache.commons.math3.ml.neuralnet.sofm.util.ExponentialDecayFunction;
-	using QuasiSigmoidDecayFunction = org.apache.commons.math3.ml.neuralnet.sofm.util.QuasiSigmoidDecayFunction;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using ExponentialDecayFunction = mathlib.ml.neuralnet.sofm.util.ExponentialDecayFunction;
+	using QuasiSigmoidDecayFunction = mathlib.ml.neuralnet.sofm.util.QuasiSigmoidDecayFunction;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Factory for creating instances of <seealso cref="NeighbourhoodSizeFunction"/>.
@@ -51,13 +51,13 @@ namespace org.apache.commons.math3.ml.neuralnet.sofm
 		/// <param name="numCall"> Argument for which the function returns
 		/// {@code valueAtNumCall}. </param>
 		/// <returns> the neighbourhood size function. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code initValue <= 0}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code valueAtNumCall <= 0}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException">
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException">
 		/// if {@code valueAtNumCall >= initValue}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code numCall <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public static NeighbourhoodSizeFunction exponentialDecay(final double initValue, final double valueAtNumCall, final long numCall)
@@ -105,11 +105,11 @@ namespace org.apache.commons.math3.ml.neuralnet.sofm
 		/// <param name="slope"> Value of the function derivative at {@code numCall}. </param>
 		/// <param name="numCall"> Inflexion point. </param>
 		/// <returns> the neighbourhood size function. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code initValue <= 0}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException">
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException">
 		/// if {@code slope >= 0}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code numCall <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public static NeighbourhoodSizeFunction quasiSigmoidDecay(final double initValue, final double slope, final long numCall)

@@ -18,12 +18,12 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using org.apache.commons.math3.optimization;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// This class implements simplex-based direct search optimization.
@@ -82,7 +82,7 @@ namespace org.apache.commons.math3.optimization.direct
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 3.0 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("boxing") @Deprecated public class SimplexOptimizer extends BaseAbstractMultivariateOptimizer<org.apache.commons.math3.analysis.MultivariateFunction> implements org.apache.commons.math3.optimization.MultivariateOptimizer
+//ORIGINAL LINE: @SuppressWarnings("boxing") @Deprecated public class SimplexOptimizer extends BaseAbstractMultivariateOptimizer<mathlib.analysis.MultivariateFunction> implements mathlib.optimization.MultivariateOptimizer
 	[Obsolete]
 	public class SimplexOptimizer : BaseAbstractMultivariateOptimizer<MultivariateFunction>, MultivariateOptimizer // deprecated anyway
 	{
@@ -134,7 +134,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="goalType"> Optimization type. </param>
 		/// <param name="optData"> Optimization data. The following data will be looked for:
 		/// <ul>
-		///  <li><seealso cref="org.apache.commons.math3.optimization.InitialGuess InitialGuess"/></li>
+		///  <li><seealso cref="mathlib.optimization.InitialGuess InitialGuess"/></li>
 		///  <li><seealso cref="AbstractSimplex"/></li>
 		/// </ul> </param>
 		/// <returns> the point/value pair giving the optimal value for objective
@@ -183,14 +183,14 @@ namespace org.apache.commons.math3.optimization.direct
 			// Indirect call to "computeObjectiveValue" in order to update the
 			// evaluations counter.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.MultivariateFunction evalFunc = new org.apache.commons.math3.analysis.MultivariateFunction()
+//ORIGINAL LINE: final mathlib.analysis.MultivariateFunction evalFunc = new mathlib.analysis.MultivariateFunction()
 			MultivariateFunction evalFunc = new MultivariateFunctionAnonymousInnerClassHelper(this);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean isMinim = getGoalType() == org.apache.commons.math3.optimization.GoalType.MINIMIZE;
+//ORIGINAL LINE: final boolean isMinim = getGoalType() == mathlib.optimization.GoalType.MINIMIZE;
 			bool isMinim = GoalType == GoalType.MINIMIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Comparator<org.apache.commons.math3.optimization.PointValuePair> comparator = new java.util.Comparator<org.apache.commons.math3.optimization.PointValuePair>()
+//ORIGINAL LINE: final java.util.Comparator<mathlib.optimization.PointValuePair> comparator = new java.util.Comparator<mathlib.optimization.PointValuePair>()
 			IComparer<PointValuePair> comparator = new ComparatorAnonymousInnerClassHelper(this, isMinim);
 
 			// Initialize search.
@@ -200,7 +200,7 @@ namespace org.apache.commons.math3.optimization.direct
 			PointValuePair[] previous = null;
 			int iteration = 0;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointValuePair> checker = ConvergenceChecker;
 			while (true)
 			{
@@ -254,7 +254,7 @@ namespace org.apache.commons.math3.optimization.direct
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public int compare(final org.apache.commons.math3.optimization.PointValuePair o1, final org.apache.commons.math3.optimization.PointValuePair o2)
+//ORIGINAL LINE: public int compare(final mathlib.optimization.PointValuePair o1, final mathlib.optimization.PointValuePair o2)
 			public virtual int Compare(PointValuePair o1, PointValuePair o2)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

@@ -18,7 +18,7 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.stat.clustering
+namespace mathlib.stat.clustering
 {
 
 
@@ -28,7 +28,7 @@ namespace org.apache.commons.math3.stat.clustering
 	/// @version $Id: Cluster.java 1461871 2013-03-27 22:01:25Z tn $
 	/// @since 2.0 </param>
 	/// @deprecated As of 3.2 (to be removed in 4.0),
-	/// use <seealso cref="org.apache.commons.math3.ml.clustering.Cluster"/> instead 
+	/// use <seealso cref="mathlib.ml.clustering.Cluster"/> instead 
 	[Obsolete("As of 3.2 (to be removed in 4.0),"), Serializable]
 	public class Cluster<T> where T : Clusterable<T>
 	{

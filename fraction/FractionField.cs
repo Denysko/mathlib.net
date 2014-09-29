@@ -17,11 +17,11 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
+	using mathlib;
+	using mathlib;
 
 	/// <summary>
 	/// Representation of the fractional numbers field.

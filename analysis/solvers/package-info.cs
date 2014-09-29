@@ -19,7 +19,7 @@
 ///     Root finding algorithms, for univariate real functions.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
 }

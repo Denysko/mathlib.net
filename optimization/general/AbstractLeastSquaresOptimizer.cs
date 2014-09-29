@@ -17,26 +17,26 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.general
+namespace mathlib.optimization.general
 {
 
-	using DifferentiableMultivariateVectorFunction = org.apache.commons.math3.analysis.DifferentiableMultivariateVectorFunction;
-	using FunctionUtils = org.apache.commons.math3.analysis.FunctionUtils;
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using MultivariateDifferentiableVectorFunction = org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using DiagonalMatrix = org.apache.commons.math3.linear.DiagonalMatrix;
-	using DecompositionSolver = org.apache.commons.math3.linear.DecompositionSolver;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using QRDecomposition = org.apache.commons.math3.linear.QRDecomposition;
-	using EigenDecomposition = org.apache.commons.math3.linear.EigenDecomposition;
-	using org.apache.commons.math3.optimization;
-	using org.apache.commons.math3.optimization.direct;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DifferentiableMultivariateVectorFunction = mathlib.analysis.DifferentiableMultivariateVectorFunction;
+	using FunctionUtils = mathlib.analysis.FunctionUtils;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using MultivariateDifferentiableVectorFunction = mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using DiagonalMatrix = mathlib.linear.DiagonalMatrix;
+	using DecompositionSolver = mathlib.linear.DecompositionSolver;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using QRDecomposition = mathlib.linear.QRDecomposition;
+	using EigenDecomposition = mathlib.linear.EigenDecomposition;
+	using mathlib.optimization;
+	using mathlib.optimization.direct;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Base class for implementing least squares optimizers.
@@ -45,13 +45,13 @@ namespace org.apache.commons.math3.optimization.general
 	/// <br/>
 	/// This class constructs the Jacobian matrix of the function argument in method
 	/// {@link BaseAbstractMultivariateVectorOptimizer#optimize(int,
-	/// org.apache.commons.math3.analysis.MultivariateVectorFunction,OptimizationData[])
+	/// mathlib.analysis.MultivariateVectorFunction,OptimizationData[])
 	/// optimize} and assumes that the rows of that matrix iterate on the model
 	/// functions while the columns iterate on the parameters; thus, the numbers
 	/// of rows is equal to the dimension of the
-	/// <seealso cref="org.apache.commons.math3.optimization.Target Target"/> while
+	/// <seealso cref="mathlib.optimization.Target Target"/> while
 	/// the number of columns is equal to the dimension of the
-	/// <seealso cref="org.apache.commons.math3.optimization.InitialGuess InitialGuess"/>.
+	/// <seealso cref="mathlib.optimization.InitialGuess InitialGuess"/>.
 	/// 
 	/// @version $Id: AbstractLeastSquaresOptimizer.java 1591835 2014-05-02 09:04:01Z tn $ </summary>
 	/// @deprecated As of 3.1 (to be removed in 4.0).
@@ -119,9 +119,9 @@ namespace org.apache.commons.math3.optimization.general
 		/// <summary>
 		/// Simple constructor with default settings.
 		/// The convergence check is set to a {@link
-		/// org.apache.commons.math3.optimization.SimpleVectorValueChecker}. </summary>
-		/// @deprecated See <seealso cref="org.apache.commons.math3.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
-		[Obsolete("See <seealso cref="org.apache.commons.math3.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
+		/// mathlib.optimization.SimpleVectorValueChecker}. </summary>
+		/// @deprecated See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
+		[Obsolete("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
 		protected internal AbstractLeastSquaresOptimizer()
 		{
 		}
@@ -151,7 +151,7 @@ namespace org.apache.commons.math3.optimization.general
 		protected internal virtual void updateJacobian()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix weightedJacobian = computeWeightedJacobian(point);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix weightedJacobian = computeWeightedJacobian(point);
 			RealMatrix weightedJacobian = computeWeightedJacobian(point);
 			weightedResidualJacobian = weightedJacobian.scalarMultiply(-1).Data;
 		}
@@ -169,7 +169,7 @@ namespace org.apache.commons.math3.optimization.general
 			++jacobianEvaluations;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] dsPoint = new org.apache.commons.math3.analysis.differentiation.DerivativeStructure[params.length];
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] dsPoint = new mathlib.analysis.differentiation.DerivativeStructure[params.length];
 			DerivativeStructure[] dsPoint = new DerivativeStructure[@params.Length];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int nC = params.length;
@@ -179,7 +179,7 @@ namespace org.apache.commons.math3.optimization.general
 				dsPoint[i] = new DerivativeStructure(nC, 1, i, @params[i]);
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] dsValue = jF.value(dsPoint);
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] dsValue = jF.value(dsPoint);
 			DerivativeStructure[] dsValue = jF.value(dsPoint);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int nR = getTarget().length;
@@ -211,7 +211,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// Update the residuals array and cost function value. </summary>
 		/// <exception cref="DimensionMismatchException"> if the dimension does not match the
 		/// problem dimension. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
 		/// @deprecated As of 3.1. Please use <seealso cref="#computeResiduals(double[])"/>,
 		/// <seealso cref="#computeObjectiveValue(double[])"/>, <seealso cref="#computeCost(double[])"/>
@@ -229,7 +229,7 @@ namespace org.apache.commons.math3.optimization.general
 
 			// Compute weighted residuals.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector residuals = new org.apache.commons.math3.linear.ArrayRealVector(res);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector residuals = new mathlib.linear.ArrayRealVector(res);
 			ArrayRealVector residuals = new ArrayRealVector(res);
 			weightedResiduals = weightMatrixSqrt.operate(residuals).toArray();
 		}
@@ -244,7 +244,7 @@ namespace org.apache.commons.math3.optimization.general
 		protected internal virtual double computeCost(double[] residuals)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector r = new org.apache.commons.math3.linear.ArrayRealVector(residuals);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector r = new mathlib.linear.ArrayRealVector(residuals);
 			ArrayRealVector r = new ArrayRealVector(residuals);
 			return FastMath.sqrt(r.dotProduct(Weight.operate(r)));
 		}
@@ -309,7 +309,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// Get the covariance matrix of the optimized parameters.
 		/// </summary>
 		/// <returns> the covariance matrix. </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		/// if the covariance matrix cannot be computed (singular problem). </exception>
 		/// <seealso cref= #getCovariances(double) </seealso>
 		/// @deprecated As of 3.1. Please use <seealso cref="#computeCovariances(double[],double)"/>
@@ -335,7 +335,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// </summary>
 		/// <param name="threshold"> Singularity threshold. </param>
 		/// <returns> the covariance matrix. </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		/// if the covariance matrix cannot be computed (singular problem). </exception>
 		/// @deprecated As of 3.1. Please use <seealso cref="#computeCovariances(double[],double)"/>
 		/// instead. 
@@ -358,24 +358,24 @@ namespace org.apache.commons.math3.optimization.general
 		/// <param name="params"> Model parameters. </param>
 		/// <param name="threshold"> Singularity threshold. </param>
 		/// <returns> the covariance matrix. </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		/// if the covariance matrix cannot be computed (singular problem).
 		/// @since 3.1 </exception>
 		public virtual double[][] computeCovariances(double[] @params, double threshold)
 		{
 			// Set up the Jacobian.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix j = computeWeightedJacobian(params);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix j = computeWeightedJacobian(params);
 			RealMatrix j = computeWeightedJacobian(@params);
 
 			// Compute transpose(J)J.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix jTj = j.transpose().multiply(j);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix jTj = j.transpose().multiply(j);
 			RealMatrix jTj = j.transpose().multiply(j);
 
 			// Compute the covariances matrix.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.DecompositionSolver solver = new org.apache.commons.math3.linear.QRDecomposition(jTj, threshold).getSolver();
+//ORIGINAL LINE: final mathlib.linear.DecompositionSolver solver = new mathlib.linear.QRDecomposition(jTj, threshold).getSolver();
 			DecompositionSolver solver = (new QRDecomposition(jTj, threshold)).Solver;
 			return solver.Inverse.Data;
 		}
@@ -400,7 +400,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// </p>
 		/// </summary>
 		/// <returns> an estimate of the standard deviation of the optimized parameters </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		/// if the covariance matrix cannot be computed. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the number of degrees of freedom is not
 		/// positive, i.e. the number of measurements is less or equal to the number of
@@ -417,7 +417,7 @@ namespace org.apache.commons.math3.optimization.general
 			}
 			double[] errors = new double[cols];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double c = org.apache.commons.math3.util.FastMath.sqrt(getChiSquare() / (rows - cols));
+//ORIGINAL LINE: final double c = mathlib.util.FastMath.sqrt(getChiSquare() / (rows - cols));
 			double c = FastMath.sqrt(ChiSquare / (rows - cols));
 			double[][] covar = computeCovariances(point, 1e-14);
 			for (int i = 0; i < errors.Length; ++i)
@@ -438,7 +438,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// <param name="covarianceSingularityThreshold"> Singularity threshold (see
 		/// <seealso cref="#computeCovariances(double[],double) computeCovariances"/>). </param>
 		/// <returns> an estimate of the standard deviation of the optimized parameters </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		/// if the covariance matrix cannot be computed.
 		/// @since 3.1 </exception>
 		public virtual double[] computeSigma(double[] @params, double covarianceSingularityThreshold)
@@ -463,11 +463,11 @@ namespace org.apache.commons.math3.optimization.general
 		/// {@inheritDoc} </summary>
 		/// @deprecated As of 3.1. Please use
 		/// {@link BaseAbstractMultivariateVectorOptimizer#optimize(int,
-		/// org.apache.commons.math3.analysis.MultivariateVectorFunction,OptimizationData[])
+		/// mathlib.analysis.MultivariateVectorFunction,OptimizationData[])
 		/// optimize(int,MultivariateDifferentiableVectorFunction,OptimizationData...)}
 		/// instead. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override @Deprecated public org.apache.commons.math3.optimization.PointVectorValuePair optimize(int maxEval, final org.apache.commons.math3.analysis.DifferentiableMultivariateVectorFunction f, final double[] target, final double[] weights, final double[] startPoint)
+//ORIGINAL LINE: @Override @Deprecated public mathlib.optimization.PointVectorValuePair optimize(int maxEval, final mathlib.analysis.DifferentiableMultivariateVectorFunction f, final double[] target, final double[] weights, final double[] startPoint)
 		[Obsolete]
 		public override PointVectorValuePair optimize(int maxEval, DifferentiableMultivariateVectorFunction f, double[] target, double[] weights, double[] startPoint)
 		{
@@ -487,19 +487,19 @@ namespace org.apache.commons.math3.optimization.general
 		/// <returns> the point/value pair giving the optimal value for objective
 		/// function. </returns>
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if
+		/// <exception cref="mathlib.exception.NullArgumentException"> if
 		/// any argument is {@code null}. </exception>
 		/// @deprecated As of 3.1. Please use
 		/// {@link BaseAbstractMultivariateVectorOptimizer#optimize(int,
-		/// org.apache.commons.math3.analysis.MultivariateVectorFunction,OptimizationData[])
+		/// mathlib.analysis.MultivariateVectorFunction,OptimizationData[])
 		/// optimize(int,MultivariateDifferentiableVectorFunction,OptimizationData...)}
 		/// instead. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public org.apache.commons.math3.optimization.PointVectorValuePair optimize(final int maxEval, final org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction f, final double[] target, final double[] weights, final double[] startPoint)
+//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public mathlib.optimization.PointVectorValuePair optimize(final int maxEval, final mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction f, final double[] target, final double[] weights, final double[] startPoint)
 		[Obsolete("As of 3.1. Please use")]
 		public virtual PointVectorValuePair optimize(int maxEval, MultivariateDifferentiableVectorFunction f, double[] target, double[] weights, double[] startPoint)
 		{
@@ -522,17 +522,17 @@ namespace org.apache.commons.math3.optimization.general
 		/// </ul> </param>
 		/// <returns> the point/value pair giving the optimal value of the objective
 		/// function. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException"> if
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException"> if
 		/// the maximal number of evaluations is exceeded. </exception>
 		/// <exception cref="DimensionMismatchException"> if the target, and weight arguments
 		/// have inconsistent dimensions. </exception>
 		/// <seealso cref= BaseAbstractMultivariateVectorOptimizer#optimizeInternal(int,
-		/// org.apache.commons.math3.analysis.MultivariateVectorFunction,OptimizationData[])
+		/// mathlib.analysis.MultivariateVectorFunction,OptimizationData[])
 		/// @since 3.1 </seealso>
 		/// @deprecated As of 3.1. Override is necessary only until this class's generic
 		/// argument is changed to {@code MultivariateDifferentiableVectorFunction}. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Override is necessary only until this class's generic") protected org.apache.commons.math3.optimization.PointVectorValuePair optimizeInternal(final int maxEval, final org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction f, org.apache.commons.math3.optimization.OptimizationData... optData)
+//ORIGINAL LINE: @Deprecated("As of 3.1. Override is necessary only until this class's generic") protected mathlib.optimization.PointVectorValuePair optimizeInternal(final int maxEval, final mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction f, mathlib.optimization.OptimizationData... optData)
 		[Obsolete("As of 3.1. Override is necessary only until this class's generic")]
 		protected internal virtual PointVectorValuePair optimizeInternal(int maxEval, MultivariateDifferentiableVectorFunction f, params OptimizationData[] optData)
 		{
@@ -616,7 +616,7 @@ namespace org.apache.commons.math3.optimization.general
 //ORIGINAL LINE: final int dim = m.getRowDimension();
 				int dim = m.RowDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix sqrtM = new org.apache.commons.math3.linear.DiagonalMatrix(dim);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix sqrtM = new mathlib.linear.DiagonalMatrix(dim);
 				RealMatrix sqrtM = new DiagonalMatrix(dim);
 				for (int i = 0; i < dim; i++)
 				{
@@ -627,7 +627,7 @@ namespace org.apache.commons.math3.optimization.general
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.EigenDecomposition dec = new org.apache.commons.math3.linear.EigenDecomposition(m);
+//ORIGINAL LINE: final mathlib.linear.EigenDecomposition dec = new mathlib.linear.EigenDecomposition(m);
 				EigenDecomposition dec = new EigenDecomposition(m);
 				return dec.SquareRoot;
 			}

@@ -16,17 +16,17 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using org.apache.commons.math3.geometry;
-	using Euclidean1D = org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
-	using Interval = org.apache.commons.math3.geometry.euclidean.oned.Interval;
-	using IntervalsSet = org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
-	using Vector1D = org.apache.commons.math3.geometry.euclidean.oned.Vector1D;
-	using Region_Location = org.apache.commons.math3.geometry.partitioning.Region_Location;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using mathlib.geometry;
+	using Euclidean1D = mathlib.geometry.euclidean.oned.Euclidean1D;
+	using Interval = mathlib.geometry.euclidean.oned.Interval;
+	using IntervalsSet = mathlib.geometry.euclidean.oned.IntervalsSet;
+	using Vector1D = mathlib.geometry.euclidean.oned.Vector1D;
+	using Region_Location = mathlib.geometry.partitioning.Region_Location;
 
 	/// <summary>
 	/// This class represents a subset of a <seealso cref="Line"/>.
@@ -53,7 +53,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="line"> underlying line </param>
 		/// <param name="remainingRegion"> remaining region of the line </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SubLine(final Line line, final org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet remainingRegion)
+//ORIGINAL LINE: public SubLine(final Line line, final mathlib.geometry.euclidean.oned.IntervalsSet remainingRegion)
 		public SubLine(Line line, IntervalsSet remainingRegion)
 		{
 			this.line = line;
@@ -68,7 +68,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathIllegalArgumentException"> if the points are equal
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SubLine(final Vector3D start, final Vector3D end, final double tolerance) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public SubLine(final Vector3D start, final Vector3D end, final double tolerance) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public SubLine(Vector3D start, Vector3D end, double tolerance) : this(new Line(start, end, tolerance), buildIntervalSet(start, end, tolerance))
 		{
@@ -81,7 +81,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathIllegalArgumentException"> if the points are equal </exception>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#SubLine(Vector3D, Vector3D, double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SubLine(final Vector3D start, final Vector3D end) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public SubLine(final Vector3D start, final Vector3D end) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public SubLine(Vector3D start, Vector3D end) : this(start, end, DEFAULT_TOLERANCE)
 		{
@@ -92,7 +92,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="segment"> single segment forming the sub-line </param>
 		/// <exception cref="MathIllegalArgumentException"> if the segment endpoints are equal </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SubLine(final Segment segment) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public SubLine(final Segment segment) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public SubLine(Segment segment) : this(segment.Line, buildIntervalSet(segment.Start, segment.End, segment.Line.Tolerance))
 		{
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			{
     
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.oned.Interval> list = remainingRegion.asList();
+	//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.oned.Interval> list = remainingRegion.asList();
 				IList<Interval> list = remainingRegion.asList();
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 	//ORIGINAL LINE: final java.util.List<Segment> segments = new java.util.ArrayList<Segment>(list.size());
@@ -127,10 +127,10 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 				foreach (Interval interval in list)
 				{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final Vector3D start = line.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>) new org.apache.commons.math3.geometry.euclidean.oned.Vector1D(interval.getInf()));
+	//ORIGINAL LINE: final Vector3D start = line.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.oned.Euclidean1D>) new mathlib.geometry.euclidean.oned.Vector1D(interval.getInf()));
 					Vector3D start = line.toSpace((Point<Euclidean1D>) new Vector1D(interval.Inf));
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final Vector3D end = line.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>) new org.apache.commons.math3.geometry.euclidean.oned.Vector1D(interval.getSup()));
+	//ORIGINAL LINE: final Vector3D end = line.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.oned.Euclidean1D>) new mathlib.geometry.euclidean.oned.Vector1D(interval.getSup()));
 					Vector3D end = line.toSpace((Point<Euclidean1D>) new Vector1D(interval.Sup));
 					segments.Add(new Segment(start, end, line));
 				}
@@ -191,7 +191,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="tolerance"> tolerance below which points are considered identical </param>
 		/// <exception cref="MathIllegalArgumentException"> if the points are equal </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet buildIntervalSet(final Vector3D start, final Vector3D end, final double tolerance) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private static mathlib.geometry.euclidean.oned.IntervalsSet buildIntervalSet(final Vector3D start, final Vector3D end, final double tolerance) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static IntervalsSet buildIntervalSet(Vector3D start, Vector3D end, double tolerance)
 		{

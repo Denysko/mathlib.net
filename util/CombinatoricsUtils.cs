@@ -75,7 +75,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if the result is too large to be
 		/// represented by a long integer. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long binomialCoefficient(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long binomialCoefficient(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static long binomialCoefficient(int n, int k)
 		{
@@ -173,7 +173,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if the result is too large to be
 		/// represented by a long integer. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double binomialCoefficientDouble(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static double binomialCoefficientDouble(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double binomialCoefficientDouble(int n, int k)
 		{
@@ -225,7 +225,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if the result is too large to be
 		/// represented by a long integer. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double binomialCoefficientLog(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static double binomialCoefficientLog(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double binomialCoefficientLog(int n, int k)
 		{
@@ -306,7 +306,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if {@code n > 20}: The factorial value is too
 		/// large to fit in a {@code long}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long factorial(final int n) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long factorial(final int n) throws mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static long factorial(int n)
 		{
@@ -334,7 +334,7 @@ namespace mathlib.util
 		/// <returns> {@code n!} </returns>
 		/// <exception cref="NotPositiveException"> if {@code n < 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double factorialDouble(final int n) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static double factorialDouble(final int n) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double factorialDouble(int n)
 		{
@@ -356,7 +356,7 @@ namespace mathlib.util
 		/// <returns> {@code n!} </returns>
 		/// <exception cref="NotPositiveException"> if {@code n < 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double factorialLog(final int n) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static double factorialLog(final int n) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double factorialLog(int n)
 		{
@@ -395,7 +395,7 @@ namespace mathlib.util
 		/// k between 20 and n-2 (S(n,n-1) is handled specifically and does not overflow)
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long stirlingS2(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long stirlingS2(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static long stirlingS2(int n, int k)
 		{
@@ -514,7 +514,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if {@code n < 0}. </exception>
 		/// <exception cref="NumberIsTooLargeException"> if {@code k > n}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkBinomial(final int n, final int k) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static void checkBinomial(final int n, final int k) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkBinomial(int n, int k)
 		{

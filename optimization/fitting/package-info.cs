@@ -27,7 +27,7 @@
 /// 
 /// 
 /// </summary>
-namespace org.apache.commons.math3.optimization.fitting
+namespace mathlib.optimization.fitting
 {
 
 }

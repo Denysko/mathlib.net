@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
-	using org.apache.commons.math3.geometry;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// Class holding the result of point projection on region boundary.
@@ -28,7 +28,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// @version $Id: BoundaryProjection.java 1560335 2014-01-22 12:39:06Z luc $
 	/// @since 3.3 </param>
 	/// <seealso cref= AbstractRegion#projectToBoundary(Point) </seealso>
-	public class BoundaryProjection<S> where S : org.apache.commons.math3.geometry.Space
+	public class BoundaryProjection<S> where S : mathlib.geometry.Space
 	{
 
 		/// <summary>
@@ -49,7 +49,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <param name="projected"> projected point </param>
 		/// <param name="offset"> offset of the point with respect to the boundary it is projected on </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public BoundaryProjection(final org.apache.commons.math3.geometry.Point<S> original, final org.apache.commons.math3.geometry.Point<S> projected, final double offset)
+//ORIGINAL LINE: public BoundaryProjection(final mathlib.geometry.Point<S> original, final mathlib.geometry.Point<S> projected, final double offset)
 		public BoundaryProjection(Point<S> original, Point<S> projected, double offset)
 		{
 			this.original = original;

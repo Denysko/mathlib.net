@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// This class implements rotations in a three-dimensional space.
@@ -182,7 +182,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 	  /// <param name="angle"> rotation angle. </param>
 	  /// <exception cref="MathIllegalArgumentException"> if the axis norm is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Rotation(Vector3D axis, double angle) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public Rotation(Vector3D axis, double angle) throws mathlib.exception.MathIllegalArgumentException
 	  public Rotation(Vector3D axis, double angle)
 	  {
 
@@ -281,7 +281,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 	  /// <exception cref="MathArithmeticException"> if the norm of one of the vectors is zero,
 	  /// or if one of the pair is degenerated (i.e. the vectors of the pair are colinear) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Rotation(Vector3D u1, Vector3D u2, Vector3D v1, Vector3D v2) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Rotation(Vector3D u1, Vector3D u2, Vector3D v1, Vector3D v2) throws mathlib.exception.MathArithmeticException
 	  public Rotation(Vector3D u1, Vector3D u2, Vector3D v1, Vector3D v2)
 	  {
 
@@ -303,7 +303,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 
 		  // buid a matrix transforming the first base into the second one
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[][] m = new double[][] { { org.apache.commons.math3.util.MathArrays.linearCombination(u1.getX(), v1.getX(), u2.getX(), v2.getX(), u3.getX(), v3.getX()), org.apache.commons.math3.util.MathArrays.linearCombination(u1.getY(), v1.getX(), u2.getY(), v2.getX(), u3.getY(), v3.getX()), org.apache.commons.math3.util.MathArrays.linearCombination(u1.getZ(), v1.getX(), u2.getZ(), v2.getX(), u3.getZ(), v3.getX()) }, { org.apache.commons.math3.util.MathArrays.linearCombination(u1.getX(), v1.getY(), u2.getX(), v2.getY(), u3.getX(), v3.getY()), org.apache.commons.math3.util.MathArrays.linearCombination(u1.getY(), v1.getY(), u2.getY(), v2.getY(), u3.getY(), v3.getY()), org.apache.commons.math3.util.MathArrays.linearCombination(u1.getZ(), v1.getY(), u2.getZ(), v2.getY(), u3.getZ(), v3.getY()) }, { org.apache.commons.math3.util.MathArrays.linearCombination(u1.getX(), v1.getZ(), u2.getX(), v2.getZ(), u3.getX(), v3.getZ()), org.apache.commons.math3.util.MathArrays.linearCombination(u1.getY(), v1.getZ(), u2.getY(), v2.getZ(), u3.getY(), v3.getZ()), org.apache.commons.math3.util.MathArrays.linearCombination(u1.getZ(), v1.getZ(), u2.getZ(), v2.getZ(), u3.getZ(), v3.getZ()) } };
+//ORIGINAL LINE: final double[][] m = new double[][] { { mathlib.util.MathArrays.linearCombination(u1.getX(), v1.getX(), u2.getX(), v2.getX(), u3.getX(), v3.getX()), mathlib.util.MathArrays.linearCombination(u1.getY(), v1.getX(), u2.getY(), v2.getX(), u3.getY(), v3.getX()), mathlib.util.MathArrays.linearCombination(u1.getZ(), v1.getX(), u2.getZ(), v2.getX(), u3.getZ(), v3.getX()) }, { mathlib.util.MathArrays.linearCombination(u1.getX(), v1.getY(), u2.getX(), v2.getY(), u3.getX(), v3.getY()), mathlib.util.MathArrays.linearCombination(u1.getY(), v1.getY(), u2.getY(), v2.getY(), u3.getY(), v3.getY()), mathlib.util.MathArrays.linearCombination(u1.getZ(), v1.getY(), u2.getZ(), v2.getY(), u3.getZ(), v3.getY()) }, { mathlib.util.MathArrays.linearCombination(u1.getX(), v1.getZ(), u2.getX(), v2.getZ(), u3.getX(), v3.getZ()), mathlib.util.MathArrays.linearCombination(u1.getY(), v1.getZ(), u2.getY(), v2.getZ(), u3.getY(), v3.getZ()), mathlib.util.MathArrays.linearCombination(u1.getZ(), v1.getZ(), u2.getZ(), v2.getZ(), u3.getZ(), v3.getZ()) } };
 		  double[][] m = new double[][] {new double[] {MathArrays.linearCombination(u1.X, v1.X, u2.X, v2.X, u3.X, v3.X), MathArrays.linearCombination(u1.Y, v1.X, u2.Y, v2.X, u3.Y, v3.X), MathArrays.linearCombination(u1.Z, v1.X, u2.Z, v2.X, u3.Z, v3.X)}, new double[] {MathArrays.linearCombination(u1.X, v1.Y, u2.X, v2.Y, u3.X, v3.Y), MathArrays.linearCombination(u1.Y, v1.Y, u2.Y, v2.Y, u3.Y, v3.Y), MathArrays.linearCombination(u1.Z, v1.Y, u2.Z, v2.Y, u3.Z, v3.Y)}, new double[] {MathArrays.linearCombination(u1.X, v1.Z, u2.X, v2.Z, u3.X, v3.Z), MathArrays.linearCombination(u1.Y, v1.Z, u2.Y, v2.Z, u3.Y, v3.Z), MathArrays.linearCombination(u1.Z, v1.Z, u2.Z, v2.Z, u3.Z, v3.Z)}};
 
 		  double[] quat = mat2quat(m);
@@ -328,7 +328,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 	  /// <param name="v"> desired image of u by the rotation </param>
 	  /// <exception cref="MathArithmeticException"> if the norm of one of the vectors is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Rotation(Vector3D u, Vector3D v) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Rotation(Vector3D u, Vector3D v) throws mathlib.exception.MathArithmeticException
 	  public Rotation(Vector3D u, Vector3D v)
 	  {
 

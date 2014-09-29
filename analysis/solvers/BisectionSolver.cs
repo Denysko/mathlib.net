@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using FastMath = mathlib.util.FastMath;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 	/// <summary>
 	/// Implements the <a href="http://mathworld.wolfram.com/Bisection.html">
@@ -60,7 +60,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: @Override protected double doSolve() throws mathlib.exception.TooManyEvaluationsException
 		protected internal override double doSolve()
 		{
 			double min = Min;

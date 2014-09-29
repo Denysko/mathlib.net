@@ -17,7 +17,7 @@
 /// <summary>
 /// Other summary statistics.
 /// </summary>
-namespace org.apache.commons.math3.stat.descriptive.summary
+namespace mathlib.stat.descriptive.summary
 {
 
 }

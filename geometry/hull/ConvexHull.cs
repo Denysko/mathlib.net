@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.hull
+namespace mathlib.geometry.hull
 {
 
-	using InsufficientDataException = org.apache.commons.math3.exception.InsufficientDataException;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry.partitioning;
+	using InsufficientDataException = mathlib.exception.InsufficientDataException;
+	using mathlib.geometry;
+	using mathlib.geometry.partitioning;
 
 	/// <summary>
 	/// This class represents a convex hull.
@@ -28,7 +28,7 @@ namespace org.apache.commons.math3.geometry.hull
 	/// @param <P> Point type.
 	/// @version $Id: ConvexHull.java 1562624 2014-01-29 22:57:04Z tn $
 	/// @since 3.3 </param>
-	public interface ConvexHull<S, P> : Serializable where S : org.apache.commons.math3.geometry.Space where P : org.apache.commons.math3.geometry.Point<S>
+	public interface ConvexHull<S, P> : Serializable where S : mathlib.geometry.Space where P : mathlib.geometry.Point<S>
 	{
 
 		/// <summary>
@@ -42,7 +42,7 @@ namespace org.apache.commons.math3.geometry.hull
 		/// <exception cref="InsufficientDataException"> if the number of vertices is not enough to
 		/// build a region in the respective space </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: org.apache.commons.math3.geometry.partitioning.Region<S> createRegion() throws org.apache.commons.math3.exception.InsufficientDataException;
+//ORIGINAL LINE: mathlib.geometry.partitioning.Region<S> createRegion() throws mathlib.exception.InsufficientDataException;
 		Region<S> createRegion();
 	}
 

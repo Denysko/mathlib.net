@@ -17,25 +17,25 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
 
-	using org.apache.commons.math3.geometry;
-	using Euclidean1D = org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
-	using Euclidean2D = org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D;
-	using SubLine = org.apache.commons.math3.geometry.euclidean.twod.SubLine;
-	using Vector2D = org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using mathlib.geometry;
+	using Euclidean1D = mathlib.geometry.euclidean.oned.Euclidean1D;
+	using Euclidean2D = mathlib.geometry.euclidean.twod.Euclidean2D;
+	using SubLine = mathlib.geometry.euclidean.twod.SubLine;
+	using Vector2D = mathlib.geometry.euclidean.twod.Vector2D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class represents a 3D region: a set of polyhedrons.
@@ -81,7 +81,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="tolerance"> tolerance below which points are considered identical
 		/// @since 3.3 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public PolyhedronsSet(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> tree, final double tolerance)
+//ORIGINAL LINE: public PolyhedronsSet(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> tree, final double tolerance)
 		public PolyhedronsSet(BSPTree<Euclidean3D> tree, double tolerance) : base(tree, tolerance)
 		{
 		}
@@ -108,7 +108,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="tolerance"> tolerance below which points are considered identical
 		/// @since 3.3 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public PolyhedronsSet(final java.util.Collection<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D>> boundary, final double tolerance)
+//ORIGINAL LINE: public PolyhedronsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Euclidean3D>> boundary, final double tolerance)
 		public PolyhedronsSet(ICollection<SubHyperplane<Euclidean3D>> boundary, double tolerance) : base(boundary, tolerance)
 		{
 		}
@@ -148,8 +148,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="tree"> inside/outside BSP tree representing the region </param>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolyhedronsSet(BSPTree, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(org.apache.commons.math3.geometry.partitioning.BSPTree, double)"/>") public PolyhedronsSet(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> tree)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(org.apache.commons.math3.geometry.partitioning.BSPTree, double)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(mathlib.geometry.partitioning.BSPTree, double)"/>") public PolyhedronsSet(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> tree)
+		[Obsolete("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
 		public PolyhedronsSet(BSPTree<Euclidean3D> tree) : this(tree, DEFAULT_TOLERANCE)
 		{
 		}
@@ -175,7 +175,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// collection of <seealso cref="SubHyperplane SubHyperplane"/> objects </param>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolyhedronsSet(Collection, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(java.util.Collection, double)"/>") public PolyhedronsSet(final java.util.Collection<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D>> boundary)
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(java.util.Collection, double)"/>") public PolyhedronsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Euclidean3D>> boundary)
 		[Obsolete("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(java.util.Collection, double)"/>")]
 		public PolyhedronsSet(ICollection<SubHyperplane<Euclidean3D>> boundary) : this(boundary, DEFAULT_TOLERANCE)
 		{
@@ -210,7 +210,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> boundary tree
 		/// @since 3.3 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> buildBoundary(final double xMin, final double xMax, final double yMin, final double yMax, final double zMin, final double zMax, final double tolerance)
+//ORIGINAL LINE: private static mathlib.geometry.partitioning.BSPTree<Euclidean3D> buildBoundary(final double xMin, final double xMax, final double yMin, final double yMax, final double zMin, final double zMax, final double tolerance)
 		private static BSPTree<Euclidean3D> buildBoundary(double xMin, double xMax, double yMin, double yMax, double zMin, double zMax, double tolerance)
 		{
 			if ((xMin >= xMax - tolerance) || (yMin >= yMax - tolerance) || (zMin >= zMax - tolerance))
@@ -237,7 +237,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final Plane pzMax = new Plane(new Vector3D(0, 0, zMax), Vector3D.PLUS_K, tolerance);
 			Plane pzMax = new Plane(new Vector3D(0, 0, zMax), Vector3D.PLUS_K, tolerance);
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") final org.apache.commons.math3.geometry.partitioning.Region<Euclidean3D> boundary = new org.apache.commons.math3.geometry.partitioning.RegionFactory<Euclidean3D>().buildConvex(pxMin, pxMax, pyMin, pyMax, pzMin, pzMax);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") final mathlib.geometry.partitioning.Region<Euclidean3D> boundary = new mathlib.geometry.partitioning.RegionFactory<Euclidean3D>().buildConvex(pxMin, pxMax, pyMin, pyMax, pzMin, pzMax);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			Region<Euclidean3D> boundary = (new RegionFactory<Euclidean3D>()).buildConvex(pxMin, pxMax, pyMin, pyMax, pzMin, pzMax);
 			return boundary.getTree(false);
@@ -246,7 +246,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public PolyhedronsSet buildNew(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> tree)
+//ORIGINAL LINE: @Override public PolyhedronsSet buildNew(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> tree)
 		public override PolyhedronsSet buildNew(BSPTree<Euclidean3D> tree)
 		{
 			return new PolyhedronsSet(tree, Tolerance);
@@ -295,20 +295,20 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node)
-			public virtual org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Euclidean3D> node)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node)
+			public virtual mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Euclidean3D> node)
 			{
-				return org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
+				return mathlib.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
 			}
 
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitInternalNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node)
+//ORIGINAL LINE: public void visitInternalNode(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node)
 			public virtual void visitInternalNode(BSPTree<Euclidean3D> node)
 			{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") final org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Euclidean3D> attribute = (org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Euclidean3D>) node.getAttribute();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") final mathlib.geometry.partitioning.BoundaryAttribute<Euclidean3D> attribute = (mathlib.geometry.partitioning.BoundaryAttribute<Euclidean3D>) node.getAttribute();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 				BoundaryAttribute<Euclidean3D> attribute = (BoundaryAttribute<Euclidean3D>) node.Attribute;
 				if (attribute.PlusOutside != null)
@@ -324,7 +324,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitLeafNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node)
+//ORIGINAL LINE: public void visitLeafNode(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node)
 			public virtual void visitLeafNode(BSPTree<Euclidean3D> node)
 			{
 			}
@@ -334,12 +334,12 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <param name="facet"> boundary facet </param>
 			/// <param name="reversed"> if true, the facet has the inside on its plus side </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void addContribution(final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> facet, final boolean reversed)
+//ORIGINAL LINE: private void addContribution(final mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> facet, final boolean reversed)
 			internal virtual void addContribution(SubHyperplane<Euclidean3D> facet, bool reversed)
 			{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.Region<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> polygon = ((SubPlane) facet).getRemainingRegion();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.Region<mathlib.geometry.euclidean.twod.Euclidean2D> polygon = ((SubPlane) facet).getRemainingRegion();
 				Region<Euclidean2D> polygon = ((SubPlane) facet).RemainingRegion;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double area = polygon.getSize();
@@ -382,7 +382,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// given point, or null if the line does not intersect any
 		/// sub-hyperplaned </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> firstIntersection(final Vector3D point, final Line line)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> firstIntersection(final Vector3D point, final Line line)
 		public virtual SubHyperplane<Euclidean3D> firstIntersection(Vector3D point, Line line)
 		{
 			return recurseFirstIntersection(getTree(true), point, line);
@@ -397,22 +397,22 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// given point, or null if the line does not intersect any
 		/// sub-hyperplaned </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> recurseFirstIntersection(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node, final Vector3D point, final Line line)
+//ORIGINAL LINE: private mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> recurseFirstIntersection(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node, final Vector3D point, final Line line)
 		private SubHyperplane<Euclidean3D> recurseFirstIntersection(BSPTree<Euclidean3D> node, Vector3D point, Line line)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> cut = node.getCut();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> cut = node.getCut();
 			SubHyperplane<Euclidean3D> cut = node.Cut;
 			if (cut == null)
 			{
 				return null;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> minus = node.getMinus();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Euclidean3D> minus = node.getMinus();
 			BSPTree<Euclidean3D> minus = node.Minus;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> plus = node.getPlus();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Euclidean3D> plus = node.getPlus();
 			BSPTree<Euclidean3D> plus = node.Plus;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Plane plane = (Plane) cut.getHyperplane();
@@ -420,16 +420,16 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 
 			// establish search order
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double offset = plane.getOffset((org.apache.commons.math3.geometry.Point<Euclidean3D>) point);
+//ORIGINAL LINE: final double offset = plane.getOffset((mathlib.geometry.Point<Euclidean3D>) point);
 			double offset = plane.getOffset((Point<Euclidean3D>) point);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean in = org.apache.commons.math3.util.FastMath.abs(offset) < 1.0e-10;
+//ORIGINAL LINE: final boolean in = mathlib.util.FastMath.abs(offset) < 1.0e-10;
 			bool @in = FastMath.abs(offset) < 1.0e-10;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> near;
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Euclidean3D> near;
 			BSPTree<Euclidean3D> near;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> far;
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Euclidean3D> far;
 			BSPTree<Euclidean3D> far;
 			if (offset < 0)
 			{
@@ -446,7 +446,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			{
 				// search in the cut hyperplane
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> facet = boundaryFacet(point, node);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> facet = boundaryFacet(point, node);
 				SubHyperplane<Euclidean3D> facet = boundaryFacet(point, node);
 				if (facet != null)
 				{
@@ -456,7 +456,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 
 			// search in the near branch
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> crossed = recurseFirstIntersection(near, point, line);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> crossed = recurseFirstIntersection(near, point, line);
 			SubHyperplane<Euclidean3D> crossed = recurseFirstIntersection(near, point, line);
 			if (crossed != null)
 			{
@@ -472,7 +472,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 				if (hit3D != null)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> facet = boundaryFacet(hit3D, node);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> facet = boundaryFacet(hit3D, node);
 					SubHyperplane<Euclidean3D> facet = boundaryFacet(hit3D, node);
 					if (facet != null)
 					{
@@ -493,21 +493,21 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> the boundary facet this points belongs to (or null if it
 		/// does not belong to any boundary facet) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> boundaryFacet(final Vector3D point, final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node)
+//ORIGINAL LINE: private mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> boundaryFacet(final Vector3D point, final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node)
 		private SubHyperplane<Euclidean3D> boundaryFacet(Vector3D point, BSPTree<Euclidean3D> node)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D point2D = ((Plane) node.getCut().getHyperplane()).toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean3D>) point);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D point2D = ((Plane) node.getCut().getHyperplane()).toSubSpace((mathlib.geometry.Point<Euclidean3D>) point);
 			Vector2D point2D = ((Plane) node.Cut.Hyperplane).toSubSpace((Point<Euclidean3D>) point);
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") final org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Euclidean3D> attribute = (org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Euclidean3D>) node.getAttribute();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") final mathlib.geometry.partitioning.BoundaryAttribute<Euclidean3D> attribute = (mathlib.geometry.partitioning.BoundaryAttribute<Euclidean3D>) node.getAttribute();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			BoundaryAttribute<Euclidean3D> attribute = (BoundaryAttribute<Euclidean3D>) node.Attribute;
-			if ((attribute.PlusOutside != null) && (((SubPlane) attribute.PlusOutside).RemainingRegion.checkPoint(point2D) == org.apache.commons.math3.geometry.partitioning.Region_Location.INSIDE))
+			if ((attribute.PlusOutside != null) && (((SubPlane) attribute.PlusOutside).RemainingRegion.checkPoint(point2D) == mathlib.geometry.partitioning.Region_Location.INSIDE))
 			{
 				return attribute.PlusOutside;
 			}
-			if ((attribute.PlusInside != null) && (((SubPlane) attribute.PlusInside).RemainingRegion.checkPoint(point2D) == org.apache.commons.math3.geometry.partitioning.Region_Location.INSIDE))
+			if ((attribute.PlusInside != null) && (((SubPlane) attribute.PlusInside).RemainingRegion.checkPoint(point2D) == mathlib.geometry.partitioning.Region_Location.INSIDE))
 			{
 				return attribute.PlusInside;
 			}
@@ -563,7 +563,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D apply(final org.apache.commons.math3.geometry.Point<Euclidean3D> point)
+//ORIGINAL LINE: public Vector3D apply(final mathlib.geometry.Point<Euclidean3D> point)
 			public virtual Vector3D apply(Point<Euclidean3D> point)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -575,7 +575,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Plane apply(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean3D> hyperplane)
+//ORIGINAL LINE: public Plane apply(final mathlib.geometry.partitioning.Hyperplane<Euclidean3D> hyperplane)
 			public virtual Plane apply(Hyperplane<Euclidean3D> hyperplane)
 			{
 				return ((Plane) hyperplane).rotate(center, rotation);
@@ -584,7 +584,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> apply(final org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> sub, final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean3D> original, final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean3D> transformed)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.twod.Euclidean2D> apply(final mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.twod.Euclidean2D> sub, final mathlib.geometry.partitioning.Hyperplane<Euclidean3D> original, final mathlib.geometry.partitioning.Hyperplane<Euclidean3D> transformed)
 			public virtual SubHyperplane<Euclidean2D> apply(SubHyperplane<Euclidean2D> sub, Hyperplane<Euclidean3D> original, Hyperplane<Euclidean3D> transformed)
 			{
 				if (original != cachedOriginal)
@@ -601,26 +601,26 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final Vector3D p00 = oPlane.getOrigin();
 					Vector3D p00 = oPlane.Origin;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Vector3D p10 = oPlane.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D>) new org.apache.commons.math3.geometry.euclidean.twod.Vector2D(1.0, 0.0));
+//ORIGINAL LINE: final Vector3D p10 = oPlane.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.twod.Euclidean2D>) new mathlib.geometry.euclidean.twod.Vector2D(1.0, 0.0));
 					Vector3D p10 = oPlane.toSpace((Point<Euclidean2D>) new Vector2D(1.0, 0.0));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Vector3D p01 = oPlane.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D>) new org.apache.commons.math3.geometry.euclidean.twod.Vector2D(0.0, 1.0));
+//ORIGINAL LINE: final Vector3D p01 = oPlane.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.twod.Euclidean2D>) new mathlib.geometry.euclidean.twod.Vector2D(0.0, 1.0));
 					Vector3D p01 = oPlane.toSpace((Point<Euclidean2D>) new Vector2D(0.0, 1.0));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D tP00 = tPlane.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean3D>) apply(p00));
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D tP00 = tPlane.toSubSpace((mathlib.geometry.Point<Euclidean3D>) apply(p00));
 					Vector2D tP00 = tPlane.toSubSpace((Point<Euclidean3D>) apply(p00));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D tP10 = tPlane.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean3D>) apply(p10));
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D tP10 = tPlane.toSubSpace((mathlib.geometry.Point<Euclidean3D>) apply(p10));
 					Vector2D tP10 = tPlane.toSubSpace((Point<Euclidean3D>) apply(p10));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D tP01 = tPlane.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean3D>) apply(p01));
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D tP01 = tPlane.toSubSpace((mathlib.geometry.Point<Euclidean3D>) apply(p01));
 					Vector2D tP01 = tPlane.toSubSpace((Point<Euclidean3D>) apply(p01));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.awt.geom.AffineTransform at = new java.awt.geom.AffineTransform(tP10.getX() - tP00.getX(), tP10.getY() - tP00.getY(), tP01.getX() - tP00.getX(), tP01.getY() - tP00.getY(), tP00.getX(), tP00.getY());
 					AffineTransform at = new AffineTransform(tP10.X - tP00.X, tP10.Y - tP00.Y, tP01.X - tP00.X, tP01.Y - tP00.Y, tP00.X, tP00.Y);
 
 					cachedOriginal = (Plane) original;
-					cachedTransform = org.apache.commons.math3.geometry.euclidean.twod.Line.getTransform(at);
+					cachedTransform = mathlib.geometry.euclidean.twod.Line.getTransform(at);
 
 				}
 				return ((SubLine) sub).applyTransform(cachedTransform);
@@ -670,7 +670,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D apply(final org.apache.commons.math3.geometry.Point<Euclidean3D> point)
+//ORIGINAL LINE: public Vector3D apply(final mathlib.geometry.Point<Euclidean3D> point)
 			public virtual Vector3D apply(Point<Euclidean3D> point)
 			{
 				return new Vector3D(1.0, (Vector3D) point, 1.0, translation);
@@ -679,7 +679,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Plane apply(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean3D> hyperplane)
+//ORIGINAL LINE: public Plane apply(final mathlib.geometry.partitioning.Hyperplane<Euclidean3D> hyperplane)
 			public virtual Plane apply(Hyperplane<Euclidean3D> hyperplane)
 			{
 				return ((Plane) hyperplane).translate(translation);
@@ -688,7 +688,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> apply(final org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> sub, final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean3D> original, final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean3D> transformed)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.twod.Euclidean2D> apply(final mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.twod.Euclidean2D> sub, final mathlib.geometry.partitioning.Hyperplane<Euclidean3D> original, final mathlib.geometry.partitioning.Hyperplane<Euclidean3D> transformed)
 			public virtual SubHyperplane<Euclidean2D> apply(SubHyperplane<Euclidean2D> sub, Hyperplane<Euclidean3D> original, Hyperplane<Euclidean3D> transformed)
 			{
 				if (original != cachedOriginal)
@@ -702,14 +702,14 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final Plane tPlane = (Plane) transformed;
 					Plane tPlane = (Plane) transformed;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D shift = tPlane.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean3D>) apply(oPlane.getOrigin()));
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D shift = tPlane.toSubSpace((mathlib.geometry.Point<Euclidean3D>) apply(oPlane.getOrigin()));
 					Vector2D shift = tPlane.toSubSpace((Point<Euclidean3D>) apply(oPlane.Origin));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.awt.geom.AffineTransform at = java.awt.geom.AffineTransform.getTranslateInstance(shift.getX(), shift.getY());
 					AffineTransform at = AffineTransform.getTranslateInstance(shift.X, shift.Y);
 
 					cachedOriginal = (Plane) original;
-					cachedTransform = org.apache.commons.math3.geometry.euclidean.twod.Line.getTransform(at);
+					cachedTransform = mathlib.geometry.euclidean.twod.Line.getTransform(at);
 
 				}
 

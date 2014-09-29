@@ -17,15 +17,15 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.general
+namespace mathlib.optimization.general
 {
 
-	using DifferentiableMultivariateFunction = org.apache.commons.math3.analysis.DifferentiableMultivariateFunction;
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using FunctionUtils = org.apache.commons.math3.analysis.FunctionUtils;
-	using MultivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction;
-	using org.apache.commons.math3.optimization;
-	using org.apache.commons.math3.optimization.direct;
+	using DifferentiableMultivariateFunction = mathlib.analysis.DifferentiableMultivariateFunction;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using FunctionUtils = mathlib.analysis.FunctionUtils;
+	using MultivariateDifferentiableFunction = mathlib.analysis.differentiation.MultivariateDifferentiableFunction;
+	using mathlib.optimization;
+	using mathlib.optimization.direct;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate scalar
@@ -47,10 +47,10 @@ namespace org.apache.commons.math3.optimization.general
 		/// <summary>
 		/// Simple constructor with default settings.
 		/// The convergence check is set to a
-		/// {@link org.apache.commons.math3.optimization.SimpleValueChecker
+		/// {@link mathlib.optimization.SimpleValueChecker
 		/// SimpleValueChecker}. </summary>
-		/// @deprecated See <seealso cref="org.apache.commons.math3.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
-		[Obsolete("See <seealso cref="org.apache.commons.math3.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
+		/// @deprecated See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
+		[Obsolete("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
 		protected internal AbstractScalarDifferentiableOptimizer()
 		{
 		}
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// </summary>
 		/// <param name="evaluationPoint"> Point at which the gradient must be evaluated. </param>
 		/// <returns> the gradient at the specified point. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the allowed number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: protected double[] computeObjectiveGradient(final double[] evaluationPoint)
@@ -77,7 +77,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override protected org.apache.commons.math3.optimization.PointValuePair optimizeInternal(int maxEval, final org.apache.commons.math3.analysis.DifferentiableMultivariateFunction f, final org.apache.commons.math3.optimization.GoalType goalType, final double[] startPoint)
+//ORIGINAL LINE: @Override protected mathlib.optimization.PointValuePair optimizeInternal(int maxEval, final mathlib.analysis.DifferentiableMultivariateFunction f, final mathlib.optimization.GoalType goalType, final double[] startPoint)
 		protected internal override PointValuePair optimizeInternal(int maxEval, DifferentiableMultivariateFunction f, GoalType goalType, double[] startPoint)
 		{
 			// Store optimization problem characteristics.
@@ -96,14 +96,14 @@ namespace org.apache.commons.math3.optimization.general
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
 		/// <returns> the point/value pair giving the optimal value for objective
 		/// function. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if
+		/// <exception cref="mathlib.exception.NullArgumentException"> if
 		/// any argument is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.optimization.PointValuePair optimize(final int maxEval, final org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction f, final org.apache.commons.math3.optimization.GoalType goalType, final double[] startPoint)
+//ORIGINAL LINE: public mathlib.optimization.PointValuePair optimize(final int maxEval, final mathlib.analysis.differentiation.MultivariateDifferentiableFunction f, final mathlib.optimization.GoalType goalType, final double[] startPoint)
 		public virtual PointValuePair optimize(int maxEval, MultivariateDifferentiableFunction f, GoalType goalType, double[] startPoint)
 		{
 			return optimizeInternal(maxEval, FunctionUtils.toDifferentiableMultivariateFunction(f), goalType, startPoint);

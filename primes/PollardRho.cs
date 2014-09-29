@@ -16,11 +16,11 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.primes
+namespace mathlib.primes
 {
 
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implementation of the Pollard's rho factorization algorithm.
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.primes
 				do
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int bound = org.apache.commons.math3.util.FastMath.min(m, r - k);
+//ORIGINAL LINE: final int bound = mathlib.util.FastMath.min(m, r - k);
 					int bound = FastMath.min(m, r - k);
 					int q = 1;
 					for (int i = -3; i < bound; i++) //start at -3 to ensure we enter this loop at least 3 times
@@ -109,7 +109,7 @@ namespace org.apache.commons.math3.primes
 						long y2 = ((long) y) * y;
 						y = (int)((y2 + cst) % n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long divisor = org.apache.commons.math3.util.FastMath.abs(x - y);
+//ORIGINAL LINE: final long divisor = mathlib.util.FastMath.abs(x - y);
 						long divisor = FastMath.abs(x - y);
 						if (0 == divisor)
 						{
@@ -129,7 +129,7 @@ namespace org.apache.commons.math3.primes
 						}
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int out = gcdPositive(org.apache.commons.math3.util.FastMath.abs(q), n);
+//ORIGINAL LINE: final int out = gcdPositive(mathlib.util.FastMath.abs(q), n);
 					int @out = gcdPositive(FastMath.abs(q), n);
 					if (1 != @out)
 					{
@@ -180,7 +180,7 @@ namespace org.apache.commons.math3.primes
 			int bTwos = int.numberOfTrailingZeros(b);
 			b >>= bTwos;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int shift = org.apache.commons.math3.util.FastMath.min(aTwos, bTwos);
+//ORIGINAL LINE: final int shift = mathlib.util.FastMath.min(aTwos, bTwos);
 			int shift = FastMath.min(aTwos, bTwos);
 
 			// a and b >0

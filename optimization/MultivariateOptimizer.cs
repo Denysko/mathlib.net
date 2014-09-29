@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
 
 	/// <summary>
 	/// This interface represents an optimization algorithm for {@link MultivariateFunction

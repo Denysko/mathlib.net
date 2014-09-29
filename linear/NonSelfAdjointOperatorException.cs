@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Exception to be thrown when a self-adjoint <seealso cref="RealLinearOperator"/>

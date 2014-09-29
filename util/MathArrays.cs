@@ -123,7 +123,7 @@ namespace mathlib.util
 		/// <exception cref="DimensionMismatchException"> if the array lengths differ.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] ebeAdd(double[] a, double[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static double[] ebeAdd(double[] a, double[] b) throws mathlib.exception.DimensionMismatchException
 		public static double[] ebeAdd(double[] a, double[] b)
 		{
 			if (a.Length != b.Length)
@@ -150,7 +150,7 @@ namespace mathlib.util
 		/// <exception cref="DimensionMismatchException"> if the array lengths differ.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] ebeSubtract(double[] a, double[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static double[] ebeSubtract(double[] a, double[] b) throws mathlib.exception.DimensionMismatchException
 		public static double[] ebeSubtract(double[] a, double[] b)
 		{
 			if (a.Length != b.Length)
@@ -177,7 +177,7 @@ namespace mathlib.util
 		/// <exception cref="DimensionMismatchException"> if the array lengths differ.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] ebeMultiply(double[] a, double[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static double[] ebeMultiply(double[] a, double[] b) throws mathlib.exception.DimensionMismatchException
 		public static double[] ebeMultiply(double[] a, double[] b)
 		{
 			if (a.Length != b.Length)
@@ -204,7 +204,7 @@ namespace mathlib.util
 		/// <exception cref="DimensionMismatchException"> if the array lengths differ.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] ebeDivide(double[] a, double[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static double[] ebeDivide(double[] a, double[] b) throws mathlib.exception.DimensionMismatchException
 		public static double[] ebeDivide(double[] a, double[] b)
 		{
 			if (a.Length != b.Length)
@@ -360,7 +360,7 @@ namespace mathlib.util
 				int comp;
 				switch (dir)
 				{
-				case org.apache.commons.math3.util.MathArrays.OrderDirection.INCREASING:
+				case mathlib.util.MathArrays.OrderDirection.INCREASING:
 					comp = previous.compareTo(val[i]);
 					if (strict)
 					{
@@ -377,7 +377,7 @@ namespace mathlib.util
 						}
 					}
 					break;
-				case org.apache.commons.math3.util.MathArrays.OrderDirection.DECREASING:
+				case mathlib.util.MathArrays.OrderDirection.DECREASING:
 					comp = val[i].compareTo(previous);
 					if (strict)
 					{
@@ -427,7 +427,7 @@ namespace mathlib.util
 		/// <exception cref="NonMonotonicSequenceException"> if the array is not sorted
 		/// and {@code abort} is {@code true}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static boolean checkOrder(double[] val, OrderDirection dir, boolean strict, boolean abort) throws org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public static boolean checkOrder(double[] val, OrderDirection dir, boolean strict, boolean abort) throws mathlib.exception.NonMonotonicSequenceException
 		public static bool checkOrder(double[] val, OrderDirection dir, bool strict, bool abort)
 		{
 			double previous = val[0];
@@ -440,7 +440,7 @@ namespace mathlib.util
 			{
 				switch (dir)
 				{
-				case org.apache.commons.math3.util.MathArrays.OrderDirection.INCREASING:
+				case mathlib.util.MathArrays.OrderDirection.INCREASING:
 					if (strict)
 					{
 						if (val[index] <= previous)
@@ -456,7 +456,7 @@ namespace mathlib.util
 						}
 					}
 					break;
-				case org.apache.commons.math3.util.MathArrays.OrderDirection.DECREASING:
+				case mathlib.util.MathArrays.OrderDirection.DECREASING:
 					if (strict)
 					{
 						if (val[index] >= previous)
@@ -508,7 +508,7 @@ namespace mathlib.util
 		/// <exception cref="NonMonotonicSequenceException"> if the array is not sorted.
 		/// @since 2.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkOrder(double[] val, OrderDirection dir, boolean strict) throws org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public static void checkOrder(double[] val, OrderDirection dir, boolean strict) throws mathlib.exception.NonMonotonicSequenceException
 		public static void checkOrder(double[] val, OrderDirection dir, bool strict)
 		{
 			checkOrder(val, dir, strict, true);
@@ -521,7 +521,7 @@ namespace mathlib.util
 		/// <exception cref="NonMonotonicSequenceException"> if the array is not sorted.
 		/// @since 2.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkOrder(double[] val) throws org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public static void checkOrder(double[] val) throws mathlib.exception.NonMonotonicSequenceException
 		public static void checkOrder(double[] val)
 		{
 			checkOrder(val, OrderDirection.INCREASING, true);
@@ -535,7 +535,7 @@ namespace mathlib.util
 		/// <exception cref="DimensionMismatchException"> if input array is not rectangular
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkRectangular(final long[][] in) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static void checkRectangular(final long[][] in) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkRectangular(long[][] @in)
 		{
@@ -557,7 +557,7 @@ namespace mathlib.util
 		/// strictly positive.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkPositive(final double[] in) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public static void checkPositive(final double[] in) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkPositive(double[] @in)
 		{
@@ -577,7 +577,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if any array entries are less than 0.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkNonNegative(final long[] in) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static void checkNonNegative(final long[] in) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkNonNegative(long[] @in)
 		{
@@ -597,7 +597,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if any array entries are less than 0.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkNonNegative(final long[][] in) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static void checkNonNegative(final long[][] in) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkNonNegative(long[][] @in)
 		{
@@ -767,7 +767,7 @@ namespace mathlib.util
 		/// <exception cref="NullArgumentException"> if {@code x} or any {@code y} is null.
 		/// @since 3.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void sortInPlace(double[] x, double[]... yList) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void sortInPlace(double[] x, double[]... yList) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NullArgumentException
 		public static void sortInPlace(double[] x, params double[][] yList)
 		{
 			sortInPlace(x, OrderDirection.INCREASING, yList);
@@ -790,7 +790,7 @@ namespace mathlib.util
 		/// <exception cref="NullArgumentException"> if {@code x} or any {@code y} is null
 		/// @since 3.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void sortInPlace(double[] x, final OrderDirection dir, double[]... yList) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static void sortInPlace(double[] x, final OrderDirection dir, double[]... yList) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void sortInPlace(double[] x, OrderDirection dir, params double[][] yList)
 		{
@@ -970,7 +970,7 @@ namespace mathlib.util
 		/// <returns> <code>&Sigma;<sub>i</sub> a<sub>i</sub> b<sub>i</sub></code>. </returns>
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions don't match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double linearCombination(final double[] a, final double[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static double linearCombination(final double[] a, final double[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double linearCombination(double[] a, double[] b)
 		{
@@ -1683,7 +1683,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if the target sum is infinite or {@code NaN}.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] normalizeArray(double[] values, double normalizedSum) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static double[] normalizeArray(double[] values, double normalizedSum) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.MathArithmeticException
 		public static double[] normalizeArray(double[] values, double normalizedSum)
 		{
 			if (double.IsInfinity(normalizedSum))
@@ -1739,7 +1739,7 @@ namespace mathlib.util
 		/// <returns> a new array
 		/// @since 3.2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T> T[] buildArray(final org.apache.commons.math3.Field<T> field, final int length)
+//ORIGINAL LINE: public static <T> T[] buildArray(final mathlib.Field<T> field, final int length)
 		public static T[] buildArray<T>(Field<T> field, int length)
 		{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1762,7 +1762,7 @@ namespace mathlib.util
 		/// <returns> a new array
 		/// @since 3.2 </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> T[][] buildArray(final org.apache.commons.math3.Field<T> field, final int rows, final int columns)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> T[][] buildArray(final mathlib.Field<T> field, final int rows, final int columns)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static T[][] buildArray<T>(Field<T> field, int rows, int columns)
 		{
@@ -1805,7 +1805,7 @@ namespace mathlib.util
 		/// 
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] convolve(double[] x, double[] h) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public static double[] convolve(double[] x, double[] h) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 		public static double[] convolve(double[] x, double[] h)
 		{
 			MathUtils.checkNotNull(x);
@@ -1895,7 +1895,7 @@ namespace mathlib.util
 		{
 			switch (pos)
 			{
-			case org.apache.commons.math3.util.MathArrays.Position.TAIL:
+			case mathlib.util.MathArrays.Position.TAIL:
 			{
 				for (int i = list.Length - 1; i >= start; i--)
 				{
@@ -1919,7 +1919,7 @@ namespace mathlib.util
 				}
 			}
 				break;
-			case org.apache.commons.math3.util.MathArrays.Position.HEAD:
+			case mathlib.util.MathArrays.Position.HEAD:
 			{
 				for (int i = 0; i <= start; i++)
 				{
@@ -2008,7 +2008,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if the indices are invalid or the array is null
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static bool verifyValues(double[] values, int begin, int length)
 		{
@@ -2036,7 +2036,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if the indices are invalid or the array is null
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final int begin, final int length, final boolean allowEmpty) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final int begin, final int length, final boolean allowEmpty) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static bool verifyValues(double[] values, int begin, int length, bool allowEmpty)
 		{
@@ -2099,7 +2099,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if the indices are invalid or the array is null
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final double[] weights, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final double[] weights, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static bool verifyValues(double[] values, double[] weights, int begin, int length)
 		{
@@ -2139,7 +2139,7 @@ namespace mathlib.util
 		/// are no positive weights.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final double[] weights, final int begin, final int length, final boolean allowEmpty) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static boolean verifyValues(final double[] values, final double[] weights, final int begin, final int length, final boolean allowEmpty) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static bool verifyValues(double[] values, double[] weights, int begin, int length, bool allowEmpty)
 		{

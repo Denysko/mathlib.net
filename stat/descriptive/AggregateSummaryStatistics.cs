@@ -18,11 +18,11 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
 
 	/// <summary>
 	/// <p>
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="NullArgumentException"> if prototypeStatistics is null </exception>
 		/// <seealso cref= #createContributingStatistics() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public AggregateSummaryStatistics(SummaryStatistics prototypeStatistics) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public AggregateSummaryStatistics(SummaryStatistics prototypeStatistics) throws mathlib.exception.NullArgumentException
 		public AggregateSummaryStatistics(SummaryStatistics prototypeStatistics) : this(prototypeStatistics, prototypeStatistics == null ? null : new SummaryStatistics(prototypeStatistics))
 		{
 		}

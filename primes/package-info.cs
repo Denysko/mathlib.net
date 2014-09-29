@@ -17,7 +17,7 @@
 /// <summary>
 /// Methods related to prime numbers like primality test, factor decomposition.
 /// </summary>
-namespace org.apache.commons.math3.primes
+namespace mathlib.primes
 {
 
 }

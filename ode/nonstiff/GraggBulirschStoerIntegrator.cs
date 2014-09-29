@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using UnivariateSolver = org.apache.commons.math3.analysis.solvers.UnivariateSolver;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using EventHandler = org.apache.commons.math3.ode.events.EventHandler;
-	using AbstractStepInterpolator = org.apache.commons.math3.ode.sampling.AbstractStepInterpolator;
-	using StepHandler = org.apache.commons.math3.ode.sampling.StepHandler;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using UnivariateSolver = mathlib.analysis.solvers.UnivariateSolver;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using EventHandler = mathlib.ode.events.EventHandler;
+	using AbstractStepInterpolator = mathlib.ode.sampling.AbstractStepInterpolator;
+	using StepHandler = mathlib.ode.sampling.StepHandler;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements a Gragg-Bulirsch-Stoer integrator for
@@ -383,7 +383,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public void addStepHandler(final org.apache.commons.math3.ode.sampling.StepHandler handler)
+//ORIGINAL LINE: @Override public void addStepHandler(final mathlib.ode.sampling.StepHandler handler)
 	  public override void addStepHandler(StepHandler handler)
 	  {
 
@@ -397,7 +397,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public void addEventHandler(final org.apache.commons.math3.ode.events.EventHandler function, final double maxCheckInterval, final double convergence, final int maxIterationCount, final org.apache.commons.math3.analysis.solvers.UnivariateSolver solver)
+//ORIGINAL LINE: @Override public void addEventHandler(final mathlib.ode.events.EventHandler function, final double maxCheckInterval, final double convergence, final int maxIterationCount, final mathlib.analysis.solvers.UnivariateSolver solver)
 	  public override void addEventHandler(EventHandler function, double maxCheckInterval, double convergence, int maxIterationCount, UnivariateSolver solver)
 	  {
 		base.addEventHandler(function, maxCheckInterval, convergence, maxIterationCount, solver);
@@ -497,7 +497,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		  for (int i = 0; i < scale.Length; ++i)
 		  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double yi = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(y1[i]), org.apache.commons.math3.util.FastMath.abs(y2[i]));
+//ORIGINAL LINE: final double yi = mathlib.util.FastMath.max(mathlib.util.FastMath.abs(y1[i]), mathlib.util.FastMath.abs(y2[i]));
 			double yi = FastMath.max(FastMath.abs(y1[i]), FastMath.abs(y2[i]));
 			scale[i] = scalAbsoluteTolerance + scalRelativeTolerance * yi;
 		  }
@@ -507,7 +507,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		  for (int i = 0; i < scale.Length; ++i)
 		  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double yi = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(y1[i]), org.apache.commons.math3.util.FastMath.abs(y2[i]));
+//ORIGINAL LINE: final double yi = mathlib.util.FastMath.max(mathlib.util.FastMath.abs(y1[i]), mathlib.util.FastMath.abs(y2[i]));
 			double yi = FastMath.max(FastMath.abs(y1[i]), FastMath.abs(y2[i]));
 			scale[i] = vecAbsoluteTolerance[i] + vecRelativeTolerance[i] * yi;
 		  }
@@ -532,7 +532,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 	  /// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private boolean tryStep(final double t0, final double[] y0, final double step, final int k, final double[] scale, final double[][] f, final double[] yMiddle, final double[] yEnd, final double[] yTmp) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private boolean tryStep(final double t0, final double[] y0, final double step, final int k, final double[] scale, final double[][] f, final double[] yMiddle, final double[] yEnd, final double[] yTmp) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  private bool tryStep(double t0, double[] y0, double step, int k, double[] scale, double[][] f, double[] yMiddle, double[] yEnd, double[] yTmp)
 	  {
@@ -648,7 +648,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void integrate(final org.apache.commons.math3.ode.ExpandableStatefulODE equations, final double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override public void integrate(final mathlib.ode.ExpandableStatefulODE equations, final double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public override void integrate(ExpandableStatefulODE equations, double t)
 	  {
@@ -734,13 +734,13 @@ namespace org.apache.commons.math3.ode.nonstiff
 //ORIGINAL LINE: final double tol = (vecRelativeTolerance == null) ? scalRelativeTolerance : vecRelativeTolerance[0];
 		double tol = (vecRelativeTolerance == null) ? scalRelativeTolerance : vecRelativeTolerance[0];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double log10R = org.apache.commons.math3.util.FastMath.log10(org.apache.commons.math3.util.FastMath.max(1.0e-10, tol));
+//ORIGINAL LINE: final double log10R = mathlib.util.FastMath.log10(mathlib.util.FastMath.max(1.0e-10, tol));
 		double log10R = FastMath.log10(FastMath.max(1.0e-10, tol));
 		int targetIter = FastMath.max(1, FastMath.min(sequence.Length - 2, (int) FastMath.floor(0.5 - 0.6 * log10R)));
 
 		// set up an interpolator sharing the integrator arrays
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ode.sampling.AbstractStepInterpolator interpolator = new GraggBulirschStoerStepInterpolator(y, yDot0, y1, yDot1, yMidDots, forward, equations.getPrimaryMapper(), equations.getSecondaryMappers());
+//ORIGINAL LINE: final mathlib.ode.sampling.AbstractStepInterpolator interpolator = new GraggBulirschStoerStepInterpolator(y, yDot0, y1, yDot1, yMidDots, forward, equations.getPrimaryMapper(), equations.getSecondaryMappers());
 		AbstractStepInterpolator interpolator = new GraggBulirschStoerStepInterpolator(y, yDot0, y1, yDot1, yMidDots, forward, equations.PrimaryMapper, equations.SecondaryMappers);
 		interpolator.storeTime(equations.Time);
 
@@ -826,7 +826,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 				for (int j = 0; j < mainSetDimension; ++j)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double e = org.apache.commons.math3.util.FastMath.abs(y1[j] - y1Diag[0][j]) / scale[j];
+//ORIGINAL LINE: final double e = mathlib.util.FastMath.abs(y1[j] - y1Diag[0][j]) / scale[j];
 				  double e = FastMath.abs(y1[j] - y1Diag[0][j]) / scale[j];
 				  error += e * e;
 				}
@@ -850,7 +850,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 				  double exp = 1.0 / (2 * k + 1);
 				  double fac = stepControl2 / FastMath.pow(error / stepControl1, exp);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double pow = org.apache.commons.math3.util.FastMath.pow(stepControl3, exp);
+//ORIGINAL LINE: final double pow = mathlib.util.FastMath.pow(stepControl3, exp);
 				  double pow = FastMath.pow(stepControl3, exp);
 				  fac = FastMath.max(pow / stepControl4, FastMath.min(1 / pow, fac));
 				  optimalStep[k] = FastMath.abs(filterStep(stepSize * fac, forward, true));

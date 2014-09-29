@@ -16,19 +16,19 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
 
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Polynomial interpolator using both sample values and sample derivatives.
@@ -49,7 +49,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 	/// 
 	/// @version $Id: FieldHermiteInterpolator.java 1455194 2013-03-11 15:45:54Z luc $
 	/// @since 3.2 </param>
-	public class FieldHermiteInterpolator<T> where T : org.apache.commons.math3.FieldElement<T>
+	public class FieldHermiteInterpolator<T> where T : mathlib.FieldElement<T>
 	{
 
 		/// <summary>
@@ -96,7 +96,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="DimensionMismatchException"> if derivative structures are inconsistent </exception>
 		/// <exception cref="NullArgumentException"> if x is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addSamplePoint(final T x, final T[] ... value) throws org.apache.commons.math3.exception.ZeroException, org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public void addSamplePoint(final T x, final T[] ... value) throws mathlib.exception.ZeroException, mathlib.exception.MathArithmeticException, mathlib.exception.DimensionMismatchException, mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void addSamplePoint(T x, params T[] [] value)
 		{
@@ -163,7 +163,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NoDataException"> if sample is empty </exception>
 		/// <exception cref="NullArgumentException"> if x is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T[] value(T x) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public T[] value(T x) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 		public virtual T[] value(T x)
 		{
 
@@ -175,7 +175,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] value = org.apache.commons.math3.util.MathArrays.buildArray(x.getField(), topDiagonal.get(0).length);
+//ORIGINAL LINE: final T[] value = mathlib.util.MathArrays.buildArray(x.getField(), topDiagonal.get(0).length);
 			T[] value = MathArrays.buildArray(x.Field, topDiagonal[0].Length);
 			T valueCoeff = x.Field.One;
 			for (int i = 0; i < topDiagonal.Count; ++i)
@@ -204,7 +204,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NoDataException"> if sample is empty </exception>
 		/// <exception cref="NullArgumentException"> if x is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T[][] derivatives(T x, int order) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public T[][] derivatives(T x, int order) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 		public virtual T[][] derivatives(T x, int order)
 		{
 
@@ -222,7 +222,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 //ORIGINAL LINE: final T one = x.getField().getOne();
 			T one = x.Field.One;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] tj = org.apache.commons.math3.util.MathArrays.buildArray(x.getField(), order + 1);
+//ORIGINAL LINE: final T[] tj = mathlib.util.MathArrays.buildArray(x.getField(), order + 1);
 			T[] tj = MathArrays.buildArray(x.Field, order + 1);
 			tj[0] = zero;
 			for (int i = 0; i < order; ++i)
@@ -231,10 +231,10 @@ namespace org.apache.commons.math3.analysis.interpolation
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] derivatives = org.apache.commons.math3.util.MathArrays.buildArray(x.getField(), order + 1, topDiagonal.get(0).length);
+//ORIGINAL LINE: final T[][] derivatives = mathlib.util.MathArrays.buildArray(x.getField(), order + 1, topDiagonal.get(0).length);
 			T[][] derivatives = MathArrays.buildArray(x.Field, order + 1, topDiagonal[0].Length);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] valueCoeff = org.apache.commons.math3.util.MathArrays.buildArray(x.getField(), order + 1);
+//ORIGINAL LINE: final T[] valueCoeff = mathlib.util.MathArrays.buildArray(x.getField(), order + 1);
 			T[] valueCoeff = MathArrays.buildArray(x.Field, order + 1);
 			valueCoeff[0] = x.Field.One;
 			for (int i = 0; i < topDiagonal.Count; ++i)

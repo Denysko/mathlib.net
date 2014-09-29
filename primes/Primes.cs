@@ -16,11 +16,11 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.primes
+namespace mathlib.primes
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 
 	/// <summary>

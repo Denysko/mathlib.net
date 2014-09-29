@@ -22,7 +22,7 @@
 /// </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.geometry
+namespace mathlib.geometry
 {
 
 }

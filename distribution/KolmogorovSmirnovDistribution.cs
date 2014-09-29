@@ -17,22 +17,22 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using BigFraction = org.apache.commons.math3.fraction.BigFraction;
-	using BigFractionField = org.apache.commons.math3.fraction.BigFractionField;
-	using FractionConversionException = org.apache.commons.math3.fraction.FractionConversionException;
-	using org.apache.commons.math3.linear;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using org.apache.commons.math3.linear;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using BigFraction = mathlib.fraction.BigFraction;
+	using BigFractionField = mathlib.fraction.BigFractionField;
+	using FractionConversionException = mathlib.fraction.FractionConversionException;
+	using mathlib.linear;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using mathlib.linear;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implementation of the Kolmogorov-Smirnov distribution.
@@ -71,7 +71,7 @@ namespace org.apache.commons.math3.distribution
 	/// Kolmogorov-Smirnov test (Wikipedia)</a>
 	/// @version $Id: KolmogorovSmirnovDistribution.java 1591211 2014-04-30 08:20:51Z luc $ </seealso>
 	/// @deprecated to be removed in version 4.0 -
-	///  use <seealso cref="org.apache.commons.math3.stat.inference.KolmogorovSmirnovTest"/> 
+	///  use <seealso cref="mathlib.stat.inference.KolmogorovSmirnovTest"/> 
 	[Serializable]
 	public class KolmogorovSmirnovDistribution
 	{
@@ -87,7 +87,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="n"> Number of observations </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code n <= 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public KolmogorovSmirnovDistribution(int n) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public KolmogorovSmirnovDistribution(int n) throws mathlib.exception.NotStrictlyPositiveException
 		public KolmogorovSmirnovDistribution(int n)
 		{
 			if (n <= 0)
@@ -104,16 +104,16 @@ namespace org.apache.commons.math3.distribution
 		/// exact as with
 		/// <seealso cref="KolmogorovSmirnovDistribution#cdfExact(double)"/> because
 		/// calculations are based on {@code double} rather than
-		/// <seealso cref="org.apache.commons.math3.fraction.BigFraction"/>.
+		/// <seealso cref="mathlib.fraction.BigFraction"/>.
 		/// </summary>
 		/// <param name="d"> statistic </param>
 		/// <returns> the two-sided probability of {@code P(D_n < d)} </returns>
 		/// <exception cref="MathArithmeticException"> if algorithm fails to convert {@code h}
-		/// to a <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> in expressing
+		/// to a <seealso cref="mathlib.fraction.BigFraction"/> in expressing
 		/// {@code d} as {@code (k - h) / m} for integer {@code k, m} and
 		/// {@code 0 <= h < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double cdf(double d) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public double cdf(double d) throws mathlib.exception.MathArithmeticException
 		public virtual double cdf(double d)
 		{
 			return this.cdf(d, false);
@@ -131,11 +131,11 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="d"> statistic </param>
 		/// <returns> the two-sided probability of {@code P(D_n < d)} </returns>
 		/// <exception cref="MathArithmeticException"> if algorithm fails to convert {@code h}
-		/// to a <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> in expressing
+		/// to a <seealso cref="mathlib.fraction.BigFraction"/> in expressing
 		/// {@code d} as {@code (k - h) / m} for integer {@code k, m} and
 		/// {@code 0 <= h < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double cdfExact(double d) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public double cdfExact(double d) throws mathlib.exception.MathArithmeticException
 		public virtual double cdfExact(double d)
 		{
 			return this.cdf(d, true);
@@ -147,18 +147,18 @@ namespace org.apache.commons.math3.distribution
 		/// </summary>
 		/// <param name="d"> statistic </param>
 		/// <param name="exact"> whether the probability should be calculated exact using
-		/// <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> everywhere at the
+		/// <seealso cref="mathlib.fraction.BigFraction"/> everywhere at the
 		/// expense of very slow execution time, or if {@code double} should be used
 		/// convenient places to gain speed. Almost never choose {@code true} in real
 		/// applications unless you are very sure; {@code true} is almost solely for
 		/// verification purposes. </param>
 		/// <returns> the two-sided probability of {@code P(D_n < d)} </returns>
 		/// <exception cref="MathArithmeticException"> if algorithm fails to convert {@code h}
-		/// to a <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> in expressing
+		/// to a <seealso cref="mathlib.fraction.BigFraction"/> in expressing
 		/// {@code d} as {@code (k - h) / m} for integer {@code k, m} and
 		/// {@code 0 <= h < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double cdf(double d, boolean exact) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public double cdf(double d, boolean exact) throws mathlib.exception.MathArithmeticException
 		public virtual double cdf(double d, bool exact)
 		{
 
@@ -207,29 +207,29 @@ namespace org.apache.commons.math3.distribution
 
 		/// <summary>
 		/// Calculates the exact value of {@code P(D_n < d)} using method described
-		/// in [1] and <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> (see
+		/// in [1] and <seealso cref="mathlib.fraction.BigFraction"/> (see
 		/// above).
 		/// </summary>
 		/// <param name="d"> statistic </param>
 		/// <returns> the two-sided probability of {@code P(D_n < d)} </returns>
 		/// <exception cref="MathArithmeticException"> if algorithm fails to convert {@code h}
-		/// to a <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> in expressing
+		/// to a <seealso cref="mathlib.fraction.BigFraction"/> in expressing
 		/// {@code d} as {@code (k - h) / m} for integer {@code k, m} and
 		/// {@code 0 <= h < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double exactK(double d) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: private double exactK(double d) throws mathlib.exception.MathArithmeticException
 		private double exactK(double d)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int k = (int) org.apache.commons.math3.util.FastMath.ceil(n * d);
+//ORIGINAL LINE: final int k = (int) mathlib.util.FastMath.ceil(n * d);
 			int k = (int) FastMath.ceil(n * d);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.FieldMatrix<org.apache.commons.math3.fraction.BigFraction> H = this.createH(d);
+//ORIGINAL LINE: final mathlib.linear.FieldMatrix<mathlib.fraction.BigFraction> H = this.createH(d);
 			FieldMatrix<BigFraction> H = this.createH(d);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.FieldMatrix<org.apache.commons.math3.fraction.BigFraction> Hpower = H.power(n);
+//ORIGINAL LINE: final mathlib.linear.FieldMatrix<mathlib.fraction.BigFraction> Hpower = H.power(n);
 			FieldMatrix<BigFraction> Hpower = H.power(n);
 
 			BigFraction pFrac = Hpower.getEntry(k - 1, k - 1);
@@ -254,19 +254,19 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="d"> statistic </param>
 		/// <returns> the two-sided probability of {@code P(D_n < d)} </returns>
 		/// <exception cref="MathArithmeticException"> if algorithm fails to convert {@code h}
-		/// to a <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> in expressing
+		/// to a <seealso cref="mathlib.fraction.BigFraction"/> in expressing
 		/// {@code d} as {@code (k - h) / m} for integer {@code k, m} and
 		/// {@code 0 <= h < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double roundedK(double d) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: private double roundedK(double d) throws mathlib.exception.MathArithmeticException
 		private double roundedK(double d)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int k = (int) org.apache.commons.math3.util.FastMath.ceil(n * d);
+//ORIGINAL LINE: final int k = (int) mathlib.util.FastMath.ceil(n * d);
 			int k = (int) FastMath.ceil(n * d);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.FieldMatrix<org.apache.commons.math3.fraction.BigFraction> HBigFraction = this.createH(d);
+//ORIGINAL LINE: final mathlib.linear.FieldMatrix<mathlib.fraction.BigFraction> HBigFraction = this.createH(d);
 			FieldMatrix<BigFraction> HBigFraction = this.createH(d);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int m = HBigFraction.getRowDimension();
@@ -277,7 +277,7 @@ namespace org.apache.commons.math3.distribution
 			 * RealMatrix instead of FieldMatrix<BigFraction>
 			 */
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix H = new org.apache.commons.math3.linear.Array2DRowRealMatrix(m, m);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix H = new mathlib.linear.Array2DRowRealMatrix(m, m);
 			RealMatrix H = new Array2DRowRealMatrix(m, m);
 
 			for (int i = 0; i < m; ++i)
@@ -289,7 +289,7 @@ namespace org.apache.commons.math3.distribution
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix Hpower = H.power(n);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix Hpower = H.power(n);
 			RealMatrix Hpower = H.power(n);
 
 			double pFrac = Hpower.getEntry(k - 1, k - 1);
@@ -310,11 +310,11 @@ namespace org.apache.commons.math3.distribution
 		/// <returns> H matrix </returns>
 		/// <exception cref="NumberIsTooLargeException"> if fractional part is greater than 1 </exception>
 		/// <exception cref="FractionConversionException"> if algorithm fails to convert
-		/// {@code h} to a <seealso cref="org.apache.commons.math3.fraction.BigFraction"/> in
+		/// {@code h} to a <seealso cref="mathlib.fraction.BigFraction"/> in
 		/// expressing {@code d} as {@code (k - h) / m} for integer {@code k, m} and
 		/// {@code 0 <= h < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.linear.FieldMatrix<org.apache.commons.math3.fraction.BigFraction> createH(double d) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.fraction.FractionConversionException
+//ORIGINAL LINE: private mathlib.linear.FieldMatrix<mathlib.fraction.BigFraction> createH(double d) throws mathlib.exception.NumberIsTooLargeException, mathlib.fraction.FractionConversionException
 		private FieldMatrix<BigFraction> createH(double d)
 		{
 
@@ -347,7 +347,7 @@ namespace org.apache.commons.math3.distribution
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction[][] Hdata = new org.apache.commons.math3.fraction.BigFraction[m][m];
+//ORIGINAL LINE: final mathlib.fraction.BigFraction[][] Hdata = new mathlib.fraction.BigFraction[m][m];
 //JAVA TO C# CONVERTER NOTE: The following call to the 'RectangularArrays' helper class reproduces the rectangular array initialization that is automatic in Java:
 //ORIGINAL LINE: BigFraction[][] Hdata = new BigFraction[m][m];
 			BigFraction[][] Hdata = RectangularArrays.ReturnRectangularBigFractionArray(m, m);
@@ -375,7 +375,7 @@ namespace org.apache.commons.math3.distribution
 			 * hPowers[0] = h^1 ... hPowers[m-1] = h^m
 			 */
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction[] hPowers = new org.apache.commons.math3.fraction.BigFraction[m];
+//ORIGINAL LINE: final mathlib.fraction.BigFraction[] hPowers = new mathlib.fraction.BigFraction[m];
 			BigFraction[] hPowers = new BigFraction[m];
 			hPowers[0] = h;
 			for (int i = 1; i < m; ++i)

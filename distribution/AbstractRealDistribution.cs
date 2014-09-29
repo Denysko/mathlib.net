@@ -16,18 +16,18 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using UnivariateSolverUtils = org.apache.commons.math3.analysis.solvers.UnivariateSolverUtils;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using RandomDataImpl = org.apache.commons.math3.random.RandomDataImpl;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using UnivariateSolverUtils = mathlib.analysis.solvers.UnivariateSolverUtils;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using RandomDataImpl = mathlib.random.RandomDataImpl;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Base class for probability distributions on the reals.
@@ -97,7 +97,7 @@ namespace org.apache.commons.math3.distribution
 		/// @deprecated As of 3.1 (to be removed in 4.0). Please use
 		/// <seealso cref="#probability(double,double)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0). Please use") public double cumulativeProbability(double x0, double x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0). Please use") public double cumulativeProbability(double x0, double x1) throws mathlib.exception.NumberIsTooLargeException
 		[Obsolete("As of 3.1 (to be removed in 4.0). Please use")]
 		public virtual double cumulativeProbability(double x0, double x1)
 		{
@@ -138,7 +138,7 @@ namespace org.apache.commons.math3.distribution
 		/// </ul>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double inverseCumulativeProbability(final double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double inverseCumulativeProbability(final double p) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double inverseCumulativeProbability(double p)
 		{
@@ -191,7 +191,7 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double mu = getNumericalMean();
 			double mu = NumericalMean;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sig = org.apache.commons.math3.util.FastMath.sqrt(getNumericalVariance());
+//ORIGINAL LINE: final double sig = mathlib.util.FastMath.sqrt(getNumericalVariance());
 			double sig = FastMath.sqrt(NumericalVariance);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final boolean chebyshevApplies;
@@ -231,7 +231,7 @@ namespace org.apache.commons.math3.distribution
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.UnivariateFunction toSolve = new org.apache.commons.math3.analysis.UnivariateFunction()
+//ORIGINAL LINE: final mathlib.analysis.UnivariateFunction toSolve = new mathlib.analysis.UnivariateFunction()
 			UnivariateFunction toSolve = new UnivariateFunctionAnonymousInnerClassHelper(this, p);
 
 			double x = UnivariateSolverUtils.solve(toSolve, lowerBound, upperBound, SolverAbsoluteAccuracy);

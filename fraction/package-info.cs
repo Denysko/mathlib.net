@@ -19,7 +19,7 @@
 ///    Fraction number type and fraction number formatting.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
 }

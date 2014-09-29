@@ -18,15 +18,15 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.fitting
+namespace mathlib.optimization.fitting
 {
 
 
-	using DifferentiableMultivariateVectorFunction = org.apache.commons.math3.analysis.DifferentiableMultivariateVectorFunction;
-	using MultivariateMatrixFunction = org.apache.commons.math3.analysis.MultivariateMatrixFunction;
-	using ParametricUnivariateFunction = org.apache.commons.math3.analysis.ParametricUnivariateFunction;
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using MultivariateDifferentiableVectorFunction = org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction;
+	using DifferentiableMultivariateVectorFunction = mathlib.analysis.DifferentiableMultivariateVectorFunction;
+	using MultivariateMatrixFunction = mathlib.analysis.MultivariateMatrixFunction;
+	using ParametricUnivariateFunction = mathlib.analysis.ParametricUnivariateFunction;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using MultivariateDifferentiableVectorFunction = mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction;
 
 	/// <summary>
 	/// Fitter for parametric univariate real functions y = f(x).
@@ -47,7 +47,7 @@ namespace org.apache.commons.math3.optimization.fitting
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 2.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public class CurveFitter<T> where T : org.apache.commons.math3.analysis.ParametricUnivariateFunction
+	public class CurveFitter<T> where T : mathlib.analysis.ParametricUnivariateFunction
 		/// <summary>
 		/// Optimizer to use for the fitting. </summary>
 		/// @deprecated as of 3.1 replaced by <seealso cref="#optimizer"/> 
@@ -68,8 +68,8 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// <param name="optimizer"> optimizer to use for the fitting </param>
 		/// @deprecated as of 3.1 replaced by <seealso cref="#CurveFitter(MultivariateDifferentiableVectorOptimizer)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#CurveFitter(org.apache.commons.math3.optimization.MultivariateDifferentiableVectorOptimizer)"/>") public CurveFitter(final org.apache.commons.math3.optimization.DifferentiableMultivariateVectorOptimizer optimizer)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#CurveFitter(org.apache.commons.math3.optimization.MultivariateDifferentiableVectorOptimizer)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#CurveFitter(mathlib.optimization.MultivariateDifferentiableVectorOptimizer)"/>") public CurveFitter(final mathlib.optimization.DifferentiableMultivariateVectorOptimizer optimizer)
+		[Obsolete("as of 3.1 replaced by <seealso cref="#CurveFitter(mathlib.optimization.MultivariateDifferentiableVectorOptimizer)"/>")]
 		public CurveFitter(DifferentiableMultivariateVectorOptimizer optimizer)
 		{
 			this.oldOptimizer = optimizer;
@@ -82,7 +82,7 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// <param name="optimizer"> optimizer to use for the fitting
 		/// @since 3.1 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public CurveFitter(final org.apache.commons.math3.optimization.MultivariateDifferentiableVectorOptimizer optimizer)
+//ORIGINAL LINE: public CurveFitter(final mathlib.optimization.MultivariateDifferentiableVectorOptimizer optimizer)
 		public CurveFitter(MultivariateDifferentiableVectorOptimizer optimizer)
 		{
 			this.oldOptimizer = null;
@@ -162,7 +162,7 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// <param name="f"> parametric function to fit. </param>
 		/// <param name="initialGuess"> first guess of the function parameters. </param>
 		/// <returns> the fitted parameters. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public double[] fit(T f, final double[] initialGuess)
@@ -182,9 +182,9 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// <param name="initialGuess"> first guess of the function parameters. </param>
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
 		/// <returns> the fitted parameters. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the number of allowed evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong.
 		/// @since 3.0 </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
@@ -204,7 +204,7 @@ namespace org.apache.commons.math3.optimization.fitting
 
 			// perform the fit
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.PointVectorValuePair optimum;
+//ORIGINAL LINE: final mathlib.optimization.PointVectorValuePair optimum;
 			PointVectorValuePair optimum;
 			if (optimizer == null)
 			{
@@ -235,7 +235,7 @@ namespace org.apache.commons.math3.optimization.fitting
 			/// Simple constructor. </summary>
 			/// <param name="f"> function to fit. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public OldTheoreticalValuesFunction(final org.apache.commons.math3.analysis.ParametricUnivariateFunction f)
+//ORIGINAL LINE: public OldTheoreticalValuesFunction(final mathlib.analysis.ParametricUnivariateFunction f)
 			public OldTheoreticalValuesFunction(CurveFitter outerInstance, ParametricUnivariateFunction f)
 			{
 				this.outerInstance = outerInstance;
@@ -307,7 +307,7 @@ namespace org.apache.commons.math3.optimization.fitting
 			/// Simple constructor. </summary>
 			/// <param name="f"> function to fit. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public TheoreticalValuesFunction(final org.apache.commons.math3.analysis.ParametricUnivariateFunction f)
+//ORIGINAL LINE: public TheoreticalValuesFunction(final mathlib.analysis.ParametricUnivariateFunction f)
 			public TheoreticalValuesFunction(CurveFitter outerInstance, ParametricUnivariateFunction f)
 			{
 				this.outerInstance = outerInstance;
@@ -347,7 +347,7 @@ namespace org.apache.commons.math3.optimization.fitting
 
 				// compute the residuals
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] values = new org.apache.commons.math3.analysis.differentiation.DerivativeStructure[observations.size()];
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] values = new mathlib.analysis.differentiation.DerivativeStructure[observations.size()];
 				DerivativeStructure[] values = new DerivativeStructure[outerInstance.observations.Count];
 				int i = 0;
 				foreach (WeightedObservedPoint observed in outerInstance.observations)

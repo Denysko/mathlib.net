@@ -16,10 +16,10 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
+namespace mathlib.optim.nonlinear.scalar.noderiv
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
 
 	/// <summary>
 	/// This class implements the multi-directional direct search method.
@@ -145,9 +145,9 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 		/// <seealso cref="AbstractSimplex#AbstractSimplex(double[][])"/>. </param>
 		/// <param name="khi"> Expansion coefficient. </param>
 		/// <param name="gamma"> Contraction coefficient. </param>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if the reference simplex does not contain at least one point. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if there is a dimension mismatch in the reference simplex. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public MultiDirectionalSimplex(final double[][] referenceSimplex, final double khi, final double gamma)
@@ -161,29 +161,29 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public void iterate(final org.apache.commons.math3.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<org.apache.commons.math3.optim.PointValuePair> comparator)
+//ORIGINAL LINE: @Override public void iterate(final mathlib.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<mathlib.optim.PointValuePair> comparator)
 		public override void iterate(MultivariateFunction evaluationFunction, IComparer<PointValuePair> comparator)
 		{
 			// Save the original simplex.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair[] original = getPoints();
+//ORIGINAL LINE: final mathlib.optim.PointValuePair[] original = getPoints();
 			PointValuePair[] original = Points;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair best = original[0];
+//ORIGINAL LINE: final mathlib.optim.PointValuePair best = original[0];
 			PointValuePair best = original[0];
 
 			// Perform a reflection step.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair reflected = evaluateNewSimplex(evaluationFunction, original, 1, comparator);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair reflected = evaluateNewSimplex(evaluationFunction, original, 1, comparator);
 			PointValuePair reflected = evaluateNewSimplex(evaluationFunction, original, 1, comparator);
 			if (comparator.Compare(reflected, best) < 0)
 			{
 				// Compute the expanded simplex.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair[] reflectedSimplex = getPoints();
+//ORIGINAL LINE: final mathlib.optim.PointValuePair[] reflectedSimplex = getPoints();
 				PointValuePair[] reflectedSimplex = Points;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair expanded = evaluateNewSimplex(evaluationFunction, original, khi, comparator);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair expanded = evaluateNewSimplex(evaluationFunction, original, khi, comparator);
 				PointValuePair expanded = evaluateNewSimplex(evaluationFunction, original, khi, comparator);
 				if (comparator.Compare(reflected, expanded) <= 0)
 				{
@@ -208,10 +208,10 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 		/// <param name="comparator"> Comparator to use to sort simplex vertices from best
 		/// to poorest. </param>
 		/// <returns> the best point in the transformed simplex. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.optim.PointValuePair evaluateNewSimplex(final org.apache.commons.math3.analysis.MultivariateFunction evaluationFunction, final org.apache.commons.math3.optim.PointValuePair[] original, final double coeff, final java.util.Comparator<org.apache.commons.math3.optim.PointValuePair> comparator)
+//ORIGINAL LINE: private mathlib.optim.PointValuePair evaluateNewSimplex(final mathlib.analysis.MultivariateFunction evaluationFunction, final mathlib.optim.PointValuePair[] original, final double coeff, final java.util.Comparator<mathlib.optim.PointValuePair> comparator)
 		private PointValuePair evaluateNewSimplex(MultivariateFunction evaluationFunction, PointValuePair[] original, double coeff, IComparer<PointValuePair> comparator)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

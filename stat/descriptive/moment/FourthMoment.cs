@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Computes a statistic related to the Fourth Central Moment.  Specifically,
@@ -81,7 +81,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code FourthMoment} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FourthMoment(FourthMoment original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FourthMoment(FourthMoment original) throws mathlib.exception.NullArgumentException
 		 public FourthMoment(FourthMoment original) : base()
 		 {
 			 copy(original, this);
@@ -151,7 +151,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> FourthMoment to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(FourthMoment source, FourthMoment dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(FourthMoment source, FourthMoment dest) throws mathlib.exception.NullArgumentException
 		public static void copy(FourthMoment source, FourthMoment dest)
 		{
 			MathUtils.checkNotNull(source);

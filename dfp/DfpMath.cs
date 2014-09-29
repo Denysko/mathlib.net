@@ -17,7 +17,7 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.dfp
+namespace mathlib.dfp
 {
 
 	/// <summary>

@@ -17,17 +17,17 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.polynomials
+namespace mathlib.analysis.polynomials
 {
 
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Immutable representation of a real polynomial function with real coefficients.
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NullArgumentException"> if {@code c} is {@code null}. </exception>
 		/// <exception cref="NoDataException"> if {@code c} is empty. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PolynomialFunction(double c[]) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public PolynomialFunction(double c[]) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 		public PolynomialFunction(double[] c) : base()
 		{
 			MathUtils.checkNotNull(c);
@@ -131,7 +131,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NoDataException"> if {@code coefficients} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code coefficients} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected static double evaluate(double[] coefficients, double argument) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: protected static double evaluate(double[] coefficients, double argument) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 		protected internal static double evaluate(double[] coefficients, double argument)
 		{
 			MathUtils.checkNotNull(coefficients);
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NoDataException"> if {@code coefficients} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code coefficients} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{
@@ -184,10 +184,10 @@ namespace org.apache.commons.math3.analysis.polynomials
 		{
 			// identify the lowest degree polynomial
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int lowLength = org.apache.commons.math3.util.FastMath.min(coefficients.length, p.coefficients.length);
+//ORIGINAL LINE: final int lowLength = mathlib.util.FastMath.min(coefficients.length, p.coefficients.length);
 			int lowLength = FastMath.min(coefficients.Length, p.coefficients.Length);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int highLength = org.apache.commons.math3.util.FastMath.max(coefficients.length, p.coefficients.length);
+//ORIGINAL LINE: final int highLength = mathlib.util.FastMath.max(coefficients.length, p.coefficients.length);
 			int highLength = FastMath.max(coefficients.Length, p.coefficients.Length);
 
 			// build the coefficients array
@@ -280,7 +280,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NoDataException"> if {@code coefficients} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code coefficients} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected static double[] differentiate(double[] coefficients) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: protected static double[] differentiate(double[] coefficients) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 		protected internal static double[] differentiate(double[] coefficients)
 		{
 			MathUtils.checkNotNull(coefficients);
@@ -466,7 +466,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(final double x, final double... parameters) throws org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public double value(final double x, final double... parameters) throws mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual double value(double x, params double[] parameters)
 			{

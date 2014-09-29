@@ -36,7 +36,7 @@ namespace mathlib
         /// <returns> a new element representing this + a </returns>
         /// <exception cref="NullArgumentException"> if {@code addend} is {@code null}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T add(T a) throws org.apache.commons.math3.exception.NullArgumentException;
+        //ORIGINAL LINE: T add(T a) throws mathlib.exception.NullArgumentException;
         T add(T a);
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace mathlib
         /// <returns> a new element representing this - a </returns>
         /// <exception cref="NullArgumentException"> if {@code a} is {@code null}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T subtract(T a) throws org.apache.commons.math3.exception.NullArgumentException;
+        //ORIGINAL LINE: T subtract(T a) throws mathlib.exception.NullArgumentException;
         T subtract(T a);
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace mathlib
         /// <returns> a new element representing this &times; a </returns>
         /// <exception cref="NullArgumentException"> if {@code a} is {@code null}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T multiply(T a) throws org.apache.commons.math3.exception.NullArgumentException;
+        //ORIGINAL LINE: T multiply(T a) throws mathlib.exception.NullArgumentException;
         T multiply(T a);
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace mathlib
         /// <exception cref="NullArgumentException"> if {@code a} is {@code null}. </exception>
         /// <exception cref="MathArithmeticException"> if {@code a} is zero </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T divide(T a) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.MathArithmeticException;
+        //ORIGINAL LINE: T divide(T a) throws mathlib.exception.NullArgumentException, mathlib.exception.MathArithmeticException;
         T divide(T a);
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace mathlib
         /// <returns> the inverse of {@code this}. </returns>
         /// <exception cref="MathArithmeticException"> if {@code this} is zero </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T reciprocal() throws org.apache.commons.math3.exception.MathArithmeticException;
+        //ORIGINAL LINE: T reciprocal() throws mathlib.exception.MathArithmeticException;
         T reciprocal();
 
         /// <summary>

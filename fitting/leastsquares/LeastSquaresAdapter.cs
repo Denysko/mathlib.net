@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using org.apache.commons.math3.optim;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
+	using RealVector = mathlib.linear.RealVector;
+	using mathlib.optim;
+	using Incrementor = mathlib.util.Incrementor;
 
 	/// <summary>
 	/// An adapter that delegates to another implementation of <seealso cref="LeastSquaresProblem"/>.
@@ -79,7 +79,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// {@inheritDoc} </summary>
 		/// <param name="point"> </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresProblem_Evaluation evaluate(final org.apache.commons.math3.linear.RealVector point)
+//ORIGINAL LINE: public LeastSquaresProblem_Evaluation evaluate(final mathlib.linear.RealVector point)
 		public virtual LeastSquaresProblem_Evaluation evaluate(RealVector point)
 		{
 			return problem.evaluate(point);

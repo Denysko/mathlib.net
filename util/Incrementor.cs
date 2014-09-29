@@ -80,7 +80,7 @@ namespace mathlib.util
             /// <summary>
             /// {@inheritDoc} </summary>
             //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-            //ORIGINAL LINE: public void trigger(int max) throws org.apache.commons.math3.exception.MaxCountExceededException
+            //ORIGINAL LINE: public void trigger(int max) throws mathlib.exception.MaxCountExceededException
             public virtual void trigger(int max)
             {
                 throw new MaxCountExceededException(max);
@@ -95,7 +95,7 @@ namespace mathlib.util
         /// <param name="cb"> Function to be called when the maximal count has been reached. </param>
         /// <exception cref="NullArgumentException"> if {@code cb} is {@code null} </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public Incrementor(int max, MaxCountExceededCallback cb) throws org.apache.commons.math3.exception.NullArgumentException
+        //ORIGINAL LINE: public Incrementor(int max, MaxCountExceededCallback cb) throws mathlib.exception.NullArgumentException
         public Incrementor(int max, MaxCountExceededCallback cb)
         {
             if (cb == null)
@@ -155,7 +155,7 @@ namespace mathlib.util
         /// <param name="value"> Number of increments. </param>
         /// <exception cref="MaxCountExceededException"> at counter exhaustion. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public void incrementCount(int value) throws org.apache.commons.math3.exception.MaxCountExceededException
+        //ORIGINAL LINE: public void incrementCount(int value) throws mathlib.exception.MaxCountExceededException
         public virtual void incrementCount(int value)
         {
             for (int i = 0; i < value; i++)
@@ -177,7 +177,7 @@ namespace mathlib.util
         /// custom <seealso cref="MaxCountExceededCallback callback"/> has been set at
         /// construction. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public void incrementCount() throws org.apache.commons.math3.exception.MaxCountExceededException
+        //ORIGINAL LINE: public void incrementCount() throws mathlib.exception.MaxCountExceededException
         public virtual void incrementCount()
         {
             if (++count > maximalCount)
@@ -206,7 +206,7 @@ namespace mathlib.util
             /// <param name="maximalCount"> Maximal count. </param>
             /// <exception cref="MaxCountExceededException"> at counter exhaustion </exception>
             //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-            //ORIGINAL LINE: void trigger(int maximalCount) throws org.apache.commons.math3.exception.MaxCountExceededException;
+            //ORIGINAL LINE: void trigger(int maximalCount) throws mathlib.exception.MaxCountExceededException;
             void trigger(int maximalCount);
         }
     }

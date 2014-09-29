@@ -17,17 +17,17 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using Logit = org.apache.commons.math3.analysis.function.Logit;
-	using Sigmoid = org.apache.commons.math3.analysis.function.Sigmoid;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using Logit = mathlib.analysis.function.Logit;
+	using Sigmoid = mathlib.analysis.function.Sigmoid;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// <p>Adapter for mapping bounded <seealso cref="MultivariateFunction"/> to unbounded ones.</p>
@@ -56,8 +56,8 @@ namespace org.apache.commons.math3.optimization.direct
 	/// user is responsible for converting his bounded point to unbounded by calling
 	/// <seealso cref="#boundedToUnbounded(double[])"/> before providing them to the optimizer.
 	/// For the same reason, the point returned by the {@link
-	/// org.apache.commons.math3.optimization.BaseMultivariateOptimizer#optimize(int,
-	/// MultivariateFunction, org.apache.commons.math3.optimization.GoalType, double[])}
+	/// mathlib.optimization.BaseMultivariateOptimizer#optimize(int,
+	/// MultivariateFunction, mathlib.optimization.GoalType, double[])}
 	/// method is unbounded. So to convert this point to bounded, users must call
 	/// <seealso cref="#unboundedToBounded(double[])"/> by themselves!</p>
 	/// <p>
@@ -102,7 +102,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <exception cref="DimensionMismatchException"> if lower and upper bounds are not
 		/// consistent, either according to dimension or to values </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public MultivariateFunctionMappingAdapter(final org.apache.commons.math3.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper)
+//ORIGINAL LINE: public MultivariateFunctionMappingAdapter(final mathlib.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper)
 		public MultivariateFunctionMappingAdapter(MultivariateFunction bounded, double[] lower, double[] upper)
 		{
 

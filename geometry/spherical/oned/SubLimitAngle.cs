@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.oned
+namespace mathlib.geometry.spherical.oned
 {
 
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using Side = org.apache.commons.math3.geometry.partitioning.Side;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using Side = mathlib.geometry.partitioning.Side;
 
 	/// <summary>
 	/// This class represents sub-hyperplane for <seealso cref="LimitAngle"/>.
@@ -36,7 +36,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="hyperplane"> underlying hyperplane </param>
 		/// <param name="remainingRegion"> remaining region of the hyperplane </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SubLimitAngle(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Sphere1D> hyperplane, final org.apache.commons.math3.geometry.partitioning.Region<Sphere1D> remainingRegion)
+//ORIGINAL LINE: public SubLimitAngle(final mathlib.geometry.partitioning.Hyperplane<Sphere1D> hyperplane, final mathlib.geometry.partitioning.Region<Sphere1D> remainingRegion)
 		public SubLimitAngle(Hyperplane<Sphere1D> hyperplane, Region<Sphere1D> remainingRegion) : base(hyperplane, remainingRegion)
 		{
 		}
@@ -64,7 +64,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override protected org.apache.commons.math3.geometry.partitioning.AbstractSubHyperplane<Sphere1D, Sphere1D> buildNew(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Sphere1D> hyperplane, final org.apache.commons.math3.geometry.partitioning.Region<Sphere1D> remainingRegion)
+//ORIGINAL LINE: @Override protected mathlib.geometry.partitioning.AbstractSubHyperplane<Sphere1D, Sphere1D> buildNew(final mathlib.geometry.partitioning.Hyperplane<Sphere1D> hyperplane, final mathlib.geometry.partitioning.Region<Sphere1D> remainingRegion)
 		protected internal override AbstractSubHyperplane<Sphere1D, Sphere1D> buildNew(Hyperplane<Sphere1D> hyperplane, Region<Sphere1D> remainingRegion)
 		{
 			return new SubLimitAngle(hyperplane, remainingRegion);
@@ -73,7 +73,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.geometry.partitioning.Side side(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Sphere1D> hyperplane)
+//ORIGINAL LINE: @Override public mathlib.geometry.partitioning.Side side(final mathlib.geometry.partitioning.Hyperplane<Sphere1D> hyperplane)
 		public override Side side(Hyperplane<Sphere1D> hyperplane)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -85,13 +85,13 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D> split(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Sphere1D> hyperplane)
-		public override org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D> Split(Hyperplane<Sphere1D> hyperplane)
+//ORIGINAL LINE: @Override public mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D> split(final mathlib.geometry.partitioning.Hyperplane<Sphere1D> hyperplane)
+		public override mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D> Split(Hyperplane<Sphere1D> hyperplane)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double global = hyperplane.getOffset(((LimitAngle) getHyperplane()).getLocation());
 			double global = hyperplane.getOffset(((LimitAngle) Hyperplane).Location);
-			return (global < -1.0e-10) ? new org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D>(null, this) : new org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D>(this, null);
+			return (global < -1.0e-10) ? new mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D>(null, this) : new mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Sphere1D>(this, null);
 		}
 
 	}

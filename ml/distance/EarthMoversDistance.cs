@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ml.distance
+namespace mathlib.ml.distance
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Calculates the Earh Mover's distance (also known as Wasserstein metric) between two distributions.

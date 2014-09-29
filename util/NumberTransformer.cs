@@ -37,7 +37,7 @@ namespace mathlib.util
         /// <returns> the double value of the Object. </returns>
         /// <exception cref="MathIllegalArgumentException"> if the Object can not be transformed into a Double. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: double transform(Object o) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+        //ORIGINAL LINE: double transform(Object o) throws mathlib.exception.MathIllegalArgumentException;
         double transform(object o);
     }
 

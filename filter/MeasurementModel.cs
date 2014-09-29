@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.filter
+namespace mathlib.filter
 {
 
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Defines the measurement model for the use with a <seealso cref="KalmanFilter"/>.
@@ -40,7 +40,7 @@ namespace org.apache.commons.math3.filter
 		/// </summary>
 		/// <returns> the measurement noise matrix </returns>
 		/// <seealso cref= KalmanFilter#correct(double[]) </seealso>
-		/// <seealso cref= KalmanFilter#correct(org.apache.commons.math3.linear.RealVector) </seealso>
+		/// <seealso cref= KalmanFilter#correct(mathlib.linear.RealVector) </seealso>
 		RealMatrix MeasurementNoise {get;}
 	}
 

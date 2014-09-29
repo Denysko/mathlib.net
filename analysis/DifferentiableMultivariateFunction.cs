@@ -17,7 +17,7 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis
+namespace mathlib.analysis
 {
 
 	/// <summary>
@@ -25,8 +25,8 @@ namespace org.apache.commons.math3.analysis
 	/// multivariate real function.
 	/// @version $Id: DifferentiableMultivariateFunction.java 1415149 2012-11-29 13:12:55Z erans $
 	/// @since 2.0 </summary>
-	/// @deprecated as of 3.1 replaced by <seealso cref="org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction"/> 
-	[Obsolete("as of 3.1 replaced by <seealso cref="org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction"/>")]
+	/// @deprecated as of 3.1 replaced by <seealso cref="mathlib.analysis.differentiation.MultivariateDifferentiableFunction"/> 
+	[Obsolete("as of 3.1 replaced by <seealso cref="mathlib.analysis.differentiation.MultivariateDifferentiableFunction"/>")]
 	public interface DifferentiableMultivariateFunction : MultivariateFunction
 	{
 

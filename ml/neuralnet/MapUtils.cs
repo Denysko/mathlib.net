@@ -17,13 +17,13 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet
+namespace mathlib.ml.neuralnet
 {
 
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
-	using NeuronSquareMesh2D = org.apache.commons.math3.ml.neuralnet.twod.NeuronSquareMesh2D;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using org.apache.commons.math3.util;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
+	using NeuronSquareMesh2D = mathlib.ml.neuralnet.twod.NeuronSquareMesh2D;
+	using NoDataException = mathlib.exception.NoDataException;
+	using mathlib.util;
 
 	/// <summary>
 	/// Utilities for network maps.
@@ -49,7 +49,7 @@ namespace org.apache.commons.math3.ml.neuralnet
 		/// <param name="distance"> Distance function. The neuron's features are
 		/// passed as the first argument to <seealso cref="DistanceMeasure#compute(double[],double[])"/>. </param>
 		/// <returns> the neuron whose features are closest to the given data. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the size of the input is not compatible with the neurons features
 		/// size. </exception>
 		public static Neuron findBest(double[] features, IEnumerable<Neuron> neurons, DistanceMeasure distance)
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.ml.neuralnet
 		/// <param name="distance"> Distance function. The neuron's features are
 		/// passed as the first argument to <seealso cref="DistanceMeasure#compute(double[],double[])"/>. </param>
 		/// <returns> the two neurons whose features are closest to the given data. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the size of the input is not compatible with the neurons features
 		/// size. </exception>
 		public static Pair<Neuron, Neuron> findBestAndSecondBest(double[] features, IEnumerable<Neuron> neurons, DistanceMeasure distance)
@@ -285,7 +285,7 @@ namespace org.apache.commons.math3.ml.neuralnet
 			{
 				++count;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<Neuron, Neuron> p = findBestAndSecondBest(f, net, distance);
+//ORIGINAL LINE: final mathlib.util.Pair<Neuron, Neuron> p = findBestAndSecondBest(f, net, distance);
 				Pair<Neuron, Neuron> p = findBestAndSecondBest(f, net, distance);
 				if (!net.getNeighbours(p.First).Contains(p.Second))
 				{

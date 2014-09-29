@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using CombinatoricsUtils = org.apache.commons.math3.util.CombinatoricsUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using ResizableDoubleArray = org.apache.commons.math3.util.ResizableDoubleArray;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using CombinatoricsUtils = mathlib.util.CombinatoricsUtils;
+	using FastMath = mathlib.util.FastMath;
+	using ResizableDoubleArray = mathlib.util.ResizableDoubleArray;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the exponential distribution.
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.distribution
 			/// Note that we don't want qi = 0 in the table.
 			/// </summary>
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double LN2 = org.apache.commons.math3.util.FastMath.log(2);
+//ORIGINAL LINE: final double LN2 = mathlib.util.FastMath.log(2);
 			double LN2 = FastMath.log(2);
 			double qi = 0;
 			int i = 1;
@@ -88,7 +88,7 @@ namespace org.apache.commons.math3.distribution
 			/// better to not hardcode it).
 			/// </summary>
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.ResizableDoubleArray ra = new org.apache.commons.math3.util.ResizableDoubleArray(20);
+//ORIGINAL LINE: final mathlib.util.ResizableDoubleArray ra = new mathlib.util.ResizableDoubleArray(20);
 			ResizableDoubleArray ra = new ResizableDoubleArray(20);
 
 			while (qi < 1)
@@ -129,7 +129,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code mean <= 0}.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ExponentialDistribution(org.apache.commons.math3.random.RandomGenerator rng, double mean) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public ExponentialDistribution(mathlib.random.RandomGenerator rng, double mean) throws mathlib.exception.NotStrictlyPositiveException
 		public ExponentialDistribution(RandomGenerator rng, double mean) : this(rng, mean, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -145,7 +145,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code mean <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ExponentialDistribution(org.apache.commons.math3.random.RandomGenerator rng, double mean, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public ExponentialDistribution(mathlib.random.RandomGenerator rng, double mean, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public ExponentialDistribution(RandomGenerator rng, double mean, double inverseCumAccuracy) : base(rng)
 		{
 
@@ -222,7 +222,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code Double.POSITIVE_INFINITY} when {@code p == 1}.
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(double p) throws mathlib.exception.OutOfRangeException
 		public override double inverseCumulativeProbability(double p)
 		{
 			double ret;

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.transform
+namespace mathlib.transform
 {
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
 
 	/// <summary>
 	/// Interface for one-dimensional data sets transformations producing real results.
@@ -29,7 +29,7 @@ namespace org.apache.commons.math3.transform
 	/// <seealso cref="FastCosineTransformer cosine transform"/> or {@link
 	/// FastHadamardTransformer Hadamard transform}. {@link FastFourierTransformer
 	/// Fourier transform} is of a different kind and does not implement this
-	/// interface since it produces <seealso cref="org.apache.commons.math3.complex.Complex"/>
+	/// interface since it produces <seealso cref="mathlib.complex.Complex"/>
 	/// results instead of real ones.
 	/// 
 	/// @version $Id: RealTransformer.java 1385310 2012-09-16 16:32:10Z tn $
@@ -48,7 +48,7 @@ namespace org.apache.commons.math3.transform
 		///   with the given type (this may be for example due to array size, which is
 		///   constrained in some transforms) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double[] transform(double[] f, TransformType type) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: double[] transform(double[] f, TransformType type) throws mathlib.exception.MathIllegalArgumentException;
 		double[] transform(double[] f, TransformType type);
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace org.apache.commons.math3.transform
 		///   with the given type (this may be for example due to sample size, which is
 		///   constrained in some transforms) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double[] transform(org.apache.commons.math3.analysis.UnivariateFunction f, double min, double max, int n, TransformType type) throws org.apache.commons.math3.exception.NonMonotonicSequenceException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: double[] transform(mathlib.analysis.UnivariateFunction f, double min, double max, int n, TransformType type) throws mathlib.exception.NonMonotonicSequenceException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.MathIllegalArgumentException;
 		double[] transform(UnivariateFunction f, double min, double max, int n, TransformType type);
 
 	}

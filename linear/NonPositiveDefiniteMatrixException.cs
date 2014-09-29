@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ExceptionContext = org.apache.commons.math3.exception.util.ExceptionContext;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ExceptionContext = mathlib.exception.util.ExceptionContext;
 
 	/// <summary>
 	/// Exception to be thrown when a positive definite matrix is expected.
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.linear
 			this.threshold = threshold;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.util.ExceptionContext context = getContext();
+//ORIGINAL LINE: final mathlib.exception.util.ExceptionContext context = getContext();
 			ExceptionContext context = Context;
 			context.addMessage(LocalizedFormats.NOT_POSITIVE_DEFINITE_MATRIX);
 			context.addMessage(LocalizedFormats.ARRAY_ELEMENT, wrong, index);

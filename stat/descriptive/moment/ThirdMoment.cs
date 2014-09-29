@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 
 	/// <summary>
@@ -83,7 +83,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code ThirdMoment} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if orginal is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ThirdMoment(ThirdMoment original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ThirdMoment(ThirdMoment original) throws mathlib.exception.NullArgumentException
 		public ThirdMoment(ThirdMoment original)
 		{
 			copy(original, this);
@@ -148,7 +148,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> ThirdMoment to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(ThirdMoment source, ThirdMoment dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(ThirdMoment source, ThirdMoment dest) throws mathlib.exception.NullArgumentException
 		public static void copy(ThirdMoment source, ThirdMoment dest)
 		{
 			MathUtils.checkNotNull(source);

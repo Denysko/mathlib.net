@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 	/// <summary>
 	/// Algorithm used to select a chromosome pair from a population.
@@ -33,7 +33,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the selected chromosomes. </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the population is not compatible with this <seealso cref="SelectionPolicy"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: ChromosomePair select(Population population) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: ChromosomePair select(Population population) throws mathlib.exception.MathIllegalArgumentException;
 		ChromosomePair select(Population population);
 	}
 

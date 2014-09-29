@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Returns the covariance matrix of the available vectors.
@@ -71,7 +71,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="v"> vector to add </param>
 		/// <exception cref="DimensionMismatchException"> if the vector does not have the right dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void increment(double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void increment(double[] v) throws mathlib.exception.DimensionMismatchException
 		public virtual void increment(double[] v)
 		{
 			if (v.Length != sums.Length)

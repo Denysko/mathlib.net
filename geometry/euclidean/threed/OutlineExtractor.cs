@@ -17,20 +17,20 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
-	using org.apache.commons.math3.geometry;
-	using Euclidean2D = org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D;
-	using PolygonsSet = org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet;
-	using Vector2D = org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using mathlib.geometry;
+	using Euclidean2D = mathlib.geometry.euclidean.twod.Euclidean2D;
+	using PolygonsSet = mathlib.geometry.euclidean.twod.PolygonsSet;
+	using Vector2D = mathlib.geometry.euclidean.twod.Vector2D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Extractor for <seealso cref="PolygonsSet polyhedrons sets"/> outlines.
@@ -72,7 +72,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="polyhedronsSet"> polyhedrons set whose outline must be extracted </param>
 		/// <returns> an outline, as an array of loops. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.euclidean.twod.Vector2D[][] getOutline(final PolyhedronsSet polyhedronsSet)
+//ORIGINAL LINE: public mathlib.geometry.euclidean.twod.Vector2D[][] getOutline(final PolyhedronsSet polyhedronsSet)
 		public virtual Vector2D[][] getOutline(PolyhedronsSet polyhedronsSet)
 		{
 
@@ -82,17 +82,17 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			BoundaryProjector projector = new BoundaryProjector(this, polyhedronsSet.Tolerance);
 			polyhedronsSet.getTree(true).visit(projector);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet projected = projector.getProjected();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.PolygonsSet projected = projector.getProjected();
 			PolygonsSet projected = projector.Projected;
 
 			// Remove the spurious intermediate vertices from the outline
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[][] outline = projected.getVertices();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D[][] outline = projected.getVertices();
 			Vector2D[][] outline = projected.Vertices;
 			for (int i = 0; i < outline.Length; ++i)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[] rawLoop = outline[i];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D[] rawLoop = outline[i];
 				Vector2D[] rawLoop = outline[i];
 				int end = rawLoop.Length;
 				int j = 0;
@@ -134,17 +134,17 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="i"> index of the point to check (must be between 0 and n-1) </param>
 		/// <returns> true if the point is exactly between its neighbors </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean pointIsBetween(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[] loop, final int n, final int i)
+//ORIGINAL LINE: private boolean pointIsBetween(final mathlib.geometry.euclidean.twod.Vector2D[] loop, final int n, final int i)
 		private bool pointIsBetween(Vector2D[] loop, int n, int i)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D previous = loop[(i + n - 1) % n];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D previous = loop[(i + n - 1) % n];
 			Vector2D previous = loop[(i + n - 1) % n];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D current = loop[i];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D current = loop[i];
 			Vector2D current = loop[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D next = loop[(i + 1) % n];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D next = loop[(i + 1) % n];
 			Vector2D next = loop[(i + 1) % n];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double dx1 = current.getX() - previous.getX();
@@ -165,7 +165,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final double dot = dx1 * dx2 + dy1 * dy2;
 			double dot = dx1 * dx2 + dy1 * dy2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d1d2 = org.apache.commons.math3.util.FastMath.sqrt((dx1 * dx1 + dy1 * dy1) * (dx2 * dx2 + dy2 * dy2));
+//ORIGINAL LINE: final double d1d2 = mathlib.util.FastMath.sqrt((dx1 * dx1 + dy1 * dy1) * (dx2 * dx2 + dy2 * dy2));
 			double d1d2 = FastMath.sqrt((dx1 * dx1 + dy1 * dy1) * (dx2 * dx2 + dy2 * dy2));
 			return (FastMath.abs(cross) <= (1.0e-6 * d1d2)) && (dot >= 0.0);
 		}
@@ -200,20 +200,20 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node)
-			public virtual org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Euclidean3D> node)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node)
+			public virtual mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Euclidean3D> node)
 			{
-				return org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
+				return mathlib.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
 			}
 
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitInternalNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node)
+//ORIGINAL LINE: public void visitInternalNode(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node)
 			public virtual void visitInternalNode(BSPTree<Euclidean3D> node)
 			{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") final org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Euclidean3D> attribute = (org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Euclidean3D>) node.getAttribute();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") final mathlib.geometry.partitioning.BoundaryAttribute<Euclidean3D> attribute = (mathlib.geometry.partitioning.BoundaryAttribute<Euclidean3D>) node.getAttribute();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 				BoundaryAttribute<Euclidean3D> attribute = (BoundaryAttribute<Euclidean3D>) node.Attribute;
 				if (attribute.PlusOutside != null)
@@ -229,7 +229,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitLeafNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean3D> node)
+//ORIGINAL LINE: public void visitLeafNode(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> node)
 			public virtual void visitLeafNode(BSPTree<Euclidean3D> node)
 			{
 			}
@@ -239,13 +239,13 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 			/// <param name="facet"> boundary facet </param>
 			/// <param name="reversed"> if true, the facet has the inside on its plus side </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void addContribution(final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean3D> facet, final boolean reversed)
+//ORIGINAL LINE: private void addContribution(final mathlib.geometry.partitioning.SubHyperplane<Euclidean3D> facet, final boolean reversed)
 			internal virtual void addContribution(SubHyperplane<Euclidean3D> facet, bool reversed)
 			{
 
 				// extract the vertices of the facet
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") final org.apache.commons.math3.geometry.partitioning.AbstractSubHyperplane<Euclidean3D, org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> absFacet = (org.apache.commons.math3.geometry.partitioning.AbstractSubHyperplane<Euclidean3D, org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D>) facet;
+//ORIGINAL LINE: @SuppressWarnings("unchecked") final mathlib.geometry.partitioning.AbstractSubHyperplane<Euclidean3D, mathlib.geometry.euclidean.twod.Euclidean2D> absFacet = (mathlib.geometry.partitioning.AbstractSubHyperplane<Euclidean3D, mathlib.geometry.euclidean.twod.Euclidean2D>) facet;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 				AbstractSubHyperplane<Euclidean3D, Euclidean2D> absFacet = (AbstractSubHyperplane<Euclidean3D, Euclidean2D>) facet;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -264,15 +264,15 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 						// the facet is seen from the inside,
 						// we need to invert its boundary orientation
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[][] newVertices = new org.apache.commons.math3.geometry.euclidean.twod.Vector2D[vertices.length][];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D[][] newVertices = new mathlib.geometry.euclidean.twod.Vector2D[vertices.length][];
 						Vector2D[][] newVertices = new Vector2D[vertices.Length][];
 						for (int i = 0; i < vertices.Length; ++i)
 						{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[] loop = vertices[i];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D[] loop = vertices[i];
 							Vector2D[] loop = vertices[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[] newLoop = new org.apache.commons.math3.geometry.euclidean.twod.Vector2D[loop.length];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D[] newLoop = new mathlib.geometry.euclidean.twod.Vector2D[loop.length];
 							Vector2D[] newLoop = new Vector2D[loop.Length];
 							if (loop[0] == null)
 							{
@@ -299,7 +299,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 
 					// compute the projection of the facet in the outline plane
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.ArrayList<org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D>> edges = new java.util.ArrayList<org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D>>();
+//ORIGINAL LINE: final java.util.ArrayList<mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.twod.Euclidean2D>> edges = new java.util.ArrayList<mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.twod.Euclidean2D>>();
 					List<SubHyperplane<Euclidean2D>> edges = new List<SubHyperplane<Euclidean2D>>();
 					foreach (Vector2D[] loop in vertices)
 					{
@@ -314,14 +314,14 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 						{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Vector3D current3D = plane.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D>) loop[current]);
+//ORIGINAL LINE: final Vector3D current3D = plane.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.twod.Euclidean2D>) loop[current]);
 							Vector3D current3D = plane.toSpace((Point<Euclidean2D>) loop[current]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D cPoint = new org.apache.commons.math3.geometry.euclidean.twod.Vector2D(current3D.dotProduct(u), current3D.dotProduct(v));
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D cPoint = new mathlib.geometry.euclidean.twod.Vector2D(current3D.dotProduct(u), current3D.dotProduct(v));
 							Vector2D cPoint = new Vector2D(current3D.dotProduct(outerInstance.u), current3D.dotProduct(outerInstance.v));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Line line = new org.apache.commons.math3.geometry.euclidean.twod.Line(pPoint, cPoint, tolerance);
-							org.apache.commons.math3.geometry.euclidean.twod.Line line = new org.apache.commons.math3.geometry.euclidean.twod.Line(pPoint, cPoint, tolerance);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Line line = new mathlib.geometry.euclidean.twod.Line(pPoint, cPoint, tolerance);
+							mathlib.geometry.euclidean.twod.Line line = new mathlib.geometry.euclidean.twod.Line(pPoint, cPoint, tolerance);
 							SubHyperplane<Euclidean2D> edge = line.wholeHyperplane();
 
 							if (closed || (previous != 1))
@@ -329,11 +329,11 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 								// the previous point is a real vertex
 								// it defines one bounding point of the edge
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double angle = line.getAngle() + 0.5 * org.apache.commons.math3.util.FastMath.PI;
+//ORIGINAL LINE: final double angle = line.getAngle() + 0.5 * mathlib.util.FastMath.PI;
 								double angle = line.Angle + 0.5 * FastMath.PI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Line l = new org.apache.commons.math3.geometry.euclidean.twod.Line(pPoint, angle, tolerance);
-								org.apache.commons.math3.geometry.euclidean.twod.Line l = new org.apache.commons.math3.geometry.euclidean.twod.Line(pPoint, angle, tolerance);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Line l = new mathlib.geometry.euclidean.twod.Line(pPoint, angle, tolerance);
+								mathlib.geometry.euclidean.twod.Line l = new mathlib.geometry.euclidean.twod.Line(pPoint, angle, tolerance);
 								edge = edge.Split(l).Plus;
 							}
 
@@ -342,11 +342,11 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 								// the current point is a real vertex
 								// it defines one bounding point of the edge
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double angle = line.getAngle() + 0.5 * org.apache.commons.math3.util.FastMath.PI;
+//ORIGINAL LINE: final double angle = line.getAngle() + 0.5 * mathlib.util.FastMath.PI;
 								double angle = line.Angle + 0.5 * FastMath.PI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Line l = new org.apache.commons.math3.geometry.euclidean.twod.Line(cPoint, angle, tolerance);
-								org.apache.commons.math3.geometry.euclidean.twod.Line l = new org.apache.commons.math3.geometry.euclidean.twod.Line(cPoint, angle, tolerance);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Line l = new mathlib.geometry.euclidean.twod.Line(cPoint, angle, tolerance);
+								mathlib.geometry.euclidean.twod.Line l = new mathlib.geometry.euclidean.twod.Line(cPoint, angle, tolerance);
 								edge = edge.Split(l).Minus;
 							}
 
@@ -359,7 +359,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 						}
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet projectedFacet = new org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet(edges, tolerance);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.PolygonsSet projectedFacet = new mathlib.geometry.euclidean.twod.PolygonsSet(edges, tolerance);
 					PolygonsSet projectedFacet = new PolygonsSet(edges, tolerance);
 
 					// add the contribution of the facet to the global outline

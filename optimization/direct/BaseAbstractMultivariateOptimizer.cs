@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using org.apache.commons.math3.optimization;
-	using org.apache.commons.math3.optimization;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
+	using Incrementor = mathlib.util.Incrementor;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using mathlib.optimization;
+	using mathlib.optimization;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate scalar functions.
@@ -41,7 +41,7 @@ namespace org.apache.commons.math3.optimization.direct
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 2.2 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public abstract class BaseAbstractMultivariateOptimizer<FUNC> : BaseMultivariateOptimizer<FUNC> where FUNC : org.apache.commons.math3.analysis.MultivariateFunction
+	public abstract class BaseAbstractMultivariateOptimizer<FUNC> : BaseMultivariateOptimizer<FUNC> where FUNC : mathlib.analysis.MultivariateFunction
 	{
 		/// <summary>
 		/// Evaluations counter. </summary>
@@ -170,11 +170,11 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
 		/// <returns> the point/value pair giving the optimal value for objective
 		/// function. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if
+		/// <exception cref="mathlib.exception.NullArgumentException"> if
 		/// any argument is {@code null}. </exception>
 		/// @deprecated As of 3.1. Please use
 		/// <seealso cref="#optimize(int,MultivariateFunction,GoalType,OptimizationData[])"/>
@@ -202,7 +202,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// evaluations is exceeded.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.optimization.PointValuePair optimizeInternal(int maxEval, FUNC f, org.apache.commons.math3.optimization.GoalType goalType, org.apache.commons.math3.optimization.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: protected mathlib.optimization.PointValuePair optimizeInternal(int maxEval, FUNC f, mathlib.optimization.GoalType goalType, mathlib.optimization.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException
 		protected internal virtual PointValuePair optimizeInternal(int maxEval, FUNC f, GoalType goalType, params OptimizationData[] optData)
 		{
 			// Set internal state.
@@ -241,7 +241,7 @@ namespace org.apache.commons.math3.optimization.direct
 				if (data is SimpleBounds)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.SimpleBounds bounds = (org.apache.commons.math3.optimization.SimpleBounds) data;
+//ORIGINAL LINE: final mathlib.optimization.SimpleBounds bounds = (mathlib.optimization.SimpleBounds) data;
 					SimpleBounds bounds = (SimpleBounds) data;
 					lowerBound = bounds.Lower;
 					upperBound = bounds.Upper;

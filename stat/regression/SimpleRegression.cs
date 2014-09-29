@@ -17,16 +17,16 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
-	using TDistribution = org.apache.commons.math3.distribution.TDistribution;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using TDistribution = mathlib.distribution.TDistribution;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Estimates an ordinary least squares regression model
@@ -768,7 +768,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <returns> half-width of 95% confidence interval for the slope estimate </returns>
 		/// <exception cref="OutOfRangeException"> if the confidence interval can not be computed. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getSlopeConfidenceInterval() throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double getSlopeConfidenceInterval() throws mathlib.exception.OutOfRangeException
 		public virtual double SlopeConfidenceInterval
 		{
 			get
@@ -808,7 +808,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <returns> half-width of 95% confidence interval for the slope estimate </returns>
 		/// <exception cref="OutOfRangeException"> if the confidence interval can not be computed. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getSlopeConfidenceInterval(final double alpha) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double getSlopeConfidenceInterval(final double alpha) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double getSlopeConfidenceInterval(double alpha)
 		{
@@ -844,7 +844,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <code>Double.NaN</code>.</p>
 		/// </summary>
 		/// <returns> significance level for slope/correlation </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if the significance level can not be computed. </exception>
 		public virtual double Significance
 		{
@@ -904,7 +904,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="NoDataException"> if there is not sufficient data in the model to
 		/// estimate the regression parameters </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RegressionResults regress() throws ModelSpecificationException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public RegressionResults regress() throws ModelSpecificationException, mathlib.exception.NoDataException
 		public virtual RegressionResults regress()
 		{
 			if (hasIntercept_Renamed)
@@ -978,7 +978,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="MathIllegalArgumentException"> if the variablesToInclude array is null or zero length </exception>
 		/// <exception cref="OutOfRangeException"> if a requested variable is not present in model </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RegressionResults regress(int[] variablesToInclude) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public RegressionResults regress(int[] variablesToInclude) throws mathlib.exception.MathIllegalArgumentException
 		public virtual RegressionResults regress(int[] variablesToInclude)
 		{
 			if (variablesToInclude == null || variablesToInclude.Length == 0)
@@ -1042,7 +1042,7 @@ namespace org.apache.commons.math3.stat.regression
 //ORIGINAL LINE: final double _sxy = sumXY + sumX * sumY / n;
 						double _sxy = sumXY + sumX * sumY / n;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double _sse = org.apache.commons.math3.util.FastMath.max(0d, _syy - _sxy * _sxy / _sxx);
+//ORIGINAL LINE: final double _sse = mathlib.util.FastMath.max(0d, _syy - _sxy * _sxy / _sxx);
 						double _sse = FastMath.max(0d, _syy - _sxy * _sxy / _sxx);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double _mse = _sse/((n-1));

@@ -17,15 +17,15 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using org.apache.commons.math3.optimization;
+	using Incrementor = mathlib.util.Incrementor;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// Provide a default implementation for several functions useful to generic

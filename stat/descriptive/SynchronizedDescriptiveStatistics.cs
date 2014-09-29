@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Implementation of
-	/// <seealso cref="org.apache.commons.math3.stat.descriptive.DescriptiveStatistics"/> that
+	/// <seealso cref="mathlib.stat.descriptive.DescriptiveStatistics"/> that
 	/// is safe to use in a multithreaded environment.  Multiple threads can safely
 	/// operate on a single instance without causing runtime exceptions due to race
 	/// conditions.  In effect, this implementation makes modification and access
@@ -55,7 +55,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalArgumentException"> if window size is less than 1 but
 		/// not equal to <seealso cref="#INFINITE_WINDOW"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SynchronizedDescriptiveStatistics(int window) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public SynchronizedDescriptiveStatistics(int window) throws mathlib.exception.MathIllegalArgumentException
 		public SynchronizedDescriptiveStatistics(int window) : base(window)
 		{
 		}
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="original"> the {@code SynchronizedDescriptiveStatistics} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SynchronizedDescriptiveStatistics(SynchronizedDescriptiveStatistics original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public SynchronizedDescriptiveStatistics(SynchronizedDescriptiveStatistics original) throws mathlib.exception.NullArgumentException
 		public SynchronizedDescriptiveStatistics(SynchronizedDescriptiveStatistics original)
 		{
 			copy(original, this);
@@ -183,7 +183,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setWindowSize(int windowSize) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public synchronized void setWindowSize(int windowSize) throws mathlib.exception.MathIllegalArgumentException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -221,7 +221,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="dest"> SynchronizedDescriptiveStatistics to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(SynchronizedDescriptiveStatistics source, SynchronizedDescriptiveStatistics dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(SynchronizedDescriptiveStatistics source, SynchronizedDescriptiveStatistics dest) throws mathlib.exception.NullArgumentException
 		public static void copy(SynchronizedDescriptiveStatistics source, SynchronizedDescriptiveStatistics dest)
 		{
 			MathUtils.checkNotNull(source);

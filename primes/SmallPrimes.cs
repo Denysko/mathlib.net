@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.primes
+namespace mathlib.primes
 {
 
 
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Utility methods to work on primes within the <code>int</code> range.
@@ -121,7 +121,7 @@ namespace org.apache.commons.math3.primes
 			}
 			// here we are sure that n is either a prime or a semi prime
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int bound = (int) org.apache.commons.math3.util.FastMath.sqrt(n);
+//ORIGINAL LINE: final int bound = (int) mathlib.util.FastMath.sqrt(n);
 			int bound = (int) FastMath.sqrt(n);
 			boundedTrialDivision(n, bound, factors);
 			return factors;

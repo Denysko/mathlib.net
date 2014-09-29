@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ml.distance
+namespace mathlib.ml.distance
 {
 
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Calculates the L<sub>&infin;</sub> (max of abs) distance between two points.

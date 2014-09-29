@@ -17,16 +17,16 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.general
+namespace mathlib.optimization.general
 {
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using BrentSolver = org.apache.commons.math3.analysis.solvers.BrentSolver;
-	using UnivariateSolver = org.apache.commons.math3.analysis.solvers.UnivariateSolver;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.optimization;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using BrentSolver = mathlib.analysis.solvers.BrentSolver;
+	using UnivariateSolver = mathlib.analysis.solvers.UnivariateSolver;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.optimization;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Non-linear conjugate gradient optimizer.
@@ -84,7 +84,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// ConjugateGradientFormula#POLAK_RIBIERE}. </param>
 		/// <param name="checker"> Convergence checker. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final ConjugateGradientFormula updateFormula, org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair> checker)
+//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final ConjugateGradientFormula updateFormula, mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointValuePair> checker)
 		public NonLinearConjugateGradientOptimizer(ConjugateGradientFormula updateFormula, ConvergenceChecker<PointValuePair> checker) : this(updateFormula, checker, new BrentSolver(), new IdentityPreconditioner())
 		{
 		}
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// <param name="checker"> Convergence checker. </param>
 		/// <param name="lineSearchSolver"> Solver to use during line search. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final ConjugateGradientFormula updateFormula, org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair> checker, final org.apache.commons.math3.analysis.solvers.UnivariateSolver lineSearchSolver)
+//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final ConjugateGradientFormula updateFormula, mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointValuePair> checker, final mathlib.analysis.solvers.UnivariateSolver lineSearchSolver)
 		public NonLinearConjugateGradientOptimizer(ConjugateGradientFormula updateFormula, ConvergenceChecker<PointValuePair> checker, UnivariateSolver lineSearchSolver) : this(updateFormula, checker, lineSearchSolver, new IdentityPreconditioner())
 		{
 		}
@@ -111,7 +111,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// <param name="lineSearchSolver"> Solver to use during line search. </param>
 		/// <param name="preconditioner"> Preconditioner. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final ConjugateGradientFormula updateFormula, org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair> checker, final org.apache.commons.math3.analysis.solvers.UnivariateSolver lineSearchSolver, final Preconditioner preconditioner)
+//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final ConjugateGradientFormula updateFormula, mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointValuePair> checker, final mathlib.analysis.solvers.UnivariateSolver lineSearchSolver, final Preconditioner preconditioner)
 		public NonLinearConjugateGradientOptimizer(ConjugateGradientFormula updateFormula, ConvergenceChecker<PointValuePair> checker, UnivariateSolver lineSearchSolver, Preconditioner preconditioner) : base(checker)
 		{
 
@@ -152,11 +152,11 @@ namespace org.apache.commons.math3.optimization.general
 		protected internal override PointValuePair doOptimize()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointValuePair> checker = ConvergenceChecker;
 			point = StartPoint;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.GoalType goal = getGoalType();
+//ORIGINAL LINE: final mathlib.optimization.GoalType goal = getGoalType();
 			GoalType goal = GoalType;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int n = point.length;
@@ -200,7 +200,7 @@ namespace org.apache.commons.math3.optimization.general
 
 				// Find the optimal step in the search direction.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.UnivariateFunction lsf = new LineSearchFunction(searchDirection);
+//ORIGINAL LINE: final mathlib.analysis.UnivariateFunction lsf = new LineSearchFunction(searchDirection);
 				UnivariateFunction lsf = new LineSearchFunction(this, searchDirection);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double uB = findUpperBound(lsf, 0, initialStep);
@@ -285,7 +285,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// <returns> b such that f(a) and f(b) have opposite signs. </returns>
 		/// <exception cref="MathIllegalStateException"> if no bracket can be found. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private double findUpperBound(final org.apache.commons.math3.analysis.UnivariateFunction f, final double a, final double h)
+//ORIGINAL LINE: private double findUpperBound(final mathlib.analysis.UnivariateFunction f, final double a, final double h)
 		private double findUpperBound(UnivariateFunction f, double a, double h)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

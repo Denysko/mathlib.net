@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
 
-	using org.apache.commons.math3.geometry;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using mathlib.geometry;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Local tree visitor to compute projection on boundary. </summary>
@@ -29,7 +29,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// @param <T> Type of the sub-space.
 	/// @version $Id: BoundaryProjector.java 1560115 2014-01-21 17:49:13Z luc $
 	/// @since 3.3 </param>
-	internal class BoundaryProjector<S, T> : BSPTreeVisitor<S> where S : org.apache.commons.math3.geometry.Space where T : org.apache.commons.math3.geometry.Space
+	internal class BoundaryProjector<S, T> : BSPTreeVisitor<S> where S : mathlib.geometry.Space where T : mathlib.geometry.Space
 	{
 
 		/// <summary>
@@ -52,7 +52,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// Simple constructor. </summary>
 		/// <param name="original"> original point </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public BoundaryProjector(final org.apache.commons.math3.geometry.Point<S> original)
+//ORIGINAL LINE: public BoundaryProjector(final mathlib.geometry.Point<S> original)
 		public BoundaryProjector(Point<S> original)
 		{
 			this.original = original;
@@ -98,7 +98,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 
 				// project point
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.Point<S> regular = hyperplane.project(original);
+//ORIGINAL LINE: final mathlib.geometry.Point<S> regular = hyperplane.project(original);
 				Point<S> regular = hyperplane.project(original);
 
 				// get boundary parts
@@ -127,7 +127,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 					foreach (Region<T> part in boundaryParts)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.Point<S> spI = singularProjection(regular, hyperplane, part);
+//ORIGINAL LINE: final mathlib.geometry.Point<S> spI = singularProjection(regular, hyperplane, part);
 						Point<S> spI = singularProjection(regular, hyperplane, part);
 						if (spI != null)
 						{
@@ -230,7 +230,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <param name="part"> boundary part </param>
 		/// <returns> true if point lies on the boundary part </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean belongsToPart(final org.apache.commons.math3.geometry.Point<S> point, final Hyperplane<S> hyperplane, final Region<T> part)
+//ORIGINAL LINE: private boolean belongsToPart(final mathlib.geometry.Point<S> point, final Hyperplane<S> hyperplane, final Region<T> part)
 		private bool belongsToPart(Point<S> point, Hyperplane<S> hyperplane, Region<T> part)
 		{
 
@@ -250,7 +250,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <param name="part"> boundary part </param>
 		/// <returns> projection to a singular point of boundary part (may be null) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.geometry.Point<S> singularProjection(final org.apache.commons.math3.geometry.Point<S> point, final Hyperplane<S> hyperplane, final Region<T> part)
+//ORIGINAL LINE: private mathlib.geometry.Point<S> singularProjection(final mathlib.geometry.Point<S> point, final Hyperplane<S> hyperplane, final Region<T> part)
 		private Point<S> singularProjection(Point<S> point, Hyperplane<S> hyperplane, Region<T> part)
 		{
 

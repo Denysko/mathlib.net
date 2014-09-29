@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <p>This class provides a stable normalized random generator. It samples from a stable
@@ -61,7 +61,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="OutOfRangeException"> if {@code alpha <= 0} or {@code alpha > 2}
 		/// or {@code beta < -1} or {@code beta > 1} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public StableRandomGenerator(final RandomGenerator generator, final double alpha, final double beta) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public StableRandomGenerator(final RandomGenerator generator, final double alpha, final double beta) throws mathlib.exception.NullArgumentException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public StableRandomGenerator(RandomGenerator generator, double alpha, double beta)
 		{

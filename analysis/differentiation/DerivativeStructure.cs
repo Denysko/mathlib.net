@@ -16,18 +16,18 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using mathlib;
+	using mathlib;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Class representing both the value and the differentials of a function.
@@ -94,7 +94,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <param name="order"> derivation order </param>
 		/// <exception cref="NumberIsTooLargeException"> if order is too large </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DerivativeStructure(int parameters, int order) : this(DSCompiler.getCompiler(parameters, order))
 		{
@@ -108,7 +108,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="NumberIsTooLargeException"> if order is too large </exception>
 		/// <seealso cref= #DerivativeStructure(int, int, int, double) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order, final double value) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order, final double value) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DerivativeStructure(int parameters, int order, double value) : this(parameters, order)
 		{
@@ -128,7 +128,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="NumberIsTooLargeException"> if {@code index >= parameters}. </exception>
 		/// <seealso cref= #DerivativeStructure(int, int, double) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order, final int index, final double value) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order, final int index, final double value) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DerivativeStructure(int parameters, int order, int index, double value) : this(parameters, order, value)
 		{
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <param name="ds2"> second base (unscaled) derivative structure </param>
 		/// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure(final double a1, final DerivativeStructure ds1, final double a2, final DerivativeStructure ds2) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure(final double a1, final DerivativeStructure ds1, final double a2, final DerivativeStructure ds2) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DerivativeStructure(double a1, DerivativeStructure ds1, double a2, DerivativeStructure ds2) : this(ds1.compiler)
 		{
@@ -174,7 +174,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <param name="ds3"> third base (unscaled) derivative structure </param>
 		/// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure(final double a1, final DerivativeStructure ds1, final double a2, final DerivativeStructure ds2, final double a3, final DerivativeStructure ds3) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure(final double a1, final DerivativeStructure ds1, final double a2, final DerivativeStructure ds2, final double a3, final DerivativeStructure ds3) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DerivativeStructure(double a1, DerivativeStructure ds1, double a2, DerivativeStructure ds2, double a3, DerivativeStructure ds3) : this(ds1.compiler)
 		{
@@ -196,7 +196,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <param name="ds4"> fourth base (unscaled) derivative structure </param>
 		/// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure(final double a1, final DerivativeStructure ds1, final double a2, final DerivativeStructure ds2, final double a3, final DerivativeStructure ds3, final double a4, final DerivativeStructure ds4) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure(final double a1, final DerivativeStructure ds1, final double a2, final DerivativeStructure ds2, final double a3, final DerivativeStructure ds3, final double a4, final DerivativeStructure ds4) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DerivativeStructure(double a1, DerivativeStructure ds1, double a2, DerivativeStructure ds2, double a3, DerivativeStructure ds3, double a4, DerivativeStructure ds4) : this(ds1.compiler)
 		{
@@ -217,7 +217,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="NumberIsTooLargeException"> if order is too large </exception>
 		/// <seealso cref= #getAllDerivatives() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order, final double... derivatives) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public DerivativeStructure(final int parameters, final int order, final double... derivatives) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DerivativeStructure(int parameters, int order, params double[] derivatives) : this(parameters, order)
 		{
@@ -313,7 +313,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="NumberIsTooLargeException"> if sum of derivation orders is larger
 		/// than the instance limits </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getPartialDerivative(final int... orders) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public double getPartialDerivative(final int... orders) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double getPartialDerivative(params int[] orders)
 		{
@@ -352,7 +352,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="DimensionMismatchException"> if number of free parameters
 		/// or orders do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure add(final DerivativeStructure a) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure add(final DerivativeStructure a) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure add(DerivativeStructure a)
 		{
@@ -380,7 +380,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="DimensionMismatchException"> if number of free parameters
 		/// or orders do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure subtract(final DerivativeStructure a) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure subtract(final DerivativeStructure a) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure subtract(DerivativeStructure a)
 		{
@@ -424,7 +424,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="DimensionMismatchException"> if number of free parameters
 		/// or orders do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure multiply(final DerivativeStructure a) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure multiply(final DerivativeStructure a) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure multiply(DerivativeStructure a)
 		{
@@ -459,7 +459,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="DimensionMismatchException"> if number of free parameters
 		/// or orders do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure divide(final DerivativeStructure a) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure divide(final DerivativeStructure a) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure divide(DerivativeStructure a)
 		{
@@ -490,7 +490,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure remainder(final DerivativeStructure a) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure remainder(final DerivativeStructure a) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure remainder(DerivativeStructure a)
 		{
@@ -649,7 +649,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure hypot(final DerivativeStructure y) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure hypot(final DerivativeStructure y) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure hypot(DerivativeStructure y)
 		{
@@ -729,7 +729,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static DerivativeStructure hypot(final DerivativeStructure x, final DerivativeStructure y) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static DerivativeStructure hypot(final DerivativeStructure x, final DerivativeStructure y) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static DerivativeStructure hypot(DerivativeStructure x, DerivativeStructure y)
 		{
@@ -745,7 +745,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="DimensionMismatchException"> if the number of derivatives
 		/// in the array is not equal to <seealso cref="#getOrder() order"/> + 1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure compose(final double... f) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure compose(final double... f) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure compose(params double[] f)
 		{
@@ -909,7 +909,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure pow(final DerivativeStructure e) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure pow(final DerivativeStructure e) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure pow(DerivativeStructure e)
 		{
@@ -1068,7 +1068,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// @since 3.2
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure atan2(final DerivativeStructure x) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure atan2(final DerivativeStructure x) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure atan2(DerivativeStructure x)
 		{
@@ -1089,7 +1089,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static DerivativeStructure atan2(final DerivativeStructure y, final DerivativeStructure x) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static DerivativeStructure atan2(final DerivativeStructure y, final DerivativeStructure x) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static DerivativeStructure atan2(DerivativeStructure y, DerivativeStructure x)
 		{
@@ -1210,7 +1210,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <returns> value of the Taylor expansion at x + &Delta;x, y + &Delta;y, ... </returns>
 		/// <exception cref="MathArithmeticException"> if factorials becomes too large </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double taylor(final double... delta) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public double taylor(final double... delta) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double taylor(params double[] delta)
 		{
@@ -1223,7 +1223,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure[] a, final DerivativeStructure[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure[] a, final DerivativeStructure[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(DerivativeStructure[] a, DerivativeStructure[] b)
 		{
@@ -1244,7 +1244,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 				bDouble[i] = b[i].Value;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(aDouble, bDouble);
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(aDouble, bDouble);
 			double accurateValue = MathArrays.linearCombination(aDouble, bDouble);
 
 			// compute a simple value, with all partial derivatives
@@ -1269,7 +1269,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final double[] a, final DerivativeStructure[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final double[] a, final DerivativeStructure[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(double[] a, DerivativeStructure[] b)
 		{
@@ -1283,7 +1283,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 				bDouble[i] = b[i].Value;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(a, bDouble);
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(a, bDouble);
 			double accurateValue = MathArrays.linearCombination(a, bDouble);
 
 			// compute a simple value, with all partial derivatives
@@ -1308,14 +1308,14 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure a1, final DerivativeStructure b1, final DerivativeStructure a2, final DerivativeStructure b2) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure a1, final DerivativeStructure b1, final DerivativeStructure a2, final DerivativeStructure b2) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(DerivativeStructure a1, DerivativeStructure b1, DerivativeStructure a2, DerivativeStructure b2)
 		{
 
 			// compute an accurate value, taking care of cancellations
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(a1.getValue(), b1.getValue(), a2.getValue(), b2.getValue());
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(a1.getValue(), b1.getValue(), a2.getValue(), b2.getValue());
 			double accurateValue = MathArrays.linearCombination(a1.Value, b1.Value, a2.Value, b2.Value);
 
 			// compute a simple value, with all partial derivatives
@@ -1338,14 +1338,14 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final double a1, final DerivativeStructure b1, final double a2, final DerivativeStructure b2) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final double a1, final DerivativeStructure b1, final double a2, final DerivativeStructure b2) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(double a1, DerivativeStructure b1, double a2, DerivativeStructure b2)
 		{
 
 			// compute an accurate value, taking care of cancellations
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(a1, b1.getValue(), a2, b2.getValue());
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(a1, b1.getValue(), a2, b2.getValue());
 			double accurateValue = MathArrays.linearCombination(a1, b1.Value, a2, b2.Value);
 
 			// compute a simple value, with all partial derivatives
@@ -1368,14 +1368,14 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure a1, final DerivativeStructure b1, final DerivativeStructure a2, final DerivativeStructure b2, final DerivativeStructure a3, final DerivativeStructure b3) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure a1, final DerivativeStructure b1, final DerivativeStructure a2, final DerivativeStructure b2, final DerivativeStructure a3, final DerivativeStructure b3) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(DerivativeStructure a1, DerivativeStructure b1, DerivativeStructure a2, DerivativeStructure b2, DerivativeStructure a3, DerivativeStructure b3)
 		{
 
 			// compute an accurate value, taking care of cancellations
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(a1.getValue(), b1.getValue(), a2.getValue(), b2.getValue(), a3.getValue(), b3.getValue());
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(a1.getValue(), b1.getValue(), a2.getValue(), b2.getValue(), a3.getValue(), b3.getValue());
 			double accurateValue = MathArrays.linearCombination(a1.Value, b1.Value, a2.Value, b2.Value, a3.Value, b3.Value);
 
 			// compute a simple value, with all partial derivatives
@@ -1398,14 +1398,14 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final double a1, final DerivativeStructure b1, final double a2, final DerivativeStructure b2, final double a3, final DerivativeStructure b3) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final double a1, final DerivativeStructure b1, final double a2, final DerivativeStructure b2, final double a3, final DerivativeStructure b3) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(double a1, DerivativeStructure b1, double a2, DerivativeStructure b2, double a3, DerivativeStructure b3)
 		{
 
 			// compute an accurate value, taking care of cancellations
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(a1, b1.getValue(), a2, b2.getValue(), a3, b3.getValue());
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(a1, b1.getValue(), a2, b2.getValue(), a3, b3.getValue());
 			double accurateValue = MathArrays.linearCombination(a1, b1.Value, a2, b2.Value, a3, b3.Value);
 
 			// compute a simple value, with all partial derivatives
@@ -1428,14 +1428,14 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure a1, final DerivativeStructure b1, final DerivativeStructure a2, final DerivativeStructure b2, final DerivativeStructure a3, final DerivativeStructure b3, final DerivativeStructure a4, final DerivativeStructure b4) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final DerivativeStructure a1, final DerivativeStructure b1, final DerivativeStructure a2, final DerivativeStructure b2, final DerivativeStructure a3, final DerivativeStructure b3, final DerivativeStructure a4, final DerivativeStructure b4) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(DerivativeStructure a1, DerivativeStructure b1, DerivativeStructure a2, DerivativeStructure b2, DerivativeStructure a3, DerivativeStructure b3, DerivativeStructure a4, DerivativeStructure b4)
 		{
 
 			// compute an accurate value, taking care of cancellations
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(a1.getValue(), b1.getValue(), a2.getValue(), b2.getValue(), a3.getValue(), b3.getValue(), a4.getValue(), b4.getValue());
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(a1.getValue(), b1.getValue(), a2.getValue(), b2.getValue(), a3.getValue(), b3.getValue(), a4.getValue(), b4.getValue());
 			double accurateValue = MathArrays.linearCombination(a1.Value, b1.Value, a2.Value, b2.Value, a3.Value, b3.Value, a4.Value, b4.Value);
 
 			// compute a simple value, with all partial derivatives
@@ -1458,14 +1458,14 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// or orders do not match
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure linearCombination(final double a1, final DerivativeStructure b1, final double a2, final DerivativeStructure b2, final double a3, final DerivativeStructure b3, final double a4, final DerivativeStructure b4) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DerivativeStructure linearCombination(final double a1, final DerivativeStructure b1, final double a2, final DerivativeStructure b2, final double a3, final DerivativeStructure b3, final double a4, final DerivativeStructure b4) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure linearCombination(double a1, DerivativeStructure b1, double a2, DerivativeStructure b2, double a3, DerivativeStructure b3, double a4, DerivativeStructure b4)
 		{
 
 			// compute an accurate value, taking care of cancellations
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double accurateValue = org.apache.commons.math3.util.MathArrays.linearCombination(a1, b1.getValue(), a2, b2.getValue(), a3, b3.getValue(), a4, b4.getValue());
+//ORIGINAL LINE: final double accurateValue = mathlib.util.MathArrays.linearCombination(a1, b1.getValue(), a2, b2.getValue(), a3, b3.getValue(), a4, b4.getValue());
 			double accurateValue = MathArrays.linearCombination(a1, b1.Value, a2, b2.Value, a3, b3.Value, a4, b4.Value);
 
 			// compute a simple value, with all partial derivatives

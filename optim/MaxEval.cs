@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
 
 	/// <summary>
 	/// Maximum number of evaluations of the function to be optimized.

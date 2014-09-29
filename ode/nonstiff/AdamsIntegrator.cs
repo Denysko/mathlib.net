@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
 
 
 	/// <summary>
@@ -53,7 +53,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// <param name="scalRelativeTolerance"> allowed relative error </param>
 		/// <exception cref="NumberIsTooSmallException"> if order is 1 or less </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public AdamsIntegrator(final String name, final int nSteps, final int order, final double minStep, final double maxStep, final double scalAbsoluteTolerance, final double scalRelativeTolerance) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public AdamsIntegrator(final String name, final int nSteps, final int order, final double minStep, final double maxStep, final double scalAbsoluteTolerance, final double scalRelativeTolerance) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public AdamsIntegrator(string name, int nSteps, int order, double minStep, double maxStep, double scalAbsoluteTolerance, double scalRelativeTolerance) : base(name, nSteps, order, minStep, maxStep, scalAbsoluteTolerance, scalRelativeTolerance)
 		{
@@ -85,14 +85,14 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public abstract void integrate(final org.apache.commons.math3.ode.ExpandableStatefulODE equations, final double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException;
+//ORIGINAL LINE: @Override public abstract void integrate(final mathlib.ode.ExpandableStatefulODE equations, final double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException;
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override abstract void integrate(ExpandableStatefulODE equations, double t);
 
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override protected org.apache.commons.math3.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot)
+//ORIGINAL LINE: @Override protected mathlib.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot)
 		protected internal override Array2DRowRealMatrix initializeHighOrderDerivatives(double h, double[] t, double[][] y, double[][] yDot)
 		{
 			return transformer.initializeHighOrderDerivatives(h, t, y, yDot);
@@ -110,7 +110,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// <returns> updated high order derivatives </returns>
 		/// <seealso cref= #updateHighOrderDerivativesPhase2(double[], double[], Array2DRowRealMatrix) </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.linear.Array2DRowRealMatrix updateHighOrderDerivativesPhase1(final org.apache.commons.math3.linear.Array2DRowRealMatrix highOrder)
+//ORIGINAL LINE: public mathlib.linear.Array2DRowRealMatrix updateHighOrderDerivativesPhase1(final mathlib.linear.Array2DRowRealMatrix highOrder)
 		public virtual Array2DRowRealMatrix updateHighOrderDerivativesPhase1(Array2DRowRealMatrix highOrder)
 		{
 			return transformer.updateHighOrderDerivativesPhase1(highOrder);
@@ -130,7 +130,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// (h<sup>2</sup>/2 y'', ... h<sup>k</sup>/k! y(k)) </param>
 		/// <seealso cref= #updateHighOrderDerivativesPhase1(Array2DRowRealMatrix) </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void updateHighOrderDerivativesPhase2(final double[] start, final double[] end, final org.apache.commons.math3.linear.Array2DRowRealMatrix highOrder)
+//ORIGINAL LINE: public void updateHighOrderDerivativesPhase2(final double[] start, final double[] end, final mathlib.linear.Array2DRowRealMatrix highOrder)
 		public virtual void updateHighOrderDerivativesPhase2(double[] start, double[] end, Array2DRowRealMatrix highOrder)
 		{
 			transformer.updateHighOrderDerivativesPhase2(start, end, highOrder);

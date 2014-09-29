@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
-	using ChiSquaredDistribution = org.apache.commons.math3.distribution.ChiSquaredDistribution;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using ChiSquaredDistribution = mathlib.distribution.ChiSquaredDistribution;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Implements Chi-Square test statistics.
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// not strictly positive </exception>
 		/// <exception cref="DimensionMismatchException"> if the arrays length is less than 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double chiSquare(final double[] expected, final long[] observed) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double chiSquare(final double[] expected, final long[] observed) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double chiSquare(double[] expected, long[] observed)
 		{
@@ -167,7 +167,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="DimensionMismatchException"> if the arrays length is less than 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double chiSquareTest(final double[] expected, final long[] observed) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double chiSquareTest(final double[] expected, final long[] observed) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double chiSquareTest(double[] expected, long[] observed)
 		{
@@ -215,7 +215,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean chiSquareTest(final double[] expected, final long[] observed, final double alpha) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean chiSquareTest(final double[] expected, final long[] observed, final double alpha) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool chiSquareTest(double[] expected, long[] observed, double alpha)
 		{
@@ -256,7 +256,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="DimensionMismatchException"> if the array is not rectangular </exception>
 		/// <exception cref="NotPositiveException"> if {@code counts} has negative entries </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double chiSquare(final long[][] counts) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double chiSquare(final long[][] counts) throws mathlib.exception.NullArgumentException, mathlib.exception.NotPositiveException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double chiSquare(long[][] counts)
 		{
@@ -325,7 +325,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NotPositiveException"> if {@code counts} has negative entries </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double chiSquareTest(final long[][] counts) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double chiSquareTest(final long[][] counts) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double chiSquareTest(long[][] counts)
 		{
@@ -376,7 +376,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean chiSquareTest(final long[][] counts, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean chiSquareTest(final long[][] counts, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool chiSquareTest(long[][] counts, double alpha)
 		{
@@ -428,7 +428,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// for both arrays
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double chiSquareDataSetsComparison(long[] observed1, long[] observed2) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public double chiSquareDataSetsComparison(long[] observed1, long[] observed2) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.ZeroException
 		public virtual double chiSquareDataSetsComparison(long[] observed1, long[] observed2)
 		{
 
@@ -538,7 +538,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double chiSquareTestDataSetsComparison(long[] observed1, long[] observed2) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.ZeroException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double chiSquareTestDataSetsComparison(long[] observed1, long[] observed2) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.ZeroException, mathlib.exception.MaxCountExceededException
 		public virtual double chiSquareTestDataSetsComparison(long[] observed1, long[] observed2)
 		{
 
@@ -590,7 +590,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if an error occurs performing the test
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean chiSquareTestDataSetsComparison(final long[] observed1, final long[] observed2, final double alpha) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.ZeroException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean chiSquareTestDataSetsComparison(final long[] observed1, final long[] observed2, final double alpha) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.ZeroException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool chiSquareTestDataSetsComparison(long[] observed1, long[] observed2, double alpha)
 		{
@@ -612,7 +612,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="DimensionMismatchException"> if the array is not valid </exception>
 		/// <exception cref="NotPositiveException"> if the array contains any negative entries </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkArray(final long[][] in) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: private void checkArray(final long[][] in) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkArray(long[][] @in)
 		{

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
-	using LUDecomposition = org.apache.commons.math3.linear.LUDecomposition;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
+	using LUDecomposition = mathlib.linear.LUDecomposition;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using RealVector = mathlib.linear.RealVector;
 
 	/// <summary>
 	/// The GLS implementation of multiple linear regression.

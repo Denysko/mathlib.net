@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Tournament selection scheme. Each of the two selected chromosomes is selected
@@ -60,7 +60,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the selected chromosomes. </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the tournament arity is bigger than the population size </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ChromosomePair select(final Population population) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public ChromosomePair select(final Population population) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual ChromosomePair select(Population population)
 		{
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the selected chromosome. </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the tournament arity is bigger than the population size </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private Chromosome tournament(final ListPopulation population) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private Chromosome tournament(final ListPopulation population) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private Chromosome tournament(ListPopulation population)
 		{

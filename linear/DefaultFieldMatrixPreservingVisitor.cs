@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using org.apache.commons.math3;
+	using mathlib;
 
 	/// <summary>
 	/// Default implementation of the <seealso cref="FieldMatrixPreservingVisitor"/> interface.
@@ -30,7 +30,7 @@ namespace org.apache.commons.math3.linear
 	/// @param <T> the type of the field elements
 	/// @version $Id: DefaultFieldMatrixPreservingVisitor.java 1416643 2012-12-03 19:37:14Z tn $
 	/// @since 2.0 </param>
-	public class DefaultFieldMatrixPreservingVisitor<T> : FieldMatrixPreservingVisitor<T> where T : org.apache.commons.math3.FieldElement<T>
+	public class DefaultFieldMatrixPreservingVisitor<T> : FieldMatrixPreservingVisitor<T> where T : mathlib.FieldElement<T>
 	{
 		/// <summary>
 		/// Zero element of the field. </summary>

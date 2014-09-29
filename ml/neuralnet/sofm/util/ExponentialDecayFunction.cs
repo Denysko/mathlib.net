@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet.sofm.util
+namespace mathlib.ml.neuralnet.sofm.util
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Exponential decay function: <code>a e<sup>-x / b</sup></code>,

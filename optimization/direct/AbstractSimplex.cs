@@ -18,18 +18,18 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// This class implements the simplex concept.
@@ -238,10 +238,10 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="evaluationFunction"> Evaluation function. </param>
 		/// <param name="comparator"> Comparator to use to sort simplex vertices from best
 		/// to worst. </param>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the algorithm fails to converge. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public abstract void iterate(final org.apache.commons.math3.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<org.apache.commons.math3.optimization.PointValuePair> comparator);
+//ORIGINAL LINE: public abstract void iterate(final mathlib.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<mathlib.optimization.PointValuePair> comparator);
 		public abstract void iterate(MultivariateFunction evaluationFunction, IComparer<PointValuePair> comparator);
 
 		/// <summary>
@@ -285,17 +285,17 @@ namespace org.apache.commons.math3.optimization.direct
 		/// </summary>
 		/// <param name="evaluationFunction"> Evaluation function. </param>
 		/// <param name="comparator"> Comparator to use to sort simplex vertices from best to worst. </param>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void evaluate(final org.apache.commons.math3.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<org.apache.commons.math3.optimization.PointValuePair> comparator)
+//ORIGINAL LINE: public void evaluate(final mathlib.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<mathlib.optimization.PointValuePair> comparator)
 		public virtual void evaluate(MultivariateFunction evaluationFunction, IComparer<PointValuePair> comparator)
 		{
 			// Evaluate the objective function at all non-evaluated simplex points.
 			for (int i = 0; i < simplex.Length; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.PointValuePair vertex = simplex[i];
+//ORIGINAL LINE: final mathlib.optimization.PointValuePair vertex = simplex[i];
 				PointValuePair vertex = simplex[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] point = vertex.getPointRef();
@@ -317,7 +317,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="comparator"> Comparator to use for sorting the simplex vertices
 		/// from best to worst. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected void replaceWorstPoint(org.apache.commons.math3.optimization.PointValuePair pointValuePair, final java.util.Comparator<org.apache.commons.math3.optimization.PointValuePair> comparator)
+//ORIGINAL LINE: protected void replaceWorstPoint(mathlib.optimization.PointValuePair pointValuePair, final java.util.Comparator<mathlib.optimization.PointValuePair> comparator)
 		protected internal virtual void replaceWorstPoint(PointValuePair pointValuePair, IComparer<PointValuePair> comparator)
 		{
 			for (int i = 0; i < dimension; i++)
@@ -341,7 +341,7 @@ namespace org.apache.commons.math3.optimization.direct
 			get
 			{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.optimization.PointValuePair[] copy = new org.apache.commons.math3.optimization.PointValuePair[simplex.length];
+	//ORIGINAL LINE: final mathlib.optimization.PointValuePair[] copy = new mathlib.optimization.PointValuePair[simplex.length];
 				PointValuePair[] copy = new PointValuePair[simplex.Length];
 				Array.Copy(simplex, 0, copy, 0, simplex.Length);
 				return copy;

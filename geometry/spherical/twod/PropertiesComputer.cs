@@ -16,16 +16,16 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.twod
+namespace mathlib.geometry.spherical.twod
 {
 
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using Vector3D = org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using Vector3D = mathlib.geometry.euclidean.threed.Vector3D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Visitor computing geometrical properties.
@@ -67,16 +67,16 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node)
-		public virtual org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Sphere2D> node)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final mathlib.geometry.partitioning.BSPTree<Sphere2D> node)
+		public virtual mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Sphere2D> node)
 		{
-			return org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
+			return mathlib.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
 		}
 
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitInternalNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node)
+//ORIGINAL LINE: public void visitInternalNode(final mathlib.geometry.partitioning.BSPTree<Sphere2D> node)
 		public virtual void visitInternalNode(BSPTree<Sphere2D> node)
 		{
 			// nothing to do here
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitLeafNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node)
+//ORIGINAL LINE: public void visitLeafNode(final mathlib.geometry.partitioning.BSPTree<Sphere2D> node)
 		public virtual void visitLeafNode(BSPTree<Sphere2D> node)
 		{
 			if ((bool?) node.Attribute)
@@ -111,7 +111,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 //ORIGINAL LINE: final double area = convexCellArea(boundary.get(0));
 				double area = convexCellArea(boundary[0]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Vector3D barycenter = convexCellBarycenter(boundary.get(0));
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Vector3D barycenter = convexCellBarycenter(boundary.get(0));
 				Vector3D barycenter = convexCellBarycenter(boundary[0]);
 				convexCellsInsidePoints.Add(barycenter);
 
@@ -140,13 +140,13 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 
 				// find path interior angle at vertex
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Vector3D previousPole = e.getCircle().getPole();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Vector3D previousPole = e.getCircle().getPole();
 				Vector3D previousPole = e.Circle.Pole;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Vector3D nextPole = e.getEnd().getOutgoing().getCircle().getPole();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Vector3D nextPole = e.getEnd().getOutgoing().getCircle().getPole();
 				Vector3D nextPole = e.End.Outgoing.Circle.Pole;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Vector3D point = e.getEnd().getLocation().getVector();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Vector3D point = e.getEnd().getLocation().getVector();
 				Vector3D point = e.End.Location.Vector;
 				double alpha = FastMath.atan2(Vector3D.dotProduct(nextPole, Vector3D.crossProduct(point, previousPole)), -Vector3D.dotProduct(nextPole, previousPole));
 				if (alpha < 0)
@@ -170,7 +170,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="start"> start vertex of the convex cell boundary </param>
 		/// <returns> barycenter </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.geometry.euclidean.threed.Vector3D convexCellBarycenter(final Vertex start)
+//ORIGINAL LINE: private mathlib.geometry.euclidean.threed.Vector3D convexCellBarycenter(final Vertex start)
 		private Vector3D convexCellBarycenter(Vertex start)
 		{
 

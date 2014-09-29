@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.vector
+namespace mathlib.optim.nonlinear.vector
 {
 
-	using MultivariateMatrixFunction = org.apache.commons.math3.analysis.MultivariateMatrixFunction;
-	using org.apache.commons.math3.optim;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
+	using MultivariateMatrixFunction = mathlib.analysis.MultivariateMatrixFunction;
+	using mathlib.optim;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate vector
@@ -32,13 +32,13 @@ namespace org.apache.commons.math3.optim.nonlinear.vector
 	/// functions while the columns iterate on the parameters; thus, the numbers
 	/// of rows is equal to the dimension of the <seealso cref="Target"/> while the
 	/// number of columns is equal to the dimension of the
-	/// <seealso cref="org.apache.commons.math3.optim.InitialGuess InitialGuess"/>.
+	/// <seealso cref="mathlib.optim.InitialGuess InitialGuess"/>.
 	/// 
 	/// @version $Id: JacobianMultivariateVectorOptimizer.java 1515242 2013-08-18 23:27:29Z erans $
 	/// @since 3.1 </summary>
 	/// @deprecated All classes and interfaces in this package are deprecated.
 	/// The optimizers that were provided here were moved to the
-	/// <seealso cref="org.apache.commons.math3.fitting.leastsquares"/> package
+	/// <seealso cref="mathlib.fitting.leastsquares"/> package
 	/// (cf. MATH-1008). 
 	[Obsolete("All classes and interfaces in this package are deprecated.")]
 	public abstract class JacobianMultivariateVectorOptimizer : MultivariateVectorOptimizer
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector
 		/// <exception cref="DimensionMismatchException"> if the initial guess, target, and weight
 		/// arguments have inconsistent dimensions. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointVectorValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public mathlib.optim.PointVectorValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.DimensionMismatchException
 		public override PointVectorValuePair optimize(params OptimizationData[] optData)
 		{
 			// Set up base class and perform computation.

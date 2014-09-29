@@ -17,20 +17,20 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
 
-	using BigFraction = org.apache.commons.math3.fraction.BigFraction;
-	using org.apache.commons.math3.linear;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using org.apache.commons.math3.linear;
-	using org.apache.commons.math3.linear;
-	using org.apache.commons.math3.linear;
-	using org.apache.commons.math3.linear;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using QRDecomposition = org.apache.commons.math3.linear.QRDecomposition;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using BigFraction = mathlib.fraction.BigFraction;
+	using mathlib.linear;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using mathlib.linear;
+	using mathlib.linear;
+	using mathlib.linear;
+	using mathlib.linear;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using QRDecomposition = mathlib.linear.QRDecomposition;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Transformer to Nordsieck vectors for Adams integrators.
@@ -236,12 +236,12 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// (excluding the one being computed) </param>
 		/// <returns> P matrix </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.linear.FieldMatrix<org.apache.commons.math3.fraction.BigFraction> buildP(final int nSteps)
+//ORIGINAL LINE: private mathlib.linear.FieldMatrix<mathlib.fraction.BigFraction> buildP(final int nSteps)
 		private FieldMatrix<BigFraction> buildP(int nSteps)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction[][] pData = new org.apache.commons.math3.fraction.BigFraction[nSteps][nSteps];
+//ORIGINAL LINE: final mathlib.fraction.BigFraction[][] pData = new mathlib.fraction.BigFraction[nSteps][nSteps];
 //JAVA TO C# CONVERTER NOTE: The following call to the 'RectangularArrays' helper class reproduces the rectangular array initialization that is automatic in Java:
 //ORIGINAL LINE: BigFraction[][] pData = new BigFraction[nSteps][nSteps];
 			BigFraction[][] pData = RectangularArrays.ReturnRectangularBigFractionArray(nSteps, nSteps);
@@ -250,7 +250,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 			{
 				// build the P matrix elements from Taylor series formulas
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction[] pI = pData[i];
+//ORIGINAL LINE: final mathlib.fraction.BigFraction[] pI = pData[i];
 				BigFraction[] pI = pData[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int factor = -(i + 1);
@@ -276,7 +276,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// <returns> Nordieck vector at first step (h<sup>2</sup>/2 y''<sub>n</sub>,
 		/// h<sup>3</sup>/6 y'''<sub>n</sub> ... h<sup>k</sup>/k! y<sup>(k)</sup><sub>n</sub>) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot)
+//ORIGINAL LINE: public mathlib.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot)
 		public virtual Array2DRowRealMatrix initializeHighOrderDerivatives(double h, double[] t, double[][] y, double[][] yDot)
 		{
 
@@ -368,7 +368,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// <returns> updated high order derivatives </returns>
 		/// <seealso cref= #updateHighOrderDerivativesPhase2(double[], double[], Array2DRowRealMatrix) </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.linear.Array2DRowRealMatrix updateHighOrderDerivativesPhase1(final org.apache.commons.math3.linear.Array2DRowRealMatrix highOrder)
+//ORIGINAL LINE: public mathlib.linear.Array2DRowRealMatrix updateHighOrderDerivativesPhase1(final mathlib.linear.Array2DRowRealMatrix highOrder)
 		public virtual Array2DRowRealMatrix updateHighOrderDerivativesPhase1(Array2DRowRealMatrix highOrder)
 		{
 			return update.multiply(highOrder);
@@ -388,7 +388,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// (h<sup>2</sup>/2 y'', ... h<sup>k</sup>/k! y(k)) </param>
 		/// <seealso cref= #updateHighOrderDerivativesPhase1(Array2DRowRealMatrix) </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void updateHighOrderDerivativesPhase2(final double[] start, final double[] end, final org.apache.commons.math3.linear.Array2DRowRealMatrix highOrder)
+//ORIGINAL LINE: public void updateHighOrderDerivativesPhase2(final double[] start, final double[] end, final mathlib.linear.Array2DRowRealMatrix highOrder)
 		public virtual void updateHighOrderDerivativesPhase2(double[] start, double[] end, Array2DRowRealMatrix highOrder)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

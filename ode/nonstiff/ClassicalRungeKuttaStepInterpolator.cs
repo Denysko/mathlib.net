@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
 
 	/// <summary>
 	/// This class implements a step interpolator for the classical fourth

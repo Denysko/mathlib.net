@@ -17,7 +17,7 @@
 /// <summary>
 /// Summary statistics based on ranks.
 /// </summary>
-namespace org.apache.commons.math3.stat.descriptive.rank
+namespace mathlib.stat.descriptive.rank
 {
 
 }

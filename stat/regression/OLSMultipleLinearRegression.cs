@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using LUDecomposition = org.apache.commons.math3.linear.LUDecomposition;
-	using QRDecomposition = org.apache.commons.math3.linear.QRDecomposition;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using SecondMoment = org.apache.commons.math3.stat.descriptive.moment.SecondMoment;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using LUDecomposition = mathlib.linear.LUDecomposition;
+	using QRDecomposition = mathlib.linear.QRDecomposition;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using SecondMoment = mathlib.stat.descriptive.moment.SecondMoment;
 
 	/// <summary>
 	/// <p>Implements ordinary least squares (OLS) to estimate the parameters of a
@@ -92,7 +92,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="MathIllegalArgumentException"> if the x and y array data are not
 		///             compatible for the regression </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void newSampleData(double[] y, double[][] x) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void newSampleData(double[] y, double[][] x) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void newSampleData(double[] y, double[][] x)
 		{
 			validateSampleData(x, y);
@@ -178,7 +178,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <seealso cref= #isNoIntercept()
 		/// @since 2.2 </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double calculateTotalSumOfSquares() throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double calculateTotalSumOfSquares() throws mathlib.exception.MathIllegalArgumentException
 		public virtual double calculateTotalSumOfSquares()
 		{
 			if (NoIntercept)
@@ -199,7 +199,7 @@ namespace org.apache.commons.math3.stat.regression
 		public virtual double calculateResidualSumOfSquares()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealVector residuals = calculateResiduals();
+//ORIGINAL LINE: final mathlib.linear.RealVector residuals = calculateResiduals();
 			RealVector residuals = calculateResiduals();
 			// No advertised DME, args are valid
 			return residuals.dotProduct(residuals);
@@ -217,7 +217,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// not contain at least 3 observations
 		/// @since 2.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double calculateRSquared() throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double calculateRSquared() throws mathlib.exception.MathIllegalArgumentException
 		public virtual double calculateRSquared()
 		{
 			return 1 - calculateResidualSumOfSquares() / calculateTotalSumOfSquares();
@@ -241,7 +241,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <seealso cref= #isNoIntercept()
 		/// @since 2.2 </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double calculateAdjustedRSquared() throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double calculateAdjustedRSquared() throws mathlib.exception.MathIllegalArgumentException
 		public virtual double calculateAdjustedRSquared()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

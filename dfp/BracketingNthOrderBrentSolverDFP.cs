@@ -16,17 +16,17 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.dfp
+namespace mathlib.dfp
 {
 
 
-	using AllowedSolution = org.apache.commons.math3.analysis.solvers.AllowedSolution;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using AllowedSolution = mathlib.analysis.solvers.AllowedSolution;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using Incrementor = mathlib.util.Incrementor;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class implements a modification of the <a
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.dfp
 		/// <param name="maximalOrder"> maximal order. </param>
 		/// <exception cref="NumberIsTooSmallException"> if maximal order is lower than 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BracketingNthOrderBrentSolverDFP(final Dfp relativeAccuracy, final Dfp absoluteAccuracy, final Dfp functionValueAccuracy, final int maximalOrder) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public BracketingNthOrderBrentSolverDFP(final Dfp relativeAccuracy, final Dfp absoluteAccuracy, final Dfp functionValueAccuracy, final int maximalOrder) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BracketingNthOrderBrentSolverDFP(Dfp relativeAccuracy, Dfp absoluteAccuracy, Dfp functionValueAccuracy, int maximalOrder)
 		{
@@ -181,7 +181,7 @@ namespace org.apache.commons.math3.dfp
 		/// <exception cref="NullArgumentException"> if f is null. </exception>
 		/// <exception cref="NoBracketingException"> if root cannot be bracketed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Dfp solve(final int maxEval, final UnivariateDfpFunction f, final Dfp min, final Dfp max, final org.apache.commons.math3.analysis.solvers.AllowedSolution allowedSolution) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public Dfp solve(final int maxEval, final UnivariateDfpFunction f, final Dfp min, final Dfp max, final mathlib.analysis.solvers.AllowedSolution allowedSolution) throws mathlib.exception.NullArgumentException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Dfp solve(int maxEval, UnivariateDfpFunction f, Dfp min, Dfp max, AllowedSolution allowedSolution)
 		{
@@ -205,7 +205,7 @@ namespace org.apache.commons.math3.dfp
 		/// <exception cref="NullArgumentException"> if f is null. </exception>
 		/// <exception cref="NoBracketingException"> if root cannot be bracketed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Dfp solve(final int maxEval, final UnivariateDfpFunction f, final Dfp min, final Dfp max, final Dfp startValue, final org.apache.commons.math3.analysis.solvers.AllowedSolution allowedSolution) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public Dfp solve(final int maxEval, final UnivariateDfpFunction f, final Dfp min, final Dfp max, final Dfp startValue, final mathlib.analysis.solvers.AllowedSolution allowedSolution) throws mathlib.exception.NullArgumentException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Dfp solve(int maxEval, UnivariateDfpFunction f, Dfp min, Dfp max, Dfp startValue, AllowedSolution allowedSolution)
 		{

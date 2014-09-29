@@ -17,12 +17,12 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.sampling
+namespace mathlib.ode.sampling
 {
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// This class wraps an object implementing <seealso cref="FixedStepHandler"/>
@@ -218,7 +218,7 @@ namespace org.apache.commons.math3.ode.sampling
 		/// <exception cref="MaxCountExceededException"> if the interpolator throws one because
 		/// the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void handleStep(final StepInterpolator interpolator, final boolean isLast) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public void handleStep(final StepInterpolator interpolator, final boolean isLast) throws mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void handleStep(StepInterpolator interpolator, bool isLast)
 		{
@@ -310,7 +310,7 @@ namespace org.apache.commons.math3.ode.sampling
 		/// <exception cref="MaxCountExceededException"> if the interpolator throws one because
 		/// the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void storeStep(StepInterpolator interpolator, double t) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: private void storeStep(StepInterpolator interpolator, double t) throws mathlib.exception.MaxCountExceededException
 		private void storeStep(StepInterpolator interpolator, double t)
 		{
 			lastTime = t;

@@ -17,19 +17,19 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Cache-friendly implementation of RealMatrix using a flat arrays to store
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NotStrictlyPositiveException"> if row or column dimension is not
 		/// positive. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BlockRealMatrix(final int rows, final int columns) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public BlockRealMatrix(final int rows, final int columns) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BlockRealMatrix(int rows, int columns) : base(rows, columns)
 		{
@@ -133,7 +133,7 @@ namespace org.apache.commons.math3.linear
 		/// positive. </exception>
 		/// <seealso cref= #BlockRealMatrix(int, int, double[][], boolean) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BlockRealMatrix(final double[][] rawData) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public BlockRealMatrix(final double[][] rawData) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BlockRealMatrix(double[][] rawData) : this(rawData.Length, rawData[0].Length, toBlocksLayout(rawData), false)
 		{
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.linear
 		/// <seealso cref= #toBlocksLayout(double[][]) </seealso>
 		/// <seealso cref= #BlockRealMatrix(double[][]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BlockRealMatrix(final int rows, final int columns, final double[][] blockData, final boolean copyArray) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public BlockRealMatrix(final int rows, final int columns, final double[][] blockData, final boolean copyArray) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BlockRealMatrix(int rows, int columns, double[][] blockData, bool copyArray) : base(rows, columns)
 		{
@@ -218,7 +218,7 @@ namespace org.apache.commons.math3.linear
 		/// <seealso cref= #createBlocksLayout(int, int) </seealso>
 		/// <seealso cref= #BlockRealMatrix(int, int, double[][], boolean) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[][] toBlocksLayout(final double[][] rawData) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static double[][] toBlocksLayout(final double[][] rawData) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double[][] toBlocksLayout(double[][] rawData)
 		{
@@ -258,7 +258,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int iHeight = pEnd - pStart;
@@ -269,7 +269,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 					int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 					int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int jWidth = qEnd - qStart;
@@ -327,7 +327,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int iHeight = pEnd - pStart;
@@ -338,7 +338,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 					int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 					int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int jWidth = qEnd - qStart;
@@ -354,7 +354,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public BlockRealMatrix createMatrix(final int rowDimension, final int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: @Override public BlockRealMatrix createMatrix(final int rowDimension, final int columnDimension) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override BlockRealMatrix createMatrix(int rowDimension, int columnDimension)
 		{
@@ -415,13 +415,13 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 						int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 						int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 						int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 						int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 						int k = 0;
 						for (int p = pStart; p < pEnd; ++p)
@@ -519,13 +519,13 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 						int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 						int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 						int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 						int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 						int k = 0;
 						for (int p = pStart; p < pEnd; ++p)
@@ -645,7 +645,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public BlockRealMatrix multiply(final RealMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public BlockRealMatrix multiply(final RealMatrix m) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override BlockRealMatrix multiply(RealMatrix m)
 		{
@@ -670,7 +670,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 					int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 					int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 
 					for (int jBlock = 0; jBlock < @out.blockColumns; ++jBlock)
@@ -679,7 +679,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 						int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, m.getColumnDimension());
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, m.getColumnDimension());
 						int qEnd = FastMath.min(qStart + BLOCK_SIZE, m.ColumnDimension);
 
 						// select current block
@@ -738,7 +738,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> {@code this} * m. </returns>
 		/// <exception cref="DimensionMismatchException"> if the matrices are not compatible. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BlockRealMatrix multiply(BlockRealMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public BlockRealMatrix multiply(BlockRealMatrix m) throws mathlib.exception.DimensionMismatchException
 		public virtual BlockRealMatrix multiply(BlockRealMatrix m)
 		{
 			// safety check
@@ -757,7 +757,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 
 				for (int jBlock = 0; jBlock < @out.blockColumns; ++jBlock)
@@ -851,7 +851,7 @@ namespace org.apache.commons.math3.linear
 	//ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 					int pStart = iBlock * BLOCK_SIZE;
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+	//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 					int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 					int regularPos = 0;
 					int lastPos = 0;
@@ -941,7 +941,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public BlockRealMatrix getSubMatrix(final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public BlockRealMatrix getSubMatrix(final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override BlockRealMatrix getSubMatrix(int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -1082,7 +1082,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setSubMatrix(final double[][] subMatrix, final int row, final int column) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public void setSubMatrix(final double[][] subMatrix, final int row, final int column) throws mathlib.exception.OutOfRangeException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setSubMatrix(double[][] subMatrix, int row, int column)
 		{
@@ -1134,10 +1134,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int firstRow = iBlock * BLOCK_SIZE;
 				int firstRow = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int iStart = org.apache.commons.math3.util.FastMath.max(row, firstRow);
+//ORIGINAL LINE: final int iStart = mathlib.util.FastMath.max(row, firstRow);
 				int iStart = FastMath.max(row, firstRow);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int iEnd = org.apache.commons.math3.util.FastMath.min(endRow + 1, firstRow + iHeight);
+//ORIGINAL LINE: final int iEnd = mathlib.util.FastMath.min(endRow + 1, firstRow + iHeight);
 				int iEnd = FastMath.min(endRow + 1, firstRow + iHeight);
 
 				for (int jBlock = blockStartColumn; jBlock < blockEndColumn; ++jBlock)
@@ -1149,10 +1149,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int firstColumn = jBlock * BLOCK_SIZE;
 					int firstColumn = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int jStart = org.apache.commons.math3.util.FastMath.max(column, firstColumn);
+//ORIGINAL LINE: final int jStart = mathlib.util.FastMath.max(column, firstColumn);
 					int jStart = FastMath.max(column, firstColumn);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int jEnd = org.apache.commons.math3.util.FastMath.min(endColumn + 1, firstColumn + jWidth);
+//ORIGINAL LINE: final int jEnd = mathlib.util.FastMath.min(endColumn + 1, firstColumn + jWidth);
 					int jEnd = FastMath.min(endColumn + 1, firstColumn + jWidth);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int jLength = jEnd - jStart;
@@ -1174,7 +1174,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public BlockRealMatrix getRowMatrix(final int row) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public BlockRealMatrix getRowMatrix(final int row) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override BlockRealMatrix getRowMatrix(int row)
 		{
@@ -1224,7 +1224,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setRowMatrix(final int row, final RealMatrix matrix) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: @Override public void setRowMatrix(final int row, final RealMatrix matrix) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setRowMatrix(int row, RealMatrix matrix)
 		{
@@ -1249,7 +1249,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="MatrixDimensionMismatchException"> if the matrix dimensions do
 		/// not match one instance row. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setRowMatrix(final int row, final BlockRealMatrix matrix) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void setRowMatrix(final int row, final BlockRealMatrix matrix) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setRowMatrix(int row, BlockRealMatrix matrix)
 		{
@@ -1301,7 +1301,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public BlockRealMatrix getColumnMatrix(final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public BlockRealMatrix getColumnMatrix(final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override BlockRealMatrix getColumnMatrix(int column)
 		{
@@ -1348,7 +1348,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setColumnMatrix(final int column, final RealMatrix matrix) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: @Override public void setColumnMatrix(final int column, final RealMatrix matrix) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setColumnMatrix(int column, RealMatrix matrix)
 		{
@@ -1373,7 +1373,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="MatrixDimensionMismatchException"> if the matrix dimensions do
 		/// not match one instance column. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setColumnMatrix(final int column, final BlockRealMatrix matrix) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: void setColumnMatrix(final int column, final BlockRealMatrix matrix) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		internal virtual void setColumnMatrix(int column, BlockRealMatrix matrix)
 		{
@@ -1422,7 +1422,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector getRowVector(final int row) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public RealVector getRowVector(final int row) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector getRowVector(int row)
 		{
@@ -1457,7 +1457,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setRowVector(final int row, final RealVector vector) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: @Override public void setRowVector(final int row, final RealVector vector) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setRowVector(int row, RealVector vector)
 		{
@@ -1474,7 +1474,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector getColumnVector(final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public RealVector getColumnVector(final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector getColumnVector(int column)
 		{
@@ -1514,7 +1514,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setColumnVector(final int column, final RealVector vector) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: @Override public void setColumnVector(final int column, final RealVector vector) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setColumnVector(int column, RealVector vector)
 		{
@@ -1531,7 +1531,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double[] getRow(final int row) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double[] getRow(final int row) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double[] getRow(int row)
 		{
@@ -1566,7 +1566,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setRow(final int row, final double[] array) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: @Override public void setRow(final int row, final double[] array) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setRow(int row, double[] array)
 		{
@@ -1603,7 +1603,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double[] getColumn(final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double[] getColumn(final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double[] getColumn(int column)
 		{
@@ -1643,7 +1643,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setColumn(final int column, final double[] array) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: @Override public void setColumn(final int column, final double[] array) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setColumn(int column, double[] array)
 		{
@@ -1685,7 +1685,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getEntry(final int row, final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double getEntry(final int row, final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double getEntry(int row, int column)
 		{
@@ -1705,7 +1705,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setEntry(final int row, final int column, final double value) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void setEntry(final int row, final int column, final double value) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setEntry(int row, int column, double value)
 		{
@@ -1725,7 +1725,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void addToEntry(final int row, final int column, final double increment) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void addToEntry(final int row, final int column, final double increment) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void addToEntry(int row, int column, double increment)
 		{
@@ -1745,7 +1745,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void multiplyEntry(final int row, final int column, final double factor) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void multiplyEntry(final int row, final int column, final double factor) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void multiplyEntry(int row, int column, double factor)
 		{
@@ -1793,13 +1793,13 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 					int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, columns);
 					int pEnd = FastMath.min(pStart + BLOCK_SIZE, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 					int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, rows);
 					int qEnd = FastMath.min(qStart + BLOCK_SIZE, rows);
 					int k = 0;
 					for (int p = pStart; p < pEnd; ++p)
@@ -1846,7 +1846,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double[] operate(final double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double[] operate(final double[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double[] operate(double[] v)
 		{
@@ -1865,7 +1865,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 				for (int jBlock = 0; jBlock < blockColumns; ++jBlock)
 				{
@@ -1876,7 +1876,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 					int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 					int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 					int k = 0;
 					for (int p = pStart; p < pEnd; ++p)
@@ -1904,7 +1904,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double[] preMultiply(final double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double[] preMultiply(final double[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double[] preMultiply(double[] v)
 		{
@@ -1935,7 +1935,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 				int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 				int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 				for (int iBlock = 0; iBlock < blockRows; ++iBlock)
 				{
@@ -1946,7 +1946,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 					int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 					int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 					for (int q = qStart; q < qEnd; ++q)
 					{
@@ -1985,7 +1985,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 				for (int p = pStart; p < pEnd; ++p)
 				{
@@ -1998,7 +1998,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 						int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 						int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[iBlock * blockColumns + jBlock];
@@ -2028,7 +2028,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 				for (int p = pStart; p < pEnd; ++p)
 				{
@@ -2041,7 +2041,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 						int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 						int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[iBlock * blockColumns + jBlock];
@@ -2061,7 +2061,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInRowOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public double walkInRowOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInRowOrder(RealMatrixChangingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -2073,10 +2073,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int p0 = iBlock * BLOCK_SIZE;
 				int p0 = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pStart = org.apache.commons.math3.util.FastMath.max(startRow, p0);
+//ORIGINAL LINE: final int pStart = mathlib.util.FastMath.max(startRow, p0);
 				int pStart = FastMath.max(startRow, p0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				int pEnd = FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				for (int p = pStart; p < pEnd; ++p)
 				{
@@ -2089,10 +2089,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int q0 = jBlock * BLOCK_SIZE;
 						int q0 = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qStart = org.apache.commons.math3.util.FastMath.max(startColumn, q0);
+//ORIGINAL LINE: final int qStart = mathlib.util.FastMath.max(startColumn, q0);
 						int qStart = FastMath.max(startColumn, q0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 						int qEnd = FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[iBlock * blockColumns + jBlock];
@@ -2112,7 +2112,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInRowOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public double walkInRowOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInRowOrder(RealMatrixPreservingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -2124,10 +2124,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int p0 = iBlock * BLOCK_SIZE;
 				int p0 = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pStart = org.apache.commons.math3.util.FastMath.max(startRow, p0);
+//ORIGINAL LINE: final int pStart = mathlib.util.FastMath.max(startRow, p0);
 				int pStart = FastMath.max(startRow, p0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				int pEnd = FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				for (int p = pStart; p < pEnd; ++p)
 				{
@@ -2140,10 +2140,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int q0 = jBlock * BLOCK_SIZE;
 						int q0 = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qStart = org.apache.commons.math3.util.FastMath.max(startColumn, q0);
+//ORIGINAL LINE: final int qStart = mathlib.util.FastMath.max(startColumn, q0);
 						int qStart = FastMath.max(startColumn, q0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 						int qEnd = FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[iBlock * blockColumns + jBlock];
@@ -2174,7 +2174,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 				for (int jBlock = 0; jBlock < blockColumns; ++jBlock)
 				{
@@ -2182,7 +2182,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 					int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 					int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[blockIndex];
@@ -2216,7 +2216,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int pStart = iBlock * BLOCK_SIZE;
 				int pStart = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min(pStart + BLOCK_SIZE, rows);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min(pStart + BLOCK_SIZE, rows);
 				int pEnd = FastMath.min(pStart + BLOCK_SIZE, rows);
 				for (int jBlock = 0; jBlock < blockColumns; ++jBlock)
 				{
@@ -2224,7 +2224,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int qStart = jBlock * BLOCK_SIZE;
 					int qStart = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min(qStart + BLOCK_SIZE, columns);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min(qStart + BLOCK_SIZE, columns);
 					int qEnd = FastMath.min(qStart + BLOCK_SIZE, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[blockIndex];
@@ -2247,7 +2247,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInOptimizedOrder(RealMatrixChangingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -2259,10 +2259,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int p0 = iBlock * BLOCK_SIZE;
 				int p0 = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pStart = org.apache.commons.math3.util.FastMath.max(startRow, p0);
+//ORIGINAL LINE: final int pStart = mathlib.util.FastMath.max(startRow, p0);
 				int pStart = FastMath.max(startRow, p0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				int pEnd = FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				for (int jBlock = startColumn / BLOCK_SIZE; jBlock < 1 + endColumn / BLOCK_SIZE; ++jBlock)
 				{
@@ -2273,10 +2273,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int q0 = jBlock * BLOCK_SIZE;
 					int q0 = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qStart = org.apache.commons.math3.util.FastMath.max(startColumn, q0);
+//ORIGINAL LINE: final int qStart = mathlib.util.FastMath.max(startColumn, q0);
 					int qStart = FastMath.max(startColumn, q0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 					int qEnd = FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[iBlock * blockColumns + jBlock];
@@ -2298,7 +2298,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInOptimizedOrder(RealMatrixPreservingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -2310,10 +2310,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int p0 = iBlock * BLOCK_SIZE;
 				int p0 = iBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pStart = org.apache.commons.math3.util.FastMath.max(startRow, p0);
+//ORIGINAL LINE: final int pStart = mathlib.util.FastMath.max(startRow, p0);
 				int pStart = FastMath.max(startRow, p0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int pEnd = org.apache.commons.math3.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
+//ORIGINAL LINE: final int pEnd = mathlib.util.FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				int pEnd = FastMath.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);
 				for (int jBlock = startColumn / BLOCK_SIZE; jBlock < 1 + endColumn / BLOCK_SIZE; ++jBlock)
 				{
@@ -2324,10 +2324,10 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int q0 = jBlock * BLOCK_SIZE;
 					int q0 = jBlock * BLOCK_SIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qStart = org.apache.commons.math3.util.FastMath.max(startColumn, q0);
+//ORIGINAL LINE: final int qStart = mathlib.util.FastMath.max(startColumn, q0);
 					int qStart = FastMath.max(startColumn, q0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int qEnd = org.apache.commons.math3.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
+//ORIGINAL LINE: final int qEnd = mathlib.util.FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 					int qEnd = FastMath.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] block = blocks[iBlock * blockColumns + jBlock];

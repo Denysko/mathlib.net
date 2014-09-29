@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod.hull
+namespace mathlib.geometry.euclidean.twod.hull
 {
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using org.apache.commons.math3.geometry.hull;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using mathlib.geometry.hull;
 
 	/// <summary>
 	/// Interface for convex hull generators in the two-dimensional euclidean space.
@@ -35,7 +35,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: ConvexHull2D generate(java.util.Collection<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> points) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ConvergenceException;
+//ORIGINAL LINE: ConvexHull2D generate(java.util.Collection<mathlib.geometry.euclidean.twod.Vector2D> points) throws mathlib.exception.NullArgumentException, mathlib.exception.ConvergenceException;
 		ConvexHull2D generate(ICollection<Vector2D> points);
 
 	}

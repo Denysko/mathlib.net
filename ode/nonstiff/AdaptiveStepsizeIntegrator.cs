@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This abstract class holds the common part of all adaptive
@@ -43,7 +43,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	/// <p>
 	/// If the Ordinary Differential Equations is an {@link ExpandableStatefulODE
 	/// extended ODE} rather than a {@link
-	/// org.apache.commons.math3.ode.FirstOrderDifferentialEquations basic ODE}, then
+	/// mathlib.ode.FirstOrderDifferentialEquations basic ODE}, then
 	/// <em>only</em> the <seealso cref="ExpandableStatefulODE#getPrimaryState() primary part"/>
 	/// of the state vector is used for stepsize control, not the complete state vector.
 	/// </p>
@@ -232,7 +232,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected void sanityChecks(final org.apache.commons.math3.ode.ExpandableStatefulODE equations, final double t) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override protected void sanityChecks(final mathlib.ode.ExpandableStatefulODE equations, final double t) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  protected internal override void sanityChecks(ExpandableStatefulODE equations, double t)
 	  {
@@ -267,7 +267,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 	  /// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double initializeStep(final boolean forward, final int order, final double[] scale, final double t0, final double[] y0, final double[] yDot0, final double[] y1, final double[] yDot1) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double initializeStep(final boolean forward, final int order, final double[] scale, final double t0, final double[] y0, final double[] yDot0, final double[] y1, final double[] yDot1) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public virtual double initializeStep(bool forward, int order, double[] scale, double t0, double[] y0, double[] yDot0, double[] y1, double[] yDot1)
 	  {
@@ -316,10 +316,10 @@ namespace org.apache.commons.math3.ode.nonstiff
 		// step size is computed such that
 		// h^order * max (||y'/tol||, ||y''/tol||) = 0.01
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double maxInv2 = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.sqrt(yDotOnScale2), yDDotOnScale);
+//ORIGINAL LINE: final double maxInv2 = mathlib.util.FastMath.max(mathlib.util.FastMath.sqrt(yDotOnScale2), yDDotOnScale);
 		double maxInv2 = FastMath.max(FastMath.sqrt(yDotOnScale2), yDDotOnScale);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double h1 = (maxInv2 < 1.0e-15) ? org.apache.commons.math3.util.FastMath.max(1.0e-6, 0.001 * org.apache.commons.math3.util.FastMath.abs(h)) : org.apache.commons.math3.util.FastMath.pow(0.01 / maxInv2, 1.0 / order);
+//ORIGINAL LINE: final double h1 = (maxInv2 < 1.0e-15) ? mathlib.util.FastMath.max(1.0e-6, 0.001 * mathlib.util.FastMath.abs(h)) : mathlib.util.FastMath.pow(0.01 / maxInv2, 1.0 / order);
 		double h1 = (maxInv2 < 1.0e-15) ? FastMath.max(1.0e-6, 0.001 * FastMath.abs(h)) : FastMath.pow(0.01 / maxInv2, 1.0 / order);
 		h = FastMath.min(100.0 * FastMath.abs(h), h1);
 		h = FastMath.max(h, 1.0e-12 * FastMath.abs(t0)); // avoids cancellation when computing t1 - t0
@@ -350,7 +350,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <returns> a bounded integration step (h if no bound is reach, or a bounded value) </returns>
 	  /// <exception cref="NumberIsTooSmallException"> if the step is too small and acceptSmall is false </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double filterStep(final double h, final boolean forward, final boolean acceptSmall) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: protected double filterStep(final double h, final boolean forward, final boolean acceptSmall) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  protected internal virtual double filterStep(double h, bool forward, bool acceptSmall)
 	  {
@@ -384,7 +384,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public abstract void integrate(org.apache.commons.math3.ode.ExpandableStatefulODE equations, double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException;
+//ORIGINAL LINE: @Override public abstract void integrate(mathlib.ode.ExpandableStatefulODE equations, double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException;
 	  public override abstract void integrate(ExpandableStatefulODE equations, double t);
 
 	  /// <summary>

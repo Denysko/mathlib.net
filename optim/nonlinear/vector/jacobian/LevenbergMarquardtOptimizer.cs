@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
+namespace mathlib.optim.nonlinear.vector.jacobian
 {
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.optim;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.optim;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using Precision = mathlib.util.Precision;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -112,7 +112,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 	/// @since 2.0 </summary>
 	/// @deprecated All classes and interfaces in this package are deprecated.
 	/// The optimizers that were provided here were moved to the
-	/// <seealso cref="org.apache.commons.math3.fitting.leastsquares"/> package
+	/// <seealso cref="mathlib.fitting.leastsquares"/> package
 	/// (cf. MATH-1008). 
 	[Obsolete("All classes and interfaces in this package are deprecated.")]
 	public class LevenbergMarquardtOptimizer : AbstractLeastSquaresOptimizer
@@ -323,7 +323,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 			double[] work3 = new double[nC];
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix weightMatrixSqrt = getWeightSquareRoot();
+//ORIGINAL LINE: final mathlib.linear.RealMatrix weightMatrixSqrt = getWeightSquareRoot();
 			RealMatrix weightMatrixSqrt = WeightSquareRoot;
 
 			// Evaluate the function at the starting point and calculate its norm.
@@ -336,14 +336,14 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 			lmPar = 0;
 			bool firstIteration = true;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointVectorValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optim.ConvergenceChecker<mathlib.optim.PointVectorValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointVectorValuePair> checker = ConvergenceChecker;
 			while (true)
 			{
 				incrementIterationCount();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointVectorValuePair previous = current;
+//ORIGINAL LINE: final mathlib.optim.PointVectorValuePair previous = current;
 				PointVectorValuePair previous = current;
 
 				// QR decomposition of the jacobian matrix
@@ -950,7 +950,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 		/// <param name="jacobian"> Weighted Jacobian matrix at the current point. </param>
 		/// <exception cref="ConvergenceException"> if the decomposition cannot be performed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void qrDecomposition(org.apache.commons.math3.linear.RealMatrix jacobian) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private void qrDecomposition(mathlib.linear.RealMatrix jacobian) throws mathlib.exception.ConvergenceException
 		private void qrDecomposition(RealMatrix jacobian)
 		{
 			// Code in this class assumes that the weighted Jacobian is -(W^(1/2) J),

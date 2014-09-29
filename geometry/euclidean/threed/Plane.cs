@@ -16,21 +16,21 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using Euclidean1D = org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
-	using Vector1D = org.apache.commons.math3.geometry.euclidean.oned.Vector1D;
-	using Euclidean2D = org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D;
-	using PolygonsSet = org.apache.commons.math3.geometry.euclidean.twod.PolygonsSet;
-	using Vector2D = org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using Euclidean1D = mathlib.geometry.euclidean.oned.Euclidean1D;
+	using Vector1D = mathlib.geometry.euclidean.oned.Vector1D;
+	using Euclidean2D = mathlib.geometry.euclidean.twod.Euclidean2D;
+	using PolygonsSet = mathlib.geometry.euclidean.twod.PolygonsSet;
+	using Vector2D = mathlib.geometry.euclidean.twod.Vector2D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// The class represent planes in a three dimensional space.
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathArithmeticException"> if the normal norm is too small
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Plane(final Vector3D normal, final double tolerance) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Plane(final Vector3D normal, final double tolerance) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Plane(Vector3D normal, double tolerance)
 		{
@@ -93,7 +93,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathArithmeticException"> if the normal norm is too small
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Plane(final Vector3D p, final Vector3D normal, final double tolerance) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Plane(final Vector3D p, final Vector3D normal, final double tolerance) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Plane(Vector3D p, Vector3D normal, double tolerance)
 		{
@@ -114,7 +114,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathArithmeticException"> if the points do not constitute a plane
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Plane(final Vector3D p1, final Vector3D p2, final Vector3D p3, final double tolerance) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Plane(final Vector3D p1, final Vector3D p2, final Vector3D p3, final double tolerance) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Plane(Vector3D p1, Vector3D p2, Vector3D p3, double tolerance) : this(p1, p2.subtract(p1).crossProduct(p3.subtract(p1)), tolerance)
 		{
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathArithmeticException"> if the normal norm is too small </exception>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#Plane(Vector3D, double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, double)"/>") public Plane(final Vector3D normal) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, double)"/>") public Plane(final Vector3D normal) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, double)"/>")]
 		public Plane(Vector3D normal) : this(normal, DEFAULT_TOLERANCE)
@@ -140,7 +140,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathArithmeticException"> if the normal norm is too small </exception>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, double)"/>") public Plane(final Vector3D p, final Vector3D normal) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, double)"/>") public Plane(final Vector3D p, final Vector3D normal) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, double)"/>")]
 		public Plane(Vector3D p, Vector3D normal) : this(p, normal, DEFAULT_TOLERANCE)
@@ -157,7 +157,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathArithmeticException"> if the points do not constitute a plane </exception>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, Vector3D, double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, Vector3D, double)"/>") public Plane(final Vector3D p1, final Vector3D p2, final Vector3D p3) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, Vector3D, double)"/>") public Plane(final Vector3D p1, final Vector3D p2, final Vector3D p3) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("as of 3.3, replaced with <seealso cref="#Plane(Vector3D, Vector3D, Vector3D, double)"/>")]
 		public Plane(Vector3D p1, Vector3D p2, Vector3D p3) : this(p1, p2, p3, DEFAULT_TOLERANCE)
@@ -199,7 +199,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="normal"> normal direction to the plane </param>
 		/// <exception cref="MathArithmeticException"> if the normal norm is too small </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void reset(final Vector3D p, final Vector3D normal) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public void reset(final Vector3D p, final Vector3D normal) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void reset(Vector3D p, Vector3D normal)
 		{
@@ -230,7 +230,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="normal"> normal direction to the plane (will be copied) </param>
 		/// <exception cref="MathArithmeticException"> if the normal norm is too small </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void setNormal(final Vector3D normal) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: private void setNormal(final Vector3D normal) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private Vector3D Normal
 		{
@@ -377,10 +377,10 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="point"> point of the space (must be a {@link Vector3D
 		/// Vector3D} instance) </param>
 		/// <returns> in-plane point (really a {@link
-		/// org.apache.commons.math3.geometry.euclidean.twod.Vector2D Vector2D} instance) </returns>
+		/// mathlib.geometry.euclidean.twod.Vector2D Vector2D} instance) </returns>
 		/// <seealso cref= #toSpace </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.euclidean.twod.Vector2D toSubSpace(final org.apache.commons.math3.geometry.Point<Euclidean3D> point)
+//ORIGINAL LINE: public mathlib.geometry.euclidean.twod.Vector2D toSubSpace(final mathlib.geometry.Point<Euclidean3D> point)
 		public virtual Vector2D toSubSpace(Point<Euclidean3D> point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -392,15 +392,15 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <summary>
 		/// Transform an in-plane point into a 3D space point. </summary>
 		/// <param name="point"> in-plane point (must be a {@link
-		/// org.apache.commons.math3.geometry.euclidean.twod.Vector2D Vector2D} instance) </param>
+		/// mathlib.geometry.euclidean.twod.Vector2D Vector2D} instance) </param>
 		/// <returns> 3D space point (really a <seealso cref="Vector3D Vector3D"/> instance) </returns>
 		/// <seealso cref= #toSubSpace </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D toSpace(final org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> point)
+//ORIGINAL LINE: public Vector3D toSpace(final mathlib.geometry.Point<mathlib.geometry.euclidean.twod.Euclidean2D> point)
 		public virtual Vector3D toSpace(Point<Euclidean2D> point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p2D = (org.apache.commons.math3.geometry.euclidean.twod.Vector2D) point;
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p2D = (mathlib.geometry.euclidean.twod.Vector2D) point;
 			Vector2D p2D = (Vector2D) point;
 			return new Vector3D(p2D.X, u, p2D.Y, v, -originOffset, w);
 		}
@@ -413,7 +413,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> one point in the 3D-space, with given coordinates and offset
 		/// relative to the plane </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D getPointAt(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D inPlane, final double offset)
+//ORIGINAL LINE: public Vector3D getPointAt(final mathlib.geometry.euclidean.twod.Vector2D inPlane, final double offset)
 		public virtual Vector3D getPointAt(Vector2D inPlane, double offset)
 		{
 			return new Vector3D(inPlane.X, u, inPlane.Y, v, offset - originOffset, w);
@@ -504,7 +504,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 				return null;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Vector3D point = line.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>) org.apache.commons.math3.geometry.euclidean.oned.Vector1D.ZERO);
+//ORIGINAL LINE: final Vector3D point = line.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.oned.Euclidean1D>) mathlib.geometry.euclidean.oned.Vector1D.ZERO);
 			Vector3D point = line.toSpace((Point<Euclidean1D>) Vector1D.ZERO);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double k = -(originOffset + w.dotProduct(point)) / dot;
@@ -674,7 +674,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="point"> point to check </param>
 		/// <returns> offset of the point </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double getOffset(final org.apache.commons.math3.geometry.Point<Euclidean3D> point)
+//ORIGINAL LINE: public double getOffset(final mathlib.geometry.Point<Euclidean3D> point)
 		public virtual double getOffset(Point<Euclidean3D> point)
 		{
 			return ((Vector3D) point).dotProduct(w) + originOffset;
@@ -686,7 +686,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> true if the instance and the other hyperplane have
 		/// the same orientation </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public boolean sameOrientationAs(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean3D> other)
+//ORIGINAL LINE: public boolean sameOrientationAs(final mathlib.geometry.partitioning.Hyperplane<Euclidean3D> other)
 		public virtual bool sameOrientationAs(Hyperplane<Euclidean3D> other)
 		{
 			return (((Plane) other).w).dotProduct(w) > 0.0;

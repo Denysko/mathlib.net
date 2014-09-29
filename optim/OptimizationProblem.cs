@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
+	using Incrementor = mathlib.util.Incrementor;
 
 	/// <summary>
 	/// Common settings for all optimization problems. Includes divergence and convergence

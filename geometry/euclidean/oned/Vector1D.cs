@@ -16,15 +16,15 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.oned
+namespace mathlib.geometry.euclidean.oned
 {
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class represents a 1D vector.
@@ -238,7 +238,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Vector1D normalize() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Vector1D normalize() throws mathlib.exception.MathArithmeticException
 		public virtual Vector1D normalize()
 		{
 			double s = Norm;
@@ -288,7 +288,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		{
 			Vector1D p3 = (Vector1D) p;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dx = org.apache.commons.math3.util.FastMath.abs(p3.x - x);
+//ORIGINAL LINE: final double dx = mathlib.util.FastMath.abs(p3.x - x);
 			double dx = FastMath.abs(p3.x - x);
 			return dx;
 		}
@@ -296,7 +296,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#distance(Point)"/> 
-		[Obsolete("as of 3.3, replaced with <seealso cref="#distance(org.apache.commons.math3.geometry.Point)"/>")]
+		[Obsolete("as of 3.3, replaced with <seealso cref="#distance(mathlib.geometry.Point)"/>")]
 		public virtual double distance(Vector<Euclidean1D> p)
 		{
 			return distance((Point<Euclidean1D>) p);
@@ -319,7 +319,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		{
 			Vector1D p3 = (Vector1D) p;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dx = org.apache.commons.math3.util.FastMath.abs(p3.x - x);
+//ORIGINAL LINE: final double dx = mathlib.util.FastMath.abs(p3.x - x);
 			double dx = FastMath.abs(p3.x - x);
 			return dx;
 		}
@@ -338,7 +338,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double dotProduct(final org.apache.commons.math3.geometry.Vector<Euclidean1D> v)
+//ORIGINAL LINE: public double dotProduct(final mathlib.geometry.Vector<Euclidean1D> v)
 		public virtual double dotProduct(Vector<Euclidean1D> v)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

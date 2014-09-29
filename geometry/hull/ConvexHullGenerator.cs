@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.hull
+namespace mathlib.geometry.hull
 {
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using org.apache.commons.math3.geometry;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// Interface for convex hull generators.
@@ -34,7 +34,7 @@ namespace org.apache.commons.math3.geometry.hull
 	/// 
 	/// @since 3.3
 	/// @version $Id: ConvexHullGenerator.java 1568752 2014-02-16 12:19:51Z tn $ </seealso>
-	public interface ConvexHullGenerator<S, P> where S : org.apache.commons.math3.geometry.Space where P : org.apache.commons.math3.geometry.Point<S>
+	public interface ConvexHullGenerator<S, P> where S : mathlib.geometry.Space where P : mathlib.geometry.Point<S>
 	{
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace org.apache.commons.math3.geometry.hull
 		/// <exception cref="ConvergenceException"> if generator fails to generate a convex hull for
 		/// the given set of input points </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: ConvexHull<S, P> generate(java.util.Collection<P> points) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ConvergenceException;
+//ORIGINAL LINE: ConvexHull<S, P> generate(java.util.Collection<P> points) throws mathlib.exception.NullArgumentException, mathlib.exception.ConvergenceException;
 		ConvexHull<S, P> generate(ICollection<P> points);
 	}
 

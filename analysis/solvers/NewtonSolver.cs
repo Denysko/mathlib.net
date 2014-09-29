@@ -17,11 +17,11 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using FastMath = mathlib.util.FastMath;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 	/// <summary>
 	/// Implements <a href="http://mathworld.wolfram.com/NewtonsMethod.html">
@@ -60,12 +60,12 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="max"> Upper bound for the interval. </param>
 		/// <param name="maxEval"> Maximum number of evaluations. </param>
 		/// <returns> the value where the function is zero. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximum evaluation count is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException">
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException">
 		/// if {@code min >= max}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double solve(int maxEval, final org.apache.commons.math3.analysis.DifferentiableUnivariateFunction f, final double min, final double max) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: @Override public double solve(int maxEval, final mathlib.analysis.DifferentiableUnivariateFunction f, final double min, final double max) throws mathlib.exception.TooManyEvaluationsException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double solve(int maxEval, DifferentiableUnivariateFunction f, double min, double max)
 		{
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: @Override protected double doSolve() throws mathlib.exception.TooManyEvaluationsException
 		protected internal override double doSolve()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry
+namespace mathlib.geometry
 {
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
 
 	/// <summary>
 	/// This interface represents a generic vector in a vectorial space or a point in an affine space. </summary>
@@ -90,7 +90,7 @@ namespace org.apache.commons.math3.geometry
 		/// <returns> a new normalized vector </returns>
 		/// <exception cref="MathArithmeticException"> if the norm is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: Vector<S> normalize() throws org.apache.commons.math3.exception.MathArithmeticException;
+//ORIGINAL LINE: Vector<S> normalize() throws mathlib.exception.MathArithmeticException;
 		Vector<S> normalize();
 
 		/// <summary>

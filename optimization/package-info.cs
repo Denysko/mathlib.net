@@ -18,8 +18,8 @@
 /// <h2>All classes and sub-packages of this package are deprecated.</h2>
 /// <h3>Please use their replacements, to be found under
 ///  <ul>
-///   <li><seealso cref="org.apache.commons.math3.optim"/></li>
-///   <li><seealso cref="org.apache.commons.math3.fitting"/></li>
+///   <li><seealso cref="mathlib.optim"/></li>
+///   <li><seealso cref="mathlib.fitting"/></li>
 ///  </ul>
 /// </h3>
 /// 
@@ -39,32 +39,32 @@
 /// interfaces defining the common behavior of optimizers, one for each supported type of objective
 /// function:
 /// <ul>
-///  <li>{@link org.apache.commons.math3.optimization.univariate.UnivariateOptimizer
-///      UnivariateOptimizer} for {@link org.apache.commons.math3.analysis.UnivariateFunction
+///  <li>{@link mathlib.optimization.univariate.UnivariateOptimizer
+///      UnivariateOptimizer} for {@link mathlib.analysis.UnivariateFunction
 ///      univariate real functions}</li>
-///  <li>{@link org.apache.commons.math3.optimization.MultivariateOptimizer
-///      MultivariateOptimizer} for {@link org.apache.commons.math3.analysis.MultivariateFunction
+///  <li>{@link mathlib.optimization.MultivariateOptimizer
+///      MultivariateOptimizer} for {@link mathlib.analysis.MultivariateFunction
 ///      multivariate real functions}</li>
-///  <li>{@link org.apache.commons.math3.optimization.MultivariateDifferentiableOptimizer
+///  <li>{@link mathlib.optimization.MultivariateDifferentiableOptimizer
 ///      MultivariateDifferentiableOptimizer} for {@link
-///      org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction
+///      mathlib.analysis.differentiation.MultivariateDifferentiableFunction
 ///      multivariate differentiable real functions}</li>
-///  <li>{@link org.apache.commons.math3.optimization.MultivariateDifferentiableVectorOptimizer
+///  <li>{@link mathlib.optimization.MultivariateDifferentiableVectorOptimizer
 ///      MultivariateDifferentiableVectorOptimizer} for {@link
-///      org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction
+///      mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction
 ///      multivariate differentiable vectorial functions}</li>
 /// </ul>
 /// </p>
 /// 
 /// <p>
 /// Despite there are only four types of supported optimizers, it is possible to optimize a
-/// transform a {@link org.apache.commons.math3.analysis.MultivariateVectorFunction
+/// transform a {@link mathlib.analysis.MultivariateVectorFunction
 /// non-differentiable multivariate vectorial function} by converting it to a {@link
-/// org.apache.commons.math3.analysis.MultivariateFunction non-differentiable multivariate
+/// mathlib.analysis.MultivariateFunction non-differentiable multivariate
 /// real function} thanks to the {@link
-/// org.apache.commons.math3.optimization.LeastSquaresConverter LeastSquaresConverter} helper class.
+/// mathlib.optimization.LeastSquaresConverter LeastSquaresConverter} helper class.
 /// The transformed function can be optimized using any implementation of the {@link
-/// org.apache.commons.math3.optimization.MultivariateOptimizer MultivariateOptimizer} interface.
+/// mathlib.optimization.MultivariateOptimizer MultivariateOptimizer} interface.
 /// </p>
 /// 
 /// <p>
@@ -76,7 +76,7 @@
 /// </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
 }

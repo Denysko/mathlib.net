@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
 
 
 	/// <summary>
@@ -56,7 +56,7 @@ namespace org.apache.commons.math3.ode
 	  /// <exception cref="MathIllegalArgumentException"> if integration parameters are wrong (typically
 	  /// too small integration span) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void integrate(SecondOrderDifferentialEquations equations, double t0, double[] y0, double[] yDot0, double t, double[] y, double[] yDot) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: void integrate(SecondOrderDifferentialEquations equations, double t0, double[] y0, double[] yDot0, double t, double[] y, double[] yDot) throws mathlib.exception.MathIllegalStateException, mathlib.exception.MathIllegalArgumentException;
 	  void integrate(SecondOrderDifferentialEquations equations, double t0, double[] y0, double[] yDot0, double t, double[] y, double[] yDot);
 
 	}

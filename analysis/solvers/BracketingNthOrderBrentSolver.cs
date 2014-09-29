@@ -16,17 +16,17 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// This class implements a modification of the <a
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="maximalOrder"> maximal order. </param>
 		/// <exception cref="NumberIsTooSmallException"> if maximal order is lower than 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BracketingNthOrderBrentSolver(final double absoluteAccuracy, final int maximalOrder) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public BracketingNthOrderBrentSolver(final double absoluteAccuracy, final int maximalOrder) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BracketingNthOrderBrentSolver(double absoluteAccuracy, int maximalOrder) : base(absoluteAccuracy)
 		{
@@ -105,7 +105,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="maximalOrder"> maximal order. </param>
 		/// <exception cref="NumberIsTooSmallException"> if maximal order is lower than 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BracketingNthOrderBrentSolver(final double relativeAccuracy, final double absoluteAccuracy, final int maximalOrder) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public BracketingNthOrderBrentSolver(final double relativeAccuracy, final double absoluteAccuracy, final int maximalOrder) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BracketingNthOrderBrentSolver(double relativeAccuracy, double absoluteAccuracy, int maximalOrder) : base(relativeAccuracy, absoluteAccuracy)
 		{
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="maximalOrder"> maximal order. </param>
 		/// <exception cref="NumberIsTooSmallException"> if maximal order is lower than 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BracketingNthOrderBrentSolver(final double relativeAccuracy, final double absoluteAccuracy, final double functionValueAccuracy, final int maximalOrder) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public BracketingNthOrderBrentSolver(final double relativeAccuracy, final double absoluteAccuracy, final double functionValueAccuracy, final int maximalOrder) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BracketingNthOrderBrentSolver(double relativeAccuracy, double absoluteAccuracy, double functionValueAccuracy, int maximalOrder) : base(relativeAccuracy, absoluteAccuracy, functionValueAccuracy)
 		{
@@ -153,7 +153,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override protected double doSolve() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.NoBracketingException
 		protected internal override double doSolve()
 		{
 			// prepare arrays with the first points
@@ -239,21 +239,21 @@ namespace org.apache.commons.math3.analysis.solvers
 
 				// check convergence of bracketing interval
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double xTol = getAbsoluteAccuracy() + getRelativeAccuracy() * org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(xA), org.apache.commons.math3.util.FastMath.abs(xB));
+//ORIGINAL LINE: final double xTol = getAbsoluteAccuracy() + getRelativeAccuracy() * mathlib.util.FastMath.max(mathlib.util.FastMath.abs(xA), mathlib.util.FastMath.abs(xB));
 				double xTol = AbsoluteAccuracy + RelativeAccuracy * FastMath.max(FastMath.abs(xA), FastMath.abs(xB));
 				if (((xB - xA) <= xTol) || (FastMath.max(absYA, absYB) < FunctionValueAccuracy))
 				{
 					switch (allowed)
 					{
-					case org.apache.commons.math3.analysis.solvers.AllowedSolution.ANY_SIDE:
+					case mathlib.analysis.solvers.AllowedSolution.ANY_SIDE:
 						return absYA < absYB ? xA : xB;
-					case org.apache.commons.math3.analysis.solvers.AllowedSolution.LEFT_SIDE:
+					case mathlib.analysis.solvers.AllowedSolution.LEFT_SIDE:
 						return xA;
-					case org.apache.commons.math3.analysis.solvers.AllowedSolution.RIGHT_SIDE:
+					case mathlib.analysis.solvers.AllowedSolution.RIGHT_SIDE:
 						return xB;
-					case org.apache.commons.math3.analysis.solvers.AllowedSolution.BELOW_SIDE:
+					case mathlib.analysis.solvers.AllowedSolution.BELOW_SIDE:
 						return (yA <= 0) ? xA : xB;
-					case org.apache.commons.math3.analysis.solvers.AllowedSolution.ABOVE_SIDE:
+					case mathlib.analysis.solvers.AllowedSolution.ABOVE_SIDE:
 						return (yA < 0) ? xB : xA;
 					default :
 						// this should never happen
@@ -461,7 +461,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double solve(int maxEval, org.apache.commons.math3.analysis.UnivariateFunction f, double min, double max, AllowedSolution allowedSolution) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public double solve(int maxEval, mathlib.analysis.UnivariateFunction f, double min, double max, AllowedSolution allowedSolution) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.NoBracketingException
 		public virtual double solve(int maxEval, UnivariateFunction f, double min, double max, AllowedSolution allowedSolution)
 		{
 			this.allowed = allowedSolution;
@@ -471,7 +471,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double solve(int maxEval, org.apache.commons.math3.analysis.UnivariateFunction f, double min, double max, double startValue, AllowedSolution allowedSolution) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public double solve(int maxEval, mathlib.analysis.UnivariateFunction f, double min, double max, double startValue, AllowedSolution allowedSolution) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.NoBracketingException
 		public virtual double solve(int maxEval, UnivariateFunction f, double min, double max, double startValue, AllowedSolution allowedSolution)
 		{
 			this.allowed = allowedSolution;

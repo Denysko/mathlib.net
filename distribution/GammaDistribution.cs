@@ -16,15 +16,15 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Gamma = org.apache.commons.math3.special.Gamma;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Gamma = mathlib.special.Gamma;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the Gamma distribution.
@@ -114,7 +114,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code shape <= 0} or
 		/// {@code scale <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GammaDistribution(double shape, double scale) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public GammaDistribution(double shape, double scale) throws mathlib.exception.NotStrictlyPositiveException
 		public GammaDistribution(double shape, double scale) : this(shape, scale, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -132,7 +132,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code scale <= 0}.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GammaDistribution(double shape, double scale, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public GammaDistribution(double shape, double scale, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public GammaDistribution(double shape, double scale, double inverseCumAccuracy) : this(new Well19937c(), shape, scale, inverseCumAccuracy)
 		{
 		}
@@ -147,7 +147,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code scale <= 0}.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GammaDistribution(org.apache.commons.math3.random.RandomGenerator rng, double shape, double scale) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public GammaDistribution(mathlib.random.RandomGenerator rng, double shape, double scale) throws mathlib.exception.NotStrictlyPositiveException
 		public GammaDistribution(RandomGenerator rng, double shape, double scale) : this(rng, shape, scale, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -165,7 +165,7 @@ namespace org.apache.commons.math3.distribution
 		/// {@code scale <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GammaDistribution(org.apache.commons.math3.random.RandomGenerator rng, double shape, double scale, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public GammaDistribution(mathlib.random.RandomGenerator rng, double shape, double scale, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public GammaDistribution(RandomGenerator rng, double shape, double scale, double inverseCumAccuracy) : base(rng)
 		{
 
@@ -183,7 +183,7 @@ namespace org.apache.commons.math3.distribution
 			this.solverAbsoluteAccuracy = inverseCumAccuracy;
 			this.shiftedShape = shape + Gamma.LANCZOS_G + 0.5;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double aux = org.apache.commons.math3.util.FastMath.E / (2.0 * org.apache.commons.math3.util.FastMath.PI * shiftedShape);
+//ORIGINAL LINE: final double aux = mathlib.util.FastMath.E / (2.0 * mathlib.util.FastMath.PI * shiftedShape);
 			double aux = FastMath.E / (2.0 * FastMath.PI * shiftedShape);
 			this.densityPrefactor2 = shape * FastMath.sqrt(aux) / Gamma.lanczos(shape);
 			this.logDensityPrefactor2 = FastMath.log(shape) + 0.5 * FastMath.log(aux) - FastMath.log(Gamma.lanczos(shape));
@@ -307,10 +307,10 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double aux1 = (y - shiftedShape) / shiftedShape;
 				double aux1 = (y - shiftedShape) / shiftedShape;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double aux2 = shape * (org.apache.commons.math3.util.FastMath.log1p(aux1) - aux1);
+//ORIGINAL LINE: final double aux2 = shape * (mathlib.util.FastMath.log1p(aux1) - aux1);
 				double aux2 = shape * (FastMath.log1p(aux1) - aux1);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double aux3 = -y * (org.apache.commons.math3.special.Gamma.LANCZOS_G + 0.5) / shiftedShape + org.apache.commons.math3.special.Gamma.LANCZOS_G + aux2;
+//ORIGINAL LINE: final double aux3 = -y * (mathlib.special.Gamma.LANCZOS_G + 0.5) / shiftedShape + mathlib.special.Gamma.LANCZOS_G + aux2;
 				double aux3 = -y * (Gamma.LANCZOS_G + 0.5) / shiftedShape + Gamma.LANCZOS_G + aux2;
 				return densityPrefactor2 / x * FastMath.exp(aux3);
 			}
@@ -343,10 +343,10 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double aux1 = (y - shiftedShape) / shiftedShape;
 				double aux1 = (y - shiftedShape) / shiftedShape;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double aux2 = shape * (org.apache.commons.math3.util.FastMath.log1p(aux1) - aux1);
+//ORIGINAL LINE: final double aux2 = shape * (mathlib.util.FastMath.log1p(aux1) - aux1);
 				double aux2 = shape * (FastMath.log1p(aux1) - aux1);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double aux3 = -y * (org.apache.commons.math3.special.Gamma.LANCZOS_G + 0.5) / shiftedShape + org.apache.commons.math3.special.Gamma.LANCZOS_G + aux2;
+//ORIGINAL LINE: final double aux3 = -y * (mathlib.special.Gamma.LANCZOS_G + 0.5) / shiftedShape + mathlib.special.Gamma.LANCZOS_G + aux2;
 				double aux3 = -y * (Gamma.LANCZOS_G + 0.5) / shiftedShape + Gamma.LANCZOS_G + aux2;
 				return logDensityPrefactor2 - FastMath.log(x) + aux3;
 			}
@@ -515,7 +515,7 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double u = random.nextDouble();
 					double u = random.NextDouble();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double bGS = 1 + shape / org.apache.commons.math3.util.FastMath.E;
+//ORIGINAL LINE: final double bGS = 1 + shape / mathlib.util.FastMath.E;
 					double bGS = 1 + shape / FastMath.E;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double p = bGS * u;
@@ -526,7 +526,7 @@ namespace org.apache.commons.math3.distribution
 						// Step 2:
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double x = org.apache.commons.math3.util.FastMath.pow(p, 1 / shape);
+//ORIGINAL LINE: final double x = mathlib.util.FastMath.pow(p, 1 / shape);
 						double x = FastMath.pow(p, 1 / shape);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double u2 = random.nextDouble();
@@ -547,7 +547,7 @@ namespace org.apache.commons.math3.distribution
 						// Step 3:
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double x = -1 * org.apache.commons.math3.util.FastMath.log((bGS - p) / shape);
+//ORIGINAL LINE: final double x = -1 * mathlib.util.FastMath.log((bGS - p) / shape);
 						double x = -1 * FastMath.log((bGS - p) / shape);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double u2 = random.nextDouble();
@@ -572,7 +572,7 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double d = shape - 0.333333333333333333;
 			double d = shape - 0.333333333333333333;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double c = 1 / (3 * org.apache.commons.math3.util.FastMath.sqrt(d));
+//ORIGINAL LINE: final double c = 1 / (3 * mathlib.util.FastMath.sqrt(d));
 			double c = 1 / (3 * FastMath.sqrt(d));
 
 			while (true)

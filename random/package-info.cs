@@ -20,19 +20,19 @@
 ///      <p>Commons-math provides a few pseudo random number generators. The top level interface is RandomGenerator.
 ///      It is implemented by three classes:
 ///      <ul>
-///        <li><seealso cref="org.apache.commons.math3.random.JDKRandomGenerator JDKRandomGenerator"/>
+///        <li><seealso cref="mathlib.random.JDKRandomGenerator JDKRandomGenerator"/>
 ///            that extends the JDK provided generator</li>
 ///        <li>AbstractRandomGenerator as a helper for users generators</li>
 ///        <li>BitStreamGenerator which is an abstract class for several generators and
 ///            which in turn is extended by:
 ///            <ul>
-///              <li><seealso cref="org.apache.commons.math3.random.MersenneTwister MersenneTwister"/></li>
-///              <li><seealso cref="org.apache.commons.math3.random.Well512a Well512a"/></li>
-///              <li><seealso cref="org.apache.commons.math3.random.Well1024a Well1024a"/></li>
-///              <li><seealso cref="org.apache.commons.math3.random.Well19937a Well19937a"/></li>
-///              <li><seealso cref="org.apache.commons.math3.random.Well19937c Well19937c"/></li>
-///              <li><seealso cref="org.apache.commons.math3.random.Well44497a Well44497a"/></li>
-///              <li><seealso cref="org.apache.commons.math3.random.Well44497b Well44497b"/></li>
+///              <li><seealso cref="mathlib.random.MersenneTwister MersenneTwister"/></li>
+///              <li><seealso cref="mathlib.random.Well512a Well512a"/></li>
+///              <li><seealso cref="mathlib.random.Well1024a Well1024a"/></li>
+///              <li><seealso cref="mathlib.random.Well19937a Well19937a"/></li>
+///              <li><seealso cref="mathlib.random.Well19937c Well19937c"/></li>
+///              <li><seealso cref="mathlib.random.Well44497a Well44497a"/></li>
+///              <li><seealso cref="mathlib.random.Well44497b Well44497b"/></li>
 ///            </ul>
 ///          </li>
 ///        </ul>
@@ -103,21 +103,21 @@
 ///        <table border="1" align="center">
 ///          <tr BGCOLOR="#CCCCFF"><td colspan="2"><font size="+2">Example of performances</font></td></tr>
 ///          <tr BGCOLOR="#EEEEFF"><font size="+1"><td>Name</td><td>generation rate (relative to MersenneTwister)</td></font></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.MersenneTwister MersenneTwister"/></td><td>1</td></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.JDKRandomGenerator JDKRandomGenerator"/></td><td>between 0.96 and 1.16</td></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.Well512a Well512a"/></td><td>between 0.85 and 0.88</td></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.Well1024a Well1024a"/></td><td>between 0.63 and 0.73</td></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.Well19937a Well19937a"/></td><td>between 0.70 and 0.71</td></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.Well19937c Well19937c"/></td><td>between 0.57 and 0.71</td></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.Well44497a Well44497a"/></td><td>between 0.69 and 0.71</td></tr>
-///          <tr><td><seealso cref="org.apache.commons.math3.random.Well44497b Well44497b"/></td><td>between 0.65 and 0.71</td></tr>
+///          <tr><td><seealso cref="mathlib.random.MersenneTwister MersenneTwister"/></td><td>1</td></tr>
+///          <tr><td><seealso cref="mathlib.random.JDKRandomGenerator JDKRandomGenerator"/></td><td>between 0.96 and 1.16</td></tr>
+///          <tr><td><seealso cref="mathlib.random.Well512a Well512a"/></td><td>between 0.85 and 0.88</td></tr>
+///          <tr><td><seealso cref="mathlib.random.Well1024a Well1024a"/></td><td>between 0.63 and 0.73</td></tr>
+///          <tr><td><seealso cref="mathlib.random.Well19937a Well19937a"/></td><td>between 0.70 and 0.71</td></tr>
+///          <tr><td><seealso cref="mathlib.random.Well19937c Well19937c"/></td><td>between 0.57 and 0.71</td></tr>
+///          <tr><td><seealso cref="mathlib.random.Well44497a Well44497a"/></td><td>between 0.69 and 0.71</td></tr>
+///          <tr><td><seealso cref="mathlib.random.Well44497b Well44497b"/></td><td>between 0.65 and 0.71</td></tr>
 ///        </table>
 ///      </p>
 /// 
 ///      <p>
 ///      So for most simulation problems, the better generators like {@link
-///      org.apache.commons.math3.random.Well19937c Well19937c} and {@link
-///      org.apache.commons.math3.random.Well44497b Well44497b} are probably very good choices.
+///      mathlib.random.Well19937c Well19937c} and {@link
+///      mathlib.random.Well44497b Well44497b} are probably very good choices.
 ///      </p>
 /// 
 ///      <p>
@@ -129,7 +129,7 @@
 /// 
 /// 
 /// </summary>
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
 }

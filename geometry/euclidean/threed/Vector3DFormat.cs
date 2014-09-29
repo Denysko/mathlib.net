@@ -17,14 +17,14 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
 
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using CompositeFormat = org.apache.commons.math3.util.CompositeFormat;
+	using MathParseException = mathlib.exception.MathParseException;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using CompositeFormat = mathlib.util.CompositeFormat;
 
 	/// <summary>
 	/// Formats a 3D vector in components list format "{x; y; z}".
@@ -117,7 +117,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		///            offsets of the alignment field </param>
 		/// <returns> the value passed in as toAppendTo. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public StringBuffer format(final org.apache.commons.math3.geometry.Vector<Euclidean3D> vector, final StringBuffer toAppendTo, final java.text.FieldPosition pos)
+//ORIGINAL LINE: @Override public StringBuffer format(final mathlib.geometry.Vector<Euclidean3D> vector, final StringBuffer toAppendTo, final java.text.FieldPosition pos)
 		public override StringBuilder format(Vector<Euclidean3D> vector, StringBuilder toAppendTo, FieldPosition pos)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -133,7 +133,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathParseException"> if the beginning of the specified string
 		/// cannot be parsed. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public Vector3D parse(final String source) throws org.apache.commons.math3.exception.MathParseException
+//ORIGINAL LINE: @Override public Vector3D parse(final String source) throws mathlib.exception.MathParseException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override Vector3D parse(string source)
 		{

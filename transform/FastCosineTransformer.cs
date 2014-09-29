@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.transform
+namespace mathlib.transform
 {
 
-	using FunctionUtils = org.apache.commons.math3.analysis.FunctionUtils;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using Complex = org.apache.commons.math3.complex.Complex;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArithmeticUtils = org.apache.commons.math3.util.ArithmeticUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FunctionUtils = mathlib.analysis.FunctionUtils;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using Complex = mathlib.complex.Complex;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArithmeticUtils = mathlib.util.ArithmeticUtils;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implements the Fast Cosine Transform for transformation of one-dimensional
@@ -95,7 +95,7 @@ namespace org.apache.commons.math3.transform
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is
 		/// not a power of two plus one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] transform(final double[] f, final TransformType type) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double[] transform(final double[] f, final TransformType type) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] transform(double[] f, TransformType type)
 		{
@@ -104,7 +104,7 @@ namespace org.apache.commons.math3.transform
 				if (normalization == DctNormalization.ORTHOGONAL_DCT_I)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double s = org.apache.commons.math3.util.FastMath.sqrt(2.0 / (f.length - 1));
+//ORIGINAL LINE: final double s = mathlib.util.FastMath.sqrt(2.0 / (f.length - 1));
 					double s = FastMath.sqrt(2.0 / (f.Length - 1));
 					return TransformUtils.scaleArray(fct(f), s);
 				}
@@ -130,20 +130,20 @@ namespace org.apache.commons.math3.transform
 		/// <summary>
 		/// {@inheritDoc}
 		/// </summary>
-		/// <exception cref="org.apache.commons.math3.exception.NonMonotonicSequenceException">
+		/// <exception cref="mathlib.exception.NonMonotonicSequenceException">
 		/// if the lower bound is greater than, or equal to the upper bound </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if the number of sample points is negative </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the number of sample points is
 		/// not a power of two plus one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] transform(final org.apache.commons.math3.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double[] transform(final mathlib.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] transform(UnivariateFunction f, double min, double max, int n, TransformType type)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] data = org.apache.commons.math3.analysis.FunctionUtils.sample(f, min, max, n);
+//ORIGINAL LINE: final double[] data = mathlib.analysis.FunctionUtils.sample(f, min, max, n);
 			double[] data = FunctionUtils.sample(f, min, max, n);
 			return transform(data, type);
 		}
@@ -156,7 +156,7 @@ namespace org.apache.commons.math3.transform
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is
 		/// not a power of two plus one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double[] fct(double[] f) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected double[] fct(double[] f) throws mathlib.exception.MathIllegalArgumentException
 		protected internal virtual double[] fct(double[] f)
 		{
 
@@ -192,10 +192,10 @@ namespace org.apache.commons.math3.transform
 //ORIGINAL LINE: final double a = 0.5 * (f[i] + f[n - i]);
 				double a = 0.5 * (f[i] + f[n - i]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double b = org.apache.commons.math3.util.FastMath.sin(i * org.apache.commons.math3.util.FastMath.PI / n) * (f[i] - f[n - i]);
+//ORIGINAL LINE: final double b = mathlib.util.FastMath.sin(i * mathlib.util.FastMath.PI / n) * (f[i] - f[n - i]);
 				double b = FastMath.sin(i * FastMath.PI / n) * (f[i] - f[n - i]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double c = org.apache.commons.math3.util.FastMath.cos(i * org.apache.commons.math3.util.FastMath.PI / n) * (f[i] - f[n - i]);
+//ORIGINAL LINE: final double c = mathlib.util.FastMath.cos(i * mathlib.util.FastMath.PI / n) * (f[i] - f[n - i]);
 				double c = FastMath.cos(i * FastMath.PI / n) * (f[i] - f[n - i]);
 				x[i] = a - b;
 				x[n - i] = a + b;

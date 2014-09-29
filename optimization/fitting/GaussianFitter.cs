@@ -18,22 +18,22 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.fitting
+namespace mathlib.optimization.fitting
 {
 
 
-	using Gaussian = org.apache.commons.math3.analysis.function.Gaussian;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using Gaussian = mathlib.analysis.function.Gaussian;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Fits points to a {@link
-	/// org.apache.commons.math3.analysis.function.Gaussian.Parametric Gaussian} function.
+	/// mathlib.analysis.function.Gaussian.Parametric Gaussian} function.
 	/// <p>
 	/// Usage example:
 	/// <pre>
@@ -83,7 +83,7 @@ namespace org.apache.commons.math3.optimization.fitting
 		public virtual double[] fit(double[] initialGuess)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.function.Gaussian.Parametric f = new org.apache.commons.math3.analysis.function.Gaussian.Parametric()
+//ORIGINAL LINE: final mathlib.analysis.function.Gaussian.Parametric f = new mathlib.analysis.function.Gaussian.Parametric()
 			Gaussian.Parametric f = new ParametricAnonymousInnerClassHelper(this);
 
 			return fit(f, initialGuess);
@@ -142,7 +142,7 @@ namespace org.apache.commons.math3.optimization.fitting
 
 		/// <summary>
 		/// Guesses the parameters {@code norm}, {@code mean}, and {@code sigma}
-		/// of a <seealso cref="org.apache.commons.math3.analysis.function.Gaussian.Parametric"/>
+		/// of a <seealso cref="mathlib.analysis.function.Gaussian.Parametric"/>
 		/// based on the specified observed points.
 		/// </summary>
 		public class ParameterGuesser
@@ -310,7 +310,7 @@ namespace org.apache.commons.math3.optimization.fitting
 					fwhmApprox = points[points.Length - 1].X - points[0].X;
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double s = fwhmApprox / (2 * org.apache.commons.math3.util.FastMath.sqrt(2 * org.apache.commons.math3.util.FastMath.log(2)));
+//ORIGINAL LINE: final double s = fwhmApprox / (2 * mathlib.util.FastMath.sqrt(2 * mathlib.util.FastMath.log(2)));
 				double s = fwhmApprox / (2 * FastMath.sqrt(2 * FastMath.log(2)));
 
 				return new double[] {n, m, s};
@@ -348,7 +348,7 @@ namespace org.apache.commons.math3.optimization.fitting
 			/// <exception cref="OutOfRangeException"> if specified {@code y} is not within the
 			/// range of the specified {@code points}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double interpolateXAtY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private double interpolateXAtY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws mathlib.exception.OutOfRangeException
 			internal virtual double interpolateXAtY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y)
 			{
 				if (idxStep == 0)
@@ -390,7 +390,7 @@ namespace org.apache.commons.math3.optimization.fitting
 			/// <exception cref="OutOfRangeException"> if specified {@code y} is not within the
 			/// range of the specified {@code points}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y) throws mathlib.exception.OutOfRangeException
 			internal virtual WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points, int startIdx, int idxStep, double y)
 			{
 				if (idxStep == 0)

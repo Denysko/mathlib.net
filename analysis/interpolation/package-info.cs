@@ -19,7 +19,7 @@
 ///     Univariate real functions interpolation algorithms.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
 }

@@ -20,9 +20,9 @@
 /// </summary>
 /// @deprecated All classes and interfaces in this package are deprecated.
 /// The optimizers that were provided here were moved to the
-/// <seealso cref="org.apache.commons.math3.fitting.leastsquares"/> package
+/// <seealso cref="mathlib.fitting.leastsquares"/> package
 /// (cf. MATH-1008). 
-namespace org.apache.commons.math3.optim.nonlinear.vector
+namespace mathlib.optim.nonlinear.vector
 {
 
 }

@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Gamma = org.apache.commons.math3.special.Gamma;
-	using CombinatoricsUtils = org.apache.commons.math3.util.CombinatoricsUtils;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Gamma = mathlib.special.Gamma;
+	using CombinatoricsUtils = mathlib.util.CombinatoricsUtils;
+	using MathUtils = mathlib.util.MathUtils;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the Poisson distribution.
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="p"> the Poisson mean </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code p <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PoissonDistribution(double p) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public PoissonDistribution(double p) throws mathlib.exception.NotStrictlyPositiveException
 		public PoissonDistribution(double p) : this(p, DEFAULT_EPSILON, DEFAULT_MAX_ITERATIONS)
 		{
 		}
@@ -92,7 +92,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code p <= 0}.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PoissonDistribution(double p, double epsilon, int maxIterations) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public PoissonDistribution(double p, double epsilon, int maxIterations) throws mathlib.exception.NotStrictlyPositiveException
 		public PoissonDistribution(double p, double epsilon, int maxIterations) : this(new Well19937c(), p, epsilon, maxIterations)
 		{
 		}
@@ -109,7 +109,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code p <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PoissonDistribution(org.apache.commons.math3.random.RandomGenerator rng, double p, double epsilon, int maxIterations) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public PoissonDistribution(mathlib.random.RandomGenerator rng, double p, double epsilon, int maxIterations) throws mathlib.exception.NotStrictlyPositiveException
 		public PoissonDistribution(RandomGenerator rng, double p, double epsilon, int maxIterations) : base(rng)
 		{
 
@@ -135,7 +135,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code p <= 0}.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PoissonDistribution(double p, double epsilon) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public PoissonDistribution(double p, double epsilon) throws mathlib.exception.NotStrictlyPositiveException
 		public PoissonDistribution(double p, double epsilon) : this(p, epsilon, DEFAULT_MAX_ITERATIONS)
 		{
 		}
@@ -352,22 +352,22 @@ namespace org.apache.commons.math3.distribution
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double lambda = org.apache.commons.math3.util.FastMath.floor(meanPoisson);
+//ORIGINAL LINE: final double lambda = mathlib.util.FastMath.floor(meanPoisson);
 				double lambda = FastMath.floor(meanPoisson);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double lambdaFractional = meanPoisson - lambda;
 				double lambdaFractional = meanPoisson - lambda;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double logLambda = org.apache.commons.math3.util.FastMath.log(lambda);
+//ORIGINAL LINE: final double logLambda = mathlib.util.FastMath.log(lambda);
 				double logLambda = FastMath.log(lambda);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double logLambdaFactorial = org.apache.commons.math3.util.CombinatoricsUtils.factorialLog((int) lambda);
+//ORIGINAL LINE: final double logLambdaFactorial = mathlib.util.CombinatoricsUtils.factorialLog((int) lambda);
 				double logLambdaFactorial = CombinatoricsUtils.factorialLog((int) lambda);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long y2 = lambdaFractional < Double.MIN_VALUE ? 0 : nextPoisson(lambdaFractional);
 				long y2 = lambdaFractional < double.MinValue ? 0 : nextPoisson(lambdaFractional);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double delta = org.apache.commons.math3.util.FastMath.sqrt(lambda * org.apache.commons.math3.util.FastMath.log(32 * lambda / org.apache.commons.math3.util.FastMath.PI + 1));
+//ORIGINAL LINE: final double delta = mathlib.util.FastMath.sqrt(lambda * mathlib.util.FastMath.log(32 * lambda / mathlib.util.FastMath.PI + 1));
 				double delta = FastMath.sqrt(lambda * FastMath.log(32 * lambda / FastMath.PI + 1));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double halfDelta = delta / 2;
@@ -376,10 +376,10 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double twolpd = 2 * lambda + delta;
 				double twolpd = 2 * lambda + delta;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a1 = org.apache.commons.math3.util.FastMath.sqrt(org.apache.commons.math3.util.FastMath.PI * twolpd) * org.apache.commons.math3.util.FastMath.exp(1 / (8 * lambda));
+//ORIGINAL LINE: final double a1 = mathlib.util.FastMath.sqrt(mathlib.util.FastMath.PI * twolpd) * mathlib.util.FastMath.exp(1 / (8 * lambda));
 				double a1 = FastMath.sqrt(FastMath.PI * twolpd) * FastMath.exp(1 / (8 * lambda));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a2 = (twolpd / delta) * org.apache.commons.math3.util.FastMath.exp(-delta * (1 + delta) / twolpd);
+//ORIGINAL LINE: final double a2 = (twolpd / delta) * mathlib.util.FastMath.exp(-delta * (1 + delta) / twolpd);
 				double a2 = (twolpd / delta) * FastMath.exp(-delta * (1 + delta) / twolpd);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double aSum = a1 + a2 + 1;

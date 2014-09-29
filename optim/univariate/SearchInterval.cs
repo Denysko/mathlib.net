@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.univariate
+namespace mathlib.optim.univariate
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
 
 	/// <summary>
 	/// Search interval and (optional) start value.

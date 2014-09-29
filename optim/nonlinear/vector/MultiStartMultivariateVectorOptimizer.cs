@@ -16,16 +16,16 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.vector
+namespace mathlib.optim.nonlinear.vector
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RandomVectorGenerator = org.apache.commons.math3.random.RandomVectorGenerator;
-	using org.apache.commons.math3.optim;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RandomVectorGenerator = mathlib.random.RandomVectorGenerator;
+	using mathlib.optim;
 
 	/// <summary>
 	/// Multi-start optimizer for a (vector) model function.
@@ -58,7 +58,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector
 		/// is {@code null}. </exception>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code starts < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MultiStartMultivariateVectorOptimizer(final MultivariateVectorOptimizer optimizer, final int starts, final org.apache.commons.math3.random.RandomVectorGenerator generator) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public MultiStartMultivariateVectorOptimizer(final MultivariateVectorOptimizer optimizer, final int starts, final mathlib.random.RandomVectorGenerator generator) throws mathlib.exception.NullArgumentException, mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public MultiStartMultivariateVectorOptimizer(MultivariateVectorOptimizer optimizer, int starts, RandomVectorGenerator generator) : base(optimizer, starts, generator)
 		{
@@ -117,7 +117,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector
 			private readonly RealMatrix weight;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public int compare(final org.apache.commons.math3.optim.PointVectorValuePair o1, final org.apache.commons.math3.optim.PointVectorValuePair o2)
+//ORIGINAL LINE: public int compare(final mathlib.optim.PointVectorValuePair o1, final mathlib.optim.PointVectorValuePair o2)
 			public virtual int Compare(PointVectorValuePair o1, PointVectorValuePair o2)
 			{
 				if (o1 == null)
@@ -132,14 +132,14 @@ namespace org.apache.commons.math3.optim.nonlinear.vector
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private double weightedResidual(final org.apache.commons.math3.optim.PointVectorValuePair pv)
+//ORIGINAL LINE: private double weightedResidual(final mathlib.optim.PointVectorValuePair pv)
 			private double weightedResidual(PointVectorValuePair pv)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealVector v = new org.apache.commons.math3.linear.ArrayRealVector(pv.getValueRef(), false);
+//ORIGINAL LINE: final mathlib.linear.RealVector v = new mathlib.linear.ArrayRealVector(pv.getValueRef(), false);
 				RealVector v = new ArrayRealVector(pv.ValueRef, false);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealVector r = target.subtract(v);
+//ORIGINAL LINE: final mathlib.linear.RealVector r = target.subtract(v);
 				RealVector r = target.subtract(v);
 				return r.dotProduct(weight.operate(r));
 			}

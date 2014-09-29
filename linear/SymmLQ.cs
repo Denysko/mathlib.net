@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using ExceptionContext = org.apache.commons.math3.exception.util.ExceptionContext;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using IterationManager = org.apache.commons.math3.util.IterationManager;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using ExceptionContext = mathlib.exception.util.ExceptionContext;
+	using FastMath = mathlib.util.FastMath;
+	using IterationManager = mathlib.util.IterationManager;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// <p>
@@ -460,7 +460,7 @@ namespace org.apache.commons.math3.linear
 					NonSelfAdjointOperatorException e;
 					e = new NonSelfAdjointOperatorException();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.util.ExceptionContext context = e.getContext();
+//ORIGINAL LINE: final mathlib.exception.util.ExceptionContext context = e.getContext();
 					ExceptionContext context = e.Context;
 					context.setValue(SymmLQ.OPERATOR, l);
 					context.setValue(SymmLQ.VECTOR1, x);
@@ -487,7 +487,7 @@ namespace org.apache.commons.math3.linear
 				NonPositiveDefiniteOperatorException e;
 				e = new NonPositiveDefiniteOperatorException();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.util.ExceptionContext context = e.getContext();
+//ORIGINAL LINE: final mathlib.exception.util.ExceptionContext context = e.getContext();
 				ExceptionContext context = e.Context;
 				context.setValue(OPERATOR, l);
 				context.setValue(VECTOR, v);
@@ -587,7 +587,7 @@ namespace org.apache.commons.math3.linear
 				else
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double anorm = org.apache.commons.math3.util.FastMath.sqrt(tnorm);
+//ORIGINAL LINE: final double anorm = mathlib.util.FastMath.sqrt(tnorm);
 					double anorm = FastMath.sqrt(tnorm);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double diag = gbar == 0.0 ? anorm * MACH_PREC : gbar;
@@ -811,7 +811,7 @@ namespace org.apache.commons.math3.linear
 				 *   s     = s[k-1].
 				 */
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double gamma = org.apache.commons.math3.util.FastMath.sqrt(gbar * gbar + oldb * oldb);
+//ORIGINAL LINE: final double gamma = mathlib.util.FastMath.sqrt(gbar * gbar + oldb * oldb);
 				double gamma = FastMath.sqrt(gbar * gbar + oldb * oldb);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double c = gbar / gamma;
@@ -905,10 +905,10 @@ namespace org.apache.commons.math3.linear
 			internal virtual void updateNorms()
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double anorm = org.apache.commons.math3.util.FastMath.sqrt(tnorm);
+//ORIGINAL LINE: final double anorm = mathlib.util.FastMath.sqrt(tnorm);
 				double anorm = FastMath.sqrt(tnorm);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double ynorm = org.apache.commons.math3.util.FastMath.sqrt(ynorm2);
+//ORIGINAL LINE: final double ynorm = mathlib.util.FastMath.sqrt(ynorm2);
 				double ynorm = FastMath.sqrt(ynorm2);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double epsa = anorm * MACH_PREC;
@@ -1060,7 +1060,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="check"> {@code true} if self-adjointedness of both matrix and
 		/// preconditioner should be checked </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SymmLQ(final org.apache.commons.math3.util.IterationManager manager, final double delta, final boolean check)
+//ORIGINAL LINE: public SymmLQ(final mathlib.util.IterationManager manager, final double delta, final boolean check)
 		public SymmLQ(IterationManager manager, double delta, bool check) : base(manager)
 		{
 			this.delta = delta;
@@ -1089,7 +1089,7 @@ namespace org.apache.commons.math3.linear
 		/// positive definite </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealLinearOperator m, final RealVector b) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException
+//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealLinearOperator m, final RealVector b) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector solve(RealLinearOperator a, RealLinearOperator m, RealVector b)
 		{
@@ -1132,7 +1132,7 @@ namespace org.apache.commons.math3.linear
 		/// inconsistent with {@code a} </exception>
 		/// <exception cref="MaxCountExceededException"> at exhaustion of the iteration count,
 		/// unless a custom
-		/// <seealso cref="org.apache.commons.math3.util.Incrementor.MaxCountExceededCallback callback"/>
+		/// <seealso cref="mathlib.util.Incrementor.MaxCountExceededCallback callback"/>
 		/// has been set at construction of the <seealso cref="IterationManager"/> </exception>
 		/// <exception cref="NonSelfAdjointOperatorException"> if <seealso cref="#getCheck()"/> is
 		/// {@code true}, and {@code a} or {@code m} is not self-adjoint </exception>
@@ -1140,7 +1140,7 @@ namespace org.apache.commons.math3.linear
 		/// positive definite </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector solve(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final boolean goodb, final double shift) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException
+//ORIGINAL LINE: public RealVector solve(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final boolean goodb, final double shift) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector solve(RealLinearOperator a, RealLinearOperator m, RealVector b, bool goodb, double shift)
 		{
@@ -1162,7 +1162,7 @@ namespace org.apache.commons.math3.linear
 		/// definite </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector solve(RealLinearOperator a, RealLinearOperator m, RealVector b, RealVector x)
 		{
@@ -1177,7 +1177,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code true}, and {@code a} is not self-adjoint </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealVector b) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealVector b) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector solve(RealLinearOperator a, RealVector b)
 		{
@@ -1218,13 +1218,13 @@ namespace org.apache.commons.math3.linear
 		/// inconsistent with {@code a} </exception>
 		/// <exception cref="MaxCountExceededException"> at exhaustion of the iteration count,
 		/// unless a custom
-		/// <seealso cref="org.apache.commons.math3.util.Incrementor.MaxCountExceededCallback callback"/>
+		/// <seealso cref="mathlib.util.Incrementor.MaxCountExceededCallback callback"/>
 		/// has been set at construction of the <seealso cref="IterationManager"/> </exception>
 		/// <exception cref="NonSelfAdjointOperatorException"> if <seealso cref="#getCheck()"/> is
 		/// {@code true}, and {@code a} is not self-adjoint </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector solve(final RealLinearOperator a, final RealVector b, final boolean goodb, final double shift) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public RealVector solve(final RealLinearOperator a, final RealVector b, final boolean goodb, final double shift) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector solve(RealLinearOperator a, RealVector b, bool goodb, double shift)
 		{
@@ -1244,7 +1244,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code true}, and {@code a} is not self-adjoint </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealVector b, final RealVector x) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override public RealVector solve(final RealLinearOperator a, final RealVector b, final RealVector x) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector solve(RealLinearOperator a, RealVector b, RealVector x)
 		{
@@ -1263,7 +1263,7 @@ namespace org.apache.commons.math3.linear
 		/// positive definite </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector solveInPlace(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override public RealVector solveInPlace(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector solveInPlace(RealLinearOperator a, RealLinearOperator m, RealVector b, RealVector x)
 		{
@@ -1304,7 +1304,7 @@ namespace org.apache.commons.math3.linear
 		/// have dimensions inconsistent with {@code a}. </exception>
 		/// <exception cref="MaxCountExceededException"> at exhaustion of the iteration count,
 		/// unless a custom
-		/// <seealso cref="org.apache.commons.math3.util.Incrementor.MaxCountExceededCallback callback"/>
+		/// <seealso cref="mathlib.util.Incrementor.MaxCountExceededCallback callback"/>
 		/// has been set at construction of the <seealso cref="IterationManager"/> </exception>
 		/// <exception cref="NonSelfAdjointOperatorException"> if <seealso cref="#getCheck()"/> is
 		/// {@code true}, and {@code a} or {@code m} is not self-adjoint </exception>
@@ -1312,14 +1312,14 @@ namespace org.apache.commons.math3.linear
 		/// definite </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector solveInPlace(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x, final boolean goodb, final double shift) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public RealVector solveInPlace(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x, final boolean goodb, final double shift) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, NonSelfAdjointOperatorException, NonPositiveDefiniteOperatorException, IllConditionedOperatorException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector solveInPlace(RealLinearOperator a, RealLinearOperator m, RealVector b, RealVector x, bool goodb, double shift)
 		{
 			checkParameters(a, m, b, x);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.IterationManager manager = getIterationManager();
+//ORIGINAL LINE: final mathlib.util.IterationManager manager = getIterationManager();
 			IterationManager manager = IterationManager;
 			/* Initialization counts as an iteration. */
 			manager.resetIterationCount();
@@ -1372,7 +1372,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code true}, and {@code a} is not self-adjoint </exception>
 		/// <exception cref="IllConditionedOperatorException"> if {@code a} is ill-conditioned </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector solveInPlace(final RealLinearOperator a, final RealVector b, final RealVector x) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override public RealVector solveInPlace(final RealLinearOperator a, final RealVector b, final RealVector x) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, NonSelfAdjointOperatorException, IllConditionedOperatorException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector solveInPlace(RealLinearOperator a, RealVector b, RealVector x)
 		{

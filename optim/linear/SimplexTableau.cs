@@ -17,15 +17,15 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.linear
+namespace mathlib.optim.linear
 {
 
 
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using GoalType = org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealVector = mathlib.linear.RealVector;
+	using GoalType = mathlib.optim.nonlinear.scalar.GoalType;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// A tableau for use in the Simplex method.
@@ -123,7 +123,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <param name="restrictToNonNegative"> Whether to restrict the variables to non-negative values. </param>
 		/// <param name="epsilon"> Amount of error to accept when checking for optimality. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: SimplexTableau(final LinearObjectiveFunction f, final java.util.Collection<LinearConstraint> constraints, final org.apache.commons.math3.optim.nonlinear.scalar.GoalType goalType, final boolean restrictToNonNegative, final double epsilon)
+//ORIGINAL LINE: SimplexTableau(final LinearObjectiveFunction f, final java.util.Collection<LinearConstraint> constraints, final mathlib.optim.nonlinear.scalar.GoalType goalType, final boolean restrictToNonNegative, final double epsilon)
 		internal SimplexTableau(LinearObjectiveFunction f, ICollection<LinearConstraint> constraints, GoalType goalType, bool restrictToNonNegative, double epsilon) : this(f, constraints, goalType, restrictToNonNegative, epsilon, SimplexSolver.DEFAULT_ULPS)
 		{
 		}
@@ -137,7 +137,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <param name="epsilon"> amount of error to accept when checking for optimality </param>
 		/// <param name="maxUlps"> amount of error to accept in floating point comparisons </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: SimplexTableau(final LinearObjectiveFunction f, final java.util.Collection<LinearConstraint> constraints, final org.apache.commons.math3.optim.nonlinear.scalar.GoalType goalType, final boolean restrictToNonNegative, final double epsilon, final int maxUlps)
+//ORIGINAL LINE: SimplexTableau(final LinearObjectiveFunction f, final java.util.Collection<LinearConstraint> constraints, final mathlib.optim.nonlinear.scalar.GoalType goalType, final boolean restrictToNonNegative, final double epsilon, final int maxUlps)
 		internal SimplexTableau(LinearObjectiveFunction f, ICollection<LinearConstraint> constraints, GoalType goalType, bool restrictToNonNegative, double epsilon, int maxUlps)
 		{
 			this.f = f;
@@ -189,7 +189,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <param name="maximize"> if true, goal is to maximize the objective function </param>
 		/// <returns> created tableau </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.linear.Array2DRowRealMatrix createTableau(final boolean maximize)
+//ORIGINAL LINE: protected mathlib.linear.Array2DRowRealMatrix createTableau(final boolean maximize)
 		protected internal virtual Array2DRowRealMatrix createTableau(bool maximize)
 		{
 
@@ -321,7 +321,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <param name="coefficients"> coefficients to sum </param>
 		/// <returns> the -1 times the sum of all coefficients in the given array. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected static double getInvertedCoefficientSum(final org.apache.commons.math3.linear.RealVector coefficients)
+//ORIGINAL LINE: protected static double getInvertedCoefficientSum(final mathlib.linear.RealVector coefficients)
 		protected internal static double getInvertedCoefficientSum(RealVector coefficients)
 		{
 			double sum = 0;

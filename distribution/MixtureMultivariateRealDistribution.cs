@@ -16,16 +16,16 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
-	using org.apache.commons.math3.util;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
+	using mathlib.util;
 
 	/// <summary>
 	/// Class for representing <a href="http://en.wikipedia.org/wiki/Mixture_model">
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.distribution
 			for (int i = 0; i < numComp; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<Double, T> comp = components.get(i);
+//ORIGINAL LINE: final mathlib.util.Pair<Double, T> comp = components.get(i);
 				Pair<double?, T> comp = components[i];
 				if (comp.Second.Dimension != dim)
 				{
@@ -100,7 +100,7 @@ namespace org.apache.commons.math3.distribution
 			for (int i = 0; i < numComp; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<Double, T> comp = components.get(i);
+//ORIGINAL LINE: final mathlib.util.Pair<Double, T> comp = components.get(i);
 				Pair<double?, T> comp = components[i];
 				weight[i] = comp.First / weightSum;
 				distribution.Add(comp.Second);
@@ -181,7 +181,7 @@ namespace org.apache.commons.math3.distribution
 			get
 			{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.util.Pair<Double, T>> list = new java.util.ArrayList<org.apache.commons.math3.util.Pair<Double, T>>(weight.length);
+	//ORIGINAL LINE: final java.util.List<mathlib.util.Pair<Double, T>> list = new java.util.ArrayList<mathlib.util.Pair<Double, T>>(weight.length);
 				IList<Pair<double?, T>> list = new List<Pair<double?, T>>(weight.Length);
     
 				for (int i = 0; i < weight.Length; i++)

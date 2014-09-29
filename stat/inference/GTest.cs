@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
-	using ChiSquaredDistribution = org.apache.commons.math3.distribution.ChiSquaredDistribution;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using ChiSquaredDistribution = mathlib.distribution.ChiSquaredDistribution;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Implements <a href="http://en.wikipedia.org/wiki/G-test">G Test</a>
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="DimensionMismatchException"> if the array lengths do not match or
 		/// are less than 2. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double g(final double[] expected, final long[] observed) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double g(final double[] expected, final long[] observed) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double g(double[] expected, long[] observed)
 		{
@@ -110,7 +110,7 @@ namespace org.apache.commons.math3.stat.inference
 			for (int i = 0; i < observed.Length; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dev = rescale ? org.apache.commons.math3.util.FastMath.log((double) observed[i] / (ratio * expected[i])) : org.apache.commons.math3.util.FastMath.log((double) observed[i] / expected[i]);
+//ORIGINAL LINE: final double dev = rescale ? mathlib.util.FastMath.log((double) observed[i] / (ratio * expected[i])) : mathlib.util.FastMath.log((double) observed[i] / expected[i]);
 				double dev = rescale ? FastMath.log((double) observed[i] / (ratio * expected[i])) : FastMath.log((double) observed[i] / expected[i]);
 				sum += ((double) observed[i]) * dev;
 			}
@@ -157,13 +157,13 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the
 		/// p-value. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double gTest(final double[] expected, final long[] observed) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double gTest(final double[] expected, final long[] observed) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double gTest(double[] expected, long[] observed)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.ChiSquaredDistribution distribution = new org.apache.commons.math3.distribution.ChiSquaredDistribution(expected.length - 1.0);
+//ORIGINAL LINE: final mathlib.distribution.ChiSquaredDistribution distribution = new mathlib.distribution.ChiSquaredDistribution(expected.length - 1.0);
 			ChiSquaredDistribution distribution = new ChiSquaredDistribution(expected.Length - 1.0);
 			return 1.0 - distribution.cumulativeProbability(g(expected, observed));
 		}
@@ -189,13 +189,13 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the
 		/// p-value. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double gTestIntrinsic(final double[] expected, final long[] observed) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double gTestIntrinsic(final double[] expected, final long[] observed) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double gTestIntrinsic(double[] expected, long[] observed)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.ChiSquaredDistribution distribution = new org.apache.commons.math3.distribution.ChiSquaredDistribution(expected.length - 2.0);
+//ORIGINAL LINE: final mathlib.distribution.ChiSquaredDistribution distribution = new mathlib.distribution.ChiSquaredDistribution(expected.length - 2.0);
 			ChiSquaredDistribution distribution = new ChiSquaredDistribution(expected.Length - 2.0);
 			return 1.0 - distribution.cumulativeProbability(g(expected, observed));
 		}
@@ -244,7 +244,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if alpha is not strictly greater than zero
 		/// and less than or equal to 0.5 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean gTest(final double[] expected, final long[] observed, final double alpha) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean gTest(final double[] expected, final long[] observed, final double alpha) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool gTest(double[] expected, long[] observed, double alpha)
 		{
@@ -371,7 +371,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// {@code observed1} or {@code observed2} are zero, or if the count
 		/// at the same index is zero for both arrays. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double gDataSetsComparison(final long[] observed1, final long[] observed2) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public double gDataSetsComparison(final long[] observed1, final long[] observed2) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.ZeroException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double gDataSetsComparison(long[] observed1, long[] observed2)
 		{
@@ -517,12 +517,12 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the
 		/// p-value. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double gTestDataSetsComparison(final long[] observed1, final long[] observed2) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.ZeroException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double gTestDataSetsComparison(final long[] observed1, final long[] observed2) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.ZeroException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double gTestDataSetsComparison(long[] observed1, long[] observed2)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.ChiSquaredDistribution distribution = new org.apache.commons.math3.distribution.ChiSquaredDistribution((double) observed1.length - 1);
+//ORIGINAL LINE: final mathlib.distribution.ChiSquaredDistribution distribution = new mathlib.distribution.ChiSquaredDistribution((double) observed1.length - 1);
 			ChiSquaredDistribution distribution = new ChiSquaredDistribution((double) observed1.Length - 1);
 			return 1 - distribution.cumulativeProbability(gDataSetsComparison(observed1, observed2));
 		}
@@ -569,7 +569,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs performing the test </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean gTestDataSetsComparison(final long[] observed1, final long[] observed2, final double alpha) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.ZeroException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean gTestDataSetsComparison(final long[] observed1, final long[] observed2, final double alpha) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.ZeroException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool gTestDataSetsComparison(long[] observed1, long[] observed2, double alpha)
 		{

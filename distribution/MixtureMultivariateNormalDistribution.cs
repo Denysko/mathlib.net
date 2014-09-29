@@ -16,14 +16,14 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using org.apache.commons.math3.util;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using mathlib.util;
 
 	/// <summary>
 	/// Multivariate normal mixture distribution.
@@ -63,7 +63,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="DimensionMismatchException"> if not all components have the same
 		/// number of variables. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MixtureMultivariateNormalDistribution(org.apache.commons.math3.random.RandomGenerator rng, java.util.List<org.apache.commons.math3.util.Pair<Double, MultivariateNormalDistribution>> components) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public MixtureMultivariateNormalDistribution(mathlib.random.RandomGenerator rng, java.util.List<mathlib.util.Pair<Double, MultivariateNormalDistribution>> components) throws mathlib.exception.NotPositiveException, mathlib.exception.DimensionMismatchException
 		public MixtureMultivariateNormalDistribution(RandomGenerator rng, IList<Pair<double?, MultivariateNormalDistribution>> components) : base(rng, components)
 		{
 		}
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.distribution
 		private static IList<Pair<double?, MultivariateNormalDistribution>> createComponents(double[] weights, double[][] means, double[][][] covariances)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.util.Pair<Double, MultivariateNormalDistribution>> mvns = new java.util.ArrayList<org.apache.commons.math3.util.Pair<Double, MultivariateNormalDistribution>>(weights.length);
+//ORIGINAL LINE: final java.util.List<mathlib.util.Pair<Double, MultivariateNormalDistribution>> mvns = new java.util.ArrayList<mathlib.util.Pair<Double, MultivariateNormalDistribution>>(weights.length);
 			IList<Pair<double?, MultivariateNormalDistribution>> mvns = new List<Pair<double?, MultivariateNormalDistribution>>(weights.Length);
 
 			for (int i = 0; i < weights.Length; i++)

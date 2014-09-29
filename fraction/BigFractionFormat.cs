@@ -18,13 +18,13 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathParseException = mathlib.exception.MathParseException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Formats a BigFraction number in proper format or improper format.
@@ -214,7 +214,7 @@ namespace org.apache.commons.math3.fraction
 		/// <exception cref="MathParseException"> if the beginning of the specified string
 		///            cannot be parsed. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public BigFraction parse(final String source) throws org.apache.commons.math3.exception.MathParseException
+//ORIGINAL LINE: @Override public BigFraction parse(final String source) throws mathlib.exception.MathParseException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override BigFraction parse(string source)
 		{

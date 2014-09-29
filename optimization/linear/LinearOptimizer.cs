@@ -18,10 +18,10 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.linear
+namespace mathlib.optimization.linear
 {
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
 
 	/// <summary>
 	/// This interface represents an optimization algorithm for linear problems.
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.optimization.linear
 		/// <exception cref="MathIllegalStateException"> if no solution fulfilling the constraints
 		///   can be found in the allowed number of iterations </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: org.apache.commons.math3.optimization.PointValuePair optimize(LinearObjectiveFunction f, java.util.Collection<LinearConstraint> constraints, org.apache.commons.math3.optimization.GoalType goalType, boolean restrictToNonNegative) throws org.apache.commons.math3.exception.MathIllegalStateException;
+//ORIGINAL LINE: mathlib.optimization.PointValuePair optimize(LinearObjectiveFunction f, java.util.Collection<LinearConstraint> constraints, mathlib.optimization.GoalType goalType, boolean restrictToNonNegative) throws mathlib.exception.MathIllegalStateException;
 	   PointValuePair optimize(LinearObjectiveFunction f, ICollection<LinearConstraint> constraints, GoalType goalType, bool restrictToNonNegative);
 
 	}

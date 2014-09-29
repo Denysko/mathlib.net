@@ -109,7 +109,7 @@ namespace mathlib.analysis.solvers
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: public double solve(final int maxEval, final org.apache.commons.math3.analysis.UnivariateFunction f, final double min, final double max, final AllowedSolution allowedSolution)
+        //ORIGINAL LINE: public double solve(final int maxEval, final mathlib.analysis.UnivariateFunction f, final double min, final double max, final AllowedSolution allowedSolution)
         public virtual double solve(int maxEval, UnivariateFunction f, double min, double max, AllowedSolution allowedSolution)
         {
             return solve(maxEval, f, min, max, min + 0.5 * (max - min), allowedSolution);
@@ -118,7 +118,7 @@ namespace mathlib.analysis.solvers
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: public double solve(final int maxEval, final org.apache.commons.math3.analysis.UnivariateFunction f, final double min, final double max, final double startValue, final AllowedSolution allowedSolution)
+        //ORIGINAL LINE: public double solve(final int maxEval, final mathlib.analysis.UnivariateFunction f, final double min, final double max, final double startValue, final AllowedSolution allowedSolution)
         public virtual double solve(int maxEval, UnivariateFunction f, double min, double max, double startValue, AllowedSolution allowedSolution)
         {
             this.allowed = allowedSolution;
@@ -128,7 +128,7 @@ namespace mathlib.analysis.solvers
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: @Override public double solve(final int maxEval, final org.apache.commons.math3.analysis.UnivariateFunction f, final double min, final double max, final double startValue)
+        //ORIGINAL LINE: @Override public double solve(final int maxEval, final mathlib.analysis.UnivariateFunction f, final double min, final double max, final double startValue)
         public override double solve(int maxEval, UnivariateFunction f, double min, double max, double startValue)
         {
             return solve(maxEval, f, min, max, startValue, AllowedSolution.ANY_SIDE);
@@ -140,7 +140,7 @@ namespace mathlib.analysis.solvers
         /// <exception cref="ConvergenceException"> if the algorithm failed due to finite
         /// precision. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected final double doSolve() throws org.apache.commons.math3.exception.ConvergenceException
+        //ORIGINAL LINE: @Override protected final double doSolve() throws mathlib.exception.ConvergenceException
         protected internal override sealed double doSolve()
         {
             // Get initial solution
@@ -211,13 +211,13 @@ namespace mathlib.analysis.solvers
                 {
                     switch (method)
                     {
-                        case org.apache.commons.math3.analysis.solvers.BaseSecantSolver.Method.ILLINOIS:
+                        case mathlib.analysis.solvers.BaseSecantSolver.Method.ILLINOIS:
                             f0 *= 0.5;
                             break;
-                        case org.apache.commons.math3.analysis.solvers.BaseSecantSolver.Method.PEGASUS:
+                        case mathlib.analysis.solvers.BaseSecantSolver.Method.PEGASUS:
                             f0 *= f1 / (f1 + fx);
                             break;
-                        case org.apache.commons.math3.analysis.solvers.BaseSecantSolver.Method.REGULA_FALSI:
+                        case mathlib.analysis.solvers.BaseSecantSolver.Method.REGULA_FALSI:
                             // Detect early that algorithm is stuck, instead of waiting
                             // for the maximum number of iterations to be exceeded.
                             if (x == x1)
@@ -241,27 +241,27 @@ namespace mathlib.analysis.solvers
                 {
                     switch (allowed)
                     {
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.ANY_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.ANY_SIDE:
                             return x1;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.LEFT_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.LEFT_SIDE:
                             if (inverted)
                             {
                                 return x1;
                             }
                             break;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.RIGHT_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.RIGHT_SIDE:
                             if (!inverted)
                             {
                                 return x1;
                             }
                             break;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.BELOW_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.BELOW_SIDE:
                             if (f1 <= 0)
                             {
                                 return x1;
                             }
                             break;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.ABOVE_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.ABOVE_SIDE:
                             if (f1 >= 0)
                             {
                                 return x1;
@@ -278,15 +278,15 @@ namespace mathlib.analysis.solvers
                 {
                     switch (allowed)
                     {
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.ANY_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.ANY_SIDE:
                             return x1;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.LEFT_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.LEFT_SIDE:
                             return inverted ? x1 : x0;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.RIGHT_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.RIGHT_SIDE:
                             return inverted ? x0 : x1;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.BELOW_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.BELOW_SIDE:
                             return (f1 <= 0) ? x1 : x0;
-                        case org.apache.commons.math3.analysis.solvers.AllowedSolution.ABOVE_SIDE:
+                        case mathlib.analysis.solvers.AllowedSolution.ABOVE_SIDE:
                             return (f1 >= 0) ? x1 : x0;
                         default:
                             throw new MathInternalError();

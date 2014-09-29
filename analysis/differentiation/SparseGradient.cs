@@ -17,18 +17,18 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using mathlib;
+	using mathlib;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// First derivative computation with large number of variables.
@@ -494,10 +494,10 @@ namespace org.apache.commons.math3.analysis.differentiation
 
 			// compute k such that lhs % rhs = lhs - k rhs
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double rem = org.apache.commons.math3.util.FastMath.IEEEremainder(value, a.value);
+//ORIGINAL LINE: final double rem = mathlib.util.FastMath.IEEEremainder(value, a.value);
 			double rem = FastMath.IEEEremainder(value, a.value);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double k = org.apache.commons.math3.util.FastMath.rint((value - rem) / a.value);
+//ORIGINAL LINE: final double k = mathlib.util.FastMath.rint((value - rem) / a.value);
 			double k = FastMath.rint((value - rem) / a.value);
 
 			return subtract(a.multiply(k));
@@ -599,7 +599,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		public virtual SparseGradient scalb(int n)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final SparseGradient out = new SparseGradient(org.apache.commons.math3.util.FastMath.scalb(value, n), java.util.Collections.emptyMap<Integer, Double> ());
+//ORIGINAL LINE: final SparseGradient out = new SparseGradient(mathlib.util.FastMath.scalb(value, n), java.util.Collections.emptyMap<Integer, Double> ());
 			SparseGradient @out = new SparseGradient(FastMath.scalb(value, n), Collections.emptyMap<int?, double?> ());
 			foreach (KeyValuePair<int?, double?> entry in derivatives)
 			{
@@ -626,10 +626,10 @@ namespace org.apache.commons.math3.analysis.differentiation
 			{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int expX = org.apache.commons.math3.util.FastMath.getExponent(value);
+//ORIGINAL LINE: final int expX = mathlib.util.FastMath.getExponent(value);
 				int expX = FastMath.getExponent(value);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int expY = org.apache.commons.math3.util.FastMath.getExponent(y.value);
+//ORIGINAL LINE: final int expY = mathlib.util.FastMath.getExponent(y.value);
 				int expY = FastMath.getExponent(y.value);
 				if (expX > expY + 27)
 				{
@@ -702,7 +702,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		public virtual SparseGradient sqrt()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sqrt = org.apache.commons.math3.util.FastMath.sqrt(value);
+//ORIGINAL LINE: final double sqrt = mathlib.util.FastMath.sqrt(value);
 			double sqrt = FastMath.sqrt(value);
 			return new SparseGradient(sqrt, 0.5 / sqrt, derivatives);
 		}
@@ -712,7 +712,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		public virtual SparseGradient cbrt()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double cbrt = org.apache.commons.math3.util.FastMath.cbrt(value);
+//ORIGINAL LINE: final double cbrt = mathlib.util.FastMath.cbrt(value);
 			double cbrt = FastMath.cbrt(value);
 			return new SparseGradient(cbrt, 1.0 / (3 * cbrt * cbrt), derivatives);
 		}
@@ -734,7 +734,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double root = org.apache.commons.math3.util.FastMath.pow(value, 1.0 / n);
+//ORIGINAL LINE: final double root = mathlib.util.FastMath.pow(value, 1.0 / n);
 				double root = FastMath.pow(value, 1.0 / n);
 				return new SparseGradient(root, 1.0 / (n * FastMath.pow(root, n - 1)), derivatives);
 			}
@@ -762,7 +762,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double valueNm1 = org.apache.commons.math3.util.FastMath.pow(value, n - 1);
+//ORIGINAL LINE: final double valueNm1 = mathlib.util.FastMath.pow(value, n - 1);
 				double valueNm1 = FastMath.pow(value, n - 1);
 				return new SparseGradient(value * valueNm1, n * valueNm1, derivatives);
 			}
@@ -804,7 +804,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double ax = org.apache.commons.math3.util.FastMath.pow(a, x.value);
+//ORIGINAL LINE: final double ax = mathlib.util.FastMath.pow(a, x.value);
 				double ax = FastMath.pow(a, x.value);
 				return new SparseGradient(ax, ax * FastMath.log(a), x.derivatives);
 			}
@@ -815,7 +815,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		public virtual SparseGradient exp()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double e = org.apache.commons.math3.util.FastMath.exp(value);
+//ORIGINAL LINE: final double e = mathlib.util.FastMath.exp(value);
 			double e = FastMath.exp(value);
 			return new SparseGradient(e, e, derivatives);
 		}
@@ -868,7 +868,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		public virtual SparseGradient tan()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = org.apache.commons.math3.util.FastMath.tan(value);
+//ORIGINAL LINE: final double t = mathlib.util.FastMath.tan(value);
 			double t = FastMath.tan(value);
 			return new SparseGradient(t, 1 + t * t, derivatives);
 		}
@@ -965,7 +965,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		public virtual SparseGradient tanh()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = org.apache.commons.math3.util.FastMath.tanh(value);
+//ORIGINAL LINE: final double t = mathlib.util.FastMath.tanh(value);
 			double t = FastMath.tanh(value);
 			return new SparseGradient(t, 1 - t * t, derivatives);
 		}
@@ -1039,7 +1039,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SparseGradient linearCombination(final SparseGradient[] a, final SparseGradient[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public SparseGradient linearCombination(final SparseGradient[] a, final SparseGradient[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual SparseGradient linearCombination(SparseGradient[] a, SparseGradient[] b)
 		{

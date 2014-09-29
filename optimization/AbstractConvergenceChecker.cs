@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using Precision = org.apache.commons.math3.util.Precision;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Base class for all convergence checker implementations.

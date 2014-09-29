@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using MathParseException = mathlib.exception.MathParseException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implementation of a Sobol sequence.
@@ -93,7 +93,7 @@ namespace org.apache.commons.math3.random
 		/// <param name="dimension"> the space dimension </param>
 		/// <exception cref="OutOfRangeException"> if the space dimension is outside the allowed range of [1, 1000] </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SobolSequenceGenerator(final int dimension) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public SobolSequenceGenerator(final int dimension) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public SobolSequenceGenerator(int dimension)
 		{
@@ -177,7 +177,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="MathParseException"> if the content in the stream could not be parsed successfully </exception>
 		/// <exception cref="IOException"> if an error occurs while reading from the input stream </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SobolSequenceGenerator(final int dimension, final java.io.InputStream is) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.MathParseException, java.io.IOException
+//ORIGINAL LINE: public SobolSequenceGenerator(final int dimension, final java.io.InputStream is) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.MathParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public SobolSequenceGenerator(int dimension, InputStream @is)
 		{
@@ -214,7 +214,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="IOException"> if the stream could not be read </exception>
 		/// <exception cref="MathParseException"> if the content could not be parsed successfully </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private int initFromStream(final java.io.InputStream is) throws org.apache.commons.math3.exception.MathParseException, java.io.IOException
+//ORIGINAL LINE: private int initFromStream(final java.io.InputStream is) throws mathlib.exception.MathParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private int initFromStream(InputStream @is)
 		{
@@ -356,7 +356,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> the i-th point in the Sobol sequence </returns>
 		/// <exception cref="NotPositiveException"> if index &lt; 0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] skipTo(final int index) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public double[] skipTo(final int index) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] skipTo(int index)
 		{

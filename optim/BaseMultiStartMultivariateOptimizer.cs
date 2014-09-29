@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using RandomVectorGenerator = org.apache.commons.math3.random.RandomVectorGenerator;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using RandomVectorGenerator = mathlib.random.RandomVectorGenerator;
 
 	/// <summary>
 	/// Base class multi-start optimizer for a multivariate function.
@@ -83,7 +83,7 @@ namespace org.apache.commons.math3.optim
 		/// <param name="generator"> Random vector generator to use for restarts. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code starts < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public BaseMultiStartMultivariateOptimizer(final BaseMultivariateOptimizer<PAIR> optimizer, final int starts, final org.apache.commons.math3.random.RandomVectorGenerator generator)
+//ORIGINAL LINE: public BaseMultiStartMultivariateOptimizer(final BaseMultivariateOptimizer<PAIR> optimizer, final int starts, final mathlib.random.RandomVectorGenerator generator)
 		public BaseMultiStartMultivariateOptimizer(BaseMultivariateOptimizer<PAIR> optimizer, int starts, RandomVectorGenerator generator) : base(optimizer.ConvergenceChecker)
 		{
 

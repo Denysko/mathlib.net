@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 	/// <summary>
 	/// Interface representing a univariate real interpolating function.
@@ -38,7 +38,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// algorithm. </exception>
 		/// <exception cref="DimensionMismatchException"> if arrays lengthes do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: org.apache.commons.math3.analysis.UnivariateFunction interpolate(double xval[] , double yval[]) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: mathlib.analysis.UnivariateFunction interpolate(double xval[] , double yval[]) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.DimensionMismatchException;
 		UnivariateFunction interpolate(double[] xval, double[] yval);
 	}
 

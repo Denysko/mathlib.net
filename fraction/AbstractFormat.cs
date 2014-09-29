@@ -18,12 +18,12 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Common part shared by both <seealso cref="FractionFormat"/> and <seealso cref="BigFractionFormat"/>.

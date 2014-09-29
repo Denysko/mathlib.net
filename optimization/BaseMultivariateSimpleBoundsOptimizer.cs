@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
 
 	/// <summary>
 	/// This interface is mainly intended to enforce the internal coherence of
 	/// Commons-FastMath. Users of the API are advised to base their code on
 	/// the following interfaces:
 	/// <ul>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.MultivariateOptimizer"/></li>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.MultivariateDifferentiableOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.MultivariateOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.MultivariateDifferentiableOptimizer"/></li>
 	/// </ul>
 	/// </summary>
 	/// @param <FUNC> Type of the objective function to be optimized.
@@ -37,7 +37,7 @@ namespace org.apache.commons.math3.optimization
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 3.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public interface BaseMultivariateSimpleBoundsOptimizer<FUNC> : BaseMultivariateOptimizer<FUNC> where FUNC : org.apache.commons.math3.analysis.MultivariateFunction
+	public interface BaseMultivariateSimpleBoundsOptimizer<FUNC> : BaseMultivariateOptimizer<FUNC> where FUNC : mathlib.analysis.MultivariateFunction
 	{
 		/// <summary>
 		/// Optimize an objective function.
@@ -51,15 +51,15 @@ namespace org.apache.commons.math3.optimization
 		/// <param name="upperBound"> Upper bound for each of the parameters. </param>
 		/// <returns> the point/value pair giving the optimal value for objective
 		/// function. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the array sizes are wrong. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if
+		/// <exception cref="mathlib.exception.NullArgumentException"> if
 		/// {@code f}, {@code goalType} or {@code startPoint} is {@code null}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooSmallException"> if any
+		/// <exception cref="mathlib.exception.NumberIsTooSmallException"> if any
 		/// of the initial values is less than its lower bound. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException"> if any
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException"> if any
 		/// of the initial values is greater than its upper bound. </exception>
 		PointValuePair optimize(int maxEval, FUNC f, GoalType goalType, double[] startPoint, double[] lowerBound, double[] upperBound);
 	}

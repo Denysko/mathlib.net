@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using TooManyIterationsException = org.apache.commons.math3.exception.TooManyIterationsException;
+	using Incrementor = mathlib.util.Incrementor;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using TooManyIterationsException = mathlib.exception.TooManyIterationsException;
 
 	/// <summary>
 	/// Base class for implementing optimizers.
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.optim
 		/// <exception cref="TooManyIterationsException"> if the maximal number of
 		/// iterations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PAIR optimize(OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.TooManyIterationsException
+//ORIGINAL LINE: public PAIR optimize(OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.TooManyIterationsException
 		public virtual PAIR optimize(params OptimizationData[] optData)
 		{
 			// Parse options.
@@ -177,7 +177,7 @@ namespace org.apache.commons.math3.optim
 		/// <exception cref="TooManyIterationsException"> if the maximal number of
 		/// iterations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PAIR optimize() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.TooManyIterationsException
+//ORIGINAL LINE: public PAIR optimize() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.TooManyIterationsException
 		public virtual PAIR optimize()
 		{
 			// Reset counters.
@@ -200,7 +200,7 @@ namespace org.apache.commons.math3.optim
 		/// <exception cref="TooManyEvaluationsException"> if the allowed evaluations
 		/// have been exhausted. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void incrementEvaluationCount() throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: protected void incrementEvaluationCount() throws mathlib.exception.TooManyEvaluationsException
 		protected internal virtual void incrementEvaluationCount()
 		{
 			evaluations.incrementCount();
@@ -212,7 +212,7 @@ namespace org.apache.commons.math3.optim
 		/// <exception cref="TooManyIterationsException"> if the allowed iterations
 		/// have been exhausted. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void incrementIterationCount() throws org.apache.commons.math3.exception.TooManyIterationsException
+//ORIGINAL LINE: protected void incrementIterationCount() throws mathlib.exception.TooManyIterationsException
 		protected internal virtual void incrementIterationCount()
 		{
 			iterations.incrementCount();

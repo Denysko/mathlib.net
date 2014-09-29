@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Beta = org.apache.commons.math3.special.Beta;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Beta = mathlib.special.Beta;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the binomial distribution.

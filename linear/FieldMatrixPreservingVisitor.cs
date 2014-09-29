@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using org.apache.commons.math3;
+	using mathlib;
 
 	/// <summary>
 	/// Interface defining a visitor for matrix entries.
@@ -27,8 +27,8 @@ namespace org.apache.commons.math3.linear
 	/// @version $Id: FieldMatrixPreservingVisitor.java 1416643 2012-12-03 19:37:14Z tn $
 	/// @since 2.0 </param>
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
-//ORIGINAL LINE: public interface FieldMatrixPreservingVisitor<T extends org.apache.commons.math3.FieldElement<?>>
-	public interface FieldMatrixPreservingVisitor<T> where T : org.apache.commons.math3.FieldElement<?>
+//ORIGINAL LINE: public interface FieldMatrixPreservingVisitor<T extends mathlib.FieldElement<?>>
+	public interface FieldMatrixPreservingVisitor<T> where T : mathlib.FieldElement<?>
 	{
 		/// <summary>
 		/// Start visiting a matrix.

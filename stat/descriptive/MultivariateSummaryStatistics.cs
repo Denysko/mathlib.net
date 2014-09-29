@@ -17,26 +17,26 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using GeometricMean = org.apache.commons.math3.stat.descriptive.moment.GeometricMean;
-	using Mean = org.apache.commons.math3.stat.descriptive.moment.Mean;
-	using VectorialCovariance = org.apache.commons.math3.stat.descriptive.moment.VectorialCovariance;
-	using Max = org.apache.commons.math3.stat.descriptive.rank.Max;
-	using Min = org.apache.commons.math3.stat.descriptive.rank.Min;
-	using Sum = org.apache.commons.math3.stat.descriptive.summary.Sum;
-	using SumOfLogs = org.apache.commons.math3.stat.descriptive.summary.SumOfLogs;
-	using SumOfSquares = org.apache.commons.math3.stat.descriptive.summary.SumOfSquares;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using GeometricMean = mathlib.stat.descriptive.moment.GeometricMean;
+	using Mean = mathlib.stat.descriptive.moment.Mean;
+	using VectorialCovariance = mathlib.stat.descriptive.moment.VectorialCovariance;
+	using Max = mathlib.stat.descriptive.rank.Max;
+	using Min = mathlib.stat.descriptive.rank.Min;
+	using Sum = mathlib.stat.descriptive.summary.Sum;
+	using SumOfLogs = mathlib.stat.descriptive.summary.SumOfLogs;
+	using SumOfSquares = mathlib.stat.descriptive.summary.SumOfSquares;
+	using MathUtils = mathlib.util.MathUtils;
+	using MathArrays = mathlib.util.MathArrays;
+	using Precision = mathlib.util.Precision;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <p>Computes summary statistics for a stream of n-tuples added using the
@@ -159,7 +159,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="DimensionMismatchException"> if the length of the array
 		/// does not match the one used at construction </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addValue(double[] value) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void addValue(double[] value) throws mathlib.exception.DimensionMismatchException
 		public virtual void addValue(double[] value)
 		{
 			checkDimension(value.Length);
@@ -468,7 +468,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		/// (i.e. if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void setImpl(StorelessUnivariateStatistic[] newImpl, StorelessUnivariateStatistic[] oldImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private void setImpl(StorelessUnivariateStatistic[] newImpl, StorelessUnivariateStatistic[] oldImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 		private void setImpl(StorelessUnivariateStatistic[] newImpl, StorelessUnivariateStatistic[] oldImpl)
 		{
 			checkEmpty();
@@ -505,7 +505,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSumImpl(StorelessUnivariateStatistic[] sumImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setSumImpl(StorelessUnivariateStatistic[] sumImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Returns the currently configured sum of squares implementation
@@ -536,7 +536,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSumsqImpl(StorelessUnivariateStatistic[] sumsqImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setSumsqImpl(StorelessUnivariateStatistic[] sumsqImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Returns the currently configured minimum implementation
@@ -567,7 +567,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setMinImpl(StorelessUnivariateStatistic[] minImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setMinImpl(StorelessUnivariateStatistic[] minImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Returns the currently configured maximum implementation
@@ -598,7 +598,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setMaxImpl(StorelessUnivariateStatistic[] maxImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setMaxImpl(StorelessUnivariateStatistic[] maxImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Returns the currently configured sum of logs implementation
@@ -629,7 +629,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSumLogImpl(StorelessUnivariateStatistic[] sumLogImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setSumLogImpl(StorelessUnivariateStatistic[] sumLogImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Returns the currently configured geometric mean implementation
@@ -660,7 +660,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setGeoMeanImpl(StorelessUnivariateStatistic[] geoMeanImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setGeoMeanImpl(StorelessUnivariateStatistic[] geoMeanImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Returns the currently configured mean implementation
@@ -691,13 +691,13 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setMeanImpl(StorelessUnivariateStatistic[] meanImpl) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setMeanImpl(StorelessUnivariateStatistic[] meanImpl) throws mathlib.exception.MathIllegalStateException, mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Throws MathIllegalStateException if the statistic is not empty. </summary>
 		/// <exception cref="MathIllegalStateException"> if n > 0. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkEmpty() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: private void checkEmpty() throws mathlib.exception.MathIllegalStateException
 		private void checkEmpty()
 		{
 			if (n > 0)
@@ -711,7 +711,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="dimension"> dimension to check </param>
 		/// <exception cref="DimensionMismatchException"> if dimension != k </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkDimension(int dimension) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private void checkDimension(int dimension) throws mathlib.exception.DimensionMismatchException
 		private void checkDimension(int dimension)
 		{
 			if (dimension != k)

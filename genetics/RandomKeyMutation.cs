@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Mutation operator for <seealso cref="RandomKey"/>s. Changes a randomly chosen element
@@ -38,7 +38,7 @@ namespace org.apache.commons.math3.genetics
 		/// </summary>
 		/// <exception cref="MathIllegalArgumentException"> if <code>original</code> is not a <seealso cref="RandomKey"/> instance </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Chromosome mutate(final Chromosome original) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public Chromosome mutate(final Chromosome original) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Chromosome mutate(Chromosome original)
 		{

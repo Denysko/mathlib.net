@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
 
 	/// <summary>
 	/// Interface representing a univariate real interpolating function.
@@ -47,7 +47,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NoDataException"> if an array has zero-length. </exception>
 		/// <exception cref="NullArgumentException"> if the arguments are {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: org.apache.commons.math3.analysis.MultivariateFunction interpolate(double[][] xval, double[] yval) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException;
+//ORIGINAL LINE: mathlib.analysis.MultivariateFunction interpolate(double[][] xval, double[] yval) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException;
 		MultivariateFunction interpolate(double[][] xval, double[] yval);
 	}
 

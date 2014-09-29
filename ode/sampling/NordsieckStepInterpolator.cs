@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.sampling
+namespace mathlib.ode.sampling
 {
 
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements an interpolator for integrators using Nordsieck representation.
@@ -29,8 +29,8 @@ namespace org.apache.commons.math3.ode.sampling
 	/// <p>This interpolator computes dense output around the current point.
 	/// The interpolation equation is based on Taylor series formulas.
 	/// </summary>
-	/// <seealso cref= org.apache.commons.math3.ode.nonstiff.AdamsBashforthIntegrator </seealso>
-	/// <seealso cref= org.apache.commons.math3.ode.nonstiff.AdamsMoultonIntegrator
+	/// <seealso cref= mathlib.ode.nonstiff.AdamsBashforthIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.nonstiff.AdamsMoultonIntegrator
 	/// @version $Id: NordsieckStepInterpolator.java 1503712 2013-07-16 13:35:19Z luc $
 	/// @since 2.0 </seealso>
 
@@ -120,7 +120,7 @@ namespace org.apache.commons.math3.ode.sampling
 		/// <param name="primaryMapper"> equations mapper for the primary equations set </param>
 		/// <param name="secondaryMappers"> equations mappers for the secondary equations sets </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public void reinitialize(final double[] y, final boolean forward, final org.apache.commons.math3.ode.EquationsMapper primaryMapper, final org.apache.commons.math3.ode.EquationsMapper[] secondaryMappers)
+//ORIGINAL LINE: @Override public void reinitialize(final double[] y, final boolean forward, final mathlib.ode.EquationsMapper primaryMapper, final mathlib.ode.EquationsMapper[] secondaryMappers)
 		public override void reinitialize(double[] y, bool forward, EquationsMapper primaryMapper, EquationsMapper[] secondaryMappers)
 		{
 			base.reinitialize(y, forward, primaryMapper, secondaryMappers);
@@ -138,7 +138,7 @@ namespace org.apache.commons.math3.ode.sampling
 		/// <param name="nordsieckVector"> reference to the integrator matrix holding the
 		/// Nordsieck vector </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void reinitialize(final double time, final double stepSize, final double[] scaledDerivative, final org.apache.commons.math3.linear.Array2DRowRealMatrix nordsieckVector)
+//ORIGINAL LINE: public void reinitialize(final double time, final double stepSize, final double[] scaledDerivative, final mathlib.linear.Array2DRowRealMatrix nordsieckVector)
 		public virtual void reinitialize(double time, double stepSize, double[] scaledDerivative, Array2DRowRealMatrix nordsieckVector)
 		{
 			this.referenceTime = time;
@@ -201,7 +201,7 @@ namespace org.apache.commons.math3.ode.sampling
 		/// <seealso cref= #getInterpolatedDerivatives() </seealso>
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getInterpolatedStateVariation() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double[] getInterpolatedStateVariation() throws mathlib.exception.MaxCountExceededException
 		public virtual double[] InterpolatedStateVariation
 		{
 			get
@@ -244,7 +244,7 @@ namespace org.apache.commons.math3.ode.sampling
 //ORIGINAL LINE: final double[] nDataI = nData[i];
 				double[] nDataI = nData[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double power = org.apache.commons.math3.util.FastMath.pow(normalizedAbscissa, order);
+//ORIGINAL LINE: final double power = mathlib.util.FastMath.pow(normalizedAbscissa, order);
 				double power = FastMath.pow(normalizedAbscissa, order);
 				for (int j = 0; j < nDataI.Length; ++j)
 				{

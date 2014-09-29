@@ -137,7 +137,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if {@code magnitude == Byte.MIN_VALUE}
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static byte copySign(byte magnitude, byte sign) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static byte copySign(byte magnitude, byte sign) throws mathlib.exception.MathArithmeticException
 		public static sbyte CopySign(sbyte magnitude, sbyte sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
@@ -164,7 +164,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if {@code magnitude == Short.MIN_VALUE}
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static short copySign(short magnitude, short sign) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static short copySign(short magnitude, short sign) throws mathlib.exception.MathArithmeticException
 		public static short CopySign(short magnitude, short sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
@@ -191,7 +191,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if {@code magnitude == Integer.MIN_VALUE}
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int copySign(int magnitude, int sign) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static int copySign(int magnitude, int sign) throws mathlib.exception.MathArithmeticException
 		public static int CopySign(int magnitude, int sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
@@ -218,7 +218,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if {@code magnitude == Long.MIN_VALUE}
 		/// and {@code sign >= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long copySign(long magnitude, long sign) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long copySign(long magnitude, long sign) throws mathlib.exception.MathArithmeticException
 		public static long CopySign(long magnitude, long sign)
 		{
 			if ((magnitude >= 0 && sign >= 0) || (magnitude < 0 && sign < 0)) // Sign is OK.
@@ -241,7 +241,7 @@ namespace mathlib.util
 		/// <exception cref="NotFiniteNumberException"> if {@code x} is not a
 		/// finite real number. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkFinite(final double x) throws org.apache.commons.math3.exception.NotFiniteNumberException
+//ORIGINAL LINE: public static void checkFinite(final double x) throws mathlib.exception.NotFiniteNumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void CheckFinite(double x)
 		{
@@ -258,7 +258,7 @@ namespace mathlib.util
 		/// <exception cref="NotFiniteNumberException"> if any values of the array is not a
 		/// finite real number. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkFinite(final double[] val) throws org.apache.commons.math3.exception.NotFiniteNumberException
+//ORIGINAL LINE: public static void checkFinite(final double[] val) throws mathlib.exception.NotFiniteNumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void CheckFinite(double[] val)
 		{
@@ -282,7 +282,7 @@ namespace mathlib.util
 		/// <param name="args"> Arguments to replace the placeholders in {@code pattern}. </param>
 		/// <exception cref="NullArgumentException"> if {@code o} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkNotNull(Object o, org.apache.commons.math3.exception.util.Localizable pattern, Object... args) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void checkNotNull(Object o, mathlib.exception.util.Localizable pattern, Object... args) throws mathlib.exception.NullArgumentException
 		public static void CheckNotNull(object o, Localizable pattern, params object[] args)
 		{
 			if (o == null)
@@ -297,7 +297,7 @@ namespace mathlib.util
 		/// <param name="o"> Object to be checked. </param>
 		/// <exception cref="NullArgumentException"> if {@code o} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkNotNull(Object o) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void checkNotNull(Object o) throws mathlib.exception.NullArgumentException
 		public static void CheckNotNull(object o)
 		{
 			if (o == null)

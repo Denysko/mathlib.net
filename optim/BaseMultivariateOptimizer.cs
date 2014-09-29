@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate functions.

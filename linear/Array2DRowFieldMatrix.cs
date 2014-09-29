@@ -17,21 +17,21 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using mathlib;
+	using mathlib;
+	using NoDataException = mathlib.exception.NoDataException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Implementation of FieldMatrix<T> using a <seealso cref="FieldElement"/>[][] array to store entries.
@@ -44,7 +44,7 @@ namespace org.apache.commons.math3.linear
 	/// @param <T> the type of the field elements
 	/// @version $Id: Array2DRowFieldMatrix.java 1449528 2013-02-24 19:06:20Z luc $ </param>
 	[Serializable]
-	public class Array2DRowFieldMatrix<T> : AbstractFieldMatrix<T> where T : org.apache.commons.math3.FieldElement<T>
+	public class Array2DRowFieldMatrix<T> : AbstractFieldMatrix<T> where T : mathlib.FieldElement<T>
 	{
 		/// <summary>
 		/// Serializable version identifier </summary>
@@ -57,7 +57,7 @@ namespace org.apache.commons.math3.linear
 		/// Creates a matrix with no data </summary>
 		/// <param name="field"> field to which the elements belong </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final org.apache.commons.math3.Field<T> field)
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final mathlib.Field<T> field)
 		public Array2DRowFieldMatrix(Field<T> field) : base(field)
 		{
 		}
@@ -70,7 +70,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="columnDimension"> Number of columns in the new matrix. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if row or column dimension is not positive. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final org.apache.commons.math3.Field<T> field, final int rowDimension, final int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final mathlib.Field<T> field, final int rowDimension, final int columnDimension) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Array2DRowFieldMatrix(Field<T> field, int rowDimension, int columnDimension) : base(field, rowDimension, columnDimension)
 		{
@@ -90,7 +90,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NoDataException"> if there are not at least one row and one column. </exception>
 		/// <seealso cref= #Array2DRowFieldMatrix(FieldElement[][], boolean) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final T[][] d) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final T[][] d) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Array2DRowFieldMatrix(T[][] d) : this(extractField(d), d)
 		{
@@ -110,7 +110,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NoDataException"> if there are not at least one row and one column. </exception>
 		/// <seealso cref= #Array2DRowFieldMatrix(FieldElement[][], boolean) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final org.apache.commons.math3.Field<T> field, final T[][] d) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final mathlib.Field<T> field, final T[][] d) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Array2DRowFieldMatrix(Field<T> field, T[][] d) : base(field)
 		{
@@ -132,7 +132,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NullArgumentException"> if {@code d} is {@code null}. </exception>
 		/// <seealso cref= #Array2DRowFieldMatrix(FieldElement[][]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final T[][] d, final boolean copyArray) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final T[][] d, final boolean copyArray) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Array2DRowFieldMatrix(T[][] d, bool copyArray) : this(extractField(d), d, copyArray)
 		{
@@ -154,7 +154,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NullArgumentException"> if {@code d} is {@code null}. </exception>
 		/// <seealso cref= #Array2DRowFieldMatrix(FieldElement[][]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final org.apache.commons.math3.Field<T> field, final T[][] d, final boolean copyArray) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final mathlib.Field<T> field, final T[][] d, final boolean copyArray) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Array2DRowFieldMatrix(Field<T> field, T[][] d, bool copyArray) : base(field)
 		{
@@ -198,7 +198,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="v"> Column vector holding data for new matrix. </param>
 		/// <exception cref="NoDataException"> if v is empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final T[] v) throws org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final T[] v) throws mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Array2DRowFieldMatrix(T[] v) : this(extractField(v), v)
 		{
@@ -212,7 +212,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="field"> Field to which the elements belong. </param>
 		/// <param name="v"> Column vector holding data for new matrix. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix(final org.apache.commons.math3.Field<T> field, final T[] v)
+//ORIGINAL LINE: public Array2DRowFieldMatrix(final mathlib.Field<T> field, final T[] v)
 		public Array2DRowFieldMatrix(Field<T> field, T[] v) : base(field)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -228,7 +228,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public FieldMatrix<T> createMatrix(final int rowDimension, final int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: @Override public FieldMatrix<T> createMatrix(final int rowDimension, final int columnDimension) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override FieldMatrix<T> createMatrix(int rowDimension, int columnDimension)
 		{
@@ -264,7 +264,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int columnCount = getColumnDimension();
 			int columnCount = ColumnDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] outData = org.apache.commons.math3.util.MathArrays.buildArray(getField(), rowCount, columnCount);
+//ORIGINAL LINE: final T[][] outData = mathlib.util.MathArrays.buildArray(getField(), rowCount, columnCount);
 			T[][] outData = MathArrays.buildArray(Field, rowCount, columnCount);
 			for (int row = 0; row < rowCount; row++)
 			{
@@ -308,7 +308,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int columnCount = getColumnDimension();
 			int columnCount = ColumnDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] outData = org.apache.commons.math3.util.MathArrays.buildArray(getField(), rowCount, columnCount);
+//ORIGINAL LINE: final T[][] outData = mathlib.util.MathArrays.buildArray(getField(), rowCount, columnCount);
 			T[][] outData = MathArrays.buildArray(Field, rowCount, columnCount);
 			for (int row = 0; row < rowCount; row++)
 			{
@@ -339,7 +339,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the number of columns of this
 		/// matrix is not equal to the number of rows of {@code m}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Array2DRowFieldMatrix<T> multiply(final Array2DRowFieldMatrix<T> m) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Array2DRowFieldMatrix<T> multiply(final Array2DRowFieldMatrix<T> m) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Array2DRowFieldMatrix<T> multiply(Array2DRowFieldMatrix<T> m)
 		{
@@ -356,7 +356,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int nSum = this.getColumnDimension();
 			int nSum = this.ColumnDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] outData = org.apache.commons.math3.util.MathArrays.buildArray(getField(), nRows, nCols);
+//ORIGINAL LINE: final T[][] outData = mathlib.util.MathArrays.buildArray(getField(), nRows, nCols);
 			T[][] outData = MathArrays.buildArray(Field, nRows, nCols);
 			for (int row = 0; row < nRows; row++)
 			{
@@ -407,7 +407,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setSubMatrix(final T[][] subMatrix, final int row, final int column) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public void setSubMatrix(final T[][] subMatrix, final int row, final int column) throws mathlib.exception.OutOfRangeException, mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setSubMatrix(T[][] subMatrix, int row, int column)
 		{
@@ -456,7 +456,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public T getEntry(final int row, final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public T getEntry(final int row, final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override T getEntry(int row, int column)
 		{
@@ -469,7 +469,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setEntry(final int row, final int column, final T value) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void setEntry(final int row, final int column, final T value) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setEntry(int row, int column, T value)
 		{
@@ -482,7 +482,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void addToEntry(final int row, final int column, final T increment) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void addToEntry(final int row, final int column, final T increment) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void addToEntry(int row, int column, T increment)
 		{
@@ -495,7 +495,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void multiplyEntry(final int row, final int column, final T factor) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void multiplyEntry(final int row, final int column, final T factor) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void multiplyEntry(int row, int column, T factor)
 		{
@@ -528,7 +528,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public T[] operate(final T[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public T[] operate(final T[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override T[] operate(T[] v)
 		{
@@ -543,7 +543,7 @@ namespace org.apache.commons.math3.linear
 				throw new DimensionMismatchException(v.Length, nCols);
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] out = org.apache.commons.math3.util.MathArrays.buildArray(getField(), nRows);
+//ORIGINAL LINE: final T[] out = mathlib.util.MathArrays.buildArray(getField(), nRows);
 			T[] @out = MathArrays.buildArray(Field, nRows);
 			for (int row = 0; row < nRows; row++)
 			{
@@ -563,7 +563,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public T[] preMultiply(final T[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public T[] preMultiply(final T[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override T[] preMultiply(T[] v)
 		{
@@ -579,7 +579,7 @@ namespace org.apache.commons.math3.linear
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] out = org.apache.commons.math3.util.MathArrays.buildArray(getField(), nCols);
+//ORIGINAL LINE: final T[] out = mathlib.util.MathArrays.buildArray(getField(), nCols);
 			T[] @out = MathArrays.buildArray(Field, nCols);
 			for (int col = 0; col < nCols; ++col)
 			{
@@ -649,7 +649,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public T walkInRowOrder(final FieldMatrixChangingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public T walkInRowOrder(final FieldMatrixChangingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override T walkInRowOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -671,7 +671,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public T walkInRowOrder(final FieldMatrixPreservingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public T walkInRowOrder(final FieldMatrixPreservingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override T walkInRowOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -742,7 +742,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public T walkInColumnOrder(final FieldMatrixChangingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public T walkInColumnOrder(final FieldMatrixChangingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override T walkInColumnOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -764,7 +764,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public T walkInColumnOrder(final FieldMatrixPreservingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public T walkInColumnOrder(final FieldMatrixPreservingVisitor<T> visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override T walkInColumnOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -790,7 +790,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int nRows = this.getRowDimension();
 			int nRows = this.RowDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] out = org.apache.commons.math3.util.MathArrays.buildArray(getField(), nRows, getColumnDimension());
+//ORIGINAL LINE: final T[][] out = mathlib.util.MathArrays.buildArray(getField(), nRows, getColumnDimension());
 			T[][] @out = MathArrays.buildArray(Field, nRows, ColumnDimension);
 			// can't copy 2-d array in one shot, otherwise get row references
 			for (int i = 0; i < nRows; i++)
@@ -808,7 +808,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the input array is not rectangular. </exception>
 		/// <exception cref="NullArgumentException"> if the input array is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void copyIn(final T[][] in) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private void copyIn(final T[][] in) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void copyIn(T[][] @in)
 		{

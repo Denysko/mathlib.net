@@ -16,22 +16,22 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using InsufficientDataException = org.apache.commons.math3.exception.InsufficientDataException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using NonSquareMatrixException = org.apache.commons.math3.linear.NonSquareMatrixException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using InsufficientDataException = mathlib.exception.InsufficientDataException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using NonSquareMatrixException = mathlib.linear.NonSquareMatrixException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Abstract base class for implementations of MultipleLinearRegression.
@@ -256,7 +256,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="MathIllegalArgumentException"> if the number of rows of {@code x}
 		/// is not larger than the number of columns + 1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void validateSampleData(double[][] x, double[] y) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected void validateSampleData(double[][] x, double[] y) throws mathlib.exception.MathIllegalArgumentException
 		protected internal virtual void validateSampleData(double[][] x, double[] y)
 		{
 			if ((x == null) || (y == null))

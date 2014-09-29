@@ -67,7 +67,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="NumberIsTooSmallException"> if maximal number of iterations
         /// is smaller than or equal to the minimal number of iterations. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public IterativeLegendreGaussIntegrator(final int n, final double relativeAccuracy, final double absoluteAccuracy, final int minimalIterationCount, final int maximalIterationCount) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException
+        //ORIGINAL LINE: public IterativeLegendreGaussIntegrator(final int n, final double relativeAccuracy, final double absoluteAccuracy, final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public IterativeLegendreGaussIntegrator(int n, double relativeAccuracy, double absoluteAccuracy, int minimalIterationCount, int maximalIterationCount)
             : base(relativeAccuracy, absoluteAccuracy, minimalIterationCount, maximalIterationCount)
@@ -87,7 +87,7 @@ namespace mathlib.analysis.integration
         /// <param name="absoluteAccuracy"> Absolute accuracy of the result. </param>
         /// <exception cref="NotStrictlyPositiveException"> if {@code n < 1}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public IterativeLegendreGaussIntegrator(final int n, final double relativeAccuracy, final double absoluteAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+        //ORIGINAL LINE: public IterativeLegendreGaussIntegrator(final int n, final double relativeAccuracy, final double absoluteAccuracy) throws mathlib.exception.NotStrictlyPositiveException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public IterativeLegendreGaussIntegrator(int n, double relativeAccuracy, double absoluteAccuracy)
             : this(n, relativeAccuracy, absoluteAccuracy, DEFAULT_MIN_ITERATIONS_COUNT, DEFAULT_MAX_ITERATIONS_COUNT)
@@ -106,7 +106,7 @@ namespace mathlib.analysis.integration
         /// is smaller than or equal to the minimal number of iterations. </exception>
         /// <exception cref="NotStrictlyPositiveException"> if {@code n < 1}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public IterativeLegendreGaussIntegrator(final int n, final int minimalIterationCount, final int maximalIterationCount) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException
+        //ORIGINAL LINE: public IterativeLegendreGaussIntegrator(final int n, final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public IterativeLegendreGaussIntegrator(int n, int minimalIterationCount, int maximalIterationCount)
             : this(n, DEFAULT_RELATIVE_ACCURACY, DEFAULT_ABSOLUTE_ACCURACY, minimalIterationCount, maximalIterationCount)
@@ -116,7 +116,7 @@ namespace mathlib.analysis.integration
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected double doIntegrate() throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.MaxCountExceededException
+        //ORIGINAL LINE: @Override protected double doIntegrate() throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.TooManyEvaluationsException, mathlib.exception.MaxCountExceededException
         protected internal override double doIntegrate()
         {
             // Compute first estimate with a single step.
@@ -132,10 +132,10 @@ namespace mathlib.analysis.integration
 
                 // Estimate the error.
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double delta = org.apache.commons.math3.util.FastMath.abs(t - oldt);
+                //ORIGINAL LINE: final double delta = mathlib.util.FastMath.abs(t - oldt);
                 double delta = FastMath.abs(t - oldt);
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double limit = org.apache.commons.math3.util.FastMath.max(getAbsoluteAccuracy(), getRelativeAccuracy() * (org.apache.commons.math3.util.FastMath.abs(oldt) + org.apache.commons.math3.util.FastMath.abs(t)) * 0.5);
+                //ORIGINAL LINE: final double limit = mathlib.util.FastMath.max(getAbsoluteAccuracy(), getRelativeAccuracy() * (mathlib.util.FastMath.abs(oldt) + mathlib.util.FastMath.abs(t)) * 0.5);
                 double limit = FastMath.max(AbsoluteAccuracy, RelativeAccuracy * (FastMath.abs(oldt) + FastMath.abs(t)) * 0.5);
 
                 // check convergence
@@ -146,7 +146,7 @@ namespace mathlib.analysis.integration
 
                 // Prepare next iteration.
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double ratio = org.apache.commons.math3.util.FastMath.min(4, org.apache.commons.math3.util.FastMath.pow(delta / limit, 0.5 / numberOfPoints));
+                //ORIGINAL LINE: final double ratio = mathlib.util.FastMath.min(4, mathlib.util.FastMath.pow(delta / limit, 0.5 / numberOfPoints));
                 double ratio = FastMath.min(4, FastMath.pow(delta / limit, 0.5 / numberOfPoints));
                 n = FastMath.max((int)(ratio * n), n + 1);
                 oldt = t;
@@ -162,13 +162,13 @@ namespace mathlib.analysis.integration
         /// <exception cref="TooManyEvaluationsException"> if the maximum number of evaluations
         /// is exceeded. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: private double stage(final int n) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+        //ORIGINAL LINE: private double stage(final int n) throws mathlib.exception.TooManyEvaluationsException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         private double stage(int n)
         {
             // Function to be integrated is stored in the base class.
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final org.apache.commons.math3.analysis.UnivariateFunction f = new org.apache.commons.math3.analysis.UnivariateFunction()
+            //ORIGINAL LINE: final mathlib.analysis.UnivariateFunction f = new mathlib.analysis.UnivariateFunction()
             UnivariateFunction f = new UnivariateFunctionAnonymousInnerClassHelper(this);
 
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -192,7 +192,7 @@ namespace mathlib.analysis.integration
                 //ORIGINAL LINE: final double b = a + step;
                 double b = a + step;
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final org.apache.commons.math3.analysis.integration.gauss.GaussIntegrator g = FACTORY.legendreHighPrecision(numberOfPoints, a, b);
+                //ORIGINAL LINE: final mathlib.analysis.integration.gauss.GaussIntegrator g = FACTORY.legendreHighPrecision(numberOfPoints, a, b);
                 GaussIntegrator g = FACTORY.legendreHighPrecision(numberOfPoints, a, b);
                 sum += g.integrate(f);
             }
@@ -210,7 +210,7 @@ namespace mathlib.analysis.integration
             }
 
             //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-            //ORIGINAL LINE: public double value(double x) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.TooManyEvaluationsException
+            //ORIGINAL LINE: public double value(double x) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.TooManyEvaluationsException
             public virtual double value(double x)
             {
                 return outerInstance.computeObjectiveValue(x);

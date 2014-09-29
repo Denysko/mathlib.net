@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using FastMath = mathlib.util.FastMath;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 	/// <summary>
 	/// Implements the <a href="http://mathworld.wolfram.com/RiddersMethod.html">
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override protected double doSolve() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NoBracketingException
 		protected internal override double doSolve()
 		{
 			double min = Min;
@@ -117,7 +117,7 @@ namespace org.apache.commons.math3.analysis.solvers
 //ORIGINAL LINE: final double delta = 1 - (y1 * y2) / (y3 * y3);
 				double delta = 1 - (y1 * y2) / (y3 * y3); // delta > 1 due to bracketing
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double correction = (org.apache.commons.math3.util.FastMath.signum(y2) * org.apache.commons.math3.util.FastMath.signum(y3)) * (x3 - x1) / org.apache.commons.math3.util.FastMath.sqrt(delta);
+//ORIGINAL LINE: final double correction = (mathlib.util.FastMath.signum(y2) * mathlib.util.FastMath.signum(y3)) * (x3 - x1) / mathlib.util.FastMath.sqrt(delta);
 				double correction = (FastMath.signum(y2) * FastMath.signum(y3)) * (x3 - x1) / FastMath.sqrt(delta);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double x = x3 - correction;
@@ -128,7 +128,7 @@ namespace org.apache.commons.math3.analysis.solvers
 
 				// check for convergence
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double tolerance = org.apache.commons.math3.util.FastMath.max(relativeAccuracy * org.apache.commons.math3.util.FastMath.abs(x), absoluteAccuracy);
+//ORIGINAL LINE: final double tolerance = mathlib.util.FastMath.max(relativeAccuracy * mathlib.util.FastMath.abs(x), absoluteAccuracy);
 				double tolerance = FastMath.max(relativeAccuracy * FastMath.abs(x), absoluteAccuracy);
 				if (FastMath.abs(x - oldx) <= tolerance)
 				{

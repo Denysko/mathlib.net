@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Mutation for <seealso cref="BinaryChromosome"/>s. Randomly changes one gene.
@@ -39,7 +39,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the mutated chromosome. </returns>
 		/// <exception cref="MathIllegalArgumentException"> if <code>original</code> is not an instance of <seealso cref="BinaryChromosome"/>. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Chromosome mutate(Chromosome original) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public Chromosome mutate(Chromosome original) throws mathlib.exception.MathIllegalArgumentException
 		public virtual Chromosome mutate(Chromosome original)
 		{
 			if (!(original is BinaryChromosome))

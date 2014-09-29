@@ -16,10 +16,10 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning.utilities
+namespace mathlib.geometry.partitioning.utilities
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements an ordering operation for T-uples.
@@ -326,7 +326,7 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 					}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int limit = org.apache.commons.math3.util.FastMath.min(encoding.length, ot.encoding.length);
+//ORIGINAL LINE: final int limit = mathlib.util.FastMath.min(encoding.length, ot.encoding.length);
 					int limit = FastMath.min(encoding.Length, ot.encoding.Length);
 					for (int i = 0; i < limit; ++i)
 					{

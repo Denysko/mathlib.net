@@ -17,15 +17,15 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.function
+namespace mathlib.analysis.function
 {
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <a href="http://en.wikipedia.org/wiki/Logit">
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(double x) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double value(double x) throws mathlib.exception.OutOfRangeException
 		public virtual double value(double x)
 		{
 			return value(x, lo, hi);
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <summary>
 		/// {@inheritDoc} </summary>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#value(DerivativeStructure)"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#value(org.apache.commons.math3.analysis.differentiation.DerivativeStructure)"/>")]
+		[Obsolete("as of 3.1, replaced by <seealso cref="#value(mathlib.analysis.differentiation.DerivativeStructure)"/>")]
 		public virtual UnivariateFunction derivative()
 		{
 			return FunctionUtils.toDifferentiableUnivariateFunction(this).derivative();
@@ -101,7 +101,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// <exception cref="DimensionMismatchException"> if the size of {@code param} is
 			/// not 2. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double value(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 			public virtual double value(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -121,7 +121,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// <exception cref="DimensionMismatchException"> if the size of {@code param} is
 			/// not 2. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] gradient(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double[] gradient(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 			public virtual double[] gradient(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -146,7 +146,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// <exception cref="DimensionMismatchException"> if the size of {@code param} is
 			/// not 2. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void validateParameters(double[] param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private void validateParameters(double[] param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 			internal virtual void validateParameters(double[] param)
 			{
 				if (param == null)
@@ -166,7 +166,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <returns> the value of the logit function at {@code x}. </returns>
 		/// <exception cref="OutOfRangeException"> if {@code x < lo} or {@code x > hi}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static double value(double x, double lo, double hi) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private static double value(double x, double lo, double hi) throws mathlib.exception.OutOfRangeException
 		private static double value(double x, double lo, double hi)
 		{
 			if (x < lo || x > hi)
@@ -181,7 +181,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// @since 3.1 </summary>
 		/// <exception cref="OutOfRangeException"> if parameter is outside of function domain </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{

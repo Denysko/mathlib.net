@@ -16,12 +16,12 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
 
 	/// <summary>
 	/// Results of a Multiple Linear Regression model fit.
@@ -163,7 +163,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="OutOfRangeException"> if {@code index} is not in the interval
 		/// {@code [0, number of parameters)}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getParameterEstimate(int index) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double getParameterEstimate(int index) throws mathlib.exception.OutOfRangeException
 		public virtual double getParameterEstimate(int index)
 		{
 			if (parameters == null)
@@ -208,7 +208,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="OutOfRangeException"> if {@code index} is not in the interval
 		/// {@code [0, number of parameters)}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getStdErrorOfEstimate(int index) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double getStdErrorOfEstimate(int index) throws mathlib.exception.OutOfRangeException
 		public virtual double getStdErrorOfEstimate(int index)
 		{
 			if (parameters == null)
@@ -272,7 +272,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="OutOfRangeException"> if {@code i} or {@code j} is not in the
 		/// interval {@code [0, number of parameters)}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getCovarianceOfParameters(int i, int j) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double getCovarianceOfParameters(int i, int j) throws mathlib.exception.OutOfRangeException
 		public virtual double getCovarianceOfParameters(int i, int j)
 		{
 			if (parameters == null)

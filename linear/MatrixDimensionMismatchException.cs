@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using MultiDimensionMismatchException = org.apache.commons.math3.exception.MultiDimensionMismatchException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MultiDimensionMismatchException = mathlib.exception.MultiDimensionMismatchException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Exception to be thrown when either the number of rows or the number of

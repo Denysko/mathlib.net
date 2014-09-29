@@ -19,7 +19,7 @@
 ///     Implementations of transform methods, including Fast Fourier transforms.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.transform
+namespace mathlib.transform
 {
 
 }

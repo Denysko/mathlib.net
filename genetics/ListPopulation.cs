@@ -17,15 +17,15 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
 
 	/// <summary>
 	/// Population of chromosomes represented by a <seealso cref="List"/>.
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.genetics
 		/// <param name="populationLimit"> maximal size of the population </param>
 		/// <exception cref="NotPositiveException"> if the population limit is not a positive number (&lt; 1) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ListPopulation(final int populationLimit) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public ListPopulation(final int populationLimit) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ListPopulation(int populationLimit) : this(Collections.emptyList<Chromosome> (), populationLimit)
 		{
@@ -68,7 +68,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="NotPositiveException"> if the population limit is not a positive number (&lt; 1) </exception>
 		/// <exception cref="NumberIsTooLargeException"> if the list of chromosomes exceeds the population limit </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ListPopulation(final java.util.List<Chromosome> chromosomes, final int populationLimit) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public ListPopulation(final java.util.List<Chromosome> chromosomes, final int populationLimit) throws mathlib.exception.NullArgumentException, mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ListPopulation(IList<Chromosome> chromosomes, int populationLimit)
 		{
@@ -101,7 +101,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="NumberIsTooLargeException"> if the list of chromosomes exceeds the population limit </exception>
 		/// @deprecated use <seealso cref="#addChromosomes(Collection)"/> instead 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="#addChromosomes(java.util.Collection)"/> instead") public void setChromosomes(final java.util.List<Chromosome> chromosomes) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="#addChromosomes(java.util.Collection)"/> instead") public void setChromosomes(final java.util.List<Chromosome> chromosomes) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="#addChromosomes(java.util.Collection)"/> instead")]
 		public virtual IList<Chromosome> Chromosomes
@@ -133,7 +133,7 @@ namespace org.apache.commons.math3.genetics
 		/// adding this chromosome
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addChromosomes(final java.util.Collection<Chromosome> chromosomeColl) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public void addChromosomes(final java.util.Collection<Chromosome> chromosomeColl) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void addChromosomes(ICollection<Chromosome> chromosomeColl)
 		{
@@ -164,7 +164,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="NumberIsTooLargeException"> if the population would exceed the {@code populationLimit} after
 		///   adding this chromosome </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addChromosome(final Chromosome chromosome) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public void addChromosome(final Chromosome chromosome) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void addChromosome(Chromosome chromosome)
 		{
@@ -226,7 +226,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="NumberIsTooSmallException"> if the new population size is smaller than the current number
 		///   of chromosomes in the population </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setPopulationLimit(final int populationLimit) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public void setPopulationLimit(final int populationLimit) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 
 		/// <summary>

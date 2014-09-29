@@ -16,10 +16,10 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
+namespace mathlib.optim.nonlinear.scalar.noderiv
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
 
 	/// <summary>
 	/// This class implements the Nelder-Mead simplex algorithm.
@@ -174,9 +174,9 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 		/// <param name="khi"> Expansion coefficient. </param>
 		/// <param name="gamma"> Contraction coefficient. </param>
 		/// <param name="sigma"> Shrinkage coefficient. </param>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if the reference simplex does not contain at least one point. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if there is a dimension mismatch in the reference simplex. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public NelderMeadSimplex(final double[][] referenceSimplex, final double rho, final double khi, final double gamma, final double sigma)
@@ -192,7 +192,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public void iterate(final org.apache.commons.math3.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<org.apache.commons.math3.optim.PointValuePair> comparator)
+//ORIGINAL LINE: @Override public void iterate(final mathlib.analysis.MultivariateFunction evaluationFunction, final java.util.Comparator<mathlib.optim.PointValuePair> comparator)
 		public override void iterate(MultivariateFunction evaluationFunction, IComparer<PointValuePair> comparator)
 		{
 			// The simplex has n + 1 points if dimension is n.
@@ -202,13 +202,13 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 
 			// Interesting values.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair best = getPoint(0);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair best = getPoint(0);
 			PointValuePair best = getPoint(0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair secondBest = getPoint(n - 1);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair secondBest = getPoint(n - 1);
 			PointValuePair secondBest = getPoint(n - 1);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair worst = getPoint(n);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair worst = getPoint(n);
 			PointValuePair worst = getPoint(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] xWorst = worst.getPointRef();
@@ -246,7 +246,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 				xR[j] = centroid[j] + rho * (centroid[j] - xWorst[j]);
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair reflected = new org.apache.commons.math3.optim.PointValuePair(xR, evaluationFunction.value(xR), false);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair reflected = new mathlib.optim.PointValuePair(xR, evaluationFunction.value(xR), false);
 			PointValuePair reflected = new PointValuePair(xR, evaluationFunction.value(xR), false);
 
 			if (comparator.Compare(best, reflected) <= 0 && comparator.Compare(reflected, secondBest) < 0)
@@ -265,7 +265,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 					xE[j] = centroid[j] + khi * (xR[j] - centroid[j]);
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair expanded = new org.apache.commons.math3.optim.PointValuePair(xE, evaluationFunction.value(xE), false);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair expanded = new mathlib.optim.PointValuePair(xE, evaluationFunction.value(xE), false);
 				PointValuePair expanded = new PointValuePair(xE, evaluationFunction.value(xE), false);
 
 				if (comparator.Compare(expanded, reflected) < 0)
@@ -292,7 +292,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 						xC[j] = centroid[j] + gamma * (xR[j] - centroid[j]);
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair outContracted = new org.apache.commons.math3.optim.PointValuePair(xC, evaluationFunction.value(xC), false);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair outContracted = new mathlib.optim.PointValuePair(xC, evaluationFunction.value(xC), false);
 					PointValuePair outContracted = new PointValuePair(xC, evaluationFunction.value(xC), false);
 					if (comparator.Compare(outContracted, reflected) <= 0)
 					{
@@ -312,7 +312,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 						xC[j] = centroid[j] - gamma * (centroid[j] - xWorst[j]);
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair inContracted = new org.apache.commons.math3.optim.PointValuePair(xC, evaluationFunction.value(xC), false);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair inContracted = new mathlib.optim.PointValuePair(xC, evaluationFunction.value(xC), false);
 					PointValuePair inContracted = new PointValuePair(xC, evaluationFunction.value(xC), false);
 
 					if (comparator.Compare(inContracted, worst) < 0)

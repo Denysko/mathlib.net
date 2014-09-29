@@ -17,13 +17,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.clustering
+namespace mathlib.stat.clustering
 {
 
 
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// DBSCAN (density-based spatial clustering of applications with noise) algorithm.
@@ -55,7 +55,7 @@ namespace org.apache.commons.math3.stat.clustering
 	/// @version $Id: DBSCANClusterer.java 1461871 2013-03-27 22:01:25Z tn $
 	/// @since 3.1 </seealso>
 	/// @deprecated As of 3.2 (to be removed in 4.0),
-	/// use <seealso cref="org.apache.commons.math3.ml.clustering.DBSCANClusterer"/> instead 
+	/// use <seealso cref="mathlib.ml.clustering.DBSCANClusterer"/> instead 
 	[Obsolete("As of 3.2 (to be removed in 4.0),")]
 	public class DBSCANClusterer<T> where T : Clusterable<T>
 	{
@@ -87,7 +87,7 @@ namespace org.apache.commons.math3.stat.clustering
 		/// <param name="minPts"> minimum number of points needed for a cluster </param>
 		/// <exception cref="NotPositiveException"> if {@code eps < 0.0} or {@code minPts < 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DBSCANClusterer(final double eps, final int minPts) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public DBSCANClusterer(final double eps, final int minPts) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DBSCANClusterer(double eps, int minPts)
 		{
@@ -138,7 +138,7 @@ namespace org.apache.commons.math3.stat.clustering
 		/// <returns> the list of clusters </returns>
 		/// <exception cref="NullArgumentException"> if the data points are null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual IList<Cluster<T>> cluster(ICollection<T> points)
 		{

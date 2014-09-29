@@ -16,17 +16,17 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using UnitSphereRandomVectorGenerator = org.apache.commons.math3.random.UnitSphereRandomVectorGenerator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RealVector = mathlib.linear.RealVector;
+	using UnitSphereRandomVectorGenerator = mathlib.random.UnitSphereRandomVectorGenerator;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Interpolating function that implements the
@@ -101,7 +101,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			/// <param name="illuminationFromSample"> illumination received from sample </param>
 			/// <param name="sample"> current sample illuminating the element </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: void store(final double illuminationFromSample, final java.util.Map.Entry<org.apache.commons.math3.linear.RealVector, Double> sample)
+//ORIGINAL LINE: void store(final double illuminationFromSample, final java.util.Map.Entry<mathlib.linear.RealVector, Double> sample)
 			internal virtual void store(double illuminationFromSample, KeyValuePair<RealVector, double?> sample)
 			{
 				if (illuminationFromSample > this.brightestIllumination)
@@ -146,7 +146,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NoDataException"> if there an array has zero-length. </exception>
 		/// <exception cref="NullArgumentException"> if an argument is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MicrosphereInterpolatingFunction(double[][] xval, double[] yval, int brightnessExponent, int microsphereElements, org.apache.commons.math3.random.UnitSphereRandomVectorGenerator rand) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public MicrosphereInterpolatingFunction(double[][] xval, double[] yval, int brightnessExponent, int microsphereElements, mathlib.random.UnitSphereRandomVectorGenerator rand) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 		public MicrosphereInterpolatingFunction(double[][] xval, double[] yval, int brightnessExponent, int microsphereElements, UnitSphereRandomVectorGenerator rand)
 		{
 			if (xval == null || yval == null)
@@ -201,11 +201,11 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <returns> the interpolated value. </returns>
 		/// <exception cref="DimensionMismatchException"> if point dimension does not math sample </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(double[] point) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double value(double[] point) throws mathlib.exception.DimensionMismatchException
 		public virtual double value(double[] point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealVector p = new org.apache.commons.math3.linear.ArrayRealVector(point);
+//ORIGINAL LINE: final mathlib.linear.RealVector p = new mathlib.linear.ArrayRealVector(point);
 			RealVector p = new ArrayRealVector(point);
 
 			// Reset.
@@ -220,7 +220,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 
 				// Vector between interpolation point and current sample point.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealVector diff = sd.getKey().subtract(p);
+//ORIGINAL LINE: final mathlib.linear.RealVector diff = sd.getKey().subtract(p);
 				RealVector diff = sd.Key.subtract(p);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double diffNorm = diff.getNorm();
@@ -236,7 +236,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 				foreach (MicrosphereSurfaceElement md in microsphere)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double w = org.apache.commons.math3.util.FastMath.pow(diffNorm, -brightnessExponent);
+//ORIGINAL LINE: final double w = mathlib.util.FastMath.pow(diffNorm, -brightnessExponent);
 					double w = FastMath.pow(diffNorm, -brightnessExponent);
 					md.store(cosAngle(diff, md.normal()) * w, sd);
 				}
@@ -252,7 +252,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 //ORIGINAL LINE: final double iV = md.illumination();
 				double iV = md.illumination();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map.Entry<org.apache.commons.math3.linear.RealVector, Double> sd = md.sample();
+//ORIGINAL LINE: final java.util.Map.Entry<mathlib.linear.RealVector, Double> sd = md.sample();
 				KeyValuePair<RealVector, double?> sd = md.sample();
 				if (sd != null)
 				{
@@ -271,7 +271,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <param name="w"> Vector. </param>
 		/// <returns> the cosine of the angle between {@code v} and {@code w}. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private double cosAngle(final org.apache.commons.math3.linear.RealVector v, final org.apache.commons.math3.linear.RealVector w)
+//ORIGINAL LINE: private double cosAngle(final mathlib.linear.RealVector v, final mathlib.linear.RealVector w)
 		private double cosAngle(RealVector v, RealVector w)
 		{
 			return v.dotProduct(w) / (v.Norm * w.Norm);

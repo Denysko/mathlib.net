@@ -17,28 +17,28 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat
+namespace mathlib.stat
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using DescriptiveStatistics = org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
-	using UnivariateStatistic = org.apache.commons.math3.stat.descriptive.UnivariateStatistic;
-	using GeometricMean = org.apache.commons.math3.stat.descriptive.moment.GeometricMean;
-	using Mean = org.apache.commons.math3.stat.descriptive.moment.Mean;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
-	using Max = org.apache.commons.math3.stat.descriptive.rank.Max;
-	using Min = org.apache.commons.math3.stat.descriptive.rank.Min;
-	using Percentile = org.apache.commons.math3.stat.descriptive.rank.Percentile;
-	using Product = org.apache.commons.math3.stat.descriptive.summary.Product;
-	using Sum = org.apache.commons.math3.stat.descriptive.summary.Sum;
-	using SumOfLogs = org.apache.commons.math3.stat.descriptive.summary.SumOfLogs;
-	using SumOfSquares = org.apache.commons.math3.stat.descriptive.summary.SumOfSquares;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using DescriptiveStatistics = mathlib.stat.descriptive.DescriptiveStatistics;
+	using UnivariateStatistic = mathlib.stat.descriptive.UnivariateStatistic;
+	using GeometricMean = mathlib.stat.descriptive.moment.GeometricMean;
+	using Mean = mathlib.stat.descriptive.moment.Mean;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
+	using Max = mathlib.stat.descriptive.rank.Max;
+	using Min = mathlib.stat.descriptive.rank.Min;
+	using Percentile = mathlib.stat.descriptive.rank.Percentile;
+	using Product = mathlib.stat.descriptive.summary.Product;
+	using Sum = mathlib.stat.descriptive.summary.Sum;
+	using SumOfLogs = mathlib.stat.descriptive.summary.SumOfLogs;
+	using SumOfSquares = mathlib.stat.descriptive.summary.SumOfSquares;
 
 	/// <summary>
 	/// StatUtils provides static methods for computing statistics based on data
@@ -108,7 +108,7 @@ namespace org.apache.commons.math3.stat
 		/// is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double sum(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double sum(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double sum(double[] values)
 		{
@@ -129,7 +129,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double sum(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double sum(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double sum(double[] values, int begin, int length)
 		{
@@ -147,7 +147,7 @@ namespace org.apache.commons.math3.stat
 		/// array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double sumSq(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double sumSq(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double sumSq(double[] values)
 		{
@@ -168,7 +168,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		/// parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double sumSq(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double sumSq(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double sumSq(double[] values, int begin, int length)
 		{
@@ -185,7 +185,7 @@ namespace org.apache.commons.math3.stat
 		/// <returns> the product of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double product(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double product(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double product(double[] values)
 		{
@@ -206,7 +206,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		/// parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double product(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double product(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double product(double[] values, int begin, int length)
 		{
@@ -219,7 +219,7 @@ namespace org.apache.commons.math3.stat
 		/// <p>
 		/// Throws <code>IllegalArgumentException</code> if the array is null.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.summary.SumOfLogs"/>.
+		/// See <seealso cref="mathlib.stat.descriptive.summary.SumOfLogs"/>.
 		/// </p>
 		/// </summary>
 		/// <param name="values"> the input array </param>
@@ -227,7 +227,7 @@ namespace org.apache.commons.math3.stat
 		/// the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double sumLog(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double sumLog(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double sumLog(double[] values)
 		{
@@ -241,7 +241,7 @@ namespace org.apache.commons.math3.stat
 		/// <p>
 		/// Throws <code>IllegalArgumentException</code> if the array is null.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.summary.SumOfLogs"/>.
+		/// See <seealso cref="mathlib.stat.descriptive.summary.SumOfLogs"/>.
 		/// </p>
 		/// </summary>
 		/// <param name="values"> the input array </param>
@@ -252,7 +252,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		/// parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double sumLog(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double sumLog(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double sumLog(double[] values, int begin, int length)
 		{
@@ -265,14 +265,14 @@ namespace org.apache.commons.math3.stat
 		/// <p>
 		/// Throws <code>IllegalArgumentException</code> if the array is null.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Mean"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Mean"/> for
 		/// details on the computing algorithm.</p>
 		/// </summary>
 		/// <param name="values"> the input array </param>
 		/// <returns> the mean of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double mean(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double mean(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double mean(double[] values)
 		{
@@ -286,7 +286,7 @@ namespace org.apache.commons.math3.stat
 		/// <p>
 		/// Throws <code>IllegalArgumentException</code> if the array is null.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Mean"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Mean"/> for
 		/// details on the computing algorithm.</p>
 		/// </summary>
 		/// <param name="values"> the input array </param>
@@ -296,7 +296,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		/// parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double mean(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double mean(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double mean(double[] values, int begin, int length)
 		{
@@ -309,14 +309,14 @@ namespace org.apache.commons.math3.stat
 		/// <p>
 		/// Throws <code>IllegalArgumentException</code> if the array is null.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.GeometricMean"/>
+		/// See <seealso cref="mathlib.stat.descriptive.moment.GeometricMean"/>
 		/// for details on the computing algorithm.</p>
 		/// </summary>
 		/// <param name="values"> the input array </param>
 		/// <returns> the geometric mean of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double geometricMean(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double geometricMean(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double geometricMean(double[] values)
 		{
@@ -330,7 +330,7 @@ namespace org.apache.commons.math3.stat
 		/// <p>
 		/// Throws <code>IllegalArgumentException</code> if the array is null.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.GeometricMean"/>
+		/// See <seealso cref="mathlib.stat.descriptive.moment.GeometricMean"/>
 		/// for details on the computing algorithm.</p>
 		/// </summary>
 		/// <param name="values"> the input array </param>
@@ -340,7 +340,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		/// parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double geometricMean(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double geometricMean(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double geometricMean(double[] values, int begin, int length)
 		{
@@ -356,7 +356,7 @@ namespace org.apache.commons.math3.stat
 		/// the denominator).  Use <seealso cref="#populationVariance(double[])"/> for the non-bias-corrected
 		/// population variance.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the computing algorithm.</p>
 		/// <p>
 		/// Returns 0 for a single-value (i.e. length = 1) sample.</p>
@@ -367,7 +367,7 @@ namespace org.apache.commons.math3.stat
 		/// <returns> the variance of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double variance(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double variance(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double variance(double[] values)
 		{
@@ -383,7 +383,7 @@ namespace org.apache.commons.math3.stat
 		/// the denominator).  Use <seealso cref="#populationVariance(double[], int, int)"/> for the non-bias-corrected
 		/// population variance.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the computing algorithm.</p>
 		/// <p>
 		/// Returns 0 for a single-value (i.e. length = 1) sample.</p>
@@ -398,7 +398,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double variance(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double variance(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double variance(double[] values, int begin, int length)
 		{
@@ -414,7 +414,7 @@ namespace org.apache.commons.math3.stat
 		/// the denominator).  Use <seealso cref="#populationVariance(double[], double, int, int)"/> for the non-bias-corrected
 		/// population variance.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the computing algorithm.</p>
 		/// <p>
 		/// The formula used assumes that the supplied mean value is the arithmetic
@@ -435,7 +435,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double variance(final double[] values, final double mean, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double variance(final double[] values, final double mean, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double variance(double[] values, double mean, int begin, int length)
 		{
@@ -451,7 +451,7 @@ namespace org.apache.commons.math3.stat
 		/// the denominator).  Use <seealso cref="#populationVariance(double[], double)"/> for the non-bias-corrected
 		/// population variance.</p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the computing algorithm.</p>
 		/// <p>
 		/// The formula used assumes that the supplied mean value is the arithmetic
@@ -468,7 +468,7 @@ namespace org.apache.commons.math3.stat
 		/// <returns> the variance of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double variance(final double[] values, final double mean) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double variance(final double[] values, final double mean) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double variance(double[] values, double mean)
 		{
@@ -480,7 +480,7 @@ namespace org.apache.commons.math3.stat
 		/// population variance</a> of the entries in the input array, or
 		/// <code>Double.NaN</code> if the array is empty.
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the formula and computing algorithm.</p>
 		/// <p>
 		/// Returns 0 for a single-value (i.e. length = 1) sample.</p>
@@ -491,7 +491,7 @@ namespace org.apache.commons.math3.stat
 		/// <returns> the population variance of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double populationVariance(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double populationVariance(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double populationVariance(double[] values)
 		{
@@ -504,7 +504,7 @@ namespace org.apache.commons.math3.stat
 		/// the input array, or <code>Double.NaN</code> if the designated subarray
 		/// is empty.
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the computing algorithm.</p>
 		/// <p>
 		/// Returns 0 for a single-value (i.e. length = 1) sample.</p>
@@ -519,7 +519,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double populationVariance(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double populationVariance(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double populationVariance(double[] values, int begin, int length)
 		{
@@ -532,7 +532,7 @@ namespace org.apache.commons.math3.stat
 		/// the input array, using the precomputed mean value.  Returns
 		/// <code>Double.NaN</code> if the designated subarray is empty.
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the computing algorithm.</p>
 		/// <p>
 		/// The formula used assumes that the supplied mean value is the arithmetic
@@ -553,7 +553,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double populationVariance(final double[] values, final double mean, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double populationVariance(final double[] values, final double mean, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double populationVariance(double[] values, double mean, int begin, int length)
 		{
@@ -566,7 +566,7 @@ namespace org.apache.commons.math3.stat
 		/// precomputed mean value.  Returns <code>Double.NaN</code> if the array
 		/// is empty.
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.moment.Variance"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.moment.Variance"/> for
 		/// details on the computing algorithm.</p>
 		/// <p>
 		/// The formula used assumes that the supplied mean value is the arithmetic
@@ -583,7 +583,7 @@ namespace org.apache.commons.math3.stat
 		/// <returns> the population variance of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double populationVariance(final double[] values, final double mean) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double populationVariance(final double[] values, final double mean) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double populationVariance(double[] values, double mean)
 		{
@@ -607,7 +607,7 @@ namespace org.apache.commons.math3.stat
 		/// <returns> the maximum of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double max(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double max(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double max(double[] values)
 		{
@@ -636,7 +636,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		/// parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double max(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double max(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double max(double[] values, int begin, int length)
 		{
@@ -660,7 +660,7 @@ namespace org.apache.commons.math3.stat
 		 /// <returns> the minimum of the values or Double.NaN if the array is empty </returns>
 		 /// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double min(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double min(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double min(double[] values)
 		{
@@ -689,7 +689,7 @@ namespace org.apache.commons.math3.stat
 		 /// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		 /// parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double min(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double min(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double min(double[] values, int begin, int length)
 		{
@@ -710,7 +710,7 @@ namespace org.apache.commons.math3.stat
 		/// and less than or equal to 100)</li>
 		/// </ul></p>
 		/// <p>
-		/// See <seealso cref="org.apache.commons.math3.stat.descriptive.rank.Percentile"/> for
+		/// See <seealso cref="mathlib.stat.descriptive.rank.Percentile"/> for
 		/// a description of the percentile estimation algorithm used.</p>
 		/// </summary>
 		/// <param name="values"> input array of values </param>
@@ -719,7 +719,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if <code>values</code> is null
 		/// or p is invalid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double percentile(final double[] values, final double p) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double percentile(final double[] values, final double p) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double percentile(double[] values, double p)
 		{
@@ -742,7 +742,7 @@ namespace org.apache.commons.math3.stat
 		 /// and less than or equal to 100)</li>
 		 /// </ul></p>
 		 /// <p>
-		 /// See <seealso cref="org.apache.commons.math3.stat.descriptive.rank.Percentile"/> for
+		 /// See <seealso cref="mathlib.stat.descriptive.rank.Percentile"/> for
 		 /// a description of the percentile estimation algorithm used.</p>
 		 /// </summary>
 		 /// <param name="values"> array of input values </param>
@@ -753,7 +753,7 @@ namespace org.apache.commons.math3.stat
 		 /// <exception cref="MathIllegalArgumentException"> if the parameters are not valid or the
 		 /// input array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double percentile(final double[] values, final int begin, final int length, final double p) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double percentile(final double[] values, final int begin, final int length, final double p) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double percentile(double[] values, int begin, int length, double p)
 		{
@@ -771,7 +771,7 @@ namespace org.apache.commons.math3.stat
 		/// (positive) length. </exception>
 		/// <exception cref="NoDataException"> if the sample arrays are empty. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double sumDifference(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public static double sumDifference(final double[] sample1, final double[] sample2) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double sumDifference(double[] sample1, double[] sample2)
 		{
@@ -803,7 +803,7 @@ namespace org.apache.commons.math3.stat
 		/// (positive) length. </exception>
 		/// <exception cref="NoDataException"> if the sample arrays are empty. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double meanDifference(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public static double meanDifference(final double[] sample1, final double[] sample2) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double meanDifference(double[] sample1, double[] sample2)
 		{
@@ -823,7 +823,7 @@ namespace org.apache.commons.math3.stat
 		/// length. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the arrays length is less than 2. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double varianceDifference(final double[] sample1, final double[] sample2, double meanDifference) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public static double varianceDifference(final double[] sample1, final double[] sample2, double meanDifference) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double varianceDifference(double[] sample1, double[] sample2, double meanDifference)
 		{
@@ -899,7 +899,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the indices are invalid or the array is null
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] mode(double[] sample) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static double[] mode(double[] sample) throws mathlib.exception.MathIllegalArgumentException
 		public static double[] mode(double[] sample)
 		{
 			if (sample == null)

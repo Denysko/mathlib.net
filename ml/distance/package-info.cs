@@ -17,7 +17,7 @@
 /// <summary>
 /// Common distance measures.
 /// </summary>
-namespace org.apache.commons.math3.ml.distance
+namespace mathlib.ml.distance
 {
 
 }

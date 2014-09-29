@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Base class for random number generators that generates bits streams.
@@ -141,10 +141,10 @@ namespace org.apache.commons.math3.random
 //ORIGINAL LINE: final double y = nextDouble();
 				double y = nextDouble();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double alpha = 2 * org.apache.commons.math3.util.FastMath.PI * x;
+//ORIGINAL LINE: final double alpha = 2 * mathlib.util.FastMath.PI * x;
 				double alpha = 2 * FastMath.PI * x;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double r = org.apache.commons.math3.util.FastMath.sqrt(-2 * org.apache.commons.math3.util.FastMath.log(y));
+//ORIGINAL LINE: final double r = mathlib.util.FastMath.sqrt(-2 * mathlib.util.FastMath.log(y));
 				double r = FastMath.sqrt(-2 * FastMath.log(y));
 				random = r * FastMath.cos(alpha);
 				nextGaussian_Renamed = r * FastMath.sin(alpha);

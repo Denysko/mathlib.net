@@ -17,13 +17,13 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using org.apache.commons.math3.optimization;
-	using org.apache.commons.math3.optimization;
-	using org.apache.commons.math3.optimization;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using mathlib.optimization;
+	using mathlib.optimization;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate scalar functions,
@@ -40,16 +40,16 @@ namespace org.apache.commons.math3.optimization.direct
 	/// @deprecated As of 3.1 since the {@link BaseAbstractMultivariateOptimizer
 	/// base class} contains similar functionality. 
 	[Obsolete("As of 3.1 since the {@link BaseAbstractMultivariateOptimizer")]
-	public abstract class BaseAbstractMultivariateSimpleBoundsOptimizer<FUNC> : BaseAbstractMultivariateOptimizer<FUNC>, BaseMultivariateOptimizer<FUNC>, BaseMultivariateSimpleBoundsOptimizer<FUNC> where FUNC : org.apache.commons.math3.analysis.MultivariateFunction
+	public abstract class BaseAbstractMultivariateSimpleBoundsOptimizer<FUNC> : BaseAbstractMultivariateOptimizer<FUNC>, BaseMultivariateOptimizer<FUNC>, BaseMultivariateSimpleBoundsOptimizer<FUNC> where FUNC : mathlib.analysis.MultivariateFunction
 		/// <summary>
 		/// Simple constructor with default settings.
 		/// The convergence checker is set to a
-		/// <seealso cref="org.apache.commons.math3.optimization.SimpleValueChecker"/>.
+		/// <seealso cref="mathlib.optimization.SimpleValueChecker"/>.
 		/// </summary>
 		/// <seealso cref= BaseAbstractMultivariateOptimizer#BaseAbstractMultivariateOptimizer() </seealso>
-		/// @deprecated See <seealso cref="org.apache.commons.math3.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
+		/// @deprecated See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
 	{
-		[Obsolete("See <seealso cref="org.apache.commons.math3.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
+		[Obsolete("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
 		protected internal BaseAbstractMultivariateSimpleBoundsOptimizer()
 		{
 		}

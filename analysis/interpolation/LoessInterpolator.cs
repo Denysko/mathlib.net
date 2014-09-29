@@ -16,22 +16,22 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
 
-	using PolynomialSplineFunction = org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NotFiniteNumberException = org.apache.commons.math3.exception.NotFiniteNumberException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using PolynomialSplineFunction = mathlib.analysis.polynomials.PolynomialSplineFunction;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NotFiniteNumberException = mathlib.exception.NotFiniteNumberException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Implements the <a href="http://en.wikipedia.org/wiki/Local_regression">
@@ -150,7 +150,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <seealso cref= #LoessInterpolator(double, int)
 		/// @since 2.1 </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public LoessInterpolator(double bandwidth, int robustnessIters, double accuracy) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public LoessInterpolator(double bandwidth, int robustnessIters, double accuracy) throws mathlib.exception.OutOfRangeException, mathlib.exception.NotPositiveException
 		public LoessInterpolator(double bandwidth, int robustnessIters, double accuracy)
 		{
 			if (bandwidth < 0 || bandwidth > 1)
@@ -170,7 +170,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// Compute an interpolating function by performing a loess fit
 		/// on the data at the original abscissae and then building a cubic spline
 		/// with a
-		/// <seealso cref="org.apache.commons.math3.analysis.interpolation.SplineInterpolator"/>
+		/// <seealso cref="mathlib.analysis.interpolation.SplineInterpolator"/>
 		/// on the resulting fit.
 		/// </summary>
 		/// <param name="xval"> the arguments for the interpolation points </param>
@@ -187,7 +187,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// accomodate the size of the input data (i.e. the bandwidth must be
 		/// larger than 2/n). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public final org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction interpolate(final double[] xval, final double[] yval) throws org.apache.commons.math3.exception.NonMonotonicSequenceException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public final mathlib.analysis.polynomials.PolynomialSplineFunction interpolate(final double[] xval, final double[] yval) throws mathlib.exception.NonMonotonicSequenceException, mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public PolynomialSplineFunction interpolate(double[] xval, double[] yval)
 		{
@@ -214,7 +214,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// larger than 2/n).
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public final double[] smooth(final double[] xval, final double[] yval, final double[] weights) throws org.apache.commons.math3.exception.NonMonotonicSequenceException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public final double[] smooth(final double[] xval, final double[] yval, final double[] weights) throws mathlib.exception.NonMonotonicSequenceException, mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public double[] smooth(double[] xval, double[] yval, double[] weights)
 		{
@@ -447,7 +447,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// accomodate the size of the input data (i.e. the bandwidth must be
 		/// larger than 2/n). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public final double[] smooth(final double[] xval, final double[] yval) throws org.apache.commons.math3.exception.NonMonotonicSequenceException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public final double[] smooth(final double[] xval, final double[] yval) throws mathlib.exception.NonMonotonicSequenceException, mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public double[] smooth(double[] xval, double[] yval)
 		{
@@ -531,7 +531,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		private static double tricube(double x)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double absX = org.apache.commons.math3.util.FastMath.abs(x);
+//ORIGINAL LINE: final double absX = mathlib.util.FastMath.abs(x);
 			double absX = FastMath.abs(x);
 			if (absX >= 1.0)
 			{
@@ -547,7 +547,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// Check that all elements of an array are finite real numbers.
 		/// </summary>
 		/// <param name="values"> Values array. </param>
-		/// <exception cref="org.apache.commons.math3.exception.NotFiniteNumberException">
+		/// <exception cref="mathlib.exception.NotFiniteNumberException">
 		/// if one of the values is not a finite real number. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: private static void checkAllFiniteReal(final double[] values)

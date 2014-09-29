@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.filter
+namespace mathlib.filter
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
 
 	/// <summary>
 	/// Default implementation of a <seealso cref="ProcessModel"/> for the use with a <seealso cref="KalmanFilter"/>.
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="DimensionMismatchException">
 		///             if any of the input matrices is non-rectangular </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DefaultProcessModel(final double[][] stateTransition, final double[][] control, final double[][] processNoise, final double[] initialStateEstimate, final double[][] initialErrorCovariance) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DefaultProcessModel(final double[][] stateTransition, final double[][] control, final double[][] processNoise, final double[] initialStateEstimate, final double[][] initialErrorCovariance) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DefaultProcessModel(double[][] stateTransition, double[][] control, double[][] processNoise, double[] initialStateEstimate, double[][] initialErrorCovariance) : this(new Array2DRowRealMatrix(stateTransition), new Array2DRowRealMatrix(control), new Array2DRowRealMatrix(processNoise), new ArrayRealVector(initialStateEstimate), new Array2DRowRealMatrix(initialErrorCovariance))
 		{
@@ -101,7 +101,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="DimensionMismatchException">
 		///             if any of the input matrices is non-rectangular </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DefaultProcessModel(final double[][] stateTransition, final double[][] control, final double[][] processNoise) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DefaultProcessModel(final double[][] stateTransition, final double[][] control, final double[][] processNoise) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DefaultProcessModel(double[][] stateTransition, double[][] control, double[][] processNoise) : this(new Array2DRowRealMatrix(stateTransition), new Array2DRowRealMatrix(control), new Array2DRowRealMatrix(processNoise), null, null)
 		{
@@ -122,7 +122,7 @@ namespace org.apache.commons.math3.filter
 		/// <param name="initialErrorCovariance">
 		///            the initial error covariance matrix </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public DefaultProcessModel(final org.apache.commons.math3.linear.RealMatrix stateTransition, final org.apache.commons.math3.linear.RealMatrix control, final org.apache.commons.math3.linear.RealMatrix processNoise, final org.apache.commons.math3.linear.RealVector initialStateEstimate, final org.apache.commons.math3.linear.RealMatrix initialErrorCovariance)
+//ORIGINAL LINE: public DefaultProcessModel(final mathlib.linear.RealMatrix stateTransition, final mathlib.linear.RealMatrix control, final mathlib.linear.RealMatrix processNoise, final mathlib.linear.RealVector initialStateEstimate, final mathlib.linear.RealMatrix initialErrorCovariance)
 		public DefaultProcessModel(RealMatrix stateTransition, RealMatrix control, RealMatrix processNoise, RealVector initialStateEstimate, RealMatrix initialErrorCovariance)
 		{
 			this.stateTransitionMatrix = stateTransition;

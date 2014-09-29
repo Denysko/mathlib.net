@@ -18,24 +18,24 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
 
-	using BracketingNthOrderBrentSolver = org.apache.commons.math3.analysis.solvers.BracketingNthOrderBrentSolver;
-	using UnivariateSolver = org.apache.commons.math3.analysis.solvers.UnivariateSolver;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using EventHandler = org.apache.commons.math3.ode.events.EventHandler;
-	using EventState = org.apache.commons.math3.ode.events.EventState;
-	using AbstractStepInterpolator = org.apache.commons.math3.ode.sampling.AbstractStepInterpolator;
-	using StepHandler = org.apache.commons.math3.ode.sampling.StepHandler;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using BracketingNthOrderBrentSolver = mathlib.analysis.solvers.BracketingNthOrderBrentSolver;
+	using UnivariateSolver = mathlib.analysis.solvers.UnivariateSolver;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using EventHandler = mathlib.ode.events.EventHandler;
+	using EventState = mathlib.ode.events.EventState;
+	using AbstractStepInterpolator = mathlib.ode.sampling.AbstractStepInterpolator;
+	using StepHandler = mathlib.ode.sampling.StepHandler;
+	using FastMath = mathlib.util.FastMath;
+	using Incrementor = mathlib.util.Incrementor;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Base class managing common boilerplate for all integrators.
@@ -124,7 +124,7 @@ namespace org.apache.commons.math3.ode
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void addStepHandler(final org.apache.commons.math3.ode.sampling.StepHandler handler)
+//ORIGINAL LINE: public void addStepHandler(final mathlib.ode.sampling.StepHandler handler)
 		public virtual void addStepHandler(StepHandler handler)
 		{
 			stepHandlers.Add(handler);
@@ -150,7 +150,7 @@ namespace org.apache.commons.math3.ode
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void addEventHandler(final org.apache.commons.math3.ode.events.EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount)
+//ORIGINAL LINE: public void addEventHandler(final mathlib.ode.events.EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount)
 		public virtual void addEventHandler(EventHandler handler, double maxCheckInterval, double convergence, int maxIterationCount)
 		{
 			addEventHandler(handler, maxCheckInterval, convergence, maxIterationCount, new BracketingNthOrderBrentSolver(convergence, 5));
@@ -159,7 +159,7 @@ namespace org.apache.commons.math3.ode
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void addEventHandler(final org.apache.commons.math3.ode.events.EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount, final org.apache.commons.math3.analysis.solvers.UnivariateSolver solver)
+//ORIGINAL LINE: public void addEventHandler(final mathlib.ode.events.EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount, final mathlib.analysis.solvers.UnivariateSolver solver)
 		public virtual void addEventHandler(EventHandler handler, double maxCheckInterval, double convergence, int maxIterationCount, UnivariateSolver solver)
 		{
 			eventsStates.Add(new EventState(handler, maxCheckInterval, convergence, maxIterationCount, solver));
@@ -172,7 +172,7 @@ namespace org.apache.commons.math3.ode
 			get
 			{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.ode.events.EventHandler> list = new java.util.ArrayList<org.apache.commons.math3.ode.events.EventHandler>(eventsStates.size());
+	//ORIGINAL LINE: final java.util.List<mathlib.ode.events.EventHandler> list = new java.util.ArrayList<mathlib.ode.events.EventHandler>(eventsStates.size());
 				IList<EventHandler> list = new List<EventHandler>(eventsStates.Count);
 				foreach (EventState state in eventsStates)
 				{
@@ -301,7 +301,7 @@ namespace org.apache.commons.math3.ode
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double integrate(final FirstOrderDifferentialEquations equations, final double t0, final double[] y0, final double t, final double[] y) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public double integrate(final FirstOrderDifferentialEquations equations, final double t0, final double[] y0, final double t, final double[] y) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double integrate(FirstOrderDifferentialEquations equations, double t0, double[] y0, double t, double[] y)
 		{
@@ -351,7 +351,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 		/// <exception cref="NoBracketingException"> if the location of an event cannot be bracketed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract void integrate(ExpandableStatefulODE equations, double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException;
+//ORIGINAL LINE: public abstract void integrate(ExpandableStatefulODE equations, double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException;
 		public abstract void integrate(ExpandableStatefulODE equations, double t);
 
 		/// <summary>
@@ -362,7 +362,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeDerivatives(final double t, final double[] y, final double[] yDot) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void computeDerivatives(final double t, final double[] y, final double[] yDot) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void computeDerivatives(double t, double[] y, double[] yDot)
 		{
@@ -401,7 +401,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings
 		/// @since 2.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double acceptStep(final org.apache.commons.math3.ode.sampling.AbstractStepInterpolator interpolator, final double[] y, final double[] yDot, final double tEnd) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: protected double acceptStep(final mathlib.ode.sampling.AbstractStepInterpolator interpolator, final double[] y, final double[] yDot, final double tEnd) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual double acceptStep(AbstractStepInterpolator interpolator, double[] y, double[] yDot, double tEnd)
 		{
@@ -441,10 +441,10 @@ namespace org.apache.commons.math3.ode
 
 					// handle the chronologically first event
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Iterator<org.apache.commons.math3.ode.events.EventState> iterator = occurringEvents.iterator();
+//ORIGINAL LINE: final java.util.Iterator<mathlib.ode.events.EventState> iterator = occurringEvents.iterator();
 					IEnumerator<EventState> iterator = occurringEvents.GetEnumerator();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ode.events.EventState currentEvent = iterator.next();
+//ORIGINAL LINE: final mathlib.ode.events.EventState currentEvent = iterator.next();
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					EventState currentEvent = iterator.next();
 					iterator.remove();
@@ -576,16 +576,16 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if adaptive step size integrators
 		/// tolerance arrays dimensions are not compatible with equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void sanityChecks(final ExpandableStatefulODE equations, final double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected void sanityChecks(final ExpandableStatefulODE equations, final double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual void sanityChecks(ExpandableStatefulODE equations, double t)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double threshold = 1000 * org.apache.commons.math3.util.FastMath.ulp(org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(equations.getTime()), org.apache.commons.math3.util.FastMath.abs(t)));
+//ORIGINAL LINE: final double threshold = 1000 * mathlib.util.FastMath.ulp(mathlib.util.FastMath.max(mathlib.util.FastMath.abs(equations.getTime()), mathlib.util.FastMath.abs(t)));
 			double threshold = 1000 * FastMath.ulp(FastMath.max(FastMath.abs(equations.Time), FastMath.abs(t)));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dt = org.apache.commons.math3.util.FastMath.abs(equations.getTime() - t);
+//ORIGINAL LINE: final double dt = mathlib.util.FastMath.abs(equations.getTime() - t);
 			double dt = FastMath.abs(equations.Time - t);
 			if (dt <= threshold)
 			{

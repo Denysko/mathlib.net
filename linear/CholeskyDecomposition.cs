@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -140,7 +140,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final double lJI = lJ[i];
 					double lJI = lJ[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double maxDelta = relativeSymmetryThreshold * org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(lIJ), org.apache.commons.math3.util.FastMath.abs(lJI));
+//ORIGINAL LINE: final double maxDelta = relativeSymmetryThreshold * mathlib.util.FastMath.max(mathlib.util.FastMath.abs(lIJ), mathlib.util.FastMath.abs(lJI));
 					double maxDelta = relativeSymmetryThreshold * FastMath.max(FastMath.abs(lIJ), FastMath.abs(lJI));
 					if (FastMath.abs(lIJ - lJI) > maxDelta)
 					{

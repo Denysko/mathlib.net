@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using mathlib;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Calculates the LUP-decomposition of a square matrix.
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.linear
 	/// <seealso cref= <a href="http://en.wikipedia.org/wiki/LU_decomposition">Wikipedia</a>
 	/// @version $Id: FieldLUDecomposition.java 1449528 2013-02-24 19:06:20Z luc $
 	/// @since 2.0 (changed to concrete class in 3.0) </seealso>
-	public class FieldLUDecomposition<T> where T : org.apache.commons.math3.FieldElement<T>
+	public class FieldLUDecomposition<T> where T : mathlib.FieldElement<T>
 	{
 
 		/// <summary>
@@ -331,7 +331,7 @@ namespace org.apache.commons.math3.linear
 
 		/// <summary>
 		/// Specialized solver. </summary>
-		private class Solver<T> : FieldDecompositionSolver<T> where T : org.apache.commons.math3.FieldElement<T>
+		private class Solver<T> : FieldDecompositionSolver<T> where T : mathlib.FieldElement<T>
 		{
 
 			/// <summary>
@@ -357,7 +357,7 @@ namespace org.apache.commons.math3.linear
 			/// <param name="pivot"> pivot permutation associated with LU decomposition </param>
 			/// <param name="singular"> singularity indicator </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private Solver(final org.apache.commons.math3.Field<T> field, final T[][] lu, final int[] pivot, final boolean singular)
+//ORIGINAL LINE: private Solver(final mathlib.Field<T> field, final T[][] lu, final int[] pivot, final boolean singular)
 			internal Solver(Field<T> field, T[][] lu, int[] pivot, bool singular)
 			{
 				this.field = field;
@@ -401,7 +401,7 @@ namespace org.apache.commons.math3.linear
 
 					// Apply permutations to b
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] bp = org.apache.commons.math3.util.MathArrays.buildArray(field, m);
+//ORIGINAL LINE: final T[] bp = mathlib.util.MathArrays.buildArray(field, m);
 					T[] bp = MathArrays.buildArray(field, m);
 					for (int row = 0; row < m; row++)
 					{
@@ -464,7 +464,7 @@ namespace org.apache.commons.math3.linear
 
 				// Apply permutations to b
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] bp = org.apache.commons.math3.util.MathArrays.buildArray(field, m);
+//ORIGINAL LINE: final T[] bp = mathlib.util.MathArrays.buildArray(field, m);
 				T[] bp = MathArrays.buildArray(field, m);
 				for (int row = 0; row < m; row++)
 				{
@@ -521,7 +521,7 @@ namespace org.apache.commons.math3.linear
 
 				// Apply permutations to b
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] bp = org.apache.commons.math3.util.MathArrays.buildArray(field, m, nColB);
+//ORIGINAL LINE: final T[][] bp = mathlib.util.MathArrays.buildArray(field, m, nColB);
 				T[][] bp = MathArrays.buildArray(field, m, nColB);
 				for (int row = 0; row < m; row++)
 				{

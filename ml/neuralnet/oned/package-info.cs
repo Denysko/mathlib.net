@@ -19,7 +19,7 @@
 /// One-dimensional neural networks.
 /// </summary>
 
-namespace org.apache.commons.math3.ml.neuralnet.oned
+namespace mathlib.ml.neuralnet.oned
 {
 
 }

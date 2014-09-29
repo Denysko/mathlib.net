@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
 	/// <summary>

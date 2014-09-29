@@ -17,7 +17,7 @@
 /// <summary>
 /// Summary statistics based on moments.
 /// </summary>
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
 }

@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using GaussNewtonOptimizer = org.apache.commons.math3.optim.nonlinear.vector.jacobian.GaussNewtonOptimizer;
-	using PolynomialFitter = org.apache.commons.math3.fitting.PolynomialFitter;
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
-	using SimpleVectorValueChecker = org.apache.commons.math3.optim.SimpleVectorValueChecker;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathArrays = mathlib.util.MathArrays;
+	using Precision = mathlib.util.Precision;
+	using GaussNewtonOptimizer = mathlib.optim.nonlinear.vector.jacobian.GaussNewtonOptimizer;
+	using PolynomialFitter = mathlib.fitting.PolynomialFitter;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
+	using SimpleVectorValueChecker = mathlib.optim.SimpleVectorValueChecker;
 
 	/// <summary>
 	/// Generates a bicubic interpolation function.
@@ -62,7 +62,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <param name="degree"> Degree of the polynomial fitting functions. </param>
 		/// <exception cref="NotPositiveException"> if degree is not positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SmoothingPolynomialBicubicSplineInterpolator(int degree) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public SmoothingPolynomialBicubicSplineInterpolator(int degree) throws mathlib.exception.NotPositiveException
 		public SmoothingPolynomialBicubicSplineInterpolator(int degree) : this(degree, degree)
 		{
 		}
@@ -73,7 +73,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// y-dimension. </param>
 		/// <exception cref="NotPositiveException"> if degrees are not positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SmoothingPolynomialBicubicSplineInterpolator(int xDegree, int yDegree) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public SmoothingPolynomialBicubicSplineInterpolator(int xDegree, int yDegree) throws mathlib.exception.NotPositiveException
 		public SmoothingPolynomialBicubicSplineInterpolator(int xDegree, int yDegree)
 		{
 			if (xDegree < 0)
@@ -89,7 +89,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 
 			const double safeFactor = 1e2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.SimpleVectorValueChecker checker = new org.apache.commons.math3.optim.SimpleVectorValueChecker(safeFactor * org.apache.commons.math3.util.Precision.EPSILON, safeFactor * org.apache.commons.math3.util.Precision.SAFE_MIN);
+//ORIGINAL LINE: final mathlib.optim.SimpleVectorValueChecker checker = new mathlib.optim.SimpleVectorValueChecker(safeFactor * mathlib.util.Precision.EPSILON, safeFactor * mathlib.util.Precision.SAFE_MIN);
 			SimpleVectorValueChecker checker = new SimpleVectorValueChecker(safeFactor * Precision.EPSILON, safeFactor * Precision.SAFE_MIN);
 			xFitter = new PolynomialFitter(new GaussNewtonOptimizer(false, checker));
 			yFitter = new PolynomialFitter(new GaussNewtonOptimizer(false, checker));
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public BicubicSplineInterpolatingFunction interpolate(final double[] xval, final double[] yval, final double[][] fval) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: @Override public BicubicSplineInterpolatingFunction interpolate(final double[] xval, final double[] yval, final double[][] fval) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NonMonotonicSequenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override BicubicSplineInterpolatingFunction interpolate(double[] xval, double[] yval, double[][] fval)
 		{
@@ -133,7 +133,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			// For each line y[j] (0 <= j < yLen), construct a polynomial, with
 			// respect to variable x, fitting array fval[][j]
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.polynomials.PolynomialFunction[] yPolyX = new org.apache.commons.math3.analysis.polynomials.PolynomialFunction[yLen];
+//ORIGINAL LINE: final mathlib.analysis.polynomials.PolynomialFunction[] yPolyX = new mathlib.analysis.polynomials.PolynomialFunction[yLen];
 			PolynomialFunction[] yPolyX = new PolynomialFunction[yLen];
 			for (int j = 0; j < yLen; j++)
 			{
@@ -158,7 +158,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			for (int j = 0; j < yLen; j++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.polynomials.PolynomialFunction f = yPolyX[j];
+//ORIGINAL LINE: final mathlib.analysis.polynomials.PolynomialFunction f = yPolyX[j];
 				PolynomialFunction f = yPolyX[j];
 				for (int i = 0; i < xLen; i++)
 				{
@@ -169,7 +169,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			// For each line x[i] (0 <= i < xLen), construct a polynomial, with
 			// respect to variable y, fitting array fval_1[i][]
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.polynomials.PolynomialFunction[] xPolyY = new org.apache.commons.math3.analysis.polynomials.PolynomialFunction[xLen];
+//ORIGINAL LINE: final mathlib.analysis.polynomials.PolynomialFunction[] xPolyY = new mathlib.analysis.polynomials.PolynomialFunction[xLen];
 			PolynomialFunction[] xPolyY = new PolynomialFunction[xLen];
 			for (int i = 0; i < xLen; i++)
 			{
@@ -194,7 +194,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			for (int i = 0; i < xLen; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.polynomials.PolynomialFunction f = xPolyY[i];
+//ORIGINAL LINE: final mathlib.analysis.polynomials.PolynomialFunction f = xPolyY[i];
 				PolynomialFunction f = xPolyY[i];
 				for (int j = 0; j < yLen; j++)
 				{

@@ -16,14 +16,14 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
-	using Precision = org.apache.commons.math3.util.Precision;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using org.apache.commons.math3.optimization;
+	using Precision = mathlib.util.Precision;
+	using FastMath = mathlib.util.FastMath;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// For a function defined on some interval {@code (lo, hi)}, this class
@@ -116,7 +116,7 @@ namespace org.apache.commons.math3.optimization.univariate
 		protected internal override UnivariatePointValuePair doOptimize()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean isMinim = getGoalType() == org.apache.commons.math3.optimization.GoalType.MINIMIZE;
+//ORIGINAL LINE: final boolean isMinim = getGoalType() == mathlib.optimization.GoalType.MINIMIZE;
 			bool isMinim = GoalType == GoalType.MINIMIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double lo = getMin();
@@ -130,7 +130,7 @@ namespace org.apache.commons.math3.optimization.univariate
 
 			// Optional additional convergence criteria.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.ConvergenceChecker<UnivariatePointValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optimization.ConvergenceChecker<UnivariatePointValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<UnivariatePointValuePair> checker = ConvergenceChecker;
 
 			double a;
@@ -171,7 +171,7 @@ namespace org.apache.commons.math3.optimization.univariate
 //ORIGINAL LINE: final double m = 0.5 * (a + b);
 				double m = 0.5 * (a + b);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double tol1 = relativeThreshold * org.apache.commons.math3.util.FastMath.abs(x) + absoluteThreshold;
+//ORIGINAL LINE: final double tol1 = relativeThreshold * mathlib.util.FastMath.abs(x) + absoluteThreshold;
 				double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double tol2 = 2 * tol1;
@@ -179,7 +179,7 @@ namespace org.apache.commons.math3.optimization.univariate
 
 				// Default stopping criterion.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean stop = org.apache.commons.math3.util.FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);
+//ORIGINAL LINE: final boolean stop = mathlib.util.FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);
 				bool stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);
 				if (!stop)
 				{

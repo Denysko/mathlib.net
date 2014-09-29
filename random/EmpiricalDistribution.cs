@@ -18,23 +18,23 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
 
-	using AbstractRealDistribution = org.apache.commons.math3.distribution.AbstractRealDistribution;
-	using NormalDistribution = org.apache.commons.math3.distribution.NormalDistribution;
-	using RealDistribution = org.apache.commons.math3.distribution.RealDistribution;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using StatisticalSummary = org.apache.commons.math3.stat.descriptive.StatisticalSummary;
-	using SummaryStatistics = org.apache.commons.math3.stat.descriptive.SummaryStatistics;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using AbstractRealDistribution = mathlib.distribution.AbstractRealDistribution;
+	using NormalDistribution = mathlib.distribution.NormalDistribution;
+	using RealDistribution = mathlib.distribution.RealDistribution;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using StatisticalSummary = mathlib.stat.descriptive.StatisticalSummary;
+	using SummaryStatistics = mathlib.stat.descriptive.SummaryStatistics;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// <p>Represents an <a href="http://http://en.wikipedia.org/wiki/Empirical_distribution_function">
@@ -225,7 +225,7 @@ namespace org.apache.commons.math3.random
 		/// <param name="in"> the input data array </param>
 		/// <exception cref="NullArgumentException"> if in is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void load(double[] in) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public void load(double[] in) throws mathlib.exception.NullArgumentException
 		public virtual void load(double[] @in)
 		{
 			DataAdapter da = new ArrayDataAdapter(this, @in);
@@ -256,7 +256,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NullArgumentException"> if url is null </exception>
 		/// <exception cref="ZeroException"> if URL contains no data </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void load(java.net.URL url) throws java.io.IOException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public void load(java.net.URL url) throws java.io.IOException, mathlib.exception.NullArgumentException, mathlib.exception.ZeroException
 		public virtual void load(URL url)
 		{
 			MathUtils.checkNotNull(url);
@@ -298,7 +298,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="IOException"> if an IO error occurs </exception>
 		/// <exception cref="NullArgumentException"> if file is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void load(java.io.File file) throws java.io.IOException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public void load(java.io.File file) throws java.io.IOException, mathlib.exception.NullArgumentException
 		public virtual void load(File file)
 		{
 			MathUtils.checkNotNull(file);
@@ -438,7 +438,7 @@ namespace org.apache.commons.math3.random
 			/// <param name="in"> double[] array holding the data </param>
 			/// <exception cref="NullArgumentException"> if in is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayDataAdapter(double[] in) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayDataAdapter(double[] in) throws mathlib.exception.NullArgumentException
 			public ArrayDataAdapter(EmpiricalDistribution outerInstance, double[] @in) : base(outerInstance)
 			{
 				this.outerInstance = outerInstance;
@@ -529,7 +529,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> the random value. </returns>
 		/// <exception cref="MathIllegalStateException"> if the distribution has not been loaded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getNextValue() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public double getNextValue() throws mathlib.exception.MathIllegalStateException
 		public virtual double NextValue
 		{
 			get
@@ -718,7 +718,7 @@ namespace org.apache.commons.math3.random
 //ORIGINAL LINE: final int binIndex = findBin(x);
 			int binIndex = findBin(x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.RealDistribution kernel = getKernel(binStats.get(binIndex));
+//ORIGINAL LINE: final mathlib.distribution.RealDistribution kernel = getKernel(binStats.get(binIndex));
 			RealDistribution kernel = getKernel(binStats[binIndex]);
 			return kernel.density(x) * pB(binIndex) / kB(binIndex);
 		}
@@ -765,7 +765,7 @@ namespace org.apache.commons.math3.random
 //ORIGINAL LINE: final double lower = binIndex == 0 ? min : binBounds[binIndex - 1];
 			double lower = binIndex == 0 ? min : binBounds[binIndex - 1];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.RealDistribution kernel = k(x);
+//ORIGINAL LINE: final mathlib.distribution.RealDistribution kernel = k(x);
 			RealDistribution kernel = k(x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double withinBinCum = (kernel.cumulativeProbability(x) - kernel.cumulativeProbability(lower)) / kB;
@@ -794,7 +794,7 @@ namespace org.apache.commons.math3.random
 		/// @since 3.1
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double inverseCumulativeProbability(double p)
 		{
@@ -820,7 +820,7 @@ namespace org.apache.commons.math3.random
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.RealDistribution kernel = getKernel(binStats.get(i));
+//ORIGINAL LINE: final mathlib.distribution.RealDistribution kernel = getKernel(binStats.get(i));
 			RealDistribution kernel = getKernel(binStats[i]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double kB = kB(i);
@@ -986,7 +986,7 @@ namespace org.apache.commons.math3.random
 //ORIGINAL LINE: final double[] binBounds = getUpperBounds();
 			double[] binBounds = UpperBounds;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.RealDistribution kernel = getKernel(binStats.get(i));
+//ORIGINAL LINE: final mathlib.distribution.RealDistribution kernel = getKernel(binStats.get(i));
 			RealDistribution kernel = getKernel(binStats[i]);
 			return i == 0 ? kernel.cumulativeProbability(min, binBounds[0]) : kernel.cumulativeProbability(binBounds[i - 1], binBounds[i]);
 		}

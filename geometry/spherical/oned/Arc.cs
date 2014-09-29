@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.oned
+namespace mathlib.geometry.spherical.oned
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Region_Location = org.apache.commons.math3.geometry.partitioning.Region_Location;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Region_Location = mathlib.geometry.partitioning.Region_Location;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
 
 
 	/// <summary>
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="tolerance"> tolerance below which angles are considered identical </param>
 		/// <exception cref="NumberIsTooLargeException"> if lower is greater than upper </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Arc(final double lower, final double upper, final double tolerance) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public Arc(final double lower, final double upper, final double tolerance) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Arc(double lower, double upper, double tolerance)
 		{
@@ -153,11 +153,11 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <returns> a code representing the point status: either {@link
 		/// Location#INSIDE}, <seealso cref="Location#OUTSIDE"/> or <seealso cref="Location#BOUNDARY"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.Region_Location checkPoint(final double point)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.Region_Location checkPoint(final double point)
 		public virtual Region_Location checkPoint(double point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double normalizedPoint = org.apache.commons.math3.util.MathUtils.normalizeAngle(point, middle);
+//ORIGINAL LINE: final double normalizedPoint = mathlib.util.MathUtils.normalizeAngle(point, middle);
 			double normalizedPoint = MathUtils.normalizeAngle(point, middle);
 			if (normalizedPoint < lower - tolerance || normalizedPoint > upper + tolerance)
 			{

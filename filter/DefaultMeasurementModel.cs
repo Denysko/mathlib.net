@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.filter
+namespace mathlib.filter
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Default implementation of a <seealso cref="MeasurementModel"/> for the use with a <seealso cref="KalmanFilter"/>.
@@ -58,7 +58,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="DimensionMismatchException">
 		///             if any of the input matrices is non-rectangular </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DefaultMeasurementModel(final double[][] measMatrix, final double[][] measNoise) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DefaultMeasurementModel(final double[][] measMatrix, final double[][] measNoise) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DefaultMeasurementModel(double[][] measMatrix, double[][] measNoise) : this(new Array2DRowRealMatrix(measMatrix), new Array2DRowRealMatrix(measNoise))
 		{
@@ -71,7 +71,7 @@ namespace org.apache.commons.math3.filter
 		/// <param name="measMatrix"> the measurement matrix </param>
 		/// <param name="measNoise"> the measurement noise matrix </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public DefaultMeasurementModel(final org.apache.commons.math3.linear.RealMatrix measMatrix, final org.apache.commons.math3.linear.RealMatrix measNoise)
+//ORIGINAL LINE: public DefaultMeasurementModel(final mathlib.linear.RealMatrix measMatrix, final mathlib.linear.RealMatrix measNoise)
 		public DefaultMeasurementModel(RealMatrix measMatrix, RealMatrix measNoise)
 		{
 			this.measurementMatrix = measMatrix;

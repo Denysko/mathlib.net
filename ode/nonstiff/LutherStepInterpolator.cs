@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class represents an interpolator over the last step during an
@@ -48,7 +48,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// Simple constructor.
 		/// This constructor builds an instance that is not usable yet, the
 		/// {@link
-		/// org.apache.commons.math3.ode.sampling.AbstractStepInterpolator#reinitialize}
+		/// mathlib.ode.sampling.AbstractStepInterpolator#reinitialize}
 		/// method should be called before using the instance in order to
 		/// initialize the internal arrays. This constructor is used only
 		/// in order to delay the initialization in some cases. The {@link

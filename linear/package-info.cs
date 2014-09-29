@@ -17,7 +17,7 @@
 /// <summary>
 /// Linear algebra support.
 /// </summary>
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 }

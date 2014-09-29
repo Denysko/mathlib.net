@@ -16,23 +16,23 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using Euclidean1D = org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
-	using IntervalsSet = org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
-	using OrientedPoint = org.apache.commons.math3.geometry.euclidean.oned.OrientedPoint;
-	using Vector1D = org.apache.commons.math3.geometry.euclidean.oned.Vector1D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using Euclidean1D = mathlib.geometry.euclidean.oned.Euclidean1D;
+	using IntervalsSet = mathlib.geometry.euclidean.oned.IntervalsSet;
+	using OrientedPoint = mathlib.geometry.euclidean.oned.OrientedPoint;
+	using Vector1D = mathlib.geometry.euclidean.oned.Vector1D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class represents an oriented line in the 2D plane.
@@ -201,7 +201,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 //ORIGINAL LINE: final double dy = p2.getY() - p1.getY();
 			double dy = p2.Y - p1.Y;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d = org.apache.commons.math3.util.FastMath.hypot(dx, dy);
+//ORIGINAL LINE: final double d = mathlib.util.FastMath.hypot(dx, dy);
 			double d = FastMath.hypot(dx, dy);
 			if (d == 0.0)
 			{
@@ -287,7 +287,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.euclidean.oned.Vector1D toSubSpace(final org.apache.commons.math3.geometry.Point<Euclidean2D> point)
+//ORIGINAL LINE: public mathlib.geometry.euclidean.oned.Vector1D toSubSpace(final mathlib.geometry.Point<Euclidean2D> point)
 		public virtual Vector1D toSubSpace(Point<Euclidean2D> point)
 		{
 			Vector2D p2 = (Vector2D) point;
@@ -297,11 +297,11 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector2D toSpace(final org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> point)
+//ORIGINAL LINE: public Vector2D toSpace(final mathlib.geometry.Point<mathlib.geometry.euclidean.oned.Euclidean1D> point)
 		public virtual Vector2D toSpace(Point<Euclidean1D> point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double abscissa = ((org.apache.commons.math3.geometry.euclidean.oned.Vector1D) point).getX();
+//ORIGINAL LINE: final double abscissa = ((mathlib.geometry.euclidean.oned.Vector1D) point).getX();
 			double abscissa = ((Vector1D) point).X;
 			return new Vector2D(abscissa * cos - originOffset * sin, abscissa * sin + originOffset * cos);
 		}
@@ -391,7 +391,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double getOffset(final org.apache.commons.math3.geometry.Point<Euclidean2D> point)
+//ORIGINAL LINE: public double getOffset(final mathlib.geometry.Point<Euclidean2D> point)
 		public virtual double getOffset(Point<Euclidean2D> point)
 		{
 			Vector2D p2 = (Vector2D) point;
@@ -401,7 +401,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public boolean sameOrientationAs(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> other)
+//ORIGINAL LINE: public boolean sameOrientationAs(final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> other)
 		public virtual bool sameOrientationAs(Hyperplane<Euclidean2D> other)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -417,7 +417,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <returns> one point in the plane, with given abscissa and offset
 		/// relative to the line </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector2D getPointAt(final org.apache.commons.math3.geometry.euclidean.oned.Vector1D abscissa, final double offset)
+//ORIGINAL LINE: public Vector2D getPointAt(final mathlib.geometry.euclidean.oned.Vector1D abscissa, final double offset)
 		public virtual Vector2D getPointAt(Vector1D abscissa, double offset)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -444,7 +444,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// Compute the distance between the instance and a point.
 		/// <p>This is a shortcut for invoking FastMath.abs(getOffset(p)),
 		/// and provides consistency with what is in the
-		/// org.apache.commons.math3.geometry.euclidean.threed.Line class.</p>
+		/// mathlib.geometry.euclidean.threed.Line class.</p>
 		/// </summary>
 		/// <param name="p"> to check </param>
 		/// <returns> distance between the instance and the point
@@ -523,20 +523,20 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 //ORIGINAL LINE: public void setOriginOffset(final double offset)
 
 		/// <summary>
-		/// Get a {@link org.apache.commons.math3.geometry.partitioning.Transform
+		/// Get a {@link mathlib.geometry.partitioning.Transform
 		/// Transform} embedding an affine transform. </summary>
 		/// <param name="transform"> affine transform to embed (must be inversible
 		/// otherwise the {@link
-		/// org.apache.commons.math3.geometry.partitioning.Transform#apply(Hyperplane)
+		/// mathlib.geometry.partitioning.Transform#apply(Hyperplane)
 		/// apply(Hyperplane)} method would work only for some lines, and
 		/// fail for other ones) </param>
 		/// <returns> a new transform that can be applied to either {@link
 		/// Vector2D Vector2D}, <seealso cref="Line Line"/> or {@link
-		/// org.apache.commons.math3.geometry.partitioning.SubHyperplane
+		/// mathlib.geometry.partitioning.SubHyperplane
 		/// SubHyperplane} instances </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the transform is non invertible </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static org.apache.commons.math3.geometry.partitioning.Transform<Euclidean2D, org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> getTransform(final java.awt.geom.AffineTransform transform) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static mathlib.geometry.partitioning.Transform<Euclidean2D, mathlib.geometry.euclidean.oned.Euclidean1D> getTransform(final java.awt.geom.AffineTransform transform) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static Transform<Euclidean2D, Euclidean1D> getTransform(AffineTransform transform)
 		{
@@ -574,7 +574,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 			/// only for some lines, and fail for other ones) </param>
 			/// <exception cref="MathIllegalArgumentException"> if the transform is non invertible </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public LineTransform(final java.awt.geom.AffineTransform transform) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public LineTransform(final java.awt.geom.AffineTransform transform) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public LineTransform(AffineTransform transform)
 			{
@@ -604,7 +604,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector2D apply(final org.apache.commons.math3.geometry.Point<Euclidean2D> point)
+//ORIGINAL LINE: public Vector2D apply(final mathlib.geometry.Point<Euclidean2D> point)
 			public virtual Vector2D apply(Point<Euclidean2D> point)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -622,7 +622,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Line apply(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane)
+//ORIGINAL LINE: public Line apply(final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane)
 			public virtual Line apply(Hyperplane<Euclidean2D> hyperplane)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -638,7 +638,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 //ORIGINAL LINE: final double rSin = cYX * line.cos + cYY * line.sin;
 				double rSin = cYX * line.cos + cYY * line.sin;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double inv = 1.0 / org.apache.commons.math3.util.FastMath.sqrt(rSin * rSin + rCos * rCos);
+//ORIGINAL LINE: final double inv = 1.0 / mathlib.util.FastMath.sqrt(rSin * rSin + rCos * rCos);
 				double inv = 1.0 / FastMath.sqrt(rSin * rSin + rCos * rCos);
 				return new Line(FastMath.PI + FastMath.atan2(-rSin, -rCos), inv * rCos, inv * rSin, inv * rOffset, line.tolerance);
 			}
@@ -646,11 +646,11 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> apply(final org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> sub, final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> original, final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> transformed)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.oned.Euclidean1D> apply(final mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.oned.Euclidean1D> sub, final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> original, final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> transformed)
 			public virtual SubHyperplane<Euclidean1D> apply(SubHyperplane<Euclidean1D> sub, Hyperplane<Euclidean2D> original, Hyperplane<Euclidean2D> transformed)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.oned.OrientedPoint op = (org.apache.commons.math3.geometry.euclidean.oned.OrientedPoint) sub.getHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.oned.OrientedPoint op = (mathlib.geometry.euclidean.oned.OrientedPoint) sub.getHyperplane();
 				OrientedPoint op = (OrientedPoint) sub.Hyperplane;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Line originalLine = (Line) original;
@@ -659,7 +659,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 //ORIGINAL LINE: final Line transformedLine = (Line) transformed;
 				Line transformedLine = (Line) transformed;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.oned.Vector1D newLoc = transformedLine.toSubSpace(apply(originalLine.toSpace(op.getLocation())));
+//ORIGINAL LINE: final mathlib.geometry.euclidean.oned.Vector1D newLoc = transformedLine.toSubSpace(apply(originalLine.toSpace(op.getLocation())));
 				Vector1D newLoc = transformedLine.toSubSpace(apply(originalLine.toSpace(op.Location)));
 				return (new OrientedPoint(newLoc, op.Direct, originalLine.tolerance)).wholeHyperplane();
 			}

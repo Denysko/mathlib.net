@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// Interface expanding {@link FirstOrderDifferentialEquations first order
@@ -40,7 +40,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void computeMainStateJacobian(double t, double[] y, double[] yDot, double[][] dFdY) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: void computeMainStateJacobian(double t, double[] y, double[] yDot, double[][] dFdY) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException;
 		void computeMainStateJacobian(double t, double[] y, double[] yDot, double[][] dFdY);
 
 	}

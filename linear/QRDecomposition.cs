@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -151,7 +151,7 @@ namespace org.apache.commons.math3.linear
 				xNormSqr += c * c;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a = (qrtMinor[minor] > 0) ? -org.apache.commons.math3.util.FastMath.sqrt(xNormSqr) : org.apache.commons.math3.util.FastMath.sqrt(xNormSqr);
+//ORIGINAL LINE: final double a = (qrtMinor[minor] > 0) ? -mathlib.util.FastMath.sqrt(xNormSqr) : mathlib.util.FastMath.sqrt(xNormSqr);
 			double a = (qrtMinor[minor] > 0) ? - FastMath.sqrt(xNormSqr) : FastMath.sqrt(xNormSqr);
 			rDiag[minor] = a;
 
@@ -537,7 +537,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int kStart = kBlock * blockSize;
 					int kStart = kBlock * blockSize;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int kEnd = org.apache.commons.math3.util.FastMath.min(kStart + blockSize, columns);
+//ORIGINAL LINE: final int kEnd = mathlib.util.FastMath.min(kStart + blockSize, columns);
 					int kEnd = FastMath.min(kStart + blockSize, columns);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int kWidth = kEnd - kStart;

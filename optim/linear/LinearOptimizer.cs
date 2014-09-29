@@ -16,11 +16,11 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.linear
+namespace mathlib.optim.linear
 {
 
-	using TooManyIterationsException = org.apache.commons.math3.exception.TooManyIterationsException;
-	using MultivariateOptimizer = org.apache.commons.math3.optim.nonlinear.scalar.MultivariateOptimizer;
+	using TooManyIterationsException = mathlib.exception.TooManyIterationsException;
+	using MultivariateOptimizer = mathlib.optim.nonlinear.scalar.MultivariateOptimizer;
 
 	/// <summary>
 	/// Base class for implementing linear optimizers.
@@ -93,7 +93,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <exception cref="TooManyIterationsException"> if the maximal number of
 		/// iterations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyIterationsException
+//ORIGINAL LINE: @Override public mathlib.optim.PointValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyIterationsException
 		public override PointValuePair optimize(params OptimizationData[] optData)
 		{
 			// Set up base class and perform computation.

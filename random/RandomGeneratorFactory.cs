@@ -16,10 +16,10 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
 
 	/// <summary>
 	/// Utilities for creating <seealso cref="RandomGenerator"/> instances.

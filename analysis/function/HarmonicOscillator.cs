@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.function
+namespace mathlib.analysis.function
 {
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <a href="http://en.wikipedia.org/wiki/Harmonic_oscillator">
@@ -68,7 +68,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <summary>
 		/// {@inheritDoc} </summary>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#value(DerivativeStructure)"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#value(org.apache.commons.math3.analysis.differentiation.DerivativeStructure)"/>")]
+		[Obsolete("as of 3.1, replaced by <seealso cref="#value(mathlib.analysis.differentiation.DerivativeStructure)"/>")]
 		public virtual UnivariateFunction derivative()
 		{
 			return FunctionUtils.toDifferentiableUnivariateFunction(this).derivative();
@@ -95,7 +95,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// <exception cref="DimensionMismatchException"> if the size of {@code param} is
 			/// not 3. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double value(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 			public virtual double value(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -115,7 +115,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// <exception cref="DimensionMismatchException"> if the size of {@code param} is
 			/// not 3. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] gradient(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double[] gradient(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 			public virtual double[] gradient(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -137,7 +137,7 @@ namespace org.apache.commons.math3.analysis.function
 //ORIGINAL LINE: final double a = HarmonicOscillator.value(xTimesOmegaPlusPhase, 1);
 				double a = HarmonicOscillator.value(xTimesOmegaPlusPhase, 1);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double p = -amplitude * org.apache.commons.math3.util.FastMath.sin(xTimesOmegaPlusPhase);
+//ORIGINAL LINE: final double p = -amplitude * mathlib.util.FastMath.sin(xTimesOmegaPlusPhase);
 				double p = -amplitude * FastMath.sin(xTimesOmegaPlusPhase);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double w = p * x;
@@ -156,7 +156,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// <exception cref="DimensionMismatchException"> if the size of {@code param} is
 			/// not 3. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void validateParameters(double[] param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private void validateParameters(double[] param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 			internal virtual void validateParameters(double[] param)
 			{
 				if (param == null)
@@ -183,7 +183,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// @since 3.1
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{

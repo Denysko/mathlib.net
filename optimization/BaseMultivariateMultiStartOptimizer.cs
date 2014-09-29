@@ -17,16 +17,16 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomVectorGenerator = org.apache.commons.math3.random.RandomVectorGenerator;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomVectorGenerator = mathlib.random.RandomVectorGenerator;
 
 	/// <summary>
 	/// Base class for all implementations of a multi-start optimizer.
@@ -42,7 +42,7 @@ namespace org.apache.commons.math3.optimization
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 3.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public class BaseMultivariateMultiStartOptimizer<FUNC> : BaseMultivariateOptimizer<FUNC> where FUNC : org.apache.commons.math3.analysis.MultivariateFunction
+	public class BaseMultivariateMultiStartOptimizer<FUNC> : BaseMultivariateOptimizer<FUNC> where FUNC : mathlib.analysis.MultivariateFunction
 	{
 		/// <summary>
 		/// Underlying classical optimizer. </summary>
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.optimization
 		/// is {@code null}. </exception>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code starts < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected BaseMultivariateMultiStartOptimizer(final BaseMultivariateOptimizer<FUNC> optimizer, final int starts, final org.apache.commons.math3.random.RandomVectorGenerator generator)
+//ORIGINAL LINE: protected BaseMultivariateMultiStartOptimizer(final BaseMultivariateOptimizer<FUNC> optimizer, final int starts, final mathlib.random.RandomVectorGenerator generator)
 		protected internal BaseMultivariateMultiStartOptimizer(BaseMultivariateOptimizer<FUNC> optimizer, int starts, RandomVectorGenerator generator)
 		{
 			if (optimizer == null || generator == null)

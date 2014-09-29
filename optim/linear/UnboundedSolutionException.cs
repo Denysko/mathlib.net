@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.linear
+namespace mathlib.optim.linear
 {
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// This class represents exceptions thrown by optimizers when a solution escapes to infinity.

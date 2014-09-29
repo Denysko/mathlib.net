@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Random Key chromosome is used for permutation representation. It is a vector
@@ -116,7 +116,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="DimensionMismatchException"> iff the length of the <code>sequence</code>,
 		///   <code>representation</code> or <code>sortedRepr</code> lists are not equal </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static <S> java.util.List<S> decodeGeneric(final java.util.List<S> sequence, java.util.List<Double> representation, final java.util.List<Double> sortedRepr) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private static <S> java.util.List<S> decodeGeneric(final java.util.List<S> sequence, java.util.List<Double> representation, final java.util.List<Double> sortedRepr) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static IList<S> decodeGeneric<S>(IList<S> sequence, IList<double?> representation, IList<double?> sortedRepr)
 		{
@@ -283,7 +283,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="MathIllegalArgumentException"> iff the <code>permutedData</code> and
 		///   <code>originalData</code> lists contain different data </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <S> java.util.List<Double> inducedPermutation(final java.util.List<S> originalData, final java.util.List<S> permutedData) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static <S> java.util.List<Double> inducedPermutation(final java.util.List<S> originalData, final java.util.List<S> permutedData) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static IList<double?> inducedPermutation<S>(IList<S> originalData, IList<S> permutedData)
 		{

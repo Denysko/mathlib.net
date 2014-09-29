@@ -18,7 +18,7 @@
 /// <summary>
 /// One-dimensional optimization algorithms.
 /// </summary>
-namespace org.apache.commons.math3.optim.univariate
+namespace mathlib.optim.univariate
 {
 
 }

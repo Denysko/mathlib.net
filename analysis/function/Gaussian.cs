@@ -17,16 +17,16 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.function
+namespace mathlib.analysis.function
 {
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// <a href="http://en.wikipedia.org/wiki/Gaussian_function">
@@ -58,7 +58,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <param name="sigma"> Standard deviation. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sigma <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Gaussian(double norm, double mean, double sigma) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public Gaussian(double norm, double mean, double sigma) throws mathlib.exception.NotStrictlyPositiveException
 		public Gaussian(double norm, double mean, double sigma)
 		{
 			if (sigma <= 0)
@@ -79,7 +79,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <param name="sigma"> Standard deviation. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sigma <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Gaussian(double mean, double sigma) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public Gaussian(double mean, double sigma) throws mathlib.exception.NotStrictlyPositiveException
 		public Gaussian(double mean, double sigma) : this(1 / (sigma * FastMath.sqrt(2 * Math.PI)), mean, sigma)
 		{
 		}
@@ -101,7 +101,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <summary>
 		/// {@inheritDoc} </summary>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#value(DerivativeStructure)"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#value(org.apache.commons.math3.analysis.differentiation.DerivativeStructure)"/>")]
+		[Obsolete("as of 3.1, replaced by <seealso cref="#value(mathlib.analysis.differentiation.DerivativeStructure)"/>")]
 		public virtual UnivariateFunction derivative()
 		{
 			return FunctionUtils.toDifferentiableUnivariateFunction(this).derivative();
@@ -129,7 +129,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// not 3. </exception>
 			/// <exception cref="NotStrictlyPositiveException"> if {@code param[2]} is negative. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double value(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 			public virtual double value(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -157,7 +157,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// not 3. </exception>
 			/// <exception cref="NotStrictlyPositiveException"> if {@code param[2]} is negative. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] gradient(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double[] gradient(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 			public virtual double[] gradient(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -199,7 +199,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// not 3. </exception>
 			/// <exception cref="NotStrictlyPositiveException"> if {@code param[2]} is negative. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void validateParameters(double[] param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: private void validateParameters(double[] param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 			internal virtual void validateParameters(double[] param)
 			{
 				if (param == null)
@@ -231,7 +231,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// @since 3.1
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{

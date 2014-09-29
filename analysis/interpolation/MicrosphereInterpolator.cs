@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using UnitSphereRandomVectorGenerator = org.apache.commons.math3.random.UnitSphereRandomVectorGenerator;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using UnitSphereRandomVectorGenerator = mathlib.random.UnitSphereRandomVectorGenerator;
 
 	/// <summary>
 	/// Interpolator that implements the algorithm described in
@@ -71,7 +71,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NotPositiveException"> if {@code exponent < 0}. </exception>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code elements <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MicrosphereInterpolator(final int elements, final int exponent) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public MicrosphereInterpolator(final int elements, final int exponent) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public MicrosphereInterpolator(int elements, int exponent)
 		{
@@ -92,12 +92,12 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.MultivariateFunction interpolate(final double[][] xval, final double[] yval) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public mathlib.analysis.MultivariateFunction interpolate(final double[][] xval, final double[] yval) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual MultivariateFunction interpolate(double[][] xval, double[] yval)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.random.UnitSphereRandomVectorGenerator rand = new org.apache.commons.math3.random.UnitSphereRandomVectorGenerator(xval[0].length);
+//ORIGINAL LINE: final mathlib.random.UnitSphereRandomVectorGenerator rand = new mathlib.random.UnitSphereRandomVectorGenerator(xval[0].length);
 			UnitSphereRandomVectorGenerator rand = new UnitSphereRandomVectorGenerator(xval[0].Length);
 			return new MicrosphereInterpolatingFunction(xval, yval, brightnessExponent, microsphereElements, rand);
 		}

@@ -277,7 +277,7 @@ namespace mathlib.util
 		/// </summary>
 		/// <exception cref="MathArithmeticException"> if {@code a} is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BigReal divide(BigReal a) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public BigReal divide(BigReal a) throws mathlib.exception.MathArithmeticException
 		public virtual BigReal divide(BigReal a)
 		{
 			try
@@ -296,7 +296,7 @@ namespace mathlib.util
 		/// </summary>
 		/// <exception cref="MathArithmeticException"> if {@code this} is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BigReal reciprocal() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public BigReal reciprocal() throws mathlib.exception.MathArithmeticException
 		public virtual BigReal reciprocal()
 		{
 			try

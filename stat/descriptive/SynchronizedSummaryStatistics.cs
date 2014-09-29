@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Implementation of
-	/// <seealso cref="org.apache.commons.math3.stat.descriptive.SummaryStatistics"/> that
+	/// <seealso cref="mathlib.stat.descriptive.SummaryStatistics"/> that
 	/// is safe to use in a multithreaded environment.  Multiple threads can safely
 	/// operate on a single instance without causing runtime exceptions due to race
 	/// conditions.  In effect, this implementation makes modification and access
@@ -54,7 +54,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="original"> the {@code SynchronizedSummaryStatistics} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SynchronizedSummaryStatistics(SynchronizedSummaryStatistics original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public SynchronizedSummaryStatistics(SynchronizedSummaryStatistics original) throws mathlib.exception.NullArgumentException
 		public SynchronizedSummaryStatistics(SynchronizedSummaryStatistics original)
 		{
 			copy(original, this);
@@ -294,7 +294,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setSumImpl(StorelessUnivariateStatistic sumImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setSumImpl(StorelessUnivariateStatistic sumImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -321,7 +321,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setSumsqImpl(StorelessUnivariateStatistic sumsqImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setSumsqImpl(StorelessUnivariateStatistic sumsqImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -348,7 +348,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setMinImpl(StorelessUnivariateStatistic minImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setMinImpl(StorelessUnivariateStatistic minImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -375,7 +375,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setMaxImpl(StorelessUnivariateStatistic maxImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setMaxImpl(StorelessUnivariateStatistic maxImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -402,7 +402,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setSumLogImpl(StorelessUnivariateStatistic sumLogImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setSumLogImpl(StorelessUnivariateStatistic sumLogImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -429,7 +429,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setGeoMeanImpl(StorelessUnivariateStatistic geoMeanImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setGeoMeanImpl(StorelessUnivariateStatistic geoMeanImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -456,7 +456,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setMeanImpl(StorelessUnivariateStatistic meanImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setMeanImpl(StorelessUnivariateStatistic meanImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -483,7 +483,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setVarianceImpl(StorelessUnivariateStatistic varianceImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setVarianceImpl(StorelessUnivariateStatistic varianceImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns a copy of this SynchronizedSummaryStatistics instance with the
@@ -510,7 +510,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="dest"> SynchronizedSummaryStatistics to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(SynchronizedSummaryStatistics source, SynchronizedSummaryStatistics dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(SynchronizedSummaryStatistics source, SynchronizedSummaryStatistics dest) throws mathlib.exception.NullArgumentException
 		public static void copy(SynchronizedSummaryStatistics source, SynchronizedSummaryStatistics dest)
 		{
 			MathUtils.checkNotNull(source);

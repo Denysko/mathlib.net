@@ -17,27 +17,27 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using GeometricMean = org.apache.commons.math3.stat.descriptive.moment.GeometricMean;
-	using Kurtosis = org.apache.commons.math3.stat.descriptive.moment.Kurtosis;
-	using Mean = org.apache.commons.math3.stat.descriptive.moment.Mean;
-	using Skewness = org.apache.commons.math3.stat.descriptive.moment.Skewness;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
-	using Max = org.apache.commons.math3.stat.descriptive.rank.Max;
-	using Min = org.apache.commons.math3.stat.descriptive.rank.Min;
-	using Percentile = org.apache.commons.math3.stat.descriptive.rank.Percentile;
-	using Sum = org.apache.commons.math3.stat.descriptive.summary.Sum;
-	using SumOfSquares = org.apache.commons.math3.stat.descriptive.summary.SumOfSquares;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using ResizableDoubleArray = org.apache.commons.math3.util.ResizableDoubleArray;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using GeometricMean = mathlib.stat.descriptive.moment.GeometricMean;
+	using Kurtosis = mathlib.stat.descriptive.moment.Kurtosis;
+	using Mean = mathlib.stat.descriptive.moment.Mean;
+	using Skewness = mathlib.stat.descriptive.moment.Skewness;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
+	using Max = mathlib.stat.descriptive.rank.Max;
+	using Min = mathlib.stat.descriptive.rank.Min;
+	using Percentile = mathlib.stat.descriptive.rank.Percentile;
+	using Sum = mathlib.stat.descriptive.summary.Sum;
+	using SumOfSquares = mathlib.stat.descriptive.summary.SumOfSquares;
+	using MathUtils = mathlib.util.MathUtils;
+	using ResizableDoubleArray = mathlib.util.ResizableDoubleArray;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -141,7 +141,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalArgumentException"> if window size is less than 1 but
 		/// not equal to <seealso cref="#INFINITE_WINDOW"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DescriptiveStatistics(int window) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public DescriptiveStatistics(int window) throws mathlib.exception.MathIllegalArgumentException
 		public DescriptiveStatistics(int window)
 		{
 			WindowSize = window;
@@ -169,7 +169,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="original"> DescriptiveStatistics instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DescriptiveStatistics(DescriptiveStatistics original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public DescriptiveStatistics(DescriptiveStatistics original) throws mathlib.exception.NullArgumentException
 		public DescriptiveStatistics(DescriptiveStatistics original)
 		{
 			copy(original, this);
@@ -206,7 +206,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// </summary>
 		/// <exception cref="MathIllegalStateException"> if there are no elements stored </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void removeMostRecentValue() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void removeMostRecentValue() throws mathlib.exception.MathIllegalStateException
 		public virtual void removeMostRecentValue()
 		{
 			try
@@ -227,7 +227,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <returns> replaced value </returns>
 		/// <exception cref="MathIllegalStateException"> if there are no elements stored </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double replaceMostRecentValue(double v) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public double replaceMostRecentValue(double v) throws mathlib.exception.MathIllegalStateException
 		public virtual double replaceMostRecentValue(double v)
 		{
 			return eDA.substituteMostRecentElement(v);
@@ -448,7 +448,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalArgumentException"> if window size is less than 1 but
 		/// not equal to <seealso cref="#INFINITE_WINDOW"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setWindowSize(int windowSize) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void setWindowSize(int windowSize) throws mathlib.exception.MathIllegalArgumentException
 
 		/// <summary>
 		/// Returns the current set of values in an array of double primitives.
@@ -511,7 +511,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		///  overridden and the supplied implementation does not support setQuantile </exception>
 		/// <exception cref="MathIllegalArgumentException"> if p is not a valid quantile </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getPercentile(double p) throws org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double getPercentile(double p) throws mathlib.exception.MathIllegalStateException, mathlib.exception.MathIllegalArgumentException
 		public virtual double getPercentile(double p)
 		{
 			if (percentileImpl is Percentile)
@@ -752,7 +752,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		///  provide a <code>setQuantile</code> method
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized void setPercentileImpl(UnivariateStatistic percentileImpl) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public synchronized void setPercentileImpl(UnivariateStatistic percentileImpl) throws mathlib.exception.MathIllegalArgumentException
 
 		/// <summary>
 		/// Returns the currently configured skewness implementation.
@@ -870,7 +870,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="dest"> DescriptiveStatistics to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(DescriptiveStatistics source, DescriptiveStatistics dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(DescriptiveStatistics source, DescriptiveStatistics dest) throws mathlib.exception.NullArgumentException
 		public static void copy(DescriptiveStatistics source, DescriptiveStatistics dest)
 		{
 			MathUtils.checkNotNull(source);

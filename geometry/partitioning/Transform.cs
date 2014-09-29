@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
-	using org.apache.commons.math3.geometry;
+	using mathlib.geometry;
 
 
 	/// <summary>
@@ -52,7 +52,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: Transform.java 1554646 2014-01-01 17:22:53Z luc $
 	/// @since 3.0 </param>
-	public interface Transform<S, T> where S : org.apache.commons.math3.geometry.Space where T : org.apache.commons.math3.geometry.Space
+	public interface Transform<S, T> where S : mathlib.geometry.Space where T : mathlib.geometry.Space
 	{
 
 		/// <summary>

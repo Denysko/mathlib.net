@@ -19,7 +19,7 @@
 ///      Classes providing binomial proportion confidence interval construction.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.stat.interval
+namespace mathlib.stat.interval
 {
 
 }

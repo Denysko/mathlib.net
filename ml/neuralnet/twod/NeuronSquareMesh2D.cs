@@ -18,12 +18,12 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet.twod
+namespace mathlib.ml.neuralnet.twod
 {
 
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using MathInternalError = mathlib.exception.MathInternalError;
 
 	/// <summary>
 	/// Neural network with the topology of a two-dimensional surface.
@@ -33,7 +33,7 @@ namespace org.apache.commons.math3.ml.neuralnet.twod
 	/// <a href="http://en.wikipedia.org/wiki/Kohonen">
 	///  Self Organizing Feature Map</a>.
 	/// </summary>
-	/// <seealso cref= org.apache.commons.math3.ml.neuralnet.sofm
+	/// <seealso cref= mathlib.ml.neuralnet.sofm
 	/// @version $Id: NeuronSquareMesh2D.java 1566396 2014-02-09 20:36:24Z tn $
 	/// @since 3.3 </seealso>
 	[Serializable]
@@ -419,12 +419,12 @@ namespace org.apache.commons.math3.ml.neuralnet.twod
 					}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ml.neuralnet.Neuron aNeuron = network.getNeuron(identifiers[i][j]);
+//ORIGINAL LINE: final mathlib.ml.neuralnet.Neuron aNeuron = network.getNeuron(identifiers[i][j]);
 					Neuron aNeuron = network.getNeuron(identifiers[i][j]);
 					foreach (long b in linkEnd)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ml.neuralnet.Neuron bNeuron = network.getNeuron(b);
+//ORIGINAL LINE: final mathlib.ml.neuralnet.Neuron bNeuron = network.getNeuron(b);
 						Neuron bNeuron = network.getNeuron(b);
 						// Link to all neighbours.
 						// The reverse links will be added as the loop proceeds.

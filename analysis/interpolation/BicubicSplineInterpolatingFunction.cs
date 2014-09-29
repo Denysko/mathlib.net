@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Function that implements the
@@ -77,7 +77,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// not strictly increasing. </exception>
 		/// <exception cref="NoDataException"> if any of the arrays has zero length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BicubicSplineInterpolatingFunction(double[] x, double[] y, double[][] f, double[][] dFdX, double[][] dFdY, double[][] d2FdXdY) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public BicubicSplineInterpolatingFunction(double[] x, double[] y, double[][] f, double[][] dFdX, double[][] dFdY, double[][] d2FdXdY) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NonMonotonicSequenceException
 		public BicubicSplineInterpolatingFunction(double[] x, double[] y, double[][] f, double[][] dFdX, double[][] dFdY, double[][] d2FdXdY)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -163,7 +163,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(double x, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double value(double x, double y) throws mathlib.exception.OutOfRangeException
 		public virtual double value(double x, double y)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -210,7 +210,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// the range defined by the boundary values of {@code xval} (resp.
 		/// {@code yval}). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double partialDerivativeX(double x, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double partialDerivativeX(double x, double y) throws mathlib.exception.OutOfRangeException
 		public virtual double partialDerivativeX(double x, double y)
 		{
 			return partialDerivative(0, x, y);
@@ -223,7 +223,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// the range defined by the boundary values of {@code xval} (resp.
 		/// {@code yval}). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double partialDerivativeY(double x, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double partialDerivativeY(double x, double y) throws mathlib.exception.OutOfRangeException
 		public virtual double partialDerivativeY(double x, double y)
 		{
 			return partialDerivative(1, x, y);
@@ -236,7 +236,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// the range defined by the boundary values of {@code xval} (resp.
 		/// {@code yval}). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double partialDerivativeXX(double x, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double partialDerivativeXX(double x, double y) throws mathlib.exception.OutOfRangeException
 		public virtual double partialDerivativeXX(double x, double y)
 		{
 			return partialDerivative(2, x, y);
@@ -249,7 +249,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// the range defined by the boundary values of {@code xval} (resp.
 		/// {@code yval}). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double partialDerivativeYY(double x, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double partialDerivativeYY(double x, double y) throws mathlib.exception.OutOfRangeException
 		public virtual double partialDerivativeYY(double x, double y)
 		{
 			return partialDerivative(3, x, y);
@@ -261,7 +261,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// the range defined by the boundary values of {@code xval} (resp.
 		/// {@code yval}). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double partialDerivativeXY(double x, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double partialDerivativeXY(double x, double y) throws mathlib.exception.OutOfRangeException
 		public virtual double partialDerivativeXY(double x, double y)
 		{
 			return partialDerivative(4, x, y);
@@ -275,7 +275,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// the range defined by the boundary values of {@code xval} (resp.
 		/// {@code yval}). </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double partialDerivative(int which, double x, double y) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private double partialDerivative(int which, double x, double y) throws mathlib.exception.OutOfRangeException
 		private double partialDerivative(int which, double x, double y)
 		{
 			if (partialDerivatives == null)

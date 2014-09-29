@@ -16,14 +16,14 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
+namespace mathlib.optim.nonlinear.scalar.noderiv
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.optim;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.optim;
 
 	/// <summary>
 	/// This class implements simplex-based direct search optimization.
@@ -71,9 +71,9 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 	///  dedicated algorithm must be used like
 	///  <seealso cref="CMAESOptimizer"/> or <seealso cref="BOBYQAOptimizer"/>, or the objective
 	///  function must be wrapped in an adapter like
-	///  {@link org.apache.commons.math3.optim.nonlinear.scalar.MultivariateFunctionMappingAdapter
+	///  {@link mathlib.optim.nonlinear.scalar.MultivariateFunctionMappingAdapter
 	///  MultivariateFunctionMappingAdapter} or
-	///  {@link org.apache.commons.math3.optim.nonlinear.scalar.MultivariateFunctionPenaltyAdapter
+	///  {@link mathlib.optim.nonlinear.scalar.MultivariateFunctionPenaltyAdapter
 	///  MultivariateFunctionPenaltyAdapter}.
 	///  <br/>
 	///  The call to <seealso cref="#optimize(OptimizationData[]) optimize"/> will throw
@@ -125,14 +125,14 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 			// Indirect call to "computeObjectiveValue" in order to update the
 			// evaluations counter.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.MultivariateFunction evalFunc = new org.apache.commons.math3.analysis.MultivariateFunction()
+//ORIGINAL LINE: final mathlib.analysis.MultivariateFunction evalFunc = new mathlib.analysis.MultivariateFunction()
 			MultivariateFunction evalFunc = new MultivariateFunctionAnonymousInnerClassHelper(this);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean isMinim = getGoalType() == org.apache.commons.math3.optim.nonlinear.scalar.GoalType.MINIMIZE;
+//ORIGINAL LINE: final boolean isMinim = getGoalType() == mathlib.optim.nonlinear.scalar.GoalType.MINIMIZE;
 			bool isMinim = GoalType == GoalType.MINIMIZE;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Comparator<org.apache.commons.math3.optim.PointValuePair> comparator = new java.util.Comparator<org.apache.commons.math3.optim.PointValuePair>()
+//ORIGINAL LINE: final java.util.Comparator<mathlib.optim.PointValuePair> comparator = new java.util.Comparator<mathlib.optim.PointValuePair>()
 			IComparer<PointValuePair> comparator = new ComparatorAnonymousInnerClassHelper(this, isMinim);
 
 			// Initialize search.
@@ -142,7 +142,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 			PointValuePair[] previous = null;
 			int iteration = 0;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointValuePair> checker = ConvergenceChecker;
 			while (true)
 			{
@@ -197,7 +197,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public int compare(final org.apache.commons.math3.optim.PointValuePair o1, final org.apache.commons.math3.optim.PointValuePair o2)
+//ORIGINAL LINE: public int compare(final mathlib.optim.PointValuePair o1, final mathlib.optim.PointValuePair o2)
 			public virtual int Compare(PointValuePair o1, PointValuePair o2)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

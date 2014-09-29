@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.correlation
+namespace mathlib.stat.correlation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using BlockRealMatrix = org.apache.commons.math3.linear.BlockRealMatrix;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using org.apache.commons.math3.util;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using BlockRealMatrix = mathlib.linear.BlockRealMatrix;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using FastMath = mathlib.util.FastMath;
+	using mathlib.util;
 
 
 	/// <summary>
@@ -121,7 +121,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="matrix"> matrix with columns representing variables to correlate </param>
 		/// <returns> correlation matrix </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.linear.RealMatrix computeCorrelationMatrix(final org.apache.commons.math3.linear.RealMatrix matrix)
+//ORIGINAL LINE: public mathlib.linear.RealMatrix computeCorrelationMatrix(final mathlib.linear.RealMatrix matrix)
 		public virtual RealMatrix computeCorrelationMatrix(RealMatrix matrix)
 		{
 			int nVars = matrix.ColumnDimension;
@@ -147,7 +147,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="matrix"> matrix with columns representing variables to correlate </param>
 		/// <returns> correlation matrix </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.linear.RealMatrix computeCorrelationMatrix(final double[][] matrix)
+//ORIGINAL LINE: public mathlib.linear.RealMatrix computeCorrelationMatrix(final double[][] matrix)
 		public virtual RealMatrix computeCorrelationMatrix(double[][] matrix)
 		{
 		   return computeCorrelationMatrix(new BlockRealMatrix(matrix));
@@ -161,7 +161,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <returns> Returns Kendall's Tau rank correlation coefficient for the two arrays </returns>
 		/// <exception cref="DimensionMismatchException"> if the arrays lengths do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double correlation(final double[] xArray, final double[] yArray) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double correlation(final double[] xArray, final double[] yArray) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double correlation(double[] xArray, double[] yArray)
 		{
@@ -179,7 +179,7 @@ namespace org.apache.commons.math3.stat.correlation
 			long numPairs = sum(n - 1);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.apache.commons.math3.util.Pair<Double, Double>[] pairs = new org.apache.commons.math3.util.Pair[n];
+//ORIGINAL LINE: @SuppressWarnings("unchecked") mathlib.util.Pair<Double, Double>[] pairs = new mathlib.util.Pair[n];
 			Pair<double?, double?>[] pairs = new Pair[n];
 			for (int i = 0; i < n; i++)
 			{
@@ -196,7 +196,7 @@ namespace org.apache.commons.math3.stat.correlation
 			for (int i = 1; i < n; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<Double, Double> curr = pairs[i];
+//ORIGINAL LINE: final mathlib.util.Pair<Double, Double> curr = pairs[i];
 				Pair<double?, double?> curr = pairs[i];
 				if (curr.First.Equals(prev.First))
 				{
@@ -225,7 +225,7 @@ namespace org.apache.commons.math3.stat.correlation
 
 			int swaps = 0;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.apache.commons.math3.util.Pair<Double, Double>[] pairsDestination = new org.apache.commons.math3.util.Pair[n];
+//ORIGINAL LINE: @SuppressWarnings("unchecked") mathlib.util.Pair<Double, Double>[] pairsDestination = new mathlib.util.Pair[n];
 			Pair<double?, double?>[] pairsDestination = new Pair[n];
 			for (int segmentSize = 1; segmentSize < n; segmentSize <<= 1)
 			{
@@ -233,11 +233,11 @@ namespace org.apache.commons.math3.stat.correlation
 				{
 					int i = offset;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int iEnd = org.apache.commons.math3.util.FastMath.min(i + segmentSize, n);
+//ORIGINAL LINE: final int iEnd = mathlib.util.FastMath.min(i + segmentSize, n);
 					int iEnd = FastMath.min(i + segmentSize, n);
 					int j = iEnd;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int jEnd = org.apache.commons.math3.util.FastMath.min(j + segmentSize, n);
+//ORIGINAL LINE: final int jEnd = mathlib.util.FastMath.min(j + segmentSize, n);
 					int jEnd = FastMath.min(j + segmentSize, n);
 
 					int copyLocation = offset;
@@ -274,7 +274,7 @@ namespace org.apache.commons.math3.stat.correlation
 					}
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<Double, Double>[] pairsTemp = pairs;
+//ORIGINAL LINE: final mathlib.util.Pair<Double, Double>[] pairsTemp = pairs;
 				Pair<double?, double?>[] pairsTemp = pairs;
 				pairs = pairsDestination;
 				pairsDestination = pairsTemp;
@@ -286,7 +286,7 @@ namespace org.apache.commons.math3.stat.correlation
 			for (int i = 1; i < n; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<Double, Double> curr = pairs[i];
+//ORIGINAL LINE: final mathlib.util.Pair<Double, Double> curr = pairs[i];
 				Pair<double?, double?> curr = pairs[i];
 				if (curr.Second.Equals(prev.Second))
 				{

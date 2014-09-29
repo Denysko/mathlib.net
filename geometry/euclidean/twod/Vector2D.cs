@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class represents a 2D vector.
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <exception cref="DimensionMismatchException"> if array does not have 2 elements </exception>
 		/// <seealso cref= #toArray() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Vector2D(double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Vector2D(double[] v) throws mathlib.exception.DimensionMismatchException
 		public Vector2D(double[] v)
 		{
 			if (v.Length != 2)
@@ -284,7 +284,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Vector2D normalize() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Vector2D normalize() throws mathlib.exception.MathArithmeticException
 		public virtual Vector2D normalize()
 		{
 			double s = Norm;
@@ -307,7 +307,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <returns> angular separation between v1 and v2 </returns>
 		/// <exception cref="MathArithmeticException"> if either vector has a null norm </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double angle(Vector2D v1, Vector2D v2) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static double angle(Vector2D v1, Vector2D v2) throws mathlib.exception.MathArithmeticException
 		public static double angle(Vector2D v1, Vector2D v2)
 		{
 
@@ -323,7 +323,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 			{
 				// the vectors are almost aligned, compute using the sine
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double n = org.apache.commons.math3.util.FastMath.abs(org.apache.commons.math3.util.MathArrays.linearCombination(v1.x, v2.y, -v1.y, v2.x));
+//ORIGINAL LINE: final double n = mathlib.util.FastMath.abs(mathlib.util.MathArrays.linearCombination(v1.x, v2.y, -v1.y, v2.x));
 				double n = FastMath.abs(MathArrays.linearCombination(v1.x, v2.y, -v1.y, v2.x));
 				if (dot >= 0)
 				{
@@ -377,10 +377,10 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		{
 			Vector2D p3 = (Vector2D) p;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dx = org.apache.commons.math3.util.FastMath.abs(p3.x - x);
+//ORIGINAL LINE: final double dx = mathlib.util.FastMath.abs(p3.x - x);
 			double dx = FastMath.abs(p3.x - x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dy = org.apache.commons.math3.util.FastMath.abs(p3.y - y);
+//ORIGINAL LINE: final double dy = mathlib.util.FastMath.abs(p3.y - y);
 			double dy = FastMath.abs(p3.y - y);
 			return dx + dy;
 		}
@@ -413,10 +413,10 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		{
 			Vector2D p3 = (Vector2D) p;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dx = org.apache.commons.math3.util.FastMath.abs(p3.x - x);
+//ORIGINAL LINE: final double dx = mathlib.util.FastMath.abs(p3.x - x);
 			double dx = FastMath.abs(p3.x - x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dy = org.apache.commons.math3.util.FastMath.abs(p3.y - y);
+//ORIGINAL LINE: final double dy = mathlib.util.FastMath.abs(p3.y - y);
 			double dy = FastMath.abs(p3.y - y);
 			return FastMath.max(dx, dy);
 		}
@@ -438,7 +438,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double dotProduct(final org.apache.commons.math3.geometry.Vector<Euclidean2D> v)
+//ORIGINAL LINE: public double dotProduct(final mathlib.geometry.Vector<Euclidean2D> v)
 		public virtual double dotProduct(Vector<Euclidean2D> v)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

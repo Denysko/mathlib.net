@@ -17,14 +17,14 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class represent a Binary Space Partition tree.
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: BSPTree.java 1560115 2014-01-21 17:49:13Z luc $
 	/// @since 3.0 </param>
-	public class BSPTree<S> where S : org.apache.commons.math3.geometry.Space
+	public class BSPTree<S> where S : mathlib.geometry.Space
 	{
 
 		/// <summary>
@@ -366,8 +366,8 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <returns> the tree cell to which the point belongs </returns>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#getCell(Point, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#getCell(org.apache.commons.math3.geometry.Point, double)"/>") public BSPTree<S> getCell(final org.apache.commons.math3.geometry.Vector<S> point)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#getCell(org.apache.commons.math3.geometry.Point, double)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#getCell(mathlib.geometry.Point, double)"/>") public BSPTree<S> getCell(final mathlib.geometry.Vector<S> point)
+		[Obsolete("as of 3.3, replaced with <seealso cref="#getCell(mathlib.geometry.Point, double)"/>")]
 		public virtual BSPTree<S> getCell(Vector<S> point)
 		{
 			return getCell((Point<S>) point, 1.0e-10);
@@ -383,7 +383,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// are considered to belong to the hyperplane itself </param>
 		/// <returns> the tree cell to which the point belongs </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public BSPTree<S> getCell(final org.apache.commons.math3.geometry.Point<S> point, final double tolerance)
+//ORIGINAL LINE: public BSPTree<S> getCell(final mathlib.geometry.Point<S> point, final double tolerance)
 		public virtual BSPTree<S> getCell(Point<S> point, double tolerance)
 		{
 
@@ -422,7 +422,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <returns> close cells (may be empty if all cut sub-hyperplanes are farther
 		/// than maxOffset from the point) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public java.util.List<BSPTree<S>> getCloseCuts(final org.apache.commons.math3.geometry.Point<S> point, final double maxOffset)
+//ORIGINAL LINE: public java.util.List<BSPTree<S>> getCloseCuts(final mathlib.geometry.Point<S> point, final double maxOffset)
 		public virtual IList<BSPTree<S>> getCloseCuts(Point<S> point, double maxOffset)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -439,7 +439,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// close to the point (in absolute value) </param>
 		/// <param name="close"> list to fill </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void recurseCloseCuts(final org.apache.commons.math3.geometry.Point<S> point, final double maxOffset, final java.util.List<BSPTree<S>> close)
+//ORIGINAL LINE: private void recurseCloseCuts(final mathlib.geometry.Point<S> point, final double maxOffset, final java.util.List<BSPTree<S>> close)
 		private void recurseCloseCuts(Point<S> point, double maxOffset, IList<BSPTree<S>> close)
 		{
 			if (cut != null)
@@ -590,7 +590,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// merging phase of the four set operations union, intersection,
 		/// difference and symmetric difference (exclusive or).</p> </summary>
 		/// @param <S> Type of the space. </param>
-		public interface LeafMerger<S> where S : org.apache.commons.math3.geometry.Space
+		public interface LeafMerger<S> where S : mathlib.geometry.Space
 		{
 
 			/// <summary>

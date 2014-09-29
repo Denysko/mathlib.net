@@ -16,12 +16,12 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.oned
+namespace mathlib.geometry.euclidean.oned
 {
 
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry.partitioning;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using mathlib.geometry.partitioning;
 
 	/// <summary>
 	/// This class represents a 1D oriented hyperplane.
@@ -101,7 +101,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double getOffset(final org.apache.commons.math3.geometry.Point<Euclidean1D> point)
+//ORIGINAL LINE: public double getOffset(final mathlib.geometry.Point<Euclidean1D> point)
 		public virtual double getOffset(Point<Euclidean1D> point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -115,9 +115,9 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <p>Since this class represent zero dimension spaces which does
 		/// not have lower dimension sub-spaces, this method returns a dummy
 		/// implementation of a {@link
-		/// org.apache.commons.math3.geometry.partitioning.SubHyperplane SubHyperplane}.
+		/// mathlib.geometry.partitioning.SubHyperplane SubHyperplane}.
 		/// This implementation is only used to allow the {@link
-		/// org.apache.commons.math3.geometry.partitioning.SubHyperplane
+		/// mathlib.geometry.partitioning.SubHyperplane
 		/// SubHyperplane} class implementation to work properly, it should
 		/// <em>not</em> be used otherwise.</p> </summary>
 		/// <returns> a dummy sub hyperplane </returns>
@@ -138,7 +138,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public boolean sameOrientationAs(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean1D> other)
+//ORIGINAL LINE: public boolean sameOrientationAs(final mathlib.geometry.partitioning.Hyperplane<Euclidean1D> other)
 		public virtual bool sameOrientationAs(Hyperplane<Euclidean1D> other)
 		{
 			return !(direct ^ ((OrientedPoint) other).direct);

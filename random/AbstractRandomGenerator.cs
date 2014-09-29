@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Abstract class implementing the <seealso cref=" RandomGenerator"/> interface.

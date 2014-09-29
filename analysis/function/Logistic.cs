@@ -17,15 +17,15 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.function
+namespace mathlib.analysis.function
 {
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <a href="http://en.wikipedia.org/wiki/Generalised_logistic_function">
@@ -67,7 +67,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// growth occurs. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code n <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Logistic(double k, double m, double b, double q, double a, double n) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public Logistic(double k, double m, double b, double q, double a, double n) throws mathlib.exception.NotStrictlyPositiveException
 		public Logistic(double k, double m, double b, double q, double a, double n)
 		{
 			if (n <= 0)
@@ -93,7 +93,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <summary>
 		/// {@inheritDoc} </summary>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#value(DerivativeStructure)"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#value(org.apache.commons.math3.analysis.differentiation.DerivativeStructure)"/>")]
+		[Obsolete("as of 3.1, replaced by <seealso cref="#value(mathlib.analysis.differentiation.DerivativeStructure)"/>")]
 		public virtual UnivariateFunction derivative()
 		{
 			return FunctionUtils.toDifferentiableUnivariateFunction(this).derivative();
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// not 6. </exception>
 			/// <exception cref="NotStrictlyPositiveException"> if {@code param[5] <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double value(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 			public virtual double value(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -148,7 +148,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// not 6. </exception>
 			/// <exception cref="NotStrictlyPositiveException"> if {@code param[5] <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] gradient(double x, double... param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double[] gradient(double x, double... param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 			public virtual double[] gradient(double x, params double[] param)
 			{
 				validateParameters(param);
@@ -167,7 +167,7 @@ namespace org.apache.commons.math3.analysis.function
 //ORIGINAL LINE: final double oneOverN = 1 / param[5];
 				double oneOverN = 1 / param[5];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double exp = org.apache.commons.math3.util.FastMath.exp(b * mMinusX);
+//ORIGINAL LINE: final double exp = mathlib.util.FastMath.exp(b * mMinusX);
 				double exp = FastMath.exp(b * mMinusX);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double qExp = q * exp;
@@ -176,7 +176,7 @@ namespace org.apache.commons.math3.analysis.function
 //ORIGINAL LINE: final double qExp1 = qExp + 1;
 				double qExp1 = qExp + 1;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double factor1 = (param[0] - param[4]) * oneOverN / org.apache.commons.math3.util.FastMath.pow(qExp1, oneOverN);
+//ORIGINAL LINE: final double factor1 = (param[0] - param[4]) * oneOverN / mathlib.util.FastMath.pow(qExp1, oneOverN);
 				double factor1 = (param[0] - param[4]) * oneOverN / FastMath.pow(qExp1, oneOverN);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double factor2 = -factor1 / qExp1;
@@ -199,7 +199,7 @@ namespace org.apache.commons.math3.analysis.function
 //ORIGINAL LINE: final double ga = Logistic.value(mMinusX, 0, b, q, 1, oneOverN);
 				double ga = Logistic.value(mMinusX, 0, b, q, 1, oneOverN);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double gn = factor1 * org.apache.commons.math3.util.FastMath.log(qExp1) * oneOverN;
+//ORIGINAL LINE: final double gn = factor1 * mathlib.util.FastMath.log(qExp1) * oneOverN;
 				double gn = factor1 * FastMath.log(qExp1) * oneOverN;
 
 				return new double[] {gk, gm, gb, gq, ga, gn};
@@ -217,7 +217,7 @@ namespace org.apache.commons.math3.analysis.function
 			/// not 6. </exception>
 			/// <exception cref="NotStrictlyPositiveException"> if {@code param[5] <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void validateParameters(double[] param) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: private void validateParameters(double[] param) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NotStrictlyPositiveException
 			internal virtual void validateParameters(double[] param)
 			{
 				if (param == null)
@@ -252,7 +252,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// @since 3.1
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t)
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t)
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{
 			return t.negate().add(m).multiply(b).exp().multiply(q).add(1).pow(oneOverN).reciprocal().multiply(k - a).add(a);

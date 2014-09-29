@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting
+namespace mathlib.fitting
 {
 
-	using MultivariateVectorOptimizer = org.apache.commons.math3.optim.nonlinear.vector.MultivariateVectorOptimizer;
-	using HarmonicOscillator = org.apache.commons.math3.analysis.function.HarmonicOscillator;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MultivariateVectorOptimizer = mathlib.optim.nonlinear.vector.MultivariateVectorOptimizer;
+	using HarmonicOscillator = mathlib.analysis.function.HarmonicOscillator;
+	using ZeroException = mathlib.exception.ZeroException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Class that implements a curve fitting specialized for sinusoids.
@@ -47,7 +47,7 @@ namespace org.apache.commons.math3.fitting
 		/// Simple constructor. </summary>
 		/// <param name="optimizer"> Optimizer to use for the fitting. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public HarmonicFitter(final org.apache.commons.math3.optim.nonlinear.vector.MultivariateVectorOptimizer optimizer)
+//ORIGINAL LINE: public HarmonicFitter(final mathlib.optim.nonlinear.vector.MultivariateVectorOptimizer optimizer)
 		public HarmonicFitter(MultivariateVectorOptimizer optimizer) : base(optimizer)
 		{
 		}

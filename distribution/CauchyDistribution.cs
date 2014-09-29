@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the Cauchy distribution.
@@ -164,7 +164,7 @@ namespace org.apache.commons.math3.distribution
 		/// and {@code Double.POSITIVE_INFINITY} when {@code p == 1}.
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(double p) throws mathlib.exception.OutOfRangeException
 		public override double inverseCumulativeProbability(double p)
 		{
 			double ret;

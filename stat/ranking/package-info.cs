@@ -19,7 +19,7 @@
 ///      Classes providing rank transformations.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.stat.ranking
+namespace mathlib.stat.ranking
 {
 
 }

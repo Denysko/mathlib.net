@@ -17,22 +17,22 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ml.clustering
+namespace mathlib.ml.clustering
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
-	using EuclideanDistance = org.apache.commons.math3.ml.distance.EuclideanDistance;
-	using JDKRandomGenerator = org.apache.commons.math3.random.JDKRandomGenerator;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
+	using EuclideanDistance = mathlib.ml.distance.EuclideanDistance;
+	using JDKRandomGenerator = mathlib.random.JDKRandomGenerator;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Fuzzy K-Means clustering algorithm.
@@ -113,7 +113,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="fuzziness"> the fuzziness factor, must be &gt; 1.0 </param>
 		/// <exception cref="NumberIsTooSmallException"> if {@code fuzziness <= 1.0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FuzzyKMeansClusterer(final int k, final double fuzziness) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public FuzzyKMeansClusterer(final int k, final double fuzziness) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FuzzyKMeansClusterer(int k, double fuzziness) : this(k, fuzziness, -1, new EuclideanDistance())
 		{
@@ -129,7 +129,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="measure"> the distance measure to use </param>
 		/// <exception cref="NumberIsTooSmallException"> if {@code fuzziness <= 1.0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FuzzyKMeansClusterer(final int k, final double fuzziness, final int maxIterations, final org.apache.commons.math3.ml.distance.DistanceMeasure measure) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public FuzzyKMeansClusterer(final int k, final double fuzziness, final int maxIterations, final mathlib.ml.distance.DistanceMeasure measure) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FuzzyKMeansClusterer(int k, double fuzziness, int maxIterations, DistanceMeasure measure) : this(k, fuzziness, maxIterations, measure, DEFAULT_EPSILON, new JDKRandomGenerator())
 		{
@@ -147,7 +147,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="random"> random generator to use for choosing initial centers </param>
 		/// <exception cref="NumberIsTooSmallException"> if {@code fuzziness <= 1.0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FuzzyKMeansClusterer(final int k, final double fuzziness, final int maxIterations, final org.apache.commons.math3.ml.distance.DistanceMeasure measure, final double epsilon, final org.apache.commons.math3.random.RandomGenerator random) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public FuzzyKMeansClusterer(final int k, final double fuzziness, final int maxIterations, final mathlib.ml.distance.DistanceMeasure measure, final double epsilon, final mathlib.random.RandomGenerator random) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FuzzyKMeansClusterer(int k, double fuzziness, int maxIterations, DistanceMeasure measure, double epsilon, RandomGenerator random) : base(measure)
 		{
@@ -309,7 +309,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <exception cref="MathIllegalArgumentException"> if the data points are null or the number
 		///     of clusters is larger than the number of data points </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public java.util.List<CentroidCluster<T>> cluster(final java.util.Collection<T> dataPoints) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public java.util.List<CentroidCluster<T>> cluster(final java.util.Collection<T> dataPoints) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override IList<CentroidCluster<T>> cluster(ICollection<T> dataPoints)
 		{
@@ -393,7 +393,7 @@ namespace org.apache.commons.math3.ml.clustering
 				foreach (T point in points)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double u = org.apache.commons.math3.util.FastMath.pow(membershipMatrix[i][j], fuzziness);
+//ORIGINAL LINE: final double u = mathlib.util.FastMath.pow(membershipMatrix[i][j], fuzziness);
 					double u = FastMath.pow(membershipMatrix[i][j], fuzziness);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] pointArr = point.getPoint();
@@ -430,13 +430,13 @@ namespace org.apache.commons.math3.ml.clustering
 				{
 					double sum = 0.0;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double distA = org.apache.commons.math3.util.FastMath.abs(distance(point, clusters.get(j).getCenter()));
+//ORIGINAL LINE: final double distA = mathlib.util.FastMath.abs(distance(point, clusters.get(j).getCenter()));
 					double distA = FastMath.abs(distance(point, clusters[j].Center));
 
 					foreach (CentroidCluster<T> c in clusters)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double distB = org.apache.commons.math3.util.FastMath.abs(distance(point, c.getCenter()));
+//ORIGINAL LINE: final double distB = mathlib.util.FastMath.abs(distance(point, c.getCenter()));
 						double distB = FastMath.abs(distance(point, c.Center));
 						sum += FastMath.pow(distA / distB, 2.0 / (fuzziness - 1.0));
 					}

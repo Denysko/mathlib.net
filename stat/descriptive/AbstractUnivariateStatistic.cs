@@ -16,15 +16,15 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Abstract base class for all implementations of the
@@ -89,7 +89,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// are not valid </exception>
 		/// <seealso cref= #evaluate() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setData(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void setData(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setData(double[] values, int begin, int length)
 		{
@@ -124,7 +124,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <returns> the value of the statistic applied to the stored data </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the stored data array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate() throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate() throws mathlib.exception.MathIllegalArgumentException
 		public virtual double evaluate()
 		{
 			return evaluate(storedData);
@@ -134,7 +134,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values)
 		{
@@ -146,7 +146,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract double evaluate(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: public abstract double evaluate(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException;
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public abstract double evaluate(double[] values, int begin, int length);
 
@@ -174,7 +174,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <returns> true if the parameters are valid and designate a subarray of positive length </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the indices are invalid or the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected boolean test(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected boolean test(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual bool test(double[] values, int begin, int length)
 		{
@@ -202,7 +202,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalArgumentException"> if the indices are invalid or the array is null
 		/// @since 3.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected boolean test(final double[] values, final int begin, final int length, final boolean allowEmpty) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected boolean test(final double[] values, final int begin, final int length, final boolean allowEmpty) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual bool test(double[] values, int begin, int length, bool allowEmpty)
 		{
@@ -238,7 +238,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalArgumentException"> if the indices are invalid or the array is null
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected boolean test(final double[] values, final double[] weights, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected boolean test(final double[] values, final double[] weights, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual bool test(double[] values, double[] weights, int begin, int length)
 		{
@@ -278,7 +278,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// are no positive weights.
 		/// @since 3.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected boolean test(final double[] values, final double[] weights, final int begin, final int length, final boolean allowEmpty) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected boolean test(final double[] values, final double[] weights, final int begin, final int length, final boolean allowEmpty) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual bool test(double[] values, double[] weights, int begin, int length, bool allowEmpty)
 		{

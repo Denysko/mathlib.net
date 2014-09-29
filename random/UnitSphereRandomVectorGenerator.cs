@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -81,7 +81,7 @@ namespace org.apache.commons.math3.random
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double f = 1 / org.apache.commons.math3.util.FastMath.sqrt(normSq);
+//ORIGINAL LINE: final double f = 1 / mathlib.util.FastMath.sqrt(normSq);
 			double f = 1 / FastMath.sqrt(normSq);
 			for (int i = 0; i < dimension; i++)
 			{

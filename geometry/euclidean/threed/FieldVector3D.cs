@@ -17,16 +17,16 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
 
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// This class is a re-implementation of <seealso cref="Vector3D"/> using <seealso cref="RealFieldElement"/>.
@@ -35,7 +35,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 	/// @version $Id: FieldVector3D.java 1591835 2014-05-02 09:04:01Z tn $
 	/// @since 3.2 </param>
 	[Serializable]
-	public class FieldVector3D<T> where T : org.apache.commons.math3.RealFieldElement<T>
+	public class FieldVector3D<T> where T : mathlib.RealFieldElement<T>
 	{
 
 		/// <summary>
@@ -79,7 +79,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="DimensionMismatchException"> if array does not have 3 elements </exception>
 		/// <seealso cref= #toArray() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector3D(final T[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public FieldVector3D(final T[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FieldVector3D(T[] v)
 		{
@@ -396,7 +396,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		public virtual T[] toArray()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] array = org.apache.commons.math3.util.MathArrays.buildArray(x.getField(), 3);
+//ORIGINAL LINE: final T[] array = mathlib.util.MathArrays.buildArray(x.getField(), 3);
 			T[] array = MathArrays.buildArray(x.Field, 3);
 			array[0] = x;
 			array[1] = y;
@@ -657,7 +657,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> a new normalized vector </returns>
 		/// <exception cref="MathArithmeticException"> if the norm is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector3D<T> normalize() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector3D<T> normalize() throws mathlib.exception.MathArithmeticException
 		public virtual FieldVector3D<T> normalize()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -686,7 +686,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> a new normalized vector orthogonal to the instance </returns>
 		/// <exception cref="MathArithmeticException"> if the norm of the instance is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector3D<T> orthogonal() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector3D<T> orthogonal() throws mathlib.exception.MathArithmeticException
 		public virtual FieldVector3D<T> orthogonal()
 		{
 
@@ -735,9 +735,9 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> angular separation between v1 and v2 </returns>
 		/// <exception cref="MathArithmeticException"> if either vector has a null norm </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T angle(final FieldVector3D<T> v1, final FieldVector3D<T> v2) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T angle(final FieldVector3D<T> v1, final FieldVector3D<T> v2) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static T angle<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+		public static T angle<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -783,9 +783,9 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> angular separation between v1 and v2 </returns>
 		/// <exception cref="MathArithmeticException"> if either vector has a null norm </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T angle(final FieldVector3D<T> v1, final Vector3D v2) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T angle(final FieldVector3D<T> v1, final Vector3D v2) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static T angle<T>(FieldVector3D<T> v1, Vector3D v2) where T : org.apache.commons.math3.RealFieldElement<T>
+		public static T angle<T>(FieldVector3D<T> v1, Vector3D v2) where T : mathlib.RealFieldElement<T>
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -831,9 +831,9 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> angular separation between v1 and v2 </returns>
 		/// <exception cref="MathArithmeticException"> if either vector has a null norm </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T angle(final Vector3D v1, final FieldVector3D<T> v2) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T angle(final Vector3D v1, final FieldVector3D<T> v2) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static T angle<T>(Vector3D v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+		public static T angle<T>(Vector3D v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return angle(v2, v1);
 		}
@@ -1239,8 +1239,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the dot product v1.v2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T dotProduct(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
-		public static T dotProduct<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T dotProduct(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
+		public static T dotProduct<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.dotProduct(v2);
 		}
@@ -1252,8 +1252,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the dot product v1.v2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T dotProduct(final FieldVector3D<T> v1, final Vector3D v2)
-		public static T dotProduct<T>(FieldVector3D<T> v1, Vector3D v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T dotProduct(final FieldVector3D<T> v1, final Vector3D v2)
+		public static T dotProduct<T>(FieldVector3D<T> v1, Vector3D v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.dotProduct(v2);
 		}
@@ -1265,8 +1265,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the dot product v1.v2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T dotProduct(final Vector3D v1, final FieldVector3D<T> v2)
-		public static T dotProduct<T>(Vector3D v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T dotProduct(final Vector3D v1, final FieldVector3D<T> v2)
+		public static T dotProduct<T>(Vector3D v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v2.dotProduct(v1);
 		}
@@ -1278,8 +1278,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the cross product v1 ^ v2 as a new Vector </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> FieldVector3D<T> crossProduct(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
-		public static FieldVector3D<T> crossProduct<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> FieldVector3D<T> crossProduct(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
+		public static FieldVector3D<T> crossProduct<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.crossProduct(v2);
 		}
@@ -1291,8 +1291,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the cross product v1 ^ v2 as a new Vector </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> FieldVector3D<T> crossProduct(final FieldVector3D<T> v1, final Vector3D v2)
-		public static FieldVector3D<T> crossProduct<T>(FieldVector3D<T> v1, Vector3D v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> FieldVector3D<T> crossProduct(final FieldVector3D<T> v1, final Vector3D v2)
+		public static FieldVector3D<T> crossProduct<T>(FieldVector3D<T> v1, Vector3D v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.crossProduct(v2);
 		}
@@ -1304,8 +1304,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the cross product v1 ^ v2 as a new Vector </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> FieldVector3D<T> crossProduct(final Vector3D v1, final FieldVector3D<T> v2)
-		public static FieldVector3D<T> crossProduct<T>(Vector3D v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> FieldVector3D<T> crossProduct(final Vector3D v1, final FieldVector3D<T> v2)
+		public static FieldVector3D<T> crossProduct<T>(Vector3D v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return new FieldVector3D<T>(v2.x.linearCombination(v1.Y, v2.z, -v1.Z, v2.y), v2.y.linearCombination(v1.Z, v2.x, -v1.X, v2.z), v2.z.linearCombination(v1.X, v2.y, -v1.Y, v2.x));
 		}
@@ -1320,8 +1320,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>1</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distance1(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
-		public static T distance1<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distance1(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
+		public static T distance1<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distance1(v2);
 		}
@@ -1336,8 +1336,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>1</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distance1(final FieldVector3D<T> v1, final Vector3D v2)
-		public static T distance1<T>(FieldVector3D<T> v1, Vector3D v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distance1(final FieldVector3D<T> v1, final Vector3D v2)
+		public static T distance1<T>(FieldVector3D<T> v1, Vector3D v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distance1(v2);
 		}
@@ -1352,8 +1352,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>1</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distance1(final Vector3D v1, final FieldVector3D<T> v2)
-		public static T distance1<T>(Vector3D v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distance1(final Vector3D v1, final FieldVector3D<T> v2)
+		public static T distance1<T>(Vector3D v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v2.distance1(v1);
 		}
@@ -1368,8 +1368,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>2</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distance(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
-		public static T distance<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distance(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
+		public static T distance<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distance(v2);
 		}
@@ -1384,8 +1384,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>2</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distance(final FieldVector3D<T> v1, final Vector3D v2)
-		public static T distance<T>(FieldVector3D<T> v1, Vector3D v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distance(final FieldVector3D<T> v1, final Vector3D v2)
+		public static T distance<T>(FieldVector3D<T> v1, Vector3D v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distance(v2);
 		}
@@ -1400,8 +1400,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>2</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distance(final Vector3D v1, final FieldVector3D<T> v2)
-		public static T distance<T>(Vector3D v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distance(final Vector3D v1, final FieldVector3D<T> v2)
+		public static T distance<T>(Vector3D v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v2.distance(v1);
 		}
@@ -1416,8 +1416,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>&infin;</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distanceInf(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
-		public static T distanceInf<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distanceInf(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
+		public static T distanceInf<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distanceInf(v2);
 		}
@@ -1432,8 +1432,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>&infin;</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distanceInf(final FieldVector3D<T> v1, final Vector3D v2)
-		public static T distanceInf<T>(FieldVector3D<T> v1, Vector3D v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distanceInf(final FieldVector3D<T> v1, final Vector3D v2)
+		public static T distanceInf<T>(FieldVector3D<T> v1, Vector3D v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distanceInf(v2);
 		}
@@ -1448,8 +1448,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the distance between v1 and v2 according to the L<sub>&infin;</sub> norm </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distanceInf(final Vector3D v1, final FieldVector3D<T> v2)
-		public static T distanceInf<T>(Vector3D v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distanceInf(final Vector3D v1, final FieldVector3D<T> v2)
+		public static T distanceInf<T>(Vector3D v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v2.distanceInf(v1);
 		}
@@ -1464,8 +1464,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the square of the distance between v1 and v2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distanceSq(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
-		public static T distanceSq<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distanceSq(final FieldVector3D<T> v1, final FieldVector3D<T> v2)
+		public static T distanceSq<T>(FieldVector3D<T> v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distanceSq(v2);
 		}
@@ -1480,8 +1480,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the square of the distance between v1 and v2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distanceSq(final FieldVector3D<T> v1, final Vector3D v2)
-		public static T distanceSq<T>(FieldVector3D<T> v1, Vector3D v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distanceSq(final FieldVector3D<T> v1, final Vector3D v2)
+		public static T distanceSq<T>(FieldVector3D<T> v1, Vector3D v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v1.distanceSq(v2);
 		}
@@ -1496,8 +1496,8 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// @param <T> the type of the field elements </param>
 		/// <returns> the square of the distance between v1 and v2 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.RealFieldElement<T>> T distanceSq(final Vector3D v1, final FieldVector3D<T> v2)
-		public static T distanceSq<T>(Vector3D v1, FieldVector3D<T> v2) where T : org.apache.commons.math3.RealFieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.RealFieldElement<T>> T distanceSq(final Vector3D v1, final FieldVector3D<T> v2)
+		public static T distanceSq<T>(Vector3D v1, FieldVector3D<T> v2) where T : mathlib.RealFieldElement<T>
 		{
 			return v2.distanceSq(v1);
 		}

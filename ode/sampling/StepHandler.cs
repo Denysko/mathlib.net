@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.sampling
+namespace mathlib.ode.sampling
 {
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 
 	/// <summary>
@@ -34,8 +34,8 @@ namespace org.apache.commons.math3.ode.sampling
 	/// last one, store the points in an ephemeris, or forward them to
 	/// specialized processing or output methods.</p>
 	/// </summary>
-	/// <seealso cref= org.apache.commons.math3.ode.FirstOrderIntegrator </seealso>
-	/// <seealso cref= org.apache.commons.math3.ode.SecondOrderIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.FirstOrderIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.SecondOrderIntegrator </seealso>
 	/// <seealso cref= StepInterpolator
 	/// @version $Id: StepHandler.java 1416643 2012-12-03 19:37:14Z tn $
 	/// @since 1.2 </seealso>
@@ -62,7 +62,7 @@ namespace org.apache.commons.math3.ode.sampling
 		/// object on each call, so if the instance wants to keep it across
 		/// all calls (for example to provide at the end of the integration a
 		/// continuous model valid throughout the integration range, as the
-		/// {@link org.apache.commons.math3.ode.ContinuousOutputModel
+		/// {@link mathlib.ode.ContinuousOutputModel
 		/// ContinuousOutputModel} class does), it should build a local copy
 		/// using the clone method of the interpolator and store this copy.
 		/// Keeping only a reference to the interpolator and reusing it will
@@ -71,7 +71,7 @@ namespace org.apache.commons.math3.ode.sampling
 		/// <exception cref="MaxCountExceededException"> if the interpolator throws one because
 		/// the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void handleStep(StepInterpolator interpolator, boolean isLast) throws org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: void handleStep(StepInterpolator interpolator, boolean isLast) throws mathlib.exception.MaxCountExceededException;
 		void handleStep(StepInterpolator interpolator, bool isLast);
 
 	}

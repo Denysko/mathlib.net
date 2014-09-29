@@ -17,7 +17,7 @@
 /// <summary>
 /// Base package for machine learning algorithms.
 /// </summary>
-namespace org.apache.commons.math3.ml
+namespace mathlib.ml
 {
 
 }

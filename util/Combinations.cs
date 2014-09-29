@@ -74,8 +74,8 @@ namespace mathlib.util
 	   /// </summary>
 	   /// <param name="n"> Size of the set from which subsets are selected. </param>
 	   /// <param name="k"> Size of the subsets to be enumerated. </param>
-	   /// <exception cref="org.apache.commons.math3.exception.NotPositiveException"> if {@code n < 0}. </exception>
-	   /// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException"> if {@code k > n}. </exception>
+	   /// <exception cref="mathlib.exception.NotPositiveException"> if {@code n < 0}. </exception>
+	   /// <exception cref="mathlib.exception.NumberIsTooLargeException"> if {@code k > n}. </exception>
 		public Combinations(int n, int k) : this(n, k, IterationOrder.LEXICOGRAPHIC)
 		{
 		}
@@ -101,8 +101,8 @@ namespace mathlib.util
 		/// <param name="n"> Size of the set from which subsets are selected. </param>
 		/// <param name="k"> Size of the subsets to be enumerated. </param>
 		/// <param name="iterationOrder"> Specifies the <seealso cref="#iterator() iteration order"/>. </param>
-		/// <exception cref="org.apache.commons.math3.exception.NotPositiveException"> if {@code n < 0}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException"> if {@code k > n}. </exception>
+		/// <exception cref="mathlib.exception.NotPositiveException"> if {@code n < 0}. </exception>
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException"> if {@code k > n}. </exception>
 		private Combinations(int n, int k, IterationOrder iterationOrder)
 		{
 			CombinatoricsUtils.checkBinomial(n, k);
@@ -146,7 +146,7 @@ namespace mathlib.util
 
 			switch (iterationOrder)
 			{
-			case org.apache.commons.math3.util.Combinations.IterationOrder.LEXICOGRAPHIC:
+			case mathlib.util.Combinations.IterationOrder.LEXICOGRAPHIC:
 				return new LexicographicIterator(n, k);
 			default:
 				throw new MathInternalError(); // Should never happen.

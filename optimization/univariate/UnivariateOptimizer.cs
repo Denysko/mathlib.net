@@ -16,10 +16,10 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
 
 	/// <summary>
 	/// Interface for univariate optimization algorithms.

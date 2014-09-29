@@ -18,16 +18,16 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.stat.clustering
+namespace mathlib.stat.clustering
 {
 
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Clustering algorithm based on David Arthur and Sergei Vassilvitski k-means++ algorithm. </summary>
@@ -36,7 +36,7 @@ namespace org.apache.commons.math3.stat.clustering
 	/// @version $Id: KMeansPlusPlusClusterer.java 1461871 2013-03-27 22:01:25Z tn $
 	/// @since 2.0 </seealso>
 	/// @deprecated As of 3.2 (to be removed in 4.0),
-	/// use <seealso cref="org.apache.commons.math3.ml.clustering.KMeansPlusPlusClusterer"/> instead 
+	/// use <seealso cref="mathlib.ml.clustering.KMeansPlusPlusClusterer"/> instead 
 	[Obsolete("As of 3.2 (to be removed in 4.0),")]
 	public class KMeansPlusPlusClusterer<T> where T : Clusterable<T>
 	{
@@ -113,7 +113,7 @@ namespace org.apache.commons.math3.stat.clustering
 		/// <exception cref="ConvergenceException"> if an empty cluster is encountered and the
 		/// <seealso cref="#emptyStrategy"/> is set to {@code ERROR} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points, final int k, int numTrials, int maxIterationsPerTrial) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points, final int k, int numTrials, int maxIterationsPerTrial) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual IList<Cluster<T>> cluster(ICollection<T> points, int k, int numTrials, int maxIterationsPerTrial)
 		{
@@ -141,7 +141,7 @@ namespace org.apache.commons.math3.stat.clustering
 //ORIGINAL LINE: final T center = cluster.getCenter();
 						T center = cluster.Center;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.stat.descriptive.moment.Variance stat = new org.apache.commons.math3.stat.descriptive.moment.Variance();
+//ORIGINAL LINE: final mathlib.stat.descriptive.moment.Variance stat = new mathlib.stat.descriptive.moment.Variance();
 						Variance stat = new Variance();
 						foreach (T point in cluster.Points)
 						{
@@ -179,7 +179,7 @@ namespace org.apache.commons.math3.stat.clustering
 		/// <exception cref="ConvergenceException"> if an empty cluster is encountered and the
 		/// <seealso cref="#emptyStrategy"/> is set to {@code ERROR} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points, final int k, final int maxIterations) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points, final int k, final int maxIterations) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual IList<Cluster<T>> cluster(ICollection<T> points, int k, int maxIterations)
 		{
@@ -218,13 +218,13 @@ namespace org.apache.commons.math3.stat.clustering
 					{
 						switch (emptyStrategy)
 						{
-							case org.apache.commons.math3.stat.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_VARIANCE:
+							case mathlib.stat.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_VARIANCE:
 								newCenter = getPointFromLargestVarianceCluster(clusters);
 								break;
-							case org.apache.commons.math3.stat.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_POINTS_NUMBER:
+							case mathlib.stat.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_POINTS_NUMBER:
 								newCenter = getPointFromLargestNumberCluster(clusters);
 								break;
-							case org.apache.commons.math3.stat.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.FARTHEST_POINT:
+							case mathlib.stat.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.FARTHEST_POINT:
 								newCenter = getFarthestPoint(clusters);
 								break;
 							default :
@@ -454,7 +454,7 @@ namespace org.apache.commons.math3.stat.clustering
 		/// <returns> a random point from the selected cluster </returns>
 		/// <exception cref="ConvergenceException"> if clusters are all empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private T getPointFromLargestVarianceCluster(final java.util.Collection<Cluster<T>> clusters) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private T getPointFromLargestVarianceCluster(final java.util.Collection<Cluster<T>> clusters) throws mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private T getPointFromLargestVarianceCluster(ICollection<Cluster<T>> clusters)
 		{
@@ -471,7 +471,7 @@ namespace org.apache.commons.math3.stat.clustering
 //ORIGINAL LINE: final T center = cluster.getCenter();
 					T center = cluster.Center;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.stat.descriptive.moment.Variance stat = new org.apache.commons.math3.stat.descriptive.moment.Variance();
+//ORIGINAL LINE: final mathlib.stat.descriptive.moment.Variance stat = new mathlib.stat.descriptive.moment.Variance();
 					Variance stat = new Variance();
 					foreach (T point in cluster.Points)
 					{
@@ -512,7 +512,7 @@ namespace org.apache.commons.math3.stat.clustering
 		/// <returns> a random point from the selected cluster </returns>
 		/// <exception cref="ConvergenceException"> if clusters are all empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private T getPointFromLargestNumberCluster(final java.util.Collection<Cluster<T>> clusters) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private T getPointFromLargestNumberCluster(final java.util.Collection<Cluster<T>> clusters) throws mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private T getPointFromLargestNumberCluster(ICollection<Cluster<T>> clusters)
 		{
@@ -557,7 +557,7 @@ namespace org.apache.commons.math3.stat.clustering
 		/// <returns> point farthest to its cluster center </returns>
 		/// <exception cref="ConvergenceException"> if clusters are all empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private T getFarthestPoint(final java.util.Collection<Cluster<T>> clusters) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private T getFarthestPoint(final java.util.Collection<Cluster<T>> clusters) throws mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private T getFarthestPoint(ICollection<Cluster<T>> clusters)
 		{

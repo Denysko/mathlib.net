@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.correlation
+namespace mathlib.stat.correlation
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using BlockRealMatrix = org.apache.commons.math3.linear.BlockRealMatrix;
-	using Mean = org.apache.commons.math3.stat.descriptive.moment.Mean;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using BlockRealMatrix = mathlib.linear.BlockRealMatrix;
+	using Mean = mathlib.stat.descriptive.moment.Mean;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
 
 	/// <summary>
 	/// Computes covariances for pairs of arrays or columns of a matrix.
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="NotStrictlyPositiveException"> if the input data array is not
 		/// rectangular with at least one row and one column. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Covariance(double[][] data, boolean biasCorrected) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public Covariance(double[][] data, boolean biasCorrected) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.NotStrictlyPositiveException
 		public Covariance(double[][] data, bool biasCorrected) : this(new BlockRealMatrix(data), biasCorrected)
 		{
 		}
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="NotStrictlyPositiveException"> if the input data array is not
 		/// rectangular with at least one row and one column. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Covariance(double[][] data) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public Covariance(double[][] data) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.NotStrictlyPositiveException
 		public Covariance(double[][] data) : this(data, true)
 		{
 		}
@@ -122,7 +122,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="MathIllegalArgumentException"> if the input matrix does not have
 		/// at least two rows and one column </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Covariance(org.apache.commons.math3.linear.RealMatrix matrix, boolean biasCorrected) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public Covariance(mathlib.linear.RealMatrix matrix, boolean biasCorrected) throws mathlib.exception.MathIllegalArgumentException
 		public Covariance(RealMatrix matrix, bool biasCorrected)
 		{
 		   checkSufficientData(matrix);
@@ -140,7 +140,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="MathIllegalArgumentException"> if the input matrix does not have
 		/// at least two rows and one column </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Covariance(org.apache.commons.math3.linear.RealMatrix matrix) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public Covariance(mathlib.linear.RealMatrix matrix) throws mathlib.exception.MathIllegalArgumentException
 		public Covariance(RealMatrix matrix) : this(matrix, true)
 		{
 		}
@@ -177,7 +177,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <returns> covariance matrix </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the matrix does not contain sufficient data </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.linear.RealMatrix computeCovarianceMatrix(org.apache.commons.math3.linear.RealMatrix matrix, boolean biasCorrected) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected mathlib.linear.RealMatrix computeCovarianceMatrix(mathlib.linear.RealMatrix matrix, boolean biasCorrected) throws mathlib.exception.MathIllegalArgumentException
 		protected internal virtual RealMatrix computeCovarianceMatrix(RealMatrix matrix, bool biasCorrected)
 		{
 			int dimension = matrix.ColumnDimension;
@@ -204,7 +204,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="MathIllegalArgumentException"> if matrix does not contain sufficient data </exception>
 		/// <seealso cref= #Covariance </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.linear.RealMatrix computeCovarianceMatrix(org.apache.commons.math3.linear.RealMatrix matrix) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected mathlib.linear.RealMatrix computeCovarianceMatrix(mathlib.linear.RealMatrix matrix) throws mathlib.exception.MathIllegalArgumentException
 		protected internal virtual RealMatrix computeCovarianceMatrix(RealMatrix matrix)
 		{
 			return computeCovarianceMatrix(matrix, true);
@@ -221,7 +221,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="NotStrictlyPositiveException"> if the input data array is not
 		/// rectangular with at least one row and one column. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.linear.RealMatrix computeCovarianceMatrix(double[][] data, boolean biasCorrected) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: protected mathlib.linear.RealMatrix computeCovarianceMatrix(double[][] data, boolean biasCorrected) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.NotStrictlyPositiveException
 		protected internal virtual RealMatrix computeCovarianceMatrix(double[][] data, bool biasCorrected)
 		{
 			return computeCovarianceMatrix(new BlockRealMatrix(data), biasCorrected);
@@ -237,7 +237,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// rectangular with at least one row and one column. </exception>
 		/// <seealso cref= #Covariance </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.linear.RealMatrix computeCovarianceMatrix(double[][] data) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: protected mathlib.linear.RealMatrix computeCovarianceMatrix(double[][] data) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.NotStrictlyPositiveException
 		protected internal virtual RealMatrix computeCovarianceMatrix(double[][] data)
 		{
 			return computeCovarianceMatrix(data, true);
@@ -255,7 +255,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="MathIllegalArgumentException"> if the arrays lengths do not match or
 		/// there is insufficient data </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double covariance(final double[] xArray, final double[] yArray, boolean biasCorrected) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double covariance(final double[] xArray, final double[] yArray, boolean biasCorrected) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double covariance(double[] xArray, double[] yArray, bool biasCorrected)
 		{
@@ -296,7 +296,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="MathIllegalArgumentException"> if the arrays lengths do not match or
 		/// there is insufficient data </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double covariance(final double[] xArray, final double[] yArray) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double covariance(final double[] xArray, final double[] yArray) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double covariance(double[] xArray, double[] yArray)
 		{
@@ -310,7 +310,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="MathIllegalArgumentException"> if the matrix does not contain sufficient data
 		/// to compute covariance </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkSufficientData(final org.apache.commons.math3.linear.RealMatrix matrix) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private void checkSufficientData(final mathlib.linear.RealMatrix matrix) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkSufficientData(RealMatrix matrix)
 		{

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using org.apache.commons.math3;
+	using mathlib;
 
 	/// <summary>
 	/// This interface defines a visitor for the entries of a vector. Visitors
@@ -28,8 +28,8 @@ namespace org.apache.commons.math3.linear
 	/// @version $Id: FieldVectorChangingVisitor.java 1570536 2014-02-21 11:26:09Z luc $
 	/// @since 3.3 </param>
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
-//ORIGINAL LINE: public interface FieldVectorChangingVisitor<T extends org.apache.commons.math3.FieldElement<?>>
-	public interface FieldVectorChangingVisitor<T> where T : org.apache.commons.math3.FieldElement<?>
+//ORIGINAL LINE: public interface FieldVectorChangingVisitor<T extends mathlib.FieldElement<?>>
+	public interface FieldVectorChangingVisitor<T> where T : mathlib.FieldElement<?>
 	{
 		/// <summary>
 		/// Start visiting a vector. This method is called once, before any entry

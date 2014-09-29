@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Generates values for use in simulation applications.
@@ -144,7 +144,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="MathIllegalStateException"> if mode is not recognized </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the underlying random generator thwrows one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getNext() throws java.io.IOException, org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double getNext() throws java.io.IOException, mathlib.exception.MathIllegalStateException, mathlib.exception.MathIllegalArgumentException
 		public virtual double Next
 		{
 			get
@@ -177,7 +177,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="MathIllegalStateException"> if mode is not recognized </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the underlying random generator thwrows one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void fill(double[] values) throws java.io.IOException, org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void fill(double[] values) throws java.io.IOException, mathlib.exception.MathIllegalStateException, mathlib.exception.MathIllegalArgumentException
 		public virtual void fill(double[] values)
 		{
 			for (int i = 0; i < values.Length; i++)
@@ -196,7 +196,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="MathIllegalStateException"> if mode is not recognized </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the underlying random generator thwrows one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] fill(int length) throws java.io.IOException, org.apache.commons.math3.exception.MathIllegalStateException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double[] fill(int length) throws java.io.IOException, mathlib.exception.MathIllegalStateException, mathlib.exception.MathIllegalArgumentException
 		public virtual double[] fill(int length)
 		{
 			double[] @out = new double[length];
@@ -221,7 +221,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NullArgumentException"> if the {@code valuesFileURL} has not been set </exception>
 		/// <exception cref="ZeroException"> if URL contains no data </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeDistribution() throws java.io.IOException, org.apache.commons.math3.exception.ZeroException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public void computeDistribution() throws java.io.IOException, mathlib.exception.ZeroException, mathlib.exception.NullArgumentException
 		public virtual void computeDistribution()
 		{
 			computeDistribution(EmpiricalDistribution.DEFAULT_BIN_COUNT);
@@ -243,7 +243,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="IOException"> if an error occurs reading the input file </exception>
 		/// <exception cref="ZeroException"> if URL contains no data </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeDistribution(int binCount) throws org.apache.commons.math3.exception.NullArgumentException, java.io.IOException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public void computeDistribution(int binCount) throws mathlib.exception.NullArgumentException, java.io.IOException, mathlib.exception.ZeroException
 		public virtual void computeDistribution(int binCount)
 		{
 			empiricalDistribution = new EmpiricalDistribution(binCount, randomData);
@@ -426,7 +426,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> next random value from the empirical distribution digest </returns>
 		/// <exception cref="MathIllegalStateException"> if digest has not been initialized </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double getNextDigest() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: private double getNextDigest() throws mathlib.exception.MathIllegalStateException
 		private double NextDigest
 		{
 			get
@@ -458,7 +458,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NumberFormatException"> if an invalid numeric string is
 		///   encountered in the file </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double getNextReplay() throws java.io.IOException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: private double getNextReplay() throws java.io.IOException, mathlib.exception.MathIllegalStateException
 		private double NextReplay
 		{
 			get
@@ -488,7 +488,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> random uniform value </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the underlying random generator thwrows one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double getNextUniform() throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private double getNextUniform() throws mathlib.exception.MathIllegalArgumentException
 		private double NextUniform
 		{
 			get
@@ -503,7 +503,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> random exponential value </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the underlying random generator thwrows one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double getNextExponential() throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private double getNextExponential() throws mathlib.exception.MathIllegalArgumentException
 		private double NextExponential
 		{
 			get
@@ -519,7 +519,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> random Gaussian value </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the underlying random generator thwrows one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double getNextGaussian() throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private double getNextGaussian() throws mathlib.exception.MathIllegalArgumentException
 		private double NextGaussian
 		{
 			get

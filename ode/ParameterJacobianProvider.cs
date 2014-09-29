@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// Interface to compute exactly Jacobian matrix for some parameter
@@ -46,7 +46,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 		/// <exception cref="UnknownParameterException"> if the parameter is not supported </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void computeParameterJacobian(double t, double[] y, double[] yDot, String paramName, double[] dFdP) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, UnknownParameterException;
+//ORIGINAL LINE: void computeParameterJacobian(double t, double[] y, double[] yDot, String paramName, double[] dFdP) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, UnknownParameterException;
 		void computeParameterJacobian(double t, double[] y, double[] yDot, string paramName, double[] dFdP);
 
 	}

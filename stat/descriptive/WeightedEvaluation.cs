@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 	/// <summary>
 	/// Weighted evaluation for statistics.
@@ -39,7 +39,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// do not match, weights contain NaN, negative or infinite values, or
 		/// weights does not include at least on positive value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double evaluate(double[] values, double[] weights) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: double evaluate(double[] values, double[] weights) throws mathlib.exception.MathIllegalArgumentException;
 		double evaluate(double[] values, double[] weights);
 
 		/// <summary>
@@ -55,7 +55,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// do not match, indices are invalid, weights contain NaN, negative or
 		/// infinite values, or weights does not include at least on positive value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double evaluate(double[] values, double[] weights, int begin, int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: double evaluate(double[] values, double[] weights, int begin, int length) throws mathlib.exception.MathIllegalArgumentException;
 		double evaluate(double[] values, double[] weights, int begin, int length);
 
 	}

@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Beta = org.apache.commons.math3.special.Beta;
-	using CombinatoricsUtils = org.apache.commons.math3.util.CombinatoricsUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Beta = mathlib.special.Beta;
+	using CombinatoricsUtils = mathlib.util.CombinatoricsUtils;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// <p>
@@ -93,7 +93,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="OutOfRangeException"> if the probability of success is not in the
 		/// range {@code [0, 1]}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PascalDistribution(int r, double p) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public PascalDistribution(int r, double p) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.OutOfRangeException
 		public PascalDistribution(int r, double p) : this(new Well19937c(), r, p)
 		{
 		}
@@ -110,7 +110,7 @@ namespace org.apache.commons.math3.distribution
 		/// range {@code [0, 1]}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PascalDistribution(org.apache.commons.math3.random.RandomGenerator rng, int r, double p) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public PascalDistribution(mathlib.random.RandomGenerator rng, int r, double p) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.OutOfRangeException
 		public PascalDistribution(RandomGenerator rng, int r, double p) : base(rng)
 		{
 

@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.correlation
+namespace mathlib.stat.correlation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Covariance implementation that does not require input data to be
@@ -145,7 +145,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="NumberIsTooSmallException"> if the number of observations
 		/// in the cell is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getCovariance(final int xIndex, final int yIndex) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double getCovariance(final int xIndex, final int yIndex) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double getCovariance(int xIndex, int yIndex)
 		{
@@ -161,7 +161,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="DimensionMismatchException"> if the length of <code>rowData</code>
 		/// does not match with the covariance matrix </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void increment(final double[] data) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void increment(final double[] data) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void increment(double[] data)
 		{
@@ -194,7 +194,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="DimensionMismatchException"> if the dimension of sc does not match this
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void append(StorelessCovariance sc) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void append(StorelessCovariance sc) throws mathlib.exception.DimensionMismatchException
 		public virtual void append(StorelessCovariance sc)
 		{
 			if (sc.dimension != dimension)
@@ -218,7 +218,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="NumberIsTooSmallException"> if the number of observations
 		/// in a cell is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.linear.RealMatrix getCovarianceMatrix() throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: @Override public mathlib.linear.RealMatrix getCovarianceMatrix() throws mathlib.exception.NumberIsTooSmallException
 		public override RealMatrix CovarianceMatrix
 		{
 			get
@@ -234,7 +234,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="NumberIsTooSmallException"> if the number of observations
 		/// for a cell is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[][] getData() throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double[][] getData() throws mathlib.exception.NumberIsTooSmallException
 		public virtual double[][] Data
 		{
 			get
@@ -264,7 +264,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <seealso cref="MathUnsupportedOperationException"/> </returns>
 		/// <exception cref="MathUnsupportedOperationException"> in all cases </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public int getN() throws org.apache.commons.math3.exception.MathUnsupportedOperationException
+//ORIGINAL LINE: @Override public int getN() throws mathlib.exception.MathUnsupportedOperationException
 		public override int N
 		{
 			get

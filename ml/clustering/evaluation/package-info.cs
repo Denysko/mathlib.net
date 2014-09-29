@@ -17,7 +17,7 @@
 /// <summary>
 /// Cluster evaluation methods.
 /// </summary>
-namespace org.apache.commons.math3.ml.clustering.evaluation
+namespace mathlib.ml.clustering.evaluation
 {
 
 }

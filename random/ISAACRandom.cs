@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <a href="http://burtleburtle.net/bob/rand/isaacafa.html">

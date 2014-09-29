@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Class transforming a general real matrix to Hessenberg form.
@@ -255,7 +255,7 @@ namespace org.apache.commons.math3.linear
 						h += ort[i] * ort[i];
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double g = (ort[m] > 0) ? -org.apache.commons.math3.util.FastMath.sqrt(h) : org.apache.commons.math3.util.FastMath.sqrt(h);
+//ORIGINAL LINE: final double g = (ort[m] > 0) ? -mathlib.util.FastMath.sqrt(h) : mathlib.util.FastMath.sqrt(h);
 					double g = (ort[m] > 0) ? - FastMath.sqrt(h) : FastMath.sqrt(h);
 
 					h -= ort[m] * g;

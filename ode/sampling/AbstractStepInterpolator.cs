@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.sampling
+namespace mathlib.ode.sampling
 {
 
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// This abstract class represents an interpolator over the last step
@@ -30,8 +30,8 @@ namespace org.apache.commons.math3.ode.sampling
 	/// retrieve the state vector at intermediate times between the
 	/// previous and the current grid points (dense output).</p>
 	/// </summary>
-	/// <seealso cref= org.apache.commons.math3.ode.FirstOrderIntegrator </seealso>
-	/// <seealso cref= org.apache.commons.math3.ode.SecondOrderIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.FirstOrderIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.SecondOrderIntegrator </seealso>
 	/// <seealso cref= StepHandler
 	/// 
 	/// @version $Id: AbstractStepInterpolator.java 1416643 2012-12-03 19:37:14Z tn $
@@ -120,7 +120,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// instance in order to initialize the internal arrays. This
 	  /// constructor is used only in order to delay the initialization in
 	  /// some cases. As an example, the {@link
-	  /// org.apache.commons.math3.ode.nonstiff.EmbeddedRungeKuttaIntegrator}
+	  /// mathlib.ode.nonstiff.EmbeddedRungeKuttaIntegrator}
 	  /// class uses the prototyping design pattern to create the step
 	  /// interpolators by cloning an uninitialized model and latter
 	  /// initializing the copy.
@@ -150,7 +150,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <param name="primaryMapper"> equations mapper for the primary equations set </param>
 	  /// <param name="secondaryMappers"> equations mappers for the secondary equations sets </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected AbstractStepInterpolator(final double[] y, final boolean forward, final org.apache.commons.math3.ode.EquationsMapper primaryMapper, final org.apache.commons.math3.ode.EquationsMapper[] secondaryMappers)
+//ORIGINAL LINE: protected AbstractStepInterpolator(final double[] y, final boolean forward, final mathlib.ode.EquationsMapper primaryMapper, final mathlib.ode.EquationsMapper[] secondaryMappers)
 	  protected internal AbstractStepInterpolator(double[] y, bool forward, EquationsMapper primaryMapper, EquationsMapper[] secondaryMappers)
 	  {
 
@@ -277,7 +277,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <param name="primary"> equations mapper for the primary equations set </param>
 	  /// <param name="secondary"> equations mappers for the secondary equations sets </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected void reinitialize(final double[] y, final boolean isForward, final org.apache.commons.math3.ode.EquationsMapper primary, final org.apache.commons.math3.ode.EquationsMapper[] secondary)
+//ORIGINAL LINE: protected void reinitialize(final double[] y, final boolean isForward, final mathlib.ode.EquationsMapper primary, final mathlib.ode.EquationsMapper[] secondary)
 	  protected internal virtual void reinitialize(double[] y, bool isForward, EquationsMapper primary, EquationsMapper[] secondary)
 	  {
 
@@ -300,7 +300,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public StepInterpolator copy() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public StepInterpolator copy() throws mathlib.exception.MaxCountExceededException
 	   public virtual StepInterpolator copy()
 	   {
 
@@ -477,14 +477,14 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// the current time </param>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected abstract void computeInterpolatedStateAndDerivatives(double theta, double oneMinusThetaH) throws org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: protected abstract void computeInterpolatedStateAndDerivatives(double theta, double oneMinusThetaH) throws mathlib.exception.MaxCountExceededException;
 	  protected internal abstract void computeInterpolatedStateAndDerivatives(double theta, double oneMinusThetaH);
 
 	  /// <summary>
 	  /// Lazy evaluation of complete interpolated state. </summary>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void evaluateCompleteInterpolatedState() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: private void evaluateCompleteInterpolatedState() throws mathlib.exception.MaxCountExceededException
 	  private void evaluateCompleteInterpolatedState()
 	  {
 		  // lazy evaluation of the state
@@ -504,7 +504,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getInterpolatedState() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double[] getInterpolatedState() throws mathlib.exception.MaxCountExceededException
 	  public virtual double[] InterpolatedState
 	  {
 		  get
@@ -518,7 +518,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getInterpolatedDerivatives() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double[] getInterpolatedDerivatives() throws mathlib.exception.MaxCountExceededException
 	  public virtual double[] InterpolatedDerivatives
 	  {
 		  get
@@ -532,7 +532,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getInterpolatedSecondaryState(final int index) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double[] getInterpolatedSecondaryState(final int index) throws mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public virtual double[] getInterpolatedSecondaryState(int index)
 	  {
@@ -544,7 +544,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getInterpolatedSecondaryDerivatives(final int index) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double[] getInterpolatedSecondaryDerivatives(final int index) throws mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public virtual double[] getInterpolatedSecondaryDerivatives(int index)
 	  {
@@ -594,7 +594,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded
 	  ///  </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public final void finalizeStep() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public final void finalizeStep() throws mathlib.exception.MaxCountExceededException
 	  public void finalizeStep()
 	  {
 		if (!finalized)
@@ -609,7 +609,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// The default implementation of this method does nothing. </summary>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void doFinalize() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: protected void doFinalize() throws mathlib.exception.MaxCountExceededException
 	  protected internal virtual void doFinalize()
 	  {
 	  }

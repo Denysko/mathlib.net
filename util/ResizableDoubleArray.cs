@@ -190,7 +190,7 @@ namespace mathlib.util
 		/// <param name="initialCapacity"> Initial size of the internal storage array. </param>
 		/// <exception cref="MathIllegalArgumentException"> if {@code initialCapacity <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity) throws mathlib.exception.MathIllegalArgumentException
 		public ResizableDoubleArray(int initialCapacity) : this(initialCapacity, DEFAULT_EXPANSION_FACTOR)
 		{
 		}
@@ -239,7 +239,7 @@ namespace mathlib.util
 		/// @deprecated As of 3.1. Please use
 		/// <seealso cref="#ResizableDoubleArray(int,double)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public ResizableDoubleArray(int initialCapacity, float expansionFactor) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public ResizableDoubleArray(int initialCapacity, float expansionFactor) throws mathlib.exception.MathIllegalArgumentException
 		[Obsolete("As of 3.1. Please use")]
 		public ResizableDoubleArray(int initialCapacity, float expansionFactor) : this(initialCapacity, (double) expansionFactor)
 		{
@@ -267,7 +267,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if parameters are not valid.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity, double expansionFactor) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity, double expansionFactor) throws mathlib.exception.MathIllegalArgumentException
 		public ResizableDoubleArray(int initialCapacity, double expansionFactor) : this(initialCapacity, expansionFactor, DEFAULT_CONTRACTION_DELTA + expansionFactor)
 		{
 		}
@@ -293,7 +293,7 @@ namespace mathlib.util
 		/// @deprecated As of 3.1. Please use
 		/// <seealso cref="#ResizableDoubleArray(int,double,double)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public ResizableDoubleArray(int initialCapacity, float expansionFactor, float contractionCriteria) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public ResizableDoubleArray(int initialCapacity, float expansionFactor, float contractionCriteria) throws mathlib.exception.MathIllegalArgumentException
 		[Obsolete("As of 3.1. Please use")]
 		public ResizableDoubleArray(int initialCapacity, float expansionFactor, float contractionCriteria) : this(initialCapacity, (double) expansionFactor, (double) contractionCriteria)
 		{
@@ -319,7 +319,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity, double expansionFactor, double contractionCriterion) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity, double expansionFactor, double contractionCriterion) throws mathlib.exception.MathIllegalArgumentException
 		public ResizableDoubleArray(int initialCapacity, double expansionFactor, double contractionCriterion) : this(initialCapacity, expansionFactor, contractionCriterion, ExpansionMode.MULTIPLICATIVE, null)
 		{
 		}
@@ -348,7 +348,7 @@ namespace mathlib.util
 		/// <seealso cref="#ResizableDoubleArray(int,double,double,ExpansionMode,double[])"/>
 		/// instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public ResizableDoubleArray(int initialCapacity, float expansionFactor, float contractionCriteria, int expansionMode) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") public ResizableDoubleArray(int initialCapacity, float expansionFactor, float contractionCriteria, int expansionMode) throws mathlib.exception.MathIllegalArgumentException
 		[Obsolete("As of 3.1. Please use")]
 		public ResizableDoubleArray(int initialCapacity, float expansionFactor, float contractionCriteria, int expansionMode) : this(initialCapacity, expansionFactor, contractionCriteria, expansionMode == ADDITIVE_MODE ? ExpansionMode.ADDITIVE : ExpansionMode.MULTIPLICATIVE, null)
 		{
@@ -376,7 +376,7 @@ namespace mathlib.util
 		/// <param name="data"> Initial contents of the array. </param>
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity, double expansionFactor, double contractionCriterion, ExpansionMode expansionMode, double... data) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public ResizableDoubleArray(int initialCapacity, double expansionFactor, double contractionCriterion, ExpansionMode expansionMode, double... data) throws mathlib.exception.MathIllegalArgumentException
 		public ResizableDoubleArray(int initialCapacity, double expansionFactor, double contractionCriterion, ExpansionMode expansionMode, params double[] data)
 		{
 			if (initialCapacity <= 0)
@@ -408,7 +408,7 @@ namespace mathlib.util
 		/// <exception cref="NullArgumentException"> if original is null
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ResizableDoubleArray(ResizableDoubleArray original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ResizableDoubleArray(ResizableDoubleArray original) throws mathlib.exception.NullArgumentException
 		public ResizableDoubleArray(ResizableDoubleArray original)
 		{
 			MathUtils.checkNotNull(original);
@@ -501,7 +501,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalStateException"> if the array is empty
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized double substituteMostRecentElement(double value) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public synchronized double substituteMostRecentElement(double value) throws mathlib.exception.MathIllegalStateException
 		public virtual double substituteMostRecentElement(double value)
 		{
 			lock (this)
@@ -536,7 +536,7 @@ namespace mathlib.util
 		/// @deprecated As of 3.1. Please use
 		/// <seealso cref="#checkContractExpand(double,double)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") protected void checkContractExpand(float contraction, float expansion) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") protected void checkContractExpand(float contraction, float expansion) throws mathlib.exception.MathIllegalArgumentException
 		[Obsolete("As of 3.1. Please use")]
 		protected internal virtual void checkContractExpand(float contraction, float expansion)
 		{
@@ -555,13 +555,13 @@ namespace mathlib.util
 		/// <exception cref="NumberIsTooSmallException"> if {@code expansion <= 1 }.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void checkContractExpand(double contraction, double expansion) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: protected void checkContractExpand(double contraction, double expansion) throws mathlib.exception.NumberIsTooSmallException
 		protected internal virtual void checkContractExpand(double contraction, double expansion)
 		{
 			if (contraction < expansion)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.NumberIsTooSmallException e = new org.apache.commons.math3.exception.NumberIsTooSmallException(contraction, 1, true);
+//ORIGINAL LINE: final mathlib.exception.NumberIsTooSmallException e = new mathlib.exception.NumberIsTooSmallException(contraction, 1, true);
 				NumberIsTooSmallException e = new NumberIsTooSmallException(contraction, 1, true);
 				e.Context.addMessage(LocalizedFormats.CONTRACTION_CRITERIA_SMALLER_THAN_EXPANSION_FACTOR, contraction, expansion);
 				throw e;
@@ -570,7 +570,7 @@ namespace mathlib.util
 			if (contraction <= 1)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.NumberIsTooSmallException e = new org.apache.commons.math3.exception.NumberIsTooSmallException(contraction, 1, false);
+//ORIGINAL LINE: final mathlib.exception.NumberIsTooSmallException e = new mathlib.exception.NumberIsTooSmallException(contraction, 1, false);
 				NumberIsTooSmallException e = new NumberIsTooSmallException(contraction, 1, false);
 				e.Context.addMessage(LocalizedFormats.CONTRACTION_CRITERIA_SMALLER_THAN_ONE, contraction);
 				throw e;
@@ -579,7 +579,7 @@ namespace mathlib.util
 			if (expansion <= 1)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.NumberIsTooSmallException e = new org.apache.commons.math3.exception.NumberIsTooSmallException(contraction, 1, false);
+//ORIGINAL LINE: final mathlib.exception.NumberIsTooSmallException e = new mathlib.exception.NumberIsTooSmallException(contraction, 1, false);
 				NumberIsTooSmallException e = new NumberIsTooSmallException(contraction, 1, false);
 				e.Context.addMessage(LocalizedFormats.EXPANSION_FACTOR_SMALLER_THAN_ONE, expansion);
 				throw e;
@@ -631,7 +631,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if i is greater than numElements.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized void discardFrontElements(int i) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public synchronized void discardFrontElements(int i) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void discardFrontElements(int i)
 		{
 			lock (this)
@@ -651,7 +651,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if i is greater than numElements.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized void discardMostRecentElements(int i) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public synchronized void discardMostRecentElements(int i) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void discardMostRecentElements(int i)
 		{
 			lock (this)
@@ -679,7 +679,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if i is greater than numElements.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private synchronized void discardExtremeElements(int i, boolean front) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private synchronized void discardExtremeElements(int i, boolean front) throws mathlib.exception.MathIllegalArgumentException
 		private void discardExtremeElements(int i, bool front)
 		{
 			lock (this)
@@ -903,9 +903,9 @@ namespace mathlib.util
 			{
 				switch (expansionMode)
 				{
-				case org.apache.commons.math3.util.ResizableDoubleArray.ExpansionMode.MULTIPLICATIVE:
+				case mathlib.util.ResizableDoubleArray.ExpansionMode.MULTIPLICATIVE:
 					return MULTIPLICATIVE_MODE;
-				case org.apache.commons.math3.util.ResizableDoubleArray.ExpansionMode.ADDITIVE:
+				case mathlib.util.ResizableDoubleArray.ExpansionMode.ADDITIVE:
 					return ADDITIVE_MODE;
 				default:
 					throw new MathInternalError(); // Should never happen.
@@ -1083,7 +1083,7 @@ namespace mathlib.util
 		///         the expansionCriteria. </exception>
 		/// @deprecated As of 3.1 (to be removed in 4.0 as field will become "final"). 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0 as field will become "final").") public void setContractionCriteria(float contractionCriteria) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0 as field will become "final").") public void setContractionCriteria(float contractionCriteria) throws mathlib.exception.MathIllegalArgumentException
 
 		/// <summary>
 		/// Performs an operation on the addressable elements of the array.
@@ -1153,7 +1153,7 @@ namespace mathlib.util
 		/// than contractionFactor </exception>
 		/// @deprecated As of 3.1 (to be removed in 4.0 as field will become "final"). 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0 as field will become "final").") public void setExpansionFactor(float expansionFactor) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0 as field will become "final").") public void setExpansionFactor(float expansionFactor) throws mathlib.exception.MathIllegalArgumentException
 
 		/// <summary>
 		/// Sets the <code>expansionMode</code>. The specified value must be one of
@@ -1163,7 +1163,7 @@ namespace mathlib.util
 		/// <exception cref="MathIllegalArgumentException"> if the specified mode value is not valid. </exception>
 		/// @deprecated As of 3.1. Please use <seealso cref="#setExpansionMode(ExpansionMode)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Please use <seealso cref="#setExpansionMode(ExpansionMode)"/> instead.") public void setExpansionMode(int expansionMode) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1. Please use <seealso cref="#setExpansionMode(ExpansionMode)"/> instead.") public void setExpansionMode(int expansionMode) throws mathlib.exception.MathIllegalArgumentException
 
 		/// <summary>
 		/// Sets the <seealso cref="ExpansionMode expansion mode"/>.
@@ -1187,7 +1187,7 @@ namespace mathlib.util
 		/// positive. </exception>
 		/// @deprecated As of 3.1, this is a no-op. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1, this is a no-op.") protected void setInitialCapacity(int initialCapacity) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("As of 3.1, this is a no-op.") protected void setInitialCapacity(int initialCapacity) throws mathlib.exception.MathIllegalArgumentException
 		[Obsolete("As of 3.1, this is a no-op.")]
 		protected internal virtual int InitialCapacity
 		{
@@ -1205,7 +1205,7 @@ namespace mathlib.util
 		/// <param name="i"> a new number of elements </param>
 		/// <exception cref="MathIllegalArgumentException"> if <code>i</code> is negative. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public synchronized void setNumElements(int i) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public synchronized void setNumElements(int i) throws mathlib.exception.MathIllegalArgumentException
 
 		/// <summary>
 		/// Returns true if the internal storage array has too many unused
@@ -1262,7 +1262,7 @@ namespace mathlib.util
 		/// @since 2.0
 		///  </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(ResizableDoubleArray source, ResizableDoubleArray dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(ResizableDoubleArray source, ResizableDoubleArray dest) throws mathlib.exception.NullArgumentException
 		public static void copy(ResizableDoubleArray source, ResizableDoubleArray dest)
 		{
 			MathUtils.checkNotNull(source);

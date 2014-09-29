@@ -72,7 +72,7 @@ namespace mathlib
         /// (the even integer is chosen for n if this/a is halfway between two integers) </returns>
         /// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T remainder(T a) throws org.apache.commons.math3.exception.DimensionMismatchException;
+        //ORIGINAL LINE: T remainder(T a) throws mathlib.exception.DimensionMismatchException;
         T remainder(T a);
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace mathlib
         /// <returns> sqrt(<i>this</i><sup>2</sup>&nbsp;+<i>y</i><sup>2</sup>) </returns>
         /// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T hypot(T y) throws org.apache.commons.math3.exception.DimensionMismatchException;
+        //ORIGINAL LINE: T hypot(T y) throws mathlib.exception.DimensionMismatchException;
         T hypot(T y);
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace mathlib
         /// <returns> this<sup>e</sup> </returns>
         /// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T pow(T e) throws org.apache.commons.math3.exception.DimensionMismatchException;
+        //ORIGINAL LINE: T pow(T e) throws mathlib.exception.DimensionMismatchException;
         T pow(T e);
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace mathlib
         /// <returns> atan2(this, x) </returns>
         /// <exception cref="DimensionMismatchException"> if number of free parameters or orders are inconsistent </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T atan2(T x) throws org.apache.commons.math3.exception.DimensionMismatchException;
+        //ORIGINAL LINE: T atan2(T x) throws mathlib.exception.DimensionMismatchException;
         T atan2(T x);
 
         /// <summary>
@@ -290,7 +290,7 @@ namespace mathlib
         /// <exception cref="DimensionMismatchException"> if arrays dimensions don't match
         /// @since 3.2 </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T linearCombination(T[] a, T[] b) throws org.apache.commons.math3.exception.DimensionMismatchException;
+        //ORIGINAL LINE: T linearCombination(T[] a, T[] b) throws mathlib.exception.DimensionMismatchException;
         T linearCombination(T[] a, T[] b);
 
         /// <summary>
@@ -301,7 +301,7 @@ namespace mathlib
         /// <exception cref="DimensionMismatchException"> if arrays dimensions don't match
         /// @since 3.2 </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: T linearCombination(double[] a, T[] b) throws org.apache.commons.math3.exception.DimensionMismatchException;
+        //ORIGINAL LINE: T linearCombination(double[] a, T[] b) throws mathlib.exception.DimensionMismatchException;
         T linearCombination(double[] a, T[] b);
 
         /// <summary>

@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
+namespace mathlib.optim.nonlinear.scalar.noderiv
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.optim;
-	using UnivariatePointValuePair = org.apache.commons.math3.optim.univariate.UnivariatePointValuePair;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.optim;
+	using UnivariatePointValuePair = mathlib.optim.univariate.UnivariatePointValuePair;
 
 	/// <summary>
 	/// Powell's algorithm.
@@ -44,9 +44,9 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 	/// <seealso cref="MathUnsupportedOperationException"/> if bounds are passed to it.
 	/// In order to impose simple constraints, the objective function must be
 	/// wrapped in an adapter like
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.MultivariateFunctionMappingAdapter
+	/// {@link mathlib.optim.nonlinear.scalar.MultivariateFunctionMappingAdapter
 	/// MultivariateFunctionMappingAdapter} or
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.MultivariateFunctionPenaltyAdapter
+	/// {@link mathlib.optim.nonlinear.scalar.MultivariateFunctionPenaltyAdapter
 	/// MultivariateFunctionPenaltyAdapter}.
 	/// 
 	/// @version $Id: PowellOptimizer.java 1579346 2014-03-19 18:43:39Z erans $
@@ -152,7 +152,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 			checkParameters();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.nonlinear.scalar.GoalType goal = getGoalType();
+//ORIGINAL LINE: final mathlib.optim.nonlinear.scalar.GoalType goal = getGoalType();
 			GoalType goal = GoalType;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] guess = getStartPoint();
@@ -172,7 +172,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointValuePair> checker = ConvergenceChecker;
 
 			double[] x = guess;
@@ -191,13 +191,13 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 				for (int i = 0; i < n; i++)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] d = org.apache.commons.math3.util.MathArrays.copyOf(direc[i]);
+//ORIGINAL LINE: final double[] d = mathlib.util.MathArrays.copyOf(direc[i]);
 					double[] d = MathArrays.copyOf(direc[i]);
 
 					fX2 = fVal;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.univariate.UnivariatePointValuePair optimum = line.search(x, d);
+//ORIGINAL LINE: final mathlib.optim.univariate.UnivariatePointValuePair optimum = line.search(x, d);
 					UnivariatePointValuePair optimum = line.search(x, d);
 					fVal = optimum.Value;
 					alphaMin = optimum.Point;
@@ -217,10 +217,10 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 				bool stop = 2 * (fX - fVal) <= (relativeThreshold * (FastMath.abs(fX) + FastMath.abs(fVal)) + absoluteThreshold);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair previous = new org.apache.commons.math3.optim.PointValuePair(x1, fX);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair previous = new mathlib.optim.PointValuePair(x1, fX);
 				PointValuePair previous = new PointValuePair(x1, fX);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair current = new org.apache.commons.math3.optim.PointValuePair(x, fVal);
+//ORIGINAL LINE: final mathlib.optim.PointValuePair current = new mathlib.optim.PointValuePair(x, fVal);
 				PointValuePair current = new PointValuePair(x, fVal);
 				if (!stop && checker != null) // User-defined stopping criteria.
 				{
@@ -264,7 +264,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
 					if (t < 0.0)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.univariate.UnivariatePointValuePair optimum = line.search(x, d);
+//ORIGINAL LINE: final mathlib.optim.univariate.UnivariatePointValuePair optimum = line.search(x, d);
 						UnivariatePointValuePair optimum = line.search(x, d);
 						fVal = optimum.Value;
 						alphaMin = optimum.Point;

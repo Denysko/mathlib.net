@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Erf = org.apache.commons.math3.special.Erf;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Erf = mathlib.special.Erf;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the log-normal (gaussian) distribution.
@@ -104,7 +104,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="shape"> the shape parameter of this distribution </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code shape <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public LogNormalDistribution(double scale, double shape) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public LogNormalDistribution(double scale, double shape) throws mathlib.exception.NotStrictlyPositiveException
 		public LogNormalDistribution(double scale, double shape) : this(scale, shape, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="inverseCumAccuracy"> Inverse cumulative probability accuracy. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code shape <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public LogNormalDistribution(double scale, double shape, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public LogNormalDistribution(double scale, double shape, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public LogNormalDistribution(double scale, double shape, double inverseCumAccuracy) : this(new Well19937c(), scale, shape, inverseCumAccuracy)
 		{
 		}
@@ -132,7 +132,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code shape <= 0}.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public LogNormalDistribution(org.apache.commons.math3.random.RandomGenerator rng, double scale, double shape) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public LogNormalDistribution(mathlib.random.RandomGenerator rng, double scale, double shape) throws mathlib.exception.NotStrictlyPositiveException
 		public LogNormalDistribution(RandomGenerator rng, double scale, double shape) : this(rng, scale, shape, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -147,7 +147,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code shape <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public LogNormalDistribution(org.apache.commons.math3.random.RandomGenerator rng, double scale, double shape, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public LogNormalDistribution(mathlib.random.RandomGenerator rng, double scale, double shape, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public LogNormalDistribution(RandomGenerator rng, double scale, double shape, double inverseCumAccuracy) : base(rng)
 		{
 
@@ -204,7 +204,7 @@ namespace org.apache.commons.math3.distribution
 				return 0;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double x0 = org.apache.commons.math3.util.FastMath.log(x) - scale;
+//ORIGINAL LINE: final double x0 = mathlib.util.FastMath.log(x) - scale;
 			double x0 = FastMath.log(x) - scale;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double x1 = x0 / shape;
@@ -224,7 +224,7 @@ namespace org.apache.commons.math3.distribution
 				return double.NegativeInfinity;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double logX = org.apache.commons.math3.util.FastMath.log(x);
+//ORIGINAL LINE: final double logX = mathlib.util.FastMath.log(x);
 			double logX = FastMath.log(x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double x0 = logX - scale;
@@ -257,7 +257,7 @@ namespace org.apache.commons.math3.distribution
 				return 0;
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dev = org.apache.commons.math3.util.FastMath.log(x) - scale;
+//ORIGINAL LINE: final double dev = mathlib.util.FastMath.log(x) - scale;
 			double dev = FastMath.log(x) - scale;
 			if (FastMath.abs(dev) > 40 * shape)
 			{
@@ -271,7 +271,7 @@ namespace org.apache.commons.math3.distribution
 		/// </summary>
 		/// @deprecated See <seealso cref="RealDistribution#cumulativeProbability(double,double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override@Deprecated public double cumulativeProbability(double x0, double x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override@Deprecated public double cumulativeProbability(double x0, double x1) throws mathlib.exception.NumberIsTooLargeException
 		Deprecated public override double cumulativeProbability(double x0, double x1)
 		{
 			return probability(x0, x1);
@@ -280,7 +280,7 @@ namespace org.apache.commons.math3.distribution
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double probability(double x0, double x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override public double probability(double x0, double x1) throws mathlib.exception.NumberIsTooLargeException
 		public override double probability(double x0, double x1)
 		{
 			if (x0 > x1)
@@ -295,10 +295,10 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double denom = shape * SQRT2;
 			double denom = shape * SQRT2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double v0 = (org.apache.commons.math3.util.FastMath.log(x0) - scale) / denom;
+//ORIGINAL LINE: final double v0 = (mathlib.util.FastMath.log(x0) - scale) / denom;
 			double v0 = (FastMath.log(x0) - scale) / denom;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double v1 = (org.apache.commons.math3.util.FastMath.log(x1) - scale) / denom;
+//ORIGINAL LINE: final double v1 = (mathlib.util.FastMath.log(x1) - scale) / denom;
 			double v1 = (FastMath.log(x1) - scale) / denom;
 			return 0.5 * Erf.erf(v0, v1);
 		}

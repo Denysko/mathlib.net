@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
 	/// <summary>

@@ -70,7 +70,7 @@ namespace mathlib.util
 		/// <returns> the value of the continued fraction evaluated at x. </returns>
 		/// <exception cref="ConvergenceException"> if the algorithm fails to converge. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(double x) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: public double evaluate(double x) throws mathlib.exception.ConvergenceException
 		public virtual double evaluate(double x)
 		{
 			return evaluate(x, DEFAULT_EPSILON, int.MaxValue);
@@ -83,7 +83,7 @@ namespace mathlib.util
 		/// <returns> the value of the continued fraction evaluated at x. </returns>
 		/// <exception cref="ConvergenceException"> if the algorithm fails to converge. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(double x, double epsilon) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: public double evaluate(double x, double epsilon) throws mathlib.exception.ConvergenceException
 		public virtual double evaluate(double x, double epsilon)
 		{
 			return evaluate(x, epsilon, int.MaxValue);
@@ -97,7 +97,7 @@ namespace mathlib.util
 		/// <exception cref="ConvergenceException"> if the algorithm fails to converge. </exception>
 		/// <exception cref="MaxCountExceededException"> if maximal number of iterations is reached </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(double x, int maxIterations) throws org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double evaluate(double x, int maxIterations) throws mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 		public virtual double evaluate(double x, int maxIterations)
 		{
 			return evaluate(x, DEFAULT_EPSILON, maxIterations);
@@ -126,7 +126,7 @@ namespace mathlib.util
 		/// <exception cref="ConvergenceException"> if the algorithm fails to converge. </exception>
 		/// <exception cref="MaxCountExceededException"> if maximal number of iterations is reached </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(double x, double epsilon, int maxIterations) throws org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double evaluate(double x, double epsilon, int maxIterations) throws mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 		public virtual double evaluate(double x, double epsilon, int maxIterations)
 		{
 			const double small = 1e-50;

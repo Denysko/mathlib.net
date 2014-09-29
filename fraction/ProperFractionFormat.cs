@@ -16,14 +16,14 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Formats a Fraction number in proper format.  The number format for each of

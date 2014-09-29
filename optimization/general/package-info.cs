@@ -19,7 +19,7 @@
 /// This package provides optimization algorithms that require derivatives.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.optimization.general
+namespace mathlib.optimization.general
 {
 
 }

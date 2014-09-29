@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning.utilities
+namespace mathlib.geometry.partitioning.utilities
 {
 
 	/// <summary>
@@ -539,7 +539,7 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 			{
 				switch (skew)
 				{
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 					if (left.skew == Skew.LEFT_HIGH)
 					{
 						rotateCW();
@@ -555,11 +555,11 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 						rotateCW();
 						switch (s)
 						{
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 							left.skew = Skew.BALANCED;
 							right.skew = Skew.RIGHT_HIGH;
 							break;
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 							left.skew = Skew.LEFT_HIGH;
 							right.skew = Skew.BALANCED;
 							break;
@@ -571,7 +571,7 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 						skew = Skew.BALANCED;
 					}
 					return false;
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 					skew = Skew.BALANCED;
 					return false;
 				default:
@@ -587,10 +587,10 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 			{
 				switch (skew)
 				{
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 					skew = Skew.BALANCED;
 					return false;
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 					if (right.skew == Skew.RIGHT_HIGH)
 					{
 						rotateCCW();
@@ -606,11 +606,11 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 						rotateCCW();
 						switch (s)
 						{
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 							left.skew = Skew.BALANCED;
 							right.skew = Skew.RIGHT_HIGH;
 							break;
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 							left.skew = Skew.LEFT_HIGH;
 							right.skew = Skew.BALANCED;
 							break;
@@ -635,10 +635,10 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 			{
 				switch (skew)
 				{
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 					skew = Skew.BALANCED;
 					return true;
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 					if (right.skew == Skew.RIGHT_HIGH)
 					{
 						rotateCCW();
@@ -662,11 +662,11 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 						rotateCCW();
 						switch (s)
 						{
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 							left.skew = Skew.BALANCED;
 							right.skew = Skew.RIGHT_HIGH;
 							break;
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 							left.skew = Skew.LEFT_HIGH;
 							right.skew = Skew.BALANCED;
 							break;
@@ -691,10 +691,10 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 			{
 				switch (skew)
 				{
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 					skew = Skew.BALANCED;
 					return true;
-				case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+				case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 					if (left.skew == Skew.LEFT_HIGH)
 					{
 						rotateCW();
@@ -718,11 +718,11 @@ namespace org.apache.commons.math3.geometry.partitioning.utilities
 						rotateCW();
 						switch (s)
 						{
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.LEFT_HIGH:
 							left.skew = Skew.BALANCED;
 							right.skew = Skew.RIGHT_HIGH;
 							break;
-						case org.apache.commons.math3.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
+						case mathlib.geometry.partitioning.utilities.AVLTree.Skew.RIGHT_HIGH:
 							left.skew = Skew.LEFT_HIGH;
 							right.skew = Skew.BALANCED;
 							break;

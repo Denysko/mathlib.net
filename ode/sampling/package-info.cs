@@ -25,8 +25,8 @@
 /// In addition to computing the evolution of the state vector at some grid points, all
 /// ODE integrators also build up interpolation models of this evolution <em>inside</em> the
 /// last computed step. If users are interested in these interpolators, they can register a
-/// <seealso cref="org.apache.commons.math3.ode.sampling.StepHandler StepHandler"/> instance using the
-/// <seealso cref="org.apache.commons.math3.ode.FirstOrderIntegrator#addStepHandler addStepHandler"/>
+/// <seealso cref="mathlib.ode.sampling.StepHandler StepHandler"/> instance using the
+/// <seealso cref="mathlib.ode.FirstOrderIntegrator#addStepHandler addStepHandler"/>
 /// method which is supported by all integrators. The integrator will call this instance
 /// at the end of each accepted step and provide it the interpolator. The user can do
 /// whatever he wants with this interpolator, which computes both the state and its
@@ -44,20 +44,20 @@
 /// 
 /// <p>
 /// Since some integrators may use variable step size, the generic {@link
-/// org.apache.commons.math3.ode.sampling.StepHandler StepHandler} interface can be called
+/// mathlib.ode.sampling.StepHandler StepHandler} interface can be called
 /// either at regular or irregular rate. This interface allows to navigate to any location
 /// within the last computed step, thanks to the provided {@link
-/// org.apache.commons.math3.ode.sampling.StepInterpolator StepInterpolator} object.
+/// mathlib.ode.sampling.StepInterpolator StepInterpolator} object.
 /// If regular output is desired (for example in order to write an ephemeris file), then
-/// the simpler <seealso cref="org.apache.commons.math3.ode.sampling.FixedStepHandler FixedStepHandler"/>
+/// the simpler <seealso cref="mathlib.ode.sampling.FixedStepHandler FixedStepHandler"/>
 /// interface can be used. Objects implementing this interface should be wrapped within a
-/// <seealso cref="org.apache.commons.math3.ode.sampling.StepNormalizer StepNormalizer"/> instance
+/// <seealso cref="mathlib.ode.sampling.StepNormalizer StepNormalizer"/> instance
 /// in order to be registered to the integrator.
 /// </p>
 /// 
 /// 
 /// </summary>
-namespace org.apache.commons.math3.ode.sampling
+namespace mathlib.ode.sampling
 {
 
 }

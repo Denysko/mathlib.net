@@ -16,15 +16,15 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.polynomials
+namespace mathlib.analysis.polynomials
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Implements the representation of a real polynomial function in
@@ -72,7 +72,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NonMonotonicSequenceException">
 		/// if two abscissae have the same value. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PolynomialFunctionLagrangeForm(double x[] , double y[]) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public PolynomialFunctionLagrangeForm(double x[] , double y[]) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NonMonotonicSequenceException
 		public PolynomialFunctionLagrangeForm(double[] x, double[] y)
 		{
 			this.x = new double[x.Length];
@@ -96,7 +96,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <returns> the function value. </returns>
 		/// <exception cref="DimensionMismatchException"> if {@code x} and {@code y} have
 		/// different lengths. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NonMonotonicSequenceException">
+		/// <exception cref="mathlib.exception.NonMonotonicSequenceException">
 		/// if {@code x} is not sorted in strictly increasing order. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the size of {@code x} is less
 		/// than 2. </exception>
@@ -185,7 +185,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NumberIsTooSmallException"> if the size of {@code x} is less
 		/// than 2. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double evaluate(double x[] , double y[], double z) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public static double evaluate(double x[] , double y[], double z) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NonMonotonicSequenceException
 		public static double evaluate(double[] x, double[] y, double z)
 		{
 			if (verifyInterpolationArray(x, y, false))
@@ -220,7 +220,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <returns> the function value. </returns>
 		/// <exception cref="DimensionMismatchException"> if {@code x} and {@code y} have
 		/// different lengths. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NonMonotonicSequenceException">
+		/// <exception cref="mathlib.exception.NonMonotonicSequenceException">
 		/// if {@code x} is not sorted in strictly increasing order. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the size of {@code x} is less
 		/// than 2. </exception>
@@ -244,7 +244,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 				d[i] = y[i];
 				// find out the abscissa closest to z
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dist = org.apache.commons.math3.util.FastMath.abs(z - x[i]);
+//ORIGINAL LINE: final double dist = mathlib.util.FastMath.abs(z - x[i]);
 				double dist = FastMath.abs(z - x[i]);
 				if (dist < min_dist)
 				{
@@ -365,7 +365,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <param name="abort"> Whether to throw an exception if {@code x} is not sorted. </param>
 		/// <exception cref="DimensionMismatchException"> if the array lengths are different. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the number of points is less than 2. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NonMonotonicSequenceException">
+		/// <exception cref="mathlib.exception.NonMonotonicSequenceException">
 		/// if {@code x} is not sorted in strictly increasing order and {@code abort}
 		/// is {@code true}. </exception>
 		/// <returns> {@code false} if the {@code x} is not sorted in increasing order,
@@ -373,7 +373,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <seealso cref= #evaluate(double[], double[], double) </seealso>
 		/// <seealso cref= #computeCoefficients() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static boolean verifyInterpolationArray(double x[] , double y[], boolean abort) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public static boolean verifyInterpolationArray(double x[] , double y[], boolean abort) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NonMonotonicSequenceException
 		public static bool verifyInterpolationArray(double[] x, double[] y, bool abort)
 		{
 			if (x.Length != y.Length)

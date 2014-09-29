@@ -16,15 +16,15 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Order 1 Crossover [OX1] builds offspring from <b>ordered</b> chromosomes by copying a
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.genetics
 		///   not an instance of <seealso cref="AbstractListChromosome"/> </exception>
 		/// <exception cref="DimensionMismatchException"> if the length of the two chromosomes is different </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public ChromosomePair crossover(final Chromosome first, final Chromosome second) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public ChromosomePair crossover(final Chromosome first, final Chromosome second) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual ChromosomePair crossover(Chromosome first, Chromosome second)
@@ -88,7 +88,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the pair of new chromosomes that resulted from the crossover </returns>
 		/// <exception cref="DimensionMismatchException"> if the length of the two chromosomes is different </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected ChromosomePair mate(final AbstractListChromosome<T> first, final AbstractListChromosome<T> second) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected ChromosomePair mate(final AbstractListChromosome<T> first, final AbstractListChromosome<T> second) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual ChromosomePair mate(AbstractListChromosome<T> first, AbstractListChromosome<T> second)
 		{
@@ -124,7 +124,7 @@ namespace org.apache.commons.math3.genetics
 			Set<T> child2Set = new HashSet<T>(length);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.random.RandomGenerator random = GeneticAlgorithm.getRandomGenerator();
+//ORIGINAL LINE: final mathlib.random.RandomGenerator random = GeneticAlgorithm.getRandomGenerator();
 			RandomGenerator random = GeneticAlgorithm.RandomGenerator;
 			// choose random points, making sure that lb < ub.
 			int a = random.Next(length);
@@ -135,10 +135,10 @@ namespace org.apache.commons.math3.genetics
 			} while (a == b);
 			// determine the lower and upper bounds
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int lb = org.apache.commons.math3.util.FastMath.min(a, b);
+//ORIGINAL LINE: final int lb = mathlib.util.FastMath.min(a, b);
 			int lb = FastMath.min(a, b);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int ub = org.apache.commons.math3.util.FastMath.max(a, b);
+//ORIGINAL LINE: final int ub = mathlib.util.FastMath.max(a, b);
 			int ub = FastMath.max(a, b);
 
 			// add the subLists that are between lb and ub

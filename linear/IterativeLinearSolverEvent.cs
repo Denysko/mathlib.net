@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using IterationEvent = org.apache.commons.math3.util.IterationEvent;
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
+	using IterationEvent = mathlib.util.IterationEvent;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
 
 	/// <summary>
 	/// This is the base class for all events occurring during the iterations of a

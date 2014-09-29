@@ -17,7 +17,7 @@
 /// <summary>
 /// Implementations of special functions such as Beta and Gamma.
 /// </summary>
-namespace org.apache.commons.math3.special
+namespace mathlib.special
 {
 
 }

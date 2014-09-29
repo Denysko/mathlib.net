@@ -16,15 +16,15 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting
+namespace mathlib.fitting
 {
 
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using MultivariateMatrixFunction = org.apache.commons.math3.analysis.MultivariateMatrixFunction;
-	using ParametricUnivariateFunction = org.apache.commons.math3.analysis.ParametricUnivariateFunction;
-	using LeastSquaresOptimizer = org.apache.commons.math3.fitting.leastsquares.LeastSquaresOptimizer;
-	using LeastSquaresProblem = org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem;
-	using LevenbergMarquardtOptimizer = org.apache.commons.math3.fitting.leastsquares.LevenbergMarquardtOptimizer;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using MultivariateMatrixFunction = mathlib.analysis.MultivariateMatrixFunction;
+	using ParametricUnivariateFunction = mathlib.analysis.ParametricUnivariateFunction;
+	using LeastSquaresOptimizer = mathlib.fitting.leastsquares.LeastSquaresOptimizer;
+	using LeastSquaresProblem = mathlib.fitting.leastsquares.LeastSquaresProblem;
+	using LevenbergMarquardtOptimizer = mathlib.fitting.leastsquares.LevenbergMarquardtOptimizer;
 
 	/// <summary>
 	/// Base class that contains common code for fitting parametric univariate
@@ -105,7 +105,7 @@ namespace org.apache.commons.math3.fitting
 			/// <param name="f"> function to fit. </param>
 			/// <param name="observations"> Observations. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public TheoreticalValuesFunction(final org.apache.commons.math3.analysis.ParametricUnivariateFunction f, final java.util.Collection<WeightedObservedPoint> observations)
+//ORIGINAL LINE: public TheoreticalValuesFunction(final mathlib.analysis.ParametricUnivariateFunction f, final java.util.Collection<WeightedObservedPoint> observations)
 			public TheoreticalValuesFunction(ParametricUnivariateFunction f, ICollection<WeightedObservedPoint> observations)
 			{
 				this.f = f;

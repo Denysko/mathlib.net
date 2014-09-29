@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using MultivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction;
+	using MultivariateDifferentiableFunction = mathlib.analysis.differentiation.MultivariateDifferentiableFunction;
 
 	/// <summary>
 	/// This interface represents an optimization algorithm for

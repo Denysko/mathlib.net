@@ -17,16 +17,16 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using org.apache.commons.math3.optimization;
+	using FastMath = mathlib.util.FastMath;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// Simple implementation of the
-	/// <seealso cref="org.apache.commons.math3.optimization.ConvergenceChecker"/> interface
+	/// <seealso cref="mathlib.optimization.ConvergenceChecker"/> interface
 	/// that uses only objective function values.
 	/// 
 	/// Convergence is considered to have been reached if either the relative
@@ -140,10 +140,10 @@ namespace org.apache.commons.math3.optimization.univariate
 //ORIGINAL LINE: final double c = current.getValue();
 			double c = current.Value;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double difference = org.apache.commons.math3.util.FastMath.abs(p - c);
+//ORIGINAL LINE: final double difference = mathlib.util.FastMath.abs(p - c);
 			double difference = FastMath.abs(p - c);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double size = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(p), org.apache.commons.math3.util.FastMath.abs(c));
+//ORIGINAL LINE: final double size = mathlib.util.FastMath.max(mathlib.util.FastMath.abs(p), mathlib.util.FastMath.abs(c));
 			double size = FastMath.max(FastMath.abs(p), FastMath.abs(c));
 			return difference <= size * RelativeThreshold || difference <= AbsoluteThreshold;
 		}

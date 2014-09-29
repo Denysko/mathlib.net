@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
-	using org.apache.commons.math3.geometry;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// This interface represents an hyperplane of a space.
@@ -42,7 +42,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: Hyperplane.java 1566416 2014-02-09 20:56:55Z luc $
 	/// @since 3.0 </param>
-	public interface Hyperplane<S> where S : org.apache.commons.math3.geometry.Space
+	public interface Hyperplane<S> where S : mathlib.geometry.Space
 	{
 
 		/// <summary>

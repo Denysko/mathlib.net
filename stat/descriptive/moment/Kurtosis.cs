@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 
 	/// <summary>
@@ -93,7 +93,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code Kurtosis} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Kurtosis(Kurtosis original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Kurtosis(Kurtosis original) throws mathlib.exception.NullArgumentException
 		public Kurtosis(Kurtosis original)
 		{
 			copy(original, this);
@@ -179,7 +179,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the input array is null or the array
 		/// index parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values,final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values,final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int begin, int length)
 		{
@@ -235,7 +235,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> Kurtosis to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(Kurtosis source, Kurtosis dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(Kurtosis source, Kurtosis dest) throws mathlib.exception.NullArgumentException
 		public static void copy(Kurtosis source, Kurtosis dest)
 		{
 			MathUtils.checkNotNull(source);

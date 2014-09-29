@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optim.univariate
+namespace mathlib.optim.univariate
 {
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using GoalType = org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using GoalType = mathlib.optim.nonlinear.scalar.GoalType;
 
 	/// <summary>
 	/// Special implementation of the <seealso cref="UnivariateOptimizer"/> interface
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.optim.univariate
 		/// <param name="generator"> Random generator to use for restarts. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code starts < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public MultiStartUnivariateOptimizer(final UnivariateOptimizer optimizer, final int starts, final org.apache.commons.math3.random.RandomGenerator generator)
+//ORIGINAL LINE: public MultiStartUnivariateOptimizer(final UnivariateOptimizer optimizer, final int starts, final mathlib.random.RandomGenerator generator)
 		public MultiStartUnivariateOptimizer(UnivariateOptimizer optimizer, int starts, RandomGenerator generator) : base(optimizer.ConvergenceChecker)
 		{
 
@@ -240,7 +240,7 @@ namespace org.apache.commons.math3.optim.univariate
 		/// </summary>
 		/// <param name="goal"> Goal type. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void sortPairs(final org.apache.commons.math3.optim.nonlinear.scalar.GoalType goal)
+//ORIGINAL LINE: private void sortPairs(final mathlib.optim.nonlinear.scalar.GoalType goal)
 		private void sortPairs(GoalType goal)
 		{
 			Arrays.sort(optima, new ComparatorAnonymousInnerClassHelper(this, goal));

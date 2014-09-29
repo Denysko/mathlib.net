@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
 
 	/// <summary>
 	/// This class defines a linear operator operating on real ({@code double})
@@ -73,7 +73,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the column dimension does not match
 		/// the size of {@code x} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract RealVector operate(final RealVector x) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: public abstract RealVector operate(final RealVector x) throws mathlib.exception.DimensionMismatchException;
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public abstract RealVector operate(RealVector x);
 
@@ -86,12 +86,12 @@ namespace org.apache.commons.math3.linear
 		/// <param name="x"> the vector to operate on </param>
 		/// <returns> the product of the transpose of {@code this} instance with
 		/// {@code x} </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the row dimension does not match the size of {@code x} </exception>
 		/// <exception cref="UnsupportedOperationException"> if this operation is not supported
 		/// by {@code this} operator </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector operateTranspose(final RealVector x) throws org.apache.commons.math3.exception.DimensionMismatchException, UnsupportedOperationException
+//ORIGINAL LINE: public RealVector operateTranspose(final RealVector x) throws mathlib.exception.DimensionMismatchException, UnsupportedOperationException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector operateTranspose(RealVector x)
 		{

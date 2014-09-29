@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// Wrapper class to compute Jacobian matrices by finite differences for ODE
@@ -92,7 +92,7 @@ namespace org.apache.commons.math3.ode
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeParameterJacobian(double t, double[] y, double[] yDot, String paramName, double[] dFdP) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public void computeParameterJacobian(double t, double[] y, double[] yDot, String paramName, double[] dFdP) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException
 		public virtual void computeParameterJacobian(double t, double[] y, double[] yDot, string paramName, double[] dFdP)
 		{
 

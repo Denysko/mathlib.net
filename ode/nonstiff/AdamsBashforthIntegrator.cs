@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using NordsieckStepInterpolator = org.apache.commons.math3.ode.sampling.NordsieckStepInterpolator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using NordsieckStepInterpolator = mathlib.ode.sampling.NordsieckStepInterpolator;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -159,7 +159,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// <param name="scalRelativeTolerance"> allowed relative error </param>
 		/// <exception cref="NumberIsTooSmallException"> if order is 1 or less </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public AdamsBashforthIntegrator(final int nSteps, final double minStep, final double maxStep, final double scalAbsoluteTolerance, final double scalRelativeTolerance) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public AdamsBashforthIntegrator(final int nSteps, final double minStep, final double maxStep, final double scalAbsoluteTolerance, final double scalRelativeTolerance) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public AdamsBashforthIntegrator(int nSteps, double minStep, double maxStep, double scalAbsoluteTolerance, double scalRelativeTolerance) : base(METHOD_NAME, nSteps, nSteps, minStep, maxStep, scalAbsoluteTolerance, scalRelativeTolerance)
 		{
@@ -187,7 +187,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void integrate(final org.apache.commons.math3.ode.ExpandableStatefulODE equations, final double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override public void integrate(final mathlib.ode.ExpandableStatefulODE equations, final double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void integrate(ExpandableStatefulODE equations, double t)
 		{
@@ -211,7 +211,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 
 			// set up an interpolator sharing the integrator arrays
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ode.sampling.NordsieckStepInterpolator interpolator = new org.apache.commons.math3.ode.sampling.NordsieckStepInterpolator();
+//ORIGINAL LINE: final mathlib.ode.sampling.NordsieckStepInterpolator interpolator = new mathlib.ode.sampling.NordsieckStepInterpolator();
 			NordsieckStepInterpolator interpolator = new NordsieckStepInterpolator();
 			interpolator.reinitialize(y, forward, equations.PrimaryMapper, equations.SecondaryMappers);
 
@@ -246,7 +246,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 					for (int i = 0; i < mainSetDimension; ++i)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double yScale = org.apache.commons.math3.util.FastMath.abs(y[i]);
+//ORIGINAL LINE: final double yScale = mathlib.util.FastMath.abs(y[i]);
 						double yScale = FastMath.abs(y[i]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double tol = (vecAbsoluteTolerance == null) ? (scalAbsoluteTolerance + scalRelativeTolerance * yScale) : (vecAbsoluteTolerance[i] + vecRelativeTolerance[i] * yScale);
@@ -277,10 +277,10 @@ namespace org.apache.commons.math3.ode.nonstiff
 				interpolator.shift();
 				interpolator.InterpolatedTime = stepEnd;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ode.ExpandableStatefulODE expandable = getExpandable();
+//ORIGINAL LINE: final mathlib.ode.ExpandableStatefulODE expandable = getExpandable();
 				ExpandableStatefulODE expandable = Expandable;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ode.EquationsMapper primary = expandable.getPrimaryMapper();
+//ORIGINAL LINE: final mathlib.ode.EquationsMapper primary = expandable.getPrimaryMapper();
 				EquationsMapper primary = expandable.PrimaryMapper;
 				primary.insertEquationData(interpolator.InterpolatedState, y);
 				int index = 0;
@@ -302,7 +302,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 					predictedScaled[j] = stepSize * yDot[j];
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.Array2DRowRealMatrix nordsieckTmp = updateHighOrderDerivativesPhase1(nordsieck);
+//ORIGINAL LINE: final mathlib.linear.Array2DRowRealMatrix nordsieckTmp = updateHighOrderDerivativesPhase1(nordsieck);
 				Array2DRowRealMatrix nordsieckTmp = updateHighOrderDerivativesPhase1(nordsieck);
 				updateHighOrderDerivativesPhase2(scaled, predictedScaled, nordsieckTmp);
 				interpolator.reinitialize(stepEnd, stepSize, predictedScaled, nordsieckTmp);

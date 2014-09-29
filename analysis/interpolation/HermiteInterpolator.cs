@@ -16,18 +16,18 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableVectorFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableVectorFunction;
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using CombinatoricsUtils = org.apache.commons.math3.util.CombinatoricsUtils;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableVectorFunction = mathlib.analysis.differentiation.UnivariateDifferentiableVectorFunction;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using CombinatoricsUtils = mathlib.util.CombinatoricsUtils;
 
 	/// <summary>
 	/// Polynomial interpolator using both sample values and sample derivatives.
@@ -92,7 +92,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="MathArithmeticException"> if the number of derivatives is larger
 		/// than 20, which prevents computation of a factorial </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addSamplePoint(final double x, final double[] ... value) throws org.apache.commons.math3.exception.ZeroException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public void addSamplePoint(final double x, final double[] ... value) throws mathlib.exception.ZeroException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void addSamplePoint(double x, params double[] [] value)
 		{
@@ -152,7 +152,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <returns> interpolation polynomials array </returns>
 		/// <exception cref="NoDataException"> if sample is empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.polynomials.PolynomialFunction[] getPolynomials() throws org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public mathlib.analysis.polynomials.PolynomialFunction[] getPolynomials() throws mathlib.exception.NoDataException
 		public virtual PolynomialFunction[] Polynomials
 		{
 			get
@@ -163,7 +163,7 @@ namespace org.apache.commons.math3.analysis.interpolation
     
 				// iteration initialization
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.analysis.polynomials.PolynomialFunction zero = polynomial(0);
+	//ORIGINAL LINE: final mathlib.analysis.polynomials.PolynomialFunction zero = polynomial(0);
 				PolynomialFunction zero = polynomial(0);
 				PolynomialFunction[] polynomials = new PolynomialFunction[topDiagonal[0].Length];
 				for (int i = 0; i < polynomials.Length; ++i)
@@ -200,7 +200,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <returns> interpolated value </returns>
 		/// <exception cref="NoDataException"> if sample is empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] value(double x) throws org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public double[] value(double x) throws mathlib.exception.NoDataException
 		public virtual double[] value(double x)
 		{
 
@@ -240,7 +240,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <returns> interpolated value </returns>
 		/// <exception cref="NoDataException"> if sample is empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure x) throws org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure[] value(final mathlib.analysis.differentiation.DerivativeStructure x) throws mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure[] value(DerivativeStructure x)
 		{
@@ -249,7 +249,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			checkInterpolation();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] value = new org.apache.commons.math3.analysis.differentiation.DerivativeStructure[topDiagonal.get(0).length];
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] value = new mathlib.analysis.differentiation.DerivativeStructure[topDiagonal.get(0).length];
 			DerivativeStructure[] value = new DerivativeStructure[topDiagonal[0].Length];
 			Arrays.fill(value, x.Field.Zero);
 			DerivativeStructure valueCoeff = x.Field.One;
@@ -261,7 +261,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 					value[k] = value[k].add(valueCoeff.multiply(dividedDifference[k]));
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure deltaX = x.subtract(abscissae.get(i));
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure deltaX = x.subtract(abscissae.get(i));
 				DerivativeStructure deltaX = x.subtract(abscissae[i]);
 				valueCoeff = valueCoeff.multiply(deltaX);
 			}
@@ -275,7 +275,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NoDataException"> if interpolation cannot be performed
 		/// because sample is empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkInterpolation() throws org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: private void checkInterpolation() throws mathlib.exception.NoDataException
 		private void checkInterpolation()
 		{
 			if (abscissae.Count == 0)

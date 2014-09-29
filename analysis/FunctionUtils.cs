@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis
+namespace mathlib.analysis
 {
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using MultivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction;
-	using MultivariateDifferentiableVectorFunction = org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using Identity = org.apache.commons.math3.analysis.function.Identity;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using MultivariateDifferentiableFunction = mathlib.analysis.differentiation.MultivariateDifferentiableFunction;
+	using MultivariateDifferentiableVectorFunction = mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using Identity = mathlib.analysis.function.Identity;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Utilities for manipulating function objects.
@@ -62,9 +62,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class UnivariateFunctionAnonymousInnerClassHelper : UnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.UnivariateFunction[] f;
+			private mathlib.analysis.UnivariateFunction[] f;
 
-			public UnivariateFunctionAnonymousInnerClassHelper(org.apache.commons.math3.analysis.UnivariateFunction[] f)
+			public UnivariateFunctionAnonymousInnerClassHelper(mathlib.analysis.UnivariateFunction[] f)
 			{
 				this.f = f;
 			}
@@ -92,7 +92,7 @@ namespace org.apache.commons.math3.analysis
 		/// <returns> the composite function.
 		/// @since 3.1 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction compose(final org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction... f)
+//ORIGINAL LINE: public static mathlib.analysis.differentiation.UnivariateDifferentiableFunction compose(final mathlib.analysis.differentiation.UnivariateDifferentiableFunction... f)
 		public static UnivariateDifferentiableFunction compose(params UnivariateDifferentiableFunction[] f)
 		{
 			return new UnivariateDifferentiableFunctionAnonymousInnerClassHelper(f);
@@ -125,7 +125,7 @@ namespace org.apache.commons.math3.analysis
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t)
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t)
 			public virtual DerivativeStructure value(DerivativeStructure t)
 			{
 				DerivativeStructure r = t;
@@ -148,8 +148,8 @@ namespace org.apache.commons.math3.analysis
 		/// <returns> the composite function. </returns>
 		/// @deprecated as of 3.1 replaced by <seealso cref="#compose(UnivariateDifferentiableFunction...)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#compose(org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction compose(final DifferentiableUnivariateFunction... f)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#compose(org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#compose(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction compose(final DifferentiableUnivariateFunction... f)
+		[Obsolete("as of 3.1 replaced by <seealso cref="#compose(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
 		public static DifferentiableUnivariateFunction compose(params DifferentiableUnivariateFunction[] f)
 		{
 			return new DifferentiableUnivariateFunctionAnonymousInnerClassHelper(f);
@@ -157,9 +157,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class DifferentiableUnivariateFunctionAnonymousInnerClassHelper : DifferentiableUnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.DifferentiableUnivariateFunction[] f;
+			private mathlib.analysis.DifferentiableUnivariateFunction[] f;
 
-			public DifferentiableUnivariateFunctionAnonymousInnerClassHelper(org.apache.commons.math3.analysis.DifferentiableUnivariateFunction[] f)
+			public DifferentiableUnivariateFunctionAnonymousInnerClassHelper(mathlib.analysis.DifferentiableUnivariateFunction[] f)
 			{
 				this.f = f;
 			}
@@ -222,9 +222,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class UnivariateFunctionAnonymousInnerClassHelper3 : UnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.UnivariateFunction[] f;
+			private mathlib.analysis.UnivariateFunction[] f;
 
-			public UnivariateFunctionAnonymousInnerClassHelper3(org.apache.commons.math3.analysis.UnivariateFunction[] f)
+			public UnivariateFunctionAnonymousInnerClassHelper3(mathlib.analysis.UnivariateFunction[] f)
 			{
 				this.f = f;
 			}
@@ -249,7 +249,7 @@ namespace org.apache.commons.math3.analysis
 		/// <returns> a function that computes the sum of the functions.
 		/// @since 3.1 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction add(final org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction... f)
+//ORIGINAL LINE: public static mathlib.analysis.differentiation.UnivariateDifferentiableFunction add(final mathlib.analysis.differentiation.UnivariateDifferentiableFunction... f)
 		public static UnivariateDifferentiableFunction add(params UnivariateDifferentiableFunction[] f)
 		{
 			return new UnivariateDifferentiableFunctionAnonymousInnerClassHelper2(f);
@@ -283,7 +283,7 @@ namespace org.apache.commons.math3.analysis
 			/// {@inheritDoc} </summary>
 			/// <exception cref="DimensionMismatchException"> if functions are not consistent with each other </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual DerivativeStructure value(DerivativeStructure t)
 			{
@@ -304,8 +304,8 @@ namespace org.apache.commons.math3.analysis
 		/// <returns> a function that computes the sum of the functions. </returns>
 		/// @deprecated as of 3.1 replaced by <seealso cref="#add(UnivariateDifferentiableFunction...)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#add(org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction add(final DifferentiableUnivariateFunction... f)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#add(org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#add(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction add(final DifferentiableUnivariateFunction... f)
+		[Obsolete("as of 3.1 replaced by <seealso cref="#add(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
 		public static DifferentiableUnivariateFunction add(params DifferentiableUnivariateFunction[] f)
 		{
 			return new DifferentiableUnivariateFunctionAnonymousInnerClassHelper2(f);
@@ -313,9 +313,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class DifferentiableUnivariateFunctionAnonymousInnerClassHelper2 : DifferentiableUnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.DifferentiableUnivariateFunction[] f;
+			private mathlib.analysis.DifferentiableUnivariateFunction[] f;
 
-			public DifferentiableUnivariateFunctionAnonymousInnerClassHelper2(org.apache.commons.math3.analysis.DifferentiableUnivariateFunction[] f)
+			public DifferentiableUnivariateFunctionAnonymousInnerClassHelper2(mathlib.analysis.DifferentiableUnivariateFunction[] f)
 			{
 				this.f = f;
 			}
@@ -376,9 +376,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class UnivariateFunctionAnonymousInnerClassHelper5 : UnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.UnivariateFunction[] f;
+			private mathlib.analysis.UnivariateFunction[] f;
 
-			public UnivariateFunctionAnonymousInnerClassHelper5(org.apache.commons.math3.analysis.UnivariateFunction[] f)
+			public UnivariateFunctionAnonymousInnerClassHelper5(mathlib.analysis.UnivariateFunction[] f)
 			{
 				this.f = f;
 			}
@@ -403,7 +403,7 @@ namespace org.apache.commons.math3.analysis
 		/// <returns> a function that computes the product of the functions.
 		/// @since 3.1 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction multiply(final org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction... f)
+//ORIGINAL LINE: public static mathlib.analysis.differentiation.UnivariateDifferentiableFunction multiply(final mathlib.analysis.differentiation.UnivariateDifferentiableFunction... f)
 		public static UnivariateDifferentiableFunction multiply(params UnivariateDifferentiableFunction[] f)
 		{
 			return new UnivariateDifferentiableFunctionAnonymousInnerClassHelper3(f);
@@ -436,7 +436,7 @@ namespace org.apache.commons.math3.analysis
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t)
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t)
 			public virtual DerivativeStructure value(DerivativeStructure t)
 			{
 				DerivativeStructure r = f[0].value(t);
@@ -456,8 +456,8 @@ namespace org.apache.commons.math3.analysis
 		/// <returns> a function that computes the product of the functions. </returns>
 		/// @deprecated as of 3.1 replaced by <seealso cref="#multiply(UnivariateDifferentiableFunction...)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#multiply(org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction multiply(final DifferentiableUnivariateFunction... f)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#multiply(org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#multiply(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction multiply(final DifferentiableUnivariateFunction... f)
+		[Obsolete("as of 3.1 replaced by <seealso cref="#multiply(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
 		public static DifferentiableUnivariateFunction multiply(params DifferentiableUnivariateFunction[] f)
 		{
 			return new DifferentiableUnivariateFunctionAnonymousInnerClassHelper3(f);
@@ -465,9 +465,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class DifferentiableUnivariateFunctionAnonymousInnerClassHelper3 : DifferentiableUnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.DifferentiableUnivariateFunction[] f;
+			private mathlib.analysis.DifferentiableUnivariateFunction[] f;
 
-			public DifferentiableUnivariateFunctionAnonymousInnerClassHelper3(org.apache.commons.math3.analysis.DifferentiableUnivariateFunction[] f)
+			public DifferentiableUnivariateFunctionAnonymousInnerClassHelper3(mathlib.analysis.DifferentiableUnivariateFunction[] f)
 			{
 				this.f = f;
 			}
@@ -539,11 +539,11 @@ namespace org.apache.commons.math3.analysis
 
 		private class UnivariateFunctionAnonymousInnerClassHelper7 : UnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.BivariateFunction combiner;
-			private org.apache.commons.math3.analysis.UnivariateFunction f;
-			private org.apache.commons.math3.analysis.UnivariateFunction g;
+			private mathlib.analysis.BivariateFunction combiner;
+			private mathlib.analysis.UnivariateFunction f;
+			private mathlib.analysis.UnivariateFunction g;
 
-			public UnivariateFunctionAnonymousInnerClassHelper7(org.apache.commons.math3.analysis.BivariateFunction combiner, org.apache.commons.math3.analysis.UnivariateFunction f, org.apache.commons.math3.analysis.UnivariateFunction g)
+			public UnivariateFunctionAnonymousInnerClassHelper7(mathlib.analysis.BivariateFunction combiner, mathlib.analysis.UnivariateFunction f, mathlib.analysis.UnivariateFunction g)
 			{
 				this.combiner = combiner;
 				this.f = f;
@@ -576,11 +576,11 @@ namespace org.apache.commons.math3.analysis
 
 		private class MultivariateFunctionAnonymousInnerClassHelper : MultivariateFunction
 		{
-			private org.apache.commons.math3.analysis.BivariateFunction combiner;
-			private org.apache.commons.math3.analysis.UnivariateFunction f;
+			private mathlib.analysis.BivariateFunction combiner;
+			private mathlib.analysis.UnivariateFunction f;
 			private double initialValue;
 
-			public MultivariateFunctionAnonymousInnerClassHelper(org.apache.commons.math3.analysis.BivariateFunction combiner, org.apache.commons.math3.analysis.UnivariateFunction f, double initialValue)
+			public MultivariateFunctionAnonymousInnerClassHelper(mathlib.analysis.BivariateFunction combiner, mathlib.analysis.UnivariateFunction f, double initialValue)
 			{
 				this.combiner = combiner;
 				this.f = f;
@@ -630,10 +630,10 @@ namespace org.apache.commons.math3.analysis
 
 		private class UnivariateFunctionAnonymousInnerClassHelper8 : UnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.BivariateFunction f;
+			private mathlib.analysis.BivariateFunction f;
 			private double @fixed;
 
-			public UnivariateFunctionAnonymousInnerClassHelper8(org.apache.commons.math3.analysis.BivariateFunction f, double @fixed)
+			public UnivariateFunctionAnonymousInnerClassHelper8(mathlib.analysis.BivariateFunction f, double @fixed)
 			{
 				this.f = f;
 				this.@fixed = @fixed;
@@ -661,10 +661,10 @@ namespace org.apache.commons.math3.analysis
 
 		private class UnivariateFunctionAnonymousInnerClassHelper9 : UnivariateFunction
 		{
-			private org.apache.commons.math3.analysis.BivariateFunction f;
+			private mathlib.analysis.BivariateFunction f;
 			private double @fixed;
 
-			public UnivariateFunctionAnonymousInnerClassHelper9(org.apache.commons.math3.analysis.BivariateFunction f, double @fixed)
+			public UnivariateFunctionAnonymousInnerClassHelper9(mathlib.analysis.BivariateFunction f, double @fixed)
 			{
 				this.f = f;
 				this.@fixed = @fixed;
@@ -695,7 +695,7 @@ namespace org.apache.commons.math3.analysis
 		/// <exception cref="NotStrictlyPositiveException"> if the number of sample points
 		/// {@code n} is negative. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] sample(UnivariateFunction f, double min, double max, int n) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public static double[] sample(UnivariateFunction f, double min, double max, int n) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotStrictlyPositiveException
 		public static double[] sample(UnivariateFunction f, double min, double max, int n)
 		{
 
@@ -728,7 +728,7 @@ namespace org.apache.commons.math3.analysis
 		/// @deprecated this conversion method is temporary in version 3.1, as the {@link
 		/// DifferentiableUnivariateFunction} interface itself is deprecated 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static DifferentiableUnivariateFunction toDifferentiableUnivariateFunction(final org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction f)
+//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static DifferentiableUnivariateFunction toDifferentiableUnivariateFunction(final mathlib.analysis.differentiation.UnivariateDifferentiableFunction f)
 		[Obsolete("this conversion method is temporary in version 3.1, as the {@link")]
 		public static DifferentiableUnivariateFunction toDifferentiableUnivariateFunction(UnivariateDifferentiableFunction f)
 		{
@@ -793,7 +793,7 @@ namespace org.apache.commons.math3.analysis
 		/// @deprecated this conversion method is temporary in version 3.1, as the {@link
 		/// DifferentiableUnivariateFunction} interface itself is deprecated 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction toUnivariateDifferential(final DifferentiableUnivariateFunction f)
+//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static mathlib.analysis.differentiation.UnivariateDifferentiableFunction toUnivariateDifferential(final DifferentiableUnivariateFunction f)
 		[Obsolete("this conversion method is temporary in version 3.1, as the {@link")]
 		public static UnivariateDifferentiableFunction toUnivariateDifferential(DifferentiableUnivariateFunction f)
 		{
@@ -802,9 +802,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class UnivariateDifferentiableFunctionAnonymousInnerClassHelper4 : UnivariateDifferentiableFunction
 		{
-			private org.apache.commons.math3.analysis.DifferentiableUnivariateFunction f;
+			private mathlib.analysis.DifferentiableUnivariateFunction f;
 
-			public UnivariateDifferentiableFunctionAnonymousInnerClassHelper4(org.apache.commons.math3.analysis.DifferentiableUnivariateFunction f)
+			public UnivariateDifferentiableFunctionAnonymousInnerClassHelper4(mathlib.analysis.DifferentiableUnivariateFunction f)
 			{
 				this.f = f;
 			}
@@ -823,7 +823,7 @@ namespace org.apache.commons.math3.analysis
 			/// {@inheritDoc} </summary>
 			/// <exception cref="NumberIsTooLargeException"> if derivation order is greater than 1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual DerivativeStructure value(DerivativeStructure t)
 			{
@@ -866,7 +866,7 @@ namespace org.apache.commons.math3.analysis
 		/// @deprecated this conversion method is temporary in version 3.1, as the {@link
 		/// DifferentiableMultivariateFunction} interface itself is deprecated 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static DifferentiableMultivariateFunction toDifferentiableMultivariateFunction(final org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction f)
+//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static DifferentiableMultivariateFunction toDifferentiableMultivariateFunction(final mathlib.analysis.differentiation.MultivariateDifferentiableFunction f)
 		[Obsolete("this conversion method is temporary in version 3.1, as the {@link")]
 		public static DifferentiableMultivariateFunction toDifferentiableMultivariateFunction(MultivariateDifferentiableFunction f)
 		{
@@ -926,7 +926,7 @@ namespace org.apache.commons.math3.analysis
 
 					// delegate computation to underlying function
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] dsX = new org.apache.commons.math3.analysis.differentiation.DerivativeStructure[n];
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] dsX = new mathlib.analysis.differentiation.DerivativeStructure[n];
 					DerivativeStructure[] dsX = new DerivativeStructure[n];
 					for (int i = 0; i < n; ++i)
 					{
@@ -940,7 +940,7 @@ namespace org.apache.commons.math3.analysis
 						}
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure y = f.value(dsX);
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure y = f.value(dsX);
 					DerivativeStructure y = outerInstance.f.value(dsX);
 
 					// extract partial derivative
@@ -976,14 +976,14 @@ namespace org.apache.commons.math3.analysis
 
 					// delegate computation to underlying function
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] dsX = new org.apache.commons.math3.analysis.differentiation.DerivativeStructure[n];
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] dsX = new mathlib.analysis.differentiation.DerivativeStructure[n];
 					DerivativeStructure[] dsX = new DerivativeStructure[n];
 					for (int i = 0; i < n; ++i)
 					{
 						dsX[i] = new DerivativeStructure(n, 1, i, x[i]);
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure y = f.value(dsX);
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure y = f.value(dsX);
 					DerivativeStructure y = outerInstance.f.value(dsX);
 
 					// extract gradient
@@ -1020,7 +1020,7 @@ namespace org.apache.commons.math3.analysis
 		/// @deprecated this conversion method is temporary in version 3.1, as the {@link
 		/// DifferentiableMultivariateFunction} interface itself is deprecated 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction toMultivariateDifferentiableFunction(final DifferentiableMultivariateFunction f)
+//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static mathlib.analysis.differentiation.MultivariateDifferentiableFunction toMultivariateDifferentiableFunction(final DifferentiableMultivariateFunction f)
 		[Obsolete("this conversion method is temporary in version 3.1, as the {@link")]
 		public static MultivariateDifferentiableFunction toMultivariateDifferentiableFunction(DifferentiableMultivariateFunction f)
 		{
@@ -1029,9 +1029,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class MultivariateDifferentiableFunctionAnonymousInnerClassHelper : MultivariateDifferentiableFunction
 		{
-			private org.apache.commons.math3.analysis.DifferentiableMultivariateFunction f;
+			private mathlib.analysis.DifferentiableMultivariateFunction f;
 
-			public MultivariateDifferentiableFunctionAnonymousInnerClassHelper(org.apache.commons.math3.analysis.DifferentiableMultivariateFunction f)
+			public MultivariateDifferentiableFunctionAnonymousInnerClassHelper(mathlib.analysis.DifferentiableMultivariateFunction f)
 			{
 				this.f = f;
 			}
@@ -1051,7 +1051,7 @@ namespace org.apache.commons.math3.analysis
 			/// <exception cref="NumberIsTooLargeException"> if derivation order is higher than 1 </exception>
 			/// <exception cref="DimensionMismatchException"> if numbers of free parameters are inconsistent </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] t) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure[] t) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual DerivativeStructure value(DerivativeStructure[] t)
 			{
@@ -1131,7 +1131,7 @@ namespace org.apache.commons.math3.analysis
 		/// @deprecated this conversion method is temporary in version 3.1, as the {@link
 		/// DifferentiableMultivariateVectorFunction} interface itself is deprecated 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static DifferentiableMultivariateVectorFunction toDifferentiableMultivariateVectorFunction(final org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction f)
+//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static DifferentiableMultivariateVectorFunction toDifferentiableMultivariateVectorFunction(final mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction f)
 		[Obsolete("this conversion method is temporary in version 3.1, as the {@link")]
 		public static DifferentiableMultivariateVectorFunction toDifferentiableMultivariateVectorFunction(MultivariateDifferentiableVectorFunction f)
 		{
@@ -1184,14 +1184,14 @@ namespace org.apache.commons.math3.analysis
 
 					// delegate computation to underlying function
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] dsX = new org.apache.commons.math3.analysis.differentiation.DerivativeStructure[n];
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] dsX = new mathlib.analysis.differentiation.DerivativeStructure[n];
 					DerivativeStructure[] dsX = new DerivativeStructure[n];
 					for (int i = 0; i < n; ++i)
 					{
 						dsX[i] = new DerivativeStructure(n, 1, i, x[i]);
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] y = f.value(dsX);
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] y = f.value(dsX);
 					DerivativeStructure[] y = outerInstance.f.value(dsX);
 
 					// extract Jacobian
@@ -1233,7 +1233,7 @@ namespace org.apache.commons.math3.analysis
 		/// @deprecated this conversion method is temporary in version 3.1, as the {@link
 		/// DifferentiableMultivariateFunction} interface itself is deprecated 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableVectorFunction toMultivariateDifferentiableVectorFunction(final DifferentiableMultivariateVectorFunction f)
+//ORIGINAL LINE: @Deprecated("this conversion method is temporary in version 3.1, as the {@link") public static mathlib.analysis.differentiation.MultivariateDifferentiableVectorFunction toMultivariateDifferentiableVectorFunction(final DifferentiableMultivariateVectorFunction f)
 		[Obsolete("this conversion method is temporary in version 3.1, as the {@link")]
 		public static MultivariateDifferentiableVectorFunction toMultivariateDifferentiableVectorFunction(DifferentiableMultivariateVectorFunction f)
 		{
@@ -1242,9 +1242,9 @@ namespace org.apache.commons.math3.analysis
 
 		private class MultivariateDifferentiableVectorFunctionAnonymousInnerClassHelper : MultivariateDifferentiableVectorFunction
 		{
-			private org.apache.commons.math3.analysis.DifferentiableMultivariateVectorFunction f;
+			private mathlib.analysis.DifferentiableMultivariateVectorFunction f;
 
-			public MultivariateDifferentiableVectorFunctionAnonymousInnerClassHelper(org.apache.commons.math3.analysis.DifferentiableMultivariateVectorFunction f)
+			public MultivariateDifferentiableVectorFunctionAnonymousInnerClassHelper(mathlib.analysis.DifferentiableMultivariateVectorFunction f)
 			{
 				this.f = f;
 			}
@@ -1264,7 +1264,7 @@ namespace org.apache.commons.math3.analysis
 			/// <exception cref="NumberIsTooLargeException"> if derivation order is higher than 1 </exception>
 			/// <exception cref="DimensionMismatchException"> if numbers of free parameters are inconsistent </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] t) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure[] value(final mathlib.analysis.differentiation.DerivativeStructure[] t) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual DerivativeStructure[] value(DerivativeStructure[] t)
 			{
@@ -1315,7 +1315,7 @@ namespace org.apache.commons.math3.analysis
 
 				// merge value and Jacobian into a DerivativeStructure array
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.differentiation.DerivativeStructure[] merged = new org.apache.commons.math3.analysis.differentiation.DerivativeStructure[value.length];
+//ORIGINAL LINE: final mathlib.analysis.differentiation.DerivativeStructure[] merged = new mathlib.analysis.differentiation.DerivativeStructure[value.length];
 				DerivativeStructure[] merged = new DerivativeStructure[value.Length];
 				for (int k = 0; k < merged.Length; ++k)
 				{

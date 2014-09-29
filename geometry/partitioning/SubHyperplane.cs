@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
 	/// <summary>
@@ -39,7 +39,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: SubHyperplane.java 1566416 2014-02-09 20:56:55Z luc $
 	/// @since 3.0 </param>
-	public interface SubHyperplane<S> where S : org.apache.commons.math3.geometry.Space
+	public interface SubHyperplane<S> where S : mathlib.geometry.Space
 	{
 
 		/// <summary>
@@ -96,7 +96,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 
 	}
 
-	public class SubHyperplane_SplitSubHyperplane<U> where U : org.apache.commons.math3.geometry.Space
+	public class SubHyperplane_SplitSubHyperplane<U> where U : mathlib.geometry.Space
 	{
 
 		/// <summary>

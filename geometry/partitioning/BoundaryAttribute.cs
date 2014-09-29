@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
 	/// <summary>
@@ -31,7 +31,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// <seealso cref= Region#getTree
 	/// @version $Id: BoundaryAttribute.java 1560336 2014-01-22 12:39:14Z luc $
 	/// @since 3.0 </seealso>
-	public class BoundaryAttribute<S> where S : org.apache.commons.math3.geometry.Space
+	public class BoundaryAttribute<S> where S : mathlib.geometry.Space
 	{
 
 		/// <summary>

@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.linear
+namespace mathlib.optim.linear
 {
 
 
-	using TooManyIterationsException = org.apache.commons.math3.exception.TooManyIterationsException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using TooManyIterationsException = mathlib.exception.TooManyIterationsException;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Solves a linear problem using the "Two-Phase Simplex" method.
@@ -32,12 +32,12 @@ namespace org.apache.commons.math3.optim.linear
 	/// <ul>
 	///   <li>objective function: <seealso cref="LinearObjectiveFunction"/> - mandatory</li>
 	///   <li>linear constraints <seealso cref="LinearConstraintSet"/> - mandatory</li>
-	///   <li>type of optimization: <seealso cref="org.apache.commons.math3.optim.nonlinear.scalar.GoalType GoalType"/>
-	///    - optional, default: <seealso cref="org.apache.commons.math3.optim.nonlinear.scalar.GoalType#MINIMIZE MINIMIZE"/></li>
+	///   <li>type of optimization: <seealso cref="mathlib.optim.nonlinear.scalar.GoalType GoalType"/>
+	///    - optional, default: <seealso cref="mathlib.optim.nonlinear.scalar.GoalType#MINIMIZE MINIMIZE"/></li>
 	///   <li>whether to allow negative values as solution: <seealso cref="NonNegativeConstraint"/> - optional, default: true</li>
 	///   <li>pivot selection rule: <seealso cref="PivotSelectionRule"/> - optional, default <seealso cref="PivotSelectionRule#DANTZIG"/></li>
 	///   <li>callback for the best solution: <seealso cref="SolutionCallback"/> - optional</li>
-	///   <li>maximum number of iterations: <seealso cref="org.apache.commons.math3.optim.MaxIter"/> - optional, default: <seealso cref="Integer#MAX_VALUE"/></li>
+	///   <li>maximum number of iterations: <seealso cref="mathlib.optim.MaxIter"/> - optional, default: <seealso cref="Integer#MAX_VALUE"/></li>
 	/// </ul>
 	/// <p>
 	/// <b>Note:</b> Depending on the problem definition, the default convergence criteria
@@ -158,7 +158,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <returns> {@inheritDoc} </returns>
 		/// <exception cref="TooManyIterationsException"> if the maximal number of iterations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyIterationsException
+//ORIGINAL LINE: @Override public mathlib.optim.PointValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyIterationsException
 		public override PointValuePair optimize(params OptimizationData[] optData)
 		{
 			// Set up base class and perform computation.
@@ -285,7 +285,7 @@ namespace org.apache.commons.math3.optim.linear
 				if (Precision.compareTo(entry, 0d, cutOff) > 0)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double ratio = org.apache.commons.math3.util.FastMath.abs(rhs / entry);
+//ORIGINAL LINE: final double ratio = mathlib.util.FastMath.abs(rhs / entry);
 					double ratio = FastMath.abs(rhs / entry);
 					// check if the entry is strictly equal to the current min ratio
 					// do not use a ulp/epsilon check
@@ -363,7 +363,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <exception cref="TooManyIterationsException"> if the allowed number of iterations has been exhausted. </exception>
 		/// <exception cref="UnboundedSolutionException"> if the model is found not to have a bounded solution. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void doIteration(final SimplexTableau tableau) throws org.apache.commons.math3.exception.TooManyIterationsException, UnboundedSolutionException
+//ORIGINAL LINE: protected void doIteration(final SimplexTableau tableau) throws mathlib.exception.TooManyIterationsException, UnboundedSolutionException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual void doIteration(SimplexTableau tableau)
 		{
@@ -388,7 +388,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <exception cref="UnboundedSolutionException"> if the model is found not to have a bounded solution. </exception>
 		/// <exception cref="NoFeasibleSolutionException"> if there is no feasible solution? </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void solvePhase1(final SimplexTableau tableau) throws org.apache.commons.math3.exception.TooManyIterationsException, UnboundedSolutionException, NoFeasibleSolutionException
+//ORIGINAL LINE: protected void solvePhase1(final SimplexTableau tableau) throws mathlib.exception.TooManyIterationsException, UnboundedSolutionException, NoFeasibleSolutionException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual void solvePhase1(SimplexTableau tableau)
 		{
@@ -414,7 +414,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointValuePair doOptimize() throws org.apache.commons.math3.exception.TooManyIterationsException, UnboundedSolutionException, NoFeasibleSolutionException
+//ORIGINAL LINE: @Override public mathlib.optim.PointValuePair doOptimize() throws mathlib.exception.TooManyIterationsException, UnboundedSolutionException, NoFeasibleSolutionException
 		public override PointValuePair doOptimize()
 		{
 
@@ -448,7 +448,7 @@ namespace org.apache.commons.math3.optim.linear
 			// (e.g. with very small constraint coefficients), the solver might actually
 			// find a non-valid solution (with negative coefficients).
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointValuePair solution = tableau.getSolution();
+//ORIGINAL LINE: final mathlib.optim.PointValuePair solution = tableau.getSolution();
 			PointValuePair solution = tableau.Solution;
 			if (RestrictedToNonNegative)
 			{

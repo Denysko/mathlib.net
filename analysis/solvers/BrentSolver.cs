@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
 
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// This class implements the <a href="http://mathworld.wolfram.com/BrentsMethod.html">
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected double doSolve() throws org.apache.commons.math3.exception.NoBracketingException, org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override protected double doSolve() throws mathlib.exception.NoBracketingException, mathlib.exception.TooManyEvaluationsException, mathlib.exception.NumberIsTooLargeException
 		protected internal override double doSolve()
 		{
 			double min = Min;
@@ -174,7 +174,7 @@ namespace org.apache.commons.math3.analysis.solvers
 				}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double tol = 2 * eps * org.apache.commons.math3.util.FastMath.abs(b) + t;
+//ORIGINAL LINE: final double tol = 2 * eps * mathlib.util.FastMath.abs(b) + t;
 				double tol = 2 * eps * FastMath.abs(b) + t;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double m = 0.5 * (c - b);

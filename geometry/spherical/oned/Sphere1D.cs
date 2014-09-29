@@ -17,11 +17,11 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.spherical.oned
+namespace mathlib.geometry.spherical.oned
 {
 
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// This class implements a one-dimensional sphere (i.e. a circle).
@@ -79,7 +79,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <returns> nothing </returns>
 		/// <exception cref="NoSubSpaceException"> in all cases </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.Space getSubSpace() throws NoSubSpaceException
+//ORIGINAL LINE: public mathlib.geometry.Space getSubSpace() throws NoSubSpaceException
 		public virtual Space SubSpace
 		{
 			get

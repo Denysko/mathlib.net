@@ -19,7 +19,7 @@
 ///      Classes providing hypothesis testing.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
 }

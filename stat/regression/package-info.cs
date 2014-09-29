@@ -19,7 +19,7 @@
 ///      Statistical routines involving multivariate data.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
 }

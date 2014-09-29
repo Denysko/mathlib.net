@@ -15,26 +15,26 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using BigFraction = org.apache.commons.math3.fraction.BigFraction;
-	using Fraction = org.apache.commons.math3.fraction.Fraction;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using mathlib;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using BigFraction = mathlib.fraction.BigFraction;
+	using Fraction = mathlib.fraction.Fraction;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// A collection of static methods that operate on or return matrices.
@@ -97,8 +97,8 @@ namespace org.apache.commons.math3.linear
 		/// <seealso cref= #createFieldMatrix(FieldElement[][])
 		/// @since 2.0 </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.FieldElement<T>> FieldMatrix<T> createFieldMatrix(final org.apache.commons.math3.Field<T> field, final int rows, final int columns)
-		public static FieldMatrix<T> createFieldMatrix<T>(Field<T> field, int rows, int columns) where T : org.apache.commons.math3.FieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.FieldElement<T>> FieldMatrix<T> createFieldMatrix(final mathlib.Field<T> field, final int rows, final int columns)
+		public static FieldMatrix<T> createFieldMatrix<T>(Field<T> field, int rows, int columns) where T : mathlib.FieldElement<T>
 		{
 			return (rows * columns <= 4096) ? new Array2DRowFieldMatrix<T>(field, rows, columns) : new BlockFieldMatrix<T>(field, rows, columns);
 		}
@@ -115,7 +115,7 @@ namespace org.apache.commons.math3.linear
 		/// </summary>
 		/// <param name="data"> input array </param>
 		/// <returns>  RealMatrix containing the values of the array </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if {@code data} is not rectangular (not all rows have the same length). </exception>
 		/// <exception cref="NoDataException"> if a row or column is empty. </exception>
 		/// <exception cref="NullArgumentException"> if either {@code data} or {@code data[0]}
@@ -123,7 +123,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if {@code data} is not rectangular. </exception>
 		/// <seealso cref= #createRealMatrix(int, int) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static RealMatrix createRealMatrix(double[][] data) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public static RealMatrix createRealMatrix(double[][] data) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException
 		public static RealMatrix createRealMatrix(double[][] data)
 		{
 			if (data == null || data[0] == null)
@@ -144,7 +144,7 @@ namespace org.apache.commons.math3.linear
 		/// @param <T> the type of the field elements </param>
 		/// <param name="data"> input array </param>
 		/// <returns> a matrix containing the values of the array. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if {@code data} is not rectangular (not all rows have the same length). </exception>
 		/// <exception cref="NoDataException"> if a row or column is empty. </exception>
 		/// <exception cref="NullArgumentException"> if either {@code data} or {@code data[0]}
@@ -152,8 +152,8 @@ namespace org.apache.commons.math3.linear
 		/// <seealso cref= #createFieldMatrix(Field, int, int)
 		/// @since 2.0 </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.FieldElement<T>> FieldMatrix<T> createFieldMatrix(T[][] data) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
-		public static FieldMatrix<T> createFieldMatrix<T>(T[][] data) where T : org.apache.commons.math3.FieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.FieldElement<T>> FieldMatrix<T> createFieldMatrix(T[][] data) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
+		public static FieldMatrix<T> createFieldMatrix<T>(T[][] data) where T : mathlib.FieldElement<T>
 		{
 			if (data == null || data[0] == null)
 			{
@@ -191,8 +191,8 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="IllegalArgumentException"> if dimension is not positive
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.FieldElement<T>> FieldMatrix<T> createFieldIdentityMatrix(final org.apache.commons.math3.Field<T> field, final int dimension)
-		public static FieldMatrix<T> createFieldIdentityMatrix<T>(Field<T> field, int dimension) where T : org.apache.commons.math3.FieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.FieldElement<T>> FieldMatrix<T> createFieldIdentityMatrix(final mathlib.Field<T> field, final int dimension)
+		public static FieldMatrix<T> createFieldIdentityMatrix<T>(Field<T> field, int dimension) where T : mathlib.FieldElement<T>
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final T zero = field.getZero();
@@ -201,7 +201,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final T one = field.getOne();
 			T one = field.One;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[][] d = org.apache.commons.math3.util.MathArrays.buildArray(field, dimension, dimension);
+//ORIGINAL LINE: final T[][] d = mathlib.util.MathArrays.buildArray(field, dimension, dimension);
 			T[][] d = MathArrays.buildArray(field, dimension, dimension);
 			for (int row = 0; row < dimension; row++)
 			{
@@ -244,8 +244,8 @@ namespace org.apache.commons.math3.linear
 		/// <returns> diagonal matrix
 		/// @since 2.0 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.FieldElement<T>> FieldMatrix<T> createFieldDiagonalMatrix(final T[] diagonal)
-		public static FieldMatrix<T> createFieldDiagonalMatrix<T>(T[] diagonal) where T : org.apache.commons.math3.FieldElement<T>
+//ORIGINAL LINE: public static <T extends mathlib.FieldElement<T>> FieldMatrix<T> createFieldDiagonalMatrix(final T[] diagonal)
+		public static FieldMatrix<T> createFieldDiagonalMatrix<T>(T[] diagonal) where T : mathlib.FieldElement<T>
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final FieldMatrix<T> m = createFieldMatrix(diagonal[0].getField(), diagonal.length, diagonal.length);
@@ -265,7 +265,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NoDataException"> if {@code data} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code data} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static RealVector createRealVector(double[] data) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static RealVector createRealVector(double[] data) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 		public static RealVector createRealVector(double[] data)
 		{
 			if (data == null)
@@ -285,9 +285,9 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NullArgumentException"> if {@code data} is {@code null}. </exception>
 		/// <exception cref="ZeroException"> if {@code data} has 0 elements </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.FieldElement<T>> FieldVector<T> createFieldVector(final T[] data) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public static <T extends mathlib.FieldElement<T>> FieldVector<T> createFieldVector(final T[] data) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException, mathlib.exception.ZeroException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static FieldVector<T> createFieldVector<T>(T[] data) where T : org.apache.commons.math3.FieldElement<T>
+		public static FieldVector<T> createFieldVector<T>(T[] data) where T : mathlib.FieldElement<T>
 		{
 			if (data == null)
 			{
@@ -309,7 +309,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NoDataException"> if {@code rowData} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code rowData} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static RealMatrix createRowRealMatrix(double[] rowData) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static RealMatrix createRowRealMatrix(double[] rowData) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 		public static RealMatrix createRowRealMatrix(double[] rowData)
 		{
 			if (rowData == null)
@@ -339,9 +339,9 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NoDataException"> if {@code rowData} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code rowData} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.FieldElement<T>> FieldMatrix<T> createRowFieldMatrix(final T[] rowData) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static <T extends mathlib.FieldElement<T>> FieldMatrix<T> createRowFieldMatrix(final T[] rowData) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static FieldMatrix<T> createRowFieldMatrix<T>(T[] rowData) where T : org.apache.commons.math3.FieldElement<T>
+		public static FieldMatrix<T> createRowFieldMatrix<T>(T[] rowData) where T : mathlib.FieldElement<T>
 		{
 			if (rowData == null)
 			{
@@ -373,7 +373,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NoDataException"> if {@code columnData} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code columnData} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static RealMatrix createColumnRealMatrix(double[] columnData) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static RealMatrix createColumnRealMatrix(double[] columnData) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 		public static RealMatrix createColumnRealMatrix(double[] columnData)
 		{
 			if (columnData == null)
@@ -403,9 +403,9 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NoDataException"> if {@code data} is empty. </exception>
 		/// <exception cref="NullArgumentException"> if {@code columnData} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static <T extends org.apache.commons.math3.FieldElement<T>> FieldMatrix<T> createColumnFieldMatrix(final T[] columnData) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static <T extends mathlib.FieldElement<T>> FieldMatrix<T> createColumnFieldMatrix(final T[] columnData) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		public static FieldMatrix<T> createColumnFieldMatrix<T>(T[] columnData) where T : org.apache.commons.math3.FieldElement<T>
+		public static FieldMatrix<T> createColumnFieldMatrix<T>(T[] columnData) where T : mathlib.FieldElement<T>
 		{
 			if (columnData == null)
 			{
@@ -514,7 +514,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if {@code row} or {@code column} is not
 		/// a valid index. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkMatrixIndex(final AnyMatrix m, final int row, final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public static void checkMatrixIndex(final AnyMatrix m, final int row, final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkMatrixIndex(AnyMatrix m, int row, int column)
 		{
@@ -529,7 +529,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="row"> Row index to check. </param>
 		/// <exception cref="OutOfRangeException"> if {@code row} is not a valid index. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkRowIndex(final AnyMatrix m, final int row) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public static void checkRowIndex(final AnyMatrix m, final int row) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkRowIndex(AnyMatrix m, int row)
 		{
@@ -546,7 +546,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="column"> Column index to check. </param>
 		/// <exception cref="OutOfRangeException"> if {@code column} is not a valid index. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkColumnIndex(final AnyMatrix m, final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public static void checkColumnIndex(final AnyMatrix m, final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkColumnIndex(AnyMatrix m, int column)
 		{
@@ -569,7 +569,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooSmallException"> if {@code endRow < startRow} or
 		/// {@code endColumn < startColumn}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkSubMatrixIndex(final AnyMatrix m, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public static void checkSubMatrixIndex(final AnyMatrix m, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkSubMatrixIndex(AnyMatrix m, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -603,7 +603,7 @@ namespace org.apache.commons.math3.linear
 		/// length). </exception>
 		/// <exception cref="OutOfRangeException"> if row or column selections are not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkSubMatrixIndex(final AnyMatrix m, final int[] selectedRows, final int[] selectedColumns) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public static void checkSubMatrixIndex(final AnyMatrix m, final int[] selectedRows, final int[] selectedColumns) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkSubMatrixIndex(AnyMatrix m, int[] selectedRows, int[] selectedColumns)
 		{
@@ -678,7 +678,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if matrices are not multiplication
 		/// compatible. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void checkMultiplicationCompatible(final AnyMatrix left, final AnyMatrix right) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static void checkMultiplicationCompatible(final AnyMatrix left, final AnyMatrix right) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkMultiplicationCompatible(AnyMatrix left, AnyMatrix right)
 		{
@@ -694,7 +694,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="m"> Matrix to convert. </param>
 		/// <returns> the converted matrix. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static Array2DRowRealMatrix fractionMatrixToRealMatrix(final FieldMatrix<org.apache.commons.math3.fraction.Fraction> m)
+//ORIGINAL LINE: public static Array2DRowRealMatrix fractionMatrixToRealMatrix(final FieldMatrix<mathlib.fraction.Fraction> m)
 		public static Array2DRowRealMatrix fractionMatrixToRealMatrix(FieldMatrix<Fraction> m)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -753,7 +753,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="m"> Matrix to convert. </param>
 		/// <returns> the converted matrix. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static Array2DRowRealMatrix bigFractionMatrixToRealMatrix(final FieldMatrix<org.apache.commons.math3.fraction.BigFraction> m)
+//ORIGINAL LINE: public static Array2DRowRealMatrix bigFractionMatrixToRealMatrix(final FieldMatrix<mathlib.fraction.BigFraction> m)
 		public static Array2DRowRealMatrix bigFractionMatrixToRealMatrix(FieldMatrix<BigFraction> m)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1081,7 +1081,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="MathArithmeticException"> if the absolute value of one of the diagonal
 		/// coefficient of {@code rm} is lower than <seealso cref="Precision#SAFE_MIN"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void solveLowerTriangularSystem(RealMatrix rm, RealVector b) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathArithmeticException, NonSquareMatrixException
+//ORIGINAL LINE: public static void solveLowerTriangularSystem(RealMatrix rm, RealVector b) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathArithmeticException, NonSquareMatrixException
 		public static void solveLowerTriangularSystem(RealMatrix rm, RealVector b)
 		{
 			if ((rm == null) || (b == null) || (rm.RowDimension != b.Dimension))
@@ -1129,7 +1129,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="MathArithmeticException"> if the absolute value of one of the diagonal
 		/// coefficient of {@code rm} is lower than <seealso cref="Precision#SAFE_MIN"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void solveUpperTriangularSystem(RealMatrix rm, RealVector b) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathArithmeticException, NonSquareMatrixException
+//ORIGINAL LINE: public static void solveUpperTriangularSystem(RealMatrix rm, RealVector b) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathArithmeticException, NonSquareMatrixException
 		public static void solveUpperTriangularSystem(RealMatrix rm, RealVector b)
 		{
 			if ((rm == null) || (b == null) || (rm.RowDimension != b.Dimension))
@@ -1291,7 +1291,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NonSquareMatrixException"> if matrix is not square
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static RealMatrix inverse(RealMatrix matrix) throws org.apache.commons.math3.exception.NullArgumentException, SingularMatrixException, NonSquareMatrixException
+//ORIGINAL LINE: public static RealMatrix inverse(RealMatrix matrix) throws mathlib.exception.NullArgumentException, SingularMatrixException, NonSquareMatrixException
 		public static RealMatrix inverse(RealMatrix matrix)
 		{
 			return inverse(matrix, 0);
@@ -1311,7 +1311,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NonSquareMatrixException"> if matrix is not square
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static RealMatrix inverse(RealMatrix matrix, double threshold) throws org.apache.commons.math3.exception.NullArgumentException, SingularMatrixException, NonSquareMatrixException
+//ORIGINAL LINE: public static RealMatrix inverse(RealMatrix matrix, double threshold) throws mathlib.exception.NullArgumentException, SingularMatrixException, NonSquareMatrixException
 		public static RealMatrix inverse(RealMatrix matrix, double threshold)
 		{
 

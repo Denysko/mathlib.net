@@ -19,7 +19,7 @@
 ///        Correlations/Covariance computations.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.stat.correlation
+namespace mathlib.stat.correlation
 {
 
 }

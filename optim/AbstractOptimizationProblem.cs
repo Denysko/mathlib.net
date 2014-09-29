@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using TooManyIterationsException = org.apache.commons.math3.exception.TooManyIterationsException;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using TooManyIterationsException = mathlib.exception.TooManyIterationsException;
+	using Incrementor = mathlib.util.Incrementor;
 
 	/// <summary>
 	/// Base class for implementing optimization problems. It contains the boiler-plate code

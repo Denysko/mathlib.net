@@ -24,7 +24,7 @@ namespace mathlib.complex
 
 	/// <summary>
 	/// Static implementations of common
-	/// <seealso cref="org.apache.commons.math3.complex.Complex"/> utilities functions.
+	/// <seealso cref="mathlib.complex.Complex"/> utilities functions.
 	/// 
 	/// @version $Id: ComplexUtils.java 1416643 2012-12-03 19:37:14Z tn $
 	/// </summary>

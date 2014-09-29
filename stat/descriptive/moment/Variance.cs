@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Computes the variance of the available values.  By default, the unbiased
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code Variance} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Variance(Variance original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Variance(Variance original) throws mathlib.exception.NullArgumentException
 		public Variance(Variance original)
 		{
 			copy(original, this);
@@ -251,7 +251,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <returns> the variance of the values or Double.NaN if length = 0 </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values)
 		{
@@ -282,7 +282,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int begin, int length)
 		{
@@ -348,7 +348,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double[] weights, int begin, int length)
 		{
@@ -410,7 +410,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double[] weights)
 		{
@@ -443,7 +443,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double mean, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double mean, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double mean, int begin, int length)
 		{
@@ -506,7 +506,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <returns> the variance of the values or Double.NaN if the array is empty </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double mean) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double mean) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double mean)
 		{
@@ -558,7 +558,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final double mean, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final double mean, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double[] weights, double mean, int begin, int length)
 		{
@@ -643,7 +643,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final double mean) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final double mean) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double[] weights, double mean)
 		{
@@ -683,7 +683,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> Variance to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(Variance source, Variance dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(Variance source, Variance dest) throws mathlib.exception.NullArgumentException
 		public static void copy(Variance source, Variance dest)
 		{
 			MathUtils.checkNotNull(source);

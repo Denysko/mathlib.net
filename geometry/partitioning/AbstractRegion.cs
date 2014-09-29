@@ -17,13 +17,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using mathlib.geometry;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// Abstract class for all regions, independently of geometry type or dimension.
@@ -33,7 +33,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: AbstractRegion.java 1566358 2014-02-09 19:17:55Z luc $
 	/// @since 3.0 </param>
-	public abstract class AbstractRegion<S, T> : Region<S> where S : org.apache.commons.math3.geometry.Space where T : org.apache.commons.math3.geometry.Space
+	public abstract class AbstractRegion<S, T> : Region<S> where S : mathlib.geometry.Space where T : mathlib.geometry.Space
 	{
 
 		/// <summary>
@@ -416,7 +416,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// @since 3.3
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public BoundaryProjection<S> projectToBoundary(final org.apache.commons.math3.geometry.Point<S> point)
+//ORIGINAL LINE: public BoundaryProjection<S> projectToBoundary(final mathlib.geometry.Point<S> point)
 		public virtual BoundaryProjection<S> projectToBoundary(Point<S> point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -432,7 +432,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <returns> a code representing the point status: either {@link
 		/// Location#INSIDE}, <seealso cref="Location#OUTSIDE"/> or <seealso cref="Location#BOUNDARY"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.Region_Location checkPoint(final org.apache.commons.math3.geometry.Vector<S> point)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.Region_Location checkPoint(final mathlib.geometry.Vector<S> point)
 		public virtual Region_Location checkPoint(Vector<S> point)
 		{
 			return checkPoint((Point<S>) point);
@@ -441,7 +441,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.Region_Location checkPoint(final org.apache.commons.math3.geometry.Point<S> point)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.Region_Location checkPoint(final mathlib.geometry.Point<S> point)
 		public virtual Region_Location checkPoint(Point<S> point)
 		{
 			return checkPoint(tree, point);
@@ -455,7 +455,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// Region.Location#INSIDE INSIDE}, {@link Region.Location#OUTSIDE
 		/// OUTSIDE} or <seealso cref="Region.Location#BOUNDARY BOUNDARY"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.geometry.partitioning.Region_Location checkPoint(final BSPTree<S> node, final org.apache.commons.math3.geometry.Vector<S> point)
+//ORIGINAL LINE: protected mathlib.geometry.partitioning.Region_Location checkPoint(final BSPTree<S> node, final mathlib.geometry.Vector<S> point)
 		protected internal virtual Region_Location checkPoint(BSPTree<S> node, Vector<S> point)
 		{
 			return checkPoint(node, (Point<S>) point);
@@ -469,7 +469,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// Region.Location#INSIDE INSIDE}, {@link Region.Location#OUTSIDE
 		/// OUTSIDE} or <seealso cref="Region.Location#BOUNDARY BOUNDARY"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.geometry.partitioning.Region_Location checkPoint(final BSPTree<S> node, final org.apache.commons.math3.geometry.Point<S> point)
+//ORIGINAL LINE: protected mathlib.geometry.partitioning.Region_Location checkPoint(final BSPTree<S> node, final mathlib.geometry.Point<S> point)
 		protected internal virtual Region_Location checkPoint(BSPTree<S> node, Point<S> point)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -483,10 +483,10 @@ namespace org.apache.commons.math3.geometry.partitioning
 
 			// the point is on a cut-sub-hyperplane, is it on a boundary ?
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.Region_Location minusCode = checkPoint(cell.getMinus(), point);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.Region_Location minusCode = checkPoint(cell.getMinus(), point);
 			Region_Location minusCode = checkPoint(cell.Minus, point);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.Region_Location plusCode = checkPoint(cell.getPlus(), point);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.Region_Location plusCode = checkPoint(cell.getPlus(), point);
 			Region_Location plusCode = checkPoint(cell.Plus, point);
 			return (minusCode == plusCode) ? minusCode : Region_Location.BOUNDARY;
 
@@ -513,7 +513,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// at each internal node.
 		/// </p>
 		/// </summary>
-		private class BoundaryBuilder<S> : BSPTreeVisitor<S> where S : org.apache.commons.math3.geometry.Space
+		private class BoundaryBuilder<S> : BSPTreeVisitor<S> where S : mathlib.geometry.Space
 		{
 
 			/// <summary>
@@ -721,13 +721,13 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// Set the barycenter of the instance. </summary>
 		/// <param name="barycenter"> barycenter of the instance </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected void setBarycenter(final org.apache.commons.math3.geometry.Vector<S> barycenter)
+//ORIGINAL LINE: protected void setBarycenter(final mathlib.geometry.Vector<S> barycenter)
 
 		/// <summary>
 		/// Set the barycenter of the instance. </summary>
 		/// <param name="barycenter"> barycenter of the instance </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected void setBarycenter(final org.apache.commons.math3.geometry.Point<S> barycenter)
+//ORIGINAL LINE: protected void setBarycenter(final mathlib.geometry.Point<S> barycenter)
 		protected internal virtual Point<S> Barycenter
 		{
 			set

@@ -16,19 +16,19 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
 
-	using org.apache.commons.math3;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArithmeticUtils = org.apache.commons.math3.util.ArithmeticUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using mathlib;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArithmeticUtils = mathlib.util.ArithmeticUtils;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Representation of a rational number without any overflow. This class is
@@ -196,7 +196,7 @@ namespace org.apache.commons.math3.fraction
 		/// <param name="value"> the double value to convert to a fraction. </param>
 		/// <exception cref="MathIllegalArgumentException"> if value is NaN or infinite </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BigFraction(final double value) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public BigFraction(final double value) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public BigFraction(double value)
 		{
@@ -349,7 +349,7 @@ namespace org.apache.commons.math3.fraction
 //ORIGINAL LINE: final double r1 = 1.0 / (r0 - a0);
 				double r1 = 1.0 / (r0 - a0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long a1 = (long) org.apache.commons.math3.util.FastMath.floor(r1);
+//ORIGINAL LINE: final long a1 = (long) mathlib.util.FastMath.floor(r1);
 				long a1 = (long) FastMath.floor(r1);
 				p2 = (a1 * p1) + p0;
 				q2 = (a1 * q1) + q0;
@@ -534,7 +534,7 @@ namespace org.apache.commons.math3.fraction
 		/// <exception cref="NullArgumentException">
 		///             if the <seealso cref="BigInteger"/> is <code>null</code>. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public BigFraction add(final java.math.BigInteger bg) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public BigFraction add(final java.math.BigInteger bg) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual BigFraction add(System.Numerics.BigInteger bg)
 		{

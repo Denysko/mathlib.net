@@ -18,25 +18,25 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using EigenDecomposition = org.apache.commons.math3.linear.EigenDecomposition;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using org.apache.commons.math3.optimization;
-	using MersenneTwister = org.apache.commons.math3.random.MersenneTwister;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using EigenDecomposition = mathlib.linear.EigenDecomposition;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using mathlib.optimization;
+	using MersenneTwister = mathlib.random.MersenneTwister;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// <p>An implementation of the active Covariance Matrix Adaptation Evolution Strategy (CMA-ES)
@@ -426,7 +426,7 @@ namespace org.apache.commons.math3.optimization.direct
 			/// <exception cref="NotPositiveException"> if any of the array entries is smaller
 			/// than zero. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Sigma(double[] s) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public Sigma(double[] s) throws mathlib.exception.NotPositiveException
 			public Sigma(double[] s)
 			{
 				for (int i = 0; i < s.Length; i++)
@@ -470,7 +470,7 @@ namespace org.apache.commons.math3.optimization.direct
 			/// <param name="size"> Population size. </param>
 			/// <exception cref="NotStrictlyPositiveException"> if {@code size <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PopulationSize(int size) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public PopulationSize(int size) throws mathlib.exception.NotStrictlyPositiveException
 			public PopulationSize(int size)
 			{
 				if (size <= 0)
@@ -498,7 +498,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="goalType"> Optimization type. </param>
 		/// <param name="optData"> Optimization data. The following data will be looked for:
 		/// <ul>
-		///  <li><seealso cref="org.apache.commons.math3.optimization.InitialGuess InitialGuess"/></li>
+		///  <li><seealso cref="mathlib.optimization.InitialGuess InitialGuess"/></li>
 		///  <li><seealso cref="Sigma"/></li>
 		///  <li><seealso cref="PopulationSize"/></li>
 		/// </ul> </param>
@@ -542,10 +542,10 @@ namespace org.apache.commons.math3.optimization.direct
 			{
 				// Generate and evaluate lambda offspring
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix arz = randn1(dimension, lambda);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix arz = randn1(dimension, lambda);
 				RealMatrix arz = randn1(dimension, lambda);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix arx = zeros(dimension, lambda);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix arx = zeros(dimension, lambda);
 				RealMatrix arx = zeros(dimension, lambda);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] fitness = new double[lambda];
@@ -587,17 +587,17 @@ namespace org.apache.commons.math3.optimization.direct
 				int[] arindex = sortedIndices(fitness);
 				// Calculate new xmean, this is selection and recombination
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix xold = xmean;
+//ORIGINAL LINE: final mathlib.linear.RealMatrix xold = xmean;
 				RealMatrix xold = xmean; // for speed up of Eq. (2) and (3)
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix bestArx = selectColumns(arx, org.apache.commons.math3.util.MathArrays.copyOf(arindex, mu));
+//ORIGINAL LINE: final mathlib.linear.RealMatrix bestArx = selectColumns(arx, mathlib.util.MathArrays.copyOf(arindex, mu));
 				RealMatrix bestArx = selectColumns(arx, MathArrays.copyOf(arindex, mu));
 				xmean = bestArx.multiply(weights);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix bestArz = selectColumns(arz, org.apache.commons.math3.util.MathArrays.copyOf(arindex, mu));
+//ORIGINAL LINE: final mathlib.linear.RealMatrix bestArz = selectColumns(arz, mathlib.util.MathArrays.copyOf(arindex, mu));
 				RealMatrix bestArz = selectColumns(arz, MathArrays.copyOf(arindex, mu));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix zmean = bestArz.multiply(weights);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix zmean = bestArz.multiply(weights);
 				RealMatrix zmean = bestArz.multiply(weights);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final boolean hsig = updateEvolutionPaths(zmean, xold);
@@ -681,7 +681,7 @@ namespace org.apache.commons.math3.optimization.direct
 				if (ConvergenceChecker != null)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.PointValuePair current = new org.apache.commons.math3.optimization.PointValuePair(bestArx.getColumn(0), isMinimize ? bestFitness : -bestFitness);
+//ORIGINAL LINE: final mathlib.optimization.PointValuePair current = new mathlib.optimization.PointValuePair(bestArx.getColumn(0), isMinimize ? bestFitness : -bestFitness);
 					PointValuePair current = new PointValuePair(bestArx.getColumn(0), isMinimize ? bestFitness : -bestFitness);
 					if (lastResult != null && ConvergenceChecker.converged(iterations, current, lastResult))
 					{
@@ -803,7 +803,7 @@ namespace org.apache.commons.math3.optimization.direct
 				sigmaArray[i][0] = inputSigma == null ? 0.3 : inputSigma[i];
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix insigma = new org.apache.commons.math3.linear.Array2DRowRealMatrix(sigmaArray, false);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix insigma = new mathlib.linear.Array2DRowRealMatrix(sigmaArray, false);
 			RealMatrix insigma = new Array2DRowRealMatrix(sigmaArray, false);
 			sigma = max(insigma); // overall standard deviation
 
@@ -869,7 +869,7 @@ namespace org.apache.commons.math3.optimization.direct
 			ps = ps.scalarMultiply(1 - cs).add(B.multiply(zmean).scalarMultiply(FastMath.sqrt(cs * (2 - cs) * mueff)));
 			normps = ps.FrobeniusNorm;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean hsig = normps / org.apache.commons.math3.util.FastMath.sqrt(1 - org.apache.commons.math3.util.FastMath.pow(1 - cs, 2 * iterations)) / chiN < 1.4 + 2 / ((double) dimension + 1);
+//ORIGINAL LINE: final boolean hsig = normps / mathlib.util.FastMath.sqrt(1 - mathlib.util.FastMath.pow(1 - cs, 2 * iterations)) / chiN < 1.4 + 2 / ((double) dimension + 1);
 			bool hsig = normps / FastMath.sqrt(1 - FastMath.pow(1 - cs, 2 * iterations)) / chiN < 1.4 + 2 / ((double) dimension + 1);
 			pc = pc.scalarMultiply(1 - cc);
 			if (hsig)
@@ -886,7 +886,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="bestArz"> Fitness-sorted matrix of the gaussian random values of the
 		/// current offspring. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void updateCovarianceDiagonalOnly(boolean hsig, final org.apache.commons.math3.linear.RealMatrix bestArz)
+//ORIGINAL LINE: private void updateCovarianceDiagonalOnly(boolean hsig, final mathlib.linear.RealMatrix bestArz)
 		private void updateCovarianceDiagonalOnly(bool hsig, RealMatrix bestArz)
 		{
 			// minor correction if hsig==false
@@ -915,17 +915,17 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="arindex"> Indices indicating the fitness-order of the current offspring. </param>
 		/// <param name="xold"> xmean matrix of the previous generation. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void updateCovariance(boolean hsig, final org.apache.commons.math3.linear.RealMatrix bestArx, final org.apache.commons.math3.linear.RealMatrix arz, final int[] arindex, final org.apache.commons.math3.linear.RealMatrix xold)
+//ORIGINAL LINE: private void updateCovariance(boolean hsig, final mathlib.linear.RealMatrix bestArx, final mathlib.linear.RealMatrix arz, final int[] arindex, final mathlib.linear.RealMatrix xold)
 		private void updateCovariance(bool hsig, RealMatrix bestArx, RealMatrix arz, int[] arindex, RealMatrix xold)
 		{
 			double negccov = 0;
 			if (ccov1 + ccovmu > 0)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix arpos = bestArx.subtract(repmat(xold, 1, mu)).scalarMultiply(1 / sigma);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix arpos = bestArx.subtract(repmat(xold, 1, mu)).scalarMultiply(1 / sigma);
 				RealMatrix arpos = bestArx.subtract(repmat(xold, 1, mu)).scalarMultiply(1 / sigma); // mu difference vectors
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix roneu = pc.multiply(pc.transpose()).scalarMultiply(ccov1);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix roneu = pc.multiply(pc.transpose()).scalarMultiply(ccov1);
 				RealMatrix roneu = pc.multiply(pc.transpose()).scalarMultiply(ccov1); // rank one update
 				// minor correction if hsig==false
 				double oldFac = hsig ? 0 : ccov1 * cc * (2 - cc);
@@ -949,20 +949,20 @@ namespace org.apache.commons.math3.optimization.direct
 //ORIGINAL LINE: final int[] idxnorms = sortedIndices(arnorms.getRow(0));
 					int[] idxnorms = sortedIndices(arnorms.getRow(0));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix arnormsSorted = selectColumns(arnorms, idxnorms);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix arnormsSorted = selectColumns(arnorms, idxnorms);
 					RealMatrix arnormsSorted = selectColumns(arnorms, idxnorms);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int[] idxReverse = reverse(idxnorms);
 					int[] idxReverse = reverse(idxnorms);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix arnormsReverse = selectColumns(arnorms, idxReverse);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix arnormsReverse = selectColumns(arnorms, idxReverse);
 					RealMatrix arnormsReverse = selectColumns(arnorms, idxReverse);
 					arnorms = divide(arnormsReverse, arnormsSorted);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int[] idxInv = inverse(idxnorms);
 					int[] idxInv = inverse(idxnorms);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix arnormsInv = selectColumns(arnorms, idxInv);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix arnormsInv = selectColumns(arnorms, idxInv);
 					RealMatrix arnormsInv = selectColumns(arnorms, idxInv);
 					// check and set learning rate negccov
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -974,10 +974,10 @@ namespace org.apache.commons.math3.optimization.direct
 					}
 					arzneg = times(arzneg, repmat(arnormsInv, dimension, 1));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix artmp = BD.multiply(arzneg);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix artmp = BD.multiply(arzneg);
 					RealMatrix artmp = BD.multiply(arzneg);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix Cneg = artmp.multiply(diag(weights)).multiply(artmp.transpose());
+//ORIGINAL LINE: final mathlib.linear.RealMatrix Cneg = artmp.multiply(diag(weights)).multiply(artmp.transpose());
 					RealMatrix Cneg = artmp.multiply(diag(weights)).multiply(artmp.transpose());
 					oldFac += negalphaold * negccov;
 					C = C.scalarMultiply(oldFac).add(roneu).add(arpos.scalarMultiply(ccovmu + (1 - negalphaold) * negccov).multiply(times(repmat(weights, 1, dimension), arpos.transpose()))).subtract(Cneg.scalarMultiply(negccov)); // plus rank mu update -  plus rank one update -  regard old matrix
@@ -1003,7 +1003,7 @@ namespace org.apache.commons.math3.optimization.direct
 				C = triu(C, 0).add(triu(C, 1).transpose());
 				// enforce symmetry to prevent complex numbers
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.EigenDecomposition eig = new org.apache.commons.math3.linear.EigenDecomposition(C);
+//ORIGINAL LINE: final mathlib.linear.EigenDecomposition eig = new mathlib.linear.EigenDecomposition(C);
 				EigenDecomposition eig = new EigenDecomposition(C);
 				B = eig.V; // eigen decomposition, B==normalized eigenvectors
 				D = eig.D;
@@ -1272,7 +1272,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m"> Input matrix </param>
 		/// <returns> Matrix representing the element-wise logarithm of m. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix log(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix log(final mathlib.linear.RealMatrix m)
 		private static RealMatrix log(RealMatrix m)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1293,7 +1293,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m"> Input matrix. </param>
 		/// <returns> Matrix representing the element-wise square root of m. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix sqrt(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix sqrt(final mathlib.linear.RealMatrix m)
 		private static RealMatrix sqrt(RealMatrix m)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1314,7 +1314,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m"> Input matrix. </param>
 		/// <returns> Matrix representing the element-wise square of m. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix square(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix square(final mathlib.linear.RealMatrix m)
 		private static RealMatrix square(RealMatrix m)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1337,7 +1337,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="n"> Input matrix 2. </param>
 		/// <returns> the matrix where the elements of m and n are element-wise multiplied. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix times(final org.apache.commons.math3.linear.RealMatrix m, final org.apache.commons.math3.linear.RealMatrix n)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix times(final mathlib.linear.RealMatrix m, final mathlib.linear.RealMatrix n)
 		private static RealMatrix times(RealMatrix m, RealMatrix n)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1359,7 +1359,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="n"> Input matrix 2. </param>
 		/// <returns> Matrix where the elements of m and n are element-wise divided. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix divide(final org.apache.commons.math3.linear.RealMatrix m, final org.apache.commons.math3.linear.RealMatrix n)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix divide(final mathlib.linear.RealMatrix m, final mathlib.linear.RealMatrix n)
 		private static RealMatrix divide(RealMatrix m, RealMatrix n)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1381,7 +1381,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="cols"> Columns to select. </param>
 		/// <returns> Matrix representing the selected columns. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix selectColumns(final org.apache.commons.math3.linear.RealMatrix m, final int[] cols)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix selectColumns(final mathlib.linear.RealMatrix m, final int[] cols)
 		private static RealMatrix selectColumns(RealMatrix m, int[] cols)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1403,7 +1403,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="k"> Diagonal position. </param>
 		/// <returns> Upper triangular part of matrix. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix triu(final org.apache.commons.math3.linear.RealMatrix m, int k)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix triu(final mathlib.linear.RealMatrix m, int k)
 		private static RealMatrix triu(RealMatrix m, int k)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1424,7 +1424,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m"> Input matrix. </param>
 		/// <returns> Row matrix representing the sums of the rows. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix sumRows(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix sumRows(final mathlib.linear.RealMatrix m)
 		private static RealMatrix sumRows(RealMatrix m)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1448,7 +1448,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <returns> the diagonal n-by-n matrix if m is a column matrix or the column
 		/// matrix representing the diagonal if m is a n-by-n matrix. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix diag(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix diag(final mathlib.linear.RealMatrix m)
 		private static RealMatrix diag(RealMatrix m)
 		{
 			if (m.ColumnDimension == 1)
@@ -1487,7 +1487,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m2"> Target matrix. </param>
 		/// <param name="col2"> Target column. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static void copyColumn(final org.apache.commons.math3.linear.RealMatrix m1, int col1, org.apache.commons.math3.linear.RealMatrix m2, int col2)
+//ORIGINAL LINE: private static void copyColumn(final mathlib.linear.RealMatrix m1, int col1, mathlib.linear.RealMatrix m2, int col2)
 		private static void copyColumn(RealMatrix m1, int col1, RealMatrix m2, int col2)
 		{
 			for (int i = 0; i < m1.RowDimension; i++)
@@ -1547,7 +1547,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m"> Number of column replicates. </param>
 		/// <returns> a matrix which replicates the input matrix in both directions. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix repmat(final org.apache.commons.math3.linear.RealMatrix mat, int n, int m)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix repmat(final mathlib.linear.RealMatrix mat, int n, int m)
 		private static RealMatrix repmat(RealMatrix mat, int n, int m)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1597,7 +1597,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m"> Input matrix. </param>
 		/// <returns> the maximum of the matrix element values. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static double max(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static double max(final mathlib.linear.RealMatrix m)
 		private static double max(RealMatrix m)
 		{
 			double max = -double.MaxValue;
@@ -1618,7 +1618,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <param name="m"> Input matrix. </param>
 		/// <returns> the minimum of the matrix element values. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static double min(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static double min(final mathlib.linear.RealMatrix m)
 		private static double min(RealMatrix m)
 		{
 			double min = double.MaxValue;

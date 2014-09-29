@@ -18,7 +18,7 @@
 /// <summary>
 /// Optimization algorithms for linear constrained problems.
 /// </summary>
-namespace org.apache.commons.math3.optim.linear
+namespace mathlib.optim.linear
 {
 
 }

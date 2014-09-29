@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Implementation of a Halton sequence.
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.random
 		/// <param name="dimension"> the space dimension </param>
 		/// <exception cref="OutOfRangeException"> if the space dimension is outside the allowed range of [1, 40] </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public HaltonSequenceGenerator(final int dimension) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public HaltonSequenceGenerator(final int dimension) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public HaltonSequenceGenerator(int dimension) : this(dimension, PRIMES, WEIGHTS)
 		{
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.random
 		///   len refers to the length of the bases array </exception>
 		/// <exception cref="DimensionMismatchException"> if weights is non-null and the length of the input arrays differ </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public HaltonSequenceGenerator(final int dimension, final int[] bases, final int[] weights) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public HaltonSequenceGenerator(final int dimension, final int[] bases, final int[] weights) throws mathlib.exception.NullArgumentException, mathlib.exception.OutOfRangeException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public HaltonSequenceGenerator(int dimension, int[] bases, int[] weights)
 		{
@@ -181,7 +181,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> the i-th point in the Halton sequence </returns>
 		/// <exception cref="NotPositiveException"> if index &lt; 0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] skipTo(final int index) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public double[] skipTo(final int index) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] skipTo(int index)
 		{

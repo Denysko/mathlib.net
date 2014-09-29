@@ -199,7 +199,7 @@ namespace mathlib.util
         /// <exception cref="NotStrictlyPositiveException"> if one of the sizes is
         /// negative or zero. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public MultidimensionalCounter(int... size) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+        //ORIGINAL LINE: public MultidimensionalCounter(int... size) throws mathlib.exception.NotStrictlyPositiveException
         public MultidimensionalCounter(params int[] size)
         {
             dimension = size.Length;
@@ -258,7 +258,7 @@ namespace mathlib.util
         /// <exception cref="OutOfRangeException"> if {@code index} is not between
         /// {@code 0} and the value returned by <seealso cref="#getSize()"/> (excluded). </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public int[] getCounts(int index) throws org.apache.commons.math3.exception.OutOfRangeException
+        //ORIGINAL LINE: public int[] getCounts(int index) throws mathlib.exception.OutOfRangeException
         public virtual int[] getCounts(int index)
         {
             if (index < 0 || index >= totalSize)
@@ -303,7 +303,7 @@ namespace mathlib.util
         /// the range of the corresponding dimension, as defined in the
         /// <seealso cref="MultidimensionalCounter#MultidimensionalCounter(int...) constructor"/>. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public int getCount(int... c) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.DimensionMismatchException
+        //ORIGINAL LINE: public int getCount(int... c) throws mathlib.exception.OutOfRangeException, mathlib.exception.DimensionMismatchException
         public virtual int getCount(params int[] c)
         {
             if (c.Length != dimension)

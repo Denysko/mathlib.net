@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
-	using TDistribution = org.apache.commons.math3.distribution.TDistribution;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using StatisticalSummary = org.apache.commons.math3.stat.descriptive.StatisticalSummary;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using TDistribution = mathlib.distribution.TDistribution;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using StatisticalSummary = mathlib.stat.descriptive.StatisticalSummary;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// An implementation for Student's t-tests.
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.stat.inference
 	/// <p>
 	/// Input to tests can be either <code>double[]</code> arrays or
 	/// <seealso cref="StatisticalSummary"/> instances.</p><p>
-	/// Uses commons-math <seealso cref="org.apache.commons.math3.distribution.TDistribution"/>
+	/// Uses commons-math <seealso cref="mathlib.distribution.TDistribution"/>
 	/// implementation to estimate exact p-values.</p>
 	/// 
 	/// @version $Id: TTest.java 1416643 2012-12-03 19:37:14Z tn $
@@ -79,7 +79,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="DimensionMismatchException"> if the length of the arrays is not equal </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the length of the arrays is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double pairedT(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double pairedT(final double[] sample1, final double[] sample2) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double pairedT(double[] sample1, double[] sample2)
 		{
@@ -127,7 +127,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NumberIsTooSmallException"> if the length of the arrays is &lt; 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double pairedTTest(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double pairedTTest(final double[] sample1, final double[] sample2) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double pairedTTest(double[] sample1, double[] sample2)
 		{
@@ -173,7 +173,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean pairedTTest(final double[] sample1, final double[] sample2, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean pairedTTest(final double[] sample1, final double[] sample2, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool pairedTTest(double[] sample1, double[] sample2, double alpha)
 		{
@@ -199,7 +199,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if <code>observed</code> is <code>null</code> </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the length of <code>observed</code> is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double t(final double mu, final double[] observed) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double t(final double mu, final double[] observed) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double t(double mu, double[] observed)
 		{
@@ -227,7 +227,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if <code>sampleStats</code> is <code>null</code> </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the number of samples is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double t(final double mu, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double t(final double mu, final mathlib.stat.descriptive.StatisticalSummary sampleStats) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double t(double mu, StatisticalSummary sampleStats)
 		{
@@ -271,7 +271,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if the arrays are <code>null</code> </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the length of the arrays is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double homoscedasticT(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double homoscedasticT(final double[] sample1, final double[] sample2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double homoscedasticT(double[] sample1, double[] sample2)
 		{
@@ -312,7 +312,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if the arrays are <code>null</code> </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the length of the arrays is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double t(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double t(final double[] sample1, final double[] sample2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double t(double[] sample1, double[] sample2)
 		{
@@ -356,7 +356,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if the sample statistics are <code>null</code> </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the number of samples is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double t(final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats1, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double t(final mathlib.stat.descriptive.StatisticalSummary sampleStats1, final mathlib.stat.descriptive.StatisticalSummary sampleStats2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double t(StatisticalSummary sampleStats1, StatisticalSummary sampleStats2)
 		{
@@ -403,7 +403,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if the sample statistics are <code>null</code> </exception>
 		/// <exception cref="NumberIsTooSmallException"> if the number of samples is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double homoscedasticT(final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats1, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double homoscedasticT(final mathlib.stat.descriptive.StatisticalSummary sampleStats1, final mathlib.stat.descriptive.StatisticalSummary sampleStats2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double homoscedasticT(StatisticalSummary sampleStats1, StatisticalSummary sampleStats2)
 		{
@@ -441,7 +441,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NumberIsTooSmallException"> if the length of the array is &lt; 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double tTest(final double mu, final double[] sample) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double tTest(final double mu, final double[] sample) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double tTest(double mu, double[] sample)
 		{
@@ -489,7 +489,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean tTest(final double mu, final double[] sample, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean tTest(final double mu, final double[] sample, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool tTest(double mu, double[] sample, double alpha)
 		{
@@ -528,7 +528,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NumberIsTooSmallException"> if the number of samples is &lt; 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double tTest(final double mu, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double tTest(final double mu, final mathlib.stat.descriptive.StatisticalSummary sampleStats) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double tTest(double mu, StatisticalSummary sampleStats)
 		{
@@ -576,7 +576,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean tTest(final double mu, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean tTest(final double mu, final mathlib.stat.descriptive.StatisticalSummary sampleStats, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool tTest(double mu, StatisticalSummary sampleStats, double alpha)
 		{
@@ -623,7 +623,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NumberIsTooSmallException"> if the length of the arrays is &lt; 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double tTest(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double tTest(final double[] sample1, final double[] sample2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double tTest(double[] sample1, double[] sample2)
 		{
@@ -669,7 +669,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NumberIsTooSmallException"> if the length of the arrays is &lt; 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double homoscedasticTTest(final double[] sample1, final double[] sample2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double homoscedasticTTest(final double[] sample1, final double[] sample2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double homoscedasticTTest(double[] sample1, double[] sample2)
 		{
@@ -733,7 +733,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean tTest(final double[] sample1, final double[] sample2, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean tTest(final double[] sample1, final double[] sample2, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool tTest(double[] sample1, double[] sample2, double alpha)
 		{
@@ -796,7 +796,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean homoscedasticTTest(final double[] sample1, final double[] sample2, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean homoscedasticTTest(final double[] sample1, final double[] sample2, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool homoscedasticTTest(double[] sample1, double[] sample2, double alpha)
 		{
@@ -841,7 +841,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NumberIsTooSmallException"> if the number of samples is &lt; 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double tTest(final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats1, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double tTest(final mathlib.stat.descriptive.StatisticalSummary sampleStats1, final mathlib.stat.descriptive.StatisticalSummary sampleStats2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double tTest(StatisticalSummary sampleStats1, StatisticalSummary sampleStats2)
 		{
@@ -886,7 +886,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NumberIsTooSmallException"> if the number of samples is &lt; 2 </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double homoscedasticTTest(final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats1, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double homoscedasticTTest(final mathlib.stat.descriptive.StatisticalSummary sampleStats1, final mathlib.stat.descriptive.StatisticalSummary sampleStats2) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double homoscedasticTTest(StatisticalSummary sampleStats1, StatisticalSummary sampleStats2)
 		{
@@ -952,7 +952,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="OutOfRangeException"> if <code>alpha</code> is not in the range (0, 0.5] </exception>
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean tTest(final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats1, final org.apache.commons.math3.stat.descriptive.StatisticalSummary sampleStats2, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean tTest(final mathlib.stat.descriptive.StatisticalSummary sampleStats1, final mathlib.stat.descriptive.StatisticalSummary sampleStats2, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool tTest(StatisticalSummary sampleStats1, StatisticalSummary sampleStats2, double alpha)
 		{
@@ -1043,7 +1043,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if an error occurs computing the p-value </exception>
 		/// <exception cref="MathIllegalArgumentException"> if n is not greater than 1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double tTest(final double m, final double mu, final double v, final double n) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected double tTest(final double m, final double mu, final double v, final double n) throws mathlib.exception.MaxCountExceededException, mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual double tTest(double m, double mu, double v, double n)
 		{
@@ -1071,13 +1071,13 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NotStrictlyPositiveException"> if the estimated degrees of freedom is not
 		/// strictly positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double tTest(final double m1, final double m2, final double v1, final double v2, final double n1, final double n2) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: protected double tTest(final double m1, final double m2, final double v1, final double v2, final double n1, final double n2) throws mathlib.exception.MaxCountExceededException, mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual double tTest(double m1, double m2, double v1, double v2, double n1, double n2)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = org.apache.commons.math3.util.FastMath.abs(t(m1, m2, v1, v2, n1, n2));
+//ORIGINAL LINE: final double t = mathlib.util.FastMath.abs(t(m1, m2, v1, v2, n1, n2));
 			double t = FastMath.abs(t(m1, m2, v1, v2, n1, n2));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double degreesOfFreedom = df(v1, v2, n1, n2);
@@ -1104,12 +1104,12 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NotStrictlyPositiveException"> if the estimated degrees of freedom is not
 		/// strictly positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double homoscedasticTTest(double m1, double m2, double v1, double v2, double n1, double n2) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: protected double homoscedasticTTest(double m1, double m2, double v1, double v2, double n1, double n2) throws mathlib.exception.MaxCountExceededException, mathlib.exception.NotStrictlyPositiveException
 		protected internal virtual double homoscedasticTTest(double m1, double m2, double v1, double v2, double n1, double n2)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = org.apache.commons.math3.util.FastMath.abs(homoscedasticT(m1, m2, v1, v2, n1, n2));
+//ORIGINAL LINE: final double t = mathlib.util.FastMath.abs(homoscedasticT(m1, m2, v1, v2, n1, n2));
 			double t = FastMath.abs(homoscedasticT(m1, m2, v1, v2, n1, n2));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double degreesOfFreedom = n1 + n2 - 2;
@@ -1125,7 +1125,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <param name="alpha"> significance level </param>
 		/// <exception cref="OutOfRangeException"> if the significance level is out of bounds. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkSignificanceLevel(final double alpha) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private void checkSignificanceLevel(final double alpha) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkSignificanceLevel(double alpha)
 		{
@@ -1144,7 +1144,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if {@code data} is {@code null}. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if there is not enough sample data. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkSampleData(final double[] data) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: private void checkSampleData(final double[] data) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkSampleData(double[] data)
 		{
@@ -1167,7 +1167,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if {@code data} is {@code null}. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if there is not enough sample data. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkSampleData(final org.apache.commons.math3.stat.descriptive.StatisticalSummary stat) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: private void checkSampleData(final mathlib.stat.descriptive.StatisticalSummary stat) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkSampleData(StatisticalSummary stat)
 		{

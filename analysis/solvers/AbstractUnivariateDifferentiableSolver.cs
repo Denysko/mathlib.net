@@ -68,7 +68,7 @@ namespace mathlib.analysis.solvers
         /// <exception cref="TooManyEvaluationsException">
         /// if the maximal number of evaluations is exceeded. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected org.apache.commons.math3.analysis.differentiation.DerivativeStructure computeObjectiveValueAndDerivative(double point) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+        //ORIGINAL LINE: protected mathlib.analysis.differentiation.DerivativeStructure computeObjectiveValueAndDerivative(double point) throws mathlib.exception.TooManyEvaluationsException
         protected internal virtual DerivativeStructure computeObjectiveValueAndDerivative(double point)
         {
             incrementEvaluationCount();

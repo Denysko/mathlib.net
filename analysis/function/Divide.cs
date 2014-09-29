@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.function
+namespace mathlib.analysis.function
 {
 
 	/// <summary>

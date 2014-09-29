@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using OpenIntToDoubleHashMap = org.apache.commons.math3.util.OpenIntToDoubleHashMap;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using OpenIntToDoubleHashMap = mathlib.util.OpenIntToDoubleHashMap;
 
 	/// <summary>
 	/// Sparse matrix implementation based on an open addressed map.
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooLargeException"> if the total number of entries of the
 		/// matrix is larger than {@code Integer.MAX_VALUE}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public OpenMapRealMatrix(int rowDimension, int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public OpenMapRealMatrix(int rowDimension, int columnDimension) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooLargeException
 		public OpenMapRealMatrix(int rowDimension, int columnDimension) : base(rowDimension, columnDimension)
 		{
 			long lRow = rowDimension;
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooLargeException"> if the total number of entries of the
 		/// matrix is larger than {@code Integer.MAX_VALUE}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public OpenMapRealMatrix createMatrix(int rowDimension, int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override public OpenMapRealMatrix createMatrix(int rowDimension, int columnDimension) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooLargeException
 		public override OpenMapRealMatrix createMatrix(int rowDimension, int columnDimension)
 		{
 			return new OpenMapRealMatrix(rowDimension, columnDimension);
@@ -207,7 +207,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code OpenMapRealMatrix}, and the total number of entries of the product
 		/// is larger than {@code Integer.MAX_VALUE}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealMatrix multiply(final RealMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override public RealMatrix multiply(final RealMatrix m) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealMatrix multiply(RealMatrix m)
 		{
@@ -261,7 +261,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooLargeException"> if the total number of entries of the
 		/// product is larger than {@code Integer.MAX_VALUE}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public OpenMapRealMatrix multiply(OpenMapRealMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public OpenMapRealMatrix multiply(OpenMapRealMatrix m) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 		public virtual OpenMapRealMatrix multiply(OpenMapRealMatrix m)
 		{
 			// Safety check.
@@ -317,7 +317,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getEntry(int row, int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double getEntry(int row, int column) throws mathlib.exception.OutOfRangeException
 		public override double getEntry(int row, int column)
 		{
 			MatrixUtils.checkRowIndex(this, row);
@@ -338,7 +338,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setEntry(int row, int column, double value) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void setEntry(int row, int column, double value) throws mathlib.exception.OutOfRangeException
 		public override void setEntry(int row, int column, double value)
 		{
 			MatrixUtils.checkRowIndex(this, row);
@@ -356,7 +356,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void addToEntry(int row, int column, double increment) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void addToEntry(int row, int column, double increment) throws mathlib.exception.OutOfRangeException
 		public override void addToEntry(int row, int column, double increment)
 		{
 			MatrixUtils.checkRowIndex(this, row);
@@ -380,7 +380,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void multiplyEntry(int row, int column, double factor) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void multiplyEntry(int row, int column, double factor) throws mathlib.exception.OutOfRangeException
 		public override void multiplyEntry(int row, int column, double factor)
 		{
 			MatrixUtils.checkRowIndex(this, row);

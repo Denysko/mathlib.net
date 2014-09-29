@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using org.apache.commons.math3.util;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using mathlib.util;
 
 	/// <summary>
 	/// A interface for functions that compute a vector of values and can compute their

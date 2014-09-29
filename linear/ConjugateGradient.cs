@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using ExceptionContext = org.apache.commons.math3.exception.util.ExceptionContext;
-	using IterationManager = org.apache.commons.math3.util.IterationManager;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using ExceptionContext = mathlib.exception.util.ExceptionContext;
+	using IterationManager = mathlib.util.IterationManager;
 
 	/// <summary>
 	/// <p>
@@ -124,7 +124,7 @@ namespace org.apache.commons.math3.linear
 		/// preconditioner should be checked </param>
 		/// <exception cref="NullArgumentException"> if {@code manager} is {@code null} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ConjugateGradient(final org.apache.commons.math3.util.IterationManager manager, final double delta, final boolean check) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ConjugateGradient(final mathlib.util.IterationManager manager, final double delta, final boolean check) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ConjugateGradient(IterationManager manager, double delta, bool check) : base(manager)
 		{
@@ -151,13 +151,13 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NonPositiveDefiniteOperatorException"> if {@code a} or {@code m} is
 		/// not positive definite </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector solveInPlace(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x0) throws org.apache.commons.math3.exception.NullArgumentException, NonPositiveDefiniteOperatorException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override public RealVector solveInPlace(final RealLinearOperator a, final RealLinearOperator m, final RealVector b, final RealVector x0) throws mathlib.exception.NullArgumentException, NonPositiveDefiniteOperatorException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector solveInPlace(RealLinearOperator a, RealLinearOperator m, RealVector b, RealVector x0)
 		{
 			checkParameters(a, m, b, x0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.IterationManager manager = getIterationManager();
+//ORIGINAL LINE: final mathlib.util.IterationManager manager = getIterationManager();
 			IterationManager manager = IterationManager;
 			// Initialization of default stopping criterion
 			manager.resetIterationCount();
@@ -228,7 +228,7 @@ namespace org.apache.commons.math3.linear
 					NonPositiveDefiniteOperatorException e;
 					e = new NonPositiveDefiniteOperatorException();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.util.ExceptionContext context = e.getContext();
+//ORIGINAL LINE: final mathlib.exception.util.ExceptionContext context = e.getContext();
 					ExceptionContext context = e.Context;
 					context.setValue(OPERATOR, m);
 					context.setValue(VECTOR, r);
@@ -253,7 +253,7 @@ namespace org.apache.commons.math3.linear
 					NonPositiveDefiniteOperatorException e;
 					e = new NonPositiveDefiniteOperatorException();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.exception.util.ExceptionContext context = e.getContext();
+//ORIGINAL LINE: final mathlib.exception.util.ExceptionContext context = e.getContext();
 					ExceptionContext context = e.Context;
 					context.setValue(OPERATOR, a);
 					context.setValue(VECTOR, p);

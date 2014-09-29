@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 
 	/// <summary>
@@ -36,7 +36,7 @@ namespace org.apache.commons.math3.analysis.solvers
 	/// <seealso cref= UnivariateSolver </seealso>
 	/// <seealso cref= PolynomialSolver </seealso>
 	/// <seealso cref= DifferentiableUnivariateSolver </seealso>
-	public interface BaseUnivariateSolver<FUNC> where FUNC : org.apache.commons.math3.analysis.UnivariateFunction
+	public interface BaseUnivariateSolver<FUNC> where FUNC : mathlib.analysis.UnivariateFunction
 	{
 		/// <summary>
 		/// Get the maximum number of function evaluations.
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <exception cref="TooManyEvaluationsException"> if
 		/// the allowed number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double solve(int maxEval, FUNC f, double min, double max) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.TooManyEvaluationsException;
+//ORIGINAL LINE: double solve(int maxEval, FUNC f, double min, double max) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.TooManyEvaluationsException;
 		double solve(int maxEval, FUNC f, double min, double max);
 
 		/// <summary>
@@ -119,7 +119,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <exception cref="TooManyEvaluationsException"> if
 		/// the allowed number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double solve(int maxEval, FUNC f, double min, double max, double startValue) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.TooManyEvaluationsException;
+//ORIGINAL LINE: double solve(int maxEval, FUNC f, double min, double max, double startValue) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.TooManyEvaluationsException;
 		double solve(int maxEval, FUNC f, double min, double max, double startValue);
 
 		/// <summary>
@@ -129,9 +129,9 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="startValue"> Start value to use. </param>
 		/// <returns> a value where the function is zero. </returns>
 		/// <param name="maxEval"> Maximum number of evaluations. </param>
-		/// <exception cref="org.apache.commons.math3.exception.MathIllegalArgumentException">
+		/// <exception cref="mathlib.exception.MathIllegalArgumentException">
 		/// if the arguments do not satisfy the requirements specified by the solver. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException"> if
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException"> if
 		/// the allowed number of evaluations is exceeded. </exception>
 		double solve(int maxEval, FUNC f, double startValue);
 	}

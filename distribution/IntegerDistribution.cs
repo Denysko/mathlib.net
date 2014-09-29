@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
 
 	/// <summary>
 	/// Interface for distributions on the integers.
@@ -59,7 +59,7 @@ namespace org.apache.commons.math3.distribution
 		/// excluding the lower and including the upper endpoint </returns>
 		/// <exception cref="NumberIsTooLargeException"> if {@code x0 > x1} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double cumulativeProbability(int x0, int x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException;
+//ORIGINAL LINE: double cumulativeProbability(int x0, int x1) throws mathlib.exception.NumberIsTooLargeException;
 		double cumulativeProbability(int x0, int x1);
 
 		/// <summary>
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.distribution
 		/// (largest 0-quantile for {@code p = 0}) </returns>
 		/// <exception cref="OutOfRangeException"> if {@code p < 0} or {@code p > 1} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: int inverseCumulativeProbability(double p) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: int inverseCumulativeProbability(double p) throws mathlib.exception.OutOfRangeException;
 		int inverseCumulativeProbability(double p);
 
 		/// <summary>
@@ -143,7 +143,7 @@ namespace org.apache.commons.math3.distribution
 		/// </summary>
 		/// <param name="sampleSize"> the number of random values to generate </param>
 		/// <returns> an array representing the random sample </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code sampleSize} is not positive
 		/// @since 3.0 </exception>
 		int[] sample(int sampleSize);

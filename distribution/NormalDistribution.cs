@@ -15,17 +15,17 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Erf = org.apache.commons.math3.special.Erf;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Erf = mathlib.special.Erf;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the normal (gaussian) distribution.
@@ -74,7 +74,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="sd"> Standard deviation for this distribution. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sd <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public NormalDistribution(double mean, double sd) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public NormalDistribution(double mean, double sd) throws mathlib.exception.NotStrictlyPositiveException
 		public NormalDistribution(double mean, double sd) : this(mean, sd, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -89,7 +89,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sd <= 0}.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public NormalDistribution(double mean, double sd, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public NormalDistribution(double mean, double sd, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public NormalDistribution(double mean, double sd, double inverseCumAccuracy) : this(new Well19937c(), mean, sd, inverseCumAccuracy)
 		{
 		}
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sd <= 0}.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public NormalDistribution(org.apache.commons.math3.random.RandomGenerator rng, double mean, double sd) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public NormalDistribution(mathlib.random.RandomGenerator rng, double mean, double sd) throws mathlib.exception.NotStrictlyPositiveException
 		public NormalDistribution(RandomGenerator rng, double mean, double sd) : this(rng, mean, sd, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sd <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public NormalDistribution(org.apache.commons.math3.random.RandomGenerator rng, double mean, double sd, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public NormalDistribution(mathlib.random.RandomGenerator rng, double mean, double sd, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public NormalDistribution(RandomGenerator rng, double mean, double sd, double inverseCumAccuracy) : base(rng)
 		{
 
@@ -201,7 +201,7 @@ namespace org.apache.commons.math3.distribution
 		/// @since 3.2
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double inverseCumulativeProbability(double p)
 		{
@@ -217,7 +217,7 @@ namespace org.apache.commons.math3.distribution
 		/// </summary>
 		/// @deprecated See <seealso cref="RealDistribution#cumulativeProbability(double,double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override@Deprecated public double cumulativeProbability(double x0, double x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override@Deprecated public double cumulativeProbability(double x0, double x1) throws mathlib.exception.NumberIsTooLargeException
 		Deprecated public override double cumulativeProbability(double x0, double x1)
 		{
 			return probability(x0, x1);
@@ -226,7 +226,7 @@ namespace org.apache.commons.math3.distribution
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double probability(double x0, double x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override public double probability(double x0, double x1) throws mathlib.exception.NumberIsTooLargeException
 		public override double probability(double x0, double x1)
 		{
 			if (x0 > x1)

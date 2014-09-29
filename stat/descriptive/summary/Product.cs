@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.summary
+namespace mathlib.stat.descriptive.summary
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Returns the product of the available values.
@@ -71,7 +71,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <param name="original"> the {@code Product} instance to copy </param>
 		/// <exception cref="NullArgumentException">  if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Product(Product original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Product(Product original) throws mathlib.exception.NullArgumentException
 		public Product(Product original)
 		{
 			copy(original, this);
@@ -133,7 +133,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int begin, int length)
 		{
@@ -177,7 +177,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double[] weights, int begin, int length)
 		{
@@ -216,7 +216,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double[] weights) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double[] weights)
 		{
@@ -243,7 +243,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <param name="dest"> Product to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(Product source, Product dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(Product source, Product dest) throws mathlib.exception.NullArgumentException
 		public static void copy(Product source, Product dest)
 		{
 			MathUtils.checkNotNull(source);

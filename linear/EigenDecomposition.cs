@@ -17,17 +17,17 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using Complex = org.apache.commons.math3.complex.Complex;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using Complex = mathlib.complex.Complex;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Precision = mathlib.util.Precision;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Calculates the eigen decomposition of a real matrix.
@@ -128,12 +128,12 @@ namespace org.apache.commons.math3.linear
 		/// results in a matrix with zero norm
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public EigenDecomposition(final RealMatrix matrix) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public EigenDecomposition(final RealMatrix matrix) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public EigenDecomposition(RealMatrix matrix)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double symTol = 10 * matrix.getRowDimension() * matrix.getColumnDimension() * org.apache.commons.math3.util.Precision.EPSILON;
+//ORIGINAL LINE: final double symTol = 10 * matrix.getRowDimension() * matrix.getColumnDimension() * mathlib.util.Precision.EPSILON;
 			double symTol = 10 * matrix.RowDimension * matrix.ColumnDimension * Precision.EPSILON;
 			isSymmetric = MatrixUtils.isSymmetric(matrix, symTol);
 			if (isSymmetric)
@@ -161,7 +161,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="MaxCountExceededException"> if the algorithm fails to converge. </exception>
 		/// @deprecated in 3.1 (to be removed in 4.0) due to unused parameter 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("in 3.1 (to be removed in 4.0) due to unused parameter") public EigenDecomposition(final RealMatrix matrix, final double splitTolerance) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("in 3.1 (to be removed in 4.0) due to unused parameter") public EigenDecomposition(final RealMatrix matrix, final double splitTolerance) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("in 3.1 (to be removed in 4.0) due to unused parameter")]
 		public EigenDecomposition(RealMatrix matrix, double splitTolerance) : this(matrix)
@@ -982,7 +982,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final double p = 0.5 * (matT[i][i] - x);
 					double p = 0.5 * (matT[i][i] - x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double z = org.apache.commons.math3.util.FastMath.sqrt(org.apache.commons.math3.util.FastMath.abs(p * p + matT[i + 1][i] * matT[i][i + 1]));
+//ORIGINAL LINE: final double z = mathlib.util.FastMath.sqrt(mathlib.util.FastMath.abs(p * p + matT[i + 1][i] * matT[i][i + 1]));
 					double z = FastMath.sqrt(FastMath.abs(p * p + matT[i + 1][i] * matT[i][i + 1]));
 					realEigenvalues[i] = x + p;
 					imagEigenvalues[i] = z;
@@ -1003,7 +1003,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="yi"> imaginary part of the second number </param>
 		/// <returns> result of the complex division </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.complex.Complex cdiv(final double xr, final double xi, final double yr, final double yi)
+//ORIGINAL LINE: private mathlib.complex.Complex cdiv(final double xr, final double xi, final double yr, final double yi)
 		private Complex cdiv(double xr, double xi, double yr, double yi)
 		{
 			return (new Complex(xr, xi)).divide(new Complex(yr, yi));
@@ -1015,7 +1015,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="schur"> the schur transformation of the matrix </param>
 		/// <exception cref="MathArithmeticException"> if the Schur form has a norm of zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void findEigenVectorsFromSchur(final SchurTransformer schur) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: private void findEigenVectorsFromSchur(final SchurTransformer schur) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void findEigenVectorsFromSchur(SchurTransformer schur)
 		{
@@ -1133,7 +1133,7 @@ namespace org.apache.commons.math3.linear
 					else
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex result = cdiv(0.0, -matrixT[idx - 1][idx], matrixT[idx - 1][idx - 1] - p, q);
+//ORIGINAL LINE: final mathlib.complex.Complex result = cdiv(0.0, -matrixT[idx - 1][idx], matrixT[idx - 1][idx - 1] - p, q);
 						Complex result = cdiv(0.0, -matrixT[idx - 1][idx], matrixT[idx - 1][idx - 1] - p, q);
 						matrixT[idx - 1][idx - 1] = result.Real;
 						matrixT[idx - 1][idx] = result.Imaginary;
@@ -1165,7 +1165,7 @@ namespace org.apache.commons.math3.linear
 							if (Precision.Equals(imagEigenvalues[i], 0.0))
 							{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex c = cdiv(-ra, -sa, w, q);
+//ORIGINAL LINE: final mathlib.complex.Complex c = cdiv(-ra, -sa, w, q);
 								Complex c = cdiv(-ra, -sa, w, q);
 								matrixT[i][idx - 1] = c.Real;
 								matrixT[i][idx] = c.Imaginary;
@@ -1184,7 +1184,7 @@ namespace org.apache.commons.math3.linear
 									vr = Precision.EPSILON * norm * (FastMath.abs(w) + FastMath.abs(q) + FastMath.abs(x) + FastMath.abs(y) + FastMath.abs(z));
 								}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex c = cdiv(x * r - z * ra + q * sa, x * s - z * sa - q * ra, vr, vi);
+//ORIGINAL LINE: final mathlib.complex.Complex c = cdiv(x * r - z * ra + q * sa, x * s - z * sa - q * ra, vr, vi);
 								Complex c = cdiv(x * r - z * ra + q * sa, x * s - z * sa - q * ra, vr, vi);
 								matrixT[i][idx - 1] = c.Real;
 								matrixT[i][idx] = c.Imaginary;
@@ -1197,7 +1197,7 @@ namespace org.apache.commons.math3.linear
 								else
 								{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex c2 = cdiv(-r - y * matrixT[i][idx - 1], -s - y * matrixT[i][idx], z, q);
+//ORIGINAL LINE: final mathlib.complex.Complex c2 = cdiv(-r - y * matrixT[i][idx - 1], -s - y * matrixT[i][idx], z, q);
 									Complex c2 = cdiv(-r - y * matrixT[i][idx - 1], -s - y * matrixT[i][idx], z, q);
 									matrixT[i + 1][idx - 1] = c2.Real;
 									matrixT[i + 1][idx] = c2.Imaginary;

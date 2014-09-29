@@ -16,7 +16,7 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis
+namespace mathlib.analysis
 {
 
 	/// <summary>
@@ -24,8 +24,8 @@ namespace org.apache.commons.math3.analysis
 	/// 
 	/// @version $Id: DifferentiableUnivariateMatrixFunction.java 1499808 2013-07-04 17:00:42Z sebb $
 	/// @since 2.0 </summary>
-	/// @deprecated as of 3.1 replaced by  <seealso cref="org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableMatrixFunction"/> 
-	[Obsolete("as of 3.1 replaced by  <seealso cref="org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableMatrixFunction"/>")]
+	/// @deprecated as of 3.1 replaced by  <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableMatrixFunction"/> 
+	[Obsolete("as of 3.1 replaced by  <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableMatrixFunction"/>")]
 	public interface DifferentiableUnivariateMatrixFunction : UnivariateMatrixFunction
 	{
 

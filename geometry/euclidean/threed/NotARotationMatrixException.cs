@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using Localizable = org.apache.commons.math3.exception.util.Localizable;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using Localizable = mathlib.exception.util.Localizable;
 
 	/// <summary>
 	/// This class represents exceptions thrown while building rotations

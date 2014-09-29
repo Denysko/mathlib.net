@@ -16,15 +16,15 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis
+namespace mathlib.analysis
 {
 
 	/// <summary>
 	/// Extension of <seealso cref="UnivariateFunction"/> representing a differentiable univariate real function.
 	/// 
 	/// @version $Id: DifferentiableUnivariateFunction.java 1383845 2012-09-12 08:34:10Z luc $ </summary>
-	/// @deprecated as of 3.1 replaced by <seealso cref="org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction"/> 
-	[Obsolete("as of 3.1 replaced by <seealso cref="org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction"/>")]
+	/// @deprecated as of 3.1 replaced by <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableFunction"/> 
+	[Obsolete("as of 3.1 replaced by <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableFunction"/>")]
 	public interface DifferentiableUnivariateFunction : UnivariateFunction
 	{
 

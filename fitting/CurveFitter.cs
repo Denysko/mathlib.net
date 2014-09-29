@@ -17,20 +17,20 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting
+namespace mathlib.fitting
 {
 
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using MultivariateMatrixFunction = org.apache.commons.math3.analysis.MultivariateMatrixFunction;
-	using ParametricUnivariateFunction = org.apache.commons.math3.analysis.ParametricUnivariateFunction;
-	using MaxEval = org.apache.commons.math3.optim.MaxEval;
-	using InitialGuess = org.apache.commons.math3.optim.InitialGuess;
-	using PointVectorValuePair = org.apache.commons.math3.optim.PointVectorValuePair;
-	using MultivariateVectorOptimizer = org.apache.commons.math3.optim.nonlinear.vector.MultivariateVectorOptimizer;
-	using ModelFunction = org.apache.commons.math3.optim.nonlinear.vector.ModelFunction;
-	using ModelFunctionJacobian = org.apache.commons.math3.optim.nonlinear.vector.ModelFunctionJacobian;
-	using Target = org.apache.commons.math3.optim.nonlinear.vector.Target;
-	using Weight = org.apache.commons.math3.optim.nonlinear.vector.Weight;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using MultivariateMatrixFunction = mathlib.analysis.MultivariateMatrixFunction;
+	using ParametricUnivariateFunction = mathlib.analysis.ParametricUnivariateFunction;
+	using MaxEval = mathlib.optim.MaxEval;
+	using InitialGuess = mathlib.optim.InitialGuess;
+	using PointVectorValuePair = mathlib.optim.PointVectorValuePair;
+	using MultivariateVectorOptimizer = mathlib.optim.nonlinear.vector.MultivariateVectorOptimizer;
+	using ModelFunction = mathlib.optim.nonlinear.vector.ModelFunction;
+	using ModelFunctionJacobian = mathlib.optim.nonlinear.vector.ModelFunctionJacobian;
+	using Target = mathlib.optim.nonlinear.vector.Target;
+	using Weight = mathlib.optim.nonlinear.vector.Weight;
 
 	/// <summary>
 	/// Fitter for parametric univariate real functions y = f(x).
@@ -52,7 +52,7 @@ namespace org.apache.commons.math3.fitting
 	/// @deprecated As of 3.3. Please use <seealso cref="AbstractCurveFitter"/> and
 	/// <seealso cref="WeightedObservedPoints"/> instead. 
 	[Obsolete("As of 3.3. Please use <seealso cref="AbstractCurveFitter"/> and")]
-	public class CurveFitter<T> where T : org.apache.commons.math3.analysis.ParametricUnivariateFunction
+	public class CurveFitter<T> where T : mathlib.analysis.ParametricUnivariateFunction
 	{
 		/// <summary>
 		/// Optimizer to use for the fitting. </summary>
@@ -67,7 +67,7 @@ namespace org.apache.commons.math3.fitting
 		/// <param name="optimizer"> Optimizer to use for the fitting.
 		/// @since 3.1 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public CurveFitter(final org.apache.commons.math3.optim.nonlinear.vector.MultivariateVectorOptimizer optimizer)
+//ORIGINAL LINE: public CurveFitter(final mathlib.optim.nonlinear.vector.MultivariateVectorOptimizer optimizer)
 		public CurveFitter(MultivariateVectorOptimizer optimizer)
 		{
 			this.optimizer = optimizer;
@@ -146,7 +146,7 @@ namespace org.apache.commons.math3.fitting
 		/// <param name="f"> parametric function to fit. </param>
 		/// <param name="initialGuess"> first guess of the function parameters. </param>
 		/// <returns> the fitted parameters. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public double[] fit(T f, final double[] initialGuess)
@@ -166,9 +166,9 @@ namespace org.apache.commons.math3.fitting
 		/// <param name="initialGuess"> first guess of the function parameters. </param>
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
 		/// <returns> the fitted parameters. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the number of allowed evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong.
 		/// @since 3.0 </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
@@ -193,7 +193,7 @@ namespace org.apache.commons.math3.fitting
 
 			// Perform the fit.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.PointVectorValuePair optimum = optimizer.optimize(new org.apache.commons.math3.optim.MaxEval(maxEval), model.getModelFunction(), model.getModelFunctionJacobian(), new org.apache.commons.math3.optim.nonlinear.vector.Target(target), new org.apache.commons.math3.optim.nonlinear.vector.Weight(weights), new org.apache.commons.math3.optim.InitialGuess(initialGuess));
+//ORIGINAL LINE: final mathlib.optim.PointVectorValuePair optimum = optimizer.optimize(new mathlib.optim.MaxEval(maxEval), model.getModelFunction(), model.getModelFunctionJacobian(), new mathlib.optim.nonlinear.vector.Target(target), new mathlib.optim.nonlinear.vector.Weight(weights), new mathlib.optim.InitialGuess(initialGuess));
 			PointVectorValuePair optimum = optimizer.optimize(new MaxEval(maxEval), model.ModelFunction, model.ModelFunctionJacobian, new Target(target), new Weight(weights), new InitialGuess(initialGuess));
 			// Extract the coefficients.
 			return optimum.PointRef;
@@ -211,7 +211,7 @@ namespace org.apache.commons.math3.fitting
 
 			/// <param name="f"> function to fit. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public TheoreticalValuesFunction(final org.apache.commons.math3.analysis.ParametricUnivariateFunction f)
+//ORIGINAL LINE: public TheoreticalValuesFunction(final mathlib.analysis.ParametricUnivariateFunction f)
 			public TheoreticalValuesFunction(CurveFitter outerInstance, ParametricUnivariateFunction f)
 			{
 				this.outerInstance = outerInstance;

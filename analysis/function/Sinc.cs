@@ -17,13 +17,13 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.function
+namespace mathlib.analysis.function
 {
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <a href="http://en.wikipedia.org/wiki/Sinc_function">Sinc</a> function,
@@ -91,7 +91,7 @@ namespace org.apache.commons.math3.analysis.function
 		public virtual double value(double x)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double scaledX = normalized ? org.apache.commons.math3.util.FastMath.PI * x : x;
+//ORIGINAL LINE: final double scaledX = normalized ? mathlib.util.FastMath.PI * x : x;
 			double scaledX = normalized ? FastMath.PI * x : x;
 			if (FastMath.abs(scaledX) <= SHORTCUT)
 			{
@@ -111,7 +111,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <summary>
 		/// {@inheritDoc} </summary>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#value(DerivativeStructure)"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#value(org.apache.commons.math3.analysis.differentiation.DerivativeStructure)"/>")]
+		[Obsolete("as of 3.1, replaced by <seealso cref="#value(mathlib.analysis.differentiation.DerivativeStructure)"/>")]
 		public virtual UnivariateFunction derivative()
 		{
 			return FunctionUtils.toDifferentiableUnivariateFunction(this).derivative();
@@ -122,13 +122,13 @@ namespace org.apache.commons.math3.analysis.function
 		/// @since 3.1
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double scaledX = (normalized ? org.apache.commons.math3.util.FastMath.PI : 1) * t.getValue();
+//ORIGINAL LINE: final double scaledX = (normalized ? mathlib.util.FastMath.PI : 1) * t.getValue();
 			double scaledX = (normalized ? FastMath.PI : 1) * t.Value;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double scaledX2 = scaledX * scaledX;
@@ -164,10 +164,10 @@ namespace org.apache.commons.math3.analysis.function
 //ORIGINAL LINE: final double inv = 1 / scaledX;
 				double inv = 1 / scaledX;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double cos = org.apache.commons.math3.util.FastMath.cos(scaledX);
+//ORIGINAL LINE: final double cos = mathlib.util.FastMath.cos(scaledX);
 				double cos = FastMath.cos(scaledX);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sin = org.apache.commons.math3.util.FastMath.sin(scaledX);
+//ORIGINAL LINE: final double sin = mathlib.util.FastMath.sin(scaledX);
 				double sin = FastMath.sin(scaledX);
 
 				f[0] = inv * sin;

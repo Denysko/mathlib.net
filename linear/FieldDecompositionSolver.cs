@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using org.apache.commons.math3;
+	using mathlib;
 
 
 	/// <summary>
@@ -35,7 +35,7 @@ namespace org.apache.commons.math3.linear
 	/// @param <T> the type of the field elements
 	/// @version $Id: FieldDecompositionSolver.java 1416643 2012-12-03 19:37:14Z tn $
 	/// @since 2.0 </param>
-	public interface FieldDecompositionSolver<T> where T : org.apache.commons.math3.FieldElement<T>
+	public interface FieldDecompositionSolver<T> where T : mathlib.FieldElement<T>
 	{
 
 		/// <summary>
@@ -44,7 +44,7 @@ namespace org.apache.commons.math3.linear
 		/// decomposition algorithm.</p> </summary>
 		/// <param name="b"> right-hand side of the equation A &times; X = B </param>
 		/// <returns> a vector X that minimizes the two norm of A &times; X - B </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the matrices dimensions do not match. </exception>
 		/// <exception cref="SingularMatrixException">
 		/// if the decomposed matrix is singular. </exception>
@@ -58,7 +58,7 @@ namespace org.apache.commons.math3.linear
 		/// decomposition algorithm.</p> </summary>
 		/// <param name="b"> right-hand side of the equation A &times; X = B </param>
 		/// <returns> a matrix X that minimizes the two norm of A &times; X - B </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the matrices dimensions do not match. </exception>
 		/// <exception cref="SingularMatrixException">
 		/// if the decomposed matrix is singular. </exception>

@@ -17,11 +17,11 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet
+namespace mathlib.ml.neuralnet
 {
 
-	using Precision = org.apache.commons.math3.util.Precision;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
+	using Precision = mathlib.util.Precision;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
 
 
 	/// <summary>

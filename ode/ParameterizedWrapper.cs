@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// Wrapper class enabling <seealso cref="FirstOrderDifferentialEquations basic simple"/>
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeDerivatives(double t, double[] y, double[] yDot) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void computeDerivatives(double t, double[] y, double[] yDot) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 		public virtual void computeDerivatives(double t, double[] y, double[] yDot)
 		{
 			fode.computeDerivatives(t, y, yDot);

@@ -17,24 +17,24 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using GeometricMean = org.apache.commons.math3.stat.descriptive.moment.GeometricMean;
-	using Mean = org.apache.commons.math3.stat.descriptive.moment.Mean;
-	using SecondMoment = org.apache.commons.math3.stat.descriptive.moment.SecondMoment;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
-	using Max = org.apache.commons.math3.stat.descriptive.rank.Max;
-	using Min = org.apache.commons.math3.stat.descriptive.rank.Min;
-	using Sum = org.apache.commons.math3.stat.descriptive.summary.Sum;
-	using SumOfLogs = org.apache.commons.math3.stat.descriptive.summary.SumOfLogs;
-	using SumOfSquares = org.apache.commons.math3.stat.descriptive.summary.SumOfSquares;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using GeometricMean = mathlib.stat.descriptive.moment.GeometricMean;
+	using Mean = mathlib.stat.descriptive.moment.Mean;
+	using SecondMoment = mathlib.stat.descriptive.moment.SecondMoment;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
+	using Max = mathlib.stat.descriptive.rank.Max;
+	using Min = mathlib.stat.descriptive.rank.Min;
+	using Sum = mathlib.stat.descriptive.summary.Sum;
+	using SumOfLogs = mathlib.stat.descriptive.summary.SumOfLogs;
+	using SumOfSquares = mathlib.stat.descriptive.summary.SumOfSquares;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <p>
@@ -175,7 +175,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="original"> the {@code SummaryStatistics} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SummaryStatistics(SummaryStatistics original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public SummaryStatistics(SummaryStatistics original) throws mathlib.exception.NullArgumentException
 		public SummaryStatistics(SummaryStatistics original)
 		{
 			if (!InstanceFieldsInitialized)
@@ -527,7 +527,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n >0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSumImpl(StorelessUnivariateStatistic sumImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setSumImpl(StorelessUnivariateStatistic sumImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns the currently configured sum of squares implementation </summary>
@@ -561,7 +561,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n > 0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSumsqImpl(StorelessUnivariateStatistic sumsqImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setSumsqImpl(StorelessUnivariateStatistic sumsqImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns the currently configured minimum implementation </summary>
@@ -595,7 +595,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n > 0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setMinImpl(StorelessUnivariateStatistic minImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setMinImpl(StorelessUnivariateStatistic minImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns the currently configured maximum implementation </summary>
@@ -629,7 +629,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n > 0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setMaxImpl(StorelessUnivariateStatistic maxImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setMaxImpl(StorelessUnivariateStatistic maxImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns the currently configured sum of logs implementation </summary>
@@ -664,7 +664,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n > 0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSumLogImpl(StorelessUnivariateStatistic sumLogImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setSumLogImpl(StorelessUnivariateStatistic sumLogImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns the currently configured geometric mean implementation </summary>
@@ -698,7 +698,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n > 0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setGeoMeanImpl(StorelessUnivariateStatistic geoMeanImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setGeoMeanImpl(StorelessUnivariateStatistic geoMeanImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns the currently configured mean implementation </summary>
@@ -732,7 +732,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n > 0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setMeanImpl(StorelessUnivariateStatistic meanImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setMeanImpl(StorelessUnivariateStatistic meanImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Returns the currently configured variance implementation </summary>
@@ -766,13 +766,13 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <exception cref="MathIllegalStateException"> if data has already been added (i.e if n > 0)
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setVarianceImpl(StorelessUnivariateStatistic varianceImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setVarianceImpl(StorelessUnivariateStatistic varianceImpl) throws mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// Throws IllegalStateException if n > 0. </summary>
 		/// <exception cref="MathIllegalStateException"> if data has been added </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkEmpty() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: private void checkEmpty() throws mathlib.exception.MathIllegalStateException
 		private void checkEmpty()
 		{
 			if (n > 0)
@@ -801,7 +801,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="dest"> SummaryStatistics to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(SummaryStatistics source, SummaryStatistics dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(SummaryStatistics source, SummaryStatistics dest) throws mathlib.exception.NullArgumentException
 		public static void copy(SummaryStatistics source, SummaryStatistics dest)
 		{
 			MathUtils.checkNotNull(source);

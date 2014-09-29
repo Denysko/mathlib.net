@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis
+namespace mathlib.analysis
 {
 
 	/// <summary>
@@ -32,9 +32,9 @@ namespace org.apache.commons.math3.analysis
 		/// </summary>
 		/// <param name="point"> Point at which the function must be evaluated. </param>
 		/// <returns> the function value for the given point. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the parameter's dimension is wrong for the function being evaluated. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.MathIllegalArgumentException">
+		/// <exception cref="mathlib.exception.MathIllegalArgumentException">
 		/// when the activated method itself can ascertain that preconditions,
 		/// specified in the API expressed at the level of the activated method,
 		/// have been violated.  In the vast majority of cases where Commons Math

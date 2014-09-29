@@ -16,17 +16,17 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
-	using org.apache.commons.math3.util;
+	using mathlib.util;
 
 	/// <summary>
 	/// This class holds a point and the vectorial value of an objective function at
 	/// that point.
 	/// </summary>
 	/// <seealso cref= PointValuePair </seealso>
-	/// <seealso cref= org.apache.commons.math3.analysis.MultivariateVectorFunction
+	/// <seealso cref= mathlib.analysis.MultivariateVectorFunction
 	/// @version $Id: PointVectorValuePair.java 1435539 2013-01-19 13:27:24Z tn $
 	/// @since 3.0 </seealso>
 	[Serializable]

@@ -16,16 +16,16 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Population of chromosomes which uses elitism (certain percentage of the best
@@ -52,7 +52,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="NumberIsTooLargeException"> if the list of chromosomes exceeds the population limit </exception>
 		/// <exception cref="OutOfRangeException"> if the elitism rate is outside the [0, 1] range </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ElitisticListPopulation(final java.util.List<Chromosome> chromosomes, final int populationLimit, final double elitismRate) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public ElitisticListPopulation(final java.util.List<Chromosome> chromosomes, final int populationLimit, final double elitismRate) throws mathlib.exception.NullArgumentException, mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ElitisticListPopulation(IList<Chromosome> chromosomes, int populationLimit, double elitismRate) : base(chromosomes, populationLimit)
 		{
@@ -68,7 +68,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="NotPositiveException"> if the population limit is not a positive number (&lt; 1) </exception>
 		/// <exception cref="OutOfRangeException"> if the elitism rate is outside the [0, 1] range </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ElitisticListPopulation(final int populationLimit, final double elitismRate) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public ElitisticListPopulation(final int populationLimit, final double elitismRate) throws mathlib.exception.NotPositiveException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ElitisticListPopulation(int populationLimit, double elitismRate) : base(populationLimit)
 		{
@@ -106,7 +106,7 @@ namespace org.apache.commons.math3.genetics
 		/// <param name="elitismRate"> how many best chromosomes will be directly transferred to the next generation [in %] </param>
 		/// <exception cref="OutOfRangeException"> if the elitism rate is outside the [0, 1] range </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setElitismRate(final double elitismRate) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public void setElitismRate(final double elitismRate) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double ElitismRate
 		{

@@ -17,12 +17,12 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using DiagonalMatrix = org.apache.commons.math3.linear.DiagonalMatrix;
-	using NonSquareMatrixException = org.apache.commons.math3.linear.NonSquareMatrixException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using DiagonalMatrix = mathlib.linear.DiagonalMatrix;
+	using NonSquareMatrixException = mathlib.linear.NonSquareMatrixException;
 
 	/// <summary>
 	/// Weight matrix of the residuals between model and observations.

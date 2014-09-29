@@ -17,12 +17,12 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet.sofm
+namespace mathlib.ml.neuralnet.sofm
 {
 
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using Gaussian = org.apache.commons.math3.analysis.function.Gaussian;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using Gaussian = mathlib.analysis.function.Gaussian;
 
 	/// <summary>
 	/// Update formula for <a href="http://en.wikipedia.org/wiki/Kohonen">
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.ml.neuralnet.sofm
 //ORIGINAL LINE: final double currentLearning = learningFactor.value(numCalls);
 			double currentLearning = learningFactor.value(numCalls);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ml.neuralnet.Neuron best = findAndUpdateBestNeuron(net, features, currentLearning);
+//ORIGINAL LINE: final mathlib.ml.neuralnet.Neuron best = findAndUpdateBestNeuron(net, features, currentLearning);
 			Neuron best = findAndUpdateBestNeuron(net, features, currentLearning);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -108,7 +108,7 @@ namespace org.apache.commons.math3.ml.neuralnet.sofm
 			// The farther away the neighbour is from the winning neuron, the
 			// smaller the learning rate will become.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.function.Gaussian neighbourhoodDecay = new org.apache.commons.math3.analysis.function.Gaussian(currentLearning, 0, 1d / currentNeighbourhood);
+//ORIGINAL LINE: final mathlib.analysis.function.Gaussian neighbourhoodDecay = new mathlib.analysis.function.Gaussian(currentLearning, 0, 1d / currentNeighbourhood);
 			Gaussian neighbourhoodDecay = new Gaussian(currentLearning, 0, 1d / currentNeighbourhood);
 
 			if (currentNeighbourhood > 0)
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.ml.neuralnet.sofm
 				neighbours.Add(best);
 				// Winning neuron must be excluded from the neighbours.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.HashSet<org.apache.commons.math3.ml.neuralnet.Neuron> exclude = new java.util.HashSet<org.apache.commons.math3.ml.neuralnet.Neuron>();
+//ORIGINAL LINE: final java.util.HashSet<mathlib.ml.neuralnet.Neuron> exclude = new java.util.HashSet<mathlib.ml.neuralnet.Neuron>();
 				HashSet<Neuron> exclude = new HashSet<Neuron>();
 				exclude.Add(best);
 
@@ -191,7 +191,7 @@ namespace org.apache.commons.math3.ml.neuralnet.sofm
 			while (true)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ml.neuralnet.Neuron best = org.apache.commons.math3.ml.neuralnet.MapUtils.findBest(features, net, distance);
+//ORIGINAL LINE: final mathlib.ml.neuralnet.Neuron best = mathlib.ml.neuralnet.MapUtils.findBest(features, net, distance);
 				Neuron best = MapUtils.findBest(features, net, distance);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -221,10 +221,10 @@ namespace org.apache.commons.math3.ml.neuralnet.sofm
 		private double[] computeFeatures(double[] current, double[] sample, double learningRate)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector c = new org.apache.commons.math3.linear.ArrayRealVector(current, false);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector c = new mathlib.linear.ArrayRealVector(current, false);
 			ArrayRealVector c = new ArrayRealVector(current, false);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector s = new org.apache.commons.math3.linear.ArrayRealVector(sample, false);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector s = new mathlib.linear.ArrayRealVector(sample, false);
 			ArrayRealVector s = new ArrayRealVector(sample, false);
 			// c + learningRate * (s - c)
 			return s.subtract(c).mapMultiplyToSelf(learningRate).add(c).toArray();

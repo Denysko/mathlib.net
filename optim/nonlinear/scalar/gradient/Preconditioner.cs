@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
+namespace mathlib.optim.nonlinear.scalar.gradient
 {
 
 	/// <summary>

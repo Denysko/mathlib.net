@@ -17,15 +17,15 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the Pareto distribution.
@@ -86,7 +86,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="shape"> the shape parameter of this distribution </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code scale <= 0} or {@code shape <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ParetoDistribution(double scale, double shape) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public ParetoDistribution(double scale, double shape) throws mathlib.exception.NotStrictlyPositiveException
 		public ParetoDistribution(double scale, double shape) : this(scale, shape, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -100,7 +100,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="inverseCumAccuracy"> Inverse cumulative probability accuracy. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code scale <= 0} or {@code shape <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ParetoDistribution(double scale, double shape, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public ParetoDistribution(double scale, double shape, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public ParetoDistribution(double scale, double shape, double inverseCumAccuracy) : this(new Well19937c(), scale, shape, inverseCumAccuracy)
 		{
 		}
@@ -113,7 +113,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="shape"> Shape parameter of this distribution. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code scale <= 0} or {@code shape <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ParetoDistribution(org.apache.commons.math3.random.RandomGenerator rng, double scale, double shape) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public ParetoDistribution(mathlib.random.RandomGenerator rng, double scale, double shape) throws mathlib.exception.NotStrictlyPositiveException
 		public ParetoDistribution(RandomGenerator rng, double scale, double shape) : this(rng, scale, shape, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -127,7 +127,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="inverseCumAccuracy"> Inverse cumulative probability accuracy. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code scale <= 0} or {@code shape <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ParetoDistribution(org.apache.commons.math3.random.RandomGenerator rng, double scale, double shape, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public ParetoDistribution(mathlib.random.RandomGenerator rng, double scale, double shape, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public ParetoDistribution(RandomGenerator rng, double scale, double shape, double inverseCumAccuracy) : base(rng)
 		{
 
@@ -226,7 +226,7 @@ namespace org.apache.commons.math3.distribution
 		/// </summary>
 		/// @deprecated See <seealso cref="RealDistribution#cumulativeProbability(double,double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override @Deprecated public double cumulativeProbability(double x0, double x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override @Deprecated public double cumulativeProbability(double x0, double x1) throws mathlib.exception.NumberIsTooLargeException
 		[Obsolete]
 		public override double cumulativeProbability(double x0, double x1)
 		{

@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
+	using MathUtils = mathlib.util.MathUtils;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
 
 	/// <summary>
 	/// Adapter for classes implementing the <seealso cref="UnivariateInterpolator"/>
@@ -82,7 +82,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NumberIsTooSmallException"> if the number of extension points
 		/// is larger than the size of {@code xval}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.UnivariateFunction interpolate(double[] xval, double[] yval) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public mathlib.analysis.UnivariateFunction interpolate(double[] xval, double[] yval) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.NonMonotonicSequenceException
 		public virtual UnivariateFunction interpolate(double[] xval, double[] yval)
 		{
 			if (xval.Length < extend)
@@ -128,7 +128,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			MathArrays.sortInPlace(x, y);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.UnivariateFunction f = interpolator.interpolate(x, y);
+//ORIGINAL LINE: final mathlib.analysis.UnivariateFunction f = interpolator.interpolate(x, y);
 			UnivariateFunction f = interpolator.interpolate(x, y);
 			return new UnivariateFunctionAnonymousInnerClassHelper(this, offset, x, f);
 		}
@@ -150,7 +150,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			}
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(final double x) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double value(final double x) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual double value(double x)
 			{

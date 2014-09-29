@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using org.apache.commons.math3.optim;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using mathlib.optim;
 
 	/// <summary>
 	/// The data necessary to define a non-linear least squares problem.
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// </summary>
 		/// <param name="point"> the parameter values. </param>
 		/// <returns> the model's value and derivative at the given point. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		///          if the maximal number of evaluations (of the model vector function) is
 		///          exceeded. </exception>
 		LeastSquaresProblem_Evaluation evaluate(RealVector point);
@@ -90,7 +90,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// </summary>
 		/// <param name="threshold"> Singularity threshold. </param>
 		/// <returns> the covariance matrix. </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		///          if the covariance matrix cannot be computed (singular problem). </exception>
 		RealMatrix getCovariances(double threshold);
 
@@ -104,7 +104,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="covarianceSingularityThreshold"> Singularity threshold (see {@link
 		///                                       #getCovariances(double) computeCovariances}). </param>
 		/// <returns> an estimate of the standard deviation of the optimized parameters </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		///          if the covariance matrix cannot be computed. </exception>
 		RealVector getSigma(double covarianceSingularityThreshold);
 
@@ -119,7 +119,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// Get the weighted Jacobian matrix.
 		/// </summary>
 		/// <returns> the weighted Jacobian: W<sup>1/2</sup> J. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the Jacobian dimension does not match problem dimension. </exception>
 		RealMatrix Jacobian {get;}
 
@@ -137,7 +137,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// then multiplied by the square root of the weight matrix.
 		/// </summary>
 		/// <returns> the weighted residuals: W<sup>1/2</sup> K. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the residuals have the wrong length. </exception>
 		RealVector Residuals {get;}
 

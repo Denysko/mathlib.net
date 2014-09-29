@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// This class is a concrete implementation of the <seealso cref="UpdatingMultipleLinearRegression"/> interface.
@@ -352,15 +352,15 @@ namespace org.apache.commons.math3.stat.regression
 		private double smartAdd(double a, double b)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double _a = org.apache.commons.math3.util.FastMath.abs(a);
+//ORIGINAL LINE: final double _a = mathlib.util.FastMath.abs(a);
 			double _a = FastMath.abs(a);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double _b = org.apache.commons.math3.util.FastMath.abs(b);
+//ORIGINAL LINE: final double _b = mathlib.util.FastMath.abs(b);
 			double _b = FastMath.abs(b);
 			if (_a > _b)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double eps = _a * org.apache.commons.math3.util.Precision.EPSILON;
+//ORIGINAL LINE: final double eps = _a * mathlib.util.Precision.EPSILON;
 				double eps = _a * Precision.EPSILON;
 				if (_b > eps)
 				{
@@ -371,7 +371,7 @@ namespace org.apache.commons.math3.stat.regression
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double eps = _b * org.apache.commons.math3.util.Precision.EPSILON;
+//ORIGINAL LINE: final double eps = _b * mathlib.util.Precision.EPSILON;
 				double eps = _b * Precision.EPSILON;
 				if (_a > eps)
 				{

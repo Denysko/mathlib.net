@@ -17,7 +17,7 @@
 /// <summary>
 /// Implementations of common discrete-time linear filters.
 /// </summary>
-namespace org.apache.commons.math3.filter
+namespace mathlib.filter
 {
 
 }

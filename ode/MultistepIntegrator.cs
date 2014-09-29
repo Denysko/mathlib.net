@@ -17,20 +17,20 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using AdaptiveStepsizeIntegrator = org.apache.commons.math3.ode.nonstiff.AdaptiveStepsizeIntegrator;
-	using DormandPrince853Integrator = org.apache.commons.math3.ode.nonstiff.DormandPrince853Integrator;
-	using StepHandler = org.apache.commons.math3.ode.sampling.StepHandler;
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using AdaptiveStepsizeIntegrator = mathlib.ode.nonstiff.AdaptiveStepsizeIntegrator;
+	using DormandPrince853Integrator = mathlib.ode.nonstiff.DormandPrince853Integrator;
+	using StepHandler = mathlib.ode.sampling.StepHandler;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class is the base class for multistep integrators for Ordinary
@@ -58,8 +58,8 @@ namespace org.apache.commons.math3.ode
 	/// factor is therefore set to a quite low value: 2<sup>1/order</sup>.
 	/// </p>
 	/// </summary>
-	/// <seealso cref= org.apache.commons.math3.ode.nonstiff.AdamsBashforthIntegrator </seealso>
-	/// <seealso cref= org.apache.commons.math3.ode.nonstiff.AdamsMoultonIntegrator
+	/// <seealso cref= mathlib.ode.nonstiff.AdamsBashforthIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.nonstiff.AdamsMoultonIntegrator
 	/// @version $Id: MultistepIntegrator.java 1463684 2013-04-02 19:04:13Z luc $
 	/// @since 2.0 </seealso>
 	public abstract class MultistepIntegrator : AdaptiveStepsizeIntegrator
@@ -119,7 +119,7 @@ namespace org.apache.commons.math3.ode
 		/// <param name="scalRelativeTolerance"> allowed relative error </param>
 		/// <exception cref="NumberIsTooSmallException"> if number of steps is smaller than 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected MultistepIntegrator(final String name, final int nSteps, final int order, final double minStep, final double maxStep, final double scalAbsoluteTolerance, final double scalRelativeTolerance) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: protected MultistepIntegrator(final String name, final int nSteps, final int order, final double minStep, final double maxStep, final double scalAbsoluteTolerance, final double scalRelativeTolerance) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal MultistepIntegrator(string name, int nSteps, int order, double minStep, double maxStep, double scalAbsoluteTolerance, double scalRelativeTolerance) : base(name, minStep, maxStep, scalAbsoluteTolerance, scalRelativeTolerance)
 		{
@@ -211,7 +211,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 		/// <exception cref="NoBracketingException"> if the location of an event cannot be bracketed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void start(final double t0, final double[] y0, final double t) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: protected void start(final double t0, final double[] y0, final double t) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual void start(double t0, double[] y0, double t)
 		{
@@ -294,7 +294,7 @@ namespace org.apache.commons.math3.ode
 		/// <returns> Nordieck vector at first step (h<sup>2</sup>/2 y''<sub>n</sub>,
 		/// h<sup>3</sup>/6 y'''<sub>n</sub> ... h<sup>k</sup>/k! y<sup>(k)</sup><sub>n</sub>) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected abstract org.apache.commons.math3.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot);
+//ORIGINAL LINE: protected abstract mathlib.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot);
 		protected internal abstract Array2DRowRealMatrix initializeHighOrderDerivatives(double h, double[] t, double[][] y, double[][] yDot);
 
 		/// <summary>
@@ -384,7 +384,7 @@ namespace org.apache.commons.math3.ode
 			/// <returns> Nordieck vector at first step (h<sup>2</sup>/2 y''<sub>n</sub>,
 			/// h<sup>3</sup>/6 y'''<sub>n</sub> ... h<sup>k</sup>/k! y<sup>(k)</sup><sub>n</sub>) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: org.apache.commons.math3.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot);
+//ORIGINAL LINE: mathlib.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double h, final double[] t, final double[][] y, final double[][] yDot);
 			Array2DRowRealMatrix initializeHighOrderDerivatives(double h, double[] t, double[][] y, double[][] yDot);
 		}
 
@@ -433,7 +433,7 @@ namespace org.apache.commons.math3.ode
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void handleStep(org.apache.commons.math3.ode.sampling.StepInterpolator interpolator, boolean isLast) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public void handleStep(mathlib.ode.sampling.StepInterpolator interpolator, boolean isLast) throws mathlib.exception.MaxCountExceededException
 			public virtual void handleStep(StepInterpolator interpolator, bool isLast)
 			{
 

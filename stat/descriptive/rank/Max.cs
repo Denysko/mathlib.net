@@ -16,12 +16,12 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.rank
+namespace mathlib.stat.descriptive.rank
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Returns the maximum of the available values.
@@ -72,7 +72,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <param name="original"> the {@code Max} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Max(Max original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Max(Max original) throws mathlib.exception.NullArgumentException
 		public Max(Max original)
 		{
 			copy(original, this);
@@ -145,7 +145,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int begin, int length)
 		{
@@ -183,7 +183,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <param name="dest"> Max to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(Max source, Max dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(Max source, Max dest) throws mathlib.exception.NullArgumentException
 		public static void copy(Max source, Max dest)
 		{
 			MathUtils.checkNotNull(source);

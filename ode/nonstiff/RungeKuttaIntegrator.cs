@@ -17,15 +17,15 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements the common part of all fixed step Runge-Kutta
@@ -98,7 +98,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void integrate(final org.apache.commons.math3.ode.ExpandableStatefulODE equations, final double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override public void integrate(final mathlib.ode.ExpandableStatefulODE equations, final double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public override void integrate(ExpandableStatefulODE equations, double t)
 	  {
@@ -246,7 +246,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// (can be set to a value smaller than {@code t0} for backward integration) </param>
 	  /// <returns> state vector at {@code t} </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double[] singleStep(final org.apache.commons.math3.ode.FirstOrderDifferentialEquations equations, final double t0, final double[] y0, final double t)
+//ORIGINAL LINE: public double[] singleStep(final mathlib.ode.FirstOrderDifferentialEquations equations, final double t0, final double[] y0, final double t)
 	  public virtual double[] singleStep(FirstOrderDifferentialEquations equations, double t0, double[] y0, double t)
 	  {
 

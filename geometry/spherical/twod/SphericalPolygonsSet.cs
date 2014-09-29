@@ -16,25 +16,25 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.twod
+namespace mathlib.geometry.spherical.twod
 {
 
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using org.apache.commons.math3.geometry.enclosing;
-	using org.apache.commons.math3.geometry.enclosing;
-	using Euclidean3D = org.apache.commons.math3.geometry.euclidean.threed.Euclidean3D;
-	using Rotation = org.apache.commons.math3.geometry.euclidean.threed.Rotation;
-	using SphereGenerator = org.apache.commons.math3.geometry.euclidean.threed.SphereGenerator;
-	using Vector3D = org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using Sphere1D = org.apache.commons.math3.geometry.spherical.oned.Sphere1D;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using mathlib.geometry.enclosing;
+	using mathlib.geometry.enclosing;
+	using Euclidean3D = mathlib.geometry.euclidean.threed.Euclidean3D;
+	using Rotation = mathlib.geometry.euclidean.threed.Rotation;
+	using SphereGenerator = mathlib.geometry.euclidean.threed.SphereGenerator;
+	using Vector3D = mathlib.geometry.euclidean.threed.Vector3D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using Sphere1D = mathlib.geometry.spherical.oned.Sphere1D;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class represents a region on the 2-sphere: a set of spherical polygons.
@@ -62,7 +62,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="pole"> pole of the hemisphere (the pole is in the inside half) </param>
 		/// <param name="tolerance"> below which points are consider to be identical </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SphericalPolygonsSet(final org.apache.commons.math3.geometry.euclidean.threed.Vector3D pole, final double tolerance)
+//ORIGINAL LINE: public SphericalPolygonsSet(final mathlib.geometry.euclidean.threed.Vector3D pole, final double tolerance)
 		public SphericalPolygonsSet(Vector3D pole, double tolerance) : base(new BSPTree<Sphere2D>((new Circle(pole, tolerance)).wholeHyperplane(), new BSPTree<Sphere2D>(false), new BSPTree<Sphere2D>(true), null), tolerance)
 		{
 		}
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="n"> number of sides of the polygon </param>
 		/// <param name="tolerance"> below which points are consider to be identical </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SphericalPolygonsSet(final org.apache.commons.math3.geometry.euclidean.threed.Vector3D center, final org.apache.commons.math3.geometry.euclidean.threed.Vector3D meridian, final double outsideRadius, final int n, final double tolerance)
+//ORIGINAL LINE: public SphericalPolygonsSet(final mathlib.geometry.euclidean.threed.Vector3D center, final mathlib.geometry.euclidean.threed.Vector3D meridian, final double outsideRadius, final int n, final double tolerance)
 		public SphericalPolygonsSet(Vector3D center, Vector3D meridian, double outsideRadius, int n, double tolerance) : this(tolerance, createRegularPolygonVertices(center, meridian, outsideRadius, n))
 		{
 		}
@@ -91,7 +91,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="tree"> inside/outside BSP tree representing the region </param>
 		/// <param name="tolerance"> below which points are consider to be identical </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SphericalPolygonsSet(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> tree, final double tolerance)
+//ORIGINAL LINE: public SphericalPolygonsSet(final mathlib.geometry.partitioning.BSPTree<Sphere2D> tree, final double tolerance)
 		public SphericalPolygonsSet(BSPTree<Sphere2D> tree, double tolerance) : base(tree, tolerance)
 		{
 		}
@@ -110,7 +110,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// boundary does not really separate an inside open from an outside
 		/// open (open having here its topological meaning), then subsequent
 		/// calls to the {@link
-		/// org.apache.commons.math3.geometry.partitioning.Region#checkPoint(org.apache.commons.math3.geometry.Point)
+		/// mathlib.geometry.partitioning.Region#checkPoint(mathlib.geometry.Point)
 		/// checkPoint} method will not be meaningful anymore.</p>
 		/// <p>If the boundary is empty, the region will represent the whole
 		/// space.</p> </summary>
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// collection of <seealso cref="SubHyperplane SubHyperplane"/> objects </param>
 		/// <param name="tolerance"> below which points are consider to be identical </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SphericalPolygonsSet(final java.util.Collection<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Sphere2D>> boundary, final double tolerance)
+//ORIGINAL LINE: public SphericalPolygonsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Sphere2D>> boundary, final double tolerance)
 		public SphericalPolygonsSet(ICollection<SubHyperplane<Sphere2D>> boundary, double tolerance) : base(boundary, tolerance)
 		{
 		}
@@ -167,19 +167,19 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="n"> number of sides of the polygon </param>
 		/// <returns> vertices array </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static S2Point[] createRegularPolygonVertices(final org.apache.commons.math3.geometry.euclidean.threed.Vector3D center, final org.apache.commons.math3.geometry.euclidean.threed.Vector3D meridian, final double outsideRadius, final int n)
+//ORIGINAL LINE: private static S2Point[] createRegularPolygonVertices(final mathlib.geometry.euclidean.threed.Vector3D center, final mathlib.geometry.euclidean.threed.Vector3D meridian, final double outsideRadius, final int n)
 		private static S2Point[] createRegularPolygonVertices(Vector3D center, Vector3D meridian, double outsideRadius, int n)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final S2Point[] array = new S2Point[n];
 			S2Point[] array = new S2Point[n];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Rotation r0 = new org.apache.commons.math3.geometry.euclidean.threed.Rotation(org.apache.commons.math3.geometry.euclidean.threed.Vector3D.crossProduct(center, meridian), outsideRadius);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Rotation r0 = new mathlib.geometry.euclidean.threed.Rotation(mathlib.geometry.euclidean.threed.Vector3D.crossProduct(center, meridian), outsideRadius);
 			Rotation r0 = new Rotation(Vector3D.crossProduct(center, meridian), outsideRadius);
 			array[0] = new S2Point(r0.applyTo(center));
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Rotation r = new org.apache.commons.math3.geometry.euclidean.threed.Rotation(center, org.apache.commons.math3.util.MathUtils.TWO_PI / n);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Rotation r = new mathlib.geometry.euclidean.threed.Rotation(center, mathlib.util.MathUtils.TWO_PI / n);
 			Rotation r = new Rotation(center, MathUtils.TWO_PI / n);
 			for (int i = 1; i < n; ++i)
 			{
@@ -208,7 +208,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="vertices"> vertices of the simple loop boundary </param>
 		/// <returns> the BSP tree of the input vertices </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> verticesToTree(final double hyperplaneThickness, final S2Point... vertices)
+//ORIGINAL LINE: private static mathlib.geometry.partitioning.BSPTree<Sphere2D> verticesToTree(final double hyperplaneThickness, final S2Point... vertices)
 		private static BSPTree<Sphere2D> verticesToTree(double hyperplaneThickness, params S2Point[] vertices)
 		{
 
@@ -267,7 +267,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 
 			// build the tree top-down
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> tree = new org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D>();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere2D> tree = new mathlib.geometry.partitioning.BSPTree<Sphere2D>();
 			BSPTree<Sphere2D> tree = new BSPTree<Sphere2D>();
 			insertEdges(hyperplaneThickness, tree, edges);
 
@@ -284,7 +284,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="edges"> list of edges to insert in the cell defined by this node
 		/// (excluding edges not belonging to the cell defined by this node) </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static void insertEdges(final double hyperplaneThickness, final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node, final java.util.List<Edge> edges)
+//ORIGINAL LINE: private static void insertEdges(final double hyperplaneThickness, final mathlib.geometry.partitioning.BSPTree<Sphere2D> node, final java.util.List<Edge> edges)
 		private static void insertEdges(double hyperplaneThickness, BSPTree<Sphere2D> node, IList<Edge> edges)
 		{
 
@@ -305,7 +305,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 				// no suitable edge was found, the node remains a leaf node
 				// we need to set its inside/outside boolean indicator
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> parent = node.getParent();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere2D> parent = node.getParent();
 				BSPTree<Sphere2D> parent = node.Parent;
 				if (parent == null || node == parent.Minus)
 				{
@@ -357,7 +357,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public SphericalPolygonsSet buildNew(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> tree)
+//ORIGINAL LINE: @Override public SphericalPolygonsSet buildNew(final mathlib.geometry.partitioning.BSPTree<Sphere2D> tree)
 		public override SphericalPolygonsSet buildNew(BSPTree<Sphere2D> tree)
 		{
 			return new SphericalPolygonsSet(tree, Tolerance);
@@ -368,12 +368,12 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <exception cref="MathIllegalStateException"> if the tolerance setting does not allow to build
 		/// a clean non-ambiguous boundary </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected void computeGeometricalProperties() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override protected void computeGeometricalProperties() throws mathlib.exception.MathIllegalStateException
 		protected internal override void computeGeometricalProperties()
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> tree = getTree(true);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere2D> tree = getTree(true);
 			BSPTree<Sphere2D> tree = getTree(true);
 
 			if (tree.Cut == null)
@@ -433,7 +433,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <seealso cref= Vertex </seealso>
 		/// <seealso cref= Edge </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public java.util.List<Vertex> getBoundaryLoops() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public java.util.List<Vertex> getBoundaryLoops() throws mathlib.exception.MathIllegalStateException
 		public virtual IList<Vertex> BoundaryLoops
 		{
 			get
@@ -450,7 +450,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
     
 						// sort the arcs according to their start point
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> root = getTree(true);
+	//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere2D> root = getTree(true);
 						BSPTree<Sphere2D> root = getTree(true);
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 	//ORIGINAL LINE: final EdgesBuilder visitor = new EdgesBuilder(root, getTolerance());
@@ -507,7 +507,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <p>
 		/// This method is intended as a first test to quickly identify points
 		/// that are guaranteed to be outside of the region, hence performing a full
-		/// <seealso cref="#checkPoint(org.apache.commons.math3.geometry.Vector) checkPoint"/>
+		/// <seealso cref="#checkPoint(mathlib.geometry.Vector) checkPoint"/>
 		/// only if the point status remains undecided after the quick check. It is
 		/// is therefore mostly useful to speed up computation for small polygons with
 		/// complex shapes (say a country boundary on Earth), as the spherical cap will
@@ -542,7 +542,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// In the special cases of empty or whole sphere polygons, special
 		/// spherical caps are returned, with angular radius set to negative
 		/// or positive infinity so the {@link
-		/// EnclosingBall#contains(org.apache.commons.math3.geometry.Point) ball.contains(point)}
+		/// EnclosingBall#contains(mathlib.geometry.Point) ball.contains(point)}
 		/// method return always false or true.
 		/// </p>
 		/// <p>
@@ -566,7 +566,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
     
 				// as the polygons is neither empty nor full, it has some boundaries and cut hyperplanes
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> root = getTree(false);
+	//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere2D> root = getTree(false);
 				BSPTree<Sphere2D> root = getTree(false);
 				if (isEmpty(root.Minus) && isFull(root.Plus))
 				{
@@ -587,7 +587,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
     
 				// gather some inside points, to be used by the encloser
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.threed.Vector3D> points = getInsidePoints();
+	//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.threed.Vector3D> points = getInsidePoints();
 				IList<Vector3D> points = InsidePoints;
     
 				// extract points from the boundary loops, to be used by the encloser as well
@@ -606,14 +606,14 @@ namespace org.apache.commons.math3.geometry.spherical.twod
     
 				// find the smallest enclosing 3D sphere
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.SphereGenerator generator = new org.apache.commons.math3.geometry.euclidean.threed.SphereGenerator();
+	//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.SphereGenerator generator = new mathlib.geometry.euclidean.threed.SphereGenerator();
 				SphereGenerator generator = new SphereGenerator();
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.geometry.enclosing.WelzlEncloser<org.apache.commons.math3.geometry.euclidean.threed.Euclidean3D, org.apache.commons.math3.geometry.euclidean.threed.Vector3D> encloser = new org.apache.commons.math3.geometry.enclosing.WelzlEncloser<org.apache.commons.math3.geometry.euclidean.threed.Euclidean3D, org.apache.commons.math3.geometry.euclidean.threed.Vector3D>(getTolerance(), generator);
+	//ORIGINAL LINE: final mathlib.geometry.enclosing.WelzlEncloser<mathlib.geometry.euclidean.threed.Euclidean3D, mathlib.geometry.euclidean.threed.Vector3D> encloser = new mathlib.geometry.enclosing.WelzlEncloser<mathlib.geometry.euclidean.threed.Euclidean3D, mathlib.geometry.euclidean.threed.Vector3D>(getTolerance(), generator);
 				WelzlEncloser<Euclidean3D, Vector3D> encloser = new WelzlEncloser<Euclidean3D, Vector3D>(Tolerance, generator);
 				EnclosingBall<Euclidean3D, Vector3D> enclosing3D = encloser.enclose(points);
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Vector3D[] support3D = enclosing3D.getSupport();
+	//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Vector3D[] support3D = enclosing3D.getSupport();
 				Vector3D[] support3D = enclosing3D.Support;
     
 				// convert to 3D sphere to spherical cap
@@ -634,7 +634,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 	//ORIGINAL LINE: final S2Point outsideS2 = new S2Point(outsidePoint);
 						S2Point outsideS2 = new S2Point(outsidePoint);
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BoundaryProjection<Sphere2D> projection = projectToBoundary(outsideS2);
+	//ORIGINAL LINE: final mathlib.geometry.partitioning.BoundaryProjection<Sphere2D> projection = projectToBoundary(outsideS2);
 						BoundaryProjection<Sphere2D> projection = projectToBoundary(outsideS2);
 						if (FastMath.PI - projection.Offset < enclosingS2.Radius)
 						{
@@ -652,7 +652,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 				}
     
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.geometry.enclosing.EnclosingBall<Sphere2D, S2Point> enclosingS2 = new org.apache.commons.math3.geometry.enclosing.EnclosingBall<Sphere2D, S2Point>(new S2Point(enclosing3D.getCenter()), org.apache.commons.math3.util.FastMath.acos((1 + h * h - r * r) / (2 * h)), support);
+	//ORIGINAL LINE: final mathlib.geometry.enclosing.EnclosingBall<Sphere2D, S2Point> enclosingS2 = new mathlib.geometry.enclosing.EnclosingBall<Sphere2D, S2Point>(new S2Point(enclosing3D.getCenter()), mathlib.util.FastMath.acos((1 + h * h - r * r) / (2 * h)), support);
 				EnclosingBall<Sphere2D, S2Point> enclosingS2 = new EnclosingBall<Sphere2D, S2Point>(new S2Point(enclosing3D.Center), FastMath.acos((1 + h * h - r * r) / (2 * h)), support);
     
 				return enclosingS2;
@@ -683,7 +683,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 			get
 			{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final SphericalPolygonsSet complement = (SphericalPolygonsSet) new org.apache.commons.math3.geometry.partitioning.RegionFactory<Sphere2D>().getComplement(this);
+	//ORIGINAL LINE: final SphericalPolygonsSet complement = (SphericalPolygonsSet) new mathlib.geometry.partitioning.RegionFactory<Sphere2D>().getComplement(this);
 				SphericalPolygonsSet complement = (SphericalPolygonsSet) (new RegionFactory<Sphere2D>()).getComplement(this);
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 	//ORIGINAL LINE: final PropertiesComputer pc = new PropertiesComputer(getTolerance());

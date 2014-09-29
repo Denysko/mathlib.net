@@ -18,19 +18,19 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
 
-	using IntegerDistribution = org.apache.commons.math3.distribution.IntegerDistribution;
-	using RealDistribution = org.apache.commons.math3.distribution.RealDistribution;
-	using NotANumberException = org.apache.commons.math3.exception.NotANumberException;
-	using NotFiniteNumberException = org.apache.commons.math3.exception.NotFiniteNumberException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
+	using IntegerDistribution = mathlib.distribution.IntegerDistribution;
+	using RealDistribution = mathlib.distribution.RealDistribution;
+	using NotANumberException = mathlib.exception.NotANumberException;
+	using NotFiniteNumberException = mathlib.exception.NotFiniteNumberException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
 
 	/// <summary>
 	/// Generates random deviates and other random data using a <seealso cref="RandomGenerator"/>
@@ -157,7 +157,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> the random string. </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code len <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public String nextHexString(int len) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public String nextHexString(int len) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual string nextHexString(int len)
 		{
 			return @delegate.nextHexString(len);
@@ -166,7 +166,7 @@ namespace org.apache.commons.math3.random
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int nextInt(int lower, int upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public int nextInt(int lower, int upper) throws mathlib.exception.NumberIsTooLargeException
 		public virtual int nextInt(int lower, int upper)
 		{
 		   return @delegate.Next(lower, upper);
@@ -175,7 +175,7 @@ namespace org.apache.commons.math3.random
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public long nextLong(long lower, long upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public long nextLong(long lower, long upper) throws mathlib.exception.NumberIsTooLargeException
 		public virtual long nextLong(long lower, long upper)
 		{
 			return @delegate.nextLong(lower, upper);
@@ -198,7 +198,7 @@ namespace org.apache.commons.math3.random
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public String nextSecureHexString(int len) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public String nextSecureHexString(int len) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual string nextSecureHexString(int len)
 		{
 			return @delegate.nextSecureHexString(len);
@@ -207,7 +207,7 @@ namespace org.apache.commons.math3.random
 		/// <summary>
 		///  {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int nextSecureInt(int lower, int upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public int nextSecureInt(int lower, int upper) throws mathlib.exception.NumberIsTooLargeException
 		public virtual int nextSecureInt(int lower, int upper)
 		{
 			return @delegate.nextSecureInt(lower, upper);
@@ -216,7 +216,7 @@ namespace org.apache.commons.math3.random
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public long nextSecureLong(long lower, long upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public long nextSecureLong(long lower, long upper) throws mathlib.exception.NumberIsTooLargeException
 		public virtual long nextSecureLong(long lower, long upper)
 		{
 			return @delegate.nextSecureLong(lower,upper);
@@ -236,7 +236,7 @@ namespace org.apache.commons.math3.random
 		/// <strong>Computing</strong> vol. 26 pp. 197-207.</li></ul></p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public long nextPoisson(double mean) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public long nextPoisson(double mean) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual long nextPoisson(double mean)
 		{
 			return @delegate.nextPoisson(mean);
@@ -245,7 +245,7 @@ namespace org.apache.commons.math3.random
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextGaussian(double mu, double sigma) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double nextGaussian(double mu, double sigma) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual double nextGaussian(double mu, double sigma)
 		{
 			return @delegate.nextGaussian(mu,sigma);
@@ -263,7 +263,7 @@ namespace org.apache.commons.math3.random
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextExponential(double mean) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double nextExponential(double mean) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual double nextExponential(double mean)
 		{
 			return @delegate.nextExponential(mean);
@@ -280,7 +280,7 @@ namespace org.apache.commons.math3.random
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextUniform(double lower, double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public double nextUniform(double lower, double upper) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 		public virtual double nextUniform(double lower, double upper)
 		{
 			return @delegate.nextUniform(lower, upper);
@@ -299,14 +299,14 @@ namespace org.apache.commons.math3.random
 		/// @since 3.0
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextUniform(double lower, double upper, boolean lowerInclusive) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public double nextUniform(double lower, double upper, boolean lowerInclusive) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 		public virtual double nextUniform(double lower, double upper, bool lowerInclusive)
 		{
 			return @delegate.nextUniform(lower, upper, lowerInclusive);
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.BetaDistribution Beta Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.BetaDistribution Beta Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(RealDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -320,7 +320,7 @@ namespace org.apache.commons.math3.random
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.BinomialDistribution Binomial Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.BinomialDistribution Binomial Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(RealDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -334,7 +334,7 @@ namespace org.apache.commons.math3.random
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.CauchyDistribution Cauchy Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.CauchyDistribution Cauchy Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(RealDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -348,7 +348,7 @@ namespace org.apache.commons.math3.random
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.ChiSquaredDistribution ChiSquare Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.ChiSquaredDistribution ChiSquare Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(RealDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -361,7 +361,7 @@ namespace org.apache.commons.math3.random
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.FDistribution F Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.FDistribution F Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(RealDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -372,7 +372,7 @@ namespace org.apache.commons.math3.random
 		/// {@code numeratorDf <= 0} or {@code denominatorDf <= 0}.
 		/// @since 2.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextF(double numeratorDf, double denominatorDf) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double nextF(double numeratorDf, double denominatorDf) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual double nextF(double numeratorDf, double denominatorDf)
 		{
 			return @delegate.nextF(numeratorDf, denominatorDf);
@@ -380,7 +380,7 @@ namespace org.apache.commons.math3.random
 
 		/// <summary>
 		/// <p>Generates a random value from the
-		/// <seealso cref="org.apache.commons.math3.distribution.GammaDistribution Gamma Distribution"/>.</p>
+		/// <seealso cref="mathlib.distribution.GammaDistribution Gamma Distribution"/>.</p>
 		/// 
 		/// <p>This implementation uses the following algorithms: </p>
 		/// 
@@ -401,14 +401,14 @@ namespace org.apache.commons.math3.random
 		/// {@code scale <= 0}.
 		/// @since 2.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextGamma(double shape, double scale) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double nextGamma(double shape, double scale) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual double nextGamma(double shape, double scale)
 		{
 			return @delegate.nextGamma(shape, scale);
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.HypergeometricDistribution Hypergeometric Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.HypergeometricDistribution Hypergeometric Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(IntegerDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -422,14 +422,14 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NotPositiveException">  if {@code numberOfSuccesses < 0}.
 		/// @since 2.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int nextHypergeometric(int populationSize, int numberOfSuccesses, int sampleSize) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public int nextHypergeometric(int populationSize, int numberOfSuccesses, int sampleSize) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooLargeException
 		public virtual int nextHypergeometric(int populationSize, int numberOfSuccesses, int sampleSize)
 		{
 			return @delegate.nextHypergeometric(populationSize, numberOfSuccesses, sampleSize);
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.PascalDistribution Pascal Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.PascalDistribution Pascal Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(IntegerDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -441,14 +441,14 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="OutOfRangeException"> if the probability of success is not in the
 		/// range {@code [0, 1]}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int nextPascal(int r, double p) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public int nextPascal(int r, double p) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.OutOfRangeException
 		public virtual int nextPascal(int r, double p)
 		{
 			return @delegate.nextPascal(r, p);
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.TDistribution T Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.TDistribution T Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(RealDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -457,14 +457,14 @@ namespace org.apache.commons.math3.random
 		/// @since 2.2 </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code df <= 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextT(double df) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double nextT(double df) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual double nextT(double df)
 		{
 			return @delegate.nextT(df);
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.WeibullDistribution Weibull Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.WeibullDistribution Weibull Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(RealDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -475,14 +475,14 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NotStrictlyPositiveException"> if {@code shape <= 0} or
 		/// {@code scale <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double nextWeibull(double shape, double scale) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public double nextWeibull(double shape, double scale) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual double nextWeibull(double shape, double scale)
 		{
 			return @delegate.nextWeibull(shape, scale);
 		}
 
 		/// <summary>
-		/// Generates a random value from the <seealso cref="org.apache.commons.math3.distribution.ZipfDistribution Zipf Distribution"/>.
+		/// Generates a random value from the <seealso cref="mathlib.distribution.ZipfDistribution Zipf Distribution"/>.
 		/// This implementation uses <seealso cref="#nextInversionDeviate(IntegerDistribution) inversion"/>
 		/// to generate random values.
 		/// </summary>
@@ -493,7 +493,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NotStrictlyPositiveException"> if {@code numberOfElements <= 0}
 		/// or {@code exponent <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int nextZipf(int numberOfElements, double exponent) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public int nextZipf(int numberOfElements, double exponent) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual int nextZipf(int numberOfElements, double exponent)
 		{
 			return @delegate.nextZipf(numberOfElements, exponent);
@@ -583,7 +583,7 @@ namespace org.apache.commons.math3.random
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int[] nextPermutation(int n, int k) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public int[] nextPermutation(int n, int k) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooLargeException
 		public virtual int[] nextPermutation(int n, int k)
 		{
 			return @delegate.nextPermutation(n, k);
@@ -603,7 +603,7 @@ namespace org.apache.commons.math3.random
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Object[] nextSample(java.util.Collection<?> c, int k) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public Object[] nextSample(java.util.Collection<?> c, int k) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooLargeException
 		public virtual object[] nextSample<T1>(ICollection<T1> c, int k)
 		{
 			return @delegate.nextSample(c, k);
@@ -619,7 +619,7 @@ namespace org.apache.commons.math3.random
 		/// @since 2.2 </exception>
 		/// @deprecated use the distribution's sample() method 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use the distribution's sample() method") public double nextInversionDeviate(org.apache.commons.math3.distribution.RealDistribution distribution) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("use the distribution's sample() method") public double nextInversionDeviate(mathlib.distribution.RealDistribution distribution) throws mathlib.exception.MathIllegalArgumentException
 		[Obsolete("use the distribution's sample() method")]
 		public virtual double nextInversionDeviate(RealDistribution distribution)
 		{
@@ -637,7 +637,7 @@ namespace org.apache.commons.math3.random
 		/// @since 2.2 </exception>
 		/// @deprecated use the distribution's sample() method 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use the distribution's sample() method") public int nextInversionDeviate(org.apache.commons.math3.distribution.IntegerDistribution distribution) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("use the distribution's sample() method") public int nextInversionDeviate(mathlib.distribution.IntegerDistribution distribution) throws mathlib.exception.MathIllegalArgumentException
 		[Obsolete("use the distribution's sample() method")]
 		public virtual int nextInversionDeviate(IntegerDistribution distribution)
 		{

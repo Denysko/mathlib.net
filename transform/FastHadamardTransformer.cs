@@ -16,14 +16,14 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.transform
+namespace mathlib.transform
 {
 
-	using FunctionUtils = org.apache.commons.math3.analysis.FunctionUtils;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArithmeticUtils = org.apache.commons.math3.util.ArithmeticUtils;
+	using FunctionUtils = mathlib.analysis.FunctionUtils;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArithmeticUtils = mathlib.util.ArithmeticUtils;
 
 	/// <summary>
 	/// Implements the <a href="http://www.archive.chipcenter.com/dsp/DSP000517F1.html">Fast Hadamard Transform</a> (FHT).
@@ -65,13 +65,13 @@ namespace org.apache.commons.math3.transform
 		/// <summary>
 		/// {@inheritDoc}
 		/// </summary>
-		/// <exception cref="org.apache.commons.math3.exception.NonMonotonicSequenceException">
+		/// <exception cref="mathlib.exception.NonMonotonicSequenceException">
 		///   if the lower bound is greater than, or equal to the upper bound </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		///   if the number of sample points is negative </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the number of sample points is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double[] transform(final org.apache.commons.math3.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
+//ORIGINAL LINE: public double[] transform(final mathlib.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
 		public virtual double[] transform(UnivariateFunction f, double min, double max, int n, TransformType type)
 		{
 
@@ -235,7 +235,7 @@ namespace org.apache.commons.math3.transform
 		/// <returns> the real transformed array, {@code y} </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double[] fht(double[] x) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected double[] fht(double[] x) throws mathlib.exception.MathIllegalArgumentException
 		protected internal virtual double[] fht(double[] x)
 		{
 
@@ -300,7 +300,7 @@ namespace org.apache.commons.math3.transform
 		/// <returns> the integer transformed array, {@code y} </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected int[] fht(int[] x) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected int[] fht(int[] x) throws mathlib.exception.MathIllegalArgumentException
 		protected internal virtual int[] fht(int[] x)
 		{
 

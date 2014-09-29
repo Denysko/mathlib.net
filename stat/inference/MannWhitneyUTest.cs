@@ -16,18 +16,18 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
-	using NormalDistribution = org.apache.commons.math3.distribution.NormalDistribution;
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NaNStrategy = org.apache.commons.math3.stat.ranking.NaNStrategy;
-	using NaturalRanking = org.apache.commons.math3.stat.ranking.NaturalRanking;
-	using TiesStrategy = org.apache.commons.math3.stat.ranking.TiesStrategy;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NormalDistribution = mathlib.distribution.NormalDistribution;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NaNStrategy = mathlib.stat.ranking.NaNStrategy;
+	using NaturalRanking = mathlib.stat.ranking.NaturalRanking;
+	using TiesStrategy = mathlib.stat.ranking.TiesStrategy;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// An implementation of the Mann-Whitney U test (also called Wilcoxon rank-sum test).
@@ -60,7 +60,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <param name="tiesStrategy">
 		///            specifies the strategy that should be used for ties </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public MannWhitneyUTest(final org.apache.commons.math3.stat.ranking.NaNStrategy nanStrategy, final org.apache.commons.math3.stat.ranking.TiesStrategy tiesStrategy)
+//ORIGINAL LINE: public MannWhitneyUTest(final mathlib.stat.ranking.NaNStrategy nanStrategy, final mathlib.stat.ranking.TiesStrategy tiesStrategy)
 		public MannWhitneyUTest(NaNStrategy nanStrategy, TiesStrategy tiesStrategy)
 		{
 			naturalRanking = new NaturalRanking(nanStrategy, tiesStrategy);
@@ -74,7 +74,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if {@code x} or {@code y} are {@code null}. </exception>
 		/// <exception cref="NoDataException"> if {@code x} or {@code y} are zero-length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void ensureDataConformance(final double[] x, final double[] y) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: private void ensureDataConformance(final double[] x, final double[] y) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void ensureDataConformance(double[] x, double[] y)
 		{
@@ -136,7 +136,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if {@code x} or {@code y} are {@code null}. </exception>
 		/// <exception cref="NoDataException"> if {@code x} or {@code y} are zero-length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double mannWhitneyU(final double[] x, final double[] y) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public double mannWhitneyU(final double[] x, final double[] y) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double mannWhitneyU(double[] x, double[] y)
 		{
@@ -188,7 +188,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if the maximum number of
 		/// iterations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double calculateAsymptoticPValue(final double Umin, final int n1, final int n2) throws org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: private double calculateAsymptoticPValue(final double Umin, final int n1, final int n2) throws mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private double calculateAsymptoticPValue(double Umin, int n1, int n2)
 		{
@@ -209,12 +209,12 @@ namespace org.apache.commons.math3.stat.inference
 			double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double z = (Umin - EU) / org.apache.commons.math3.util.FastMath.sqrt(VarU);
+//ORIGINAL LINE: final double z = (Umin - EU) / mathlib.util.FastMath.sqrt(VarU);
 			double z = (Umin - EU) / FastMath.sqrt(VarU);
 
 			// No try-catch or advertised exception because args are valid
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.NormalDistribution standardNormal = new org.apache.commons.math3.distribution.NormalDistribution(0, 1);
+//ORIGINAL LINE: final mathlib.distribution.NormalDistribution standardNormal = new mathlib.distribution.NormalDistribution(0, 1);
 			NormalDistribution standardNormal = new NormalDistribution(0, 1);
 
 			return 2 * standardNormal.cumulativeProbability(z);
@@ -252,7 +252,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if the maximum number of iterations
 		/// is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double mannWhitneyUTest(final double[] x, final double[] y) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double mannWhitneyUTest(final double[] x, final double[] y) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double mannWhitneyUTest(double[] x, double[] y)
 		{

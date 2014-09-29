@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
 	/// <summary>

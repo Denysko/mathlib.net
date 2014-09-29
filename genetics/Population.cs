@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
 
 
 	/// <summary>
@@ -49,7 +49,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="NumberIsTooLargeException"> if the population would exceed the population limit when adding
 		///   this chromosome </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void addChromosome(Chromosome chromosome) throws org.apache.commons.math3.exception.NumberIsTooLargeException;
+//ORIGINAL LINE: void addChromosome(Chromosome chromosome) throws mathlib.exception.NumberIsTooLargeException;
 		void addChromosome(Chromosome chromosome);
 
 		/// <summary>

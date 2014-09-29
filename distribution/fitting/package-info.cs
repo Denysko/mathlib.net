@@ -17,7 +17,7 @@
 /// <summary>
 /// Fitting of parameters against distributions.
 /// </summary>
-namespace org.apache.commons.math3.distribution.fitting
+namespace mathlib.distribution.fitting
 {
 
 }

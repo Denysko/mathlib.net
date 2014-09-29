@@ -17,7 +17,7 @@
 /// <summary>
 /// Data storage, manipulation and summary routines.
 /// </summary>
-namespace org.apache.commons.math3.stat
+namespace mathlib.stat
 {
 
 }

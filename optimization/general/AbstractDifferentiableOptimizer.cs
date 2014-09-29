@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.general
+namespace mathlib.optimization.general
 {
 
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using GradientFunction = org.apache.commons.math3.analysis.differentiation.GradientFunction;
-	using MultivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction;
-	using org.apache.commons.math3.optimization;
-	using org.apache.commons.math3.optimization.direct;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using GradientFunction = mathlib.analysis.differentiation.GradientFunction;
+	using MultivariateDifferentiableFunction = mathlib.analysis.differentiation.MultivariateDifferentiableFunction;
+	using mathlib.optimization;
+	using mathlib.optimization.direct;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate scalar
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// <seealso cref="#optimizeInternal(int,MultivariateDifferentiableFunction,GoalType,OptimizationData[])"/>
 		/// instead. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override@Deprecated protected org.apache.commons.math3.optimization.PointValuePair optimizeInternal(final int maxEval, final org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction f, final org.apache.commons.math3.optimization.GoalType goalType, final double[] startPoint)
+//ORIGINAL LINE: @Override@Deprecated protected mathlib.optimization.PointValuePair optimizeInternal(final int maxEval, final mathlib.analysis.differentiation.MultivariateDifferentiableFunction f, final mathlib.optimization.GoalType goalType, final double[] startPoint)
 		Deprecated protected internal override PointValuePair optimizeInternal(int maxEval, MultivariateDifferentiableFunction f, GoalType goalType, double[] startPoint)
 		{
 			return optimizeInternal(maxEval, f, goalType, new InitialGuess(startPoint));
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override protected org.apache.commons.math3.optimization.PointValuePair optimizeInternal(final int maxEval, final org.apache.commons.math3.analysis.differentiation.MultivariateDifferentiableFunction f, final org.apache.commons.math3.optimization.GoalType goalType, final org.apache.commons.math3.optimization.OptimizationData... optData)
+//ORIGINAL LINE: @Override protected mathlib.optimization.PointValuePair optimizeInternal(final int maxEval, final mathlib.analysis.differentiation.MultivariateDifferentiableFunction f, final mathlib.optimization.GoalType goalType, final mathlib.optimization.OptimizationData... optData)
 		protected internal override PointValuePair optimizeInternal(int maxEval, MultivariateDifferentiableFunction f, GoalType goalType, params OptimizationData[] optData)
 		{
 			// Store optimization problem characteristics.

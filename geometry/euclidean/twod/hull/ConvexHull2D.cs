@@ -16,17 +16,17 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod.hull
+namespace mathlib.geometry.euclidean.twod.hull
 {
 
-	using InsufficientDataException = org.apache.commons.math3.exception.InsufficientDataException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry.hull;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using InsufficientDataException = mathlib.exception.InsufficientDataException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry.hull;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// This class represents a convex hull in an two-dimensional euclidean space.
@@ -63,7 +63,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <param name="tolerance"> tolerance below which points are considered identical </param>
 		/// <exception cref="MathIllegalArgumentException"> if the vertices do not form a convex hull </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ConvexHull2D(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[] vertices, final double tolerance) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public ConvexHull2D(final mathlib.geometry.euclidean.twod.Vector2D[] vertices, final double tolerance) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ConvexHull2D(Vector2D[] vertices, double tolerance)
 		{
@@ -82,7 +82,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <param name="hullVertices"> the hull vertices </param>
 		/// <returns> {@code true} if the vertices form a convex hull, {@code false} otherwise </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isConvex(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D[] hullVertices)
+//ORIGINAL LINE: private boolean isConvex(final mathlib.geometry.euclidean.twod.Vector2D[] hullVertices)
 		private bool isConvex(Vector2D[] hullVertices)
 		{
 			if (hullVertices.Length < 3)
@@ -94,24 +94,24 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 			for (int i = 0; i < hullVertices.Length; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p1 = hullVertices[i == 0 ? hullVertices.length - 1 : i - 1];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p1 = hullVertices[i == 0 ? hullVertices.length - 1 : i - 1];
 				Vector2D p1 = hullVertices[i == 0 ? hullVertices.Length - 1 : i - 1];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p2 = hullVertices[i];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p2 = hullVertices[i];
 				Vector2D p2 = hullVertices[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p3 = hullVertices[i == hullVertices.length - 1 ? 0 : i + 1];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p3 = hullVertices[i == hullVertices.length - 1 ? 0 : i + 1];
 				Vector2D p3 = hullVertices[i == hullVertices.Length - 1 ? 0 : i + 1];
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D d1 = p2.subtract(p1);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D d1 = p2.subtract(p1);
 				Vector2D d1 = p2.subtract(p1);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D d2 = p3.subtract(p2);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D d2 = p3.subtract(p2);
 				Vector2D d2 = p3.subtract(p2);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double cross = org.apache.commons.math3.util.FastMath.signum(org.apache.commons.math3.util.MathArrays.linearCombination(d1.getX(), d2.getY(), -d1.getY(), d2.getX()));
+//ORIGINAL LINE: final double cross = mathlib.util.FastMath.signum(mathlib.util.MathArrays.linearCombination(d1.getX(), d2.getY(), -d1.getY(), d2.getX()));
 				double cross = FastMath.signum(MathArrays.linearCombination(d1.X, d2.Y, -d1.Y, d2.X));
 				// in case of collinear points the cross product will be zero
 				if (cross != 0.0)
@@ -168,10 +168,10 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 				{
 					this.lineSegments = new Segment[1];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p1 = vertices[0];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p1 = vertices[0];
 					Vector2D p1 = vertices[0];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p2 = vertices[1];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p2 = vertices[1];
 					Vector2D p2 = vertices[1];
 					this.lineSegments[0] = new Segment(p1, p2, new Line(p1, p2, tolerance));
 				}
@@ -203,7 +203,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.Region<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> createRegion() throws org.apache.commons.math3.exception.InsufficientDataException
+//ORIGINAL LINE: public mathlib.geometry.partitioning.Region<mathlib.geometry.euclidean.twod.Euclidean2D> createRegion() throws mathlib.exception.InsufficientDataException
 		public virtual Region<Euclidean2D> createRegion()
 		{
 			if (vertices.Length < 3)
@@ -211,13 +211,13 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 				throw new InsufficientDataException();
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.RegionFactory<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D> factory = new org.apache.commons.math3.geometry.partitioning.RegionFactory<org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D>();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.RegionFactory<mathlib.geometry.euclidean.twod.Euclidean2D> factory = new mathlib.geometry.partitioning.RegionFactory<mathlib.geometry.euclidean.twod.Euclidean2D>();
 			RegionFactory<Euclidean2D> factory = new RegionFactory<Euclidean2D>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Segment[] segments = retrieveLineSegments();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Segment[] segments = retrieveLineSegments();
 			Segment[] segments = retrieveLineSegments();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Line[] lineArray = new org.apache.commons.math3.geometry.euclidean.twod.Line[segments.length];
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Line[] lineArray = new mathlib.geometry.euclidean.twod.Line[segments.length];
 			Line[] lineArray = new Line[segments.Length];
 			for (int i = 0; i < segments.Length; i++)
 			{

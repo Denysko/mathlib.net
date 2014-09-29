@@ -17,7 +17,7 @@
 /// <summary>
 /// Implementations of common discrete and continuous distributions.
 /// </summary>
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
 }

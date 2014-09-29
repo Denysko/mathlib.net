@@ -17,7 +17,7 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using org.apache.commons.math3.exception.util;
+using mathlib.exception.util;
 
 namespace mathlib.exception.util
 {

@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ml.clustering
+namespace mathlib.ml.clustering
 {
 
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
 
 	/// <summary>
 	/// Base class for clustering algorithms.
@@ -42,7 +42,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// </summary>
 		/// <param name="measure"> the distance measure to use </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected Clusterer(final org.apache.commons.math3.ml.distance.DistanceMeasure measure)
+//ORIGINAL LINE: protected Clusterer(final mathlib.ml.distance.DistanceMeasure measure)
 		protected internal Clusterer(DistanceMeasure measure)
 		{
 			this.measure = measure;
@@ -58,10 +58,10 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <exception cref="ConvergenceException"> if the algorithm has not yet converged after
 		///   the maximum number of iterations has been exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract java.util.List<? extends Cluster<T>> cluster(java.util.Collection<T> points) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.ConvergenceException;
+//ORIGINAL LINE: public abstract java.util.List<? extends Cluster<T>> cluster(java.util.Collection<T> points) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.ConvergenceException;
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract java.util.List<? extends Cluster<T>> cluster(java.util.Collection<T> points) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.ConvergenceException;
+//ORIGINAL LINE: public abstract java.util.List<? extends Cluster<T>> cluster(java.util.Collection<T> points) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.ConvergenceException;
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
 		public abstract IList<?> cluster(ICollection<T> points) where ? : Cluster<T>;
 

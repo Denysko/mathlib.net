@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ml.distance
+namespace mathlib.ml.distance
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Calculates the Canberra distance between two points.
@@ -40,10 +40,10 @@ namespace org.apache.commons.math3.ml.distance
 			for (int i = 0; i < a.Length; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double num = org.apache.commons.math3.util.FastMath.abs(a[i] - b[i]);
+//ORIGINAL LINE: final double num = mathlib.util.FastMath.abs(a[i] - b[i]);
 				double num = FastMath.abs(a[i] - b[i]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double denom = org.apache.commons.math3.util.FastMath.abs(a[i]) + org.apache.commons.math3.util.FastMath.abs(b[i]);
+//ORIGINAL LINE: final double denom = mathlib.util.FastMath.abs(a[i]) + mathlib.util.FastMath.abs(b[i]);
 				double denom = FastMath.abs(a[i]) + FastMath.abs(b[i]);
 				sum += num == 0.0 && denom == 0.0 ? 0.0 : num / denom;
 			}

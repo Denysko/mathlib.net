@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 	/// <summary>
 	/// Algorithm used to mutate a chromosome.
@@ -34,7 +34,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the mutated chromosome. </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the given chromosome is not compatible with this <seealso cref="MutationPolicy"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: Chromosome mutate(Chromosome original) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: Chromosome mutate(Chromosome original) throws mathlib.exception.MathIllegalArgumentException;
 		Chromosome mutate(Chromosome original);
 	}
 

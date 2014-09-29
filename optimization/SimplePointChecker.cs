@@ -17,12 +17,12 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using org.apache.commons.math3.util;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
+	using FastMath = mathlib.util.FastMath;
+	using mathlib.util;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
 
 	/// <summary>
 	/// Simple implementation of the <seealso cref="ConvergenceChecker"/> interface using
@@ -45,8 +45,8 @@ namespace org.apache.commons.math3.optimization
 	/// @since 3.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0).") public class SimplePointChecker<PAIR extends org.apache.commons.math3.util.Pair<double[] , ? extends Object>> extends AbstractConvergenceChecker<PAIR>
-	public class SimplePointChecker<PAIR> : AbstractConvergenceChecker<PAIR> where PAIR : org.apache.commons.math3.util.Pair<double[] , ? extends Object>
+//ORIGINAL LINE: @Deprecated("As of 3.1 (to be removed in 4.0).") public class SimplePointChecker<PAIR extends mathlib.util.Pair<double[] , ? extends Object>> extends AbstractConvergenceChecker<PAIR>
+	public class SimplePointChecker<PAIR> : AbstractConvergenceChecker<PAIR> where PAIR : mathlib.util.Pair<double[] , ? extends Object>
 	{
 		/// <summary>
 		/// If <seealso cref="#maxIterationCount"/> is set to this value, the number of
@@ -148,10 +148,10 @@ namespace org.apache.commons.math3.optimization
 //ORIGINAL LINE: final double ci = c[i];
 				double ci = c[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double difference = org.apache.commons.math3.util.FastMath.abs(pi - ci);
+//ORIGINAL LINE: final double difference = mathlib.util.FastMath.abs(pi - ci);
 				double difference = FastMath.abs(pi - ci);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double size = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(pi), org.apache.commons.math3.util.FastMath.abs(ci));
+//ORIGINAL LINE: final double size = mathlib.util.FastMath.max(mathlib.util.FastMath.abs(pi), mathlib.util.FastMath.abs(ci));
 				double size = FastMath.max(FastMath.abs(pi), FastMath.abs(ci));
 				if (difference > size * RelativeThreshold && difference > AbsoluteThreshold)
 				{

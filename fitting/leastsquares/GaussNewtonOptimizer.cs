@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using CholeskyDecomposition = org.apache.commons.math3.linear.CholeskyDecomposition;
-	using LUDecomposition = org.apache.commons.math3.linear.LUDecomposition;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using NonPositiveDefiniteMatrixException = org.apache.commons.math3.linear.NonPositiveDefiniteMatrixException;
-	using QRDecomposition = org.apache.commons.math3.linear.QRDecomposition;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using SingularMatrixException = org.apache.commons.math3.linear.SingularMatrixException;
-	using SingularValueDecomposition = org.apache.commons.math3.linear.SingularValueDecomposition;
-	using org.apache.commons.math3.optim;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using org.apache.commons.math3.util;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using CholeskyDecomposition = mathlib.linear.CholeskyDecomposition;
+	using LUDecomposition = mathlib.linear.LUDecomposition;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using NonPositiveDefiniteMatrixException = mathlib.linear.NonPositiveDefiniteMatrixException;
+	using QRDecomposition = mathlib.linear.QRDecomposition;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using SingularMatrixException = mathlib.linear.SingularMatrixException;
+	using SingularValueDecomposition = mathlib.linear.SingularValueDecomposition;
+	using mathlib.optim;
+	using Incrementor = mathlib.util.Incrementor;
+	using mathlib.util;
 
 	/// <summary>
 	/// Gauss-Newton least-squares solver.
@@ -66,26 +66,26 @@ namespace org.apache.commons.math3.fitting.leastsquares
 //JAVA TO C# CONVERTER TODO TASK: The following line could not be converted:
 			LU
 			{
-				protected org.apache.commons.math3.linear.RealVector solve(final org.apache.commons.math3.linear.RealMatrix jacobian,
+				protected mathlib.linear.RealVector solve(final mathlib.linear.RealMatrix jacobian,
 //JAVA TO C# CONVERTER TODO TASK: The following line could not be converted:
-										   final org.apache.commons.math3.linear.RealVector residuals)
+										   final mathlib.linear.RealVector residuals)
 										   {
 //JAVA TO C# CONVERTER TODO TASK: The following line could not be converted:
 					try
 					{
 //JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-						final org.apache.commons.math3.util.Pair<org.apache.commons.math3.linear.RealMatrix, org.apache.commons.math3.linear.RealVector> normalEquation = computeNormalMatrix(jacobian, residuals);
+						final mathlib.util.Pair<mathlib.linear.RealMatrix, mathlib.linear.RealVector> normalEquation = computeNormalMatrix(jacobian, residuals);
 //JAVA TO C# CONVERTER TODO TASK: Enums cannot contain fields in .NET:
-//						final org.apache.commons.math3.linear.RealMatrix normal = normalEquation.getFirst();
+//						final mathlib.linear.RealMatrix normal = normalEquation.getFirst();
 //JAVA TO C# CONVERTER TODO TASK: Enums cannot contain fields in .NET:
-//						final org.apache.commons.math3.linear.RealVector jTr = normalEquation.getSecond();
+//						final mathlib.linear.RealVector jTr = normalEquation.getSecond();
 						return = jTr
 					}
 //JAVA TO C# CONVERTER TODO TASK: The following line could not be converted:
-					catch (org.apache.commons.math3.linear.SingularMatrixException e)
+					catch (mathlib.linear.SingularMatrixException e)
 					{
 //JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-						throw new org.apache.commons.math3.exception.ConvergenceException(org.apache.commons.math3.exception.util.LocalizedFormats.UNABLE_TO_SOLVE_SINGULAR_PROBLEM, e);
+						throw new mathlib.exception.ConvergenceException(mathlib.exception.util.LocalizedFormats.UNABLE_TO_SOLVE_SINGULAR_PROBLEM, e);
 					}
 										   }
 			},
@@ -135,7 +135,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			/// <exception cref="ConvergenceException"> if the matrix properties (e.g. singular) do not
 			///                              permit a solution. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-			protected abstract org.apache.commons.math3.linear.RealVector solve(org.apache.commons.math3.linear.RealMatrix jacobian, org.apache.commons.math3.linear.RealVector residuals);
+			protected abstract mathlib.linear.RealVector solve(mathlib.linear.RealMatrix jacobian, mathlib.linear.RealVector residuals);
 		}
 
 		/// <summary>
@@ -186,7 +186,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="residuals"> the m by 1 residual vector, r. Input. </param>
 		/// <returns>  the n by n normal matrix and  the n by 1 J<sup>Tr vector. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Enums cannot contain methods in .NET:
-//		private static org.apache.commons.math3.util.Pair<org.apache.commons.math3.linear.RealMatrix, org.apache.commons.math3.linear.RealVector> computeNormalMatrix(final org.apache.commons.math3.linear.RealMatrix jacobian, final org.apache.commons.math3.linear.RealVector residuals)
+//		private static mathlib.util.Pair<mathlib.linear.RealMatrix, mathlib.linear.RealVector> computeNormalMatrix(final mathlib.linear.RealMatrix jacobian, final mathlib.linear.RealVector residuals)
 	//	{
 	//		//since the normal matrix is symmetric, we only need to compute half of it.
 	//		final int nR = jacobian.getRowDimension();

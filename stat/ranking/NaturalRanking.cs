@@ -18,15 +18,15 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.stat.ranking
+namespace mathlib.stat.ranking
 {
 
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NotANumberException = org.apache.commons.math3.exception.NotANumberException;
-	using RandomDataGenerator = org.apache.commons.math3.random.RandomDataGenerator;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NotANumberException = mathlib.exception.NotANumberException;
+	using RandomDataGenerator = mathlib.random.RandomDataGenerator;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -208,19 +208,19 @@ namespace org.apache.commons.math3.stat.ranking
 			IList<int?> nanPositions = null;
 			switch (nanStrategy)
 			{
-				case org.apache.commons.math3.stat.ranking.NaNStrategy.MAXIMAL: // Replace NaNs with +INFs
+				case mathlib.stat.ranking.NaNStrategy.MAXIMAL: // Replace NaNs with +INFs
 					recodeNaNs(ranks, double.PositiveInfinity);
 					break;
-				case org.apache.commons.math3.stat.ranking.NaNStrategy.MINIMAL: // Replace NaNs with -INFs
+				case mathlib.stat.ranking.NaNStrategy.MINIMAL: // Replace NaNs with -INFs
 					recodeNaNs(ranks, double.NegativeInfinity);
 					break;
-				case org.apache.commons.math3.stat.ranking.NaNStrategy.REMOVED: // Drop NaNs from data
+				case mathlib.stat.ranking.NaNStrategy.REMOVED: // Drop NaNs from data
 					ranks = removeNaNs(ranks);
 					break;
-				case org.apache.commons.math3.stat.ranking.NaNStrategy.FIXED: // Record positions of NaNs
+				case mathlib.stat.ranking.NaNStrategy.FIXED: // Record positions of NaNs
 					nanPositions = getNanPositions(ranks);
 					break;
-				case org.apache.commons.math3.stat.ranking.NaNStrategy.FAILED:
+				case mathlib.stat.ranking.NaNStrategy.FAILED:
 					nanPositions = getNanPositions(ranks);
 					if (nanPositions.Count > 0)
 					{
@@ -368,16 +368,16 @@ namespace org.apache.commons.math3.stat.ranking
 
 			switch (tiesStrategy)
 			{
-				case org.apache.commons.math3.stat.ranking.TiesStrategy.AVERAGE: // Replace ranks with average
+				case mathlib.stat.ranking.TiesStrategy.AVERAGE: // Replace ranks with average
 					fill(ranks, tiesTrace, (2 * c + length - 1) / 2d);
 					break;
-				case org.apache.commons.math3.stat.ranking.TiesStrategy.MAXIMUM: // Replace ranks with maximum values
+				case mathlib.stat.ranking.TiesStrategy.MAXIMUM: // Replace ranks with maximum values
 					fill(ranks, tiesTrace, c + length - 1);
 					break;
-				case org.apache.commons.math3.stat.ranking.TiesStrategy.MINIMUM: // Replace ties with minimum
+				case mathlib.stat.ranking.TiesStrategy.MINIMUM: // Replace ties with minimum
 					fill(ranks, tiesTrace, c);
 					break;
-				case org.apache.commons.math3.stat.ranking.TiesStrategy.RANDOM: // Fill with random integral values in [c, c + length - 1]
+				case mathlib.stat.ranking.TiesStrategy.RANDOM: // Fill with random integral values in [c, c + length - 1]
 					IEnumerator<int?> iterator = tiesTrace.GetEnumerator();
 					long f = FastMath.round(c);
 					while (iterator.MoveNext())
@@ -386,7 +386,7 @@ namespace org.apache.commons.math3.stat.ranking
 						ranks[iterator.Current] = randomData.nextLong(f, f + length - 1);
 					}
 					break;
-				case org.apache.commons.math3.stat.ranking.TiesStrategy.SEQUENTIAL: // Fill sequentially from c to c + length - 1
+				case mathlib.stat.ranking.TiesStrategy.SEQUENTIAL: // Fill sequentially from c to c + length - 1
 					// walk and fill
 					iterator = tiesTrace.GetEnumerator();
 					f = FastMath.round(c);

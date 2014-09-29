@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
 
 	/// <summary>
 	/// Applies a dense weight matrix to an evaluation.
@@ -42,7 +42,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="unweighted"> the evalutation before weights are applied </param>
 		/// <param name="weightSqrt"> the matrix square root of the weight matrix </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: DenseWeightedEvaluation(final org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation unweighted, final org.apache.commons.math3.linear.RealMatrix weightSqrt)
+//ORIGINAL LINE: DenseWeightedEvaluation(final mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation unweighted, final mathlib.linear.RealMatrix weightSqrt)
 		internal DenseWeightedEvaluation(LeastSquaresProblem_Evaluation unweighted, RealMatrix weightSqrt) : base(weightSqrt.ColumnDimension)
 		{
 			// weight square root is square, nR=nC=number of observations

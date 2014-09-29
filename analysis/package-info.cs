@@ -29,7 +29,7 @@
 ///    </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.analysis
+namespace mathlib.analysis
 {
 
 }

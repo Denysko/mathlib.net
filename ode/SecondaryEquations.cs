@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// This interface allows users to add secondary differential equations to a primary
@@ -57,7 +57,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void computeDerivatives(double t, double[] primary, double[] primaryDot, double[] secondary, double[] secondaryDot) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: void computeDerivatives(double t, double[] primary, double[] primaryDot, double[] secondary, double[] secondaryDot) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException;
 		void computeDerivatives(double t, double[] primary, double[] primaryDot, double[] secondary, double[] secondaryDot);
 
 	}

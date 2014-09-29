@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 	/// <summary>
@@ -45,7 +45,7 @@ namespace org.apache.commons.math3.linear
 		/// </summary>
 		/// <param name="b"> right-hand side of the equation A &times; X = B </param>
 		/// <returns> a vector X that minimizes the two norm of A &times; X - B </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the matrices dimensions do not match. </exception>
 		/// <exception cref="SingularMatrixException"> if the decomposed matrix is singular. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
@@ -61,7 +61,7 @@ namespace org.apache.commons.math3.linear
 		/// </summary>
 		/// <param name="b"> right-hand side of the equation A &times; X = B </param>
 		/// <returns> a matrix X that minimizes the two norm of A &times; X - B </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the matrices dimensions do not match. </exception>
 		/// <exception cref="SingularMatrixException"> if the decomposed matrix is singular. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:

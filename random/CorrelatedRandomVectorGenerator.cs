@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RectangularCholeskyDecomposition = org.apache.commons.math3.linear.RectangularCholeskyDecomposition;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RectangularCholeskyDecomposition = mathlib.linear.RectangularCholeskyDecomposition;
 
 	/// <summary>
 	/// A <seealso cref="RandomVectorGenerator"/> that generates vectors with with
@@ -84,7 +84,7 @@ namespace org.apache.commons.math3.random
 		/// considered to be dependent on previous ones and are discarded </param>
 		/// <param name="generator"> underlying generator for uncorrelated normalized
 		/// components. </param>
-		/// <exception cref="org.apache.commons.math3.linear.NonPositiveDefiniteMatrixException">
+		/// <exception cref="mathlib.linear.NonPositiveDefiniteMatrixException">
 		/// if the covariance matrix is not strictly positive definite. </exception>
 		/// <exception cref="DimensionMismatchException"> if the mean and covariance
 		/// arrays dimensions do not match. </exception>
@@ -98,7 +98,7 @@ namespace org.apache.commons.math3.random
 			this.mean = mean.clone();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RectangularCholeskyDecomposition decomposition = new org.apache.commons.math3.linear.RectangularCholeskyDecomposition(covariance, small);
+//ORIGINAL LINE: final mathlib.linear.RectangularCholeskyDecomposition decomposition = new mathlib.linear.RectangularCholeskyDecomposition(covariance, small);
 			RectangularCholeskyDecomposition decomposition = new RectangularCholeskyDecomposition(covariance, small);
 			root = decomposition.RootMatrix;
 
@@ -116,7 +116,7 @@ namespace org.apache.commons.math3.random
 		/// considered to be dependent on previous ones and are discarded. </param>
 		/// <param name="generator"> Underlying generator for uncorrelated normalized
 		/// components. </param>
-		/// <exception cref="org.apache.commons.math3.linear.NonPositiveDefiniteMatrixException">
+		/// <exception cref="mathlib.linear.NonPositiveDefiniteMatrixException">
 		/// if the covariance matrix is not strictly positive definite. </exception>
 		public CorrelatedRandomVectorGenerator(RealMatrix covariance, double small, NormalizedRandomGenerator generator)
 		{
@@ -128,7 +128,7 @@ namespace org.apache.commons.math3.random
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RectangularCholeskyDecomposition decomposition = new org.apache.commons.math3.linear.RectangularCholeskyDecomposition(covariance, small);
+//ORIGINAL LINE: final mathlib.linear.RectangularCholeskyDecomposition decomposition = new mathlib.linear.RectangularCholeskyDecomposition(covariance, small);
 			RectangularCholeskyDecomposition decomposition = new RectangularCholeskyDecomposition(covariance, small);
 			root = decomposition.RootMatrix;
 

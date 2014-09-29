@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements the common part of all embedded Runge-Kutta
@@ -203,7 +203,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void integrate(final org.apache.commons.math3.ode.ExpandableStatefulODE equations, final double t) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override public void integrate(final mathlib.ode.ExpandableStatefulODE equations, final double t) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public override void integrate(ExpandableStatefulODE equations, double t)
 	  {
@@ -341,7 +341,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 			{
 			  // reject the step and attempt to reduce error by stepsize control
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double factor = org.apache.commons.math3.util.FastMath.min(maxGrowth, org.apache.commons.math3.util.FastMath.max(minReduction, safety * org.apache.commons.math3.util.FastMath.pow(error, exp)));
+//ORIGINAL LINE: final double factor = mathlib.util.FastMath.min(maxGrowth, mathlib.util.FastMath.max(minReduction, safety * mathlib.util.FastMath.pow(error, exp)));
 			  double factor = FastMath.min(maxGrowth, FastMath.max(minReduction, safety * FastMath.pow(error, exp)));
 			  hNew = filterStep(stepSize * factor, forward, false);
 			}
@@ -369,7 +369,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 
 			  // stepsize control for next step
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double factor = org.apache.commons.math3.util.FastMath.min(maxGrowth, org.apache.commons.math3.util.FastMath.max(minReduction, safety * org.apache.commons.math3.util.FastMath.pow(error, exp)));
+//ORIGINAL LINE: final double factor = mathlib.util.FastMath.min(maxGrowth, mathlib.util.FastMath.max(minReduction, safety * mathlib.util.FastMath.pow(error, exp)));
 			  double factor = FastMath.min(maxGrowth, FastMath.max(minReduction, safety * FastMath.pow(error, exp)));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double scaledH = stepSize * factor;

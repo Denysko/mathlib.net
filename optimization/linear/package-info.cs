@@ -19,7 +19,7 @@
 /// This package provides optimization algorithms for linear constrained problems.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.optimization.linear
+namespace mathlib.optimization.linear
 {
 
 }

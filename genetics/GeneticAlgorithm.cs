@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using JDKRandomGenerator = org.apache.commons.math3.random.JDKRandomGenerator;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using JDKRandomGenerator = mathlib.random.JDKRandomGenerator;
 
 	/// <summary>
 	/// Implementation of a genetic algorithm. All factors that govern the operation
@@ -73,7 +73,7 @@ namespace org.apache.commons.math3.genetics
 		/// <param name="selectionPolicy"> The <seealso cref="SelectionPolicy"/> </param>
 		/// <exception cref="OutOfRangeException"> if the crossover or mutation rate is outside the [0, 1] range </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GeneticAlgorithm(final CrossoverPolicy crossoverPolicy, final double crossoverRate, final MutationPolicy mutationPolicy, final double mutationRate, final SelectionPolicy selectionPolicy) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public GeneticAlgorithm(final CrossoverPolicy crossoverPolicy, final double crossoverRate, final MutationPolicy mutationPolicy, final double mutationRate, final SelectionPolicy selectionPolicy) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public GeneticAlgorithm(CrossoverPolicy crossoverPolicy, double crossoverRate, MutationPolicy mutationPolicy, double mutationRate, SelectionPolicy selectionPolicy)
 		{
@@ -98,7 +98,7 @@ namespace org.apache.commons.math3.genetics
 		/// </summary>
 		/// <param name="random"> random generator </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static synchronized void setRandomGenerator(final org.apache.commons.math3.random.RandomGenerator random)
+//ORIGINAL LINE: public static synchronized void setRandomGenerator(final mathlib.random.RandomGenerator random)
 		public static RandomGenerator RandomGenerator
 		{
 			set

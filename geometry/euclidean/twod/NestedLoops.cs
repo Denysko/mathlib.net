@@ -16,17 +16,17 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using IntervalsSet = org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using IntervalsSet = mathlib.geometry.euclidean.oned.IntervalsSet;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
 
 	/// <summary>
 	/// This class represent a tree of nested 2D boundary loops.
@@ -94,7 +94,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <exception cref="MathIllegalArgumentException"> if an outline has an open boundary loop
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private NestedLoops(final Vector2D[] loop, final double tolerance) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private NestedLoops(final Vector2D[] loop, final double tolerance) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private NestedLoops(Vector2D[] loop, double tolerance)
 		{
@@ -110,7 +110,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 
 			// build the polygon defined by the loop
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.ArrayList<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean2D>> edges = new java.util.ArrayList<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean2D>>();
+//ORIGINAL LINE: final java.util.ArrayList<mathlib.geometry.partitioning.SubHyperplane<Euclidean2D>> edges = new java.util.ArrayList<mathlib.geometry.partitioning.SubHyperplane<Euclidean2D>>();
 			List<SubHyperplane<Euclidean2D>> edges = new List<SubHyperplane<Euclidean2D>>();
 			Vector2D current = loop[loop.Length - 1];
 			for (int i = 0; i < loop.Length; ++i)
@@ -123,7 +123,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 //ORIGINAL LINE: final Line line = new Line(previous, current, tolerance);
 				Line line = new Line(previous, current, tolerance);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet region = new org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet(line.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean2D>) previous).getX(), line.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean2D>) current).getX(), tolerance);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.oned.IntervalsSet region = new mathlib.geometry.euclidean.oned.IntervalsSet(line.toSubSpace((mathlib.geometry.Point<Euclidean2D>) previous).getX(), line.toSubSpace((mathlib.geometry.Point<Euclidean2D>) current).getX(), tolerance);
 				IntervalsSet region = new IntervalsSet(line.toSubSpace((Point<Euclidean2D>) previous).X, line.toSubSpace((Point<Euclidean2D>) current).X, tolerance);
 				edges.Add(new SubLine(line, region));
 			}
@@ -148,7 +148,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <exception cref="MathIllegalArgumentException"> if an outline has crossing
 		/// boundary loops or open boundary loops </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void add(final Vector2D[] bLoop) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void add(final Vector2D[] bLoop) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void add(Vector2D[] bLoop)
 		{
@@ -161,7 +161,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <exception cref="MathIllegalArgumentException"> if an outline has boundary
 		/// loops that cross each other </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void add(final NestedLoops node) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: private void add(final NestedLoops node) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void add(NestedLoops node)
 		{

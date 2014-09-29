@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
 	/// <summary>
@@ -47,7 +47,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: BSPTreeVisitor.java 1416643 2012-12-03 19:37:14Z tn $
 	/// @since 3.0 </seealso>
-	public interface BSPTreeVisitor<S> where S : org.apache.commons.math3.geometry.Space
+	public interface BSPTreeVisitor<S> where S : mathlib.geometry.Space
 	{
 
 		/// <summary>

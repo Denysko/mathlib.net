@@ -20,7 +20,7 @@
 ///     univariate real functions.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.analysis.polynomials
+namespace mathlib.analysis.polynomials
 {
 
 }

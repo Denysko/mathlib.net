@@ -21,7 +21,7 @@
 /// </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.geometry.enclosing
+namespace mathlib.geometry.enclosing
 {
 
 }

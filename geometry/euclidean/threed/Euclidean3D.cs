@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
-	using Euclidean2D = org.apache.commons.math3.geometry.euclidean.twod.Euclidean2D;
+	using Euclidean2D = mathlib.geometry.euclidean.twod.Euclidean2D;
 
 	/// <summary>
 	/// This class implements a three-dimensional space.

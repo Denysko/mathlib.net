@@ -17,11 +17,11 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.dfp
+namespace mathlib.dfp
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
+	using mathlib;
+	using mathlib;
 
 	/// <summary>
 	/// Field for Decimal floating point instances.

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.interval
+namespace mathlib.stat.interval
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
 
 	/// <summary>
 	/// Abstract base class to generate confidence intervals for a binomial proportion.
@@ -57,7 +57,7 @@ namespace org.apache.commons.math3.stat.interval
 		/// <exception cref="NumberIsTooLargeException"> if {@code numberOfSuccesses > numberOfTrials}. </exception>
 		/// <exception cref="OutOfRangeException"> if {@code confidenceLevel} is not in the interval {@code (0, 1)}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: ConfidenceInterval createInterval(int numberOfTrials, int numberOfSuccesses, double confidenceLevel) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: ConfidenceInterval createInterval(int numberOfTrials, int numberOfSuccesses, double confidenceLevel) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.OutOfRangeException;
 		ConfidenceInterval createInterval(int numberOfTrials, int numberOfSuccesses, double confidenceLevel);
 
 	}

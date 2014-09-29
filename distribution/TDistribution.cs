@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Beta = org.apache.commons.math3.special.Beta;
-	using Gamma = org.apache.commons.math3.special.Gamma;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Beta = mathlib.special.Beta;
+	using Gamma = mathlib.special.Gamma;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of Student's t-distribution.
@@ -54,7 +54,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="degreesOfFreedom"> Degrees of freedom. </param>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code degreesOfFreedom <= 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public TDistribution(double degreesOfFreedom) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public TDistribution(double degreesOfFreedom) throws mathlib.exception.NotStrictlyPositiveException
 		public TDistribution(double degreesOfFreedom) : this(degreesOfFreedom, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -70,7 +70,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code degreesOfFreedom <= 0}
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public TDistribution(double degreesOfFreedom, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public TDistribution(double degreesOfFreedom, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public TDistribution(double degreesOfFreedom, double inverseCumAccuracy) : this(new Well19937c(), degreesOfFreedom, inverseCumAccuracy)
 		{
 		}
@@ -83,7 +83,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code degreesOfFreedom <= 0}
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public TDistribution(org.apache.commons.math3.random.RandomGenerator rng, double degreesOfFreedom) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public TDistribution(mathlib.random.RandomGenerator rng, double degreesOfFreedom) throws mathlib.exception.NotStrictlyPositiveException
 		public TDistribution(RandomGenerator rng, double degreesOfFreedom) : this(rng, degreesOfFreedom, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code degreesOfFreedom <= 0}
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public TDistribution(org.apache.commons.math3.random.RandomGenerator rng, double degreesOfFreedom, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public TDistribution(mathlib.random.RandomGenerator rng, double degreesOfFreedom, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public TDistribution(RandomGenerator rng, double degreesOfFreedom, double inverseCumAccuracy) : base(rng)
 		{
 

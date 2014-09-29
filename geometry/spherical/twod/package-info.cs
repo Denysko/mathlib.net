@@ -27,7 +27,7 @@
 /// </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.geometry.spherical.twod
+namespace mathlib.geometry.spherical.twod
 {
 
 }

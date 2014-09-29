@@ -17,17 +17,17 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using OpenIntToDoubleHashMap = org.apache.commons.math3.util.OpenIntToDoubleHashMap;
-	using Iterator = org.apache.commons.math3.util.OpenIntToDoubleHashMap.Iterator;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using OpenIntToDoubleHashMap = mathlib.util.OpenIntToDoubleHashMap;
+	using Iterator = mathlib.util.OpenIntToDoubleHashMap.Iterator;
 
 	/// <summary>
 	/// This class implements the <seealso cref="RealVector"/> interface with a
@@ -246,7 +246,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector add(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public RealVector add(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override RealVector add(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -268,7 +268,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the sum of {@code this} and {@code v}. </returns>
 		/// <exception cref="DimensionMismatchException"> if the dimensions do not match. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public OpenMapRealVector add(OpenMapRealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public OpenMapRealVector add(OpenMapRealVector v) throws mathlib.exception.DimensionMismatchException
 		public virtual OpenMapRealVector add(OpenMapRealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -364,7 +364,7 @@ namespace org.apache.commons.math3.linear
 		/// performed by the parent class. The method must be kept to maintain
 		/// backwards compatibility. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.1 (to be removed in 4.0). The computation is") public double dotProduct(OpenMapRealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Deprecated("as of 3.1 (to be removed in 4.0). The computation is") public double dotProduct(OpenMapRealVector v) throws mathlib.exception.DimensionMismatchException
 		[Obsolete("as of 3.1 (to be removed in 4.0). The computation is")]
 		public virtual double dotProduct(OpenMapRealVector v)
 		{
@@ -374,7 +374,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public OpenMapRealVector ebeDivide(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public OpenMapRealVector ebeDivide(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override OpenMapRealVector ebeDivide(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -397,7 +397,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public OpenMapRealVector ebeMultiply(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public OpenMapRealVector ebeMultiply(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override OpenMapRealVector ebeMultiply(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -414,7 +414,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public OpenMapRealVector getSubVector(int index, int n) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public OpenMapRealVector getSubVector(int index, int n) throws mathlib.exception.NotPositiveException, mathlib.exception.OutOfRangeException
 		public override OpenMapRealVector getSubVector(int index, int n)
 		{
 			checkIndex(index);
@@ -455,7 +455,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the distance from {@code this} and {@code v}. </returns>
 		/// <exception cref="DimensionMismatchException"> if the dimensions do not match. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getDistance(OpenMapRealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double getDistance(OpenMapRealVector v) throws mathlib.exception.DimensionMismatchException
 		public virtual double getDistance(OpenMapRealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -488,7 +488,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getDistance(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double getDistance(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override double getDistance(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -505,7 +505,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getEntry(int index) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double getEntry(int index) throws mathlib.exception.OutOfRangeException
 		public override double getEntry(int index)
 		{
 			checkIndex(index);
@@ -522,7 +522,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> distance between this vector and {@code v}. </returns>
 		/// <exception cref="DimensionMismatchException"> if the dimensions do not match. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getL1Distance(OpenMapRealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double getL1Distance(OpenMapRealVector v) throws mathlib.exception.DimensionMismatchException
 		public virtual double getL1Distance(OpenMapRealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -551,7 +551,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getL1Distance(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double getL1Distance(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override double getL1Distance(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -572,7 +572,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the LInfDistance. </returns>
 		/// <exception cref="DimensionMismatchException"> if the dimensions do not match. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double getLInfDistance(OpenMapRealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private double getLInfDistance(OpenMapRealVector v) throws mathlib.exception.DimensionMismatchException
 		private double getLInfDistance(OpenMapRealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -603,7 +603,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getLInfDistance(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double getLInfDistance(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override double getLInfDistance(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -684,7 +684,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setEntry(int index, double value) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void setEntry(int index, double value) throws mathlib.exception.OutOfRangeException
 		public override void setEntry(int index, double value)
 		{
 			checkIndex(index);
@@ -701,7 +701,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setSubVector(int index, RealVector v) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void setSubVector(int index, RealVector v) throws mathlib.exception.OutOfRangeException
 		public override void setSubVector(int index, RealVector v)
 		{
 			checkIndex(index);
@@ -729,7 +729,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the difference of {@code this} and {@code v}. </returns>
 		/// <exception cref="DimensionMismatchException"> if the dimensions do not match. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public OpenMapRealVector subtract(OpenMapRealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public OpenMapRealVector subtract(OpenMapRealVector v) throws mathlib.exception.DimensionMismatchException
 		public virtual OpenMapRealVector subtract(OpenMapRealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -754,7 +754,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector subtract(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public RealVector subtract(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override RealVector subtract(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -771,7 +771,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public OpenMapRealVector unitVector() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Override public OpenMapRealVector unitVector() throws mathlib.exception.MathArithmeticException
 		public override OpenMapRealVector unitVector()
 		{
 			OpenMapRealVector res = copy();
@@ -782,7 +782,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void unitize() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Override public void unitize() throws mathlib.exception.MathArithmeticException
 		public override void unitize()
 		{
 			double norm = Norm;

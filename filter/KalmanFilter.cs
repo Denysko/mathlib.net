@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.filter
+namespace mathlib.filter
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using MatrixDimensionMismatchException = org.apache.commons.math3.linear.MatrixDimensionMismatchException;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using NonSquareMatrixException = org.apache.commons.math3.linear.NonSquareMatrixException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using SingularMatrixException = org.apache.commons.math3.linear.SingularMatrixException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using MatrixDimensionMismatchException = mathlib.linear.MatrixDimensionMismatchException;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using NonSquareMatrixException = mathlib.linear.NonSquareMatrixException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using SingularMatrixException = mathlib.linear.SingularMatrixException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Implementation of a Kalman filter to estimate the state <i>x<sub>k</sub></i>
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="MatrixDimensionMismatchException">
 		///             if the matrix dimensions do not fit together </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public KalmanFilter(final ProcessModel process, final MeasurementModel measurement) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.linear.NonSquareMatrixException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.linear.MatrixDimensionMismatchException
+//ORIGINAL LINE: public KalmanFilter(final ProcessModel process, final MeasurementModel measurement) throws mathlib.exception.NullArgumentException, mathlib.linear.NonSquareMatrixException, mathlib.exception.DimensionMismatchException, mathlib.linear.MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public KalmanFilter(ProcessModel process, MeasurementModel measurement)
 		{
@@ -309,7 +309,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="DimensionMismatchException">
 		///             if the dimension of the control vector does not fit </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void predict(final double[] u) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void predict(final double[] u) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void predict(double[] u)
 		{
@@ -324,7 +324,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="DimensionMismatchException">
 		///             if the dimension of the control vector does not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void predict(final org.apache.commons.math3.linear.RealVector u) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void predict(final mathlib.linear.RealVector u) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void predict(RealVector u)
 		{
@@ -361,7 +361,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="SingularMatrixException">
 		///             if the covariance matrix could not be inverted </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void correct(final double[] z) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.linear.SingularMatrixException
+//ORIGINAL LINE: public void correct(final double[] z) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.linear.SingularMatrixException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void correct(double[] z)
 		{
@@ -380,7 +380,7 @@ namespace org.apache.commons.math3.filter
 		/// <exception cref="SingularMatrixException">
 		///             if the covariance matrix could not be inverted </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void correct(final org.apache.commons.math3.linear.RealVector z) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.linear.SingularMatrixException
+//ORIGINAL LINE: public void correct(final mathlib.linear.RealVector z) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.linear.SingularMatrixException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void correct(RealVector z)
 		{

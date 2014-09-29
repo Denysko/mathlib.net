@@ -17,11 +17,11 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using DifferentiableMultivariateVectorFunction = org.apache.commons.math3.analysis.DifferentiableMultivariateVectorFunction;
-	using RandomVectorGenerator = org.apache.commons.math3.random.RandomVectorGenerator;
+	using DifferentiableMultivariateVectorFunction = mathlib.analysis.DifferentiableMultivariateVectorFunction;
+	using RandomVectorGenerator = mathlib.random.RandomVectorGenerator;
 
 	/// <summary>
 	/// Special implementation of the <seealso cref="DifferentiableMultivariateVectorOptimizer"/>
@@ -46,7 +46,7 @@ namespace org.apache.commons.math3.optimization
 		/// equal to 1. </param>
 		/// <param name="generator"> Random vector generator to use for restarts. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public DifferentiableMultivariateVectorMultiStartOptimizer(final DifferentiableMultivariateVectorOptimizer optimizer, final int starts, final org.apache.commons.math3.random.RandomVectorGenerator generator)
+//ORIGINAL LINE: public DifferentiableMultivariateVectorMultiStartOptimizer(final DifferentiableMultivariateVectorOptimizer optimizer, final int starts, final mathlib.random.RandomVectorGenerator generator)
 		public DifferentiableMultivariateVectorMultiStartOptimizer(DifferentiableMultivariateVectorOptimizer optimizer, int starts, RandomVectorGenerator generator) : base(optimizer, starts, generator)
 		{
 		}

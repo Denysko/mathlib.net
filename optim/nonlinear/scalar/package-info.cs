@@ -18,7 +18,7 @@
 /// <summary>
 /// Algorithms for optimizing a scalar function.
 /// </summary>
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
 }

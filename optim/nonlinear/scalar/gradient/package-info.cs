@@ -18,7 +18,7 @@
 /// <summary>
 /// This package provides optimization algorithms that require derivatives.
 /// </summary>
-namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
+namespace mathlib.optim.nonlinear.scalar.gradient
 {
 
 }

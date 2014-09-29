@@ -18,17 +18,17 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using StepHandler = org.apache.commons.math3.ode.sampling.StepHandler;
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using StepHandler = mathlib.ode.sampling.StepHandler;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class stores all information provided by an ODE integrator
@@ -79,7 +79,7 @@ namespace org.apache.commons.math3.ode
 	/// ContinuousOutputModel instance can be important if the state vector
 	/// is large, if the integration interval is long or if the steps are
 	/// small (which can result from small tolerance settings in {@link
-	/// org.apache.commons.math3.ode.nonstiff.AdaptiveStepsizeIntegrator adaptive
+	/// mathlib.ode.nonstiff.AdaptiveStepsizeIntegrator adaptive
 	/// step size integrators}).</p>
 	/// </summary>
 	/// <seealso cref= StepHandler </seealso>
@@ -137,7 +137,7 @@ namespace org.apache.commons.math3.ode
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded
 	  /// during step finalization </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void append(final ContinuousOutputModel model) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public void append(final ContinuousOutputModel model) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public virtual void append(ContinuousOutputModel model)
 	  {
@@ -166,7 +166,7 @@ namespace org.apache.commons.math3.ode
 		  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ode.sampling.StepInterpolator lastInterpolator = steps.get(index);
+//ORIGINAL LINE: final mathlib.ode.sampling.StepInterpolator lastInterpolator = steps.get(index);
 		  StepInterpolator lastInterpolator = steps[index];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double current = lastInterpolator.getCurrentTime();
@@ -217,7 +217,7 @@ namespace org.apache.commons.math3.ode
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded
 	  /// during step finalization </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void handleStep(final org.apache.commons.math3.ode.sampling.StepInterpolator interpolator, final boolean isLast) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public void handleStep(final mathlib.ode.sampling.StepInterpolator interpolator, final boolean isLast) throws mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public virtual void handleStep(StepInterpolator interpolator, bool isLast)
 	  {
@@ -277,13 +277,13 @@ namespace org.apache.commons.math3.ode
 			  // initialize the search with the complete steps table
 			  int iMin = 0;
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.ode.sampling.StepInterpolator sMin = steps.get(iMin);
+	//ORIGINAL LINE: final mathlib.ode.sampling.StepInterpolator sMin = steps.get(iMin);
 			  StepInterpolator sMin = steps[iMin];
 			  double tMin = 0.5 * (sMin.PreviousTime + sMin.CurrentTime);
     
 			  int iMax = steps.Count - 1;
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.ode.sampling.StepInterpolator sMax = steps.get(iMax);
+	//ORIGINAL LINE: final mathlib.ode.sampling.StepInterpolator sMax = steps.get(iMax);
 			  StepInterpolator sMax = steps[iMax];
 			  double tMax = 0.5 * (sMax.PreviousTime + sMax.CurrentTime);
     
@@ -308,7 +308,7 @@ namespace org.apache.commons.math3.ode
     
 				// use the last estimated index as the splitting index
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.ode.sampling.StepInterpolator si = steps.get(index);
+	//ORIGINAL LINE: final mathlib.ode.sampling.StepInterpolator si = steps.get(index);
 				StepInterpolator si = steps[index];
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 	//ORIGINAL LINE: final int location = locatePoint(value, si);
@@ -335,7 +335,7 @@ namespace org.apache.commons.math3.ode
 	//ORIGINAL LINE: final int iMed = (iMin + iMax) / 2;
 				int iMed = (iMin + iMax) / 2;
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.ode.sampling.StepInterpolator sMed = steps.get(iMed);
+	//ORIGINAL LINE: final mathlib.ode.sampling.StepInterpolator sMed = steps.get(iMed);
 				StepInterpolator sMed = steps[iMed];
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 	//ORIGINAL LINE: final double tMed = 0.5 * (sMed.getPreviousTime() + sMed.getCurrentTime());
@@ -377,10 +377,10 @@ namespace org.apache.commons.math3.ode
     
 				// force the next size reduction to be at least one tenth
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final int low = org.apache.commons.math3.util.FastMath.max(iMin + 1, (9 * iMin + iMax) / 10);
+	//ORIGINAL LINE: final int low = mathlib.util.FastMath.max(iMin + 1, (9 * iMin + iMax) / 10);
 				int low = FastMath.max(iMin + 1, (9 * iMin + iMax) / 10);
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final int high = org.apache.commons.math3.util.FastMath.min(iMax - 1, (iMin + 9 * iMax) / 10);
+	//ORIGINAL LINE: final int high = mathlib.util.FastMath.min(iMax - 1, (iMin + 9 * iMax) / 10);
 				int high = FastMath.min(iMax - 1, (iMin + 9 * iMax) / 10);
 				if (index < low)
 				{
@@ -426,7 +426,7 @@ namespace org.apache.commons.math3.ode
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 	  /// <seealso cref= #getInterpolatedSecondaryState(int) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getInterpolatedState() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double[] getInterpolatedState() throws mathlib.exception.MaxCountExceededException
 	  public virtual double[] InterpolatedState
 	  {
 		  get
@@ -438,15 +438,15 @@ namespace org.apache.commons.math3.ode
 	  /// <summary>
 	  /// Get the interpolated secondary state corresponding to the secondary equations. </summary>
 	  /// <param name="secondaryStateIndex"> index of the secondary set, as returned by {@link
-	  /// org.apache.commons.math3.ode.ExpandableStatefulODE#addSecondaryEquations(
-	  /// org.apache.commons.math3.ode.SecondaryEquations)
+	  /// mathlib.ode.ExpandableStatefulODE#addSecondaryEquations(
+	  /// mathlib.ode.SecondaryEquations)
 	  /// ExpandableStatefulODE.addSecondaryEquations(SecondaryEquations)} </param>
 	  /// <returns> interpolated secondary state at the current interpolation date </returns>
 	  /// <seealso cref= #getInterpolatedState()
 	  /// @since 3.2 </seealso>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getInterpolatedSecondaryState(final int secondaryStateIndex) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double[] getInterpolatedSecondaryState(final int secondaryStateIndex) throws mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  public virtual double[] getInterpolatedSecondaryState(int secondaryStateIndex)
 	  {
@@ -461,7 +461,7 @@ namespace org.apache.commons.math3.ode
 	  /// the interval, and +1 if it is after the interval, according to
 	  /// the interval direction </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private int locatePoint(final double time, final org.apache.commons.math3.ode.sampling.StepInterpolator interval)
+//ORIGINAL LINE: private int locatePoint(final double time, final mathlib.ode.sampling.StepInterpolator interval)
 	  private int locatePoint(double time, StepInterpolator interval)
 	  {
 		if (forward)

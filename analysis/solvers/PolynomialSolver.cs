@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
 
 	/// <summary>
 	/// Interface for (polynomial) root-finding algorithms.

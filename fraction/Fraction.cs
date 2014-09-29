@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
 
-	using org.apache.commons.math3;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using ArithmeticUtils = org.apache.commons.math3.util.ArithmeticUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using mathlib;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using ArithmeticUtils = mathlib.util.ArithmeticUtils;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Representation of a rational number.
@@ -306,7 +306,7 @@ namespace org.apache.commons.math3.fraction
 			}
 			// reduce numerator and denominator by greatest common denominator.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int d = org.apache.commons.math3.util.ArithmeticUtils.gcd(num, den);
+//ORIGINAL LINE: final int d = mathlib.util.ArithmeticUtils.gcd(num, den);
 			int d = ArithmeticUtils.gcd(num, den);
 			if (d > 1)
 			{

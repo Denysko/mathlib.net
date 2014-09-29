@@ -18,13 +18,13 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using NotANumberException = org.apache.commons.math3.exception.NotANumberException;
-	using NotFiniteNumberException = org.apache.commons.math3.exception.NotFiniteNumberException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
+	using NotANumberException = mathlib.exception.NotANumberException;
+	using NotFiniteNumberException = mathlib.exception.NotFiniteNumberException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
 
 	/// <summary>
 	/// Random data generation utilities. </summary>
@@ -46,7 +46,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NotStrictlyPositiveException">
 		/// if {@code len <= 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: String nextHexString(int len) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: String nextHexString(int len) throws mathlib.exception.NotStrictlyPositiveException;
 		string nextHexString(int len);
 
 		/// <summary>
@@ -64,7 +64,7 @@ namespace org.apache.commons.math3.random
 		/// and less than or equal to {@code upper} </returns>
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: int nextInt(int lower, int upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException;
+//ORIGINAL LINE: int nextInt(int lower, int upper) throws mathlib.exception.NumberIsTooLargeException;
 		int nextInt(int lower, int upper);
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace org.apache.commons.math3.random
 		/// less than or equal to {@code upper} </returns>
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: long nextLong(long lower, long upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException;
+//ORIGINAL LINE: long nextLong(long lower, long upper) throws mathlib.exception.NumberIsTooLargeException;
 		long nextLong(long lower, long upper);
 
 		/// <summary>
@@ -97,7 +97,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> a random string of hex characters of length {@code len} </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code len <= 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: String nextSecureHexString(int len) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: String nextSecureHexString(int len) throws mathlib.exception.NotStrictlyPositiveException;
 		string nextSecureHexString(int len);
 
 		/// <summary>
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.random
 		/// than or equal to {@code upper}. </returns>
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: int nextSecureInt(int lower, int upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException;
+//ORIGINAL LINE: int nextSecureInt(int lower, int upper) throws mathlib.exception.NumberIsTooLargeException;
 		int nextSecureInt(int lower, int upper);
 
 		/// <summary>
@@ -140,7 +140,7 @@ namespace org.apache.commons.math3.random
 		/// less than or equal to {@code upper}. </returns>
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: long nextSecureLong(long lower, long upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException;
+//ORIGINAL LINE: long nextSecureLong(long lower, long upper) throws mathlib.exception.NumberIsTooLargeException;
 		long nextSecureLong(long lower, long upper);
 
 		/// <summary>
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> a random value following the specified Poisson distribution </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code mean <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: long nextPoisson(double mean) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: long nextPoisson(double mean) throws mathlib.exception.NotStrictlyPositiveException;
 		long nextPoisson(double mean);
 
 		/// <summary>
@@ -171,7 +171,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> a random value following the specified Gaussian distribution </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sigma <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double nextGaussian(double mu, double sigma) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: double nextGaussian(double mu, double sigma) throws mathlib.exception.NotStrictlyPositiveException;
 		double nextGaussian(double mu, double sigma);
 
 		/// <summary>
@@ -186,7 +186,7 @@ namespace org.apache.commons.math3.random
 		/// <returns> a random value following the specified exponential distribution </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code mean <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double nextExponential(double mean) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: double nextExponential(double mean) throws mathlib.exception.NotStrictlyPositiveException;
 		double nextExponential(double mean);
 
 		/// <summary>
@@ -207,7 +207,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NotFiniteNumberException"> if one of the bounds is infinite </exception>
 		/// <exception cref="NotANumberException"> if one of the bounds is NaN </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double nextUniform(double lower, double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException;
+//ORIGINAL LINE: double nextUniform(double lower, double upper) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException;
 		double nextUniform(double lower, double upper);
 
 		/// <summary>
@@ -233,7 +233,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NotFiniteNumberException"> if one of the bounds is infinite </exception>
 		/// <exception cref="NotANumberException"> if one of the bounds is NaN </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double nextUniform(double lower, double upper, boolean lowerInclusive) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException;
+//ORIGINAL LINE: double nextUniform(double lower, double upper, boolean lowerInclusive) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException;
 		double nextUniform(double lower, double upper, bool lowerInclusive);
 
 		/// <summary>
@@ -251,7 +251,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NumberIsTooLargeException"> if {@code k > n}. </exception>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code k <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: int[] nextPermutation(int n, int k) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: int[] nextPermutation(int n, int k) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotStrictlyPositiveException;
 		int[] nextPermutation(int n, int k);
 
 		/// <summary>
@@ -271,7 +271,7 @@ namespace org.apache.commons.math3.random
 		/// <exception cref="NumberIsTooLargeException"> if {@code k > c.size()}. </exception>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code k <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: Object[] nextSample(java.util.Collection<?> c, int k) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: Object[] nextSample(java.util.Collection<?> c, int k) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NotStrictlyPositiveException;
 		object[] nextSample<T1>(ICollection<T1> c, int k);
 
 	}

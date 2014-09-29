@@ -16,19 +16,19 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using Euclidean1D = org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
-	using IntervalsSet = org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
-	using Vector1D = org.apache.commons.math3.geometry.euclidean.oned.Vector1D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using Euclidean1D = mathlib.geometry.euclidean.oned.Euclidean1D;
+	using IntervalsSet = mathlib.geometry.euclidean.oned.IntervalsSet;
+	using Vector1D = mathlib.geometry.euclidean.oned.Vector1D;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// The class represent lines in a three dimensional space.
@@ -70,7 +70,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathIllegalArgumentException"> if the points are equal
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Line(final Vector3D p1, final Vector3D p2, final double tolerance) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public Line(final Vector3D p1, final Vector3D p2, final double tolerance) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Line(Vector3D p1, Vector3D p2, double tolerance)
 		{
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="MathIllegalArgumentException"> if the points are equal </exception>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#Line(Vector3D, Vector3D, double)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Line(Vector3D, Vector3D, double)"/>") public Line(final Vector3D p1, final Vector3D p2) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Line(Vector3D, Vector3D, double)"/>") public Line(final Vector3D p1, final Vector3D p2) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("as of 3.3, replaced with <seealso cref="#Line(Vector3D, Vector3D, double)"/>")]
 		public Line(Vector3D p1, Vector3D p2) : this(p1, p2, DEFAULT_TOLERANCE)
@@ -112,7 +112,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="p2"> second point belonging to the line (this can be any point, different from p1) </param>
 		/// <exception cref="MathIllegalArgumentException"> if the points are equal </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void reset(final Vector3D p1, final Vector3D p2) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void reset(final Vector3D p1, final Vector3D p2) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void reset(Vector3D p1, Vector3D p2)
 		{
@@ -225,7 +225,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// {@inheritDoc} </summary>
 		/// <seealso cref= #getAbscissa(Vector3D) </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.euclidean.oned.Vector1D toSubSpace(final org.apache.commons.math3.geometry.Point<Euclidean3D> point)
+//ORIGINAL LINE: public mathlib.geometry.euclidean.oned.Vector1D toSubSpace(final mathlib.geometry.Point<Euclidean3D> point)
 		public virtual Vector1D toSubSpace(Point<Euclidean3D> point)
 		{
 			return new Vector1D(getAbscissa((Vector3D) point));
@@ -235,7 +235,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// {@inheritDoc} </summary>
 		/// <seealso cref= #pointAt(double) </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D toSpace(final org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> point)
+//ORIGINAL LINE: public Vector3D toSpace(final mathlib.geometry.Point<mathlib.geometry.euclidean.oned.Euclidean1D> point)
 		public virtual Vector3D toSpace(Point<Euclidean1D> point)
 		{
 			return pointAt(((Vector1D) point).X);

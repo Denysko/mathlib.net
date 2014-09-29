@@ -50,7 +50,7 @@ namespace mathlib.util
 		/// as an {@code int}.
 		/// @since 1.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int addAndCheck(int x, int y) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static int addAndCheck(int x, int y) throws mathlib.exception.MathArithmeticException
 		public static int addAndCheck(int x, int y)
 		{
 			long s = (long)x + (long)y;
@@ -70,7 +70,7 @@ namespace mathlib.util
 		/// <exception cref="MathArithmeticException"> if the result can not be represented as an long
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long addAndCheck(long a, long b) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long addAndCheck(long a, long b) throws mathlib.exception.MathArithmeticException
 		public static long addAndCheck(long a, long b)
 		{
 			return addAndCheck(a, b, LocalizedFormats.OVERFLOW_IN_ADDITION);
@@ -103,7 +103,7 @@ namespace mathlib.util
 		/// represented by a long integer. </exception>
 		/// @deprecated use <seealso cref="CombinatoricsUtils#binomialCoefficient(int, int)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficient(int, int)"/>") public static long binomialCoefficient(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficient(int, int)"/>") public static long binomialCoefficient(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="CombinatoricsUtils#binomialCoefficient(int, int)"/>")]
 		public static long binomialCoefficient(int n, int k)
@@ -137,7 +137,7 @@ namespace mathlib.util
 		/// represented by a long integer. </exception>
 		/// @deprecated use <seealso cref="CombinatoricsUtils#binomialCoefficientDouble(int, int)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficientDouble(int, int)"/>") public static double binomialCoefficientDouble(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficientDouble(int, int)"/>") public static double binomialCoefficientDouble(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="CombinatoricsUtils#binomialCoefficientDouble(int, int)"/>")]
 		public static double binomialCoefficientDouble(int n, int k)
@@ -167,7 +167,7 @@ namespace mathlib.util
 		/// represented by a long integer. </exception>
 		/// @deprecated use <seealso cref="CombinatoricsUtils#binomialCoefficientLog(int, int)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficientLog(int, int)"/>") public static double binomialCoefficientLog(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficientLog(int, int)"/>") public static double binomialCoefficientLog(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="CombinatoricsUtils#binomialCoefficientLog(int, int)"/>")]
 		public static double binomialCoefficientLog(int n, int k)
@@ -200,7 +200,7 @@ namespace mathlib.util
 		/// large to fit in a {@code long}. </exception>
 		/// @deprecated use <seealso cref="CombinatoricsUtils#factorial(int)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorial(int)"/>") public static long factorial(final int n) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorial(int)"/>") public static long factorial(final int n) throws mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="CombinatoricsUtils#factorial(int)"/>")]
 		public static long factorial(int n)
@@ -222,7 +222,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if {@code n < 0}. </exception>
 		/// @deprecated use <seealso cref="CombinatoricsUtils#factorialDouble(int)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorialDouble(int)"/>") public static double factorialDouble(final int n) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorialDouble(int)"/>") public static double factorialDouble(final int n) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="CombinatoricsUtils#factorialDouble(int)"/>")]
 		public static double factorialDouble(int n)
@@ -238,7 +238,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if {@code n < 0}. </exception>
 		/// @deprecated use <seealso cref="CombinatoricsUtils#factorialLog(int)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorialLog(int)"/>") public static double factorialLog(final int n) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorialLog(int)"/>") public static double factorialLog(final int n) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="CombinatoricsUtils#factorialLog(int)"/>")]
 		public static double factorialLog(int n)
@@ -274,7 +274,7 @@ namespace mathlib.util
 		/// a non-negative {@code int} value.
 		/// @since 1.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int gcd(int p, int q) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static int gcd(int p, int q) throws mathlib.exception.MathArithmeticException
 		public static int gcd(int p, int q)
 		{
 			int a = p;
@@ -436,7 +436,7 @@ namespace mathlib.util
 		/// a non-negative {@code long} value.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long gcd(final long p, final long q) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long gcd(final long p, final long q) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static long gcd(long p, long q)
 		{
@@ -528,7 +528,7 @@ namespace mathlib.util
 		/// a non-negative {@code int} value.
 		/// @since 1.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int lcm(int a, int b) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static int lcm(int a, int b) throws mathlib.exception.MathArithmeticException
 		public static int lcm(int a, int b)
 		{
 			if (a == 0 || b == 0)
@@ -565,7 +565,7 @@ namespace mathlib.util
 		/// as a non-negative {@code long} value.
 		/// @since 2.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long lcm(long a, long b) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long lcm(long a, long b) throws mathlib.exception.MathArithmeticException
 		public static long lcm(long a, long b)
 		{
 			if (a == 0 || b == 0)
@@ -590,7 +590,7 @@ namespace mathlib.util
 		/// represented as an {@code int}.
 		/// @since 1.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int mulAndCheck(int x, int y) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static int mulAndCheck(int x, int y) throws mathlib.exception.MathArithmeticException
 		public static int mulAndCheck(int x, int y)
 		{
 			long m = ((long)x) * ((long)y);
@@ -611,7 +611,7 @@ namespace mathlib.util
 		/// as a {@code long}.
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long mulAndCheck(long a, long b) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long mulAndCheck(long a, long b) throws mathlib.exception.MathArithmeticException
 		public static long mulAndCheck(long a, long b)
 		{
 			long ret;
@@ -689,7 +689,7 @@ namespace mathlib.util
 		/// as an {@code int}.
 		/// @since 1.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int subAndCheck(int x, int y) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static int subAndCheck(int x, int y) throws mathlib.exception.MathArithmeticException
 		public static int subAndCheck(int x, int y)
 		{
 			long s = (long)x - (long)y;
@@ -710,7 +710,7 @@ namespace mathlib.util
 		/// {@code long}.
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long subAndCheck(long a, long b) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long subAndCheck(long a, long b) throws mathlib.exception.MathArithmeticException
 		public static long subAndCheck(long a, long b)
 		{
 			long ret;
@@ -742,7 +742,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if {@code e < 0}. </exception>
 		/// <exception cref="MathArithmeticException"> if the result would overflow. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int pow(final int k, final int e) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static int pow(final int k, final int e) throws mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static int pow(int k, int e)
 		{
@@ -795,7 +795,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if {@code e < 0}. </exception>
 		/// @deprecated As of 3.3. Please use <seealso cref="#pow(int,int)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.3. Please use <seealso cref="#pow(int,int)"/> instead.") public static int pow(final int k, long e) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: @Deprecated("As of 3.3. Please use <seealso cref="#pow(int,int)"/> instead.") public static int pow(final int k, long e) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("As of 3.3. Please use <seealso cref="#pow(int,int)"/> instead.")]
 		public static int pow(int k, long e)
@@ -829,7 +829,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if {@code e < 0}. </exception>
 		/// <exception cref="MathArithmeticException"> if the result would overflow. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static long pow(final long k, final int e) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static long pow(final long k, final int e) throws mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static long pow(long k, int e)
 		{
@@ -882,7 +882,7 @@ namespace mathlib.util
 		/// <exception cref="NotPositiveException"> if {@code e < 0}. </exception>
 		/// @deprecated As of 3.3. Please use <seealso cref="#pow(long,int)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.3. Please use <seealso cref="#pow(long,int)"/> instead.") public static long pow(final long k, long e) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: @Deprecated("As of 3.3. Please use <seealso cref="#pow(long,int)"/> instead.") public static long pow(final long k, long e) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("As of 3.3. Please use <seealso cref="#pow(long,int)"/> instead.")]
 		public static long pow(long k, long e)
@@ -915,7 +915,7 @@ namespace mathlib.util
 		/// <returns> k<sup>e</sup> </returns>
 		/// <exception cref="NotPositiveException"> if {@code e < 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static java.math.BigInteger pow(final java.math.BigInteger k, int e) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static java.math.BigInteger pow(final java.math.BigInteger k, int e) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static System.Numerics.BigInteger pow(System.Numerics.BigInteger k, int e)
 		{
@@ -935,7 +935,7 @@ namespace mathlib.util
 		/// <returns> k<sup>e</sup> </returns>
 		/// <exception cref="NotPositiveException"> if {@code e < 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static java.math.BigInteger pow(final java.math.BigInteger k, long e) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static java.math.BigInteger pow(final java.math.BigInteger k, long e) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static System.Numerics.BigInteger pow(System.Numerics.BigInteger k, long e)
 		{
@@ -968,7 +968,7 @@ namespace mathlib.util
 		/// <returns> k<sup>e</sup> </returns>
 		/// <exception cref="NotPositiveException"> if {@code e < 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static java.math.BigInteger pow(final java.math.BigInteger k, java.math.BigInteger e) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public static java.math.BigInteger pow(final java.math.BigInteger k, java.math.BigInteger e) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static System.Numerics.BigInteger pow(System.Numerics.BigInteger k, System.Numerics.BigInteger e)
 		{
@@ -1012,7 +1012,7 @@ namespace mathlib.util
 		/// @since 3.1 </exception>
 		/// @deprecated use <seealso cref="CombinatoricsUtils#stirlingS2(int, int)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#stirlingS2(int, int)"/>") public static long stirlingS2(final int n, final int k) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#stirlingS2(int, int)"/>") public static long stirlingS2(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		[Obsolete("use <seealso cref="CombinatoricsUtils#stirlingS2(int, int)"/>")]
 		public static long stirlingS2(int n, int k)
@@ -1032,7 +1032,7 @@ namespace mathlib.util
 		/// as a {@code long}.
 		/// @since 1.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static long addAndCheck(long a, long b, org.apache.commons.math3.exception.util.Localizable pattern) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: private static long addAndCheck(long a, long b, mathlib.exception.util.Localizable pattern) throws mathlib.exception.MathArithmeticException
 		 private static long addAndCheck(long a, long b, Localizable pattern)
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

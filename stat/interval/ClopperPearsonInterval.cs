@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.interval
+namespace mathlib.stat.interval
 {
 
-	using FDistribution = org.apache.commons.math3.distribution.FDistribution;
+	using FDistribution = mathlib.distribution.FDistribution;
 
 	/// <summary>
 	/// Implements the Clopper-Pearson method for creating a binomial proportion confidence interval.
@@ -42,7 +42,7 @@ namespace org.apache.commons.math3.stat.interval
 			double alpha = (1.0 - confidenceLevel) / 2.0;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.FDistribution distributionLowerBound = new org.apache.commons.math3.distribution.FDistribution(2 * (numberOfTrials - numberOfSuccesses + 1), 2 * numberOfSuccesses);
+//ORIGINAL LINE: final mathlib.distribution.FDistribution distributionLowerBound = new mathlib.distribution.FDistribution(2 * (numberOfTrials - numberOfSuccesses + 1), 2 * numberOfSuccesses);
 			FDistribution distributionLowerBound = new FDistribution(2 * (numberOfTrials - numberOfSuccesses + 1), 2 * numberOfSuccesses);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double fValueLowerBound = distributionLowerBound.inverseCumulativeProbability(1 - alpha);
@@ -53,7 +53,7 @@ namespace org.apache.commons.math3.stat.interval
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.FDistribution distributionUpperBound = new org.apache.commons.math3.distribution.FDistribution(2 * (numberOfSuccesses + 1), 2 * (numberOfTrials - numberOfSuccesses));
+//ORIGINAL LINE: final mathlib.distribution.FDistribution distributionUpperBound = new mathlib.distribution.FDistribution(2 * (numberOfSuccesses + 1), 2 * (numberOfTrials - numberOfSuccesses));
 			FDistribution distributionUpperBound = new FDistribution(2 * (numberOfSuccesses + 1), 2 * (numberOfTrials - numberOfSuccesses));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double fValueUpperBound = distributionUpperBound.inverseCumulativeProbability(1 - alpha);

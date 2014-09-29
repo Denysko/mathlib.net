@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// <p>Adapter extending bounded <seealso cref="MultivariateFunction"/> to an unbouded
@@ -49,12 +49,12 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 	/// <p>
 	/// This adapter is only a poor-man's solution to simple bounds optimization
 	/// constraints that can be used with simple optimizers like
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizer
+	/// {@link mathlib.optim.nonlinear.scalar.noderiv.SimplexOptimizer
 	/// SimplexOptimizer}.
 	/// A better solution is to use an optimizer that directly supports simple bounds like
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.noderiv.CMAESOptimizer
+	/// {@link mathlib.optim.nonlinear.scalar.noderiv.CMAESOptimizer
 	/// CMAESOptimizer} or
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.noderiv.BOBYQAOptimizer
+	/// {@link mathlib.optim.nonlinear.scalar.noderiv.BOBYQAOptimizer
 	/// BOBYQAOptimizer}.
 	/// One caveat of this poor-man's solution is that if start point or start simplex
 	/// is completely outside of the allowed range, only the penalty function is used,
@@ -125,7 +125,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// scales are not consistent, either according to dimension or to bounadary
 		/// values </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public MultivariateFunctionPenaltyAdapter(final org.apache.commons.math3.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper, final double offset, final double[] scale)
+//ORIGINAL LINE: public MultivariateFunctionPenaltyAdapter(final mathlib.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper, final double offset, final double[] scale)
 		public MultivariateFunctionPenaltyAdapter(MultivariateFunction bounded, double[] lower, double[] upper, double offset, double[] scale)
 		{
 

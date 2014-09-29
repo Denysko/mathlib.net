@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the hypergeometric distribution.
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NumberIsTooLargeException"> if {@code numberOfSuccesses > populationSize},
 		/// or {@code sampleSize > populationSize}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public HypergeometricDistribution(int populationSize, int numberOfSuccesses, int sampleSize) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public HypergeometricDistribution(int populationSize, int numberOfSuccesses, int sampleSize) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooLargeException
 		public HypergeometricDistribution(int populationSize, int numberOfSuccesses, int sampleSize) : this(new Well19937c(), populationSize, numberOfSuccesses, sampleSize)
 		{
 		}
@@ -83,7 +83,7 @@ namespace org.apache.commons.math3.distribution
 		/// or {@code sampleSize > populationSize}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public HypergeometricDistribution(org.apache.commons.math3.random.RandomGenerator rng, int populationSize, int numberOfSuccesses, int sampleSize) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public HypergeometricDistribution(mathlib.random.RandomGenerator rng, int populationSize, int numberOfSuccesses, int sampleSize) throws mathlib.exception.NotPositiveException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooLargeException
 		public HypergeometricDistribution(RandomGenerator rng, int populationSize, int numberOfSuccesses, int sampleSize) : base(rng)
 		{
 

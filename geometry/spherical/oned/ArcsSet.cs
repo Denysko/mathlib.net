@@ -16,23 +16,23 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.oned
+namespace mathlib.geometry.spherical.oned
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using Side = org.apache.commons.math3.geometry.partitioning.Side;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using Side = mathlib.geometry.partitioning.Side;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// This class represents a region of a circle: a set of arcs.
@@ -40,7 +40,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 	/// Note that due to the wrapping around \(2 \pi\), barycenter is
 	/// ill-defined here. It was defined only in order to fulfill
 	/// the requirements of the {@link
-	/// org.apache.commons.math3.geometry.partitioning.Region Region}
+	/// mathlib.geometry.partitioning.Region Region}
 	/// interface, but its use is discouraged.
 	/// </p>
 	/// @version $Id: ArcsSet.java 1563714 2014-02-02 20:55:14Z tn $
@@ -72,7 +72,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="tolerance"> tolerance below which close sub-arcs are merged together </param>
 		/// <exception cref="NumberIsTooLargeException"> if lower is greater than upper </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArcsSet(final double lower, final double upper, final double tolerance) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public ArcsSet(final double lower, final double upper, final double tolerance) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ArcsSet(double lower, double upper, double tolerance) : base(buildTree(lower, upper, tolerance), tolerance)
 		{
@@ -91,7 +91,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <exception cref="InconsistentStateAt2PiWrapping"> if the tree leaf nodes are not
 		/// consistent across the \( 0, 2 \pi \) crossing </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArcsSet(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> tree, final double tolerance) throws InconsistentStateAt2PiWrapping
+//ORIGINAL LINE: public ArcsSet(final mathlib.geometry.partitioning.BSPTree<Sphere1D> tree, final double tolerance) throws InconsistentStateAt2PiWrapping
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ArcsSet(BSPTree<Sphere1D> tree, double tolerance) : base(tree, tolerance)
 		{
@@ -112,7 +112,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// boundary does not really separate an inside open from an outside
 		/// open (open having here its topological meaning), then subsequent
 		/// calls to the {@link
-		/// org.apache.commons.math3.geometry.partitioning.Region#checkPoint(org.apache.commons.math3.geometry.Point)
+		/// mathlib.geometry.partitioning.Region#checkPoint(mathlib.geometry.Point)
 		/// checkPoint} method will not be meaningful anymore.</p>
 		/// <p>If the boundary is empty, the region will represent the whole
 		/// space.</p> </summary>
@@ -121,7 +121,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <exception cref="InconsistentStateAt2PiWrapping"> if the tree leaf nodes are not
 		/// consistent across the \( 0, 2 \pi \) crossing </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArcsSet(final java.util.Collection<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Sphere1D>> boundary, final double tolerance) throws InconsistentStateAt2PiWrapping
+//ORIGINAL LINE: public ArcsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Sphere1D>> boundary, final double tolerance) throws InconsistentStateAt2PiWrapping
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public ArcsSet(ICollection<SubHyperplane<Sphere1D>> boundary, double tolerance) : base(boundary, tolerance)
 		{
@@ -136,7 +136,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <returns> the built tree </returns>
 		/// <exception cref="NumberIsTooLargeException"> if lower is greater than upper </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> buildTree(final double lower, final double upper, final double tolerance) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private static mathlib.geometry.partitioning.BSPTree<Sphere1D> buildTree(final double lower, final double upper, final double tolerance) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static BSPTree<Sphere1D> buildTree(double lower, double upper, double tolerance)
 		{
@@ -153,20 +153,20 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 
 			// this is a regular arc, covering only part of the circle
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double normalizedLower = org.apache.commons.math3.util.MathUtils.normalizeAngle(lower, org.apache.commons.math3.util.FastMath.PI);
+//ORIGINAL LINE: final double normalizedLower = mathlib.util.MathUtils.normalizeAngle(lower, mathlib.util.FastMath.PI);
 			double normalizedLower = MathUtils.normalizeAngle(lower, FastMath.PI);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double normalizedUpper = normalizedLower + (upper - lower);
 			double normalizedUpper = normalizedLower + (upper - lower);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Sphere1D> lowerCut = new LimitAngle(new S1Point(normalizedLower), false, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Sphere1D> lowerCut = new LimitAngle(new S1Point(normalizedLower), false, tolerance).wholeHyperplane();
 			SubHyperplane<Sphere1D> lowerCut = (new LimitAngle(new S1Point(normalizedLower), false, tolerance)).wholeHyperplane();
 
 			if (normalizedUpper <= MathUtils.TWO_PI)
 			{
 				// simple arc starting after 0 and ending before 2 \pi
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Sphere1D> upperCut = new LimitAngle(new S1Point(normalizedUpper), true, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Sphere1D> upperCut = new LimitAngle(new S1Point(normalizedUpper), true, tolerance).wholeHyperplane();
 				SubHyperplane<Sphere1D> upperCut = (new LimitAngle(new S1Point(normalizedUpper), true, tolerance)).wholeHyperplane();
 				return new BSPTree<Sphere1D>(lowerCut, new BSPTree<Sphere1D>(false), new BSPTree<Sphere1D>(upperCut, new BSPTree<Sphere1D>(false), new BSPTree<Sphere1D>(true), null), null);
 			}
@@ -174,7 +174,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 			{
 				// arc wrapping around 2 \pi
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Sphere1D> upperCut = new LimitAngle(new S1Point(normalizedUpper - org.apache.commons.math3.util.MathUtils.TWO_PI), true, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Sphere1D> upperCut = new LimitAngle(new S1Point(normalizedUpper - mathlib.util.MathUtils.TWO_PI), true, tolerance).wholeHyperplane();
 				SubHyperplane<Sphere1D> upperCut = (new LimitAngle(new S1Point(normalizedUpper - MathUtils.TWO_PI), true, tolerance)).wholeHyperplane();
 				return new BSPTree<Sphere1D>(lowerCut, new BSPTree<Sphere1D>(upperCut, new BSPTree<Sphere1D>(false), new BSPTree<Sphere1D>(true), null), new BSPTree<Sphere1D>(true), null);
 			}
@@ -219,7 +219,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="root"> tree root </param>
 		/// <returns> first leaf node (i.e. node corresponding to the region just after 0.0 radians) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> getFirstLeaf(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> root)
+//ORIGINAL LINE: private mathlib.geometry.partitioning.BSPTree<Sphere1D> getFirstLeaf(final mathlib.geometry.partitioning.BSPTree<Sphere1D> root)
 		private BSPTree<Sphere1D> getFirstLeaf(BSPTree<Sphere1D> root)
 		{
 
@@ -244,7 +244,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="root"> tree root </param>
 		/// <returns> last leaf node (i.e. node corresponding to the region just before \( 2 \pi \) radians) </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> getLastLeaf(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> root)
+//ORIGINAL LINE: private mathlib.geometry.partitioning.BSPTree<Sphere1D> getLastLeaf(final mathlib.geometry.partitioning.BSPTree<Sphere1D> root)
 		private BSPTree<Sphere1D> getLastLeaf(BSPTree<Sphere1D> root)
 		{
 
@@ -299,7 +299,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> true if the node corresponds to the start angle of an arc </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isArcStart(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> node)
+//ORIGINAL LINE: private boolean isArcStart(final mathlib.geometry.partitioning.BSPTree<Sphere1D> node)
 		private bool isArcStart(BSPTree<Sphere1D> node)
 		{
 
@@ -326,7 +326,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> true if the node corresponds to the end angle of an arc </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isArcEnd(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> node)
+//ORIGINAL LINE: private boolean isArcEnd(final mathlib.geometry.partitioning.BSPTree<Sphere1D> node)
 		private bool isArcEnd(BSPTree<Sphere1D> node)
 		{
 
@@ -433,11 +433,11 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="node"> child node considered </param>
 		/// <returns> true is the node has a parent end is before it in trigonometric order </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isBeforeParent(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> node)
+//ORIGINAL LINE: private boolean isBeforeParent(final mathlib.geometry.partitioning.BSPTree<Sphere1D> node)
 		private bool isBeforeParent(BSPTree<Sphere1D> node)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> parent = node.getParent();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere1D> parent = node.getParent();
 			BSPTree<Sphere1D> parent = node.Parent;
 			if (parent == null)
 			{
@@ -454,11 +454,11 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="node"> child node considered </param>
 		/// <returns> true is the node has a parent end is after it in trigonometric order </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isAfterParent(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> node)
+//ORIGINAL LINE: private boolean isAfterParent(final mathlib.geometry.partitioning.BSPTree<Sphere1D> node)
 		private bool isAfterParent(BSPTree<Sphere1D> node)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> parent = node.getParent();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere1D> parent = node.getParent();
 			BSPTree<Sphere1D> parent = node.Parent;
 			if (parent == null)
 			{
@@ -511,7 +511,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> true if the limit angle is direct </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isDirect(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> node)
+//ORIGINAL LINE: private boolean isDirect(final mathlib.geometry.partitioning.BSPTree<Sphere1D> node)
 		private bool isDirect(BSPTree<Sphere1D> node)
 		{
 			return ((LimitAngle) node.Cut.Hyperplane).Direct;
@@ -522,7 +522,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> limit angle </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private double getAngle(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> node)
+//ORIGINAL LINE: private double getAngle(final mathlib.geometry.partitioning.BSPTree<Sphere1D> node)
 		private double getAngle(BSPTree<Sphere1D> node)
 		{
 			return ((LimitAngle) node.Cut.Hyperplane).Location.Alpha;
@@ -531,7 +531,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public ArcsSet buildNew(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> tree)
+//ORIGINAL LINE: @Override public ArcsSet buildNew(final mathlib.geometry.partitioning.BSPTree<Sphere1D> tree)
 		public override ArcsSet buildNew(BSPTree<Sphere1D> tree)
 		{
 			return new ArcsSet(tree, Tolerance);
@@ -582,7 +582,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// @since 3.3
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.geometry.partitioning.BoundaryProjection<Sphere1D> projectToBoundary(final org.apache.commons.math3.geometry.Point<Sphere1D> point)
+//ORIGINAL LINE: @Override public mathlib.geometry.partitioning.BoundaryProjection<Sphere1D> projectToBoundary(final mathlib.geometry.Point<Sphere1D> point)
 		public override BoundaryProjection<Sphere1D> projectToBoundary(Point<Sphere1D> point)
 		{
 
@@ -671,7 +671,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 				{
 					// the test point is between 0 and first
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double previousOffset = alpha - (previous - org.apache.commons.math3.util.MathUtils.TWO_PI);
+//ORIGINAL LINE: final double previousOffset = alpha - (previous - mathlib.util.MathUtils.TWO_PI);
 					double previousOffset = alpha - (previous - MathUtils.TWO_PI);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double currentOffset = first - alpha;
@@ -692,7 +692,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 //ORIGINAL LINE: final double previousOffset = alpha - previous;
 					double previousOffset = alpha - previous;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double currentOffset = first + org.apache.commons.math3.util.MathUtils.TWO_PI - alpha;
+//ORIGINAL LINE: final double currentOffset = first + mathlib.util.MathUtils.TWO_PI - alpha;
 					double currentOffset = first + MathUtils.TWO_PI - alpha;
 					if (previousOffset < currentOffset)
 					{
@@ -893,12 +893,12 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <returns> one of <seealso cref="Side#PLUS"/>, <seealso cref="Side#MINUS"/>, <seealso cref="Side#BOTH"/>
 		/// or <seealso cref="Side#HYPER"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.Side side(final Arc arc)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.Side side(final Arc arc)
 		public virtual Side side(Arc arc)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double reference = org.apache.commons.math3.util.FastMath.PI + arc.getInf();
+//ORIGINAL LINE: final double reference = mathlib.util.FastMath.PI + arc.getInf();
 			double reference = FastMath.PI + arc.Inf;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double arcLength = arc.getSup() - arc.getInf();
@@ -909,7 +909,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 			foreach (double[] a in this)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double syncedStart = org.apache.commons.math3.util.MathUtils.normalizeAngle(a[0], reference) - arc.getInf();
+//ORIGINAL LINE: final double syncedStart = mathlib.util.MathUtils.normalizeAngle(a[0], reference) - arc.getInf();
 				double syncedStart = MathUtils.normalizeAngle(a[0], reference) - arc.Inf;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double arcOffset = a[0] - syncedStart;
@@ -971,7 +971,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 			IList<double?> plus = new List<double?>();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double reference = org.apache.commons.math3.util.FastMath.PI + arc.getInf();
+//ORIGINAL LINE: final double reference = mathlib.util.FastMath.PI + arc.getInf();
 			double reference = FastMath.PI + arc.Inf;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double arcLength = arc.getSup() - arc.getInf();
@@ -980,7 +980,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 			foreach (double[] a in this)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double syncedStart = org.apache.commons.math3.util.MathUtils.normalizeAngle(a[0], reference) - arc.getInf();
+//ORIGINAL LINE: final double syncedStart = mathlib.util.MathUtils.normalizeAngle(a[0], reference) - arc.getInf();
 				double syncedStart = MathUtils.normalizeAngle(a[0], reference) - arc.Inf;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double arcOffset = a[0] - syncedStart;
@@ -1006,7 +1006,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 							// in fact the end point a[1] goes far enough that we
 							// leave the plus part of the arc and enter the minus part again
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double plusToMinus = org.apache.commons.math3.util.MathUtils.TWO_PI + arcOffset;
+//ORIGINAL LINE: final double plusToMinus = mathlib.util.MathUtils.TWO_PI + arcOffset;
 							double plusToMinus = MathUtils.TWO_PI + arcOffset;
 							plus.Add(plusToMinus);
 							minus.Add(plusToMinus);
@@ -1033,7 +1033,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 						// the end point a[1] wraps around to the start of the arc
 						// so we leave the plus part and enter the minus part
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double plusToMinus = org.apache.commons.math3.util.MathUtils.TWO_PI + arcOffset;
+//ORIGINAL LINE: final double plusToMinus = mathlib.util.MathUtils.TWO_PI + arcOffset;
 						double plusToMinus = MathUtils.TWO_PI + arcOffset;
 						plus.Add(plusToMinus);
 						minus.Add(plusToMinus);
@@ -1042,7 +1042,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 							// in fact the end point a[1] goes far enough that we
 							// leave the minus part of the arc and enter the plus part again
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double minusToPlus = org.apache.commons.math3.util.MathUtils.TWO_PI + arcLength + arcOffset;
+//ORIGINAL LINE: final double minusToPlus = mathlib.util.MathUtils.TWO_PI + arcLength + arcOffset;
 							double minusToPlus = MathUtils.TWO_PI + arcLength + arcOffset;
 							minus.Add(minusToPlus);
 							plus.Add(minusToPlus);
@@ -1072,7 +1072,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="alpha"> arc limit </param>
 		/// <param name="isStart"> if true, the limit is the start of an arc </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void addArcLimit(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> tree, final double alpha, final boolean isStart)
+//ORIGINAL LINE: private void addArcLimit(final mathlib.geometry.partitioning.BSPTree<Sphere1D> tree, final double alpha, final boolean isStart)
 		private void addArcLimit(BSPTree<Sphere1D> tree, double alpha, bool isStart)
 		{
 
@@ -1080,7 +1080,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 //ORIGINAL LINE: final LimitAngle limit = new LimitAngle(new S1Point(alpha), !isStart, getTolerance());
 			LimitAngle limit = new LimitAngle(new S1Point(alpha), !isStart, Tolerance);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere1D> node = tree.getCell(limit.getLocation(), getTolerance());
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Sphere1D> node = tree.getCell(limit.getLocation(), getTolerance());
 			BSPTree<Sphere1D> node = tree.getCell(limit.Location, Tolerance);
 			if (node.Cut != null)
 			{
@@ -1125,7 +1125,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 //ORIGINAL LINE: final double lA = limits.get(i);
 					double lA = limits[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double lB = org.apache.commons.math3.util.MathUtils.normalizeAngle(limits.get(j), lA);
+//ORIGINAL LINE: final double lB = mathlib.util.MathUtils.normalizeAngle(limits.get(j), lA);
 					double lB = MathUtils.normalizeAngle(limits[j], lA);
 					if (FastMath.abs(lB - lA) <= Tolerance)
 					{
@@ -1247,7 +1247,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// Specialized exception for inconsistent BSP tree state inconsistency.
 		/// <p>
 		/// This exception is thrown at <seealso cref="ArcsSet"/> construction time when the
-		/// <seealso cref="org.apache.commons.math3.geometry.partitioning.Region.Location inside/outside"/>
+		/// <seealso cref="mathlib.geometry.partitioning.Region.Location inside/outside"/>
 		/// state is not consistent at the 0, \(2 \pi \) crossing.
 		/// </p>
 		/// </summary>

@@ -16,20 +16,20 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
+namespace mathlib.optim.nonlinear.vector.jacobian
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using DiagonalMatrix = org.apache.commons.math3.linear.DiagonalMatrix;
-	using DecompositionSolver = org.apache.commons.math3.linear.DecompositionSolver;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using QRDecomposition = org.apache.commons.math3.linear.QRDecomposition;
-	using EigenDecomposition = org.apache.commons.math3.linear.EigenDecomposition;
-	using org.apache.commons.math3.optim;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using DiagonalMatrix = mathlib.linear.DiagonalMatrix;
+	using DecompositionSolver = mathlib.linear.DecompositionSolver;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using QRDecomposition = mathlib.linear.QRDecomposition;
+	using EigenDecomposition = mathlib.linear.EigenDecomposition;
+	using mathlib.optim;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Base class for implementing least-squares optimizers.
@@ -39,7 +39,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 	/// @since 3.1 </summary>
 	/// @deprecated All classes and interfaces in this package are deprecated.
 	/// The optimizers that were provided here were moved to the
-	/// <seealso cref="org.apache.commons.math3.fitting.leastsquares"/> package
+	/// <seealso cref="mathlib.fitting.leastsquares"/> package
 	/// (cf. MATH-1008). 
 	[Obsolete("All classes and interfaces in this package are deprecated.")]
 	public abstract class AbstractLeastSquaresOptimizer : JacobianMultivariateVectorOptimizer
@@ -77,7 +77,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 		protected internal virtual double computeCost(double[] residuals)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector r = new org.apache.commons.math3.linear.ArrayRealVector(residuals);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector r = new mathlib.linear.ArrayRealVector(residuals);
 			ArrayRealVector r = new ArrayRealVector(residuals);
 			return FastMath.sqrt(r.dotProduct(Weight.operate(r)));
 		}
@@ -150,23 +150,23 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 		/// <param name="params"> Model parameters. </param>
 		/// <param name="threshold"> Singularity threshold. </param>
 		/// <returns> the covariance matrix. </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		/// if the covariance matrix cannot be computed (singular problem). </exception>
 		public virtual double[][] computeCovariances(double[] @params, double threshold)
 		{
 			// Set up the Jacobian.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix j = computeWeightedJacobian(params);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix j = computeWeightedJacobian(params);
 			RealMatrix j = computeWeightedJacobian(@params);
 
 			// Compute transpose(J)J.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix jTj = j.transpose().multiply(j);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix jTj = j.transpose().multiply(j);
 			RealMatrix jTj = j.transpose().multiply(j);
 
 			// Compute the covariances matrix.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.DecompositionSolver solver = new org.apache.commons.math3.linear.QRDecomposition(jTj, threshold).getSolver();
+//ORIGINAL LINE: final mathlib.linear.DecompositionSolver solver = new mathlib.linear.QRDecomposition(jTj, threshold).getSolver();
 			DecompositionSolver solver = (new QRDecomposition(jTj, threshold)).Solver;
 			return solver.Inverse.Data;
 		}
@@ -182,7 +182,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 		/// <param name="covarianceSingularityThreshold"> Singularity threshold (see
 		/// <seealso cref="#computeCovariances(double[],double) computeCovariances"/>). </param>
 		/// <returns> an estimate of the standard deviation of the optimized parameters </returns>
-		/// <exception cref="org.apache.commons.math3.linear.SingularMatrixException">
+		/// <exception cref="mathlib.linear.SingularMatrixException">
 		/// if the covariance matrix cannot be computed. </exception>
 		public virtual double[] computeSigma(double[] @params, double covarianceSingularityThreshold)
 		{
@@ -209,7 +209,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 		/// {@link JacobianMultivariateVectorOptimizer#parseOptimizationData(OptimizationData[])
 		/// JacobianMultivariateVectorOptimizer}, this method will register the following data:
 		/// <ul>
-		///  <li><seealso cref="org.apache.commons.math3.optim.nonlinear.vector.Weight"/></li>
+		///  <li><seealso cref="mathlib.optim.nonlinear.vector.Weight"/></li>
 		/// </ul> </param>
 		/// <returns> {@inheritDoc} </returns>
 		/// <exception cref="TooManyEvaluationsException"> if the maximal number of
@@ -217,7 +217,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 		/// <exception cref="DimensionMismatchException"> if the initial guess, target, and weight
 		/// arguments have inconsistent dimensions. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointVectorValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: @Override public mathlib.optim.PointVectorValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException
 		public override PointVectorValuePair optimize(params OptimizationData[] optData)
 		{
 			// Set up base class and perform computation.
@@ -301,7 +301,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 //ORIGINAL LINE: final int dim = m.getRowDimension();
 				int dim = m.RowDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix sqrtM = new org.apache.commons.math3.linear.DiagonalMatrix(dim);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix sqrtM = new mathlib.linear.DiagonalMatrix(dim);
 				RealMatrix sqrtM = new DiagonalMatrix(dim);
 				for (int i = 0; i < dim; i++)
 				{
@@ -312,7 +312,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector.jacobian
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.EigenDecomposition dec = new org.apache.commons.math3.linear.EigenDecomposition(m);
+//ORIGINAL LINE: final mathlib.linear.EigenDecomposition dec = new mathlib.linear.EigenDecomposition(m);
 				EigenDecomposition dec = new EigenDecomposition(m);
 				return dec.SquareRoot;
 			}

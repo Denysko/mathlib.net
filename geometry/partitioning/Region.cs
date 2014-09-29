@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
-	using org.apache.commons.math3.geometry;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// This interface represents a region of a space as a partition.
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: Region.java 1566416 2014-02-09 20:56:55Z luc $
 	/// @since 3.0 </param>
-	public interface Region<S> where S : org.apache.commons.math3.geometry.Space
+	public interface Region<S> where S : mathlib.geometry.Space
 	{
 
 		/// <summary>
@@ -130,7 +130,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <returns> a code representing the point status: either {@link
 		/// Location#INSIDE}, <seealso cref="Location#OUTSIDE"/> or <seealso cref="Location#BOUNDARY"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: Region_Location checkPoint(final org.apache.commons.math3.geometry.Point<S> point);
+//ORIGINAL LINE: Region_Location checkPoint(final mathlib.geometry.Point<S> point);
 		Region_Location checkPoint(Point<S> point);
 
 		/// <summary>
@@ -139,7 +139,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 		/// <returns> projection of the point on the boundary
 		/// @since 3.3 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: BoundaryProjection<S> projectToBoundary(final org.apache.commons.math3.geometry.Point<S> point);
+//ORIGINAL LINE: BoundaryProjection<S> projectToBoundary(final mathlib.geometry.Point<S> point);
 		BoundaryProjection<S> projectToBoundary(Point<S> point);
 
 		/// <summary>

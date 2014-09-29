@@ -27,7 +27,7 @@
 /// </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.geometry.spherical.oned
+namespace mathlib.geometry.spherical.oned
 {
 
 }

@@ -17,13 +17,13 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathParseException = mathlib.exception.MathParseException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Formats a Fraction number in proper format or improper format.  The number
@@ -187,7 +187,7 @@ namespace org.apache.commons.math3.fraction
 		/// <exception cref="FractionConversionException"> if the number cannot be converted to a fraction </exception>
 		/// <exception cref="MathIllegalArgumentException"> if <code>obj</code> is not a valid type. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final java.text.FieldPosition pos) throws FractionConversionException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final java.text.FieldPosition pos) throws FractionConversionException, mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override StringBuilder format(object obj, StringBuilder toAppendTo, FieldPosition pos)
 		{
@@ -216,7 +216,7 @@ namespace org.apache.commons.math3.fraction
 		/// <exception cref="MathParseException"> if the beginning of the specified string
 		///            cannot be parsed. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public Fraction parse(final String source) throws org.apache.commons.math3.exception.MathParseException
+//ORIGINAL LINE: @Override public Fraction parse(final String source) throws mathlib.exception.MathParseException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override Fraction parse(string source)
 		{

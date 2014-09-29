@@ -17,12 +17,12 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry
+namespace mathlib.geometry
 {
 
 
-	using CompositeFormat = org.apache.commons.math3.util.CompositeFormat;
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
+	using CompositeFormat = mathlib.util.CompositeFormat;
+	using MathParseException = mathlib.exception.MathParseException;
 
 	/// <summary>
 	/// Formats a vector in components list format "{x; y; ...}".
@@ -247,7 +247,7 @@ namespace org.apache.commons.math3.geometry
 		/// <exception cref="MathParseException"> if the beginning of the specified string
 		/// cannot be parsed. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract Vector<S> parse(String source) throws org.apache.commons.math3.exception.MathParseException;
+//ORIGINAL LINE: public abstract Vector<S> parse(String source) throws mathlib.exception.MathParseException;
 		public abstract Vector<S> parse(string source);
 
 		/// <summary>

@@ -19,7 +19,7 @@
 /// Self Organizing Feature Map.
 /// </summary>
 
-namespace org.apache.commons.math3.ml.neuralnet.sofm
+namespace mathlib.ml.neuralnet.sofm
 {
 
 }

@@ -16,23 +16,23 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using mathlib;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class implements the <seealso cref="FieldVector"/> interface with a <seealso cref="FieldElement"/> array. </summary>
@@ -40,7 +40,7 @@ namespace org.apache.commons.math3.linear
 	/// @version $Id: ArrayFieldVector.java 1570536 2014-02-21 11:26:09Z luc $
 	/// @since 2.0 </param>
 	[Serializable]
-	public class ArrayFieldVector<T> : FieldVector<T> where T : org.apache.commons.math3.FieldElement<T>
+	public class ArrayFieldVector<T> : FieldVector<T> where T : mathlib.FieldElement<T>
 	{
 		/// <summary>
 		/// Serializable version identifier. </summary>
@@ -64,7 +64,7 @@ namespace org.apache.commons.math3.linear
 		/// </summary>
 		/// <param name="field"> field to which the elements belong </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(final org.apache.commons.math3.Field<T> field)
+//ORIGINAL LINE: public ArrayFieldVector(final mathlib.Field<T> field)
 		public ArrayFieldVector(Field<T> field) : this(field, 0)
 		{
 		}
@@ -102,7 +102,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="ZeroException"> if {@code d} is empty. </exception>
 		/// <seealso cref= #ArrayFieldVector(Field, FieldElement[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(T[] d) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public ArrayFieldVector(T[] d) throws mathlib.exception.NullArgumentException, mathlib.exception.ZeroException
 		public ArrayFieldVector(T[] d)
 		{
 			MathUtils.checkNotNull(d);
@@ -125,7 +125,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NullArgumentException"> if {@code d} is {@code null}. </exception>
 		/// <seealso cref= #ArrayFieldVector(FieldElement[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(org.apache.commons.math3.Field<T> field, T[] d) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(mathlib.Field<T> field, T[] d) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(Field<T> field, T[] d)
 		{
 			MathUtils.checkNotNull(d);
@@ -154,7 +154,7 @@ namespace org.apache.commons.math3.linear
 		/// <seealso cref= #ArrayFieldVector(FieldElement[]) </seealso>
 		/// <seealso cref= #ArrayFieldVector(Field, FieldElement[], boolean) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(T[] d, boolean copyArray) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public ArrayFieldVector(T[] d, boolean copyArray) throws mathlib.exception.NullArgumentException, mathlib.exception.ZeroException
 		public ArrayFieldVector(T[] d, bool copyArray)
 		{
 			MathUtils.checkNotNull(d);
@@ -181,7 +181,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NullArgumentException"> if {@code d} is {@code null}. </exception>
 		/// <seealso cref= #ArrayFieldVector(FieldElement[], boolean) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(org.apache.commons.math3.Field<T> field, T[] d, boolean copyArray) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(mathlib.Field<T> field, T[] d, boolean copyArray) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(Field<T> field, T[] d, bool copyArray)
 		{
 			MathUtils.checkNotNull(d);
@@ -199,7 +199,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooLargeException"> if the size of {@code d} is less
 		/// than {@code pos + size}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(T[] d, int pos, int size) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public ArrayFieldVector(T[] d, int pos, int size) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooLargeException
 		public ArrayFieldVector(T[] d, int pos, int size)
 		{
 			MathUtils.checkNotNull(d);
@@ -223,7 +223,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooLargeException"> if the size of {@code d} is less
 		/// than {@code pos + size}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(org.apache.commons.math3.Field<T> field, T[] d, int pos, int size) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public ArrayFieldVector(mathlib.Field<T> field, T[] d, int pos, int size) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooLargeException
 		public ArrayFieldVector(Field<T> field, T[] d, int pos, int size)
 		{
 			MathUtils.checkNotNull(d);
@@ -242,7 +242,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="v"> Vector to copy. </param>
 		/// <exception cref="NullArgumentException"> if {@code v} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(FieldVector<T> v) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(FieldVector<T> v) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(FieldVector<T> v)
 		{
 			MathUtils.checkNotNull(v);
@@ -260,7 +260,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="v"> Vector to copy. </param>
 		/// <exception cref="NullArgumentException"> if {@code v} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(ArrayFieldVector<T> v) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(ArrayFieldVector<T> v)
 		{
 			MathUtils.checkNotNull(v);
@@ -276,7 +276,7 @@ namespace org.apache.commons.math3.linear
 		/// a shallow copy </param>
 		/// <exception cref="NullArgumentException"> if {@code v} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(ArrayFieldVector<T> v, boolean deep) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(ArrayFieldVector<T> v, boolean deep) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(ArrayFieldVector<T> v, bool deep)
 		{
 			MathUtils.checkNotNull(v);
@@ -293,7 +293,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code null}. </exception>
 		/// @deprecated as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/>") public ArrayFieldVector(ArrayFieldVector<T> v1, ArrayFieldVector<T> v2) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/>") public ArrayFieldVector(ArrayFieldVector<T> v1, ArrayFieldVector<T> v2) throws mathlib.exception.NullArgumentException
 		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/>")]
 		public ArrayFieldVector(ArrayFieldVector<T> v1, ArrayFieldVector<T> v2) : this((FieldVector<T>) v1, (FieldVector<T>) v2)
 		{
@@ -308,7 +308,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code null}.
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(FieldVector<T> v1, FieldVector<T> v2) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(FieldVector<T> v1, FieldVector<T> v2) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(FieldVector<T> v1, FieldVector<T> v2)
 		{
 			MathUtils.checkNotNull(v1);
@@ -334,8 +334,8 @@ namespace org.apache.commons.math3.linear
 		/// {@code null}. </exception>
 		/// @deprecated as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldElement[])"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, org.apache.commons.math3.FieldElement[])"/>") public ArrayFieldVector(ArrayFieldVector<T> v1, T[] v2) throws org.apache.commons.math3.exception.NullArgumentException
-		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, org.apache.commons.math3.FieldElement[])"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, mathlib.FieldElement[])"/>") public ArrayFieldVector(ArrayFieldVector<T> v1, T[] v2) throws mathlib.exception.NullArgumentException
+		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, mathlib.FieldElement[])"/>")]
 		public ArrayFieldVector(ArrayFieldVector<T> v1, T[] v2) : this((FieldVector<T>) v1, v2)
 		{
 		}
@@ -349,7 +349,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code null}.
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(FieldVector<T> v1, T[] v2) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(FieldVector<T> v1, T[] v2) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(FieldVector<T> v1, T[] v2)
 		{
 			MathUtils.checkNotNull(v1);
@@ -372,8 +372,8 @@ namespace org.apache.commons.math3.linear
 		/// {@code null}. </exception>
 		/// @deprecated as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldElement[], FieldVector)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(org.apache.commons.math3.FieldElement[] , FieldVector)"/>") public ArrayFieldVector(T[] v1, ArrayFieldVector<T> v2) throws org.apache.commons.math3.exception.NullArgumentException
-		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(org.apache.commons.math3.FieldElement[] , FieldVector)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(mathlib.FieldElement[] , FieldVector)"/>") public ArrayFieldVector(T[] v1, ArrayFieldVector<T> v2) throws mathlib.exception.NullArgumentException
+		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(mathlib.FieldElement[] , FieldVector)"/>")]
 		public ArrayFieldVector(T[] v1, ArrayFieldVector<T> v2) : this(v1, (FieldVector<T>) v2)
 		{
 		}
@@ -387,7 +387,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code null}.
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(T[] v1, FieldVector<T> v2) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayFieldVector(T[] v1, FieldVector<T> v2) throws mathlib.exception.NullArgumentException
 		public ArrayFieldVector(T[] v1, FieldVector<T> v2)
 		{
 			MathUtils.checkNotNull(v1);
@@ -416,7 +416,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="ZeroException"> if both arrays are empty. </exception>
 		/// <seealso cref= #ArrayFieldVector(Field, FieldElement[], FieldElement[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(T[] v1, T[] v2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public ArrayFieldVector(T[] v1, T[] v2) throws mathlib.exception.NullArgumentException, mathlib.exception.ZeroException
 		public ArrayFieldVector(T[] v1, T[] v2)
 		{
 			MathUtils.checkNotNull(v1);
@@ -442,7 +442,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="ZeroException"> if both arrays are empty. </exception>
 		/// <seealso cref= #ArrayFieldVector(FieldElement[], FieldElement[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector(org.apache.commons.math3.Field<T> field, T[] v1, T[] v2) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.ZeroException
+//ORIGINAL LINE: public ArrayFieldVector(mathlib.Field<T> field, T[] v1, T[] v2) throws mathlib.exception.NullArgumentException, mathlib.exception.ZeroException
 		public ArrayFieldVector(Field<T> field, T[] v1, T[] v2)
 		{
 			MathUtils.checkNotNull(v1);
@@ -477,7 +477,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> add(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public FieldVector<T> add(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual FieldVector<T> add(FieldVector<T> v)
 		{
 			try
@@ -503,7 +503,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if {@code v} is not the same size as
 		/// {@code this} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector<T> add(ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public ArrayFieldVector<T> add(ArrayFieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual ArrayFieldVector<T> add(ArrayFieldVector<T> v)
 		{
 			checkVectorDimensions(v.data.Length);
@@ -518,7 +518,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> subtract(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public FieldVector<T> subtract(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual FieldVector<T> subtract(FieldVector<T> v)
 		{
 			try
@@ -544,7 +544,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if {@code v} is not the same size as
 		/// {@code this} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector<T> subtract(ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public ArrayFieldVector<T> subtract(ArrayFieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual ArrayFieldVector<T> subtract(ArrayFieldVector<T> v)
 		{
 			checkVectorDimensions(v.data.Length);
@@ -559,7 +559,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapAdd(T d) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FieldVector<T> mapAdd(T d) throws mathlib.exception.NullArgumentException
 		public virtual FieldVector<T> mapAdd(T d)
 		{
 			T[] @out = MathArrays.buildArray(field, data.Length);
@@ -573,7 +573,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapAddToSelf(T d) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FieldVector<T> mapAddToSelf(T d) throws mathlib.exception.NullArgumentException
 		public virtual FieldVector<T> mapAddToSelf(T d)
 		{
 			for (int i = 0; i < data.Length; i++)
@@ -586,7 +586,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapSubtract(T d) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FieldVector<T> mapSubtract(T d) throws mathlib.exception.NullArgumentException
 		public virtual FieldVector<T> mapSubtract(T d)
 		{
 			T[] @out = MathArrays.buildArray(field, data.Length);
@@ -600,7 +600,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapSubtractToSelf(T d) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FieldVector<T> mapSubtractToSelf(T d) throws mathlib.exception.NullArgumentException
 		public virtual FieldVector<T> mapSubtractToSelf(T d)
 		{
 			for (int i = 0; i < data.Length; i++)
@@ -613,7 +613,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapMultiply(T d) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FieldVector<T> mapMultiply(T d) throws mathlib.exception.NullArgumentException
 		public virtual FieldVector<T> mapMultiply(T d)
 		{
 			T[] @out = MathArrays.buildArray(field, data.Length);
@@ -627,7 +627,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapMultiplyToSelf(T d) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FieldVector<T> mapMultiplyToSelf(T d) throws mathlib.exception.NullArgumentException
 		public virtual FieldVector<T> mapMultiplyToSelf(T d)
 		{
 			for (int i = 0; i < data.Length; i++)
@@ -640,7 +640,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapDivide(T d) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector<T> mapDivide(T d) throws mathlib.exception.NullArgumentException, mathlib.exception.MathArithmeticException
 		public virtual FieldVector<T> mapDivide(T d)
 		{
 			MathUtils.checkNotNull(d);
@@ -655,7 +655,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapDivideToSelf(T d) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector<T> mapDivideToSelf(T d) throws mathlib.exception.NullArgumentException, mathlib.exception.MathArithmeticException
 		public virtual FieldVector<T> mapDivideToSelf(T d)
 		{
 			MathUtils.checkNotNull(d);
@@ -669,7 +669,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapInv() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector<T> mapInv() throws mathlib.exception.MathArithmeticException
 		public virtual FieldVector<T> mapInv()
 		{
 			T[] @out = MathArrays.buildArray(field, data.Length);
@@ -683,7 +683,7 @@ namespace org.apache.commons.math3.linear
 					@out[i] = one.divide(data[i]);
 				}
 //JAVA TO C# CONVERTER WARNING: 'final' catch parameters are not allowed in C#:
-//ORIGINAL LINE: catch (final org.apache.commons.math3.exception.MathArithmeticException e)
+//ORIGINAL LINE: catch (final mathlib.exception.MathArithmeticException e)
 				catch (MathArithmeticException e)
 				{
 					throw new MathArithmeticException(LocalizedFormats.INDEX, i);
@@ -695,7 +695,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> mapInvToSelf() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector<T> mapInvToSelf() throws mathlib.exception.MathArithmeticException
 		public virtual FieldVector<T> mapInvToSelf()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -708,7 +708,7 @@ namespace org.apache.commons.math3.linear
 					data[i] = one.divide(data[i]);
 				}
 //JAVA TO C# CONVERTER WARNING: 'final' catch parameters are not allowed in C#:
-//ORIGINAL LINE: catch (final org.apache.commons.math3.exception.MathArithmeticException e)
+//ORIGINAL LINE: catch (final mathlib.exception.MathArithmeticException e)
 				catch (MathArithmeticException e)
 				{
 					throw new MathArithmeticException(LocalizedFormats.INDEX, i);
@@ -720,7 +720,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> ebeMultiply(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public FieldVector<T> ebeMultiply(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual FieldVector<T> ebeMultiply(FieldVector<T> v)
 		{
 			try
@@ -746,7 +746,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if {@code v} is not the same size as
 		/// {@code this} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector<T> ebeMultiply(ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public ArrayFieldVector<T> ebeMultiply(ArrayFieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual ArrayFieldVector<T> ebeMultiply(ArrayFieldVector<T> v)
 		{
 			checkVectorDimensions(v.data.Length);
@@ -761,7 +761,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> ebeDivide(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector<T> ebeDivide(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathArithmeticException
 		public virtual FieldVector<T> ebeDivide(FieldVector<T> v)
 		{
 			try
@@ -779,7 +779,7 @@ namespace org.apache.commons.math3.linear
 						@out[i] = data[i].divide(v.getEntry(i));
 					}
 //JAVA TO C# CONVERTER WARNING: 'final' catch parameters are not allowed in C#:
-//ORIGINAL LINE: catch (final org.apache.commons.math3.exception.MathArithmeticException e)
+//ORIGINAL LINE: catch (final mathlib.exception.MathArithmeticException e)
 					catch (MathArithmeticException e)
 					{
 						throw new MathArithmeticException(LocalizedFormats.INDEX, i);
@@ -797,7 +797,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code this} </exception>
 		/// <exception cref="MathArithmeticException"> if one entry of {@code v} is zero. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector<T> ebeDivide(ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public ArrayFieldVector<T> ebeDivide(ArrayFieldVector<T> v) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathArithmeticException
 		public virtual ArrayFieldVector<T> ebeDivide(ArrayFieldVector<T> v)
 		{
 			checkVectorDimensions(v.data.Length);
@@ -809,7 +809,7 @@ namespace org.apache.commons.math3.linear
 					@out[i] = data[i].divide(v.data[i]);
 				}
 //JAVA TO C# CONVERTER WARNING: 'final' catch parameters are not allowed in C#:
-//ORIGINAL LINE: catch (final org.apache.commons.math3.exception.MathArithmeticException e)
+//ORIGINAL LINE: catch (final mathlib.exception.MathArithmeticException e)
 				catch (MathArithmeticException e)
 				{
 					throw new MathArithmeticException(LocalizedFormats.INDEX, i);
@@ -843,7 +843,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T dotProduct(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public T dotProduct(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual T dotProduct(FieldVector<T> v)
 		{
 			try
@@ -869,7 +869,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if {@code v} is not the same size as
 		/// {@code this} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T dotProduct(ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public T dotProduct(ArrayFieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		public virtual T dotProduct(ArrayFieldVector<T> v)
 		{
 			checkVectorDimensions(v.data.Length);
@@ -884,7 +884,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> projection(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public FieldVector<T> projection(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathArithmeticException
 		public virtual FieldVector<T> projection(FieldVector<T> v)
 		{
 			return v.mapMultiply(dotProduct(v).divide(v.dotProduct(v)));
@@ -898,7 +898,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code this} </exception>
 		/// <exception cref="MathArithmeticException"> if {@code v} is the null vector. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayFieldVector<T> projection(ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public ArrayFieldVector<T> projection(ArrayFieldVector<T> v) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathArithmeticException
 		public virtual ArrayFieldVector<T> projection(ArrayFieldVector<T> v)
 		{
 			return (ArrayFieldVector<T>) v.mapMultiply(dotProduct(v).divide(v.dotProduct(v)));
@@ -1004,7 +1004,7 @@ namespace org.apache.commons.math3.linear
 		public virtual FieldVector<T> append(T @in)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final T[] out = org.apache.commons.math3.util.MathArrays.buildArray(field, data.length + 1);
+//ORIGINAL LINE: final T[] out = mathlib.util.MathArrays.buildArray(field, data.length + 1);
 			T[] @out = MathArrays.buildArray(field, data.Length + 1);
 			Array.Copy(data, 0, @out, 0, data.Length);
 			@out[data.Length] = @in;
@@ -1014,7 +1014,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FieldVector<T> getSubVector(int index, int n) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public FieldVector<T> getSubVector(int index, int n) throws mathlib.exception.OutOfRangeException, mathlib.exception.NotPositiveException
 		public virtual FieldVector<T> getSubVector(int index, int n)
 		{
 			if (n < 0)
@@ -1051,7 +1051,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSubVector(int index, FieldVector<T> v) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public void setSubVector(int index, FieldVector<T> v) throws mathlib.exception.OutOfRangeException
 		public virtual void setSubVector(int index, FieldVector<T> v)
 		{
 			try
@@ -1082,7 +1082,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="v"> vector containing the values to set. </param>
 		/// <exception cref="OutOfRangeException"> if the index is invalid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void set(int index, ArrayFieldVector<T> v) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public void set(int index, ArrayFieldVector<T> v) throws mathlib.exception.OutOfRangeException
 		public virtual void set(int index, ArrayFieldVector<T> v)
 		{
 			try
@@ -1116,7 +1116,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the vectors do not
 		/// have the same dimensions </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void checkVectorDimensions(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected void checkVectorDimensions(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException
 		protected internal virtual void checkVectorDimensions(FieldVector<T> v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -1129,7 +1129,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the dimension is not equal to the
 		/// size of {@code this} vector. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void checkVectorDimensions(int n) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected void checkVectorDimensions(int n) throws mathlib.exception.DimensionMismatchException
 		protected internal virtual void checkVectorDimensions(int n)
 		{
 			if (data.Length != n)
@@ -1175,7 +1175,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the indices are not valid.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T walkInDefaultOrder(final FieldVectorPreservingVisitor<T> visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public T walkInDefaultOrder(final FieldVectorPreservingVisitor<T> visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual T walkInDefaultOrder(FieldVectorPreservingVisitor<T> visitor, int start, int end)
 		{
@@ -1221,7 +1221,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the indices are not valid.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T walkInOptimizedOrder(final FieldVectorPreservingVisitor<T> visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public T walkInOptimizedOrder(final FieldVectorPreservingVisitor<T> visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual T walkInOptimizedOrder(FieldVectorPreservingVisitor<T> visitor, int start, int end)
 		{
@@ -1265,7 +1265,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the indices are not valid.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T walkInDefaultOrder(final FieldVectorChangingVisitor<T> visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public T walkInDefaultOrder(final FieldVectorChangingVisitor<T> visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual T walkInDefaultOrder(FieldVectorChangingVisitor<T> visitor, int start, int end)
 		{
@@ -1311,7 +1311,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the indices are not valid.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T walkInOptimizedOrder(final FieldVectorChangingVisitor<T> visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public T walkInOptimizedOrder(final FieldVectorChangingVisitor<T> visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual T walkInOptimizedOrder(FieldVectorChangingVisitor<T> visitor, int start, int end)
 		{
@@ -1381,7 +1381,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="index"> Index to check. </param>
 		/// <exception cref="OutOfRangeException"> if the index is not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkIndex(final int index) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private void checkIndex(final int index) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkIndex(int index)
 		{
@@ -1400,7 +1400,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooSmallException"> if {@code end < start}
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkIndices(final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private void checkIndices(final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkIndices(int start, int end)
 		{

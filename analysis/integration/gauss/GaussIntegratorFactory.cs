@@ -43,7 +43,7 @@ namespace mathlib.analysis.integration.gauss
 		/// <summary>
 		/// Creates a Gauss-Legendre integrator of the given order.
 		/// The call to the
-		/// {@link GaussIntegrator#integrate(org.apache.commons.math3.analysis.UnivariateFunction)
+		/// {@link GaussIntegrator#integrate(mathlib.analysis.UnivariateFunction)
 		/// integrate} method will perform an integration on the natural interval
 		/// {@code [-1 , 1]}.
 		/// </summary>
@@ -57,7 +57,7 @@ namespace mathlib.analysis.integration.gauss
 		/// <summary>
 		/// Creates a Gauss-Legendre integrator of the given order.
 		/// The call to the
-		/// {@link GaussIntegrator#integrate(org.apache.commons.math3.analysis.UnivariateFunction)
+		/// {@link GaussIntegrator#integrate(mathlib.analysis.UnivariateFunction)
 		/// integrate} method will perform an integration on the given interval.
 		/// </summary>
 		/// <param name="numberOfPoints"> Order of the integration rule. </param>
@@ -66,7 +66,7 @@ namespace mathlib.analysis.integration.gauss
 		/// <returns> a Gauss-Legendre integrator. </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if number of points is not positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GaussIntegrator legendre(int numberOfPoints, double lowerBound, double upperBound) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public GaussIntegrator legendre(int numberOfPoints, double lowerBound, double upperBound) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual GaussIntegrator legendre(int numberOfPoints, double lowerBound, double upperBound)
 		{
 			return new GaussIntegrator(transform(getRule(legendre_Renamed, numberOfPoints), lowerBound, upperBound));
@@ -75,7 +75,7 @@ namespace mathlib.analysis.integration.gauss
 		/// <summary>
 		/// Creates a Gauss-Legendre integrator of the given order.
 		/// The call to the
-		/// {@link GaussIntegrator#integrate(org.apache.commons.math3.analysis.UnivariateFunction)
+		/// {@link GaussIntegrator#integrate(mathlib.analysis.UnivariateFunction)
 		/// integrate} method will perform an integration on the natural interval
 		/// {@code [-1 , 1]}.
 		/// </summary>
@@ -83,7 +83,7 @@ namespace mathlib.analysis.integration.gauss
 		/// <returns> a Gauss-Legendre integrator. </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if number of points is not positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GaussIntegrator legendreHighPrecision(int numberOfPoints) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public GaussIntegrator legendreHighPrecision(int numberOfPoints) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual GaussIntegrator legendreHighPrecision(int numberOfPoints)
 		{
 			return new GaussIntegrator(getRule(legendreHighPrecision_Renamed, numberOfPoints));
@@ -91,7 +91,7 @@ namespace mathlib.analysis.integration.gauss
 
 		/// <summary>
 		/// Creates an integrator of the given order, and whose call to the
-		/// {@link GaussIntegrator#integrate(org.apache.commons.math3.analysis.UnivariateFunction)
+		/// {@link GaussIntegrator#integrate(mathlib.analysis.UnivariateFunction)
 		/// integrate} method will perform an integration on the given interval.
 		/// </summary>
 		/// <param name="numberOfPoints"> Order of the integration rule. </param>
@@ -100,7 +100,7 @@ namespace mathlib.analysis.integration.gauss
 		/// <returns> a Gauss-Legendre integrator. </returns>
 		/// <exception cref="NotStrictlyPositiveException"> if number of points is not positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GaussIntegrator legendreHighPrecision(int numberOfPoints, double lowerBound, double upperBound) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public GaussIntegrator legendreHighPrecision(int numberOfPoints, double lowerBound, double upperBound) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual GaussIntegrator legendreHighPrecision(int numberOfPoints, double lowerBound, double upperBound)
 		{
 			return new GaussIntegrator(transform(getRule(legendreHighPrecision_Renamed, numberOfPoints), lowerBound, upperBound));
@@ -109,14 +109,14 @@ namespace mathlib.analysis.integration.gauss
 		/// <summary>
 		/// Creates a Gauss-Hermite integrator of the given order.
 		/// The call to the
-		/// {@link SymmetricGaussIntegrator#integrate(org.apache.commons.math3.analysis.UnivariateFunction)
+		/// {@link SymmetricGaussIntegrator#integrate(mathlib.analysis.UnivariateFunction)
 		/// integrate} method will perform a weighted integration on the interval
 		/// {@code [-&inf;, +&inf;]}: the computed value is the improper integral of
 		/// <code>
 		///  e<sup>-x<sup>2</sup></sup> f(x)
 		/// </code>
 		/// where {@code f(x)} is the function passed to the
-		/// {@link SymmetricGaussIntegrator#integrate(org.apache.commons.math3.analysis.UnivariateFunction)
+		/// {@link SymmetricGaussIntegrator#integrate(mathlib.analysis.UnivariateFunction)
 		/// integrate} method.
 		/// </summary>
 		/// <param name="numberOfPoints"> Order of the integration rule. </param>
@@ -133,7 +133,7 @@ namespace mathlib.analysis.integration.gauss
 		/// <exception cref="DimensionMismatchException"> if the elements of the rule pair do not
 		/// have the same length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.util.Pair<double[] , double[]> getRule(BaseRuleFactory<? extends Number> factory, int numberOfPoints) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private static mathlib.util.Pair<double[] , double[]> getRule(BaseRuleFactory<? extends Number> factory, int numberOfPoints) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException
 		private static Pair<double[], double[]> getRule(BaseRuleFactory<T1> factory, int numberOfPoints) where T1 : Number
 		{
 			return factory.getRule(numberOfPoints);

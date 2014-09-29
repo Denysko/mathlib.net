@@ -17,14 +17,14 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
 
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using CompositeFormat = org.apache.commons.math3.util.CompositeFormat;
+	using MathParseException = mathlib.exception.MathParseException;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using CompositeFormat = mathlib.util.CompositeFormat;
 
 	/// <summary>
 	/// Formats a 2D vector in components list format "{x; y}".
@@ -113,7 +113,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public StringBuffer format(final org.apache.commons.math3.geometry.Vector<Euclidean2D> vector, final StringBuffer toAppendTo, final java.text.FieldPosition pos)
+//ORIGINAL LINE: @Override public StringBuffer format(final mathlib.geometry.Vector<Euclidean2D> vector, final StringBuffer toAppendTo, final java.text.FieldPosition pos)
 		public override StringBuilder format(Vector<Euclidean2D> vector, StringBuilder toAppendTo, FieldPosition pos)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -125,7 +125,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public Vector2D parse(final String source) throws org.apache.commons.math3.exception.MathParseException
+//ORIGINAL LINE: @Override public Vector2D parse(final String source) throws mathlib.exception.MathParseException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override Vector2D parse(string source)
 		{

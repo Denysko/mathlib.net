@@ -18,18 +18,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RealVector = mathlib.linear.RealVector;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Powell's BOBYQA algorithm. This implementation is translated and
@@ -414,13 +414,13 @@ namespace org.apache.commons.math3.optimization.direct
 			int nh = n * np / 2;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector work1 = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector work1 = new mathlib.linear.ArrayRealVector(n);
 			ArrayRealVector work1 = new ArrayRealVector(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector work2 = new org.apache.commons.math3.linear.ArrayRealVector(npt);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector work2 = new mathlib.linear.ArrayRealVector(npt);
 			ArrayRealVector work2 = new ArrayRealVector(npt);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector work3 = new org.apache.commons.math3.linear.ArrayRealVector(npt);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector work3 = new mathlib.linear.ArrayRealVector(npt);
 			ArrayRealVector work3 = new ArrayRealVector(npt);
 
 			double cauchy = double.NaN;
@@ -535,19 +535,19 @@ namespace org.apache.commons.math3.optimization.direct
 			{
 				printState(60); // XXX
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector gnew = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector gnew = new mathlib.linear.ArrayRealVector(n);
 				ArrayRealVector gnew = new ArrayRealVector(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector xbdi = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector xbdi = new mathlib.linear.ArrayRealVector(n);
 				ArrayRealVector xbdi = new ArrayRealVector(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector s = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector s = new mathlib.linear.ArrayRealVector(n);
 				ArrayRealVector s = new ArrayRealVector(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector hs = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector hs = new mathlib.linear.ArrayRealVector(n);
 				ArrayRealVector hs = new ArrayRealVector(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector hred = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector hred = new mathlib.linear.ArrayRealVector(n);
 				ArrayRealVector hred = new ArrayRealVector(n);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -581,7 +581,7 @@ namespace org.apache.commons.math3.optimization.direct
 					// Computing MAX
 					deltaOne = FastMath.max(diffa, diffb);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double errbig = org.apache.commons.math3.util.FastMath.max(deltaOne, diffc);
+//ORIGINAL LINE: final double errbig = mathlib.util.FastMath.max(deltaOne, diffc);
 					double errbig = FastMath.max(deltaOne, diffc);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double frhosq = rho * ONE_OVER_EIGHT * rho;
@@ -934,7 +934,7 @@ namespace org.apache.commons.math3.optimization.direct
 //ORIGINAL LINE: final double d4 = distsq / delsq;
 						double d4 = distsq / delsq;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double temp = org.apache.commons.math3.util.FastMath.max(ONE, d4 * d4);
+//ORIGINAL LINE: final double temp = mathlib.util.FastMath.max(ONE, d4 * d4);
 						double temp = FastMath.max(ONE, d4 * d4);
 						if (temp * den > scaden)
 						{
@@ -973,7 +973,7 @@ namespace org.apache.commons.math3.optimization.direct
 //ORIGINAL LINE: final double d4 = originShift.getEntry(i) + newPoint.getEntry(i);
 					double d4 = originShift.getEntry(i) + newPoint.getEntry(i);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d1 = org.apache.commons.math3.util.FastMath.max(d3, d4);
+//ORIGINAL LINE: final double d1 = mathlib.util.FastMath.max(d3, d4);
 					double d1 = FastMath.max(d3, d4);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double d2 = upperBound[i];
@@ -1127,7 +1127,7 @@ namespace org.apache.commons.math3.optimization.direct
 //ORIGINAL LINE: final double d3 = distsq / delsq;
 							double d3 = distsq / delsq;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double temp = org.apache.commons.math3.util.FastMath.max(ONE, d3 * d3);
+//ORIGINAL LINE: final double temp = mathlib.util.FastMath.max(ONE, d3 * d3);
 							double temp = FastMath.max(ONE, d3 * d3);
 							if (temp * den > scaden)
 							{
@@ -1306,12 +1306,12 @@ namespace org.apache.commons.math3.optimization.direct
 							// Computing MIN
 							// Computing 2nd power
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d1 = org.apache.commons.math3.util.FastMath.min(ZERO, gradientAtTrustRegionCenter.getEntry(i));
+//ORIGINAL LINE: final double d1 = mathlib.util.FastMath.min(ZERO, gradientAtTrustRegionCenter.getEntry(i));
 							double d1 = FastMath.min(ZERO, gradientAtTrustRegionCenter.getEntry(i));
 							gqsq += d1 * d1;
 							// Computing 2nd power
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d2 = org.apache.commons.math3.util.FastMath.min(ZERO, sum);
+//ORIGINAL LINE: final double d2 = mathlib.util.FastMath.min(ZERO, sum);
 							double d2 = FastMath.min(ZERO, sum);
 							gisq += d2 * d2;
 						}
@@ -1320,12 +1320,12 @@ namespace org.apache.commons.math3.optimization.direct
 							// Computing MAX
 							// Computing 2nd power
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d1 = org.apache.commons.math3.util.FastMath.max(ZERO, gradientAtTrustRegionCenter.getEntry(i));
+//ORIGINAL LINE: final double d1 = mathlib.util.FastMath.max(ZERO, gradientAtTrustRegionCenter.getEntry(i));
 							double d1 = FastMath.max(ZERO, gradientAtTrustRegionCenter.getEntry(i));
 							gqsq += d1 * d1;
 							// Computing 2nd power
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d2 = org.apache.commons.math3.util.FastMath.max(ZERO, sum);
+//ORIGINAL LINE: final double d2 = mathlib.util.FastMath.max(ZERO, sum);
 							double d2 = FastMath.max(ZERO, sum);
 							gisq += d2 * d2;
 						}
@@ -1431,7 +1431,7 @@ namespace org.apache.commons.math3.optimization.direct
 				if (knew >= 0)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dist = org.apache.commons.math3.util.FastMath.sqrt(distsq);
+//ORIGINAL LINE: final double dist = mathlib.util.FastMath.sqrt(distsq);
 					double dist = FastMath.sqrt(distsq);
 					if (ntrits == -1)
 					{
@@ -1446,7 +1446,7 @@ namespace org.apache.commons.math3.optimization.direct
 					// Computing MAX
 					// Computing MIN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d1 = org.apache.commons.math3.util.FastMath.min(ONE_OVER_TEN * dist, delta);
+//ORIGINAL LINE: final double d1 = mathlib.util.FastMath.min(ONE_OVER_TEN * dist, delta);
 					double d1 = FastMath.min(ONE_OVER_TEN * dist, delta);
 					adelt = FastMath.max(d1, rho);
 					dsq = adelt * adelt;
@@ -1525,7 +1525,7 @@ namespace org.apache.commons.math3.optimization.direct
 //ORIGINAL LINE: final double d4 = originShift.getEntry(i) + trustRegionCenterOffset.getEntry(i);
 						double d4 = originShift.getEntry(i) + trustRegionCenterOffset.getEntry(i);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d1 = org.apache.commons.math3.util.FastMath.max(d3, d4);
+//ORIGINAL LINE: final double d1 = mathlib.util.FastMath.max(d3, d4);
 						double d1 = FastMath.max(d3, d4);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double d2 = upperBound[i];
@@ -1598,17 +1598,17 @@ namespace org.apache.commons.math3.optimization.direct
 			int npt = numberOfInterpolationPoints;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector glag = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector glag = new mathlib.linear.ArrayRealVector(n);
 			ArrayRealVector glag = new ArrayRealVector(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector hcol = new org.apache.commons.math3.linear.ArrayRealVector(npt);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector hcol = new mathlib.linear.ArrayRealVector(npt);
 			ArrayRealVector hcol = new ArrayRealVector(npt);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector work1 = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector work1 = new mathlib.linear.ArrayRealVector(n);
 			ArrayRealVector work1 = new ArrayRealVector(n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector work2 = new org.apache.commons.math3.linear.ArrayRealVector(n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector work2 = new mathlib.linear.ArrayRealVector(n);
 			ArrayRealVector work2 = new ArrayRealVector(n);
 
 			for (int k = 0; k < npt; k++)
@@ -1684,7 +1684,7 @@ namespace org.apache.commons.math3.optimization.direct
 				int ilbd = 0;
 				int iubd = 0;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sumin = org.apache.commons.math3.util.FastMath.min(ONE, subd);
+//ORIGINAL LINE: final double sumin = mathlib.util.FastMath.min(ONE, subd);
 				double sumin = FastMath.min(ONE, subd);
 
 				// Revise SLBD and SUBD if necessary because of the bounds in SL and SU.
@@ -1916,7 +1916,7 @@ namespace org.apache.commons.math3.optimization.direct
 					{
 						work1.setEntry(i, -step * glagValue);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double min = org.apache.commons.math3.util.FastMath.min(upperDifference.getEntry(i), trustRegionCenterOffset.getEntry(i) + work1.getEntry(i));
+//ORIGINAL LINE: final double min = mathlib.util.FastMath.min(upperDifference.getEntry(i), trustRegionCenterOffset.getEntry(i) + work1.getEntry(i));
 						double min = FastMath.min(upperDifference.getEntry(i), trustRegionCenterOffset.getEntry(i) + work1.getEntry(i));
 						alternativeNewPoint.setEntry(i, FastMath.max(lowerDifference.getEntry(i), min));
 					}
@@ -2855,7 +2855,7 @@ namespace org.apache.commons.math3.optimization.direct
 					// Computing MAX
 					// Computing MIN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double min = org.apache.commons.math3.util.FastMath.min(trustRegionCenterOffset.getEntry(i) + trialStepPoint.getEntry(i), upperDifference.getEntry(i));
+//ORIGINAL LINE: final double min = mathlib.util.FastMath.min(trustRegionCenterOffset.getEntry(i) + trialStepPoint.getEntry(i), upperDifference.getEntry(i));
 					double min = FastMath.min(trustRegionCenterOffset.getEntry(i) + trialStepPoint.getEntry(i), upperDifference.getEntry(i));
 					newPoint.setEntry(i, FastMath.max(min, lowerDifference.getEntry(i)));
 					if (xbdi.getEntry(i) == MINUS_ONE)
@@ -2897,7 +2897,7 @@ namespace org.apache.commons.math3.optimization.direct
 					}
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealVector tmp = interpolationPoints.operate(s).ebeMultiply(modelSecondDerivativesParameters);
+//ORIGINAL LINE: final mathlib.linear.RealVector tmp = interpolationPoints.operate(s).ebeMultiply(modelSecondDerivativesParameters);
 				RealVector tmp = interpolationPoints.operate(s).ebeMultiply(modelSecondDerivativesParameters);
 				for (int k = 0; k < npt; k++)
 				{
@@ -2964,7 +2964,7 @@ namespace org.apache.commons.math3.optimization.direct
 
 			// XXX Should probably be split into two arrays.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector work = new org.apache.commons.math3.linear.ArrayRealVector(npt + n);
+//ORIGINAL LINE: final mathlib.linear.ArrayRealVector work = new mathlib.linear.ArrayRealVector(npt + n);
 			ArrayRealVector work = new ArrayRealVector(npt + n);
 
 			double ztest = ZERO;
@@ -2996,7 +2996,7 @@ namespace org.apache.commons.math3.optimization.direct
 //ORIGINAL LINE: final double d3 = zMatrix.getEntry(knew, j);
 					double d3 = zMatrix.getEntry(knew, j);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double d4 = org.apache.commons.math3.util.FastMath.sqrt(d2 * d2 + d3 * d3);
+//ORIGINAL LINE: final double d4 = mathlib.util.FastMath.sqrt(d2 * d2 + d3 * d3);
 					double d4 = FastMath.sqrt(d2 * d2 + d3 * d3);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double d5 = zMatrix.getEntry(knew, 0) / d4;
@@ -3034,7 +3034,7 @@ namespace org.apache.commons.math3.optimization.direct
 			// Complete the updating of ZMAT.
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sqrtDenom = org.apache.commons.math3.util.FastMath.sqrt(denom);
+//ORIGINAL LINE: final double sqrtDenom = mathlib.util.FastMath.sqrt(denom);
 			double sqrtDenom = FastMath.sqrt(denom);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double d1 = tau / sqrtDenom;

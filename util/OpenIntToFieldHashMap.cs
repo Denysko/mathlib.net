@@ -34,7 +34,7 @@ namespace mathlib.util
     /// @version $Id: OpenIntToFieldHashMap.java 1421448 2012-12-13 19:45:57Z tn $
     /// @since 2.0 </param>
     [Serializable]
-    public class OpenIntToFieldHashMap<T> where T : org.apache.commons.math3.FieldElement<T>
+    public class OpenIntToFieldHashMap<T> where T : mathlib.FieldElement<T>
     {
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace mathlib.util
         /// Build an empty map with default size and using zero for missing entries. </summary>
         /// <param name="field"> field to which the elements belong </param>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: public OpenIntToFieldHashMap(final org.apache.commons.math3.Field<T>field)
+        //ORIGINAL LINE: public OpenIntToFieldHashMap(final mathlib.Field<T>field)
         public OpenIntToFieldHashMap(Field<T> field)
             : this(field, DEFAULT_EXPECTED_SIZE, field.Zero)
         {
@@ -121,7 +121,7 @@ namespace mathlib.util
         /// <param name="field"> field to which the elements belong </param>
         /// <param name="missingEntries"> value to return when a missing entry is fetched </param>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: public OpenIntToFieldHashMap(final org.apache.commons.math3.Field<T>field, final T missingEntries)
+        //ORIGINAL LINE: public OpenIntToFieldHashMap(final mathlib.Field<T>field, final T missingEntries)
         public OpenIntToFieldHashMap(Field<T> field, T missingEntries)
             : this(field, DEFAULT_EXPECTED_SIZE, missingEntries)
         {
@@ -132,7 +132,7 @@ namespace mathlib.util
         /// <param name="field"> field to which the elements belong </param>
         /// <param name="expectedSize"> expected number of elements in the map </param>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: public OpenIntToFieldHashMap(final org.apache.commons.math3.Field<T> field,final int expectedSize)
+        //ORIGINAL LINE: public OpenIntToFieldHashMap(final mathlib.Field<T> field,final int expectedSize)
         public OpenIntToFieldHashMap(Field<T> field, int expectedSize)
             : this(field, expectedSize, field.Zero)
         {
@@ -144,7 +144,7 @@ namespace mathlib.util
         /// <param name="expectedSize"> expected number of elements in the map </param>
         /// <param name="missingEntries"> value to return when a missing entry is fetched </param>
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: public OpenIntToFieldHashMap(final org.apache.commons.math3.Field<T> field,final int expectedSize, final T missingEntries)
+        //ORIGINAL LINE: public OpenIntToFieldHashMap(final mathlib.Field<T> field,final int expectedSize, final T missingEntries)
         public OpenIntToFieldHashMap(Field<T> field, int expectedSize, T missingEntries)
         {
             this.field = field;

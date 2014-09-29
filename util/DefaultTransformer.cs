@@ -47,7 +47,7 @@ namespace mathlib.util
 		/// cannot successfully be transformed </exception>
 		/// <seealso cref= <a href="http://commons.apache.org/collections/api-release/org/apache/commons/collections/Transformer.html">Commons Collections Transformer</a> </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double transform(Object o) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double transform(Object o) throws mathlib.exception.NullArgumentException, mathlib.exception.MathIllegalArgumentException
 		public virtual double transform(object o)
 		{
 

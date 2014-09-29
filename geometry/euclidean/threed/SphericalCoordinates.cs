@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class provides conversions related to <a
@@ -121,16 +121,16 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double cosTheta = org.apache.commons.math3.util.FastMath.cos(theta);
+//ORIGINAL LINE: final double cosTheta = mathlib.util.FastMath.cos(theta);
 			double cosTheta = FastMath.cos(theta);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sinTheta = org.apache.commons.math3.util.FastMath.sin(theta);
+//ORIGINAL LINE: final double sinTheta = mathlib.util.FastMath.sin(theta);
 			double sinTheta = FastMath.sin(theta);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double cosPhi = org.apache.commons.math3.util.FastMath.cos(phi);
+//ORIGINAL LINE: final double cosPhi = mathlib.util.FastMath.cos(phi);
 			double cosPhi = FastMath.cos(phi);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sinPhi = org.apache.commons.math3.util.FastMath.sin(phi);
+//ORIGINAL LINE: final double sinPhi = mathlib.util.FastMath.sin(phi);
 			double sinPhi = FastMath.sin(phi);
 
 			// spherical coordinates
@@ -313,7 +313,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final double rho2 = x * x + y * y;
 				double rho2 = x * x + y * y;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double rho = org.apache.commons.math3.util.FastMath.sqrt(rho2);
+//ORIGINAL LINE: final double rho = mathlib.util.FastMath.sqrt(rho2);
 				double rho = FastMath.sqrt(rho2);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double r2 = rho2 + z * z;
@@ -373,7 +373,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final double rho2 = x2 + y2;
 				double rho2 = x2 + y2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double rho = org.apache.commons.math3.util.FastMath.sqrt(rho2);
+//ORIGINAL LINE: final double rho = mathlib.util.FastMath.sqrt(rho2);
 				double rho = FastMath.sqrt(rho2);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double r2 = rho2 + z2;

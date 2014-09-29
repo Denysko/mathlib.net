@@ -18,14 +18,14 @@ using System.Text;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat
+namespace mathlib.stat
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Maintains a frequency distribution.
@@ -134,7 +134,7 @@ namespace org.apache.commons.math3.stat
 		/// <param name="v"> the value to add. </param>
 		/// <exception cref="MathIllegalArgumentException"> if <code>v</code> is not comparable with previous entries </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addValue(Comparable<?> v) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void addValue(Comparable<?> v) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void addValue<T1>(IComparable<T1> v)
 		{
 			incrementValue(v, 1);
@@ -147,7 +147,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the table contains entries not
 		/// comparable to Long </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addValue(int v) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void addValue(int v) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void addValue(int v)
 		{
 			addValue(Convert.ToInt64(v));
@@ -160,7 +160,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the table contains entries not
 		/// comparable to Long </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addValue(long v) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void addValue(long v) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void addValue(long v)
 		{
 			addValue(Convert.ToInt64(v));
@@ -173,7 +173,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if the table contains entries not
 		/// comparable to Char </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addValue(char v) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void addValue(char v) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void addValue(char v)
 		{
 			addValue(Convert.ToChar(v));
@@ -191,7 +191,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="MathIllegalArgumentException"> if <code>v</code> is not comparable with previous entries
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void incrementValue(Comparable<?> v, long increment) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void incrementValue(Comparable<?> v, long increment) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void incrementValue<T1>(IComparable<T1> v, long increment)
 		{
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
@@ -233,7 +233,7 @@ namespace org.apache.commons.math3.stat
 		/// comparable to Long
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void incrementValue(int v, long increment) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void incrementValue(int v, long increment) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void incrementValue(int v, long increment)
 		{
 			incrementValue(Convert.ToInt64(v), increment);
@@ -252,7 +252,7 @@ namespace org.apache.commons.math3.stat
 		/// comparable to Long
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void incrementValue(long v, long increment) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void incrementValue(long v, long increment) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void incrementValue(long v, long increment)
 		{
 			incrementValue(Convert.ToInt64(v), increment);
@@ -271,7 +271,7 @@ namespace org.apache.commons.math3.stat
 		/// comparable to Char
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void incrementValue(char v, long increment) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void incrementValue(char v, long increment) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void incrementValue(char v, long increment)
 		{
 			incrementValue(Convert.ToChar(v), increment);
@@ -687,7 +687,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="NullArgumentException"> if {@code other} is null
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void merge(final Frequency other) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public void merge(final Frequency other) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void merge(Frequency other)
 		{
@@ -716,7 +716,7 @@ namespace org.apache.commons.math3.stat
 		/// <exception cref="NullArgumentException"> if the collection is null
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void merge(final java.util.Collection<Frequency> others) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public void merge(final java.util.Collection<Frequency> others) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void merge(ICollection<Frequency> others)
 		{

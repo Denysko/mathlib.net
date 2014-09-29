@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.interval
+namespace mathlib.stat.interval
 {
 
-	using NormalDistribution = org.apache.commons.math3.distribution.NormalDistribution;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NormalDistribution = mathlib.distribution.NormalDistribution;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implements the normal approximation method for creating a binomial proportion confidence interval.
@@ -43,10 +43,10 @@ namespace org.apache.commons.math3.stat.interval
 //ORIGINAL LINE: final double alpha = (1.0 - confidenceLevel) / 2;
 			double alpha = (1.0 - confidenceLevel) / 2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.NormalDistribution normalDistribution = new org.apache.commons.math3.distribution.NormalDistribution();
+//ORIGINAL LINE: final mathlib.distribution.NormalDistribution normalDistribution = new mathlib.distribution.NormalDistribution();
 			NormalDistribution normalDistribution = new NormalDistribution();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double difference = normalDistribution.inverseCumulativeProbability(1 - alpha) * org.apache.commons.math3.util.FastMath.sqrt(1.0 / numberOfTrials * mean * (1 - mean));
+//ORIGINAL LINE: final double difference = normalDistribution.inverseCumulativeProbability(1 - alpha) * mathlib.util.FastMath.sqrt(1.0 / numberOfTrials * mean * (1 - mean));
 			double difference = normalDistribution.inverseCumulativeProbability(1 - alpha) * FastMath.sqrt(1.0 / numberOfTrials * mean * (1 - mean));
 			return new ConfidenceInterval(mean - difference, mean + difference, confidenceLevel);
 		}

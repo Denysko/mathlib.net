@@ -16,15 +16,15 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ml.clustering
+namespace mathlib.ml.clustering
 {
 
 
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
-	using EuclideanDistance = org.apache.commons.math3.ml.distance.EuclideanDistance;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
+	using EuclideanDistance = mathlib.ml.distance.EuclideanDistance;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// DBSCAN (density-based spatial clustering of applications with noise) algorithm.
@@ -83,7 +83,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="minPts"> minimum number of points needed for a cluster </param>
 		/// <exception cref="NotPositiveException"> if {@code eps < 0.0} or {@code minPts < 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DBSCANClusterer(final double eps, final int minPts) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public DBSCANClusterer(final double eps, final int minPts) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DBSCANClusterer(double eps, int minPts) : this(eps, minPts, new EuclideanDistance())
 		{
@@ -97,7 +97,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="measure"> the distance measure to use </param>
 		/// <exception cref="NotPositiveException"> if {@code eps < 0.0} or {@code minPts < 0} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DBSCANClusterer(final double eps, final int minPts, final org.apache.commons.math3.ml.distance.DistanceMeasure measure) throws org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: public DBSCANClusterer(final double eps, final int minPts, final mathlib.ml.distance.DistanceMeasure measure) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DBSCANClusterer(double eps, int minPts, DistanceMeasure measure) : base(measure)
 		{
@@ -143,7 +143,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <returns> the list of clusters </returns>
 		/// <exception cref="NullArgumentException"> if the data points are null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: @Override public java.util.List<Cluster<T>> cluster(final java.util.Collection<T> points) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override IList<Cluster<T>> cluster(ICollection<T> points)
 		{

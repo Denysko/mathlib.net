@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
 
 	/// <summary>
 	/// Class mapping the part of a complete state or derivative that pertains
@@ -89,7 +89,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if the dimension of the equation data does not
 		/// match the mapper dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void extractEquationData(double[] complete, double[] equationData) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void extractEquationData(double[] complete, double[] equationData) throws mathlib.exception.DimensionMismatchException
 		public virtual void extractEquationData(double[] complete, double[] equationData)
 		{
 			if (equationData.Length != dimension)
@@ -107,7 +107,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if the dimension of the equation data does not
 		/// match the mapper dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void insertEquationData(double[] equationData, double[] complete) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void insertEquationData(double[] equationData, double[] complete) throws mathlib.exception.DimensionMismatchException
 		public virtual void insertEquationData(double[] equationData, double[] complete)
 		{
 			if (equationData.Length != dimension)

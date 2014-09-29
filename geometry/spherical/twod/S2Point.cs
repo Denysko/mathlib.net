@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.twod
+namespace mathlib.geometry.spherical.twod
 {
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using org.apache.commons.math3.geometry;
-	using Vector3D = org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using mathlib.geometry;
+	using Vector3D = mathlib.geometry.euclidean.threed.Vector3D;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class represents a point on the 2-sphere.
@@ -95,7 +95,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <seealso cref= #getPhi() </seealso>
 		/// <exception cref="OutOfRangeException"> if \( \varphi \) is not in the [\( 0; \pi \)] range </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public S2Point(final double theta, final double phi) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public S2Point(final double theta, final double phi) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public S2Point(double theta, double phi) : this(theta, phi, vector(theta, phi))
 		{
@@ -107,7 +107,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="vector"> 3D vector </param>
 		/// <exception cref="MathArithmeticException"> if vector norm is zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public S2Point(final org.apache.commons.math3.geometry.euclidean.threed.Vector3D vector) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public S2Point(final mathlib.geometry.euclidean.threed.Vector3D vector) throws mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public S2Point(Vector3D vector) : this(FastMath.atan2(vector.Y, vector.X), Vector3D.angle(Vector3D.PLUS_K, vector), vector.normalize())
 		{
@@ -119,7 +119,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="phi"> polar angle \( \varphi \) </param>
 		/// <param name="vector"> corresponding vector </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private S2Point(final double theta, final double phi, final org.apache.commons.math3.geometry.euclidean.threed.Vector3D vector)
+//ORIGINAL LINE: private S2Point(final double theta, final double phi, final mathlib.geometry.euclidean.threed.Vector3D vector)
 		private S2Point(double theta, double phi, Vector3D vector)
 		{
 			this.theta = theta;
@@ -134,7 +134,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <returns> normalized vector </returns>
 		/// <exception cref="OutOfRangeException"> if \( \varphi \) is not in the [\( 0; \pi \)] range </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.geometry.euclidean.threed.Vector3D vector(final double theta, final double phi) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private static mathlib.geometry.euclidean.threed.Vector3D vector(final double theta, final double phi) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static Vector3D vector(double theta, double phi)
 		{
@@ -145,16 +145,16 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double cosTheta = org.apache.commons.math3.util.FastMath.cos(theta);
+//ORIGINAL LINE: final double cosTheta = mathlib.util.FastMath.cos(theta);
 			double cosTheta = FastMath.cos(theta);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sinTheta = org.apache.commons.math3.util.FastMath.sin(theta);
+//ORIGINAL LINE: final double sinTheta = mathlib.util.FastMath.sin(theta);
 			double sinTheta = FastMath.sin(theta);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double cosPhi = org.apache.commons.math3.util.FastMath.cos(phi);
+//ORIGINAL LINE: final double cosPhi = mathlib.util.FastMath.cos(phi);
 			double cosPhi = FastMath.cos(phi);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sinPhi = org.apache.commons.math3.util.FastMath.sin(phi);
+//ORIGINAL LINE: final double sinPhi = mathlib.util.FastMath.sin(phi);
 			double sinPhi = FastMath.sin(phi);
 
 			return new Vector3D(cosTheta * sinPhi, sinTheta * sinPhi, cosPhi);
@@ -227,7 +227,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double distance(final org.apache.commons.math3.geometry.Point<Sphere2D> point)
+//ORIGINAL LINE: public double distance(final mathlib.geometry.Point<Sphere2D> point)
 		public virtual double distance(Point<Sphere2D> point)
 		{
 			return distance(this, (S2Point) point);

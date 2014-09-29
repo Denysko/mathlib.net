@@ -53,8 +53,8 @@ namespace mathlib.complex
     /// Note that this is in contradiction with the IEEE-754 standard for floating
     /// point numbers (according to which the test {@code x == x} must fail if
     /// {@code x} is {@code NaN}). The method
-    /// {@link org.apache.commons.math3.util.Precision#equals(double,double,int)
-    /// equals for primitive double} in <seealso cref="org.apache.commons.math3.util.Precision"/>
+    /// {@link mathlib.util.Precision#equals(double,double,int)
+    /// equals for primitive double} in <seealso cref="mathlib.util.Precision"/>
     /// conforms with IEEE-754 while this class conforms with the standard behavior
     /// for Java object types.
     /// <br/>
@@ -1307,7 +1307,7 @@ namespace mathlib.complex
 
             // nth root of abs -- faster / more accurate to use a solver here?
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final double nthRootOfAbs = org.apache.commons.math3.util.FastMath.pow(abs(), 1.0 / n);
+            //ORIGINAL LINE: final double nthRootOfAbs = mathlib.util.FastMath.pow(abs(), 1.0 / n);
             double nthRootOfAbs = FastMath.pow(abs(), 1.0 / n);
 
             // Compute nth roots of complex number with k = 0, 1, ... n-1
@@ -1315,17 +1315,17 @@ namespace mathlib.complex
             //ORIGINAL LINE: final double nthPhi = getArgument() / n;
             double nthPhi = Argument / n;
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final double slice = 2 * org.apache.commons.math3.util.FastMath.PI / n;
+            //ORIGINAL LINE: final double slice = 2 * mathlib.util.FastMath.PI / n;
             double slice = 2 * FastMath.PI / n;
             double innerPart = nthPhi;
             for (int k = 0; k < n; k++)
             {
                 // inner part
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double realPart = nthRootOfAbs * org.apache.commons.math3.util.FastMath.cos(innerPart);
+                //ORIGINAL LINE: final double realPart = nthRootOfAbs * mathlib.util.FastMath.cos(innerPart);
                 double realPart = nthRootOfAbs * FastMath.cos(innerPart);
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double imaginaryPart = nthRootOfAbs * org.apache.commons.math3.util.FastMath.sin(innerPart);
+                //ORIGINAL LINE: final double imaginaryPart = nthRootOfAbs * mathlib.util.FastMath.sin(innerPart);
                 double imaginaryPart = nthRootOfAbs * FastMath.sin(innerPart);
                 result.Add(CreateComplex(realPart, imaginaryPart));
                 innerPart += slice;

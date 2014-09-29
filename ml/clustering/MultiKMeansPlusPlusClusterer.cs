@@ -17,14 +17,14 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.clustering
+namespace mathlib.ml.clustering
 {
 
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using org.apache.commons.math3.ml.clustering.evaluation;
-	using org.apache.commons.math3.ml.clustering.evaluation;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using mathlib.ml.clustering.evaluation;
+	using mathlib.ml.clustering.evaluation;
 
 	/// <summary>
 	/// A wrapper around a k-means++ clustering algorithm which performs multiple trials
@@ -64,7 +64,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="evaluator"> the cluster evaluator to use
 		/// @since 3.3 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public MultiKMeansPlusPlusClusterer(final KMeansPlusPlusClusterer<T> clusterer, final int numTrials, final org.apache.commons.math3.ml.clustering.evaluation.ClusterEvaluator<T> evaluator)
+//ORIGINAL LINE: public MultiKMeansPlusPlusClusterer(final KMeansPlusPlusClusterer<T> clusterer, final int numTrials, final mathlib.ml.clustering.evaluation.ClusterEvaluator<T> evaluator)
 		public MultiKMeansPlusPlusClusterer(KMeansPlusPlusClusterer<T> clusterer, int numTrials, ClusterEvaluator<T> evaluator) : base(clusterer.DistanceMeasure)
 		{
 			this.clusterer = clusterer;
@@ -117,7 +117,7 @@ namespace org.apache.commons.math3.ml.clustering
 		///   underlying <seealso cref="KMeansPlusPlusClusterer"/> has its
 		///   <seealso cref="KMeansPlusPlusClusterer.EmptyClusterStrategy"/> is set to {@code ERROR}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public java.util.List<CentroidCluster<T>> cluster(final java.util.Collection<T> points) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: @Override public java.util.List<CentroidCluster<T>> cluster(final java.util.Collection<T> points) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override IList<CentroidCluster<T>> cluster(ICollection<T> points)
 		{

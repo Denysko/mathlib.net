@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using FastMath = mathlib.util.FastMath;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 	/// <summary>
 	/// This class implements the <a href="http://mathworld.wolfram.com/MullersMethod.html">
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override protected double doSolve() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.NoBracketingException
 		protected internal override double doSolve()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -145,7 +145,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <exception cref="TooManyEvaluationsException"> if the allowed number of calls to
 		/// the function to be solved has been exhausted. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double solve(double min, double max, double fMin, double fMax) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: private double solve(double min, double max, double fMin, double fMax) throws mathlib.exception.TooManyEvaluationsException
 		private double solve(double min, double max, double fMin, double fMax)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -193,10 +193,10 @@ namespace org.apache.commons.math3.analysis.solvers
 //ORIGINAL LINE: final double delta = c1 * c1 - 4 * y1 * d012;
 				double delta = c1 * c1 - 4 * y1 * d012;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double xplus = x1 + (-2.0 * y1) / (c1 + org.apache.commons.math3.util.FastMath.sqrt(delta));
+//ORIGINAL LINE: final double xplus = x1 + (-2.0 * y1) / (c1 + mathlib.util.FastMath.sqrt(delta));
 				double xplus = x1 + (-2.0 * y1) / (c1 + FastMath.sqrt(delta));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double xminus = x1 + (-2.0 * y1) / (c1 - org.apache.commons.math3.util.FastMath.sqrt(delta));
+//ORIGINAL LINE: final double xminus = x1 + (-2.0 * y1) / (c1 - mathlib.util.FastMath.sqrt(delta));
 				double xminus = x1 + (-2.0 * y1) / (c1 - FastMath.sqrt(delta));
 				// xplus and xminus are two roots of parabola and at least
 				// one of them should lie in (x0, x2)
@@ -209,7 +209,7 @@ namespace org.apache.commons.math3.analysis.solvers
 
 				// check for convergence
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double tolerance = org.apache.commons.math3.util.FastMath.max(relativeAccuracy * org.apache.commons.math3.util.FastMath.abs(x), absoluteAccuracy);
+//ORIGINAL LINE: final double tolerance = mathlib.util.FastMath.max(relativeAccuracy * mathlib.util.FastMath.abs(x), absoluteAccuracy);
 				double tolerance = FastMath.max(relativeAccuracy * FastMath.abs(x), absoluteAccuracy);
 				if (FastMath.abs(x - oldx) <= tolerance || FastMath.abs(y) <= functionValueAccuracy)
 				{

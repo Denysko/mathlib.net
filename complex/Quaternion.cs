@@ -338,7 +338,7 @@ namespace mathlib.complex
             foreach (double comp in new double[] { q0, q1, q2, q3 })
             {
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final int c = org.apache.commons.math3.util.MathUtils.hash(comp);
+                //ORIGINAL LINE: final int c = mathlib.util.MathUtils.hash(comp);
                 int c = MathUtils.hash(comp);
                 result = 31 * result + c;
             }

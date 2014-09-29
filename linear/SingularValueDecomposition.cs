@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Calculates the compact Singular Value Decomposition of a matrix.
@@ -141,10 +141,10 @@ namespace org.apache.commons.math3.linear
 			// Reduce A to bidiagonal form, storing the diagonal elements
 			// in s and the super-diagonal elements in e.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int nct = org.apache.commons.math3.util.FastMath.min(m - 1, n);
+//ORIGINAL LINE: final int nct = mathlib.util.FastMath.min(m - 1, n);
 			int nct = FastMath.min(m - 1, n);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int nrt = org.apache.commons.math3.util.FastMath.max(0, n - 2);
+//ORIGINAL LINE: final int nrt = mathlib.util.FastMath.max(0, n - 2);
 			int nrt = FastMath.max(0, n - 2);
 			for (int k = 0; k < FastMath.max(nct, nrt); k++)
 			{
@@ -367,7 +367,7 @@ namespace org.apache.commons.math3.linear
 				for (k = p - 2; k >= 0; k--)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double threshold = TINY + EPS * (org.apache.commons.math3.util.FastMath.abs(singularValues[k]) + org.apache.commons.math3.util.FastMath.abs(singularValues[k + 1]));
+//ORIGINAL LINE: final double threshold = TINY + EPS * (mathlib.util.FastMath.abs(singularValues[k]) + mathlib.util.FastMath.abs(singularValues[k + 1]));
 					double threshold = TINY + EPS * (FastMath.abs(singularValues[k]) + FastMath.abs(singularValues[k + 1]));
 
 					// the following condition is written this way in order
@@ -398,7 +398,7 @@ namespace org.apache.commons.math3.linear
 							break;
 						}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = (ks != p ? org.apache.commons.math3.util.FastMath.abs(e[ks]) : 0) + (ks != k + 1 ? org.apache.commons.math3.util.FastMath.abs(e[ks - 1]) : 0);
+//ORIGINAL LINE: final double t = (ks != p ? mathlib.util.FastMath.abs(e[ks]) : 0) + (ks != k + 1 ? mathlib.util.FastMath.abs(e[ks - 1]) : 0);
 						double t = (ks != p ? FastMath.abs(e[ks]) : 0) + (ks != k + 1 ? FastMath.abs(e[ks - 1]) : 0);
 						if (FastMath.abs(singularValues[ks]) <= TINY + EPS * t)
 						{
@@ -486,10 +486,10 @@ namespace org.apache.commons.math3.linear
 					{
 						// Calculate the shift.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double maxPm1Pm2 = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(singularValues[p - 1]), org.apache.commons.math3.util.FastMath.abs(singularValues[p - 2]));
+//ORIGINAL LINE: final double maxPm1Pm2 = mathlib.util.FastMath.max(mathlib.util.FastMath.abs(singularValues[p - 1]), mathlib.util.FastMath.abs(singularValues[p - 2]));
 						double maxPm1Pm2 = FastMath.max(FastMath.abs(singularValues[p - 1]), FastMath.abs(singularValues[p - 2]));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double scale = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.max(maxPm1Pm2, org.apache.commons.math3.util.FastMath.abs(e[p - 2])), org.apache.commons.math3.util.FastMath.abs(singularValues[k])), org.apache.commons.math3.util.FastMath.abs(e[k]));
+//ORIGINAL LINE: final double scale = mathlib.util.FastMath.max(mathlib.util.FastMath.max(mathlib.util.FastMath.max(maxPm1Pm2, mathlib.util.FastMath.abs(e[p - 2])), mathlib.util.FastMath.abs(singularValues[k])), mathlib.util.FastMath.abs(e[k]));
 						double scale = FastMath.max(FastMath.max(FastMath.max(maxPm1Pm2, FastMath.abs(e[p - 2])), FastMath.abs(singularValues[k])), FastMath.abs(e[k]));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double sp = singularValues[p - 1] / scale;
@@ -922,7 +922,7 @@ namespace org.apache.commons.math3.linear
 			/// </p> </summary>
 			/// <param name="b"> Right-hand side of the equation A &times; X = B </param>
 			/// <returns> a vector X that minimizes the two norm of A &times; X - B </returns>
-			/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+			/// <exception cref="mathlib.exception.DimensionMismatchException">
 			/// if the matrices dimensions do not match. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public RealVector solve(final RealVector b)
@@ -940,7 +940,7 @@ namespace org.apache.commons.math3.linear
 			/// </summary>
 			/// <param name="b"> Right-hand side of the equation A &times; X = B </param>
 			/// <returns> a matrix X that minimizes the two norm of A &times; X - B </returns>
-			/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+			/// <exception cref="mathlib.exception.DimensionMismatchException">
 			/// if the matrices dimensions do not match. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public RealMatrix solve(final RealMatrix b)

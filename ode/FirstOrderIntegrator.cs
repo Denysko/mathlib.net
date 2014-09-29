@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
 
 	/// <summary>
 	/// This interface represents a first order integrator for
@@ -33,8 +33,8 @@ namespace org.apache.commons.math3.ode
 	/// FirstOrderDifferentialEquations} interface.</p>
 	/// </summary>
 	/// <seealso cref= FirstOrderDifferentialEquations </seealso>
-	/// <seealso cref= org.apache.commons.math3.ode.sampling.StepHandler </seealso>
-	/// <seealso cref= org.apache.commons.math3.ode.events.EventHandler
+	/// <seealso cref= mathlib.ode.sampling.StepHandler </seealso>
+	/// <seealso cref= mathlib.ode.events.EventHandler
 	/// @version $Id: FirstOrderIntegrator.java 1416643 2012-12-03 19:37:14Z tn $
 	/// @since 1.2 </seealso>
 
@@ -56,13 +56,13 @@ namespace org.apache.commons.math3.ode
 	  ///  step (and hence at the end of integration), can be the same object as y0 </param>
 	  /// <returns> stop time, will be the same as target time if integration reached its
 	  /// target, but may be different if some {@link
-	  /// org.apache.commons.math3.ode.events.EventHandler} stops it at some point. </returns>
+	  /// mathlib.ode.events.EventHandler} stops it at some point. </returns>
 	  /// <exception cref="DimensionMismatchException"> if arrays dimension do not match equations settings </exception>
 	  /// <exception cref="NumberIsTooSmallException"> if integration step is too small </exception>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 	  /// <exception cref="NoBracketingException"> if the location of an event cannot be bracketed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double integrate(FirstOrderDifferentialEquations equations, double t0, double[] y0, double t, double[] y) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException;
+//ORIGINAL LINE: double integrate(FirstOrderDifferentialEquations equations, double t0, double[] y0, double t, double[] y) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException;
 	  double integrate(FirstOrderDifferentialEquations equations, double t0, double[] y0, double t, double[] y);
 
 	}

@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Exception to be thrown when a square linear operator is expected.

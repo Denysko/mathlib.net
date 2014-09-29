@@ -16,17 +16,17 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotANumberException = org.apache.commons.math3.exception.NotANumberException;
-	using NotFiniteNumberException = org.apache.commons.math3.exception.NotFiniteNumberException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
-	using org.apache.commons.math3.util;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NotANumberException = mathlib.exception.NotANumberException;
+	using NotFiniteNumberException = mathlib.exception.NotFiniteNumberException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
+	using mathlib.util;
 
 	/// <summary>
 	/// <p>Implementation of an integer-valued <seealso cref="EnumeratedDistribution"/>.</p>
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotANumberException"> if any of the probabilities are NaN. </exception>
 		/// <exception cref="MathArithmeticException"> all of the probabilities are 0. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public EnumeratedIntegerDistribution(final int[] singletons, final double[] probabilities) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public EnumeratedIntegerDistribution(final int[] singletons, final double[] probabilities) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public EnumeratedIntegerDistribution(int[] singletons, double[] probabilities) : this(new Well19937c(), singletons, probabilities)
 		{
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotANumberException"> if any of the probabilities are NaN. </exception>
 		/// <exception cref="MathArithmeticException"> all of the probabilities are 0. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public EnumeratedIntegerDistribution(final org.apache.commons.math3.random.RandomGenerator rng, final int[] singletons, final double[] probabilities) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public EnumeratedIntegerDistribution(final mathlib.random.RandomGenerator rng, final int[] singletons, final double[] probabilities) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public EnumeratedIntegerDistribution(RandomGenerator rng, int[] singletons, double[] probabilities) : base(rng)
 		{
@@ -95,7 +95,7 @@ namespace org.apache.commons.math3.distribution
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.util.Pair<Integer, Double>> samples = new java.util.ArrayList<org.apache.commons.math3.util.Pair<Integer, Double>>(singletons.length);
+//ORIGINAL LINE: final java.util.List<mathlib.util.Pair<Integer, Double>> samples = new java.util.ArrayList<mathlib.util.Pair<Integer, Double>>(singletons.length);
 			IList<Pair<int?, double?>> samples = new List<Pair<int?, double?>>(singletons.Length);
 
 			for (int i = 0; i < singletons.Length; i++)

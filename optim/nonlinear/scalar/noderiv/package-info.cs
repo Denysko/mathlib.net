@@ -18,7 +18,7 @@
 /// <summary>
 /// This package provides optimization algorithms that do not require derivatives.
 /// </summary>
-namespace org.apache.commons.math3.optim.nonlinear.scalar.noderiv
+namespace mathlib.optim.nonlinear.scalar.noderiv
 {
 
 }

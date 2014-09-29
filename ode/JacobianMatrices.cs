@@ -17,14 +17,14 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// This class defines a set of <seealso cref="SecondaryEquations secondary equations"/> to
@@ -112,7 +112,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if there is a dimension mismatch between
 		/// the steps array {@code hY} and the equation dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public JacobianMatrices(final FirstOrderDifferentialEquations fode, final double[] hY, final String... parameters) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public JacobianMatrices(final FirstOrderDifferentialEquations fode, final double[] hY, final String... parameters) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public JacobianMatrices(FirstOrderDifferentialEquations fode, double[] hY, params string[] parameters) : this(new MainStateJacobianWrapper(fode, hY), parameters)
 		{
@@ -180,7 +180,7 @@ namespace org.apache.commons.math3.ode
 		/// not match the one used to build the instance </exception>
 		/// <seealso cref= ExpandableStatefulODE#addSecondaryEquations(SecondaryEquations) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void registerVariationalEquations(final ExpandableStatefulODE expandable) throws org.apache.commons.math3.exception.DimensionMismatchException, MismatchedEquations
+//ORIGINAL LINE: public void registerVariationalEquations(final ExpandableStatefulODE expandable) throws mathlib.exception.DimensionMismatchException, MismatchedEquations
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void registerVariationalEquations(ExpandableStatefulODE expandable)
 		{
@@ -270,7 +270,7 @@ namespace org.apache.commons.math3.ode
 		/// <param name="dYdY0"> initial Jacobian matrix w.r.t. state </param>
 		/// <exception cref="DimensionMismatchException"> if matrix dimensions are incorrect </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setInitialMainStateJacobian(final double[][] dYdY0) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setInitialMainStateJacobian(final double[][] dYdY0) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[][] InitialMainStateJacobian
 		{
@@ -308,7 +308,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="UnknownParameterException"> if a parameter is not supported </exception>
 		/// <exception cref="DimensionMismatchException"> if the column vector does not match state dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setInitialParameterJacobian(final String pName, final double[] dYdP) throws UnknownParameterException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setInitialParameterJacobian(final String pName, final double[] dYdP) throws UnknownParameterException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setInitialParameterJacobian(string pName, double[] dYdP)
 		{
@@ -387,7 +387,7 @@ namespace org.apache.commons.math3.ode
 		/// <param name="array"> (may be null if expected is 0) </param>
 		/// <exception cref="DimensionMismatchException"> if the array dimension does not match the expected one </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkDimension(final int expected, final Object array) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private void checkDimension(final int expected, final Object array) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void checkDimension(int expected, object array)
 		{
@@ -428,7 +428,7 @@ namespace org.apache.commons.math3.ode
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeDerivatives(final double t, final double[] y, final double[] yDot, final double[] z, final double[] zDot) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void computeDerivatives(final double t, final double[] y, final double[] yDot, final double[] z, final double[] zDot) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual void computeDerivatives(double t, double[] y, double[] yDot, double[] z, double[] zDot)
 			{
@@ -537,7 +537,7 @@ namespace org.apache.commons.math3.ode
 			/// <exception cref="DimensionMismatchException"> if there is a dimension mismatch between
 			/// the steps array {@code hY} and the equation dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MainStateJacobianWrapper(final FirstOrderDifferentialEquations ode, final double[] hY) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public MainStateJacobianWrapper(final FirstOrderDifferentialEquations ode, final double[] hY) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public MainStateJacobianWrapper(FirstOrderDifferentialEquations ode, double[] hY)
 			{
@@ -562,7 +562,7 @@ namespace org.apache.commons.math3.ode
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeDerivatives(double t, double[] y, double[] yDot) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void computeDerivatives(double t, double[] y, double[] yDot) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 			public virtual void computeDerivatives(double t, double[] y, double[] yDot)
 			{
 				ode.computeDerivatives(t, y, yDot);
@@ -571,7 +571,7 @@ namespace org.apache.commons.math3.ode
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeMainStateJacobian(double t, double[] y, double[] yDot, double[][] dFdY) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void computeMainStateJacobian(double t, double[] y, double[] yDot, double[][] dFdY) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 			public virtual void computeMainStateJacobian(double t, double[] y, double[] yDot, double[][] dFdY)
 			{
 

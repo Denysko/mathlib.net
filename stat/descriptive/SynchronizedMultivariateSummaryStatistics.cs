@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Implementation of
-	/// <seealso cref="org.apache.commons.math3.stat.descriptive.MultivariateSummaryStatistics"/> that
+	/// <seealso cref="mathlib.stat.descriptive.MultivariateSummaryStatistics"/> that
 	/// is safe to use in a multithreaded environment.  Multiple threads can safely
 	/// operate on a single instance without causing runtime exceptions due to race
 	/// conditions.  In effect, this implementation makes modification and access
@@ -54,7 +54,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void addValue(double[] value) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public synchronized void addValue(double[] value) throws mathlib.exception.DimensionMismatchException
 		public override void addValue(double[] value)
 		{
 			lock (this)
@@ -286,7 +286,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setSumImpl(StorelessUnivariateStatistic[] sumImpl) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setSumImpl(StorelessUnivariateStatistic[] sumImpl) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -313,7 +313,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setSumsqImpl(StorelessUnivariateStatistic[] sumsqImpl) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setSumsqImpl(StorelessUnivariateStatistic[] sumsqImpl) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -340,7 +340,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setMinImpl(StorelessUnivariateStatistic[] minImpl) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setMinImpl(StorelessUnivariateStatistic[] minImpl) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -367,7 +367,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setMaxImpl(StorelessUnivariateStatistic[] maxImpl) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setMaxImpl(StorelessUnivariateStatistic[] maxImpl) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -394,7 +394,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setSumLogImpl(StorelessUnivariateStatistic[] sumLogImpl) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setSumLogImpl(StorelessUnivariateStatistic[] sumLogImpl) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -421,7 +421,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setGeoMeanImpl(StorelessUnivariateStatistic[] geoMeanImpl) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setGeoMeanImpl(StorelessUnivariateStatistic[] geoMeanImpl) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalStateException
 
 		/// <summary>
 		/// {@inheritDoc}
@@ -448,7 +448,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public synchronized void setMeanImpl(StorelessUnivariateStatistic[] meanImpl) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: @Override public synchronized void setMeanImpl(StorelessUnivariateStatistic[] meanImpl) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalStateException
 	}
 
 }

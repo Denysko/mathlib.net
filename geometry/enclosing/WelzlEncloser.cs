@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.enclosing
+namespace mathlib.geometry.enclosing
 {
 
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using org.apache.commons.math3.geometry;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// Class implementing Emo Welzl algorithm to find the smallest enclosing ball in linear time.
@@ -41,7 +41,7 @@ namespace org.apache.commons.math3.geometry.enclosing
 	/// @param <P> Point type.
 	/// @version $Id: WelzlEncloser.java 1591835 2014-05-02 09:04:01Z tn $
 	/// @since 3.3 </param>
-	public class WelzlEncloser<S, P> : Encloser<S, P> where S : org.apache.commons.math3.geometry.Space where P : org.apache.commons.math3.geometry.Point<S>
+	public class WelzlEncloser<S, P> : Encloser<S, P> where S : mathlib.geometry.Space where P : mathlib.geometry.Point<S>
 	{
 
 		/// <summary>

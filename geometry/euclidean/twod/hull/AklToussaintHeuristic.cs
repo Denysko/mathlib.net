@@ -16,7 +16,7 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod.hull
+namespace mathlib.geometry.euclidean.twod.hull
 {
 
 
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <param name="points"> the original point set </param>
 		/// <returns> a reduced point set, useful as input for convex hull algorithms </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static java.util.Collection<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> reducePoints(final java.util.Collection<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> points)
+//ORIGINAL LINE: public static java.util.Collection<mathlib.geometry.euclidean.twod.Vector2D> reducePoints(final java.util.Collection<mathlib.geometry.euclidean.twod.Vector2D> points)
 		public static ICollection<Vector2D> reducePoints(ICollection<Vector2D> points)
 		{
 
@@ -88,7 +88,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> quadrilateral = buildQuadrilateral(minY, maxX, maxY, minX);
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> quadrilateral = buildQuadrilateral(minY, maxX, maxY, minX);
 			IList<Vector2D> quadrilateral = buildQuadrilateral(minY, maxX, maxY, minX);
 			// if the quadrilateral is not well formed, e.g. only 2 points, do not attempt to reduce
 			if (quadrilateral.Count < 3)
@@ -97,7 +97,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> reducedPoints = new java.util.ArrayList<org.apache.commons.math3.geometry.euclidean.twod.Vector2D>(quadrilateral);
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> reducedPoints = new java.util.ArrayList<mathlib.geometry.euclidean.twod.Vector2D>(quadrilateral);
 			IList<Vector2D> reducedPoints = new List<Vector2D>(quadrilateral);
 			foreach (Vector2D p in points)
 			{
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <param name="points"> the respective points with min/max x/y coordinate </param>
 		/// <returns> the quadrilateral </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> buildQuadrilateral(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D... points)
+//ORIGINAL LINE: private static java.util.List<mathlib.geometry.euclidean.twod.Vector2D> buildQuadrilateral(final mathlib.geometry.euclidean.twod.Vector2D... points)
 		private static IList<Vector2D> buildQuadrilateral(params Vector2D[] points)
 		{
 			IList<Vector2D> quadrilateral = new List<Vector2D>();
@@ -138,7 +138,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <param name="quadrilateralPoints"> the convex quadrilateral, represented by 4 points </param>
 		/// <returns> {@code true} if the point is inside the quadrilateral, {@code false} otherwise </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static boolean insideQuadrilateral(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D point, final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> quadrilateralPoints)
+//ORIGINAL LINE: private static boolean insideQuadrilateral(final mathlib.geometry.euclidean.twod.Vector2D point, final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> quadrilateralPoints)
 		private static bool insideQuadrilateral(Vector2D point, IList<Vector2D> quadrilateralPoints)
 		{
 

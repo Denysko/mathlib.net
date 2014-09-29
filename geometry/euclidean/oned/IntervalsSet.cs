@@ -17,16 +17,16 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.oned
+namespace mathlib.geometry.euclidean.oned
 {
 
 
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using mathlib.geometry;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// This class represents a 1D region: a set of intervals.
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="tolerance"> tolerance below which points are considered identical.
 		/// @since 3.3 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public IntervalsSet(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> tree, final double tolerance)
+//ORIGINAL LINE: public IntervalsSet(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> tree, final double tolerance)
 		public IntervalsSet(BSPTree<Euclidean1D> tree, double tolerance) : base(tree, tolerance)
 		{
 		}
@@ -95,7 +95,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// boundary does not really separate an inside open from an outside
 		/// open (open having here its topological meaning), then subsequent
 		/// calls to the {@link
-		/// org.apache.commons.math3.geometry.partitioning.Region#checkPoint(org.apache.commons.math3.geometry.Point)
+		/// mathlib.geometry.partitioning.Region#checkPoint(mathlib.geometry.Point)
 		/// checkPoint} method will not be meaningful anymore.</p>
 		/// <p>If the boundary is empty, the region will represent the whole
 		/// space.</p> </summary>
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="tolerance"> tolerance below which points are considered identical.
 		/// @since 3.3 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public IntervalsSet(final java.util.Collection<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean1D>> boundary, final double tolerance)
+//ORIGINAL LINE: public IntervalsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Euclidean1D>> boundary, final double tolerance)
 		public IntervalsSet(ICollection<SubHyperplane<Euclidean1D>> boundary, double tolerance) : base(boundary, tolerance)
 		{
 		}
@@ -141,8 +141,8 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="tree"> inside/outside BSP tree representing the intervals set </param>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#IntervalsSet(BSPTree, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#IntervalsSet(org.apache.commons.math3.geometry.partitioning.BSPTree, double)"/>") public IntervalsSet(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> tree)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#IntervalsSet(org.apache.commons.math3.geometry.partitioning.BSPTree, double)"/>")]
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#IntervalsSet(mathlib.geometry.partitioning.BSPTree, double)"/>") public IntervalsSet(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> tree)
+		[Obsolete("as of 3.3, replaced with <seealso cref="#IntervalsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
 		public IntervalsSet(BSPTree<Euclidean1D> tree) : this(tree, DEFAULT_TOLERANCE)
 		{
 		}
@@ -161,14 +161,14 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// boundary does not really separate an inside open from an outside
 		/// open (open having here its topological meaning), then subsequent
 		/// calls to the {@link
-		/// org.apache.commons.math3.geometry.partitioning.Region#checkPoint(org.apache.commons.math3.geometry.Point)
+		/// mathlib.geometry.partitioning.Region#checkPoint(mathlib.geometry.Point)
 		/// checkPoint} method will not be meaningful anymore.</p>
 		/// <p>If the boundary is empty, the region will represent the whole
 		/// space.</p> </summary>
 		/// <param name="boundary"> collection of boundary elements </param>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#IntervalsSet(Collection, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#IntervalsSet(java.util.Collection, double)"/>") public IntervalsSet(final java.util.Collection<org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean1D>> boundary)
+//ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#IntervalsSet(java.util.Collection, double)"/>") public IntervalsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Euclidean1D>> boundary)
 		[Obsolete("as of 3.3, replaced with <seealso cref="#IntervalsSet(java.util.Collection, double)"/>")]
 		public IntervalsSet(ICollection<SubHyperplane<Euclidean1D>> boundary) : this(boundary, DEFAULT_TOLERANCE)
 		{
@@ -183,7 +183,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="tolerance"> tolerance below which points are considered identical. </param>
 		/// <returns> the built tree </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> buildTree(final double lower, final double upper, final double tolerance)
+//ORIGINAL LINE: private static mathlib.geometry.partitioning.BSPTree<Euclidean1D> buildTree(final double lower, final double upper, final double tolerance)
 		private static BSPTree<Euclidean1D> buildTree(double lower, double upper, double tolerance)
 		{
 			if (double.IsInfinity(lower) && (lower < 0))
@@ -195,12 +195,12 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 				}
 				// the tree must be open on the negative infinity side
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean1D> upperCut = new OrientedPoint(new Vector1D(upper), true, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Euclidean1D> upperCut = new OrientedPoint(new Vector1D(upper), true, tolerance).wholeHyperplane();
 				SubHyperplane<Euclidean1D> upperCut = (new OrientedPoint(new Vector1D(upper), true, tolerance)).wholeHyperplane();
 				return new BSPTree<Euclidean1D>(upperCut, new BSPTree<Euclidean1D>(false), new BSPTree<Euclidean1D>(true), null);
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean1D> lowerCut = new OrientedPoint(new Vector1D(lower), false, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Euclidean1D> lowerCut = new OrientedPoint(new Vector1D(lower), false, tolerance).wholeHyperplane();
 			SubHyperplane<Euclidean1D> lowerCut = (new OrientedPoint(new Vector1D(lower), false, tolerance)).wholeHyperplane();
 			if (double.IsInfinity(upper) && (upper > 0))
 			{
@@ -210,7 +210,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 
 			// the tree must be bounded on the two sides
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<Euclidean1D> upperCut = new OrientedPoint(new Vector1D(upper), true, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<Euclidean1D> upperCut = new OrientedPoint(new Vector1D(upper), true, tolerance).wholeHyperplane();
 			SubHyperplane<Euclidean1D> upperCut = (new OrientedPoint(new Vector1D(upper), true, tolerance)).wholeHyperplane();
 			return new BSPTree<Euclidean1D>(lowerCut, new BSPTree<Euclidean1D>(false), new BSPTree<Euclidean1D>(upperCut, new BSPTree<Euclidean1D>(false), new BSPTree<Euclidean1D>(true), null), null);
 
@@ -219,7 +219,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public IntervalsSet buildNew(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> tree)
+//ORIGINAL LINE: @Override public IntervalsSet buildNew(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> tree)
 		public override IntervalsSet buildNew(BSPTree<Euclidean1D> tree)
 		{
 			return new IntervalsSet(tree, Tolerance);
@@ -312,7 +312,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// @since 3.3
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.geometry.partitioning.BoundaryProjection<Euclidean1D> projectToBoundary(final org.apache.commons.math3.geometry.Point<Euclidean1D> point)
+//ORIGINAL LINE: @Override public mathlib.geometry.partitioning.BoundaryProjection<Euclidean1D> projectToBoundary(final mathlib.geometry.Point<Euclidean1D> point)
 		public override BoundaryProjection<Euclidean1D> projectToBoundary(Point<Euclidean1D> point)
 		{
 
@@ -411,7 +411,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="root"> tree root </param>
 		/// <returns> first leaf node </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> getFirstLeaf(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> root)
+//ORIGINAL LINE: private mathlib.geometry.partitioning.BSPTree<Euclidean1D> getFirstLeaf(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> root)
 		private BSPTree<Euclidean1D> getFirstLeaf(BSPTree<Euclidean1D> root)
 		{
 
@@ -466,7 +466,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> true if the node corresponds to the start abscissa of an interval </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isIntervalStart(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> node)
+//ORIGINAL LINE: private boolean isIntervalStart(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> node)
 		private bool isIntervalStart(BSPTree<Euclidean1D> node)
 		{
 
@@ -493,7 +493,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> true if the node corresponds to the end abscissa of an interval </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isIntervalEnd(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> node)
+//ORIGINAL LINE: private boolean isIntervalEnd(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> node)
 		private bool isIntervalEnd(BSPTree<Euclidean1D> node)
 		{
 
@@ -600,11 +600,11 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="node"> child node considered </param>
 		/// <returns> true is the node has a parent end is before it in ascending order </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isBeforeParent(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> node)
+//ORIGINAL LINE: private boolean isBeforeParent(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> node)
 		private bool isBeforeParent(BSPTree<Euclidean1D> node)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> parent = node.getParent();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Euclidean1D> parent = node.getParent();
 			BSPTree<Euclidean1D> parent = node.Parent;
 			if (parent == null)
 			{
@@ -621,11 +621,11 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="node"> child node considered </param>
 		/// <returns> true is the node has a parent end is after it in ascending order </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isAfterParent(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> node)
+//ORIGINAL LINE: private boolean isAfterParent(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> node)
 		private bool isAfterParent(BSPTree<Euclidean1D> node)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> parent = node.getParent();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<Euclidean1D> parent = node.getParent();
 			BSPTree<Euclidean1D> parent = node.Parent;
 			if (parent == null)
 			{
@@ -678,7 +678,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> true if the oriented point is direct </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private boolean isDirect(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> node)
+//ORIGINAL LINE: private boolean isDirect(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> node)
 		private bool isDirect(BSPTree<Euclidean1D> node)
 		{
 			return ((OrientedPoint) node.Cut.Hyperplane).Direct;
@@ -689,7 +689,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// <param name="node"> internal node to check </param>
 		/// <returns> abscissa </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private double getAngle(final org.apache.commons.math3.geometry.partitioning.BSPTree<Euclidean1D> node)
+//ORIGINAL LINE: private double getAngle(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> node)
 		private double getAngle(BSPTree<Euclidean1D> node)
 		{
 			return ((OrientedPoint) node.Cut.Hyperplane).Location.X;

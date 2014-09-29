@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using RandomVectorGenerator = org.apache.commons.math3.random.RandomVectorGenerator;
-	using org.apache.commons.math3.optim;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using RandomVectorGenerator = mathlib.random.RandomVectorGenerator;
+	using mathlib.optim;
 
 	/// <summary>
 	/// Multi-start optimizer.
@@ -55,7 +55,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// is {@code null}. </exception>
 		/// <exception cref="NotStrictlyPositiveException"> if {@code starts < 1}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MultiStartMultivariateOptimizer(final MultivariateOptimizer optimizer, final int starts, final org.apache.commons.math3.random.RandomVectorGenerator generator) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public MultiStartMultivariateOptimizer(final MultivariateOptimizer optimizer, final int starts, final mathlib.random.RandomVectorGenerator generator) throws mathlib.exception.NullArgumentException, mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public MultiStartMultivariateOptimizer(MultivariateOptimizer optimizer, int starts, RandomVectorGenerator generator) : base(optimizer, starts, generator)
 		{
@@ -109,7 +109,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public int compare(final org.apache.commons.math3.optim.PointValuePair o1, final org.apache.commons.math3.optim.PointValuePair o2)
+//ORIGINAL LINE: public int compare(final mathlib.optim.PointValuePair o1, final mathlib.optim.PointValuePair o2)
 			public virtual int Compare(PointValuePair o1, PointValuePair o2)
 			{
 				if (o1 == null)

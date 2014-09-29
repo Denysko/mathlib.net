@@ -21,7 +21,7 @@
 /// </p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.geometry.partitioning.utilities
+namespace mathlib.geometry.partitioning.utilities
 {
 
 }

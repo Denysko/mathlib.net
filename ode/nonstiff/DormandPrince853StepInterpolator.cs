@@ -17,12 +17,12 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
 
 	/// <summary>
 	/// This class represents an interpolator over the last step during an
@@ -305,7 +305,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public void reinitialize(final org.apache.commons.math3.ode.AbstractIntegrator integrator, final double[] y, final double[][] yDotK, final boolean forward, final org.apache.commons.math3.ode.EquationsMapper primaryMapper, final org.apache.commons.math3.ode.EquationsMapper[] secondaryMappers)
+//ORIGINAL LINE: @Override public void reinitialize(final mathlib.ode.AbstractIntegrator integrator, final double[] y, final double[][] yDotK, final boolean forward, final mathlib.ode.EquationsMapper primaryMapper, final mathlib.ode.EquationsMapper[] secondaryMappers)
 	  public override void reinitialize(AbstractIntegrator integrator, double[] y, double[][] yDotK, bool forward, EquationsMapper primaryMapper, EquationsMapper[] secondaryMappers)
 	  {
 
@@ -344,7 +344,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected void computeInterpolatedStateAndDerivatives(final double theta, final double oneMinusThetaH) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override protected void computeInterpolatedStateAndDerivatives(final double theta, final double oneMinusThetaH) throws mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 	  protected internal override void computeInterpolatedStateAndDerivatives(double theta, double oneMinusThetaH)
 	  {
@@ -466,7 +466,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected void doFinalize() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: @Override protected void doFinalize() throws mathlib.exception.MaxCountExceededException
 	  protected internal override void doFinalize()
 	  {
 

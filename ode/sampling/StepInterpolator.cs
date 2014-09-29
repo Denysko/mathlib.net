@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.sampling
+namespace mathlib.ode.sampling
 {
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// This interface represents an interpolator over the last step
@@ -39,8 +39,8 @@ namespace org.apache.commons.math3.ode.sampling
 	/// <seealso cref="#copy()"/> method.
 	/// </p>
 	/// </summary>
-	/// <seealso cref= org.apache.commons.math3.ode.FirstOrderIntegrator </seealso>
-	/// <seealso cref= org.apache.commons.math3.ode.SecondOrderIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.FirstOrderIntegrator </seealso>
+	/// <seealso cref= mathlib.ode.SecondOrderIntegrator </seealso>
 	/// <seealso cref= StepHandler
 	/// @version $Id: StepInterpolator.java 1416643 2012-12-03 19:37:14Z tn $
 	/// @since 1.2 </seealso>
@@ -75,7 +75,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <seealso cref= #getInterpolatedDerivatives() </seealso>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double[] getInterpolatedState() throws org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: double[] getInterpolatedState() throws mathlib.exception.MaxCountExceededException;
 	  double[] InterpolatedState {get;}
 
 	  /// <summary>
@@ -88,7 +88,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// @since 2.0 </seealso>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double[] getInterpolatedDerivatives() throws org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: double[] getInterpolatedDerivatives() throws mathlib.exception.MaxCountExceededException;
 	  double[] InterpolatedDerivatives {get;}
 
 	  /// <summary>
@@ -97,8 +97,8 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// it should not be modified and it should be copied if it needs
 	  /// to be preserved across several calls.</p> </summary>
 	  /// <param name="index"> index of the secondary set, as returned by {@link
-	  /// org.apache.commons.math3.ode.ExpandableStatefulODE#addSecondaryEquations(
-	  /// org.apache.commons.math3.ode.SecondaryEquations)
+	  /// mathlib.ode.ExpandableStatefulODE#addSecondaryEquations(
+	  /// mathlib.ode.SecondaryEquations)
 	  /// ExpandableStatefulODE.addSecondaryEquations(SecondaryEquations)} </param>
 	  /// <returns> interpolated secondary state at the current interpolation date </returns>
 	  /// <seealso cref= #getInterpolatedState() </seealso>
@@ -108,7 +108,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// @since 3.0 </seealso>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double[] getInterpolatedSecondaryState(int index) throws org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: double[] getInterpolatedSecondaryState(int index) throws mathlib.exception.MaxCountExceededException;
 	  double[] getInterpolatedSecondaryState(int index);
 
 	  /// <summary>
@@ -117,8 +117,8 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// it should not be modified and it should be copied if it needs
 	  /// to be preserved across several calls.</p> </summary>
 	  /// <param name="index"> index of the secondary set, as returned by {@link
-	  /// org.apache.commons.math3.ode.ExpandableStatefulODE#addSecondaryEquations(
-	  /// org.apache.commons.math3.ode.SecondaryEquations)
+	  /// mathlib.ode.ExpandableStatefulODE#addSecondaryEquations(
+	  /// mathlib.ode.SecondaryEquations)
 	  /// ExpandableStatefulODE.addSecondaryEquations(SecondaryEquations)} </param>
 	  /// <returns> interpolated secondary derivatives at the current interpolation date </returns>
 	  /// <seealso cref= #getInterpolatedState() </seealso>
@@ -128,7 +128,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// @since 3.0 </seealso>
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double[] getInterpolatedSecondaryDerivatives(int index) throws org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: double[] getInterpolatedSecondaryDerivatives(int index) throws mathlib.exception.MaxCountExceededException;
 	  double[] getInterpolatedSecondaryDerivatives(int index);
 
 	  /// <summary>
@@ -152,7 +152,7 @@ namespace org.apache.commons.math3.ode.sampling
 	  /// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded
 	  /// during step finalization </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: StepInterpolator copy() throws org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: StepInterpolator copy() throws mathlib.exception.MaxCountExceededException;
 	   StepInterpolator copy();
 
 	}

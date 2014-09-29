@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
 
 	/// <summary>
 	/// Stops after a fixed amount of time has elapsed.
@@ -45,7 +45,7 @@ namespace org.apache.commons.math3.genetics
 		/// <param name="maxTime"> maximum number of seconds generations are allowed to evolve </param>
 		/// <exception cref="NumberIsTooSmallException"> if the provided time is &lt; 0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FixedElapsedTime(final long maxTime) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public FixedElapsedTime(final long maxTime) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FixedElapsedTime(long maxTime) : this(maxTime, TimeUnit.SECONDS)
 		{
@@ -58,7 +58,7 @@ namespace org.apache.commons.math3.genetics
 		/// <param name="unit"> <seealso cref="TimeUnit"/> of the maxTime argument </param>
 		/// <exception cref="NumberIsTooSmallException"> if the provided time is &lt; 0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FixedElapsedTime(final long maxTime, final java.util.concurrent.TimeUnit unit) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public FixedElapsedTime(final long maxTime, final java.util.concurrent.TimeUnit unit) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FixedElapsedTime(long maxTime, TimeUnit unit)
 		{

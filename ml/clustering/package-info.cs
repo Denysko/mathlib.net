@@ -17,7 +17,7 @@
 /// <summary>
 /// Clustering algorithms.
 /// </summary>
-namespace org.apache.commons.math3.ml.clustering
+namespace mathlib.ml.clustering
 {
 
 }

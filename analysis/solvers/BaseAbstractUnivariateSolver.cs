@@ -34,7 +34,7 @@ namespace mathlib.analysis.solvers
     /// 
     /// @since 2.0
     /// @version $Id: BaseAbstractUnivariateSolver.java 1455194 2013-03-11 15:45:54Z luc $ </param>
-    public abstract class BaseAbstractUnivariateSolver<FUNC> : BaseUnivariateSolver<FUNC> where FUNC : org.apache.commons.math3.analysis.UnivariateFunction
+    public abstract class BaseAbstractUnivariateSolver<FUNC> : BaseUnivariateSolver<FUNC> where FUNC : mathlib.analysis.UnivariateFunction
     {
         /// <summary>
         /// Default relative accuracy. </summary>
@@ -186,7 +186,7 @@ namespace mathlib.analysis.solvers
         /// <exception cref="TooManyEvaluationsException"> if the maximal number of evaluations
         /// is exceeded. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected double computeObjectiveValue(double point) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+        //ORIGINAL LINE: protected double computeObjectiveValue(double point) throws mathlib.exception.TooManyEvaluationsException
         protected internal virtual double computeObjectiveValue(double point)
         {
             incrementEvaluationCount();
@@ -205,7 +205,7 @@ namespace mathlib.analysis.solvers
         /// <param name="maxEval"> Maximum number of evaluations. </param>
         /// <exception cref="NullArgumentException"> if f is null </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void setup(int maxEval, FUNC f, double min, double max, double startValue) throws org.apache.commons.math3.exception.NullArgumentException
+        //ORIGINAL LINE: protected void setup(int maxEval, FUNC f, double min, double max, double startValue) throws mathlib.exception.NullArgumentException
         protected internal virtual void setup(int maxEval, FUNC f, double min, double max, double startValue)
         {
             // Checks.
@@ -223,7 +223,7 @@ namespace mathlib.analysis.solvers
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public double solve(int maxEval, FUNC f, double min, double max, double startValue) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NoBracketingException
+        //ORIGINAL LINE: public double solve(int maxEval, FUNC f, double min, double max, double startValue) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NoBracketingException
         public virtual double solve(int maxEval, FUNC f, double min, double max, double startValue)
         {
             // Initialization.
@@ -243,7 +243,7 @@ namespace mathlib.analysis.solvers
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public double solve(int maxEval, FUNC f, double startValue) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NoBracketingException
+        //ORIGINAL LINE: public double solve(int maxEval, FUNC f, double startValue) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NoBracketingException
         public virtual double solve(int maxEval, FUNC f, double startValue)
         {
             return solve(maxEval, f, double.NaN, double.NaN, startValue);
@@ -259,7 +259,7 @@ namespace mathlib.analysis.solvers
         /// <exception cref="NoBracketingException"> if the initial search interval does not bracket
         /// a root and the solver requires it. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected abstract double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NoBracketingException;
+        //ORIGINAL LINE: protected abstract double doSolve() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NoBracketingException;
         protected internal abstract double doSolve();
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace mathlib.analysis.solvers
         /// <param name="upper"> Upper endpoint. </param>
         /// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void verifyInterval(final double lower, final double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+        //ORIGINAL LINE: protected void verifyInterval(final double lower, final double upper) throws mathlib.exception.NumberIsTooLargeException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         protected internal virtual void verifyInterval(double lower, double upper)
         {
@@ -313,7 +313,7 @@ namespace mathlib.analysis.solvers
         /// <exception cref="NumberIsTooLargeException"> if {@code lower >= initial} or
         /// {@code initial >= upper}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void verifySequence(final double lower, final double initial, final double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+        //ORIGINAL LINE: protected void verifySequence(final double lower, final double initial, final double upper) throws mathlib.exception.NumberIsTooLargeException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         protected internal virtual void verifySequence(double lower, double initial, double upper)
         {
@@ -330,7 +330,7 @@ namespace mathlib.analysis.solvers
         /// <exception cref="NoBracketingException"> if the function has the same sign at
         /// the endpoints. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void verifyBracketing(final double lower, final double upper) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoBracketingException
+        //ORIGINAL LINE: protected void verifyBracketing(final double lower, final double upper) throws mathlib.exception.NullArgumentException, mathlib.exception.NoBracketingException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         protected internal virtual void verifyBracketing(double lower, double upper)
         {
@@ -347,7 +347,7 @@ namespace mathlib.analysis.solvers
         /// <exception cref="TooManyEvaluationsException"> when the allowed number of function
         /// evaluations has been exhausted. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void incrementEvaluationCount() throws org.apache.commons.math3.exception.TooManyEvaluationsException
+        //ORIGINAL LINE: protected void incrementEvaluationCount() throws mathlib.exception.TooManyEvaluationsException
         protected internal virtual void incrementEvaluationCount()
         {
             try

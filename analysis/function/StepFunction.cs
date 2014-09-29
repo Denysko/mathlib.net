@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.function
+namespace mathlib.analysis.function
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// <a href="http://en.wikipedia.org/wiki/Step_function">
@@ -60,7 +60,7 @@ namespace org.apache.commons.math3.analysis.function
 		/// <exception cref="DimensionMismatchException"> if {@code x} and {@code y} do not
 		/// have the same length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public StepFunction(double[] x, double[] y) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public StepFunction(double[] x, double[] y) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException, mathlib.exception.NonMonotonicSequenceException
 		public StepFunction(double[] x, double[] y)
 		{
 			if (x == null || y == null)

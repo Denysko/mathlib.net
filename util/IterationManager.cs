@@ -59,7 +59,7 @@ namespace mathlib.util
 		/// <param name="maxIterations"> the maximum number of iterations </param>
 		/// <param name="callBack"> the function to be called when the maximum number of
 		/// iterations has been reached </param>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if {@code callBack} is {@code null}
+		/// <exception cref="mathlib.exception.NullArgumentException"> if {@code callBack} is {@code null}
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public IterationManager(final int maxIterations, final Incrementor.MaxCountExceededCallback callBack)
@@ -173,7 +173,7 @@ namespace mathlib.util
 		/// <exception cref="MaxCountExceededException"> if the maximum number of iterations is
 		/// reached. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void incrementIterationCount() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public void incrementIterationCount() throws mathlib.exception.MaxCountExceededException
 		public virtual void incrementIterationCount()
 		{
 			iterations.incrementCount();

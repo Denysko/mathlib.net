@@ -16,18 +16,18 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting
+namespace mathlib.fitting
 {
 
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using LeastSquaresBuilder = org.apache.commons.math3.fitting.leastsquares.LeastSquaresBuilder;
-	using LeastSquaresProblem = org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem;
-	using DiagonalMatrix = org.apache.commons.math3.linear.DiagonalMatrix;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using LeastSquaresBuilder = mathlib.fitting.leastsquares.LeastSquaresBuilder;
+	using LeastSquaresProblem = mathlib.fitting.leastsquares.LeastSquaresProblem;
+	using DiagonalMatrix = mathlib.linear.DiagonalMatrix;
 
 	/// <summary>
 	/// Fits points to a {@link
-	/// org.apache.commons.math3.analysis.polynomials.PolynomialFunction.Parametric polynomial}
+	/// mathlib.analysis.polynomials.PolynomialFunction.Parametric polynomial}
 	/// function.
 	/// <br/>
 	/// The size of the <seealso cref="#withStartPoint(double[]) initial guess"/> array defines the

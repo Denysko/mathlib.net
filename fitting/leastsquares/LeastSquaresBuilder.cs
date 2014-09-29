@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using MultivariateMatrixFunction = org.apache.commons.math3.analysis.MultivariateMatrixFunction;
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using org.apache.commons.math3.optim;
-	using PointVectorValuePair = org.apache.commons.math3.optim.PointVectorValuePair;
+	using MultivariateMatrixFunction = mathlib.analysis.MultivariateMatrixFunction;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using mathlib.optim;
+	using PointVectorValuePair = mathlib.optim.PointVectorValuePair;
 
 	/// <summary>
 	/// A mutable builder for <seealso cref="LeastSquaresProblem"/>s.
@@ -98,7 +98,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="newChecker"> the convergence checker. </param>
 		/// <returns> this </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresBuilder checker(final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation> newChecker)
+//ORIGINAL LINE: public LeastSquaresBuilder checker(final mathlib.optim.ConvergenceChecker<mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation> newChecker)
 		public virtual LeastSquaresBuilder checker(ConvergenceChecker<LeastSquaresProblem_Evaluation> newChecker)
 		{
 			this.checker_Renamed = newChecker;
@@ -113,7 +113,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="newChecker"> the convergence checker. </param>
 		/// <returns> this </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresBuilder checkerPair(final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointVectorValuePair> newChecker)
+//ORIGINAL LINE: public LeastSquaresBuilder checkerPair(final mathlib.optim.ConvergenceChecker<mathlib.optim.PointVectorValuePair> newChecker)
 		public virtual LeastSquaresBuilder checkerPair(ConvergenceChecker<PointVectorValuePair> newChecker)
 		{
 			return this.checker(LeastSquaresFactory.evaluationChecker(newChecker));
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="jacobian"> the Jacobian of {@code value} </param>
 		/// <returns> this </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresBuilder model(final org.apache.commons.math3.analysis.MultivariateVectorFunction value, final org.apache.commons.math3.analysis.MultivariateMatrixFunction jacobian)
+//ORIGINAL LINE: public LeastSquaresBuilder model(final mathlib.analysis.MultivariateVectorFunction value, final mathlib.analysis.MultivariateMatrixFunction jacobian)
 		public virtual LeastSquaresBuilder model(MultivariateVectorFunction value, MultivariateMatrixFunction jacobian)
 		{
 			return model(LeastSquaresFactory.model(value, jacobian));
@@ -151,7 +151,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="newTarget"> the observed data. </param>
 		/// <returns> this </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresBuilder target(final org.apache.commons.math3.linear.RealVector newTarget)
+//ORIGINAL LINE: public LeastSquaresBuilder target(final mathlib.linear.RealVector newTarget)
 		public virtual LeastSquaresBuilder target(RealVector newTarget)
 		{
 			this.target_Renamed = newTarget;
@@ -176,7 +176,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="newStart"> the initial guess. </param>
 		/// <returns> this </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresBuilder start(final org.apache.commons.math3.linear.RealVector newStart)
+//ORIGINAL LINE: public LeastSquaresBuilder start(final mathlib.linear.RealVector newStart)
 		public virtual LeastSquaresBuilder start(RealVector newStart)
 		{
 			this.start_Renamed = newStart;
@@ -201,7 +201,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="newWeight"> the weight matrix </param>
 		/// <returns> this </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresBuilder weight(final org.apache.commons.math3.linear.RealMatrix newWeight)
+//ORIGINAL LINE: public LeastSquaresBuilder weight(final mathlib.linear.RealMatrix newWeight)
 		public virtual LeastSquaresBuilder weight(RealMatrix newWeight)
 		{
 			this.weight_Renamed = newWeight;

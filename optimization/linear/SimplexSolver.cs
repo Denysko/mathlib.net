@@ -18,12 +18,12 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.linear
+namespace mathlib.optimization.linear
 {
 
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using Precision = mathlib.util.Precision;
 
 
 	/// <summary>
@@ -211,7 +211,7 @@ namespace org.apache.commons.math3.optimization.linear
 		/// <exception cref="MaxCountExceededException"> if the maximal iteration count has been exceeded </exception>
 		/// <exception cref="UnboundedSolutionException"> if the model is found not to have a bounded solution </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void doIteration(final SimplexTableau tableau) throws org.apache.commons.math3.exception.MaxCountExceededException, UnboundedSolutionException
+//ORIGINAL LINE: protected void doIteration(final SimplexTableau tableau) throws mathlib.exception.MaxCountExceededException, UnboundedSolutionException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual void doIteration(SimplexTableau tableau)
 		{
@@ -249,7 +249,7 @@ namespace org.apache.commons.math3.optimization.linear
 		/// <exception cref="UnboundedSolutionException"> if the model is found not to have a bounded solution </exception>
 		/// <exception cref="NoFeasibleSolutionException"> if there is no feasible solution </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void solvePhase1(final SimplexTableau tableau) throws org.apache.commons.math3.exception.MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException
+//ORIGINAL LINE: protected void solvePhase1(final SimplexTableau tableau) throws mathlib.exception.MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal virtual void solvePhase1(SimplexTableau tableau)
 		{
@@ -275,7 +275,7 @@ namespace org.apache.commons.math3.optimization.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optimization.PointValuePair doOptimize() throws org.apache.commons.math3.exception.MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException
+//ORIGINAL LINE: @Override public mathlib.optimization.PointValuePair doOptimize() throws mathlib.exception.MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException
 		public override PointValuePair doOptimize()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

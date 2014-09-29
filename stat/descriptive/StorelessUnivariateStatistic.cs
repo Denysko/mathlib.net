@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 	/// <summary>
 	/// Extends the definition of <seealso cref="UnivariateStatistic"/> with
@@ -46,7 +46,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="values">  array holding the new values to add </param>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void incrementAll(double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: void incrementAll(double[] values) throws mathlib.exception.MathIllegalArgumentException;
 		void incrementAll(double[] values);
 
 		/// <summary>
@@ -60,7 +60,7 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="length">  the number of elements to add </param>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the index </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void incrementAll(double[] values, int start, int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: void incrementAll(double[] values, int start, int length) throws mathlib.exception.MathIllegalArgumentException;
 		void incrementAll(double[] values, int start, int length);
 
 		/// <summary>

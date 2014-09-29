@@ -17,7 +17,7 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
 	/// <summary>
@@ -25,10 +25,10 @@ namespace org.apache.commons.math3.optimization
 	/// Commons-Math. Users of the API are advised to base their code on
 	/// the following interfaces:
 	/// <ul>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.MultivariateOptimizer"/></li>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.MultivariateDifferentiableOptimizer"/></li>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.MultivariateDifferentiableVectorOptimizer"/></li>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.univariate.UnivariateOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.MultivariateOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.MultivariateDifferentiableOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.MultivariateDifferentiableVectorOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.univariate.UnivariateOptimizer"/></li>
 	/// </ul>
 	/// </summary>
 	/// @param <PAIR> Type of the point/objective pair.

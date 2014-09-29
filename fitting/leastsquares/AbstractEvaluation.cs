@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using DecompositionSolver = org.apache.commons.math3.linear.DecompositionSolver;
-	using QRDecomposition = org.apache.commons.math3.linear.QRDecomposition;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using DecompositionSolver = mathlib.linear.DecompositionSolver;
+	using QRDecomposition = mathlib.linear.QRDecomposition;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// An implementation of <seealso cref="Evaluation"/> that is designed for extension. All of the
@@ -61,17 +61,17 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		{
 			// Set up the Jacobian.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix j = this.getJacobian();
+//ORIGINAL LINE: final mathlib.linear.RealMatrix j = this.getJacobian();
 			RealMatrix j = this.Jacobian;
 
 			// Compute transpose(J)J.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix jTj = j.transpose().multiply(j);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix jTj = j.transpose().multiply(j);
 			RealMatrix jTj = j.transpose().multiply(j);
 
 			// Compute the covariances matrix.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.DecompositionSolver solver = new org.apache.commons.math3.linear.QRDecomposition(jTj, threshold).getSolver();
+//ORIGINAL LINE: final mathlib.linear.DecompositionSolver solver = new mathlib.linear.QRDecomposition(jTj, threshold).getSolver();
 			DecompositionSolver solver = (new QRDecomposition(jTj, threshold)).Solver;
 			return solver.Inverse;
 		}
@@ -81,13 +81,13 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		public virtual RealVector getSigma(double covarianceSingularityThreshold)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix cov = this.getCovariances(covarianceSingularityThreshold);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix cov = this.getCovariances(covarianceSingularityThreshold);
 			RealMatrix cov = this.getCovariances(covarianceSingularityThreshold);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int nC = cov.getColumnDimension();
 			int nC = cov.ColumnDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealVector sig = new org.apache.commons.math3.linear.ArrayRealVector(nC);
+//ORIGINAL LINE: final mathlib.linear.RealVector sig = new mathlib.linear.ArrayRealVector(nC);
 			RealVector sig = new ArrayRealVector(nC);
 			for (int i = 0; i < nC; ++i)
 			{
@@ -116,7 +116,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			get
 			{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final org.apache.commons.math3.linear.ArrayRealVector r = new org.apache.commons.math3.linear.ArrayRealVector(this.getResiduals());
+	//ORIGINAL LINE: final mathlib.linear.ArrayRealVector r = new mathlib.linear.ArrayRealVector(this.getResiduals());
 				ArrayRealVector r = new ArrayRealVector(this.Residuals);
 				return FastMath.sqrt(r.dotProduct(r));
 			}

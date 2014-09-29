@@ -470,7 +470,7 @@ namespace mathlib.util
         /// <exception cref="MathArithmeticException"> if an exact operation is required but result is not exact </exception>
         /// <exception cref="MathIllegalArgumentException"> if {@code roundingMethod} is not a valid rounding method. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public static float round(float x, int scale, int roundingMethod) throws org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.MathIllegalArgumentException
+        //ORIGINAL LINE: public static float round(float x, int scale, int roundingMethod) throws mathlib.exception.MathArithmeticException, mathlib.exception.MathIllegalArgumentException
         public static float round(float x, int scale, int roundingMethod)
         {
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -495,7 +495,7 @@ namespace mathlib.util
         /// <exception cref="MathIllegalArgumentException"> if {@code roundingMethod} is not a valid rounding method.
         /// @since 1.1 (previously in {@code MathUtils}, moved as of version 3.0) </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: private static double roundUnscaled(double unscaled, double sign, int roundingMethod) throws org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.MathIllegalArgumentException
+        //ORIGINAL LINE: private static double roundUnscaled(double unscaled, double sign, int roundingMethod) throws mathlib.exception.MathArithmeticException, mathlib.exception.MathIllegalArgumentException
         private static double roundUnscaled(double unscaled, double sign, int roundingMethod)
         {
             switch (roundingMethod)

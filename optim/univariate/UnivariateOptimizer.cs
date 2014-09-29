@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.univariate
+namespace mathlib.optim.univariate
 {
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using org.apache.commons.math3.optim;
-	using GoalType = org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
-	using org.apache.commons.math3.optim;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using mathlib.optim;
+	using GoalType = mathlib.optim.nonlinear.scalar.GoalType;
+	using mathlib.optim;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 	/// <summary>
 	/// Base class for a univariate scalar function optimizer.
@@ -67,7 +67,7 @@ namespace org.apache.commons.math3.optim.univariate
 		/// <exception cref="TooManyEvaluationsException"> if the maximal number of
 		/// evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public UnivariatePointValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: @Override public UnivariatePointValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException
 		public override UnivariatePointValuePair optimize(params OptimizationData[] optData)
 		{
 			// Perform computation.

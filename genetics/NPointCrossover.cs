@@ -16,16 +16,16 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
 
 	/// <summary>
 	/// N-point crossover policy. For each iteration a random crossover point is
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.genetics
 		/// <param name="crossoverPoints"> the number of crossover points </param>
 		/// <exception cref="NotStrictlyPositiveException"> if the number of {@code crossoverPoints} is not strictly positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public NPointCrossover(final int crossoverPoints) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public NPointCrossover(final int crossoverPoints) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public NPointCrossover(int crossoverPoints)
 		{
@@ -113,7 +113,7 @@ namespace org.apache.commons.math3.genetics
 		///   not an instance of <seealso cref="AbstractListChromosome"/> </exception>
 		/// <exception cref="DimensionMismatchException"> if the length of the two chromosomes is different </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public ChromosomePair crossover(final Chromosome first, final Chromosome second) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public ChromosomePair crossover(final Chromosome first, final Chromosome second) throws mathlib.exception.DimensionMismatchException, mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual ChromosomePair crossover(Chromosome first, Chromosome second) // OK because of instanceof checks
@@ -137,7 +137,7 @@ namespace org.apache.commons.math3.genetics
 		/// <exception cref="DimensionMismatchException"> if the length of the two chromosomes is different </exception>
 		/// <exception cref="NumberIsTooLargeException"> if the number of crossoverPoints is too large for the actual chromosomes </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private ChromosomePair mate(final AbstractListChromosome<T> first, final AbstractListChromosome<T> second) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private ChromosomePair mate(final AbstractListChromosome<T> first, final AbstractListChromosome<T> second) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private ChromosomePair mate(AbstractListChromosome<T> first, AbstractListChromosome<T> second)
 		{
@@ -170,7 +170,7 @@ namespace org.apache.commons.math3.genetics
 			IList<T> child2Rep = new List<T>(length);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.random.RandomGenerator random = GeneticAlgorithm.getRandomGenerator();
+//ORIGINAL LINE: final mathlib.random.RandomGenerator random = GeneticAlgorithm.getRandomGenerator();
 			RandomGenerator random = GeneticAlgorithm.RandomGenerator;
 
 			IList<T> c1 = child1Rep;

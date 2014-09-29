@@ -16,14 +16,14 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Univariate functions differentiator using finite differences.
@@ -109,7 +109,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <seealso cref="NotPositiveException"/> extends <seealso cref="NumberIsTooSmallException"/>) </exception>
 		/// <exception cref="NumberIsTooSmallException"> {@code nbPoint <= 1} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FiniteDifferencesDifferentiator(final int nbPoints, final double stepSize) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public FiniteDifferencesDifferentiator(final int nbPoints, final double stepSize) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FiniteDifferencesDifferentiator(int nbPoints, double stepSize) : this(nbPoints, stepSize, double.NegativeInfinity, double.PositiveInfinity)
 		{
@@ -144,7 +144,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="NumberIsTooSmallException"> {@code nbPoint <= 1} </exception>
 		/// <exception cref="NumberIsTooLargeException"> {@code stepSize * (nbPoints - 1) >= tUpper - tLower} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FiniteDifferencesDifferentiator(final int nbPoints, final double stepSize, final double tLower, final double tUpper) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public FiniteDifferencesDifferentiator(final int nbPoints, final double stepSize, final double tLower, final double tUpper) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FiniteDifferencesDifferentiator(int nbPoints, double stepSize, double tLower, double tUpper)
 		{
@@ -167,7 +167,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 				throw new NumberIsTooLargeException(2 * halfSampleSpan, tUpper - tLower, false);
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double safety = org.apache.commons.math3.util.FastMath.ulp(halfSampleSpan);
+//ORIGINAL LINE: final double safety = mathlib.util.FastMath.ulp(halfSampleSpan);
 			double safety = FastMath.ulp(halfSampleSpan);
 			this.tMin = tLower + halfSampleSpan + safety;
 			this.tMax = tUpper - halfSampleSpan - safety;
@@ -208,7 +208,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="NumberIsTooLargeException"> if the requested derivation order
 		/// is larger or equal to the number of points </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private DerivativeStructure evaluate(final DerivativeStructure t, final double t0, final double[] y) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private DerivativeStructure evaluate(final DerivativeStructure t, final double t0, final double[] y) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private DerivativeStructure evaluate(DerivativeStructure t, double t0, double[] y)
 		{
@@ -282,7 +282,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public UnivariateDifferentiableFunction differentiate(final org.apache.commons.math3.analysis.UnivariateFunction function)
+//ORIGINAL LINE: public UnivariateDifferentiableFunction differentiate(final mathlib.analysis.UnivariateFunction function)
 		public virtual UnivariateDifferentiableFunction differentiate(UnivariateFunction function)
 		{
 			return new UnivariateDifferentiableFunctionAnonymousInnerClassHelper(this, function);
@@ -304,7 +304,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 					/// <summary>
 					/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double value(final double x) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double value(final double x) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual double value(double x)
 			{
@@ -314,7 +314,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure value(final DerivativeStructure t) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public DerivativeStructure value(final DerivativeStructure t) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual DerivativeStructure value(DerivativeStructure t)
 			{
@@ -327,7 +327,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 
 				// compute sample position, trying to be centered if possible
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t0 = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.min(t.getValue(), tMax), tMin) - halfSampleSpan;
+//ORIGINAL LINE: final double t0 = mathlib.util.FastMath.max(mathlib.util.FastMath.min(t.getValue(), tMax), tMin) - halfSampleSpan;
 				double t0 = FastMath.max(FastMath.min(t.Value, outerInstance.tMax), outerInstance.tMin) - outerInstance.halfSampleSpan;
 
 				// compute sample points
@@ -354,7 +354,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public UnivariateDifferentiableVectorFunction differentiate(final org.apache.commons.math3.analysis.UnivariateVectorFunction function)
+//ORIGINAL LINE: public UnivariateDifferentiableVectorFunction differentiate(final mathlib.analysis.UnivariateVectorFunction function)
 		public virtual UnivariateDifferentiableVectorFunction differentiate(UnivariateVectorFunction function)
 		{
 			return new UnivariateDifferentiableVectorFunctionAnonymousInnerClassHelper(this, function);
@@ -376,7 +376,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 					/// <summary>
 					/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] value(final double x) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double[] value(final double x) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual double[] value(double x)
 			{
@@ -386,7 +386,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure[] value(final DerivativeStructure t) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public DerivativeStructure[] value(final DerivativeStructure t) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual DerivativeStructure[] value(DerivativeStructure t)
 			{
@@ -399,7 +399,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 
 				// compute sample position, trying to be centered if possible
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t0 = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.min(t.getValue(), tMax), tMin) - halfSampleSpan;
+//ORIGINAL LINE: final double t0 = mathlib.util.FastMath.max(mathlib.util.FastMath.min(t.getValue(), tMax), tMin) - halfSampleSpan;
 				double t0 = FastMath.max(FastMath.min(t.Value, outerInstance.tMax), outerInstance.tMin) - outerInstance.halfSampleSpan;
 
 				// compute sample points
@@ -444,7 +444,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// </p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public UnivariateDifferentiableMatrixFunction differentiate(final org.apache.commons.math3.analysis.UnivariateMatrixFunction function)
+//ORIGINAL LINE: public UnivariateDifferentiableMatrixFunction differentiate(final mathlib.analysis.UnivariateMatrixFunction function)
 		public virtual UnivariateDifferentiableMatrixFunction differentiate(UnivariateMatrixFunction function)
 		{
 			return new UnivariateDifferentiableMatrixFunctionAnonymousInnerClassHelper(this, function);
@@ -466,7 +466,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 					/// <summary>
 					/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[][] value(final double x) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double[][] value(final double x) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual double[][] value(double x)
 			{
@@ -476,7 +476,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DerivativeStructure[][] value(final DerivativeStructure t) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public DerivativeStructure[][] value(final DerivativeStructure t) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 			public virtual DerivativeStructure[][] value(DerivativeStructure t)
 			{
@@ -489,7 +489,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 
 				// compute sample position, trying to be centered if possible
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t0 = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.min(t.getValue(), tMax), tMin) - halfSampleSpan;
+//ORIGINAL LINE: final double t0 = mathlib.util.FastMath.max(mathlib.util.FastMath.min(t.getValue(), tMax), tMin) - halfSampleSpan;
 				double t0 = FastMath.max(FastMath.min(t.Value, outerInstance.tMax), outerInstance.tMin) - outerInstance.halfSampleSpan;
 
 				// compute sample points

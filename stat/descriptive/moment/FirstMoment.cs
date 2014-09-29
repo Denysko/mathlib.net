@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Computes the first moment (arithmetic mean).  Uses the definitional formula:
@@ -95,7 +95,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code FirstMoment} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FirstMoment(FirstMoment original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public FirstMoment(FirstMoment original) throws mathlib.exception.NullArgumentException
 		 public FirstMoment(FirstMoment original) : base()
 		 {
 			 copy(original, this);
@@ -171,7 +171,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> FirstMoment to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(FirstMoment source, FirstMoment dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(FirstMoment source, FirstMoment dest) throws mathlib.exception.NullArgumentException
 		public static void copy(FirstMoment source, FirstMoment dest)
 		{
 			MathUtils.checkNotNull(source);

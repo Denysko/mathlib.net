@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
 
 	/// <summary>
 	/// Base interface for multivariate distributions on the reals.
@@ -68,12 +68,12 @@ namespace org.apache.commons.math3.distribution
 		/// </summary>
 		/// <param name="sampleSize"> the number of random vectors to generate. </param>
 		/// <returns> an array representing the random samples. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if {@code sampleSize} is not positive.
 		/// </exception>
 		/// <seealso cref= #sample() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double[][] sample(int sampleSize) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: double[][] sample(int sampleSize) throws mathlib.exception.NotStrictlyPositiveException;
 		double[][] sample(int sampleSize);
 	}
 

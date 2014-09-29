@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
 
 	/// <summary>
 	/// This class represents an interpolator over the last step during an
@@ -168,7 +168,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <summary>
 	  /// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public void reinitialize(final org.apache.commons.math3.ode.AbstractIntegrator integrator, final double[] y, final double[][] yDotK, final boolean forward, final org.apache.commons.math3.ode.EquationsMapper primaryMapper, final org.apache.commons.math3.ode.EquationsMapper[] secondaryMappers)
+//ORIGINAL LINE: @Override public void reinitialize(final mathlib.ode.AbstractIntegrator integrator, final double[] y, final double[][] yDotK, final boolean forward, final mathlib.ode.EquationsMapper primaryMapper, final mathlib.ode.EquationsMapper[] secondaryMappers)
 	  public override void reinitialize(AbstractIntegrator integrator, double[] y, double[][] yDotK, bool forward, EquationsMapper primaryMapper, EquationsMapper[] secondaryMappers)
 	  {
 		base.reinitialize(integrator, y, yDotK, forward, primaryMapper, secondaryMappers);

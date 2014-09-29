@@ -733,7 +733,7 @@ namespace mathlib.util
 		/// <param name="actual"> actual length </param>
 		/// <exception cref="DimensionMismatchException"> if the two lengths are not equal </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static void checkLen(int expectedLen, int actual) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private static void checkLen(int expectedLen, int actual) throws mathlib.exception.DimensionMismatchException
 		private static void checkLen(int expectedLen, int actual)
 		{
 			if (expectedLen != actual)

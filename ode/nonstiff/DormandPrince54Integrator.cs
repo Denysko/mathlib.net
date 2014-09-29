@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -152,7 +152,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 			double errSum = E1 * yDotK[0][j] + E3 * yDotK[2][j] + E4 * yDotK[3][j] + E5 * yDotK[4][j] + E6 * yDotK[5][j] + E7 * yDotK[6][j];
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double yScale = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(y0[j]), org.apache.commons.math3.util.FastMath.abs(y1[j]));
+//ORIGINAL LINE: final double yScale = mathlib.util.FastMath.max(mathlib.util.FastMath.abs(y0[j]), mathlib.util.FastMath.abs(y1[j]));
 			double yScale = FastMath.max(FastMath.abs(y0[j]), FastMath.abs(y1[j]));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double tol = (vecAbsoluteTolerance == null) ? (scalAbsoluteTolerance + scalRelativeTolerance * yScale) : (vecAbsoluteTolerance[j] + vecRelativeTolerance[j] * yScale);

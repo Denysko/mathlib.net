@@ -16,11 +16,11 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod.hull
+namespace mathlib.geometry.euclidean.twod.hull
 {
 
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implements Andrew's monotone chain method to generate the convex hull of a finite set of
@@ -72,12 +72,12 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public java.util.Collection<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> findHullVertices(final java.util.Collection<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> points)
+//ORIGINAL LINE: @Override public java.util.Collection<mathlib.geometry.euclidean.twod.Vector2D> findHullVertices(final java.util.Collection<mathlib.geometry.euclidean.twod.Vector2D> points)
 		public override ICollection<Vector2D> findHullVertices(ICollection<Vector2D> points)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> pointsSortedByXAxis = new java.util.ArrayList<org.apache.commons.math3.geometry.euclidean.twod.Vector2D>(points);
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> pointsSortedByXAxis = new java.util.ArrayList<mathlib.geometry.euclidean.twod.Vector2D>(points);
 			IList<Vector2D> pointsSortedByXAxis = new List<Vector2D>(points);
 
 			// sort the points in increasing order on the x-axis
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 
 			// build lower hull
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> lowerHull = new java.util.ArrayList<org.apache.commons.math3.geometry.euclidean.twod.Vector2D>();
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> lowerHull = new java.util.ArrayList<mathlib.geometry.euclidean.twod.Vector2D>();
 			IList<Vector2D> lowerHull = new List<Vector2D>();
 			foreach (Vector2D p in pointsSortedByXAxis)
 			{
@@ -94,12 +94,12 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 
 			// build upper hull
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> upperHull = new java.util.ArrayList<org.apache.commons.math3.geometry.euclidean.twod.Vector2D>();
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> upperHull = new java.util.ArrayList<mathlib.geometry.euclidean.twod.Vector2D>();
 			IList<Vector2D> upperHull = new List<Vector2D>();
 			for (int idx = pointsSortedByXAxis.Count - 1; idx >= 0; idx--)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p = pointsSortedByXAxis.get(idx);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p = pointsSortedByXAxis.get(idx);
 				Vector2D p = pointsSortedByXAxis[idx];
 				updateHull(p, upperHull);
 			}
@@ -107,7 +107,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 			// concatenate the lower and upper hulls
 			// the last point of each list is omitted as it is repeated at the beginning of the other list
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> hullVertices = new java.util.ArrayList<org.apache.commons.math3.geometry.euclidean.twod.Vector2D>(lowerHull.size() + upperHull.size() - 2);
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> hullVertices = new java.util.ArrayList<mathlib.geometry.euclidean.twod.Vector2D>(lowerHull.size() + upperHull.size() - 2);
 			IList<Vector2D> hullVertices = new List<Vector2D>(lowerHull.Count + upperHull.Count - 2);
 			for (int idx = 0; idx < lowerHull.Count - 1; idx++)
 			{
@@ -137,11 +137,11 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public int compare(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D o1, final org.apache.commons.math3.geometry.euclidean.twod.Vector2D o2)
+//ORIGINAL LINE: public int compare(final mathlib.geometry.euclidean.twod.Vector2D o1, final mathlib.geometry.euclidean.twod.Vector2D o2)
 			public virtual int Compare(Vector2D o1, Vector2D o2)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int diff = (int) org.apache.commons.math3.util.FastMath.signum(o1.getX() - o2.getX());
+//ORIGINAL LINE: final int diff = (int) mathlib.util.FastMath.signum(o1.getX() - o2.getX());
 				int diff = (int) FastMath.signum(o1.X - o2.X);
 				if (diff == 0)
 				{
@@ -160,7 +160,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 		/// <param name="point"> the current point </param>
 		/// <param name="hull"> the partial hull </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void updateHull(final org.apache.commons.math3.geometry.euclidean.twod.Vector2D point, final java.util.List<org.apache.commons.math3.geometry.euclidean.twod.Vector2D> hull)
+//ORIGINAL LINE: private void updateHull(final mathlib.geometry.euclidean.twod.Vector2D point, final java.util.List<mathlib.geometry.euclidean.twod.Vector2D> hull)
 		private void updateHull(Vector2D point, IList<Vector2D> hull)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -171,7 +171,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 			{
 				// ensure that we do not add an identical point
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p1 = hull.get(0);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p1 = hull.get(0);
 				Vector2D p1 = hull[0];
 				if (p1.distance(point) < tolerance)
 				{
@@ -185,14 +185,14 @@ namespace org.apache.commons.math3.geometry.euclidean.twod.hull
 //ORIGINAL LINE: final int size = hull.size();
 				int size = hull.Count;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p1 = hull.get(size - 2);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p1 = hull.get(size - 2);
 				Vector2D p1 = hull[size - 2];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.twod.Vector2D p2 = hull.get(size - 1);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.twod.Vector2D p2 = hull.get(size - 1);
 				Vector2D p2 = hull[size - 1];
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double offset = new org.apache.commons.math3.geometry.euclidean.twod.Line(p1, p2, tolerance).getOffset(point);
+//ORIGINAL LINE: final double offset = new mathlib.geometry.euclidean.twod.Line(p1, p2, tolerance).getOffset(point);
 				double offset = (new Line(p1, p2, tolerance)).getOffset(point);
 				if (FastMath.abs(offset) < tolerance)
 				{

@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using org.apache.commons.math3.optimization;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// This interface is mainly intended to enforce the internal coherence of
 	/// Commons-Math. Users of the API are advised to base their code on
 	/// the following interfaces:
 	/// <ul>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.univariate.UnivariateOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.univariate.UnivariateOptimizer"/></li>
 	/// </ul>
 	/// </summary>
 	/// @param <FUNC> Type of the objective function to be optimized.
@@ -37,7 +37,7 @@ namespace org.apache.commons.math3.optimization.univariate
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 3.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public interface BaseUnivariateOptimizer<FUNC> : BaseOptimizer<UnivariatePointValuePair> where FUNC : org.apache.commons.math3.analysis.UnivariateFunction
+	public interface BaseUnivariateOptimizer<FUNC> : BaseOptimizer<UnivariatePointValuePair> where FUNC : mathlib.analysis.UnivariateFunction
 	{
 		/// <summary>
 		/// Find an optimum in the given interval.
@@ -51,9 +51,9 @@ namespace org.apache.commons.math3.optimization.univariate
 		/// <param name="max"> Upper bound for the interval. </param>
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
 		/// <returns> a (point, value) pair where the function is optimum. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximum evaluation count is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.ConvergenceException">
+		/// <exception cref="mathlib.exception.ConvergenceException">
 		/// if the optimizer detects a convergence problem. </exception>
 		/// <exception cref="IllegalArgumentException"> if {@code min > max} or the endpoints
 		/// do not satisfy the requirements specified by the optimizer. </exception>
@@ -71,13 +71,13 @@ namespace org.apache.commons.math3.optimization.univariate
 		/// <param name="startValue"> Start value to use. </param>
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
 		/// <returns> a (point, value) pair where the function is optimum. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximum evaluation count is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.ConvergenceException"> if the
+		/// <exception cref="mathlib.exception.ConvergenceException"> if the
 		/// optimizer detects a convergence problem. </exception>
 		/// <exception cref="IllegalArgumentException"> if {@code min > max} or the endpoints
 		/// do not satisfy the requirements specified by the optimizer. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if any
+		/// <exception cref="mathlib.exception.NullArgumentException"> if any
 		/// argument is {@code null}. </exception>
 		UnivariatePointValuePair optimize(int maxEval, FUNC f, GoalType goalType, double min, double max, double startValue);
 	}

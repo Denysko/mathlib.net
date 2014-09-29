@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
 
 	/// <summary>
 	/// Interface for univariate functions derivatives.
@@ -40,7 +40,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// <exception cref="DimensionMismatchException"> if t is inconsistent with the
 		/// function's free parameters or order </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: DerivativeStructure value(DerivativeStructure t) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: DerivativeStructure value(DerivativeStructure t) throws mathlib.exception.DimensionMismatchException;
 		DerivativeStructure value(DerivativeStructure t);
 
 	}

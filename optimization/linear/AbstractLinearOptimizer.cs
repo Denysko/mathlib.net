@@ -18,12 +18,12 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.linear
+namespace mathlib.optimization.linear
 {
 
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 	/// <summary>
 	/// Base class for implementing linear optimizers.
@@ -145,7 +145,7 @@ namespace org.apache.commons.math3.optimization.linear
 		/// Increment the iterations counter by 1. </summary>
 		/// <exception cref="MaxCountExceededException"> if the maximal number of iterations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected void incrementIterationsCounter() throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: protected void incrementIterationsCounter() throws mathlib.exception.MaxCountExceededException
 		protected internal virtual void incrementIterationsCounter()
 		{
 			if (++iterations > maxIterations)
@@ -157,7 +157,7 @@ namespace org.apache.commons.math3.optimization.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.optimization.PointValuePair optimize(final LinearObjectiveFunction f, final java.util.Collection<LinearConstraint> constraints, final org.apache.commons.math3.optimization.GoalType goalType, final boolean restrictToNonNegative) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public mathlib.optimization.PointValuePair optimize(final LinearObjectiveFunction f, final java.util.Collection<LinearConstraint> constraints, final mathlib.optimization.GoalType goalType, final boolean restrictToNonNegative) throws mathlib.exception.MathIllegalStateException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual PointValuePair optimize(LinearObjectiveFunction f, ICollection<LinearConstraint> constraints, GoalType goalType, bool restrictToNonNegative)
 		{
@@ -181,7 +181,7 @@ namespace org.apache.commons.math3.optimization.linear
 		/// <exception cref="MathIllegalStateException"> if no solution fulfilling the constraints
 		/// can be found in the allowed number of iterations </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected abstract org.apache.commons.math3.optimization.PointValuePair doOptimize() throws org.apache.commons.math3.exception.MathIllegalStateException;
+//ORIGINAL LINE: protected abstract mathlib.optimization.PointValuePair doOptimize() throws mathlib.exception.MathIllegalStateException;
 		protected internal abstract PointValuePair doOptimize();
 
 	}

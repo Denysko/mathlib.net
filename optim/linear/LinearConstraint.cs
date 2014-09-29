@@ -16,12 +16,12 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.linear
+namespace mathlib.optim.linear
 {
 
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealVector = mathlib.linear.RealVector;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
 
 	/// <summary>
 	/// A linear constraint for a linear optimization problem.
@@ -95,7 +95,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <param name="relationship"> The type of (in)equality used in the constraint </param>
 		/// <param name="value"> The value of the constraint (right hand side) </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LinearConstraint(final org.apache.commons.math3.linear.RealVector coefficients, final Relationship relationship, final double value)
+//ORIGINAL LINE: public LinearConstraint(final mathlib.linear.RealVector coefficients, final Relationship relationship, final double value)
 		public LinearConstraint(RealVector coefficients, Relationship relationship, double value)
 		{
 			this.coefficients = coefficients;
@@ -154,7 +154,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <param name="rhsCoefficients"> The coefficients of the linear expression on the right hand side of the constraint </param>
 		/// <param name="rhsConstant"> The constant term of the linear expression on the right hand side of the constraint </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LinearConstraint(final org.apache.commons.math3.linear.RealVector lhsCoefficients, final double lhsConstant, final Relationship relationship, final org.apache.commons.math3.linear.RealVector rhsCoefficients, final double rhsConstant)
+//ORIGINAL LINE: public LinearConstraint(final mathlib.linear.RealVector lhsCoefficients, final double lhsConstant, final Relationship relationship, final mathlib.linear.RealVector rhsCoefficients, final double rhsConstant)
 		public LinearConstraint(RealVector lhsCoefficients, double lhsConstant, Relationship relationship, RealVector rhsCoefficients, double rhsConstant)
 		{
 			this.coefficients = lhsCoefficients.subtract(rhsCoefficients);

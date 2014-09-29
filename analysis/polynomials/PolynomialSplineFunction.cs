@@ -16,18 +16,18 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.polynomials
+namespace mathlib.analysis.polynomials
 {
 
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using MathArrays = mathlib.util.MathArrays;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Represents a polynomial spline function.
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NonMonotonicSequenceException"> if the {@code knots} array is not strictly increasing.
 		///  </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PolynomialSplineFunction(double knots[] , PolynomialFunction polynomials[]) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public PolynomialSplineFunction(double knots[] , PolynomialFunction polynomials[]) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.NonMonotonicSequenceException
 		public PolynomialSplineFunction(double[] knots, PolynomialFunction[] polynomials)
 		{
 			if (knots == null || polynomials == null)
@@ -183,7 +183,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// @since 3.1
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t)
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t)
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

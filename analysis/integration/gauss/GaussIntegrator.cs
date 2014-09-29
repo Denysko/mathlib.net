@@ -50,7 +50,7 @@ namespace mathlib.analysis.integration.gauss
         /// sorted in increasing order. </exception>
         /// <exception cref="DimensionMismatchException"> if points and weights don't have the same length </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public GaussIntegrator(double[] points, double[] weights) throws org.apache.commons.math3.exception.NonMonotonicSequenceException, org.apache.commons.math3.exception.DimensionMismatchException
+        //ORIGINAL LINE: public GaussIntegrator(double[] points, double[] weights) throws mathlib.exception.NonMonotonicSequenceException, mathlib.exception.DimensionMismatchException
         public GaussIntegrator(double[] points, double[] weights)
         {
             if (points.Length != weights.Length)
@@ -74,7 +74,7 @@ namespace mathlib.analysis.integration.gauss
         /// </exception>
         /// <seealso cref= #GaussIntegrator(double[], double[]) </seealso>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public GaussIntegrator(org.apache.commons.math3.util.Pair<double[] , double[]> pointsAndWeights) throws org.apache.commons.math3.exception.NonMonotonicSequenceException
+        //ORIGINAL LINE: public GaussIntegrator(mathlib.util.Pair<double[] , double[]> pointsAndWeights) throws mathlib.exception.NonMonotonicSequenceException
         public GaussIntegrator(Pair<double[], double[]> pointsAndWeights)
             : this(pointsAndWeights.First, pointsAndWeights.Second)
         {

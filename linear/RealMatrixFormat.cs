@@ -18,12 +18,12 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 
-	using MathParseException = org.apache.commons.math3.exception.MathParseException;
-	using CompositeFormat = org.apache.commons.math3.util.CompositeFormat;
+	using MathParseException = mathlib.exception.MathParseException;
+	using CompositeFormat = mathlib.util.CompositeFormat;
 
 	/// <summary>
 	/// Formats a {@code nxm} matrix in components list format

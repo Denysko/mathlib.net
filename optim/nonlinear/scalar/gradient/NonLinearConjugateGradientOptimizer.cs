@@ -17,15 +17,15 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
+namespace mathlib.optim.nonlinear.scalar.gradient
 {
 
-	using UnivariateSolver = org.apache.commons.math3.analysis.solvers.UnivariateSolver;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.optim;
+	using UnivariateSolver = mathlib.analysis.solvers.UnivariateSolver;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.optim;
 
 
 	/// <summary>
@@ -128,7 +128,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 		/// <seealso cref="Formula#POLAK_RIBIERE"/>. </param>
 		/// <param name="checker"> Convergence checker. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final Formula updateFormula, org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker)
+//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final Formula updateFormula, mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker)
 		public NonLinearConjugateGradientOptimizer(Formula updateFormula, ConvergenceChecker<PointValuePair> checker) : this(updateFormula, checker, 1e-8, 1e-8, 1e-8, new IdentityPreconditioner())
 		{
 		}
@@ -144,7 +144,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 		/// @deprecated as of 3.3. Please use
 		/// <seealso cref="#NonLinearConjugateGradientOptimizer(Formula,ConvergenceChecker,double,double,double)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3. Please use") public NonLinearConjugateGradientOptimizer(final Formula updateFormula, org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker, final org.apache.commons.math3.analysis.solvers.UnivariateSolver lineSearchSolver)
+//ORIGINAL LINE: @Deprecated("as of 3.3. Please use") public NonLinearConjugateGradientOptimizer(final Formula updateFormula, mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker, final mathlib.analysis.solvers.UnivariateSolver lineSearchSolver)
 		[Obsolete("as of 3.3. Please use")]
 		public NonLinearConjugateGradientOptimizer(Formula updateFormula, ConvergenceChecker<PointValuePair> checker, UnivariateSolver lineSearchSolver) : this(updateFormula, checker, lineSearchSolver, new IdentityPreconditioner())
 		{
@@ -166,7 +166,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 		/// <seealso cref= LineSearch#LineSearch(MultivariateOptimizer,double,double,double)
 		/// @since 3.3 </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final Formula updateFormula, org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker, double relativeTolerance, double absoluteTolerance, double initialBracketingRange)
+//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final Formula updateFormula, mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker, double relativeTolerance, double absoluteTolerance, double initialBracketingRange)
 		public NonLinearConjugateGradientOptimizer(Formula updateFormula, ConvergenceChecker<PointValuePair> checker, double relativeTolerance, double absoluteTolerance, double initialBracketingRange) : this(updateFormula, checker, relativeTolerance, absoluteTolerance, initialBracketingRange, new IdentityPreconditioner())
 		{
 		}
@@ -180,7 +180,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 		/// @deprecated as of 3.3. Please use
 		/// <seealso cref="#NonLinearConjugateGradientOptimizer(Formula,ConvergenceChecker,double,double,double,Preconditioner)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.3. Please use") public NonLinearConjugateGradientOptimizer(final Formula updateFormula, org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker, final org.apache.commons.math3.analysis.solvers.UnivariateSolver lineSearchSolver, final Preconditioner preconditioner)
+//ORIGINAL LINE: @Deprecated("as of 3.3. Please use") public NonLinearConjugateGradientOptimizer(final Formula updateFormula, mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker, final mathlib.analysis.solvers.UnivariateSolver lineSearchSolver, final Preconditioner preconditioner)
 		[Obsolete("as of 3.3. Please use")]
 		public NonLinearConjugateGradientOptimizer(Formula updateFormula, ConvergenceChecker<PointValuePair> checker, UnivariateSolver lineSearchSolver, Preconditioner preconditioner) : this(updateFormula, checker, lineSearchSolver.RelativeAccuracy, lineSearchSolver.AbsoluteAccuracy, lineSearchSolver.AbsoluteAccuracy, preconditioner)
 		{
@@ -200,7 +200,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 		/// <seealso cref= LineSearch#LineSearch(MultivariateOptimizer,double,double,double)
 		/// @since 3.3 </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final Formula updateFormula, org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker, double relativeTolerance, double absoluteTolerance, double initialBracketingRange, final Preconditioner preconditioner)
+//ORIGINAL LINE: public NonLinearConjugateGradientOptimizer(final Formula updateFormula, mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker, double relativeTolerance, double absoluteTolerance, double initialBracketingRange, final Preconditioner preconditioner)
 		public NonLinearConjugateGradientOptimizer(Formula updateFormula, ConvergenceChecker<PointValuePair> checker, double relativeTolerance, double absoluteTolerance, double initialBracketingRange, Preconditioner preconditioner) : base(checker)
 		{
 
@@ -213,7 +213,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: @Override public mathlib.optim.PointValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException
 		public override PointValuePair optimize(params OptimizationData[] optData)
 		{
 			// Set up base class and perform computation.
@@ -225,13 +225,13 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 		protected internal override PointValuePair doOptimize()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optim.ConvergenceChecker<mathlib.optim.PointValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointValuePair> checker = ConvergenceChecker;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] point = getStartPoint();
 			double[] point = StartPoint;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.nonlinear.scalar.GoalType goal = getGoalType();
+//ORIGINAL LINE: final mathlib.optim.nonlinear.scalar.GoalType goal = getGoalType();
 			GoalType goal = GoalType;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int n = point.length;
@@ -308,10 +308,10 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar.gradient
 				double beta;
 				switch (updateFormula)
 				{
-				case org.apache.commons.math3.optim.nonlinear.scalar.gradient.NonLinearConjugateGradientOptimizer.Formula.FLETCHER_REEVES:
+				case mathlib.optim.nonlinear.scalar.gradient.NonLinearConjugateGradientOptimizer.Formula.FLETCHER_REEVES:
 					beta = delta / deltaOld;
 					break;
-				case org.apache.commons.math3.optim.nonlinear.scalar.gradient.NonLinearConjugateGradientOptimizer.Formula.POLAK_RIBIERE:
+				case mathlib.optim.nonlinear.scalar.gradient.NonLinearConjugateGradientOptimizer.Formula.POLAK_RIBIERE:
 					double deltaMid = 0;
 					for (int i = 0; i < r.Length; ++i)
 					{

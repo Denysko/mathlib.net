@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
 
 	/// <summary>
 	/// This interface is mainly intended to enforce the internal coherence of
 	/// Commons-FastMath. Users of the API are advised to base their code on
 	/// the following interfaces:
 	/// <ul>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.MultivariateOptimizer"/></li>
-	///  <li><seealso cref="org.apache.commons.math3.optimization.MultivariateDifferentiableOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.MultivariateOptimizer"/></li>
+	///  <li><seealso cref="mathlib.optimization.MultivariateDifferentiableOptimizer"/></li>
 	/// </ul>
 	/// </summary>
 	/// @param <FUNC> Type of the objective function to be optimized.
@@ -37,7 +37,7 @@ namespace org.apache.commons.math3.optimization
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 3.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public interface BaseMultivariateOptimizer<FUNC> : BaseOptimizer<PointValuePair> where FUNC : org.apache.commons.math3.analysis.MultivariateFunction
+	public interface BaseMultivariateOptimizer<FUNC> : BaseOptimizer<PointValuePair> where FUNC : mathlib.analysis.MultivariateFunction
 		/// <summary>
 		/// Optimize an objective function.
 		/// </summary>
@@ -48,14 +48,14 @@ namespace org.apache.commons.math3.optimization
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
 		/// <returns> the point/value pair giving the optimal value for objective
 		/// function. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if
+		/// <exception cref="mathlib.exception.NullArgumentException"> if
 		/// any argument is {@code null}. </exception>
 		/// @deprecated As of 3.1. In 4.0, it will be replaced by the declaration
-		/// corresponding to this <seealso cref="org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateOptimizer#optimize(int,MultivariateFunction,GoalType,OptimizationData[]) method"/>. 
+		/// corresponding to this <seealso cref="mathlib.optimization.direct.BaseAbstractMultivariateOptimizer#optimize(int,MultivariateFunction,GoalType,OptimizationData[]) method"/>. 
 	{
 		[Obsolete("As of 3.1. In 4.0, it will be replaced by the declaration")]
 		PointValuePair optimize(int maxEval, FUNC f, GoalType goalType, double[] startPoint);

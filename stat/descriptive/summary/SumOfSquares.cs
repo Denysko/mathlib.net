@@ -16,12 +16,12 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.summary
+namespace mathlib.stat.descriptive.summary
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Returns the sum of the squares of the available values.
@@ -68,7 +68,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <param name="original"> the {@code SumOfSquares} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SumOfSquares(SumOfSquares original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public SumOfSquares(SumOfSquares original) throws mathlib.exception.NullArgumentException
 		public SumOfSquares(SumOfSquares original)
 		{
 			copy(original, this);
@@ -130,7 +130,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the array index
 		///  parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values,final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values,final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int begin, int length)
 		{
@@ -165,7 +165,7 @@ namespace org.apache.commons.math3.stat.descriptive.summary
 		/// <param name="dest"> SumOfSquares to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(SumOfSquares source, SumOfSquares dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(SumOfSquares source, SumOfSquares dest) throws mathlib.exception.NullArgumentException
 		public static void copy(SumOfSquares source, SumOfSquares dest)
 		{
 			MathUtils.checkNotNull(source);

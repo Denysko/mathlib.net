@@ -17,20 +17,20 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.clustering
+namespace mathlib.ml.clustering
 {
 
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
-	using EuclideanDistance = org.apache.commons.math3.ml.distance.EuclideanDistance;
-	using JDKRandomGenerator = org.apache.commons.math3.random.JDKRandomGenerator;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
+	using EuclideanDistance = mathlib.ml.distance.EuclideanDistance;
+	using JDKRandomGenerator = mathlib.random.JDKRandomGenerator;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Clustering algorithm based on David Arthur and Sergei Vassilvitski k-means++ algorithm. </summary>
@@ -123,7 +123,7 @@ namespace org.apache.commons.math3.ml.clustering
 		///   If negative, no maximum will be used. </param>
 		/// <param name="measure"> the distance measure to use </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public KMeansPlusPlusClusterer(final int k, final int maxIterations, final org.apache.commons.math3.ml.distance.DistanceMeasure measure)
+//ORIGINAL LINE: public KMeansPlusPlusClusterer(final int k, final int maxIterations, final mathlib.ml.distance.DistanceMeasure measure)
 		public KMeansPlusPlusClusterer(int k, int maxIterations, DistanceMeasure measure) : this(k, maxIterations, measure, new JDKRandomGenerator())
 		{
 		}
@@ -140,7 +140,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="measure"> the distance measure to use </param>
 		/// <param name="random"> random generator to use for choosing initial centers </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public KMeansPlusPlusClusterer(final int k, final int maxIterations, final org.apache.commons.math3.ml.distance.DistanceMeasure measure, final org.apache.commons.math3.random.RandomGenerator random)
+//ORIGINAL LINE: public KMeansPlusPlusClusterer(final int k, final int maxIterations, final mathlib.ml.distance.DistanceMeasure measure, final mathlib.random.RandomGenerator random)
 		public KMeansPlusPlusClusterer(int k, int maxIterations, DistanceMeasure measure, RandomGenerator random) : this(k, maxIterations, measure, random, EmptyClusterStrategy.LARGEST_VARIANCE)
 		{
 		}
@@ -156,7 +156,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <param name="emptyStrategy"> strategy to use for handling empty clusters that
 		/// may appear during algorithm iterations </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public KMeansPlusPlusClusterer(final int k, final int maxIterations, final org.apache.commons.math3.ml.distance.DistanceMeasure measure, final org.apache.commons.math3.random.RandomGenerator random, final EmptyClusterStrategy emptyStrategy)
+//ORIGINAL LINE: public KMeansPlusPlusClusterer(final int k, final int maxIterations, final mathlib.ml.distance.DistanceMeasure measure, final mathlib.random.RandomGenerator random, final EmptyClusterStrategy emptyStrategy)
 		public KMeansPlusPlusClusterer(int k, int maxIterations, DistanceMeasure measure, RandomGenerator random, EmptyClusterStrategy emptyStrategy) : base(measure)
 		{
 			this.k = k;
@@ -219,7 +219,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <exception cref="ConvergenceException"> if an empty cluster is encountered and the
 		/// <seealso cref="#emptyStrategy"/> is set to {@code ERROR} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public java.util.List<CentroidCluster<T>> cluster(final java.util.Collection<T> points) throws org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: @Override public java.util.List<CentroidCluster<T>> cluster(final java.util.Collection<T> points) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override IList<CentroidCluster<T>> cluster(ICollection<T> points)
 		{
@@ -258,13 +258,13 @@ namespace org.apache.commons.math3.ml.clustering
 					{
 						switch (emptyStrategy)
 						{
-							case org.apache.commons.math3.ml.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_VARIANCE:
+							case mathlib.ml.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_VARIANCE:
 								newCenter = getPointFromLargestVarianceCluster(clusters);
 								break;
-							case org.apache.commons.math3.ml.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_POINTS_NUMBER:
+							case mathlib.ml.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.LARGEST_POINTS_NUMBER:
 								newCenter = getPointFromLargestNumberCluster(clusters);
 								break;
-							case org.apache.commons.math3.ml.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.FARTHEST_POINT:
+							case mathlib.ml.clustering.KMeansPlusPlusClusterer.EmptyClusterStrategy.FARTHEST_POINT:
 								newCenter = getFarthestPoint(clusters);
 								break;
 							default :
@@ -490,7 +490,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <returns> a random point from the selected cluster </returns>
 		/// <exception cref="ConvergenceException"> if clusters are all empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private T getPointFromLargestVarianceCluster(final java.util.Collection<CentroidCluster<T>> clusters) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private T getPointFromLargestVarianceCluster(final java.util.Collection<CentroidCluster<T>> clusters) throws mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private T getPointFromLargestVarianceCluster(ICollection<CentroidCluster<T>> clusters)
 		{
@@ -507,7 +507,7 @@ namespace org.apache.commons.math3.ml.clustering
 //ORIGINAL LINE: final Clusterable center = cluster.getCenter();
 					Clusterable center = cluster.Center;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.stat.descriptive.moment.Variance stat = new org.apache.commons.math3.stat.descriptive.moment.Variance();
+//ORIGINAL LINE: final mathlib.stat.descriptive.moment.Variance stat = new mathlib.stat.descriptive.moment.Variance();
 					Variance stat = new Variance();
 					foreach (T point in cluster.Points)
 					{
@@ -548,7 +548,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <returns> a random point from the selected cluster </returns>
 		/// <exception cref="ConvergenceException"> if clusters are all empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private T getPointFromLargestNumberCluster(final java.util.Collection<? extends Cluster<T>> clusters) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private T getPointFromLargestNumberCluster(final java.util.Collection<? extends Cluster<T>> clusters) throws mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private T getPointFromLargestNumberCluster<T1>(ICollection<T1> clusters) where T1 : Cluster<T>
 		{
@@ -593,7 +593,7 @@ namespace org.apache.commons.math3.ml.clustering
 		/// <returns> point farthest to its cluster center </returns>
 		/// <exception cref="ConvergenceException"> if clusters are all empty </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private T getFarthestPoint(final java.util.Collection<CentroidCluster<T>> clusters) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private T getFarthestPoint(final java.util.Collection<CentroidCluster<T>> clusters) throws mathlib.exception.ConvergenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private T getFarthestPoint(ICollection<CentroidCluster<T>> clusters)
 		{

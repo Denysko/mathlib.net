@@ -17,7 +17,7 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.linear
+namespace mathlib.optimization.linear
 {
 
 	/// <summary>

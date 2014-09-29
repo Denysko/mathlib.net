@@ -139,7 +139,7 @@ namespace mathlib.complex
 
                 // avoid repetitive calculations
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final int absN = org.apache.commons.math3.util.FastMath.abs(n);
+                //ORIGINAL LINE: final int absN = mathlib.util.FastMath.abs(n);
                 int absN = FastMath.abs(n);
 
                 if (absN == omegaCount)
@@ -149,13 +149,13 @@ namespace mathlib.complex
 
                 // calculate everything from scratch
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double t = 2.0 * org.apache.commons.math3.util.FastMath.PI / absN;
+                //ORIGINAL LINE: final double t = 2.0 * mathlib.util.FastMath.PI / absN;
                 double t = 2.0 * FastMath.PI / absN;
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double cosT = org.apache.commons.math3.util.FastMath.cos(t);
+                //ORIGINAL LINE: final double cosT = mathlib.util.FastMath.cos(t);
                 double cosT = FastMath.cos(t);
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double sinT = org.apache.commons.math3.util.FastMath.sin(t);
+                //ORIGINAL LINE: final double sinT = mathlib.util.FastMath.sin(t);
                 double sinT = FastMath.sin(t);
                 omegaReal = new double[absN];
                 omegaImaginaryCounterClockwise = new double[absN];

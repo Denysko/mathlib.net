@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.transform
+namespace mathlib.transform
 {
 
-	using Complex = org.apache.commons.math3.complex.Complex;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using Complex = mathlib.complex.Complex;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Useful functions for the implementation of various transforms.
@@ -92,7 +92,7 @@ namespace org.apache.commons.math3.transform
 		/// <returns> a two dimensional array filled with the real and imaginary parts
 		///   of the specified complex input </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static double[][] createRealImaginaryArray(final org.apache.commons.math3.complex.Complex[] dataC)
+//ORIGINAL LINE: public static double[][] createRealImaginaryArray(final mathlib.complex.Complex[] dataC)
 		public static double[][] createRealImaginaryArray(Complex[] dataC)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -109,7 +109,7 @@ namespace org.apache.commons.math3.transform
 			for (int i = 0; i < dataC.Length; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex c = dataC[i];
+//ORIGINAL LINE: final mathlib.complex.Complex c = dataC[i];
 				Complex c = dataC[i];
 				dataR[i] = c.Real;
 				dataI[i] = c.Imaginary;
@@ -131,7 +131,7 @@ namespace org.apache.commons.math3.transform
 		/// <exception cref="DimensionMismatchException"> if the number of rows of the specified
 		///   array is not two, or the array is not rectangular </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static org.apache.commons.math3.complex.Complex[] createComplexArray(final double[][] dataRI) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static mathlib.complex.Complex[] createComplexArray(final double[][] dataRI) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static Complex[] createComplexArray(double[][] dataRI)
 		{
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.transform
 //ORIGINAL LINE: final int n = dataR.length;
 			int n = dataR.Length;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex[] c = new org.apache.commons.math3.complex.Complex[n];
+//ORIGINAL LINE: final mathlib.complex.Complex[] c = new mathlib.complex.Complex[n];
 			Complex[] c = new Complex[n];
 			for (int i = 0; i < n; i++)
 			{
@@ -173,7 +173,7 @@ namespace org.apache.commons.math3.transform
 		/// <returns> the base-2 logarithm of {@code n} </returns>
 		/// <exception cref="MathIllegalArgumentException"> if {@code n} is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static int exactLog2(final int n) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public static int exactLog2(final int n) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static int exactLog2(int n)
 		{

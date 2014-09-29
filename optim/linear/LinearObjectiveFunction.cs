@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.linear
+namespace mathlib.optim.linear
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using MatrixUtils = org.apache.commons.math3.linear.MatrixUtils;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using MatrixUtils = mathlib.linear.MatrixUtils;
+	using RealVector = mathlib.linear.RealVector;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
 
 	/// <summary>
 	/// An objective function for a linear optimization problem.
@@ -108,7 +108,7 @@ namespace org.apache.commons.math3.optim.linear
 		/// <param name="point"> Point at which linear equation must be evaluated. </param>
 		/// <returns> the value of the linear equation at the current point. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double value(final org.apache.commons.math3.linear.RealVector point)
+//ORIGINAL LINE: public double value(final mathlib.linear.RealVector point)
 		public virtual double value(RealVector point)
 		{
 			return coefficients.dotProduct(point) + constantTerm;

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the uniform integer distribution.
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="upper"> Upper bound (inclusive) of this distribution. </param>
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public UniformIntegerDistribution(int lower, int upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public UniformIntegerDistribution(int lower, int upper) throws mathlib.exception.NumberIsTooLargeException
 		public UniformIntegerDistribution(int lower, int upper) : this(new Well19937c(), lower, upper)
 		{
 		}
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public UniformIntegerDistribution(org.apache.commons.math3.random.RandomGenerator rng, int lower, int upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public UniformIntegerDistribution(mathlib.random.RandomGenerator rng, int lower, int upper) throws mathlib.exception.NumberIsTooLargeException
 		public UniformIntegerDistribution(RandomGenerator rng, int lower, int upper) : base(rng)
 		{
 

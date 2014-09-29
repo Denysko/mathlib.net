@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	///  Reporting interface for basic multivariate statistics.

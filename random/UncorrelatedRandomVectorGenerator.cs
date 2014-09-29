@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.random
+namespace mathlib.random
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
 
 	/// <summary>
 	/// A <seealso cref="RandomVectorGenerator"/> that generates vectors with uncorrelated

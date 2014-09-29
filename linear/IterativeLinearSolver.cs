@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using IterationManager = org.apache.commons.math3.util.IterationManager;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using IterationManager = mathlib.util.IterationManager;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This abstract class defines an iterative solver for the linear system A
@@ -56,7 +56,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="manager"> the custom iteration manager </param>
 		/// <exception cref="NullArgumentException"> if {@code manager} is {@code null} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public IterativeLinearSolver(final org.apache.commons.math3.util.IterationManager manager) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public IterativeLinearSolver(final mathlib.util.IterationManager manager) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public IterativeLinearSolver(IterationManager manager)
 		{
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if {@code b} or {@code x0} have
 		/// dimensions inconsistent with {@code a} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected static void checkParameters(final RealLinearOperator a, final RealVector b, final RealVector x0) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected static void checkParameters(final RealLinearOperator a, final RealVector b, final RealVector x0) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal static void checkParameters(RealLinearOperator a, RealVector b, RealVector x0)
 		{
@@ -124,10 +124,10 @@ namespace org.apache.commons.math3.linear
 		/// inconsistent with {@code a} </exception>
 		/// <exception cref="MaxCountExceededException"> at exhaustion of the iteration count,
 		/// unless a custom
-		/// <seealso cref="org.apache.commons.math3.util.Incrementor.MaxCountExceededCallback callback"/>
+		/// <seealso cref="mathlib.util.Incrementor.MaxCountExceededCallback callback"/>
 		/// has been set at construction of the <seealso cref="IterationManager"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector solve(final RealLinearOperator a, final RealVector b) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public RealVector solve(final RealLinearOperator a, final RealVector b) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector solve(RealLinearOperator a, RealVector b)
 		{
@@ -153,10 +153,10 @@ namespace org.apache.commons.math3.linear
 		/// dimensions inconsistent with {@code a} </exception>
 		/// <exception cref="MaxCountExceededException"> at exhaustion of the iteration count,
 		/// unless a custom
-		/// <seealso cref="org.apache.commons.math3.util.Incrementor.MaxCountExceededCallback callback"/>
+		/// <seealso cref="mathlib.util.Incrementor.MaxCountExceededCallback callback"/>
 		/// has been set at construction of the <seealso cref="IterationManager"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector solve(RealLinearOperator a, RealVector b, RealVector x0) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public RealVector solve(RealLinearOperator a, RealVector b, RealVector x0) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException
 		public virtual RealVector solve(RealLinearOperator a, RealVector b, RealVector x0)
 		{
 			MathUtils.checkNotNull(x0);
@@ -178,10 +178,10 @@ namespace org.apache.commons.math3.linear
 		/// dimensions inconsistent with {@code a} </exception>
 		/// <exception cref="MaxCountExceededException"> at exhaustion of the iteration count,
 		/// unless a custom
-		/// <seealso cref="org.apache.commons.math3.util.Incrementor.MaxCountExceededCallback callback"/>
+		/// <seealso cref="mathlib.util.Incrementor.MaxCountExceededCallback callback"/>
 		/// has been set at construction of the <seealso cref="IterationManager"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract RealVector solveInPlace(RealLinearOperator a, RealVector b, RealVector x0) throws org.apache.commons.math3.exception.NullArgumentException, NonSquareOperatorException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.MaxCountExceededException;
+//ORIGINAL LINE: public abstract RealVector solveInPlace(RealLinearOperator a, RealVector b, RealVector x0) throws mathlib.exception.NullArgumentException, NonSquareOperatorException, mathlib.exception.DimensionMismatchException, mathlib.exception.MaxCountExceededException;
 		public abstract RealVector solveInPlace(RealLinearOperator a, RealVector b, RealVector x0);
 	}
 

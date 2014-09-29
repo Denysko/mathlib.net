@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using org.apache.commons.math3.util;
+	using mathlib;
+	using mathlib;
+	using mathlib.util;
 
 	/// <summary>
 	/// Sparse matrix implementation based on an open addressed map.
@@ -34,7 +34,7 @@ namespace org.apache.commons.math3.linear
 	/// @param <T> the type of the field elements
 	/// @version $Id: SparseFieldMatrix.java 1569825 2014-02-19 17:19:59Z luc $
 	/// @since 2.0 </param>
-	public class SparseFieldMatrix<T> : AbstractFieldMatrix<T> where T : org.apache.commons.math3.FieldElement<T>
+	public class SparseFieldMatrix<T> : AbstractFieldMatrix<T> where T : mathlib.FieldElement<T>
 	{
 
 		/// <summary>
@@ -52,7 +52,7 @@ namespace org.apache.commons.math3.linear
 		/// </summary>
 		/// <param name="field"> Field to which the elements belong. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SparseFieldMatrix(final org.apache.commons.math3.Field<T> field)
+//ORIGINAL LINE: public SparseFieldMatrix(final mathlib.Field<T> field)
 		public SparseFieldMatrix(Field<T> field) : base(field)
 		{
 			rows = 0;
@@ -67,10 +67,10 @@ namespace org.apache.commons.math3.linear
 		/// <param name="field"> Field to which the elements belong. </param>
 		/// <param name="rowDimension"> Number of rows in the new matrix. </param>
 		/// <param name="columnDimension"> Number of columns in the new matrix. </param>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		/// if row or column dimension is not positive. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SparseFieldMatrix(final org.apache.commons.math3.Field<T> field, final int rowDimension, final int columnDimension)
+//ORIGINAL LINE: public SparseFieldMatrix(final mathlib.Field<T> field, final int rowDimension, final int columnDimension)
 		public SparseFieldMatrix(Field<T> field, int rowDimension, int columnDimension) : base(field, rowDimension, columnDimension)
 		{
 			this.rows = rowDimension;

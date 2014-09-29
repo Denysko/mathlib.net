@@ -38,7 +38,7 @@ namespace mathlib.analysis.integration.gauss
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected org.apache.commons.math3.util.Pair<Double[] , Double[]> computeRule(int numberOfPoints) throws org.apache.commons.math3.exception.DimensionMismatchException
+        //ORIGINAL LINE: @Override protected mathlib.util.Pair<Double[] , Double[]> computeRule(int numberOfPoints) throws mathlib.exception.DimensionMismatchException
         protected internal override Pair<double?[], Double[]> computeRule(int numberOfPoints)
         {
 

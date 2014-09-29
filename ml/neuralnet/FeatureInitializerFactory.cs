@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet
+namespace mathlib.ml.neuralnet
 {
 
-	using RealDistribution = org.apache.commons.math3.distribution.RealDistribution;
-	using UniformRealDistribution = org.apache.commons.math3.distribution.UniformRealDistribution;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using Constant = org.apache.commons.math3.analysis.function.Constant;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
+	using RealDistribution = mathlib.distribution.RealDistribution;
+	using UniformRealDistribution = mathlib.distribution.UniformRealDistribution;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using Constant = mathlib.analysis.function.Constant;
+	using RandomGenerator = mathlib.random.RandomGenerator;
 
 	/// <summary>
 	/// Creates functions that will select the initial values of a neuron's
@@ -48,10 +48,10 @@ namespace org.apache.commons.math3.ml.neuralnet
 		/// uniform distribution. </param>
 		/// <returns> an initializer such that the features will be initialized with
 		/// values within the given range. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException">
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException">
 		/// if {@code min >= max}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static FeatureInitializer uniform(final org.apache.commons.math3.random.RandomGenerator rng, final double min, final double max)
+//ORIGINAL LINE: public static FeatureInitializer uniform(final mathlib.random.RandomGenerator rng, final double min, final double max)
 		public static FeatureInitializer uniform(RandomGenerator rng, double min, double max)
 		{
 			return randomize(new UniformRealDistribution(rng, min, max), function(new Constant(0), 0, 0));
@@ -64,7 +64,7 @@ namespace org.apache.commons.math3.ml.neuralnet
 		/// <param name="max"> Upper bound of the range. </param>
 		/// <returns> an initializer such that the features will be initialized with
 		/// values within the given range. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException">
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException">
 		/// if {@code min >= max}. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public static FeatureInitializer uniform(final double min, final double max)
@@ -83,7 +83,7 @@ namespace org.apache.commons.math3.ml.neuralnet
 		/// <param name="inc"> Increment </param>
 		/// <returns> the initializer. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static FeatureInitializer function(final org.apache.commons.math3.analysis.UnivariateFunction f, final double init, final double inc)
+//ORIGINAL LINE: public static FeatureInitializer function(final mathlib.analysis.UnivariateFunction f, final double init, final double inc)
 		public static FeatureInitializer function(UnivariateFunction f, double init, double inc)
 		{
 			return new FeatureInitializerAnonymousInnerClassHelper(f, init, inc);
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.ml.neuralnet
 		/// <returns> an initializer whose <seealso cref="FeatureInitializer#value() value"/>
 		/// method will return {@code orig.value() + random.sample()}. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static FeatureInitializer randomize(final org.apache.commons.math3.distribution.RealDistribution random, final FeatureInitializer orig)
+//ORIGINAL LINE: public static FeatureInitializer randomize(final mathlib.distribution.RealDistribution random, final FeatureInitializer orig)
 		public static FeatureInitializer randomize(RealDistribution random, FeatureInitializer orig)
 		{
 			return new FeatureInitializerAnonymousInnerClassHelper2(random, orig);
@@ -135,9 +135,9 @@ namespace org.apache.commons.math3.ml.neuralnet
 		private class FeatureInitializerAnonymousInnerClassHelper2 : FeatureInitializer
 		{
 			private RealDistribution random;
-			private org.apache.commons.math3.ml.neuralnet.FeatureInitializer orig;
+			private mathlib.ml.neuralnet.FeatureInitializer orig;
 
-			public FeatureInitializerAnonymousInnerClassHelper2(RealDistribution random, org.apache.commons.math3.ml.neuralnet.FeatureInitializer orig)
+			public FeatureInitializerAnonymousInnerClassHelper2(RealDistribution random, mathlib.ml.neuralnet.FeatureInitializer orig)
 			{
 				this.random = random;
 				this.orig = orig;

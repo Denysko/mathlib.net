@@ -17,24 +17,24 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
 
-	using org.apache.commons.math3.geometry;
-	using Euclidean1D = org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
-	using Interval = org.apache.commons.math3.geometry.euclidean.oned.Interval;
-	using IntervalsSet = org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet;
-	using OrientedPoint = org.apache.commons.math3.geometry.euclidean.oned.OrientedPoint;
-	using Vector1D = org.apache.commons.math3.geometry.euclidean.oned.Vector1D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using Region_Location = org.apache.commons.math3.geometry.partitioning.Region_Location;
-	using Side = org.apache.commons.math3.geometry.partitioning.Side;
-	using org.apache.commons.math3.geometry.partitioning;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using mathlib.geometry;
+	using Euclidean1D = mathlib.geometry.euclidean.oned.Euclidean1D;
+	using Interval = mathlib.geometry.euclidean.oned.Interval;
+	using IntervalsSet = mathlib.geometry.euclidean.oned.IntervalsSet;
+	using OrientedPoint = mathlib.geometry.euclidean.oned.OrientedPoint;
+	using Vector1D = mathlib.geometry.euclidean.oned.Vector1D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using Region_Location = mathlib.geometry.partitioning.Region_Location;
+	using Side = mathlib.geometry.partitioning.Side;
+	using mathlib.geometry.partitioning;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class represents a sub-hyperplane for <seealso cref="Line"/>.
@@ -53,7 +53,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <param name="hyperplane"> underlying hyperplane </param>
 		/// <param name="remainingRegion"> remaining region of the hyperplane </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SubLine(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane, final org.apache.commons.math3.geometry.partitioning.Region<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> remainingRegion)
+//ORIGINAL LINE: public SubLine(final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane, final mathlib.geometry.partitioning.Region<mathlib.geometry.euclidean.oned.Euclidean1D> remainingRegion)
 		public SubLine(Hyperplane<Euclidean2D> hyperplane, Region<Euclidean1D> remainingRegion) : base(hyperplane, remainingRegion)
 		{
 		}
@@ -114,7 +114,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 	//ORIGINAL LINE: final Line line = (Line) getHyperplane();
 				Line line = (Line) Hyperplane;
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.euclidean.oned.Interval> list = ((org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet) getRemainingRegion()).asList();
+	//ORIGINAL LINE: final java.util.List<mathlib.geometry.euclidean.oned.Interval> list = ((mathlib.geometry.euclidean.oned.IntervalsSet) getRemainingRegion()).asList();
 				IList<Interval> list = ((IntervalsSet) RemainingRegion).asList();
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 	//ORIGINAL LINE: final java.util.List<Segment> segments = new java.util.ArrayList<Segment>(list.size());
@@ -123,10 +123,10 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 				foreach (Interval interval in list)
 				{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final Vector2D start = line.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>) new org.apache.commons.math3.geometry.euclidean.oned.Vector1D(interval.getInf()));
+	//ORIGINAL LINE: final Vector2D start = line.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.oned.Euclidean1D>) new mathlib.geometry.euclidean.oned.Vector1D(interval.getInf()));
 					Vector2D start = line.toSpace((Point<Euclidean1D>) new Vector1D(interval.Inf));
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final Vector2D end = line.toSpace((org.apache.commons.math3.geometry.Point<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>) new org.apache.commons.math3.geometry.euclidean.oned.Vector1D(interval.getSup()));
+	//ORIGINAL LINE: final Vector2D end = line.toSpace((mathlib.geometry.Point<mathlib.geometry.euclidean.oned.Euclidean1D>) new mathlib.geometry.euclidean.oned.Vector1D(interval.getSup()));
 					Vector2D end = line.toSpace((Point<Euclidean1D>) new Vector1D(interval.Sup));
 					segments.Add(new Segment(start, end, line));
 				}
@@ -190,7 +190,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <param name="tolerance"> tolerance below which points are considered identical </param>
 		/// <returns> an interval set </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.geometry.euclidean.oned.IntervalsSet buildIntervalSet(final Vector2D start, final Vector2D end, final double tolerance)
+//ORIGINAL LINE: private static mathlib.geometry.euclidean.oned.IntervalsSet buildIntervalSet(final Vector2D start, final Vector2D end, final double tolerance)
 		private static IntervalsSet buildIntervalSet(Vector2D start, Vector2D end, double tolerance)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -202,7 +202,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override protected org.apache.commons.math3.geometry.partitioning.AbstractSubHyperplane<Euclidean2D, org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> buildNew(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane, final org.apache.commons.math3.geometry.partitioning.Region<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> remainingRegion)
+//ORIGINAL LINE: @Override protected mathlib.geometry.partitioning.AbstractSubHyperplane<Euclidean2D, mathlib.geometry.euclidean.oned.Euclidean1D> buildNew(final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane, final mathlib.geometry.partitioning.Region<mathlib.geometry.euclidean.oned.Euclidean1D> remainingRegion)
 		protected internal override AbstractSubHyperplane<Euclidean2D, Euclidean1D> buildNew(Hyperplane<Euclidean2D> hyperplane, Region<Euclidean1D> remainingRegion)
 		{
 			return new SubLine(hyperplane, remainingRegion);
@@ -211,7 +211,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.geometry.partitioning.Side side(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane)
+//ORIGINAL LINE: @Override public mathlib.geometry.partitioning.Side side(final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane)
 		public override Side side(Hyperplane<Euclidean2D> hyperplane)
 		{
 
@@ -236,10 +236,10 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 
 			// the lines do intersect
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean direct = org.apache.commons.math3.util.FastMath.sin(thisLine.getAngle() - otherLine.getAngle()) < 0;
+//ORIGINAL LINE: final boolean direct = mathlib.util.FastMath.sin(thisLine.getAngle() - otherLine.getAngle()) < 0;
 			bool direct = FastMath.sin(thisLine.Angle - otherLine.Angle) < 0;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.oned.Vector1D x = thisLine.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean2D>) crossing);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.oned.Vector1D x = thisLine.toSubSpace((mathlib.geometry.Point<Euclidean2D>) crossing);
 			Vector1D x = thisLine.toSubSpace((Point<Euclidean2D>) crossing);
 			return RemainingRegion.side(new OrientedPoint(x, direct, thisLine.Tolerance));
 
@@ -248,8 +248,8 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D> split(final org.apache.commons.math3.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane)
-		public override org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D> Split(Hyperplane<Euclidean2D> hyperplane)
+//ORIGINAL LINE: @Override public mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D> split(final mathlib.geometry.partitioning.Hyperplane<Euclidean2D> hyperplane)
+		public override mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D> Split(Hyperplane<Euclidean2D> hyperplane)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -271,34 +271,34 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double global = otherLine.getOffset(thisLine);
 				double global = otherLine.getOffset(thisLine);
-				return (global < -1.0e-10) ? new org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D>(null, this) : new org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D>(this, null);
+				return (global < -1.0e-10) ? new mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D>(null, this) : new mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D>(this, null);
 			}
 
 			// the lines do intersect
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean direct = org.apache.commons.math3.util.FastMath.sin(thisLine.getAngle() - otherLine.getAngle()) < 0;
+//ORIGINAL LINE: final boolean direct = mathlib.util.FastMath.sin(thisLine.getAngle() - otherLine.getAngle()) < 0;
 			bool direct = FastMath.sin(thisLine.Angle - otherLine.Angle) < 0;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.oned.Vector1D x = thisLine.toSubSpace((org.apache.commons.math3.geometry.Point<Euclidean2D>) crossing);
+//ORIGINAL LINE: final mathlib.geometry.euclidean.oned.Vector1D x = thisLine.toSubSpace((mathlib.geometry.Point<Euclidean2D>) crossing);
 			Vector1D x = thisLine.toSubSpace((Point<Euclidean2D>) crossing);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> subPlus = new org.apache.commons.math3.geometry.euclidean.oned.OrientedPoint(x, !direct, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.oned.Euclidean1D> subPlus = new mathlib.geometry.euclidean.oned.OrientedPoint(x, !direct, tolerance).wholeHyperplane();
 			SubHyperplane<Euclidean1D> subPlus = (new OrientedPoint(x, !direct, tolerance)).wholeHyperplane();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.SubHyperplane<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> subMinus = new org.apache.commons.math3.geometry.euclidean.oned.OrientedPoint(x, direct, tolerance).wholeHyperplane();
+//ORIGINAL LINE: final mathlib.geometry.partitioning.SubHyperplane<mathlib.geometry.euclidean.oned.Euclidean1D> subMinus = new mathlib.geometry.euclidean.oned.OrientedPoint(x, direct, tolerance).wholeHyperplane();
 			SubHyperplane<Euclidean1D> subMinus = (new OrientedPoint(x, direct, tolerance)).wholeHyperplane();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> splitTree = getRemainingRegion().getTree(false).split(subMinus);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D> splitTree = getRemainingRegion().getTree(false).split(subMinus);
 			BSPTree<Euclidean1D> splitTree = RemainingRegion.getTree(false).Split(subMinus);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> plusTree = getRemainingRegion().isEmpty(splitTree.getPlus()) ? new org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE) : new org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>(subPlus, new org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE), splitTree.getPlus(), null);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D> plusTree = getRemainingRegion().isEmpty(splitTree.getPlus()) ? new mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE) : new mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D>(subPlus, new mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE), splitTree.getPlus(), null);
 			BSPTree<Euclidean1D> plusTree = RemainingRegion.isEmpty(splitTree.Plus) ? new BSPTree<Euclidean1D>(false) : new BSPTree<Euclidean1D>(subPlus, new BSPTree<Euclidean1D>(false), splitTree.Plus, null);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D> minusTree = getRemainingRegion().isEmpty(splitTree.getMinus()) ? new org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE) : new org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>(subMinus, new org.apache.commons.math3.geometry.partitioning.BSPTree<org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE), splitTree.getMinus(), null);
+//ORIGINAL LINE: final mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D> minusTree = getRemainingRegion().isEmpty(splitTree.getMinus()) ? new mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE) : new mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D>(subMinus, new mathlib.geometry.partitioning.BSPTree<mathlib.geometry.euclidean.oned.Euclidean1D>(Boolean.FALSE), splitTree.getMinus(), null);
 			BSPTree<Euclidean1D> minusTree = RemainingRegion.isEmpty(splitTree.Minus) ? new BSPTree<Euclidean1D>(false) : new BSPTree<Euclidean1D>(subMinus, new BSPTree<Euclidean1D>(false), splitTree.Minus, null);
 
-			return new org.apache.commons.math3.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D>(new SubLine(thisLine.copySelf(), new IntervalsSet(plusTree, tolerance)), new SubLine(thisLine.copySelf(), new IntervalsSet(minusTree, tolerance)));
+			return new mathlib.geometry.partitioning.SubHyperplane_SplitSubHyperplane<Euclidean2D>(new SubLine(thisLine.copySelf(), new IntervalsSet(plusTree, tolerance)), new SubLine(thisLine.copySelf(), new IntervalsSet(minusTree, tolerance)));
 
 		}
 

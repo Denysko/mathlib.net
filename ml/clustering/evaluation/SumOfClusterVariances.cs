@@ -17,12 +17,12 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.clustering.evaluation
+namespace mathlib.ml.clustering.evaluation
 {
 
-	using org.apache.commons.math3.ml.clustering;
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
-	using Variance = org.apache.commons.math3.stat.descriptive.moment.Variance;
+	using mathlib.ml.clustering;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
+	using Variance = mathlib.stat.descriptive.moment.Variance;
 
 	/// <summary>
 	/// Computes the sum of intra-cluster distance variances according to the formula:
@@ -35,20 +35,20 @@ namespace org.apache.commons.math3.ml.clustering.evaluation
 	/// @param <T> the type of the clustered points
 	/// @version $Id: SumOfClusterVariances.java 1542545 2013-11-16 18:48:48Z tn $
 	/// @since 3.3 </param>
-	public class SumOfClusterVariances<T> : ClusterEvaluator<T> where T : org.apache.commons.math3.ml.clustering.Clusterable
+	public class SumOfClusterVariances<T> : ClusterEvaluator<T> where T : mathlib.ml.clustering.Clusterable
 	{
 
 		/// 
 		/// <param name="measure"> the distance measure to use </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SumOfClusterVariances(final org.apache.commons.math3.ml.distance.DistanceMeasure measure)
+//ORIGINAL LINE: public SumOfClusterVariances(final mathlib.ml.distance.DistanceMeasure measure)
 		public SumOfClusterVariances(DistanceMeasure measure) : base(measure)
 		{
 		}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public double score(final java.util.List<? extends org.apache.commons.math3.ml.clustering.Cluster<T>> clusters)
-		public override double score<T1>(IList<T1> clusters) where T1 : org.apache.commons.math3.ml.clustering.Cluster<T>
+//ORIGINAL LINE: @Override public double score(final java.util.List<? extends mathlib.ml.clustering.Cluster<T>> clusters)
+		public override double score<T1>(IList<T1> clusters) where T1 : mathlib.ml.clustering.Cluster<T>
 		{
 			double varianceSum = 0.0;
 			foreach (Cluster<T> cluster in clusters)
@@ -57,12 +57,12 @@ namespace org.apache.commons.math3.ml.clustering.evaluation
 				{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.ml.clustering.Clusterable center = centroidOf(cluster);
+//ORIGINAL LINE: final mathlib.ml.clustering.Clusterable center = centroidOf(cluster);
 					Clusterable center = centroidOf(cluster);
 
 					// compute the distance variance of the current cluster
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.stat.descriptive.moment.Variance stat = new org.apache.commons.math3.stat.descriptive.moment.Variance();
+//ORIGINAL LINE: final mathlib.stat.descriptive.moment.Variance stat = new mathlib.stat.descriptive.moment.Variance();
 					Variance stat = new Variance();
 					foreach (T point in cluster.Points)
 					{

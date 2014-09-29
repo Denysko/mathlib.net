@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// This class converts
@@ -74,7 +74,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// <param name="function"> vectorial residuals function to wrap </param>
 		/// <param name="observations"> observations to be compared to objective function to compute residuals </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresConverter(final org.apache.commons.math3.analysis.MultivariateVectorFunction function, final double[] observations)
+//ORIGINAL LINE: public LeastSquaresConverter(final mathlib.analysis.MultivariateVectorFunction function, final double[] observations)
 		public LeastSquaresConverter(MultivariateVectorFunction function, double[] observations)
 		{
 			this.function = function;
@@ -114,7 +114,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// vector dimensions do not match (objective function dimension is checked only when
 		/// the <seealso cref="#value(double[])"/> method is called) </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresConverter(final org.apache.commons.math3.analysis.MultivariateVectorFunction function, final double[] observations, final double[] weights)
+//ORIGINAL LINE: public LeastSquaresConverter(final mathlib.analysis.MultivariateVectorFunction function, final double[] observations, final double[] weights)
 		public LeastSquaresConverter(MultivariateVectorFunction function, double[] observations, double[] weights)
 		{
 			if (observations.Length != weights.Length)
@@ -149,7 +149,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// matrix dimensions do not match (objective function dimension is checked only when
 		/// the <seealso cref="#value(double[])"/> method is called) </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LeastSquaresConverter(final org.apache.commons.math3.analysis.MultivariateVectorFunction function, final double[] observations, final org.apache.commons.math3.linear.RealMatrix scale)
+//ORIGINAL LINE: public LeastSquaresConverter(final mathlib.analysis.MultivariateVectorFunction function, final double[] observations, final mathlib.linear.RealMatrix scale)
 		public LeastSquaresConverter(MultivariateVectorFunction function, double[] observations, RealMatrix scale)
 		{
 			if (observations.Length != scale.ColumnDimension)

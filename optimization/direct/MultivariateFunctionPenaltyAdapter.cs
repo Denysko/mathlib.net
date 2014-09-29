@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// <p>Adapter extending bounded <seealso cref="MultivariateFunction"/> to an unbouded
@@ -131,7 +131,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// scales are not consistent, either according to dimension or to bounadary
 		/// values </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public MultivariateFunctionPenaltyAdapter(final org.apache.commons.math3.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper, final double offset, final double[] scale)
+//ORIGINAL LINE: public MultivariateFunctionPenaltyAdapter(final mathlib.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper, final double offset, final double[] scale)
 		public MultivariateFunctionPenaltyAdapter(MultivariateFunction bounded, double[] lower, double[] upper, double offset, double[] scale)
 		{
 

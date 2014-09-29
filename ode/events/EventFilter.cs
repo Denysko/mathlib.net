@@ -17,7 +17,7 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.events
+namespace mathlib.ode.events
 {
 
 	/// <summary>
@@ -40,7 +40,7 @@ namespace org.apache.commons.math3.ode.events
 	/// 
 	/// <p>Users can wrap a regular <seealso cref="EventHandler event handler"/> in
 	/// an instance of this class and provide this wrapping instance to
-	/// the <seealso cref="org.apache.commons.math3.ode.FirstOrderIntegrator ODE solver"/>
+	/// the <seealso cref="mathlib.ode.FirstOrderIntegrator ODE solver"/>
 	/// in order to avoid wasting time looking for uninteresting events.
 	/// The wrapper will intercept the calls to the {@link
 	/// EventHandler#g(double, double[]) g function} and to the {@link

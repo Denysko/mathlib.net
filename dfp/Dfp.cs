@@ -17,12 +17,12 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.dfp
+namespace mathlib.dfp
 {
 
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	///  Decimal floating point library for Java
@@ -757,12 +757,12 @@ namespace org.apache.commons.math3.dfp
 		}
 
 		/// <summary>
-		/// Get the <seealso cref="org.apache.commons.math3.Field Field"/> (really a <seealso cref="DfpField"/>) to which the instance belongs.
+		/// Get the <seealso cref="mathlib.Field Field"/> (really a <seealso cref="DfpField"/>) to which the instance belongs.
 		/// <p>
 		/// The field is linked to the number of digits and acts as a factory
 		/// for <seealso cref="Dfp"/> instances.
 		/// </p> </summary>
-		/// <returns> <seealso cref="org.apache.commons.math3.Field Field"/> (really a <seealso cref="DfpField"/>) to which the instance belongs </returns>
+		/// <returns> <seealso cref="mathlib.Field Field"/> (really a <seealso cref="DfpField"/>) to which the instance belongs </returns>
 		public virtual DfpField Field
 		{
 			get
@@ -1339,7 +1339,7 @@ namespace org.apache.commons.math3.dfp
 			{
 				switch (rmode)
 				{
-					case org.apache.commons.math3.dfp.DfpField.RoundingMode.ROUND_FLOOR:
+					case mathlib.dfp.DfpField.RoundingMode.ROUND_FLOOR:
 						if (result.sign == -1)
 						{
 							// then we must increment the mantissa by one
@@ -1347,7 +1347,7 @@ namespace org.apache.commons.math3.dfp
 						}
 						break;
 
-					case org.apache.commons.math3.dfp.DfpField.RoundingMode.ROUND_CEIL:
+					case mathlib.dfp.DfpField.RoundingMode.ROUND_CEIL:
 						if (result.sign == 1)
 						{
 							// then we must increment the mantissa by one
@@ -1355,7 +1355,7 @@ namespace org.apache.commons.math3.dfp
 						}
 						break;
 
-					case org.apache.commons.math3.dfp.DfpField.RoundingMode.ROUND_HALF_EVEN:
+					case mathlib.dfp.DfpField.RoundingMode.ROUND_HALF_EVEN:
 					default:
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Dfp half = newInstance("0.5");
@@ -3369,7 +3369,7 @@ namespace org.apache.commons.math3.dfp
 		/// @since 3.2
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Dfp atan2(final Dfp x) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Dfp atan2(final Dfp x) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Dfp atan2(Dfp x)
 		{
@@ -3394,7 +3394,7 @@ namespace org.apache.commons.math3.dfp
 //ORIGINAL LINE: final Dfp tmp = getTwo().multiply(divide(r.subtract(x)).atan());
 				Dfp tmp = Two.multiply(divide(r.subtract(x)).atan());
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Dfp pmPi = newInstance((tmp.sign <= 0) ? -org.apache.commons.math3.util.FastMath.PI : org.apache.commons.math3.util.FastMath.PI);
+//ORIGINAL LINE: final Dfp pmPi = newInstance((tmp.sign <= 0) ? -mathlib.util.FastMath.PI : mathlib.util.FastMath.PI);
 				Dfp pmPi = newInstance((tmp.sign <= 0) ? - FastMath.PI : FastMath.PI);
 				return pmPi.subtract(tmp);
 
@@ -3467,7 +3467,7 @@ namespace org.apache.commons.math3.dfp
 		/// @since 3.2
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Dfp linearCombination(final Dfp[] a, final Dfp[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Dfp linearCombination(final Dfp[] a, final Dfp[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Dfp linearCombination(Dfp[] a, Dfp[] b)
 		{
@@ -3488,7 +3488,7 @@ namespace org.apache.commons.math3.dfp
 		/// @since 3.2
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Dfp linearCombination(final double[] a, final Dfp[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Dfp linearCombination(final double[] a, final Dfp[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Dfp linearCombination(double[] a, Dfp[] b)
 		{

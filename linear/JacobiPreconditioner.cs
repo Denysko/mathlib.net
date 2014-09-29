@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using Sqrt = org.apache.commons.math3.analysis.function.Sqrt;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using Sqrt = mathlib.analysis.function.Sqrt;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// This class implements the standard Jacobi (diagonal) preconditioner. For a
@@ -141,7 +141,7 @@ namespace org.apache.commons.math3.linear
 		public virtual RealLinearOperator sqrt()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RealVector sqrtDiag = diag.map(new org.apache.commons.math3.analysis.function.Sqrt());
+//ORIGINAL LINE: final RealVector sqrtDiag = diag.map(new mathlib.analysis.function.Sqrt());
 			RealVector sqrtDiag = diag.map(new Sqrt());
 			return new RealLinearOperatorAnonymousInnerClassHelper(this, sqrtDiag);
 		}
@@ -150,9 +150,9 @@ namespace org.apache.commons.math3.linear
 		{
 			private readonly JacobiPreconditioner outerInstance;
 
-			private org.apache.commons.math3.linear.RealVector sqrtDiag;
+			private mathlib.linear.RealVector sqrtDiag;
 
-			public RealLinearOperatorAnonymousInnerClassHelper(JacobiPreconditioner outerInstance, org.apache.commons.math3.linear.RealVector sqrtDiag)
+			public RealLinearOperatorAnonymousInnerClassHelper(JacobiPreconditioner outerInstance, mathlib.linear.RealVector sqrtDiag)
 			{
 				this.outerInstance = outerInstance;
 				this.sqrtDiag = sqrtDiag;

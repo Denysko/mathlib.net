@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.fraction
+namespace mathlib.fraction
 {
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Error thrown when a double value cannot be converted to a fraction

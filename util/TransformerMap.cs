@@ -140,9 +140,9 @@ namespace mathlib.util
 		/// <returns> the double value of the Object. </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the Object can not be
 		/// transformed into a Double. </exception>
-		/// <seealso cref= org.apache.commons.math3.util.NumberTransformer#transform(java.lang.Object) </seealso>
+		/// <seealso cref= mathlib.util.NumberTransformer#transform(java.lang.Object) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double transform(Object o) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double transform(Object o) throws mathlib.exception.MathIllegalArgumentException
 		public virtual double transform(object o)
 		{
 			double value = double.NaN;

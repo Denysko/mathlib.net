@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
-	using BinomialDistribution = org.apache.commons.math3.distribution.BinomialDistribution;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using BinomialDistribution = mathlib.distribution.BinomialDistribution;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Implements binomial test statistics.
@@ -123,15 +123,15 @@ namespace org.apache.commons.math3.stat.inference
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.BinomialDistribution distribution = new org.apache.commons.math3.distribution.BinomialDistribution(numberOfTrials, probability);
+//ORIGINAL LINE: final mathlib.distribution.BinomialDistribution distribution = new mathlib.distribution.BinomialDistribution(numberOfTrials, probability);
 			BinomialDistribution distribution = new BinomialDistribution(numberOfTrials, probability);
 			switch (alternativeHypothesis)
 			{
-			case org.apache.commons.math3.stat.inference.AlternativeHypothesis.GREATER_THAN:
+			case mathlib.stat.inference.AlternativeHypothesis.GREATER_THAN:
 				return 1 - distribution.cumulativeProbability(numberOfSuccesses - 1);
-			case org.apache.commons.math3.stat.inference.AlternativeHypothesis.LESS_THAN:
+			case mathlib.stat.inference.AlternativeHypothesis.LESS_THAN:
 				return distribution.cumulativeProbability(numberOfSuccesses);
-			case org.apache.commons.math3.stat.inference.AlternativeHypothesis.TWO_SIDED:
+			case mathlib.stat.inference.AlternativeHypothesis.TWO_SIDED:
 				int criticalValueLow = 0;
 				int criticalValueHigh = numberOfTrials;
 				double pTotal = 0;

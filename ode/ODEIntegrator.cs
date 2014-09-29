@@ -17,12 +17,12 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
-	using UnivariateSolver = org.apache.commons.math3.analysis.solvers.UnivariateSolver;
-	using EventHandler = org.apache.commons.math3.ode.events.EventHandler;
-	using StepHandler = org.apache.commons.math3.ode.sampling.StepHandler;
+	using UnivariateSolver = mathlib.analysis.solvers.UnivariateSolver;
+	using EventHandler = mathlib.ode.events.EventHandler;
+	using StepHandler = mathlib.ode.sampling.StepHandler;
 
 	/// <summary>
 	/// This interface defines the common parts shared by integrators

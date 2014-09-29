@@ -17,19 +17,19 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.events
+namespace mathlib.ode.events
 {
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using AllowedSolution = org.apache.commons.math3.analysis.solvers.AllowedSolution;
-	using org.apache.commons.math3.analysis.solvers;
-	using PegasusSolver = org.apache.commons.math3.analysis.solvers.PegasusSolver;
-	using UnivariateSolver = org.apache.commons.math3.analysis.solvers.UnivariateSolver;
-	using UnivariateSolverUtils = org.apache.commons.math3.analysis.solvers.UnivariateSolverUtils;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using StepInterpolator = org.apache.commons.math3.ode.sampling.StepInterpolator;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using AllowedSolution = mathlib.analysis.solvers.AllowedSolution;
+	using mathlib.analysis.solvers;
+	using PegasusSolver = mathlib.analysis.solvers.PegasusSolver;
+	using UnivariateSolver = mathlib.analysis.solvers.UnivariateSolver;
+	using UnivariateSolverUtils = mathlib.analysis.solvers.UnivariateSolverUtils;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using StepInterpolator = mathlib.ode.sampling.StepInterpolator;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class handles the state for one {@link EventHandler
@@ -121,7 +121,7 @@ namespace org.apache.commons.math3.ode.events
 		/// the event time search </param>
 		/// <param name="solver"> Root-finding algorithm to use to detect state events </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public EventState(final EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount, final org.apache.commons.math3.analysis.solvers.UnivariateSolver solver)
+//ORIGINAL LINE: public EventState(final EventHandler handler, final double maxCheckInterval, final double convergence, final int maxIterationCount, final mathlib.analysis.solvers.UnivariateSolver solver)
 		public EventState(EventHandler handler, double maxCheckInterval, double convergence, int maxIterationCount, UnivariateSolver solver)
 		{
 			this.handler = handler;
@@ -158,7 +158,7 @@ namespace org.apache.commons.math3.ode.events
 		/// Set the equation. </summary>
 		/// <param name="expandable"> equation being integrated </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void setExpandable(final org.apache.commons.math3.ode.ExpandableStatefulODE expandable)
+//ORIGINAL LINE: public void setExpandable(final mathlib.ode.ExpandableStatefulODE expandable)
 		public virtual ExpandableStatefulODE Expandable
 		{
 			set
@@ -206,7 +206,7 @@ namespace org.apache.commons.math3.ode.events
 		/// <exception cref="MaxCountExceededException"> if the interpolator throws one because
 		/// the number of functions evaluations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void reinitializeBegin(final org.apache.commons.math3.ode.sampling.StepInterpolator interpolator) throws org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public void reinitializeBegin(final mathlib.ode.sampling.StepInterpolator interpolator) throws mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void reinitializeBegin(StepInterpolator interpolator)
 		{
@@ -230,7 +230,7 @@ namespace org.apache.commons.math3.ode.events
 				// extremely rare case: there is a zero EXACTLY at interval start
 				// we will use the sign slightly after step beginning to force ignoring this zero
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double epsilon = org.apache.commons.math3.util.FastMath.max(solver.getAbsoluteAccuracy(), org.apache.commons.math3.util.FastMath.abs(solver.getRelativeAccuracy() * t0));
+//ORIGINAL LINE: final double epsilon = mathlib.util.FastMath.max(solver.getAbsoluteAccuracy(), mathlib.util.FastMath.abs(solver.getRelativeAccuracy() * t0));
 				double epsilon = FastMath.max(solver.AbsoluteAccuracy, FastMath.abs(solver.RelativeAccuracy * t0));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double tStart = t0 + 0.5 * epsilon;
@@ -247,7 +247,7 @@ namespace org.apache.commons.math3.ode.events
 		/// <param name="interpolator"> interpolator to use </param>
 		/// <returns> complete state </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private double[] getCompleteState(final org.apache.commons.math3.ode.sampling.StepInterpolator interpolator)
+//ORIGINAL LINE: private double[] getCompleteState(final mathlib.ode.sampling.StepInterpolator interpolator)
 		private double[] getCompleteState(StepInterpolator interpolator)
 		{
 
@@ -275,7 +275,7 @@ namespace org.apache.commons.math3.ode.events
 		/// the number of functions evaluations is exceeded </exception>
 		/// <exception cref="NoBracketingException"> if the event cannot be bracketed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean evaluateStep(final org.apache.commons.math3.ode.sampling.StepInterpolator interpolator) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public boolean evaluateStep(final mathlib.ode.sampling.StepInterpolator interpolator) throws mathlib.exception.MaxCountExceededException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool evaluateStep(StepInterpolator interpolator)
 		{
@@ -295,14 +295,14 @@ namespace org.apache.commons.math3.ode.events
 					return false;
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int n = org.apache.commons.math3.util.FastMath.max(1, (int) org.apache.commons.math3.util.FastMath.ceil(org.apache.commons.math3.util.FastMath.abs(dt) / maxCheckInterval));
+//ORIGINAL LINE: final int n = mathlib.util.FastMath.max(1, (int) mathlib.util.FastMath.ceil(mathlib.util.FastMath.abs(dt) / maxCheckInterval));
 				int n = FastMath.max(1, (int) FastMath.ceil(FastMath.abs(dt) / maxCheckInterval));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double h = dt / n;
 				double h = dt / n;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.UnivariateFunction f = new org.apache.commons.math3.analysis.UnivariateFunction()
+//ORIGINAL LINE: final mathlib.analysis.UnivariateFunction f = new mathlib.analysis.UnivariateFunction()
 				UnivariateFunction f = new UnivariateFunctionAnonymousInnerClassHelper(this, interpolator);
 
 				double ta = t0;
@@ -332,11 +332,11 @@ namespace org.apache.commons.math3.ode.events
 //ORIGINAL LINE: final double root;
 						double root;
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
-//ORIGINAL LINE: if (solver instanceof org.apache.commons.math3.analysis.solvers.BracketedUnivariateSolver<?>)
+//ORIGINAL LINE: if (solver instanceof mathlib.analysis.solvers.BracketedUnivariateSolver<?>)
 						if (solver is BracketedUnivariateSolver<?>)
 						{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.apache.commons.math3.analysis.solvers.BracketedUnivariateSolver<org.apache.commons.math3.analysis.UnivariateFunction> bracketing = (org.apache.commons.math3.analysis.solvers.BracketedUnivariateSolver<org.apache.commons.math3.analysis.UnivariateFunction>) solver;
+//ORIGINAL LINE: @SuppressWarnings("unchecked") mathlib.analysis.solvers.BracketedUnivariateSolver<mathlib.analysis.UnivariateFunction> bracketing = (mathlib.analysis.solvers.BracketedUnivariateSolver<mathlib.analysis.UnivariateFunction>) solver;
 							BracketedUnivariateSolver<UnivariateFunction> bracketing = (BracketedUnivariateSolver<UnivariateFunction>) solver;
 							root = forward ? bracketing.solve(maxIterationCount, f, ta, tb, AllowedSolution.RIGHT_SIDE) : bracketing.solve(maxIterationCount, f, tb, ta, AllowedSolution.LEFT_SIDE);
 						}
@@ -524,7 +524,7 @@ namespace org.apache.commons.math3.ode.events
 			/// Simple constructor. </summary>
 			/// <param name="exception"> exception to wrap </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LocalMaxCountExceededException(final org.apache.commons.math3.exception.MaxCountExceededException exception)
+//ORIGINAL LINE: public LocalMaxCountExceededException(final mathlib.exception.MaxCountExceededException exception)
 			public LocalMaxCountExceededException(MaxCountExceededException exception)
 			{
 				wrapped = exception;

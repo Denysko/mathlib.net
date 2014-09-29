@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.fitting
+namespace mathlib.optimization.fitting
 {
 
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
 
 	/// <summary>
 	/// Polynomial fitting is a very simple case of <seealso cref="CurveFitter curve fitting"/>.
@@ -50,7 +50,7 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// @deprecated Since 3.1 (to be removed in 4.0). Please use
 		/// <seealso cref="#PolynomialFitter(DifferentiableMultivariateVectorOptimizer)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("Since 3.1 (to be removed in 4.0). Please use") public PolynomialFitter(int degree, final org.apache.commons.math3.optimization.DifferentiableMultivariateVectorOptimizer optimizer)
+//ORIGINAL LINE: @Deprecated("Since 3.1 (to be removed in 4.0). Please use") public PolynomialFitter(int degree, final mathlib.optimization.DifferentiableMultivariateVectorOptimizer optimizer)
 		[Obsolete("Since 3.1 (to be removed in 4.0). Please use")]
 		public PolynomialFitter(int degree, DifferentiableMultivariateVectorOptimizer optimizer) : base(optimizer)
 		{
@@ -71,7 +71,7 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// Get the polynomial fitting the weighted (x, y) points.
 		/// </summary>
 		/// <returns> the coefficients of the polynomial that best fits the observed points. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.ConvergenceException">
+		/// <exception cref="mathlib.exception.ConvergenceException">
 		/// if the algorithm failed to converge. </exception>
 		/// @deprecated Since 3.1 (to be removed in 4.0). Please use <seealso cref="#fit(double[])"/> instead. 
 		[Obsolete("Since 3.1 (to be removed in 4.0). Please use <seealso cref="#fit(double[])"/> instead.")]
@@ -88,9 +88,9 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// increasing order of the polynomial's degree. </param>
 		/// <param name="maxEval"> Maximum number of evaluations of the polynomial. </param>
 		/// <returns> the coefficients of the polynomial that best fits the observed points. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException"> if
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException"> if
 		/// the number of evaluations exceeds {@code maxEval}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.ConvergenceException">
+		/// <exception cref="mathlib.exception.ConvergenceException">
 		/// if the algorithm failed to converge.
 		/// @since 3.1 </exception>
 		public virtual double[] fit(int maxEval, double[] guess)
@@ -105,7 +105,7 @@ namespace org.apache.commons.math3.optimization.fitting
 		/// <param name="guess"> First guess for the coefficients. They must be sorted in
 		/// increasing order of the polynomial's degree. </param>
 		/// <returns> the coefficients of the polynomial that best fits the observed points. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.ConvergenceException">
+		/// <exception cref="mathlib.exception.ConvergenceException">
 		/// if the algorithm failed to converge.
 		/// @since 3.1 </exception>
 		public virtual double[] fit(double[] guess)

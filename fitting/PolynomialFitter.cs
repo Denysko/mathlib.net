@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting
+namespace mathlib.fitting
 {
 
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
-	using MultivariateVectorOptimizer = org.apache.commons.math3.optim.nonlinear.vector.MultivariateVectorOptimizer;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
+	using MultivariateVectorOptimizer = mathlib.optim.nonlinear.vector.MultivariateVectorOptimizer;
 
 	/// <summary>
 	/// Polynomial fitting is a very simple case of <seealso cref="CurveFitter curve fitting"/>.
@@ -50,9 +50,9 @@ namespace org.apache.commons.math3.fitting
 		/// increasing order of the polynomial's degree. </param>
 		/// <param name="maxEval"> Maximum number of evaluations of the polynomial. </param>
 		/// <returns> the coefficients of the polynomial that best fits the observed points. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException"> if
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException"> if
 		/// the number of evaluations exceeds {@code maxEval}. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.ConvergenceException">
+		/// <exception cref="mathlib.exception.ConvergenceException">
 		/// if the algorithm failed to converge. </exception>
 		public virtual double[] fit(int maxEval, double[] guess)
 		{
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.fitting
 		/// <param name="guess"> First guess for the coefficients. They must be sorted in
 		/// increasing order of the polynomial's degree. </param>
 		/// <returns> the coefficients of the polynomial that best fits the observed points. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.ConvergenceException">
+		/// <exception cref="mathlib.exception.ConvergenceException">
 		/// if the algorithm failed to converge. </exception>
 		public virtual double[] fit(double[] guess)
 		{

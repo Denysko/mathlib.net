@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
 
 	/// <summary>
 	/// Interface representing a trivariate real interpolating function where the
@@ -49,7 +49,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NumberIsTooSmallException"> if the number of points is too small for
 		/// the order of the interpolation </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: org.apache.commons.math3.analysis.TrivariateFunction interpolate(double[] xval, double[] yval, double[] zval, double[][][] fval) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NonMonotonicSequenceException;
+//ORIGINAL LINE: mathlib.analysis.TrivariateFunction interpolate(double[] xval, double[] yval, double[] zval, double[][][] fval) throws mathlib.exception.NoDataException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.DimensionMismatchException, mathlib.exception.NonMonotonicSequenceException;
 		TrivariateFunction interpolate(double[] xval, double[] yval, double[] zval, double[][][] fval);
 	}
 

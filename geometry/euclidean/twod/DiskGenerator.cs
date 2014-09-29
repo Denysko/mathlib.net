@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
-	using BigFraction = org.apache.commons.math3.fraction.BigFraction;
-	using org.apache.commons.math3.geometry.enclosing;
-	using org.apache.commons.math3.geometry.enclosing;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using BigFraction = mathlib.fraction.BigFraction;
+	using mathlib.geometry.enclosing;
+	using mathlib.geometry.enclosing;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Class generating an enclosing ball from its support points.
@@ -35,7 +35,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.enclosing.EnclosingBall<Euclidean2D, Vector2D> ballOnSupport(final java.util.List<Vector2D> support)
+//ORIGINAL LINE: public mathlib.geometry.enclosing.EnclosingBall<Euclidean2D, Vector2D> ballOnSupport(final java.util.List<Vector2D> support)
 		public virtual EnclosingBall<Euclidean2D, Vector2D> ballOnSupport(IList<Vector2D> support)
 		{
 
@@ -88,37 +88,37 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 						// Note that the minors m_11, m_12 and m_13 all have the last column
 						// filled with 1.0, hence simplifying the computation
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction[] c2 = new org.apache.commons.math3.fraction.BigFraction[] { new org.apache.commons.math3.fraction.BigFraction(vA.getX()), new org.apache.commons.math3.fraction.BigFraction(vB.getX()), new org.apache.commons.math3.fraction.BigFraction(vC.getX()) };
+//ORIGINAL LINE: final mathlib.fraction.BigFraction[] c2 = new mathlib.fraction.BigFraction[] { new mathlib.fraction.BigFraction(vA.getX()), new mathlib.fraction.BigFraction(vB.getX()), new mathlib.fraction.BigFraction(vC.getX()) };
 						BigFraction[] c2 = new BigFraction[] {new BigFraction(vA.X), new BigFraction(vB.X), new BigFraction(vC.X)};
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction[] c3 = new org.apache.commons.math3.fraction.BigFraction[] { new org.apache.commons.math3.fraction.BigFraction(vA.getY()), new org.apache.commons.math3.fraction.BigFraction(vB.getY()), new org.apache.commons.math3.fraction.BigFraction(vC.getY()) };
+//ORIGINAL LINE: final mathlib.fraction.BigFraction[] c3 = new mathlib.fraction.BigFraction[] { new mathlib.fraction.BigFraction(vA.getY()), new mathlib.fraction.BigFraction(vB.getY()), new mathlib.fraction.BigFraction(vC.getY()) };
 						BigFraction[] c3 = new BigFraction[] {new BigFraction(vA.Y), new BigFraction(vB.Y), new BigFraction(vC.Y)};
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction[] c1 = new org.apache.commons.math3.fraction.BigFraction[] { c2[0].multiply(c2[0]).add(c3[0].multiply(c3[0])), c2[1].multiply(c2[1]).add(c3[1].multiply(c3[1])), c2[2].multiply(c2[2]).add(c3[2].multiply(c3[2])) };
+//ORIGINAL LINE: final mathlib.fraction.BigFraction[] c1 = new mathlib.fraction.BigFraction[] { c2[0].multiply(c2[0]).add(c3[0].multiply(c3[0])), c2[1].multiply(c2[1]).add(c3[1].multiply(c3[1])), c2[2].multiply(c2[2]).add(c3[2].multiply(c3[2])) };
 						BigFraction[] c1 = new BigFraction[] {c2[0].multiply(c2[0]).add(c3[0].multiply(c3[0])), c2[1].multiply(c2[1]).add(c3[1].multiply(c3[1])), c2[2].multiply(c2[2]).add(c3[2].multiply(c3[2]))};
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction twoM11 = minor(c2, c3).multiply(2);
+//ORIGINAL LINE: final mathlib.fraction.BigFraction twoM11 = minor(c2, c3).multiply(2);
 						BigFraction twoM11 = minor(c2, c3).multiply(2);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction m12 = minor(c1, c3);
+//ORIGINAL LINE: final mathlib.fraction.BigFraction m12 = minor(c1, c3);
 						BigFraction m12 = minor(c1, c3);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction m13 = minor(c1, c2);
+//ORIGINAL LINE: final mathlib.fraction.BigFraction m13 = minor(c1, c2);
 						BigFraction m13 = minor(c1, c2);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction centerX = m12.divide(twoM11);
+//ORIGINAL LINE: final mathlib.fraction.BigFraction centerX = m12.divide(twoM11);
 						BigFraction centerX = m12.divide(twoM11);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction centerY = m13.divide(twoM11).negate();
+//ORIGINAL LINE: final mathlib.fraction.BigFraction centerY = m13.divide(twoM11).negate();
 						BigFraction centerY = m13.divide(twoM11).negate();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction dx = c2[0].subtract(centerX);
+//ORIGINAL LINE: final mathlib.fraction.BigFraction dx = c2[0].subtract(centerX);
 						BigFraction dx = c2[0].subtract(centerX);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction dy = c3[0].subtract(centerY);
+//ORIGINAL LINE: final mathlib.fraction.BigFraction dy = c3[0].subtract(centerY);
 						BigFraction dy = c3[0].subtract(centerY);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction r2 = dx.multiply(dx).add(dy.multiply(dy));
+//ORIGINAL LINE: final mathlib.fraction.BigFraction r2 = dx.multiply(dx).add(dy.multiply(dy));
 						BigFraction r2 = dx.multiply(dx).add(dy.multiply(dy));
 						return new EnclosingBall<Euclidean2D, Vector2D>(new Vector2D((double)centerX, (double)centerY), FastMath.sqrt((double)r2), vA, vB, vC);
 					}
@@ -132,7 +132,7 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 		/// <param name="c2"> second column </param>
 		/// <returns> value of the minor computed has an exact fraction </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.fraction.BigFraction minor(final org.apache.commons.math3.fraction.BigFraction[] c1, final org.apache.commons.math3.fraction.BigFraction[] c2)
+//ORIGINAL LINE: private mathlib.fraction.BigFraction minor(final mathlib.fraction.BigFraction[] c1, final mathlib.fraction.BigFraction[] c2)
 		private BigFraction minor(BigFraction[] c1, BigFraction[] c2)
 		{
 			return c2[0].multiply(c1[2].subtract(c1[1])).add(c2[1].multiply(c1[0].subtract(c1[2]))).add(c2[2].multiply(c1[1].subtract(c1[0])));

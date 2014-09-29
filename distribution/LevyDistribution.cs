@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Erf = org.apache.commons.math3.special.Erf;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Erf = mathlib.special.Erf;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements the <a href="http://en.wikipedia.org/wiki/L%C3%A9vy_distribution">
@@ -54,7 +54,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="mu"> location </param>
 		/// <param name="c"> scale parameter </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public LevyDistribution(final org.apache.commons.math3.random.RandomGenerator rng, final double mu, final double c)
+//ORIGINAL LINE: public LevyDistribution(final mathlib.random.RandomGenerator rng, final double mu, final double c)
 		public LevyDistribution(RandomGenerator rng, double mu, double c) : base(rng)
 		{
 			this.mu = mu;
@@ -139,7 +139,7 @@ namespace org.apache.commons.math3.distribution
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double inverseCumulativeProbability(double p)
 		{
@@ -148,7 +148,7 @@ namespace org.apache.commons.math3.distribution
 				throw new OutOfRangeException(p, 0, 1);
 			}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double t = org.apache.commons.math3.special.Erf.erfcInv(p);
+//ORIGINAL LINE: final double t = mathlib.special.Erf.erfcInv(p);
 			double t = Erf.erfcInv(p);
 			return mu + halfC / (t * t);
 		}

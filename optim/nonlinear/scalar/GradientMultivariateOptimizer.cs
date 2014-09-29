@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using org.apache.commons.math3.optim;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using mathlib.optim;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate scalar
@@ -66,7 +66,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// <exception cref="TooManyEvaluationsException"> if the maximal number of
 		/// evaluations (of the objective function) is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: @Override public mathlib.optim.PointValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException
 		public override PointValuePair optimize(params OptimizationData[] optData)
 		{
 			// Set up base class and perform computation.

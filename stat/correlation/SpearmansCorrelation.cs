@@ -17,18 +17,18 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.stat.correlation
+namespace mathlib.stat.correlation
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using BlockRealMatrix = org.apache.commons.math3.linear.BlockRealMatrix;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using NaNStrategy = org.apache.commons.math3.stat.ranking.NaNStrategy;
-	using NaturalRanking = org.apache.commons.math3.stat.ranking.NaturalRanking;
-	using RankingAlgorithm = org.apache.commons.math3.stat.ranking.RankingAlgorithm;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using BlockRealMatrix = mathlib.linear.BlockRealMatrix;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using NaNStrategy = mathlib.stat.ranking.NaNStrategy;
+	using NaturalRanking = mathlib.stat.ranking.NaturalRanking;
+	using RankingAlgorithm = mathlib.stat.ranking.RankingAlgorithm;
 
 	/// <summary>
 	/// Spearman's rank correlation. This implementation performs a rank
@@ -73,7 +73,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="rankingAlgorithm"> ranking algorithm
 		/// @since 3.1 </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SpearmansCorrelation(final org.apache.commons.math3.stat.ranking.RankingAlgorithm rankingAlgorithm)
+//ORIGINAL LINE: public SpearmansCorrelation(final mathlib.stat.ranking.RankingAlgorithm rankingAlgorithm)
 		public SpearmansCorrelation(RankingAlgorithm rankingAlgorithm)
 		{
 			data = null;
@@ -87,7 +87,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="dataMatrix"> matrix of data with columns representing
 		/// variables to correlate </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SpearmansCorrelation(final org.apache.commons.math3.linear.RealMatrix dataMatrix)
+//ORIGINAL LINE: public SpearmansCorrelation(final mathlib.linear.RealMatrix dataMatrix)
 		public SpearmansCorrelation(RealMatrix dataMatrix) : this(dataMatrix, new NaturalRanking())
 		{
 		}
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// variables to correlate </param>
 		/// <param name="rankingAlgorithm"> ranking algorithm </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SpearmansCorrelation(final org.apache.commons.math3.linear.RealMatrix dataMatrix, final org.apache.commons.math3.stat.ranking.RankingAlgorithm rankingAlgorithm)
+//ORIGINAL LINE: public SpearmansCorrelation(final mathlib.linear.RealMatrix dataMatrix, final mathlib.stat.ranking.RankingAlgorithm rankingAlgorithm)
 		public SpearmansCorrelation(RealMatrix dataMatrix, RankingAlgorithm rankingAlgorithm)
 		{
 			this.rankingAlgorithm = rankingAlgorithm;
@@ -149,11 +149,11 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="matrix"> matrix with columns representing variables to correlate </param>
 		/// <returns> correlation matrix </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.linear.RealMatrix computeCorrelationMatrix(final org.apache.commons.math3.linear.RealMatrix matrix)
+//ORIGINAL LINE: public mathlib.linear.RealMatrix computeCorrelationMatrix(final mathlib.linear.RealMatrix matrix)
 		public virtual RealMatrix computeCorrelationMatrix(RealMatrix matrix)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix matrixCopy = rankTransform(matrix);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix matrixCopy = rankTransform(matrix);
 			RealMatrix matrixCopy = rankTransform(matrix);
 			return (new PearsonsCorrelation()).computeCorrelationMatrix(matrixCopy);
 		}
@@ -166,7 +166,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="matrix"> matrix with columns representing variables to correlate </param>
 		/// <returns> correlation matrix </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.linear.RealMatrix computeCorrelationMatrix(final double[][] matrix)
+//ORIGINAL LINE: public mathlib.linear.RealMatrix computeCorrelationMatrix(final double[][] matrix)
 		public virtual RealMatrix computeCorrelationMatrix(double[][] matrix)
 		{
 		   return computeCorrelationMatrix(new BlockRealMatrix(matrix));
@@ -219,7 +219,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="matrix"> matrix to transform </param>
 		/// <returns> a rank-transformed matrix </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private org.apache.commons.math3.linear.RealMatrix rankTransform(final org.apache.commons.math3.linear.RealMatrix matrix)
+//ORIGINAL LINE: private mathlib.linear.RealMatrix rankTransform(final mathlib.linear.RealMatrix matrix)
 		private RealMatrix rankTransform(RealMatrix matrix)
 		{
 			RealMatrix transformed = null;

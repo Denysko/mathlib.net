@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.spherical.twod
+namespace mathlib.geometry.spherical.twod
 {
 
-	using Sphere1D = org.apache.commons.math3.geometry.spherical.oned.Sphere1D;
+	using Sphere1D = mathlib.geometry.spherical.oned.Sphere1D;
 
 	/// <summary>
 	/// This class implements a two-dimensional sphere (i.e. the regular sphere).

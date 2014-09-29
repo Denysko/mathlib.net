@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
-	using org.apache.commons.math3.geometry;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// This interface defines mappers between a space and one of its sub-spaces.
@@ -26,10 +26,10 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// space. The (n-1)-dimension sub-spaces are specific sub-spaces known
 	/// as <seealso cref="Hyperplane hyperplanes"/>. This interface can be used regardless
 	/// of the dimensions differences. As an example, {@link
-	/// org.apache.commons.math3.geometry.euclidean.threed.Line Line} in 3D
+	/// mathlib.geometry.euclidean.threed.Line Line} in 3D
 	/// implements Embedding<{@link
-	/// org.apache.commons.math3.geometry.euclidean.threed.Vector3D Vector3D}, {link
-	/// org.apache.commons.math3.geometry.euclidean.oned.Vector1D Vector1D>, i.e. it
+	/// mathlib.geometry.euclidean.threed.Vector3D Vector3D}, {link
+	/// mathlib.geometry.euclidean.oned.Vector1D Vector1D>, i.e. it
 	/// maps directly dimensions 3 and 1.</p>
 	/// 
 	/// <p>In the 3D euclidean space, hyperplanes are 2D planes, and the 1D
@@ -48,7 +48,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// <seealso cref= Hyperplane
 	/// @version $Id: Embedding.java 1591835 2014-05-02 09:04:01Z tn $
 	/// @since 3.0 </seealso>
-	public interface Embedding<S, T> where S : org.apache.commons.math3.geometry.Space where T : org.apache.commons.math3.geometry.Space
+	public interface Embedding<S, T> where S : mathlib.geometry.Space where T : mathlib.geometry.Space
 	{
 
 		/// <summary>

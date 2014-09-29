@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.events
+namespace mathlib.ode.events
 {
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
+	using MathInternalError = mathlib.exception.MathInternalError;
 
 	/// <summary>
 	/// Enumerate for <seealso cref="EventFilter filtering events"/>.
@@ -88,7 +88,7 @@ namespace org.apache.commons.math3.ode.events
 			///   <li>h = min(-s,-g,+g)</li>
 			///   <li>h = -g</li>
 			/// </ul>
-			/// where s is a tiny positive value: <seealso cref="org.apache.commons.math3.util.Precision#SAFE_MIN"/>.
+			/// where s is a tiny positive value: <seealso cref="mathlib.util.Precision#SAFE_MIN"/>.
 			/// </p>
 			/// </summary>
 
@@ -152,7 +152,7 @@ namespace org.apache.commons.math3.ode.events
 			///   <li>h = min(-s,-g,+g)</li>
 			///   <li>h = -g</li>
 			/// </ul>
-			/// where s is a tiny positive value: <seealso cref="org.apache.commons.math3.util.Precision#SAFE_MIN"/>.
+			/// where s is a tiny positive value: <seealso cref="mathlib.util.Precision#SAFE_MIN"/>.
 			/// </p>
 			/// </summary>
 

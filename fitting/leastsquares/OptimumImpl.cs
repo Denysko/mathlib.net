@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
 
 	/// <summary>
 	/// A pedantic implementation of <seealso cref="Optimum"/>.
@@ -46,7 +46,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="evaluations"> number of times the function was evaluated </param>
 		/// <param name="iterations">  number of iterations of the algorithm </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: OptimumImpl(final org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation value, final int evaluations, final int iterations)
+//ORIGINAL LINE: OptimumImpl(final mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation value, final int evaluations, final int iterations)
 		internal OptimumImpl(LeastSquaresProblem_Evaluation value, int evaluations, int iterations)
 		{
 			this.value = value;

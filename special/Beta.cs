@@ -16,13 +16,13 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.special
+namespace mathlib.special
 {
 
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using ContinuedFraction = org.apache.commons.math3.util.ContinuedFraction;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using ContinuedFraction = mathlib.util.ContinuedFraction;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <p>
@@ -102,7 +102,7 @@ namespace org.apache.commons.math3.special
 		/// <param name="a"> Parameter {@code a}. </param>
 		/// <param name="b"> Parameter {@code b}. </param>
 		/// <returns> the regularized beta function I(x, a, b). </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if the algorithm fails to converge. </exception>
 		public static double regularizedBeta(double x, double a, double b)
 		{
@@ -121,7 +121,7 @@ namespace org.apache.commons.math3.special
 		/// series is less than epsilon the approximation ceases to calculate
 		/// further elements in the series. </param>
 		/// <returns> the regularized beta function I(x, a, b) </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if the algorithm fails to converge. </exception>
 		public static double regularizedBeta(double x, double a, double b, double epsilon)
 		{
@@ -136,7 +136,7 @@ namespace org.apache.commons.math3.special
 		/// <param name="b"> Parameter {@code b}. </param>
 		/// <param name="maxIterations"> Maximum number of "iterations" to complete. </param>
 		/// <returns> the regularized beta function I(x, a, b) </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if the algorithm fails to converge. </exception>
 		public static double regularizedBeta(double x, double a, double b, int maxIterations)
 		{
@@ -164,7 +164,7 @@ namespace org.apache.commons.math3.special
 		/// further elements in the series. </param>
 		/// <param name="maxIterations"> Maximum number of "iterations" to complete. </param>
 		/// <returns> the regularized beta function I(x, a, b) </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if the algorithm fails to converge. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: public static double regularizedBeta(double x, final double a, final double b, double epsilon, int maxIterations)
@@ -266,7 +266,7 @@ namespace org.apache.commons.math3.special
 		/// <exception cref="OutOfRangeException"> if {@code a} or {@code b} is lower than
 		/// {@code 1.0} or greater than {@code 2.0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static double logGammaSum(final double a, final double b) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: private static double logGammaSum(final double a, final double b) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static double logGammaSum(double a, double b)
 		{
@@ -309,7 +309,7 @@ namespace org.apache.commons.math3.special
 		/// <returns> the value of {@code log(Gamma(b) / Gamma(a + b))}. </returns>
 		/// <exception cref="NumberIsTooSmallException"> if {@code a < 0.0} or {@code b < 10.0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static double logGammaMinusLogGammaSum(final double a, final double b) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: private static double logGammaMinusLogGammaSum(final double a, final double b) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static double logGammaMinusLogGammaSum(double a, double b)
 		{
@@ -344,10 +344,10 @@ namespace org.apache.commons.math3.special
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double u = d * org.apache.commons.math3.util.FastMath.log1p(a / b);
+//ORIGINAL LINE: final double u = d * mathlib.util.FastMath.log1p(a / b);
 			double u = d * FastMath.log1p(a / b);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double v = a * (org.apache.commons.math3.util.FastMath.log(b) - 1.0);
+//ORIGINAL LINE: final double v = a * (mathlib.util.FastMath.log(b) - 1.0);
 			double v = a * (FastMath.log(b) - 1.0);
 
 			return u <= v ? (w - u) - v : (w - v) - u;
@@ -363,7 +363,7 @@ namespace org.apache.commons.math3.special
 		/// <exception cref="OutOfRangeException"> if {@code a < 0} or {@code a > b} </exception>
 		/// <exception cref="NumberIsTooSmallException"> if {@code b < 10} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static double deltaMinusDeltaSum(final double a, final double b) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: private static double deltaMinusDeltaSum(final double a, final double b) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private static double deltaMinusDeltaSum(double a, double b)
 		{
@@ -443,10 +443,10 @@ namespace org.apache.commons.math3.special
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a = org.apache.commons.math3.util.FastMath.min(p, q);
+//ORIGINAL LINE: final double a = mathlib.util.FastMath.min(p, q);
 			double a = FastMath.min(p, q);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double b = org.apache.commons.math3.util.FastMath.max(p, q);
+//ORIGINAL LINE: final double b = mathlib.util.FastMath.max(p, q);
 			double b = FastMath.max(p, q);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double sqrtT = 10.0 / a;
@@ -481,10 +481,10 @@ namespace org.apache.commons.math3.special
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a = org.apache.commons.math3.util.FastMath.min(p, q);
+//ORIGINAL LINE: final double a = mathlib.util.FastMath.min(p, q);
 			double a = FastMath.min(p, q);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double b = org.apache.commons.math3.util.FastMath.max(p, q);
+//ORIGINAL LINE: final double b = mathlib.util.FastMath.max(p, q);
 			double b = FastMath.max(p, q);
 			if (a >= 10.0)
 			{
@@ -498,10 +498,10 @@ namespace org.apache.commons.math3.special
 //ORIGINAL LINE: final double c = h / (1.0 + h);
 				double c = h / (1.0 + h);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double u = -(a - 0.5) * org.apache.commons.math3.util.FastMath.log(c);
+//ORIGINAL LINE: final double u = -(a - 0.5) * mathlib.util.FastMath.log(c);
 				double u = -(a - 0.5) * FastMath.log(c);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double v = b * org.apache.commons.math3.util.FastMath.log1p(h);
+//ORIGINAL LINE: final double v = b * mathlib.util.FastMath.log1p(h);
 				double v = b * FastMath.log1p(h);
 				if (u <= v)
 				{
@@ -517,7 +517,7 @@ namespace org.apache.commons.math3.special
 				if (b > 1000.0)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int n = (int) org.apache.commons.math3.util.FastMath.floor(a - 1.0);
+//ORIGINAL LINE: final int n = (int) mathlib.util.FastMath.floor(a - 1.0);
 					int n = (int) FastMath.floor(a - 1.0);
 					double prod = 1.0;
 					double ared = a;

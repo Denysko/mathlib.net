@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.twod
+namespace mathlib.geometry.spherical.twod
 {
 
-	using Vector3D = org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-	using Arc = org.apache.commons.math3.geometry.spherical.oned.Arc;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using Vector3D = mathlib.geometry.euclidean.threed.Vector3D;
+	using Arc = mathlib.geometry.spherical.oned.Arc;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Spherical polygons boundary edge. </summary>
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="alpha"> angle along the edge, counted from <seealso cref="#getStart()"/> </param>
 		/// <returns> an intermediate point </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.euclidean.threed.Vector3D getPointAt(final double alpha)
+//ORIGINAL LINE: public mathlib.geometry.euclidean.threed.Vector3D getPointAt(final double alpha)
 		public virtual Vector3D getPointAt(double alpha)
 		{
 			return circle.getPointAt(alpha + circle.getPhase(start.Location.Vector));
@@ -167,16 +167,16 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 //ORIGINAL LINE: final double edgeStart = circle.getPhase(start.getLocation().getVector());
 			double edgeStart = circle.getPhase(start.Location.Vector);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.spherical.oned.Arc arc = circle.getInsideArc(splitCircle);
+//ORIGINAL LINE: final mathlib.geometry.spherical.oned.Arc arc = circle.getInsideArc(splitCircle);
 			Arc arc = circle.getInsideArc(splitCircle);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double arcRelativeStart = org.apache.commons.math3.util.MathUtils.normalizeAngle(arc.getInf(), edgeStart + org.apache.commons.math3.util.FastMath.PI) - edgeStart;
+//ORIGINAL LINE: final double arcRelativeStart = mathlib.util.MathUtils.normalizeAngle(arc.getInf(), edgeStart + mathlib.util.FastMath.PI) - edgeStart;
 			double arcRelativeStart = MathUtils.normalizeAngle(arc.Inf, edgeStart + FastMath.PI) - edgeStart;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double arcRelativeEnd = arcRelativeStart + arc.getSize();
 			double arcRelativeEnd = arcRelativeStart + arc.Size;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double unwrappedEnd = arcRelativeEnd - org.apache.commons.math3.util.MathUtils.TWO_PI;
+//ORIGINAL LINE: final double unwrappedEnd = arcRelativeEnd - mathlib.util.MathUtils.TWO_PI;
 			double unwrappedEnd = arcRelativeEnd - MathUtils.TWO_PI;
 
 			// build the sub-edges

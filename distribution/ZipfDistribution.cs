@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the Zipf distribution.
@@ -77,7 +77,7 @@ namespace org.apache.commons.math3.distribution
 		/// or {@code exponent <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ZipfDistribution(org.apache.commons.math3.random.RandomGenerator rng, int numberOfElements, double exponent) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public ZipfDistribution(mathlib.random.RandomGenerator rng, int numberOfElements, double exponent) throws mathlib.exception.NotStrictlyPositiveException
 		public ZipfDistribution(RandomGenerator rng, int numberOfElements, double exponent) : base(rng)
 		{
 

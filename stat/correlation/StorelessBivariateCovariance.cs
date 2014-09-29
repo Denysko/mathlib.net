@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.correlation
+namespace mathlib.stat.correlation
 {
 
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
 	/// <summary>
 	/// Bivariate Covariance implementation that does not require input data to be
@@ -146,7 +146,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <exception cref="NumberIsTooSmallException"> if the number of observations
 		/// is &lt; 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double getResult() throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double getResult() throws mathlib.exception.NumberIsTooSmallException
 		public virtual double Result
 		{
 			get

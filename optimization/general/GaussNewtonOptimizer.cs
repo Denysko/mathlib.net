@@ -17,21 +17,21 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.general
+namespace mathlib.optimization.general
 {
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using BlockRealMatrix = org.apache.commons.math3.linear.BlockRealMatrix;
-	using DecompositionSolver = org.apache.commons.math3.linear.DecompositionSolver;
-	using LUDecomposition = org.apache.commons.math3.linear.LUDecomposition;
-	using QRDecomposition = org.apache.commons.math3.linear.QRDecomposition;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using SingularMatrixException = org.apache.commons.math3.linear.SingularMatrixException;
-	using org.apache.commons.math3.optimization;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using BlockRealMatrix = mathlib.linear.BlockRealMatrix;
+	using DecompositionSolver = mathlib.linear.DecompositionSolver;
+	using LUDecomposition = mathlib.linear.LUDecomposition;
+	using QRDecomposition = mathlib.linear.QRDecomposition;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using SingularMatrixException = mathlib.linear.SingularMatrixException;
+	using mathlib.optimization;
 
 	/// <summary>
 	/// Gauss-Newton least-squares solver.
@@ -94,7 +94,7 @@ namespace org.apache.commons.math3.optimization.general
 		/// decomposition. </param>
 		/// <param name="checker"> Convergence checker. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public GaussNewtonOptimizer(final boolean useLU, org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointVectorValuePair> checker)
+//ORIGINAL LINE: public GaussNewtonOptimizer(final boolean useLU, mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointVectorValuePair> checker)
 		public GaussNewtonOptimizer(bool useLU, ConvergenceChecker<PointVectorValuePair> checker) : base(checker)
 		{
 			this.useLU = useLU;
@@ -105,7 +105,7 @@ namespace org.apache.commons.math3.optimization.general
 		public override PointVectorValuePair doOptimize()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointVectorValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointVectorValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointVectorValuePair> checker = ConvergenceChecker;
 
 			// Computation will be useless without a checker (see "for-loop").
@@ -122,7 +122,7 @@ namespace org.apache.commons.math3.optimization.general
 			int nR = targetValues.Length; // Number of observed data.
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix weightMatrix = getWeight();
+//ORIGINAL LINE: final mathlib.linear.RealMatrix weightMatrix = getWeight();
 			RealMatrix weightMatrix = Weight;
 			// Diagonal of the weight matrix.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -157,7 +157,7 @@ namespace org.apache.commons.math3.optimization.general
 //ORIGINAL LINE: final double[] currentResiduals = computeResiduals(currentObjective);
 				double[] currentResiduals = computeResiduals(currentObjective);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix weightedJacobian = computeWeightedJacobian(currentPoint);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix weightedJacobian = computeWeightedJacobian(currentPoint);
 				RealMatrix weightedJacobian = computeWeightedJacobian(currentPoint);
 				current = new PointVectorValuePair(currentPoint, currentObjective);
 
@@ -210,7 +210,7 @@ namespace org.apache.commons.math3.optimization.general
 					RealMatrix mA = new BlockRealMatrix(a);
 					DecompositionSolver solver = useLU ? (new LUDecomposition(mA)).Solver : (new QRDecomposition(mA)).Solver;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] dX = solver.solve(new org.apache.commons.math3.linear.ArrayRealVector(b, false)).toArray();
+//ORIGINAL LINE: final double[] dX = solver.solve(new mathlib.linear.ArrayRealVector(b, false)).toArray();
 					double[] dX = solver.solve(new ArrayRealVector(b, false)).toArray();
 					// update the estimated parameters
 					for (int i = 0; i < nC; ++i)

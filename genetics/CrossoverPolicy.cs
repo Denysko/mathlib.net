@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 	/// <summary>
 	/// Policy used to create a pair of new chromosomes by performing a crossover
@@ -37,7 +37,7 @@ namespace org.apache.commons.math3.genetics
 		/// <returns> the pair of new chromosomes that resulted from the crossover. </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the given chromosomes are not compatible with this <seealso cref="CrossoverPolicy"/> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: ChromosomePair crossover(Chromosome first, Chromosome second) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: ChromosomePair crossover(Chromosome first, Chromosome second) throws mathlib.exception.MathIllegalArgumentException;
 		ChromosomePair crossover(Chromosome first, Chromosome second);
 	}
 

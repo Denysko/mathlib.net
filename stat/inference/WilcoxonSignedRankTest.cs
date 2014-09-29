@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
-	using NormalDistribution = org.apache.commons.math3.distribution.NormalDistribution;
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NaNStrategy = org.apache.commons.math3.stat.ranking.NaNStrategy;
-	using NaturalRanking = org.apache.commons.math3.stat.ranking.NaturalRanking;
-	using TiesStrategy = org.apache.commons.math3.stat.ranking.TiesStrategy;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NormalDistribution = mathlib.distribution.NormalDistribution;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NaNStrategy = mathlib.stat.ranking.NaNStrategy;
+	using NaturalRanking = mathlib.stat.ranking.NaturalRanking;
+	using TiesStrategy = mathlib.stat.ranking.TiesStrategy;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// An implementation of the Wilcoxon signed-rank test.
@@ -60,7 +60,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <param name="tiesStrategy">
 		///            specifies the strategy that should be used for ties </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public WilcoxonSignedRankTest(final org.apache.commons.math3.stat.ranking.NaNStrategy nanStrategy, final org.apache.commons.math3.stat.ranking.TiesStrategy tiesStrategy)
+//ORIGINAL LINE: public WilcoxonSignedRankTest(final mathlib.stat.ranking.NaNStrategy nanStrategy, final mathlib.stat.ranking.TiesStrategy tiesStrategy)
 		public WilcoxonSignedRankTest(NaNStrategy nanStrategy, TiesStrategy tiesStrategy)
 		{
 			naturalRanking = new NaturalRanking(nanStrategy, tiesStrategy);
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="DimensionMismatchException"> if {@code x} and {@code y} do not
 		/// have the same length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void ensureDataConformance(final double[] x, final double[] y) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private void ensureDataConformance(final double[] x, final double[] y) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void ensureDataConformance(double[] x, double[] y)
 		{
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="NullArgumentException"> if {@code z} is {@code null} </exception>
 		/// <exception cref="NoDataException"> if {@code z} is zero-length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double[] calculateAbsoluteDifferences(final double[] z) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: private double[] calculateAbsoluteDifferences(final double[] z) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private double[] calculateAbsoluteDifferences(double[] z)
 		{
@@ -188,7 +188,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="DimensionMismatchException"> if {@code x} and {@code y} do not
 		/// have the same length. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double wilcoxonSignedRank(final double[] x, final double[] y) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double wilcoxonSignedRank(final double[] x, final double[] y) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double wilcoxonSignedRank(double[] x, double[] y)
 		{
@@ -298,12 +298,12 @@ namespace org.apache.commons.math3.stat.inference
 
 			// - 0.5 is a continuity correction
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double z = (Wmin - ES - 0.5) / org.apache.commons.math3.util.FastMath.sqrt(VarS);
+//ORIGINAL LINE: final double z = (Wmin - ES - 0.5) / mathlib.util.FastMath.sqrt(VarS);
 			double z = (Wmin - ES - 0.5) / FastMath.sqrt(VarS);
 
 			// No try-catch or advertised exception because args are valid
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.NormalDistribution standardNormal = new org.apache.commons.math3.distribution.NormalDistribution(0, 1);
+//ORIGINAL LINE: final mathlib.distribution.NormalDistribution standardNormal = new mathlib.distribution.NormalDistribution(0, 1);
 			NormalDistribution standardNormal = new NormalDistribution(0, 1);
 
 			return 2 * standardNormal.cumulativeProbability(z);
@@ -351,7 +351,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if the maximum number of iterations
 		/// is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double wilcoxonSignedRankTest(final double[] x, final double[] y, final boolean exactPValue) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double wilcoxonSignedRankTest(final double[] x, final double[] y, final boolean exactPValue) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double wilcoxonSignedRankTest(double[] x, double[] y, bool exactPValue)
 		{

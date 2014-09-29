@@ -14,23 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using MultivariateMatrixFunction = org.apache.commons.math3.analysis.MultivariateMatrixFunction;
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using DiagonalMatrix = org.apache.commons.math3.linear.DiagonalMatrix;
-	using EigenDecomposition = org.apache.commons.math3.linear.EigenDecomposition;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using RealVector = org.apache.commons.math3.linear.RealVector;
-	using org.apache.commons.math3.optim;
-	using org.apache.commons.math3.optim;
-	using PointVectorValuePair = org.apache.commons.math3.optim.PointVectorValuePair;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using org.apache.commons.math3.util;
+	using MultivariateMatrixFunction = mathlib.analysis.MultivariateMatrixFunction;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using DiagonalMatrix = mathlib.linear.DiagonalMatrix;
+	using EigenDecomposition = mathlib.linear.EigenDecomposition;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using RealVector = mathlib.linear.RealVector;
+	using mathlib.optim;
+	using mathlib.optim;
+	using PointVectorValuePair = mathlib.optim.PointVectorValuePair;
+	using FastMath = mathlib.util.FastMath;
+	using Incrementor = mathlib.util.Incrementor;
+	using mathlib.util;
 
 	/// <summary>
 	/// A Factory for creating <seealso cref="LeastSquaresProblem"/>s.
@@ -48,7 +48,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		}
 
 		 /// <summary>
-		 /// Create a <seealso cref="org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem"/>
+		 /// Create a <seealso cref="mathlib.fitting.leastsquares.LeastSquaresProblem"/>
 		 /// from the given elements. There will be no weights applied (Identity weights).
 		 /// </summary>
 		 /// <param name="model">          the model function. Produces the computed values. </param>
@@ -59,14 +59,14 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		 /// <param name="maxIterations">  the maximum number to times to iterate in the algorithm </param>
 		 /// <returns> the specified General Least Squares problem. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static LeastSquaresProblem create(final MultivariateJacobianFunction model, final org.apache.commons.math3.linear.RealVector observed, final org.apache.commons.math3.linear.RealVector start, final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
+//ORIGINAL LINE: public static LeastSquaresProblem create(final MultivariateJacobianFunction model, final mathlib.linear.RealVector observed, final mathlib.linear.RealVector start, final mathlib.optim.ConvergenceChecker<mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
 		public static LeastSquaresProblem create(MultivariateJacobianFunction model, RealVector observed, RealVector start, ConvergenceChecker<LeastSquaresProblem_Evaluation> checker, int maxEvaluations, int maxIterations)
 		{
 			return new LocalLeastSquaresProblem(model, observed, start, checker, maxEvaluations, maxIterations);
 		}
 
 		/// <summary>
-		/// Create a <seealso cref="org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem"/>
+		/// Create a <seealso cref="mathlib.fitting.leastsquares.LeastSquaresProblem"/>
 		/// from the given elements.
 		/// </summary>
 		/// <param name="model">          the model function. Produces the computed values. </param>
@@ -78,14 +78,14 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="maxIterations">  the maximum number to times to iterate in the algorithm </param>
 		/// <returns> the specified General Least Squares problem. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static LeastSquaresProblem create(final MultivariateJacobianFunction model, final org.apache.commons.math3.linear.RealVector observed, final org.apache.commons.math3.linear.RealVector start, final org.apache.commons.math3.linear.RealMatrix weight, final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
+//ORIGINAL LINE: public static LeastSquaresProblem create(final MultivariateJacobianFunction model, final mathlib.linear.RealVector observed, final mathlib.linear.RealVector start, final mathlib.linear.RealMatrix weight, final mathlib.optim.ConvergenceChecker<mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
 		public static LeastSquaresProblem create(MultivariateJacobianFunction model, RealVector observed, RealVector start, RealMatrix weight, ConvergenceChecker<LeastSquaresProblem_Evaluation> checker, int maxEvaluations, int maxIterations)
 		{
 			return weightMatrix(create(model, observed, start, checker, maxEvaluations, maxIterations), weight);
 		}
 
 		/// <summary>
-		/// Create a <seealso cref="org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem"/>
+		/// Create a <seealso cref="mathlib.fitting.leastsquares.LeastSquaresProblem"/>
 		/// from the given elements.
 		/// <p/>
 		/// This factory method is provided for continuity with previous interfaces. Newer
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="maxIterations">  the maximum number to times to iterate in the algorithm </param>
 		/// <returns> the specified General Least Squares problem. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static LeastSquaresProblem create(final org.apache.commons.math3.analysis.MultivariateVectorFunction model, final org.apache.commons.math3.analysis.MultivariateMatrixFunction jacobian, final double[] observed, final double[] start, final org.apache.commons.math3.linear.RealMatrix weight, final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
+//ORIGINAL LINE: public static LeastSquaresProblem create(final mathlib.analysis.MultivariateVectorFunction model, final mathlib.analysis.MultivariateMatrixFunction jacobian, final double[] observed, final double[] start, final mathlib.linear.RealMatrix weight, final mathlib.optim.ConvergenceChecker<mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
 		public static LeastSquaresProblem create(MultivariateVectorFunction model, MultivariateMatrixFunction jacobian, double[] observed, double[] start, RealMatrix weight, ConvergenceChecker<LeastSquaresProblem_Evaluation> checker, int maxEvaluations, int maxIterations)
 		{
 			return create(model(model, jacobian), new ArrayRealVector(observed, false), new ArrayRealVector(start, false), weight, checker, maxEvaluations, maxIterations);
@@ -117,11 +117,11 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <returns> a new <seealso cref="LeastSquaresProblem"/> with the weights applied. The original
 		///         {@code problem} is not modified. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static LeastSquaresProblem weightMatrix(final LeastSquaresProblem problem, final org.apache.commons.math3.linear.RealMatrix weights)
+//ORIGINAL LINE: public static LeastSquaresProblem weightMatrix(final LeastSquaresProblem problem, final mathlib.linear.RealMatrix weights)
 		public static LeastSquaresProblem weightMatrix(LeastSquaresProblem problem, RealMatrix weights)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix weightSquareRoot = squareRoot(weights);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix weightSquareRoot = squareRoot(weights);
 			RealMatrix weightSquareRoot = squareRoot(weights);
 			return new LeastSquaresAdapterAnonymousInnerClassHelper(problem, weightSquareRoot);
 		}
@@ -130,13 +130,13 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		{
 			private RealMatrix weightSquareRoot;
 
-			public LeastSquaresAdapterAnonymousInnerClassHelper(org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem problem, RealMatrix weightSquareRoot) : base(problem)
+			public LeastSquaresAdapterAnonymousInnerClassHelper(mathlib.fitting.leastsquares.LeastSquaresProblem problem, RealMatrix weightSquareRoot) : base(problem)
 			{
 				this.weightSquareRoot = weightSquareRoot;
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation evaluate(final org.apache.commons.math3.linear.RealVector point)
+//ORIGINAL LINE: @Override public mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation evaluate(final mathlib.linear.RealVector point)
 			public override LeastSquaresProblem_Evaluation evaluate(RealVector point)
 			{
 				return new DenseWeightedEvaluation(base.evaluate(point), weightSquareRoot);
@@ -151,7 +151,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <returns> a new <seealso cref="LeastSquaresProblem"/> with the weights applied. The original
 		///         {@code problem} is not modified. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static LeastSquaresProblem weightDiagonal(final LeastSquaresProblem problem, final org.apache.commons.math3.linear.RealVector weights)
+//ORIGINAL LINE: public static LeastSquaresProblem weightDiagonal(final LeastSquaresProblem problem, final mathlib.linear.RealVector weights)
 		public static LeastSquaresProblem weightDiagonal(LeastSquaresProblem problem, RealVector weights)
 		{
 			//TODO more efficient implementation
@@ -167,7 +167,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="counter"> the counter to increment. </param>
 		/// <returns> a least squares problem that tracks evaluations </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static LeastSquaresProblem countEvaluations(final LeastSquaresProblem problem, final org.apache.commons.math3.util.Incrementor counter)
+//ORIGINAL LINE: public static LeastSquaresProblem countEvaluations(final LeastSquaresProblem problem, final mathlib.util.Incrementor counter)
 		public static LeastSquaresProblem countEvaluations(LeastSquaresProblem problem, Incrementor counter)
 		{
 			return new LeastSquaresAdapterAnonymousInnerClassHelper2(problem, counter);
@@ -177,14 +177,14 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		{
 			private Incrementor counter;
 
-			public LeastSquaresAdapterAnonymousInnerClassHelper2(org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem problem, Incrementor counter) : base(problem)
+			public LeastSquaresAdapterAnonymousInnerClassHelper2(mathlib.fitting.leastsquares.LeastSquaresProblem problem, Incrementor counter) : base(problem)
 			{
 				this.counter = counter;
 			}
 
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation evaluate(final org.apache.commons.math3.linear.RealVector point)
+//ORIGINAL LINE: public mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation evaluate(final mathlib.linear.RealVector point)
 			public override LeastSquaresProblem_Evaluation evaluate(RealVector point)
 			{
 				counter.incrementCount();
@@ -202,7 +202,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="checker"> the convergence checker to adapt. </param>
 		/// <returns> a convergence checker that delegates to {@code checker}. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation> evaluationChecker(final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.optim.PointVectorValuePair> checker)
+//ORIGINAL LINE: public static mathlib.optim.ConvergenceChecker<mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation> evaluationChecker(final mathlib.optim.ConvergenceChecker<mathlib.optim.PointVectorValuePair> checker)
 		public static ConvergenceChecker<LeastSquaresProblem_Evaluation> evaluationChecker(ConvergenceChecker<PointVectorValuePair> checker)
 		{
 			return new ConvergenceCheckerAnonymousInnerClassHelper(checker);
@@ -218,7 +218,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public boolean converged(final int iteration, final org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation previous, final org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation current)
+//ORIGINAL LINE: public boolean converged(final int iteration, final mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation previous, final mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation current)
 			public virtual bool converged(int iteration, LeastSquaresProblem_Evaluation previous, LeastSquaresProblem_Evaluation current)
 			{
 				return checker.converged(iteration, new PointVectorValuePair(previous.Point.toArray(), previous.Residuals.toArray(), false), new PointVectorValuePair(current.Point.toArray(), current.Residuals.toArray(), false)
@@ -232,7 +232,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="m"> Symmetric, positive-definite (weight) matrix. </param>
 		/// <returns> the square-root of the weight matrix. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static org.apache.commons.math3.linear.RealMatrix squareRoot(final org.apache.commons.math3.linear.RealMatrix m)
+//ORIGINAL LINE: private static mathlib.linear.RealMatrix squareRoot(final mathlib.linear.RealMatrix m)
 		private static RealMatrix squareRoot(RealMatrix m)
 		{
 			if (m is DiagonalMatrix)
@@ -241,7 +241,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 //ORIGINAL LINE: final int dim = m.getRowDimension();
 				int dim = m.RowDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix sqrtM = new org.apache.commons.math3.linear.DiagonalMatrix(dim);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix sqrtM = new mathlib.linear.DiagonalMatrix(dim);
 				RealMatrix sqrtM = new DiagonalMatrix(dim);
 				for (int i = 0; i < dim; i++)
 				{
@@ -252,7 +252,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			else
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.EigenDecomposition dec = new org.apache.commons.math3.linear.EigenDecomposition(m);
+//ORIGINAL LINE: final mathlib.linear.EigenDecomposition dec = new mathlib.linear.EigenDecomposition(m);
 				EigenDecomposition dec = new EigenDecomposition(m);
 				return dec.SquareRoot;
 			}
@@ -266,7 +266,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <param name="jacobian"> the Jacobian function </param>
 		/// <returns> a function that computes both at the same time </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static MultivariateJacobianFunction model(final org.apache.commons.math3.analysis.MultivariateVectorFunction value, final org.apache.commons.math3.analysis.MultivariateMatrixFunction jacobian)
+//ORIGINAL LINE: public static MultivariateJacobianFunction model(final mathlib.analysis.MultivariateVectorFunction value, final mathlib.analysis.MultivariateMatrixFunction jacobian)
 		public static MultivariateJacobianFunction model(MultivariateVectorFunction value, MultivariateMatrixFunction jacobian)
 		{
 			return new MultivariateJacobianFunctionAnonymousInnerClassHelper(value, jacobian);
@@ -284,7 +284,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			}
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.util.Pair<org.apache.commons.math3.linear.RealVector, org.apache.commons.math3.linear.RealMatrix> value(final org.apache.commons.math3.linear.RealVector point)
+//ORIGINAL LINE: public mathlib.util.Pair<mathlib.linear.RealVector, mathlib.linear.RealMatrix> value(final mathlib.linear.RealVector point)
 			public virtual Pair<RealVector, RealMatrix> value(RealVector point)
 			{
 				//TODO get array from RealVector without copying?
@@ -324,7 +324,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			/// <param name="maxEvaluations"> the allowed evaluations </param>
 			/// <param name="maxIterations">  the allowed iterations </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: LocalLeastSquaresProblem(final MultivariateJacobianFunction model, final org.apache.commons.math3.linear.RealVector target, final org.apache.commons.math3.linear.RealVector start, final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
+//ORIGINAL LINE: LocalLeastSquaresProblem(final MultivariateJacobianFunction model, final mathlib.linear.RealVector target, final mathlib.linear.RealVector start, final mathlib.optim.ConvergenceChecker<mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker, final int maxEvaluations, final int maxIterations)
 			internal LocalLeastSquaresProblem(MultivariateJacobianFunction model, RealVector target, RealVector start, ConvergenceChecker<LeastSquaresProblem_Evaluation> checker, int maxEvaluations, int maxIterations) : base(maxEvaluations, maxIterations, checker)
 			{
 				this.target = target;
@@ -365,12 +365,12 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			/// <summary>
 			/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation evaluate(final org.apache.commons.math3.linear.RealVector point)
+//ORIGINAL LINE: public mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation evaluate(final mathlib.linear.RealVector point)
 			public virtual LeastSquaresProblem_Evaluation evaluate(RealVector point)
 			{
 				//evaluate value and jacobian in one function call
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<org.apache.commons.math3.linear.RealVector, org.apache.commons.math3.linear.RealMatrix> value = this.model.value(point);
+//ORIGINAL LINE: final mathlib.util.Pair<mathlib.linear.RealVector, mathlib.linear.RealMatrix> value = this.model.value(point);
 				Pair<RealVector, RealMatrix> value = this.model.value(point);
 				return new UnweightedEvaluation(value.First, value.Second, this.target, point.copy());
 						// copy so optimizer can change point without changing our instance
@@ -402,7 +402,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 				/// <param name="target">   the observed values </param>
 				/// <param name="point">    the abscissa </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private UnweightedEvaluation(final org.apache.commons.math3.linear.RealVector values, final org.apache.commons.math3.linear.RealMatrix jacobian, final org.apache.commons.math3.linear.RealVector target, final org.apache.commons.math3.linear.RealVector point)
+//ORIGINAL LINE: private UnweightedEvaluation(final mathlib.linear.RealVector values, final mathlib.linear.RealMatrix jacobian, final mathlib.linear.RealVector target, final mathlib.linear.RealVector point)
 				internal UnweightedEvaluation(RealVector values, RealMatrix jacobian, RealVector target, RealVector point) : base(target.Dimension)
 				{
 					this.jacobian = jacobian;

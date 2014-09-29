@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet.sofm
+namespace mathlib.ml.neuralnet.sofm
 {
 
 	/// <summary>

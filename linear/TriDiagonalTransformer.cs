@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -264,7 +264,7 @@ namespace org.apache.commons.math3.linear
 					xNormSqr += c * c;
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a = (hK[k + 1] > 0) ? -org.apache.commons.math3.util.FastMath.sqrt(xNormSqr) : org.apache.commons.math3.util.FastMath.sqrt(xNormSqr);
+//ORIGINAL LINE: final double a = (hK[k + 1] > 0) ? -mathlib.util.FastMath.sqrt(xNormSqr) : mathlib.util.FastMath.sqrt(xNormSqr);
 				double a = (hK[k + 1] > 0) ? - FastMath.sqrt(xNormSqr) : FastMath.sqrt(xNormSqr);
 				secondary[k] = a;
 				if (a != 0.0)

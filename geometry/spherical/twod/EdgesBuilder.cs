@@ -16,19 +16,19 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.twod
+namespace mathlib.geometry.spherical.twod
 {
 
 
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Vector3D = org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using org.apache.commons.math3.geometry.partitioning;
-	using Arc = org.apache.commons.math3.geometry.spherical.oned.Arc;
-	using ArcsSet = org.apache.commons.math3.geometry.spherical.oned.ArcsSet;
-	using S1Point = org.apache.commons.math3.geometry.spherical.oned.S1Point;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Vector3D = mathlib.geometry.euclidean.threed.Vector3D;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using mathlib.geometry.partitioning;
+	using Arc = mathlib.geometry.spherical.oned.Arc;
+	using ArcsSet = mathlib.geometry.spherical.oned.ArcsSet;
+	using S1Point = mathlib.geometry.spherical.oned.S1Point;
 
 	/// <summary>
 	/// Visitor building edges.
@@ -59,7 +59,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="root"> tree root </param>
 		/// <param name="tolerance"> below which points are consider to be identical </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public EdgesBuilder(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> root, final double tolerance)
+//ORIGINAL LINE: public EdgesBuilder(final mathlib.geometry.partitioning.BSPTree<Sphere2D> root, final double tolerance)
 		public EdgesBuilder(BSPTree<Sphere2D> root, double tolerance)
 		{
 			this.root = root;
@@ -71,21 +71,21 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node)
-		public virtual org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Sphere2D> node)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(final mathlib.geometry.partitioning.BSPTree<Sphere2D> node)
+		public virtual mathlib.geometry.partitioning.BSPTreeVisitor_Order visitOrder(BSPTree<Sphere2D> node)
 		{
-			return org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
+			return mathlib.geometry.partitioning.BSPTreeVisitor_Order.MINUS_SUB_PLUS;
 		}
 
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitInternalNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node)
+//ORIGINAL LINE: public void visitInternalNode(final mathlib.geometry.partitioning.BSPTree<Sphere2D> node)
 		public virtual void visitInternalNode(BSPTree<Sphere2D> node)
 		{
 			nodeToEdgesList[node] = new List<Edge>();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") final org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Sphere2D> attribute = (org.apache.commons.math3.geometry.partitioning.BoundaryAttribute<Sphere2D>) node.getAttribute();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") final mathlib.geometry.partitioning.BoundaryAttribute<Sphere2D> attribute = (mathlib.geometry.partitioning.BoundaryAttribute<Sphere2D>) node.getAttribute();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			BoundaryAttribute<Sphere2D> attribute = (BoundaryAttribute<Sphere2D>) node.Attribute;
 			if (attribute.PlusOutside != null)
@@ -101,7 +101,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void visitLeafNode(final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node)
+//ORIGINAL LINE: public void visitLeafNode(final mathlib.geometry.partitioning.BSPTree<Sphere2D> node)
 		public virtual void visitLeafNode(BSPTree<Sphere2D> node)
 		{
 		}
@@ -112,22 +112,22 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <param name="reversed"> if true, the facet has the inside on its plus side </param>
 		/// <param name="node"> node to which the edge belongs </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void addContribution(final SubCircle sub, final boolean reversed, final org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D> node)
+//ORIGINAL LINE: private void addContribution(final SubCircle sub, final boolean reversed, final mathlib.geometry.partitioning.BSPTree<Sphere2D> node)
 		private void addContribution(SubCircle sub, bool reversed, BSPTree<Sphere2D> node)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Circle circle = (Circle) sub.getHyperplane();
 			Circle circle = (Circle) sub.Hyperplane;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.spherical.oned.Arc> arcs = ((org.apache.commons.math3.geometry.spherical.oned.ArcsSet) sub.getRemainingRegion()).asList();
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.spherical.oned.Arc> arcs = ((mathlib.geometry.spherical.oned.ArcsSet) sub.getRemainingRegion()).asList();
 			IList<Arc> arcs = ((ArcsSet) sub.RemainingRegion).asList();
 			foreach (Arc a in arcs)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Vertex start = new Vertex((S2Point) circle.toSpace(new org.apache.commons.math3.geometry.spherical.oned.S1Point(a.getInf())));
+//ORIGINAL LINE: final Vertex start = new Vertex((S2Point) circle.toSpace(new mathlib.geometry.spherical.oned.S1Point(a.getInf())));
 				Vertex start = new Vertex((S2Point) circle.toSpace(new S1Point(a.Inf)));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Vertex end = new Vertex((S2Point) circle.toSpace(new org.apache.commons.math3.geometry.spherical.oned.S1Point(a.getSup())));
+//ORIGINAL LINE: final Vertex end = new Vertex((S2Point) circle.toSpace(new mathlib.geometry.spherical.oned.S1Point(a.getSup())));
 				Vertex end = new Vertex((S2Point) circle.toSpace(new S1Point(a.Sup)));
 				start.bindWith(circle);
 				end.bindWith(circle);
@@ -154,7 +154,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// have not been connected yet) </returns>
 		/// <exception cref="MathIllegalStateException"> if there is not a single other edge </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private Edge getFollowingEdge(final Edge previous) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: private Edge getFollowingEdge(final Edge previous) throws mathlib.exception.MathIllegalStateException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private Edge getFollowingEdge(Edge previous)
 		{
@@ -164,7 +164,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 //ORIGINAL LINE: final S2Point point = previous.getEnd().getLocation();
 			S2Point point = previous.End.Location;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.geometry.partitioning.BSPTree<Sphere2D>> candidates = root.getCloseCuts(point, tolerance);
+//ORIGINAL LINE: final java.util.List<mathlib.geometry.partitioning.BSPTree<Sphere2D>> candidates = root.getCloseCuts(point, tolerance);
 			IList<BSPTree<Sphere2D>> candidates = root.getCloseCuts(point, tolerance);
 
 			// the following edge we are looking for must start from one of the candidates nodes
@@ -177,10 +177,10 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 					if (edge != previous && edge.Start.Incoming == null)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Vector3D edgeStart = edge.getStart().getLocation().getVector();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Vector3D edgeStart = edge.getStart().getLocation().getVector();
 						Vector3D edgeStart = edge.Start.Location.Vector;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double gap = org.apache.commons.math3.geometry.euclidean.threed.Vector3D.angle(point.getVector(), edgeStart);
+//ORIGINAL LINE: final double gap = mathlib.geometry.euclidean.threed.Vector3D.angle(point.getVector(), edgeStart);
 						double gap = Vector3D.angle(point.Vector, edgeStart);
 						if (gap <= closest)
 						{
@@ -194,7 +194,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 			if (following == null)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.geometry.euclidean.threed.Vector3D previousStart = previous.getStart().getLocation().getVector();
+//ORIGINAL LINE: final mathlib.geometry.euclidean.threed.Vector3D previousStart = previous.getStart().getLocation().getVector();
 				Vector3D previousStart = previous.Start.Location.Vector;
 				if (Vector3D.angle(point.Vector, previousStart) <= tolerance)
 				{
@@ -216,7 +216,7 @@ namespace org.apache.commons.math3.geometry.spherical.twod
 		/// <returns> boundary edges </returns>
 		/// <exception cref="MathIllegalStateException"> if there is not a single other edge </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public java.util.List<Edge> getEdges() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public java.util.List<Edge> getEdges() throws mathlib.exception.MathIllegalStateException
 		public virtual IList<Edge> Edges
 		{
 			get

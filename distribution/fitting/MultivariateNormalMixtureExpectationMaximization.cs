@@ -17,23 +17,23 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution.fitting
+namespace mathlib.distribution.fitting
 {
 
 
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using SingularMatrixException = org.apache.commons.math3.linear.SingularMatrixException;
-	using Covariance = org.apache.commons.math3.stat.correlation.Covariance;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using org.apache.commons.math3.util;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using SingularMatrixException = mathlib.linear.SingularMatrixException;
+	using Covariance = mathlib.stat.correlation.Covariance;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using mathlib.util;
 
 	/// <summary>
 	/// Expectation-Maximization</a> algorithm for fitting the parameters of
@@ -84,7 +84,7 @@ namespace org.apache.commons.math3.distribution.fitting
 		/// <exception cref="NumberIsTooSmallException"> if the number of columns in the data is
 		///             less than 2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MultivariateNormalMixtureExpectationMaximization(double[][] data) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public MultivariateNormalMixtureExpectationMaximization(double[][] data) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException
 		public MultivariateNormalMixtureExpectationMaximization(double[][] data)
 		{
 			if (data.Length < 1)
@@ -133,7 +133,7 @@ namespace org.apache.commons.math3.distribution.fitting
 		/// <exception cref="DimensionMismatchException"> if initialMixture mean vector and data
 		///             number of columns are not equal </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void fit(final org.apache.commons.math3.distribution.MixtureMultivariateNormalDistribution initialMixture, final int maxIterations, final double threshold) throws org.apache.commons.math3.linear.SingularMatrixException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void fit(final mathlib.distribution.MixtureMultivariateNormalDistribution initialMixture, final int maxIterations, final double threshold) throws mathlib.linear.SingularMatrixException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void fit(MixtureMultivariateNormalDistribution initialMixture, int maxIterations, double threshold)
 		{
@@ -184,7 +184,7 @@ namespace org.apache.commons.math3.distribution.fitting
 
 				// Mixture components
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.util.Pair<Double, org.apache.commons.math3.distribution.MultivariateNormalDistribution>> components = fittedModel.getComponents();
+//ORIGINAL LINE: final java.util.List<mathlib.util.Pair<Double, mathlib.distribution.MultivariateNormalDistribution>> components = fittedModel.getComponents();
 				IList<Pair<double?, MultivariateNormalDistribution>> components = fittedModel.Components;
 
 				// Weight and distribution of each component
@@ -193,7 +193,7 @@ namespace org.apache.commons.math3.distribution.fitting
 				double[] weights = new double[k];
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.MultivariateNormalDistribution[] mvns = new org.apache.commons.math3.distribution.MultivariateNormalDistribution[k];
+//ORIGINAL LINE: final mathlib.distribution.MultivariateNormalDistribution[] mvns = new mathlib.distribution.MultivariateNormalDistribution[k];
 				MultivariateNormalDistribution[] mvns = new MultivariateNormalDistribution[k];
 
 				for (int j = 0; j < k; j++)
@@ -267,7 +267,7 @@ namespace org.apache.commons.math3.distribution.fitting
 
 				// Compute new covariance matrices
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix[] newCovMats = new org.apache.commons.math3.linear.RealMatrix[k];
+//ORIGINAL LINE: final mathlib.linear.RealMatrix[] newCovMats = new mathlib.linear.RealMatrix[k];
 				RealMatrix[] newCovMats = new RealMatrix[k];
 				for (int j = 0; j < k; j++)
 				{
@@ -278,10 +278,10 @@ namespace org.apache.commons.math3.distribution.fitting
 					for (int j = 0; j < k; j++)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix vec = new org.apache.commons.math3.linear.Array2DRowRealMatrix(org.apache.commons.math3.util.MathArrays.ebeSubtract(data[i], newMeans[j]));
+//ORIGINAL LINE: final mathlib.linear.RealMatrix vec = new mathlib.linear.Array2DRowRealMatrix(mathlib.util.MathArrays.ebeSubtract(data[i], newMeans[j]));
 						RealMatrix vec = new Array2DRowRealMatrix(MathArrays.ebeSubtract(data[i], newMeans[j]));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix dataCov = vec.multiply(vec.transpose()).scalarMultiply(gamma[i][j]);
+//ORIGINAL LINE: final mathlib.linear.RealMatrix dataCov = vec.multiply(vec.transpose()).scalarMultiply(gamma[i][j]);
 						RealMatrix dataCov = vec.multiply(vec.transpose()).scalarMultiply(gamma[i][j]);
 						newCovMats[j] = newCovMats[j].add(dataCov);
 					}
@@ -327,7 +327,7 @@ namespace org.apache.commons.math3.distribution.fitting
 		/// <exception cref="NotStrictlyPositiveException"> if numComponents is less than one or
 		///             threshold is less than Double.MIN_VALUE </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void fit(org.apache.commons.math3.distribution.MixtureMultivariateNormalDistribution initialMixture) throws org.apache.commons.math3.linear.SingularMatrixException, org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public void fit(mathlib.distribution.MixtureMultivariateNormalDistribution initialMixture) throws mathlib.linear.SingularMatrixException, mathlib.exception.NotStrictlyPositiveException
 		public virtual void fit(MixtureMultivariateNormalDistribution initialMixture)
 		{
 			fit(initialMixture, DEFAULT_MAX_ITERATIONS, DEFAULT_THRESHOLD);
@@ -351,7 +351,7 @@ namespace org.apache.commons.math3.distribution.fitting
 		/// <exception cref="DimensionMismatchException"> if rows of data have different numbers
 		///             of columns </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static org.apache.commons.math3.distribution.MixtureMultivariateNormalDistribution estimate(final double[][] data, final int numComponents) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public static mathlib.distribution.MixtureMultivariateNormalDistribution estimate(final double[][] data, final int numComponents) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static MixtureMultivariateNormalDistribution estimate(double[][] data, int numComponents)
 		{
@@ -392,7 +392,7 @@ namespace org.apache.commons.math3.distribution.fitting
 
 			// components of mixture model to be created
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.util.Pair<Double, org.apache.commons.math3.distribution.MultivariateNormalDistribution>> components = new java.util.ArrayList<org.apache.commons.math3.util.Pair<Double, org.apache.commons.math3.distribution.MultivariateNormalDistribution>>(numComponents);
+//ORIGINAL LINE: final java.util.List<mathlib.util.Pair<Double, mathlib.distribution.MultivariateNormalDistribution>> components = new java.util.ArrayList<mathlib.util.Pair<Double, mathlib.distribution.MultivariateNormalDistribution>>(numComponents);
 			IList<Pair<double?, MultivariateNormalDistribution>> components = new List<Pair<double?, MultivariateNormalDistribution>>(numComponents);
 
 			// create a component based on data in each bin
@@ -442,10 +442,10 @@ namespace org.apache.commons.math3.distribution.fitting
 
 				// covariance matrix for this bin
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[][] covMat = new org.apache.commons.math3.stat.correlation.Covariance(binData).getCovarianceMatrix().getData();
+//ORIGINAL LINE: final double[][] covMat = new mathlib.stat.correlation.Covariance(binData).getCovarianceMatrix().getData();
 				double[][] covMat = (new Covariance(binData)).CovarianceMatrix.Data;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.MultivariateNormalDistribution mvn = new org.apache.commons.math3.distribution.MultivariateNormalDistribution(columnMeans, covMat);
+//ORIGINAL LINE: final mathlib.distribution.MultivariateNormalDistribution mvn = new mathlib.distribution.MultivariateNormalDistribution(columnMeans, covMat);
 				MultivariateNormalDistribution mvn = new MultivariateNormalDistribution(columnMeans, covMat);
 
 				components.Add(new Pair<double?, MultivariateNormalDistribution>(weight, mvn));

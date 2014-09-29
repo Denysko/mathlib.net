@@ -16,13 +16,13 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.polynomials
+namespace mathlib.analysis.polynomials
 {
 
 
-	using BigFraction = org.apache.commons.math3.fraction.BigFraction;
-	using CombinatoricsUtils = org.apache.commons.math3.util.CombinatoricsUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using BigFraction = mathlib.fraction.BigFraction;
+	using CombinatoricsUtils = mathlib.util.CombinatoricsUtils;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// A collection of static methods that operate on or return polynomials.
@@ -267,7 +267,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 
 				// allocate a new list for v, w
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.fraction.BigFraction> list = new java.util.ArrayList<org.apache.commons.math3.fraction.BigFraction>();
+//ORIGINAL LINE: final java.util.List<mathlib.fraction.BigFraction> list = new java.util.ArrayList<mathlib.fraction.BigFraction>();
 				IList<BigFraction> list = new List<BigFraction>();
 				JACOBI_COEFFICIENTS[key] = list;
 
@@ -452,12 +452,12 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <param name="generator"> recurrence coefficients generator </param>
 		/// <returns> coefficients array </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static PolynomialFunction buildPolynomial(final int degree, final java.util.List<org.apache.commons.math3.fraction.BigFraction> coefficients, final RecurrenceCoefficientsGenerator generator)
+//ORIGINAL LINE: private static PolynomialFunction buildPolynomial(final int degree, final java.util.List<mathlib.fraction.BigFraction> coefficients, final RecurrenceCoefficientsGenerator generator)
 		private static PolynomialFunction buildPolynomial(int degree, IList<BigFraction> coefficients, RecurrenceCoefficientsGenerator generator)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int maxDegree = (int) org.apache.commons.math3.util.FastMath.floor(org.apache.commons.math3.util.FastMath.sqrt(2 * coefficients.size())) - 1;
+//ORIGINAL LINE: final int maxDegree = (int) mathlib.util.FastMath.floor(mathlib.util.FastMath.sqrt(2 * coefficients.size())) - 1;
 			int maxDegree = (int) FastMath.floor(FastMath.sqrt(2 * coefficients.Count)) - 1;
 			lock (typeof(PolynomialsUtils))
 			{
@@ -499,7 +499,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <param name="generator"> recurrence coefficients generator </param>
 		/// <param name="coefficients"> list where the computed coefficients should be appended </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static void computeUpToDegree(final int degree, final int maxDegree, final RecurrenceCoefficientsGenerator generator, final java.util.List<org.apache.commons.math3.fraction.BigFraction> coefficients)
+//ORIGINAL LINE: private static void computeUpToDegree(final int degree, final int maxDegree, final RecurrenceCoefficientsGenerator generator, final java.util.List<mathlib.fraction.BigFraction> coefficients)
 		private static void computeUpToDegree(int degree, int maxDegree, RecurrenceCoefficientsGenerator generator, IList<BigFraction> coefficients)
 		{
 
@@ -524,7 +524,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 				for (int i = 1; i < k; ++i)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction ckPrev = ck;
+//ORIGINAL LINE: final mathlib.fraction.BigFraction ckPrev = ck;
 					BigFraction ckPrev = ck;
 					ck = coefficients[startK + i];
 					ckm1 = coefficients[startKm1 + i];
@@ -533,7 +533,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 
 				// degree k coefficient
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fraction.BigFraction ckPrev = ck;
+//ORIGINAL LINE: final mathlib.fraction.BigFraction ckPrev = ck;
 				BigFraction ckPrev = ck;
 				ck = coefficients[startK + k];
 				coefficients.Add(ck.multiply(ai[0]).add(ckPrev.multiply(ai[1])));

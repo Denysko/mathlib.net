@@ -17,21 +17,21 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
 
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using NotANumberException = org.apache.commons.math3.exception.NotANumberException;
-	using NotFiniteNumberException = org.apache.commons.math3.exception.NotFiniteNumberException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using org.apache.commons.math3.util;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using NotANumberException = mathlib.exception.NotANumberException;
+	using NotFiniteNumberException = mathlib.exception.NotFiniteNumberException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
+	using MathArrays = mathlib.util.MathArrays;
+	using mathlib.util;
 
 	/// <summary>
 	/// <p>A generic implementation of a
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotANumberException"> if any of the probabilities are NaN. </exception>
 		/// <exception cref="MathArithmeticException"> all of the probabilities are 0. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public EnumeratedDistribution(final java.util.List<org.apache.commons.math3.util.Pair<T, Double>> pmf) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public EnumeratedDistribution(final java.util.List<mathlib.util.Pair<T, Double>> pmf) throws mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public EnumeratedDistribution(IList<Pair<T, double?>> pmf) : this(new Well19937c(), pmf)
 		{
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotANumberException"> if any of the probabilities are NaN. </exception>
 		/// <exception cref="MathArithmeticException"> all of the probabilities are 0. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public EnumeratedDistribution(final org.apache.commons.math3.random.RandomGenerator rng, final java.util.List<org.apache.commons.math3.util.Pair<T, Double>> pmf) throws org.apache.commons.math3.exception.NotPositiveException, org.apache.commons.math3.exception.MathArithmeticException, org.apache.commons.math3.exception.NotFiniteNumberException, org.apache.commons.math3.exception.NotANumberException
+//ORIGINAL LINE: public EnumeratedDistribution(final mathlib.random.RandomGenerator rng, final java.util.List<mathlib.util.Pair<T, Double>> pmf) throws mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException, mathlib.exception.NotFiniteNumberException, mathlib.exception.NotANumberException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public EnumeratedDistribution(RandomGenerator rng, IList<Pair<T, double?>> pmf)
 		{
@@ -117,7 +117,7 @@ namespace org.apache.commons.math3.distribution
 			for (int i = 0; i < pmf.Count; i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Pair<T, Double> sample = pmf.get(i);
+//ORIGINAL LINE: final mathlib.util.Pair<T, Double> sample = pmf.get(i);
 				Pair<T, double?> sample = pmf[i];
 				singletons.Add(sample.Key);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -192,7 +192,7 @@ namespace org.apache.commons.math3.distribution
 			get
 			{
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final java.util.List<org.apache.commons.math3.util.Pair<T, Double>> samples = new java.util.ArrayList<org.apache.commons.math3.util.Pair<T, Double>>(probabilities.length);
+	//ORIGINAL LINE: final java.util.List<mathlib.util.Pair<T, Double>> samples = new java.util.ArrayList<mathlib.util.Pair<T, Double>>(probabilities.length);
 				IList<Pair<T, double?>> samples = new List<Pair<T, double?>>(probabilities.Length);
     
 				for (int i = 0; i < probabilities.Length; i++)
@@ -238,7 +238,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sampleSize} is not
 		/// positive. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Object[] sample(int sampleSize) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public Object[] sample(int sampleSize) throws mathlib.exception.NotStrictlyPositiveException
 		public virtual object[] sample(int sampleSize)
 		{
 			if (sampleSize <= 0)
@@ -272,7 +272,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code sampleSize} is not positive. </exception>
 		/// <exception cref="NullArgumentException"> if {@code array} is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public T[] sample(int sampleSize, final T[] array) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public T[] sample(int sampleSize, final T[] array) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual T[] sample(int sampleSize, T[] array)
 		{

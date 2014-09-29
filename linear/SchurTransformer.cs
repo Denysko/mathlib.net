@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Class transforming a general real matrix to Schur form.
@@ -208,12 +208,12 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final double x = matrixT[iu][iu - 1];
 						double x = matrixT[iu][iu - 1];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double s = org.apache.commons.math3.util.FastMath.abs(x) + org.apache.commons.math3.util.FastMath.abs(z);
+//ORIGINAL LINE: final double s = mathlib.util.FastMath.abs(x) + mathlib.util.FastMath.abs(z);
 						double s = FastMath.abs(x) + FastMath.abs(z);
 						p = x / s;
 						q = z / s;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double r = org.apache.commons.math3.util.FastMath.sqrt(p * p + q * q);
+//ORIGINAL LINE: final double r = mathlib.util.FastMath.sqrt(p * p + q * q);
 						double r = FastMath.sqrt(p * p + q * q);
 						p /= r;
 						q /= r;
@@ -346,7 +346,7 @@ namespace org.apache.commons.math3.linear
 					matrixT[i][i] -= shift.x;
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double s = org.apache.commons.math3.util.FastMath.abs(matrixT[idx][idx - 1]) + org.apache.commons.math3.util.FastMath.abs(matrixT[idx - 1][idx - 2]);
+//ORIGINAL LINE: final double s = mathlib.util.FastMath.abs(matrixT[idx][idx - 1]) + mathlib.util.FastMath.abs(matrixT[idx - 1][idx - 2]);
 				double s = FastMath.abs(matrixT[idx][idx - 1]) + FastMath.abs(matrixT[idx - 1][idx - 2]);
 				shift.x = 0.75 * s;
 				shift.y = 0.75 * s;
@@ -409,10 +409,10 @@ namespace org.apache.commons.math3.linear
 				}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double lhs = org.apache.commons.math3.util.FastMath.abs(matrixT[im][im - 1]) * (org.apache.commons.math3.util.FastMath.abs(hVec[1]) + org.apache.commons.math3.util.FastMath.abs(hVec[2]));
+//ORIGINAL LINE: final double lhs = mathlib.util.FastMath.abs(matrixT[im][im - 1]) * (mathlib.util.FastMath.abs(hVec[1]) + mathlib.util.FastMath.abs(hVec[2]));
 				double lhs = FastMath.abs(matrixT[im][im - 1]) * (FastMath.abs(hVec[1]) + FastMath.abs(hVec[2]));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double rhs = org.apache.commons.math3.util.FastMath.abs(hVec[0]) * (org.apache.commons.math3.util.FastMath.abs(matrixT[im - 1][im - 1]) + org.apache.commons.math3.util.FastMath.abs(z) + org.apache.commons.math3.util.FastMath.abs(matrixT[im + 1][im + 1]));
+//ORIGINAL LINE: final double rhs = mathlib.util.FastMath.abs(hVec[0]) * (mathlib.util.FastMath.abs(matrixT[im - 1][im - 1]) + mathlib.util.FastMath.abs(z) + mathlib.util.FastMath.abs(matrixT[im + 1][im + 1]));
 				double rhs = FastMath.abs(hVec[0]) * (FastMath.abs(matrixT[im - 1][im - 1]) + FastMath.abs(z) + FastMath.abs(matrixT[im + 1][im + 1]));
 
 				if (lhs < epsilon * rhs)

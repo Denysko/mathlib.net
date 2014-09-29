@@ -17,20 +17,20 @@ using System.Diagnostics;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.transform
+namespace mathlib.transform
 {
 
 
-	using FunctionUtils = org.apache.commons.math3.analysis.FunctionUtils;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using Complex = org.apache.commons.math3.complex.Complex;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArithmeticUtils = org.apache.commons.math3.util.ArithmeticUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using FunctionUtils = mathlib.analysis.FunctionUtils;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using Complex = mathlib.complex.Complex;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArithmeticUtils = mathlib.util.ArithmeticUtils;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Implements the Fast Fourier Transform for transformation of one-dimensional
@@ -159,7 +159,7 @@ namespace org.apache.commons.math3.transform
 
 			switch (normalization)
 			{
-				case org.apache.commons.math3.transform.DftNormalization.STANDARD:
+				case mathlib.transform.DftNormalization.STANDARD:
 					if (type == TransformType.INVERSE)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -172,9 +172,9 @@ namespace org.apache.commons.math3.transform
 						}
 					}
 					break;
-				case org.apache.commons.math3.transform.DftNormalization.UNITARY:
+				case mathlib.transform.DftNormalization.UNITARY:
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double scaleFactor = 1.0 / org.apache.commons.math3.util.FastMath.sqrt(n);
+//ORIGINAL LINE: final double scaleFactor = 1.0 / mathlib.util.FastMath.sqrt(n);
 					double scaleFactor = 1.0 / FastMath.sqrt(n);
 					for (int i = 0; i < n; i++)
 					{
@@ -436,11 +436,11 @@ namespace org.apache.commons.math3.transform
 		/// <returns> the complex transformed array </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex[] transform(final double[] f, final TransformType type)
+//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final double[] f, final TransformType type)
 		public virtual Complex[] transform(double[] f, TransformType type)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[][] dataRI = new double[][] { org.apache.commons.math3.util.MathArrays.copyOf(f, f.length), new double[f.length] };
+//ORIGINAL LINE: final double[][] dataRI = new double[][] { mathlib.util.MathArrays.copyOf(f, f.length), new double[f.length] };
 			double[][] dataRI = new double[][] {MathArrays.copyOf(f, f.Length), new double[f.Length]};
 
 			transformInPlace(dataRI, normalization, type);
@@ -458,19 +458,19 @@ namespace org.apache.commons.math3.transform
 		/// <param name="n"> the number of sample points </param>
 		/// <param name="type"> the type of transform (forward, inverse) to be performed </param>
 		/// <returns> the complex transformed array </returns>
-		/// <exception cref="org.apache.commons.math3.exception.NumberIsTooLargeException">
+		/// <exception cref="mathlib.exception.NumberIsTooLargeException">
 		///   if the lower bound is greater than, or equal to the upper bound </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		///   if the number of sample points {@code n} is negative </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the number of sample points
 		///   {@code n} is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex[] transform(final org.apache.commons.math3.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
+//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final mathlib.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
 		public virtual Complex[] transform(UnivariateFunction f, double min, double max, int n, TransformType type)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] data = org.apache.commons.math3.analysis.FunctionUtils.sample(f, min, max, n);
+//ORIGINAL LINE: final double[] data = mathlib.analysis.FunctionUtils.sample(f, min, max, n);
 			double[] data = FunctionUtils.sample(f, min, max, n);
 			return transform(data, type);
 		}
@@ -483,7 +483,7 @@ namespace org.apache.commons.math3.transform
 		/// <returns> the complex transformed array </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex[] transform(final org.apache.commons.math3.complex.Complex[] f, final TransformType type)
+//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final mathlib.complex.Complex[] f, final TransformType type)
 		public virtual Complex[] transform(Complex[] f, TransformType type)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -641,7 +641,7 @@ namespace org.apache.commons.math3.transform
 			/// <returns> matrix element </returns>
 			/// <exception cref="DimensionMismatchException"> if dimensions do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex get(int... vector) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public mathlib.complex.Complex get(int... vector) throws mathlib.exception.DimensionMismatchException
 			public virtual Complex get(params int[] vector)
 			{
 
@@ -675,7 +675,7 @@ namespace org.apache.commons.math3.transform
 			/// <returns> the previous value </returns>
 			/// <exception cref="DimensionMismatchException"> if dimensions do not match </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex set(org.apache.commons.math3.complex.Complex magnitude, int... vector) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public mathlib.complex.Complex set(mathlib.complex.Complex magnitude, int... vector) throws mathlib.exception.DimensionMismatchException
 			public virtual Complex set(Complex magnitude, params int[] vector)
 			{
 

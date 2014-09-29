@@ -16,11 +16,11 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Computes a statistic related to the Second Central Moment.  Specifically,
@@ -73,7 +73,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code SecondMoment} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SecondMoment(SecondMoment original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public SecondMoment(SecondMoment original) throws mathlib.exception.NullArgumentException
 		public SecondMoment(SecondMoment original) : base(original)
 		{
 			this.m2 = original.m2;
@@ -133,7 +133,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> SecondMoment to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(SecondMoment source, SecondMoment dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(SecondMoment source, SecondMoment dest) throws mathlib.exception.NullArgumentException
 		public static void copy(SecondMoment source, SecondMoment dest)
 		{
 			MathUtils.checkNotNull(source);

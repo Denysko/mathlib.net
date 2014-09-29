@@ -94,7 +94,7 @@ namespace mathlib.analysis.integration
         ///       achieved due to large values or short mantissa length. If this
         ///       should be the primary criterion for convergence rather then a
         ///       safety measure, set the absolute accuracy to a ridiculously small value,
-        ///       like <seealso cref="org.apache.commons.math3.util.Precision#SAFE_MIN Precision.SAFE_MIN"/>.</li>
+        ///       like <seealso cref="mathlib.util.Precision#SAFE_MIN Precision.SAFE_MIN"/>.</li>
         ///   <li>absolute accuracy:
         ///       The default is usually chosen so that results in the interval
         ///       -10..-0.1 and +0.1..+10 can be found with a reasonable accuracy. If the
@@ -119,7 +119,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="NumberIsTooSmallException"> if maximal number of iterations
         /// is lesser than or equal to the minimal number of iterations </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected BaseAbstractUnivariateIntegrator(final double relativeAccuracy, final double absoluteAccuracy, final int minimalIterationCount, final int maximalIterationCount) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException
+        //ORIGINAL LINE: protected BaseAbstractUnivariateIntegrator(final double relativeAccuracy, final double absoluteAccuracy, final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         protected internal BaseAbstractUnivariateIntegrator(double relativeAccuracy, double absoluteAccuracy, int minimalIterationCount, int maximalIterationCount)
         {
@@ -166,7 +166,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="NumberIsTooSmallException"> if maximal number of iterations
         /// is lesser than or equal to the minimal number of iterations </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected BaseAbstractUnivariateIntegrator(final int minimalIterationCount, final int maximalIterationCount) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NumberIsTooSmallException
+        //ORIGINAL LINE: protected BaseAbstractUnivariateIntegrator(final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         protected internal BaseAbstractUnivariateIntegrator(int minimalIterationCount, int maximalIterationCount)
             : this(DEFAULT_RELATIVE_ACCURACY, DEFAULT_ABSOLUTE_ACCURACY, minimalIterationCount, maximalIterationCount)
@@ -258,7 +258,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="TooManyEvaluationsException"> if the maximal number of function
         /// evaluations is exceeded. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected double computeObjectiveValue(final double point) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+        //ORIGINAL LINE: protected double computeObjectiveValue(final double point) throws mathlib.exception.TooManyEvaluationsException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         protected internal virtual double computeObjectiveValue(double point)
         {
@@ -285,7 +285,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="NullArgumentException"> if {@code f} is {@code null}. </exception>
         /// <exception cref="MathIllegalArgumentException"> if {@code min >= max}. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void setup(final int maxEval, final org.apache.commons.math3.analysis.UnivariateFunction f, final double lower, final double upper) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.MathIllegalArgumentException
+        //ORIGINAL LINE: protected void setup(final int maxEval, final mathlib.analysis.UnivariateFunction f, final double lower, final double upper) throws mathlib.exception.NullArgumentException, mathlib.exception.MathIllegalArgumentException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         protected internal virtual void setup(int maxEval, UnivariateFunction f, double lower, double upper)
         {
@@ -307,7 +307,7 @@ namespace mathlib.analysis.integration
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public double integrate(final int maxEval, final org.apache.commons.math3.analysis.UnivariateFunction f, final double lower, final double upper) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.MathIllegalArgumentException, org.apache.commons.math3.exception.NullArgumentException
+        //ORIGINAL LINE: public double integrate(final int maxEval, final mathlib.analysis.UnivariateFunction f, final double lower, final double upper) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.MaxCountExceededException, mathlib.exception.MathIllegalArgumentException, mathlib.exception.NullArgumentException
         //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public virtual double integrate(int maxEval, UnivariateFunction f, double lower, double upper)
         {
@@ -330,7 +330,7 @@ namespace mathlib.analysis.integration
         /// <exception cref="MaxCountExceededException"> if the maximum iteration count is exceeded
         /// or the integrator detects convergence problems otherwise </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected abstract double doIntegrate() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.MaxCountExceededException;
+        //ORIGINAL LINE: protected abstract double doIntegrate() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.MaxCountExceededException;
         protected internal abstract double doIntegrate();
 
     }

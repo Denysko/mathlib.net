@@ -19,7 +19,7 @@
 /// Miscellaneous utilities.
 /// </summary>
 
-namespace org.apache.commons.math3.ml.neuralnet.sofm.util
+namespace mathlib.ml.neuralnet.sofm.util
 {
 
 }

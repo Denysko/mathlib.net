@@ -41,7 +41,7 @@
 ///        </code>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
 }

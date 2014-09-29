@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.threed
+namespace mathlib.geometry.euclidean.threed
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathArithmeticException = org.apache.commons.math3.exception.MathArithmeticException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.geometry;
-	using org.apache.commons.math3.geometry;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathArithmeticException = mathlib.exception.MathArithmeticException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.geometry;
+	using mathlib.geometry;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class implements vectors in a three-dimensional space.
@@ -121,7 +121,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <exception cref="DimensionMismatchException"> if array does not have 3 elements </exception>
 		/// <seealso cref= #toArray() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Vector3D(double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Vector3D(double[] v) throws mathlib.exception.DimensionMismatchException
 		public Vector3D(double[] v)
 		{
 			if (v.Length != 3)
@@ -347,7 +347,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D add(final org.apache.commons.math3.geometry.Vector<Euclidean3D> v)
+//ORIGINAL LINE: public Vector3D add(final mathlib.geometry.Vector<Euclidean3D> v)
 		public virtual Vector3D add(Vector<Euclidean3D> v)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -359,7 +359,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D add(double factor, final org.apache.commons.math3.geometry.Vector<Euclidean3D> v)
+//ORIGINAL LINE: public Vector3D add(double factor, final mathlib.geometry.Vector<Euclidean3D> v)
 		public virtual Vector3D add(double factor, Vector<Euclidean3D> v)
 		{
 			return new Vector3D(1, this, factor, (Vector3D) v);
@@ -368,7 +368,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D subtract(final org.apache.commons.math3.geometry.Vector<Euclidean3D> v)
+//ORIGINAL LINE: public Vector3D subtract(final mathlib.geometry.Vector<Euclidean3D> v)
 		public virtual Vector3D subtract(Vector<Euclidean3D> v)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -380,7 +380,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D subtract(final double factor, final org.apache.commons.math3.geometry.Vector<Euclidean3D> v)
+//ORIGINAL LINE: public Vector3D subtract(final double factor, final mathlib.geometry.Vector<Euclidean3D> v)
 		public virtual Vector3D subtract(double factor, Vector<Euclidean3D> v)
 		{
 			return new Vector3D(1, this, -factor, (Vector3D) v);
@@ -389,7 +389,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Vector3D normalize() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Vector3D normalize() throws mathlib.exception.MathArithmeticException
 		public virtual Vector3D normalize()
 		{
 			double s = Norm;
@@ -416,7 +416,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> a new normalized vector orthogonal to the instance </returns>
 		/// <exception cref="MathArithmeticException"> if the norm of the instance is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Vector3D orthogonal() throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public Vector3D orthogonal() throws mathlib.exception.MathArithmeticException
 		public virtual Vector3D orthogonal()
 		{
 
@@ -453,7 +453,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <returns> angular separation between v1 and v2 </returns>
 		/// <exception cref="MathArithmeticException"> if either vector has a null norm </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double angle(Vector3D v1, Vector3D v2) throws org.apache.commons.math3.exception.MathArithmeticException
+//ORIGINAL LINE: public static double angle(Vector3D v1, Vector3D v2) throws mathlib.exception.MathArithmeticException
 		public static double angle(Vector3D v1, Vector3D v2)
 		{
 
@@ -580,7 +580,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// </p> </summary>
 		/// <seealso cref= MathArrays#linearCombination(double, double, double, double, double, double) </seealso>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double dotProduct(final org.apache.commons.math3.geometry.Vector<Euclidean3D> v)
+//ORIGINAL LINE: public double dotProduct(final mathlib.geometry.Vector<Euclidean3D> v)
 		public virtual double dotProduct(Vector<Euclidean3D> v)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -594,7 +594,7 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 		/// <param name="v"> other vector </param>
 		/// <returns> the cross product this ^ v as a new Vector3D </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public Vector3D crossProduct(final org.apache.commons.math3.geometry.Vector<Euclidean3D> v)
+//ORIGINAL LINE: public Vector3D crossProduct(final mathlib.geometry.Vector<Euclidean3D> v)
 		public virtual Vector3D crossProduct(Vector<Euclidean3D> v)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -611,13 +611,13 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final Vector3D v3 = (Vector3D) v;
 			Vector3D v3 = (Vector3D) v;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dx = org.apache.commons.math3.util.FastMath.abs(v3.x - x);
+//ORIGINAL LINE: final double dx = mathlib.util.FastMath.abs(v3.x - x);
 			double dx = FastMath.abs(v3.x - x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dy = org.apache.commons.math3.util.FastMath.abs(v3.y - y);
+//ORIGINAL LINE: final double dy = mathlib.util.FastMath.abs(v3.y - y);
 			double dy = FastMath.abs(v3.y - y);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dz = org.apache.commons.math3.util.FastMath.abs(v3.z - z);
+//ORIGINAL LINE: final double dz = mathlib.util.FastMath.abs(v3.z - z);
 			double dz = FastMath.abs(v3.z - z);
 			return dx + dy + dz;
 		}
@@ -656,13 +656,13 @@ namespace org.apache.commons.math3.geometry.euclidean.threed
 //ORIGINAL LINE: final Vector3D v3 = (Vector3D) v;
 			Vector3D v3 = (Vector3D) v;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dx = org.apache.commons.math3.util.FastMath.abs(v3.x - x);
+//ORIGINAL LINE: final double dx = mathlib.util.FastMath.abs(v3.x - x);
 			double dx = FastMath.abs(v3.x - x);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dy = org.apache.commons.math3.util.FastMath.abs(v3.y - y);
+//ORIGINAL LINE: final double dy = mathlib.util.FastMath.abs(v3.y - y);
 			double dy = FastMath.abs(v3.y - y);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dz = org.apache.commons.math3.util.FastMath.abs(v3.z - z);
+//ORIGINAL LINE: final double dz = mathlib.util.FastMath.abs(v3.z - z);
 			double dz = FastMath.abs(v3.z - z);
 			return FastMath.max(FastMath.max(dx, dy), dz);
 		}

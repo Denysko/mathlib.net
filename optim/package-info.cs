@@ -18,52 +18,52 @@
 /// <summary>
 /// <p>
 ///  Generally, optimizers are algorithms that will either
-///  <seealso cref="org.apache.commons.math3.optim.nonlinear.scalar.GoalType#MINIMIZE minimize"/> or
-///  <seealso cref="org.apache.commons.math3.optim.nonlinear.scalar.GoalType#MAXIMIZE maximize"/>
+///  <seealso cref="mathlib.optim.nonlinear.scalar.GoalType#MINIMIZE minimize"/> or
+///  <seealso cref="mathlib.optim.nonlinear.scalar.GoalType#MAXIMIZE maximize"/>
 ///  a scalar function, called the
-///  {@link org.apache.commons.math3.optim.nonlinear.scalar.ObjectiveFunction <em>objective
+///  {@link mathlib.optim.nonlinear.scalar.ObjectiveFunction <em>objective
 ///  function</em>}.
 ///  <br/>
 ///  For some scalar objective functions the gradient can be computed (analytically
 ///  or numerically). Algorithms that use this knowledge are defined in the
-///  <seealso cref="org.apache.commons.math3.optim.nonlinear.scalar.gradient"/> package.
+///  <seealso cref="mathlib.optim.nonlinear.scalar.gradient"/> package.
 ///  The algorithms that do not need this additional information are located in
-///  the <seealso cref="org.apache.commons.math3.optim.nonlinear.scalar.noderiv"/> package.
+///  the <seealso cref="mathlib.optim.nonlinear.scalar.noderiv"/> package.
 /// </p>
 /// 
 /// <p>
 ///  Some problems are solved more efficiently by algorithms that, instead of an
 ///  objective function, need access to a
-///  {@link org.apache.commons.math3.optim.nonlinear.vector.ModelFunction
+///  {@link mathlib.optim.nonlinear.vector.ModelFunction
 ///  <em>model function</em>}: such a model predicts a set of values which the
 ///  algorithm tries to match with a set of given
-///  <seealso cref="org.apache.commons.math3.optim.nonlinear.vector.Target target values"/>.
+///  <seealso cref="mathlib.optim.nonlinear.vector.Target target values"/>.
 ///  Those algorithms are located in the
-///  <seealso cref="org.apache.commons.math3.optim.nonlinear.vector"/> package.
+///  <seealso cref="mathlib.optim.nonlinear.vector"/> package.
 ///  <br/>
 ///  Algorithms that also require the
-///  {@link org.apache.commons.math3.optim.nonlinear.vector.ModelFunctionJacobian
+///  {@link mathlib.optim.nonlinear.vector.ModelFunctionJacobian
 ///  Jacobian matrix of the model} are located in the
-///  <seealso cref="org.apache.commons.math3.optim.nonlinear.vector.jacobian"/> package.
+///  <seealso cref="mathlib.optim.nonlinear.vector.jacobian"/> package.
 ///  <br/>
-///  The {@link org.apache.commons.math3.optim.nonlinear.vector.jacobian.AbstractLeastSquaresOptimizer
+///  The {@link mathlib.optim.nonlinear.vector.jacobian.AbstractLeastSquaresOptimizer
 ///  non-linear least-squares optimizers} are a specialization of the the latter,
 ///  that minimize the distance (called <em>cost</em> or <em>&chi;<sup>2</sup></em>)
 ///  between model and observations.
 ///  <br/>
 ///  For cases where the Jacobian cannot be provided, a utility class will
-///  {@link org.apache.commons.math3.optim.nonlinear.scalar.LeastSquaresConverter
+///  {@link mathlib.optim.nonlinear.scalar.LeastSquaresConverter
 ///  convert} a (vector) model into a (scalar) objective function.
 /// </p>
 /// 
 /// <p>
 ///  This package provides common functionality for the optimization algorithms.
-///  Abstract classes (<seealso cref="org.apache.commons.math3.optim.BaseOptimizer"/> and
-///  <seealso cref="org.apache.commons.math3.optim.BaseMultivariateOptimizer"/>) contain
-///  boiler-plate code for storing {@link org.apache.commons.math3.optim.MaxEval
-///  evaluations} and <seealso cref="org.apache.commons.math3.optim.MaxIter iterations"/>
+///  Abstract classes (<seealso cref="mathlib.optim.BaseOptimizer"/> and
+///  <seealso cref="mathlib.optim.BaseMultivariateOptimizer"/>) contain
+///  boiler-plate code for storing {@link mathlib.optim.MaxEval
+///  evaluations} and <seealso cref="mathlib.optim.MaxIter iterations"/>
 ///  counters and a user-defined
-///  <seealso cref="org.apache.commons.math3.optim.ConvergenceChecker convergence checker"/>.
+///  <seealso cref="mathlib.optim.ConvergenceChecker convergence checker"/>.
 /// </p>
 /// 
 /// <p>
@@ -74,7 +74,7 @@
 ///  This could be useful to avoid being trapped in a local extremum.
 /// </p>
 /// </summary>
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
 }

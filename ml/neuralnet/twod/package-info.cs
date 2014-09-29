@@ -19,7 +19,7 @@
 /// Two-dimensional neural networks.
 /// </summary>
 
-namespace org.apache.commons.math3.ml.neuralnet.twod
+namespace mathlib.ml.neuralnet.twod
 {
 
 }

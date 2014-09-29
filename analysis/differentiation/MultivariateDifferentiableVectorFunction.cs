@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 
 	/// <summary>
@@ -38,7 +38,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// satisfy the function's constraints (wrong dimension, argument out of bound,
 		/// or unsupported derivative order for example) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: DerivativeStructure[] value(DerivativeStructure[] point) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: DerivativeStructure[] value(DerivativeStructure[] point) throws mathlib.exception.MathIllegalArgumentException;
 		DerivativeStructure[] value(DerivativeStructure[] point);
 
 	}

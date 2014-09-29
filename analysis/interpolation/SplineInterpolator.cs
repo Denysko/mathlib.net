@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
-	using PolynomialSplineFunction = org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
+	using PolynomialSplineFunction = mathlib.analysis.polynomials.PolynomialSplineFunction;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Computes a natural (also known as "free", "unclamped") cubic spline interpolation for the data set.
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NumberIsTooSmallException"> if the size of {@code x} is smaller
 		/// than 3. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction interpolate(double x[] , double y[]) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public mathlib.analysis.polynomials.PolynomialSplineFunction interpolate(double x[] , double y[]) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NonMonotonicSequenceException
 		public virtual PolynomialSplineFunction interpolate(double[] x, double[] y)
 		{
 			if (x.Length != y.Length)
@@ -132,7 +132,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.polynomials.PolynomialFunction polynomials[] = new org.apache.commons.math3.analysis.polynomials.PolynomialFunction[n];
+//ORIGINAL LINE: final mathlib.analysis.polynomials.PolynomialFunction polynomials[] = new mathlib.analysis.polynomials.PolynomialFunction[n];
 			PolynomialFunction[] polynomials = new PolynomialFunction[n];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double coefficients[] = new double[4];

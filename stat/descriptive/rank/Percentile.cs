@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.rank
+namespace mathlib.stat.descriptive.rank
 {
 
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Provides percentile computation.
@@ -122,7 +122,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <exception cref="MathIllegalArgumentException">  if p is not greater than 0 and less
 		/// than or equal to 100 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Percentile(final double p) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public Percentile(final double p) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public Percentile(double p)
 		{
@@ -137,7 +137,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <param name="original"> the {@code Percentile} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Percentile(Percentile original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Percentile(Percentile original) throws mathlib.exception.NullArgumentException
 		public Percentile(Percentile original)
 		{
 			copy(original, this);
@@ -167,7 +167,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setData(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public void setData(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setData(double[] values, int begin, int length)
 		{
@@ -194,7 +194,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <exception cref="MathIllegalArgumentException"> if p is not a valid quantile value
 		/// (p must be greater than 0 and less than or equal to 100) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double p) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double p) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double p)
 		{
@@ -227,7 +227,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <exception cref="MathIllegalArgumentException"> if <code>values</code> is null
 		///     or p is invalid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double p) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double p) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double p)
 		{
@@ -258,7 +258,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		///  </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int start, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int start, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int start, int length)
 		{
@@ -295,7 +295,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		 /// <exception cref="MathIllegalArgumentException"> if the parameters are not valid or the
 		 /// input array is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final int begin, final int length, final double p) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final int begin, final int length, final double p) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, int begin, int length, double p)
 		{
@@ -576,7 +576,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <exception cref="MathIllegalArgumentException">  if p is not greater than 0 and less
 		/// than or equal to 100 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setQuantile(final double p) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void setQuantile(final double p) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 
 		/// <summary>
@@ -598,7 +598,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <param name="dest"> Percentile to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(Percentile source, Percentile dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(Percentile source, Percentile dest) throws mathlib.exception.NullArgumentException
 		public static void copy(Percentile source, Percentile dest)
 		{
 			MathUtils.checkNotNull(source);

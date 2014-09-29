@@ -17,13 +17,13 @@ using System.Collections.Generic;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.clustering.evaluation
+namespace mathlib.ml.clustering.evaluation
 {
 
-	using org.apache.commons.math3.ml.clustering;
-	using org.apache.commons.math3.ml.clustering;
-	using DistanceMeasure = org.apache.commons.math3.ml.distance.DistanceMeasure;
-	using EuclideanDistance = org.apache.commons.math3.ml.distance.EuclideanDistance;
+	using mathlib.ml.clustering;
+	using mathlib.ml.clustering;
+	using DistanceMeasure = mathlib.ml.distance.DistanceMeasure;
+	using EuclideanDistance = mathlib.ml.distance.EuclideanDistance;
 
 	/// <summary>
 	/// Base class for cluster evaluation methods.
@@ -31,7 +31,7 @@ namespace org.apache.commons.math3.ml.clustering.evaluation
 	/// @param <T> type of the clustered points
 	/// @version $Id: ClusterEvaluator.java 1542545 2013-11-16 18:48:48Z tn $
 	/// @since 3.3 </param>
-	public abstract class ClusterEvaluator<T> where T : org.apache.commons.math3.ml.clustering.Clusterable
+	public abstract class ClusterEvaluator<T> where T : mathlib.ml.clustering.Clusterable
 	{
 
 		/// <summary>
@@ -50,7 +50,7 @@ namespace org.apache.commons.math3.ml.clustering.evaluation
 		/// Creates a new cluster evaluator with the given distance measure. </summary>
 		/// <param name="measure"> the distance measure to use </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public ClusterEvaluator(final org.apache.commons.math3.ml.distance.DistanceMeasure measure)
+//ORIGINAL LINE: public ClusterEvaluator(final mathlib.ml.distance.DistanceMeasure measure)
 		public ClusterEvaluator(DistanceMeasure measure)
 		{
 			this.measure = measure;
@@ -60,7 +60,7 @@ namespace org.apache.commons.math3.ml.clustering.evaluation
 		/// Computes the evaluation score for the given list of clusters. </summary>
 		/// <param name="clusters"> the clusters to evaluate </param>
 		/// <returns> the computed score </returns>
-		public abstract double score<T1>(IList<T1> clusters) where T1 : org.apache.commons.math3.ml.clustering.Cluster<T>;
+		public abstract double score<T1>(IList<T1> clusters) where T1 : mathlib.ml.clustering.Cluster<T>;
 
 		/// <summary>
 		/// Returns whether the first evaluation score is considered to be better
@@ -85,7 +85,7 @@ namespace org.apache.commons.math3.ml.clustering.evaluation
 		/// <param name="p2"> the second clusterable </param>
 		/// <returns> the distance between the two clusterables </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected double distance(final org.apache.commons.math3.ml.clustering.Clusterable p1, final org.apache.commons.math3.ml.clustering.Clusterable p2)
+//ORIGINAL LINE: protected double distance(final mathlib.ml.clustering.Clusterable p1, final mathlib.ml.clustering.Clusterable p2)
 		protected internal virtual double distance(Clusterable p1, Clusterable p2)
 		{
 			return measure.compute(p1.Point, p2.Point);
@@ -98,7 +98,7 @@ namespace org.apache.commons.math3.ml.clustering.evaluation
 		/// <returns> the computed centroid for the cluster,
 		/// or {@code null} if the cluster does not contain any points </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.ml.clustering.Clusterable centroidOf(final org.apache.commons.math3.ml.clustering.Cluster<T> cluster)
+//ORIGINAL LINE: protected mathlib.ml.clustering.Clusterable centroidOf(final mathlib.ml.clustering.Cluster<T> cluster)
 		protected internal virtual Clusterable centroidOf(Cluster<T> cluster)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

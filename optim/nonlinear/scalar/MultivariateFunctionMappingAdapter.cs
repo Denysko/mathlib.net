@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using Logit = org.apache.commons.math3.analysis.function.Logit;
-	using Sigmoid = org.apache.commons.math3.analysis.function.Sigmoid;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using Logit = mathlib.analysis.function.Logit;
+	using Sigmoid = mathlib.analysis.function.Sigmoid;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// <p>Adapter for mapping bounded <seealso cref="MultivariateFunction"/> to unbounded ones.</p>
@@ -53,19 +53,19 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 	/// user is responsible for converting his bounded point to unbounded by calling
 	/// <seealso cref="#boundedToUnbounded(double[])"/> before providing them to the optimizer.
 	/// For the same reason, the point returned by the {@link
-	/// org.apache.commons.math3.optimization.BaseMultivariateOptimizer#optimize(int,
-	/// MultivariateFunction, org.apache.commons.math3.optimization.GoalType, double[])}
+	/// mathlib.optimization.BaseMultivariateOptimizer#optimize(int,
+	/// MultivariateFunction, mathlib.optimization.GoalType, double[])}
 	/// method is unbounded. So to convert this point to bounded, users must call
 	/// <seealso cref="#unboundedToBounded(double[])"/> by themselves!</p>
 	/// <p>
 	/// This adapter is only a poor man solution to simple bounds optimization constraints
 	/// that can be used with simple optimizers like
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizer
+	/// {@link mathlib.optim.nonlinear.scalar.noderiv.SimplexOptimizer
 	/// SimplexOptimizer}.
 	/// A better solution is to use an optimizer that directly supports simple bounds like
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.noderiv.CMAESOptimizer
+	/// {@link mathlib.optim.nonlinear.scalar.noderiv.CMAESOptimizer
 	/// CMAESOptimizer} or
-	/// {@link org.apache.commons.math3.optim.nonlinear.scalar.noderiv.BOBYQAOptimizer
+	/// {@link mathlib.optim.nonlinear.scalar.noderiv.BOBYQAOptimizer
 	/// BOBYQAOptimizer}.
 	/// One caveat of this poor-man's solution is that behavior near the bounds may be
 	/// numerically unstable as bounds are mapped from infinite values.
@@ -99,7 +99,7 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// <exception cref="DimensionMismatchException"> if lower and upper bounds are not
 		/// consistent, either according to dimension or to values </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public MultivariateFunctionMappingAdapter(final org.apache.commons.math3.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper)
+//ORIGINAL LINE: public MultivariateFunctionMappingAdapter(final mathlib.analysis.MultivariateFunction bounded, final double[] lower, final double[] upper)
 		public MultivariateFunctionMappingAdapter(MultivariateFunction bounded, double[] lower, double[] upper)
 		{
 			// safety checks

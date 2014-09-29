@@ -17,11 +17,11 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization
+namespace mathlib.optimization
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
+	using FastMath = mathlib.util.FastMath;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
 
 	/// <summary>
 	/// Simple implementation of the <seealso cref="ConvergenceChecker"/> interface using
@@ -146,10 +146,10 @@ namespace org.apache.commons.math3.optimization
 //ORIGINAL LINE: final double ci = c[i];
 				double ci = c[i];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double difference = org.apache.commons.math3.util.FastMath.abs(pi - ci);
+//ORIGINAL LINE: final double difference = mathlib.util.FastMath.abs(pi - ci);
 				double difference = FastMath.abs(pi - ci);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double size = org.apache.commons.math3.util.FastMath.max(org.apache.commons.math3.util.FastMath.abs(pi), org.apache.commons.math3.util.FastMath.abs(ci));
+//ORIGINAL LINE: final double size = mathlib.util.FastMath.max(mathlib.util.FastMath.abs(pi), mathlib.util.FastMath.abs(ci));
 				double size = FastMath.max(FastMath.abs(pi), FastMath.abs(ci));
 				if (difference > size * RelativeThreshold && difference > AbsoluteThreshold)
 				{

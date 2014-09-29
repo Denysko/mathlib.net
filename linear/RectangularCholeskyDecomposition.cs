@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Calculates the rectangular Cholesky decomposition of a matrix.
@@ -30,7 +30,7 @@ namespace org.apache.commons.math3.linear
 	/// is that rows/columns may be permuted (hence the rectangular shape instead
 	/// of the traditional triangular shape) and there is a threshold to ignore
 	/// small diagonal elements. This is used for example to generate {@link
-	/// org.apache.commons.math3.random.CorrelatedRandomVectorGenerator correlated
+	/// mathlib.random.CorrelatedRandomVectorGenerator correlated
 	/// random n-dimensions vectors} in a p-dimension subspace (p < n).
 	/// In other words, it allows generating random vectors from a covariance
 	/// matrix that is only positive semidefinite, and not positive definite.</p>
@@ -167,7 +167,7 @@ namespace org.apache.commons.math3.linear
 
 					// transform the matrix
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sqrt = org.apache.commons.math3.util.FastMath.sqrt(c[ir][ir]);
+//ORIGINAL LINE: final double sqrt = mathlib.util.FastMath.sqrt(c[ir][ir]);
 					double sqrt = FastMath.sqrt(c[ir][ir]);
 					b[r][r] = sqrt;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

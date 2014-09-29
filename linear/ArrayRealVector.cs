@@ -17,20 +17,20 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathUtils = mathlib.util.MathUtils;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// This class implements the <seealso cref="RealVector"/> interface with a double array.
@@ -107,7 +107,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NullArgumentException"> if {@code d} is {@code null}. </exception>
 		/// <seealso cref= #ArrayRealVector(double[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayRealVector(double[] d, boolean copyArray) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayRealVector(double[] d, boolean copyArray) throws mathlib.exception.NullArgumentException
 		public ArrayRealVector(double[] d, bool copyArray)
 		{
 			if (d == null)
@@ -127,7 +127,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooLargeException"> if the size of {@code d} is less
 		/// than {@code pos + size}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayRealVector(double[] d, int pos, int size) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public ArrayRealVector(double[] d, int pos, int size) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooLargeException
 		public ArrayRealVector(double[] d, int pos, int size)
 		{
 			if (d == null)
@@ -165,7 +165,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NumberIsTooLargeException"> if the size of {@code d} is less
 		/// than {@code pos + size}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayRealVector(Double[] d, int pos, int size) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public ArrayRealVector(Double[] d, int pos, int size) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooLargeException
 		public ArrayRealVector(double?[] d, int pos, int size)
 		{
 			if (d == null)
@@ -189,7 +189,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="v"> vector to copy. </param>
 		/// <exception cref="NullArgumentException"> if {@code v} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayRealVector(RealVector v) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayRealVector(RealVector v) throws mathlib.exception.NullArgumentException
 		public ArrayRealVector(RealVector v)
 		{
 			if (v == null)
@@ -209,7 +209,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="v"> Vector to copy. </param>
 		/// <exception cref="NullArgumentException"> if {@code v} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public ArrayRealVector(ArrayRealVector v) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public ArrayRealVector(ArrayRealVector v) throws mathlib.exception.NullArgumentException
 		public ArrayRealVector(ArrayRealVector v) : this(v, true)
 		{
 		}
@@ -337,7 +337,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public ArrayRealVector add(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public ArrayRealVector add(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override ArrayRealVector add(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -376,7 +376,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public ArrayRealVector subtract(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public ArrayRealVector subtract(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override ArrayRealVector subtract(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -477,7 +477,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public ArrayRealVector ebeMultiply(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public ArrayRealVector ebeMultiply(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override ArrayRealVector ebeMultiply(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -512,7 +512,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public ArrayRealVector ebeDivide(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public ArrayRealVector ebeDivide(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override ArrayRealVector ebeDivide(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -560,7 +560,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double dotProduct(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double dotProduct(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override double dotProduct(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -627,7 +627,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getDistance(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double getDistance(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override double getDistance(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -664,7 +664,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getL1Distance(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double getL1Distance(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override double getL1Distance(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -701,7 +701,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getLInfDistance(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double getLInfDistance(RealVector v) throws mathlib.exception.DimensionMismatchException
 		public override double getLInfDistance(RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -787,7 +787,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getEntry(int index) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double getEntry(int index) throws mathlib.exception.OutOfRangeException
 		public override double getEntry(int index)
 		{
 			try
@@ -849,7 +849,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector getSubVector(int index, int n) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NotPositiveException
+//ORIGINAL LINE: @Override public RealVector getSubVector(int index, int n) throws mathlib.exception.OutOfRangeException, mathlib.exception.NotPositiveException
 		public override RealVector getSubVector(int index, int n)
 		{
 			if (n < 0)
@@ -872,7 +872,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setEntry(int index, double value) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void setEntry(int index, double value) throws mathlib.exception.OutOfRangeException
 		public override void setEntry(int index, double value)
 		{
 			try
@@ -888,7 +888,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void addToEntry(int index, double increment) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void addToEntry(int index, double increment) throws mathlib.exception.OutOfRangeException
 		public override void addToEntry(int index, double increment)
 		{
 			try
@@ -904,7 +904,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setSubVector(int index, RealVector v) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void setSubVector(int index, RealVector v) throws mathlib.exception.OutOfRangeException
 		public override void setSubVector(int index, RealVector v)
 		{
 			if (v is ArrayRealVector)
@@ -936,7 +936,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the index is inconsistent with the vector
 		/// size. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSubVector(int index, double[] v) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public void setSubVector(int index, double[] v) throws mathlib.exception.OutOfRangeException
 		public virtual void setSubVector(int index, double[] v)
 		{
 			try
@@ -978,7 +978,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the vectors do not
 		/// have the same dimension. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected void checkVectorDimensions(RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override protected void checkVectorDimensions(RealVector v) throws mathlib.exception.DimensionMismatchException
 		protected internal override void checkVectorDimensions(RealVector v)
 		{
 			checkVectorDimensions(v.Dimension);
@@ -991,7 +991,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the dimension is
 		/// inconsistent with vector size. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected void checkVectorDimensions(int n) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override protected void checkVectorDimensions(int n) throws mathlib.exception.DimensionMismatchException
 		protected internal override void checkVectorDimensions(int n)
 		{
 			if (data.Length != n)
@@ -1097,7 +1097,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public ArrayRealVector combine(double a, double b, RealVector y) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public ArrayRealVector combine(double a, double b, RealVector y) throws mathlib.exception.DimensionMismatchException
 		public override ArrayRealVector combine(double a, double b, RealVector y)
 		{
 			return copy().combineToSelf(a, b, y);
@@ -1106,7 +1106,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public ArrayRealVector combineToSelf(double a, double b, RealVector y) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public ArrayRealVector combineToSelf(double a, double b, RealVector y) throws mathlib.exception.DimensionMismatchException
 		public override ArrayRealVector combineToSelf(double a, double b, RealVector y)
 		{
 			if (y is ArrayRealVector)
@@ -1148,7 +1148,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInDefaultOrder(final RealVectorPreservingVisitor visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double walkInDefaultOrder(final RealVectorPreservingVisitor visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInDefaultOrder(RealVectorPreservingVisitor visitor, int start, int end)
 		{
@@ -1179,7 +1179,7 @@ namespace org.apache.commons.math3.linear
 		/// In this implementation, the optimized order is the default order.
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealVectorPreservingVisitor visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealVectorPreservingVisitor visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInOptimizedOrder(RealVectorPreservingVisitor visitor, int start, int end)
 		{
@@ -1203,7 +1203,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInDefaultOrder(final RealVectorChangingVisitor visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double walkInDefaultOrder(final RealVectorChangingVisitor visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInDefaultOrder(RealVectorChangingVisitor visitor, int start, int end)
 		{
@@ -1234,7 +1234,7 @@ namespace org.apache.commons.math3.linear
 		/// In this implementation, the optimized order is the default order.
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealVectorChangingVisitor visitor, final int start, final int end) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double walkInOptimizedOrder(final RealVectorChangingVisitor visitor, final int start, final int end) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double walkInOptimizedOrder(RealVectorChangingVisitor visitor, int start, int end)
 		{

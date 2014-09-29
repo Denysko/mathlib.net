@@ -65,7 +65,7 @@ namespace mathlib.analysis.solvers
 		/// <returns> the objective function value at specified point. </returns>
 		/// <exception cref="TooManyEvaluationsException"> if the maximal number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double computeDerivativeObjectiveValue(double point) throws org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: protected double computeDerivativeObjectiveValue(double point) throws mathlib.exception.TooManyEvaluationsException
 		protected internal virtual double computeDerivativeObjectiveValue(double point)
 		{
 			incrementEvaluationCount();

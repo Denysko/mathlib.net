@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using Gamma = org.apache.commons.math3.special.Gamma;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using Gamma = mathlib.special.Gamma;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the Weibull distribution. This implementation uses the
@@ -77,7 +77,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code alpha <= 0} or
 		/// {@code beta <= 0}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public WeibullDistribution(double alpha, double beta) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public WeibullDistribution(double alpha, double beta) throws mathlib.exception.NotStrictlyPositiveException
 		public WeibullDistribution(double alpha, double beta) : this(alpha, beta, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -107,7 +107,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code alpha <= 0} or {@code beta <= 0}.
 		/// @since 3.3 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public WeibullDistribution(org.apache.commons.math3.random.RandomGenerator rng, double alpha, double beta) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public WeibullDistribution(mathlib.random.RandomGenerator rng, double alpha, double beta) throws mathlib.exception.NotStrictlyPositiveException
 		public WeibullDistribution(RandomGenerator rng, double alpha, double beta) : this(rng, alpha, beta, DEFAULT_INVERSE_ABSOLUTE_ACCURACY)
 		{
 		}
@@ -124,7 +124,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NotStrictlyPositiveException"> if {@code alpha <= 0} or {@code beta <= 0}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public WeibullDistribution(org.apache.commons.math3.random.RandomGenerator rng, double alpha, double beta, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public WeibullDistribution(mathlib.random.RandomGenerator rng, double alpha, double beta, double inverseCumAccuracy) throws mathlib.exception.NotStrictlyPositiveException
 		public WeibullDistribution(RandomGenerator rng, double alpha, double beta, double inverseCumAccuracy) : base(rng)
 		{
 
@@ -178,7 +178,7 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double xscale = x / scale;
 			double xscale = x / scale;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double xscalepow = org.apache.commons.math3.util.FastMath.pow(xscale, shape - 1);
+//ORIGINAL LINE: final double xscalepow = mathlib.util.FastMath.pow(xscale, shape - 1);
 			double xscalepow = FastMath.pow(xscale, shape - 1);
 
 			/*
@@ -206,7 +206,7 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double xscale = x / scale;
 			double xscale = x / scale;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double logxscalepow = org.apache.commons.math3.util.FastMath.log(xscale) * (shape - 1);
+//ORIGINAL LINE: final double logxscalepow = mathlib.util.FastMath.log(xscale) * (shape - 1);
 			double logxscalepow = FastMath.log(xscale) * (shape - 1);
 
 			/*
@@ -215,7 +215,7 @@ namespace org.apache.commons.math3.distribution
 			 * FastMath.pow(xscale, shape - 1) * xscale
 			 */
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double xscalepowshape = org.apache.commons.math3.util.FastMath.exp(logxscalepow) * xscale;
+//ORIGINAL LINE: final double xscalepowshape = mathlib.util.FastMath.exp(logxscalepow) * xscale;
 			double xscalepowshape = FastMath.exp(logxscalepow) * xscale;
 
 			return FastMath.log(shape / scale) + logxscalepow - xscalepowshape;

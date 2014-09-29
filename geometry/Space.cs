@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry
+namespace mathlib.geometry
 {
 
-	using MathUnsupportedOperationException = org.apache.commons.math3.exception.MathUnsupportedOperationException;
+	using MathUnsupportedOperationException = mathlib.exception.MathUnsupportedOperationException;
 
 	/// <summary>
 	/// This interface represents a generic space, with affine and vectorial counterparts.
@@ -39,7 +39,7 @@ namespace org.apache.commons.math3.geometry
 		/// <exception cref="MathUnsupportedOperationException"> for dimension-1 spaces
 		/// which do not have sub-spaces </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: Space getSubSpace() throws org.apache.commons.math3.exception.MathUnsupportedOperationException;
+//ORIGINAL LINE: Space getSubSpace() throws mathlib.exception.MathUnsupportedOperationException;
 		Space SubSpace {get;}
 
 	}

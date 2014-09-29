@@ -53,7 +53,7 @@ namespace mathlib.analysis.integration.gauss
         /// <exception cref="DimensionMismatchException"> if the elements of the rule pair do not
         /// have the same length. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public org.apache.commons.math3.util.Pair<double[] , double[]> getRule(int numberOfPoints) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+        //ORIGINAL LINE: public mathlib.util.Pair<double[] , double[]> getRule(int numberOfPoints) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException
         public virtual Pair<double[], double[]> getRule(int numberOfPoints)
         {
 
@@ -71,7 +71,7 @@ namespace mathlib.analysis.integration.gauss
 
                 // Compute the rule.
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final org.apache.commons.math3.util.Pair<T[] , T[]> rule = getRuleInternal(numberOfPoints);
+                //ORIGINAL LINE: final mathlib.util.Pair<T[] , T[]> rule = getRuleInternal(numberOfPoints);
                 Pair<T[], T[]> rule = getRuleInternal(numberOfPoints);
                 cached = convertToDouble(rule);
 
@@ -94,13 +94,13 @@ namespace mathlib.analysis.integration.gauss
         /// <exception cref="DimensionMismatchException"> if the elements of the rule pair do not
         /// have the same length. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected synchronized org.apache.commons.math3.util.Pair<T[] , T[]> getRuleInternal(int numberOfPoints) throws org.apache.commons.math3.exception.DimensionMismatchException
+        //ORIGINAL LINE: protected synchronized mathlib.util.Pair<T[] , T[]> getRuleInternal(int numberOfPoints) throws mathlib.exception.DimensionMismatchException
         protected internal virtual Pair<T[], T[]> getRuleInternal(int numberOfPoints)
         {
             lock (this)
             {
                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final org.apache.commons.math3.util.Pair<T[] , T[]> rule = pointsAndWeights.get(numberOfPoints);
+                //ORIGINAL LINE: final mathlib.util.Pair<T[] , T[]> rule = pointsAndWeights.get(numberOfPoints);
                 Pair<T[], T[]> rule = pointsAndWeights[numberOfPoints];
                 if (rule == null)
                 {
@@ -119,7 +119,7 @@ namespace mathlib.analysis.integration.gauss
         /// <exception cref="DimensionMismatchException"> if the elements of the pair do not
         /// have the same length. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void addRule(org.apache.commons.math3.util.Pair<T[] , T[]> rule) throws org.apache.commons.math3.exception.DimensionMismatchException
+        //ORIGINAL LINE: protected void addRule(mathlib.util.Pair<T[] , T[]> rule) throws mathlib.exception.DimensionMismatchException
         protected internal virtual void addRule(Pair<T[], T[]> rule)
         {
             if (rule.First.Length != rule.Second.Length)
@@ -138,7 +138,7 @@ namespace mathlib.analysis.integration.gauss
         /// <exception cref="DimensionMismatchException"> if the elements of the pair do not
         /// have the same length. </exception>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected abstract org.apache.commons.math3.util.Pair<T[] , T[]> computeRule(int numberOfPoints) throws org.apache.commons.math3.exception.DimensionMismatchException;
+        //ORIGINAL LINE: protected abstract mathlib.util.Pair<T[] , T[]> computeRule(int numberOfPoints) throws mathlib.exception.DimensionMismatchException;
         protected internal abstract Pair<T[], T[]> computeRule(int numberOfPoints);
 
         /// <summary>

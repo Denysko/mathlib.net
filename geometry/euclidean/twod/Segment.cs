@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
-	using org.apache.commons.math3.geometry;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using mathlib.geometry;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Simple container for a two-points segment.
@@ -127,10 +127,10 @@ namespace org.apache.commons.math3.geometry.euclidean.twod
 			if (r < 0 || r > 1)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dist1 = getStart().distance((org.apache.commons.math3.geometry.Point<Euclidean2D>) p);
+//ORIGINAL LINE: final double dist1 = getStart().distance((mathlib.geometry.Point<Euclidean2D>) p);
 				double dist1 = Start.distance((Point<Euclidean2D>) p);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double dist2 = getEnd().distance((org.apache.commons.math3.geometry.Point<Euclidean2D>) p);
+//ORIGINAL LINE: final double dist2 = getEnd().distance((mathlib.geometry.Point<Euclidean2D>) p);
 				double dist2 = End.distance((Point<Euclidean2D>) p);
 
 				return FastMath.min(dist1, dist2);

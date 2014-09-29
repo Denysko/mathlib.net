@@ -16,10 +16,10 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.enclosing
+namespace mathlib.geometry.enclosing
 {
 
-	using org.apache.commons.math3.geometry;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// This class represents a ball enclosing some points. </summary>
@@ -31,7 +31,7 @@ namespace org.apache.commons.math3.geometry.enclosing
 	/// <seealso cref= Encloser
 	/// @since 3.3 </seealso>
 	[Serializable]
-	public class EnclosingBall<S, P> where S : org.apache.commons.math3.geometry.Space where P : org.apache.commons.math3.geometry.Point<S>
+	public class EnclosingBall<S, P> where S : mathlib.geometry.Space where P : mathlib.geometry.Point<S>
 	{
 
 		/// <summary>

@@ -17,14 +17,14 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the uniform real distribution.
@@ -67,7 +67,7 @@ namespace org.apache.commons.math3.distribution
 		/// <param name="upper"> Upper bound of this distribution (exclusive). </param>
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public UniformRealDistribution(double lower, double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public UniformRealDistribution(double lower, double upper) throws mathlib.exception.NumberIsTooLargeException
 		public UniformRealDistribution(double lower, double upper) : this(new Well19937c(), lower, upper)
 		{
 		}
@@ -82,7 +82,7 @@ namespace org.apache.commons.math3.distribution
 		/// @deprecated as of 3.2, inverse CDF is now calculated analytically, use
 		///             <seealso cref="#UniformRealDistribution(double, double)"/> instead. 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Deprecated("as of 3.2, inverse CDF is now calculated analytically, use") public UniformRealDistribution(double lower, double upper, double inverseCumAccuracy) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Deprecated("as of 3.2, inverse CDF is now calculated analytically, use") public UniformRealDistribution(double lower, double upper, double inverseCumAccuracy) throws mathlib.exception.NumberIsTooLargeException
 		[Obsolete("as of 3.2, inverse CDF is now calculated analytically, use")]
 		public UniformRealDistribution(double lower, double upper, double inverseCumAccuracy) : this(new Well19937c(), lower, upper)
 		{
@@ -114,7 +114,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public UniformRealDistribution(org.apache.commons.math3.random.RandomGenerator rng, double lower, double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public UniformRealDistribution(mathlib.random.RandomGenerator rng, double lower, double upper) throws mathlib.exception.NumberIsTooLargeException
 		public UniformRealDistribution(RandomGenerator rng, double lower, double upper) : base(rng)
 		{
 			if (lower >= upper)
@@ -153,7 +153,7 @@ namespace org.apache.commons.math3.distribution
 		}
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(final double p) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double inverseCumulativeProbability(double p)
 		{

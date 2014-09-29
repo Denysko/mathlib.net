@@ -16,10 +16,10 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.rank
+namespace mathlib.stat.descriptive.rank
 {
 
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
 
 
 	/// <summary>
@@ -56,7 +56,7 @@ namespace org.apache.commons.math3.stat.descriptive.rank
 		/// <param name="original"> the {@code Median} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Median(Median original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public Median(Median original) throws mathlib.exception.NullArgumentException
 		public Median(Median original) : base(original)
 		{
 		}

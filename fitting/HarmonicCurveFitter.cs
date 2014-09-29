@@ -17,23 +17,23 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting
+namespace mathlib.fitting
 {
 
 
-	using HarmonicOscillator = org.apache.commons.math3.analysis.function.HarmonicOscillator;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using ZeroException = org.apache.commons.math3.exception.ZeroException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using LeastSquaresBuilder = org.apache.commons.math3.fitting.leastsquares.LeastSquaresBuilder;
-	using LeastSquaresProblem = org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem;
-	using DiagonalMatrix = org.apache.commons.math3.linear.DiagonalMatrix;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using HarmonicOscillator = mathlib.analysis.function.HarmonicOscillator;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using ZeroException = mathlib.exception.ZeroException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using LeastSquaresBuilder = mathlib.fitting.leastsquares.LeastSquaresBuilder;
+	using LeastSquaresProblem = mathlib.fitting.leastsquares.LeastSquaresProblem;
+	using DiagonalMatrix = mathlib.linear.DiagonalMatrix;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Fits points to a {@link
-	/// org.apache.commons.math3.analysis.function.HarmonicOscillator.Parametric harmonic oscillator}
+	/// mathlib.analysis.function.HarmonicOscillator.Parametric harmonic oscillator}
 	/// function.
 	/// <br/>
 	/// The <seealso cref="#withStartPoint(double[]) initial guess values"/> must be passed

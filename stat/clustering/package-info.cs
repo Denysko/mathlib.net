@@ -18,7 +18,7 @@
 /// <h2>All classes and sub-packages of this package are deprecated.</h2>
 /// <h3>Please use their replacements, to be found under
 ///  <ul>
-///   <li><seealso cref="org.apache.commons.math3.ml.clustering"/></li>
+///   <li><seealso cref="mathlib.ml.clustering"/></li>
 ///  </ul>
 /// </h3>
 /// 
@@ -26,7 +26,7 @@
 /// Clustering algorithms.
 /// </p>
 /// </summary>
-namespace org.apache.commons.math3.stat.clustering
+namespace mathlib.stat.clustering
 {
 
 }

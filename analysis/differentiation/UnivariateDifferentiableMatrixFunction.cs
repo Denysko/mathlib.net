@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.differentiation
+namespace mathlib.analysis.differentiation
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
 
 	/// <summary>
 	/// Extension of <seealso cref="UnivariateMatrixFunction"/> representing a univariate differentiable matrix function.
@@ -36,7 +36,7 @@ namespace org.apache.commons.math3.analysis.differentiation
 		/// satisfy the function's constraints (argument out of bound, or unsupported
 		/// derivative order for example) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: DerivativeStructure[][] value(DerivativeStructure x) throws org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: DerivativeStructure[][] value(DerivativeStructure x) throws mathlib.exception.MathIllegalArgumentException;
 		DerivativeStructure[][] value(DerivativeStructure x);
 
 	}

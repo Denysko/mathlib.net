@@ -17,18 +17,18 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using org.apache.commons.math3.optimization;
-	using org.apache.commons.math3.optimization;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using Incrementor = mathlib.util.Incrementor;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using mathlib.optimization;
+	using mathlib.optimization;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Base class for implementing optimizers for multivariate scalar functions.
@@ -41,7 +41,7 @@ namespace org.apache.commons.math3.optimization.direct
 	/// @deprecated As of 3.1 (to be removed in 4.0).
 	/// @since 3.0 
 	[Obsolete("As of 3.1 (to be removed in 4.0).")]
-	public abstract class BaseAbstractMultivariateVectorOptimizer<FUNC> : BaseMultivariateVectorOptimizer<FUNC> where FUNC : org.apache.commons.math3.analysis.MultivariateVectorFunction
+	public abstract class BaseAbstractMultivariateVectorOptimizer<FUNC> : BaseMultivariateVectorOptimizer<FUNC> where FUNC : mathlib.analysis.MultivariateVectorFunction
 	{
 		/// <summary>
 		/// Evaluations counter. </summary>
@@ -164,7 +164,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// 
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.optimization.PointVectorValuePair optimize(int maxEval, FUNC f, org.apache.commons.math3.optimization.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected mathlib.optimization.PointVectorValuePair optimize(int maxEval, FUNC f, mathlib.optimization.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.DimensionMismatchException
 		protected internal virtual PointVectorValuePair optimize(int maxEval, FUNC f, params OptimizationData[] optData)
 		{
 			return optimizeInternal(maxEval, f, optData);
@@ -183,17 +183,17 @@ namespace org.apache.commons.math3.optimization.direct
 		/// <returns> the point/value pair giving the optimal value for objective
 		/// function. </returns>
 		/// <param name="maxEval"> Maximum number of function evaluations. </param>
-		/// <exception cref="org.apache.commons.math3.exception.DimensionMismatchException">
+		/// <exception cref="mathlib.exception.DimensionMismatchException">
 		/// if the start point dimension is wrong. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximal number of evaluations is exceeded. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NullArgumentException"> if
+		/// <exception cref="mathlib.exception.NullArgumentException"> if
 		/// any argument is {@code null}. </exception>
 		/// @deprecated As of 3.1. Please use
 		/// <seealso cref="#optimizeInternal(int,MultivariateVectorFunction,OptimizationData[])"/>
 		/// instead. 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") protected org.apache.commons.math3.optimization.PointVectorValuePair optimizeInternal(final int maxEval, final FUNC f, final double[] t, final double[] w, final double[] startPoint)
+//ORIGINAL LINE: @Deprecated("As of 3.1. Please use") protected mathlib.optimization.PointVectorValuePair optimizeInternal(final int maxEval, final FUNC f, final double[] t, final double[] w, final double[] startPoint)
 		[Obsolete("As of 3.1. Please use")]
 		protected internal virtual PointVectorValuePair optimizeInternal(int maxEval, FUNC f, double[] t, double[] w, double[] startPoint)
 		{
@@ -242,7 +242,7 @@ namespace org.apache.commons.math3.optimization.direct
 		/// 
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected org.apache.commons.math3.optimization.PointVectorValuePair optimizeInternal(int maxEval, FUNC f, org.apache.commons.math3.optimization.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected mathlib.optimization.PointVectorValuePair optimizeInternal(int maxEval, FUNC f, mathlib.optimization.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.DimensionMismatchException
 		protected internal virtual PointVectorValuePair optimizeInternal(int maxEval, FUNC f, params OptimizationData[] optData)
 		{
 			// Set internal state.

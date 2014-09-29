@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using Array2DRowRealMatrix = org.apache.commons.math3.linear.Array2DRowRealMatrix;
-	using EigenDecomposition = org.apache.commons.math3.linear.EigenDecomposition;
-	using NonPositiveDefiniteMatrixException = org.apache.commons.math3.linear.NonPositiveDefiniteMatrixException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using SingularMatrixException = org.apache.commons.math3.linear.SingularMatrixException;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using Array2DRowRealMatrix = mathlib.linear.Array2DRowRealMatrix;
+	using EigenDecomposition = mathlib.linear.EigenDecomposition;
+	using NonPositiveDefiniteMatrixException = mathlib.linear.NonPositiveDefiniteMatrixException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using SingularMatrixException = mathlib.linear.SingularMatrixException;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// Implementation of the multivariate normal (Gaussian) distribution.
@@ -73,7 +73,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NonPositiveDefiniteMatrixException"> if any of the eigenvalues is
 		/// negative. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MultivariateNormalDistribution(final double[] means, final double[][] covariances) throws org.apache.commons.math3.linear.SingularMatrixException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.linear.NonPositiveDefiniteMatrixException
+//ORIGINAL LINE: public MultivariateNormalDistribution(final double[] means, final double[][] covariances) throws mathlib.linear.SingularMatrixException, mathlib.exception.DimensionMismatchException, mathlib.linear.NonPositiveDefiniteMatrixException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public MultivariateNormalDistribution(double[] means, double[][] covariances) : this(new Well19937c(), means, covariances)
 		{
@@ -97,7 +97,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NonPositiveDefiniteMatrixException"> if any of the eigenvalues is
 		/// negative. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public MultivariateNormalDistribution(org.apache.commons.math3.random.RandomGenerator rng, final double[] means, final double[][] covariances) throws org.apache.commons.math3.linear.SingularMatrixException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.linear.NonPositiveDefiniteMatrixException
+//ORIGINAL LINE: public MultivariateNormalDistribution(mathlib.random.RandomGenerator rng, final double[] means, final double[][] covariances) throws mathlib.linear.SingularMatrixException, mathlib.exception.DimensionMismatchException, mathlib.linear.NonPositiveDefiniteMatrixException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public MultivariateNormalDistribution(RandomGenerator rng, double[] means, double[][] covariances) : base(rng, means.Length)
 		{
@@ -125,7 +125,7 @@ namespace org.apache.commons.math3.distribution
 
 			// Covariance matrix eigen decomposition.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.EigenDecomposition covMatDec = new org.apache.commons.math3.linear.EigenDecomposition(covarianceMatrix);
+//ORIGINAL LINE: final mathlib.linear.EigenDecomposition covMatDec = new mathlib.linear.EigenDecomposition(covarianceMatrix);
 			EigenDecomposition covMatDec = new EigenDecomposition(covarianceMatrix);
 
 			// Compute and store the inverse.
@@ -148,7 +148,7 @@ namespace org.apache.commons.math3.distribution
 
 			// Matrix where each column is an eigenvector of the covariance matrix.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.Array2DRowRealMatrix covMatEigenvectors = new org.apache.commons.math3.linear.Array2DRowRealMatrix(dim, dim);
+//ORIGINAL LINE: final mathlib.linear.Array2DRowRealMatrix covMatEigenvectors = new mathlib.linear.Array2DRowRealMatrix(dim, dim);
 			Array2DRowRealMatrix covMatEigenvectors = new Array2DRowRealMatrix(dim, dim);
 			for (int v = 0; v < dim; v++)
 			{
@@ -159,14 +159,14 @@ namespace org.apache.commons.math3.distribution
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.linear.RealMatrix tmpMatrix = covMatEigenvectors.transpose();
+//ORIGINAL LINE: final mathlib.linear.RealMatrix tmpMatrix = covMatEigenvectors.transpose();
 			RealMatrix tmpMatrix = covMatEigenvectors.transpose();
 
 			// Scale each eigenvector by the square root of its eigenvalue.
 			for (int row = 0; row < dim; row++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double factor = org.apache.commons.math3.util.FastMath.sqrt(covMatEigenvalues[row]);
+//ORIGINAL LINE: final double factor = mathlib.util.FastMath.sqrt(covMatEigenvalues[row]);
 				double factor = FastMath.sqrt(covMatEigenvalues[row]);
 				for (int col = 0; col < dim; col++)
 				{
@@ -204,7 +204,7 @@ namespace org.apache.commons.math3.distribution
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double density(final double[] vals) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double density(final double[] vals) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double density(double[] vals)
 		{

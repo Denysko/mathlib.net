@@ -19,11 +19,11 @@ using System.Collections.Concurrent;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet
+namespace mathlib.ml.neuralnet
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
 
 	/// <summary>
 	/// Neural network, composed of <seealso cref="Neuron"/> instances and the links

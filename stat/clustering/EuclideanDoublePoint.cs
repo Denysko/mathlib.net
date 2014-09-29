@@ -17,18 +17,18 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.clustering
+namespace mathlib.stat.clustering
 {
 
 
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
+	using MathArrays = mathlib.util.MathArrays;
 
 	/// <summary>
 	/// A simple implementation of <seealso cref="Clusterable"/> for points with double coordinates.
 	/// @version $Id: EuclideanDoublePoint.java 1461871 2013-03-27 22:01:25Z tn $
 	/// @since 3.1 </summary>
 	/// @deprecated As of 3.2 (to be removed in 4.0),
-	/// use <seealso cref="org.apache.commons.math3.ml.clustering.DoublePoint"/> instead 
+	/// use <seealso cref="mathlib.ml.clustering.DoublePoint"/> instead 
 	[Obsolete("As of 3.2 (to be removed in 4.0),"), Serializable]
 	public class EuclideanDoublePoint : Clusterable<EuclideanDoublePoint>
 	{

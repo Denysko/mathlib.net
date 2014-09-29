@@ -68,7 +68,7 @@ namespace mathlib.analysis.integration.gauss
         /// <summary>
         /// {@inheritDoc} </summary>
         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected org.apache.commons.math3.util.Pair<Double[] , Double[]> computeRule(int numberOfPoints) throws org.apache.commons.math3.exception.DimensionMismatchException
+        //ORIGINAL LINE: @Override protected mathlib.util.Pair<Double[] , Double[]> computeRule(int numberOfPoints) throws mathlib.exception.DimensionMismatchException
         protected internal override Pair<double?[], Double[]> computeRule(int numberOfPoints)
         {
 
@@ -97,10 +97,10 @@ namespace mathlib.analysis.integration.gauss
             double?[] weights = new double?[numberOfPoints];
 
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final double sqrtTwoTimesLastNumPoints = org.apache.commons.math3.util.FastMath.sqrt(2 * lastNumPoints);
+            //ORIGINAL LINE: final double sqrtTwoTimesLastNumPoints = mathlib.util.FastMath.sqrt(2 * lastNumPoints);
             double sqrtTwoTimesLastNumPoints = FastMath.sqrt(2 * lastNumPoints);
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final double sqrtTwoTimesNumPoints = org.apache.commons.math3.util.FastMath.sqrt(2 * numberOfPoints);
+            //ORIGINAL LINE: final double sqrtTwoTimesNumPoints = mathlib.util.FastMath.sqrt(2 * numberOfPoints);
             double sqrtTwoTimesNumPoints = FastMath.sqrt(2 * numberOfPoints);
 
             // Find i-th root of H[n+1] by bracketing.
@@ -129,10 +129,10 @@ namespace mathlib.analysis.integration.gauss
                     //ORIGINAL LINE: final double jp1 = j + 1;
                     double jp1 = j + 1;
                     //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double s = org.apache.commons.math3.util.FastMath.sqrt(2 / jp1);
+                    //ORIGINAL LINE: final double s = mathlib.util.FastMath.sqrt(2 / jp1);
                     double s = FastMath.sqrt(2 / jp1);
                     //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double sm = org.apache.commons.math3.util.FastMath.sqrt(j / jp1);
+                    //ORIGINAL LINE: final double sm = mathlib.util.FastMath.sqrt(j / jp1);
                     double sm = FastMath.sqrt(j / jp1);
                     //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
                     //ORIGINAL LINE: final double hpa = s * a * ha - sm * hma;
@@ -166,10 +166,10 @@ namespace mathlib.analysis.integration.gauss
                         //ORIGINAL LINE: final double jp1 = j + 1;
                         double jp1 = j + 1;
                         //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                        //ORIGINAL LINE: final double s = org.apache.commons.math3.util.FastMath.sqrt(2 / jp1);
+                        //ORIGINAL LINE: final double s = mathlib.util.FastMath.sqrt(2 / jp1);
                         double s = FastMath.sqrt(2 / jp1);
                         //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                        //ORIGINAL LINE: final double sm = org.apache.commons.math3.util.FastMath.sqrt(j / jp1);
+                        //ORIGINAL LINE: final double sm = mathlib.util.FastMath.sqrt(j / jp1);
                         double sm = FastMath.sqrt(j / jp1);
                         //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
                         //ORIGINAL LINE: final double hpc = s * c * hc - sm * hmc;

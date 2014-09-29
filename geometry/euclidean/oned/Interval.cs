@@ -16,10 +16,10 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.euclidean.oned
+namespace mathlib.geometry.euclidean.oned
 {
 
-	using Region_Location = org.apache.commons.math3.geometry.partitioning.Region_Location;
+	using Region_Location = mathlib.geometry.partitioning.Region_Location;
 
 
 	/// <summary>
@@ -159,7 +159,7 @@ namespace org.apache.commons.math3.geometry.euclidean.oned
 		/// Location#INSIDE}, <seealso cref="Location#OUTSIDE"/> or <seealso cref="Location#BOUNDARY"/>
 		/// @since 3.1 </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.geometry.partitioning.Region_Location checkPoint(final double point, final double tolerance)
+//ORIGINAL LINE: public mathlib.geometry.partitioning.Region_Location checkPoint(final double point, final double tolerance)
 		public virtual Region_Location checkPoint(double point, double tolerance)
 		{
 			if (point < lower - tolerance || point > upper + tolerance)

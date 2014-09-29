@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.correlation
+namespace mathlib.stat.correlation
 {
 
-	using TDistribution = org.apache.commons.math3.distribution.TDistribution;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using BlockRealMatrix = org.apache.commons.math3.linear.BlockRealMatrix;
-	using SimpleRegression = org.apache.commons.math3.stat.regression.SimpleRegression;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using TDistribution = mathlib.distribution.TDistribution;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using BlockRealMatrix = mathlib.linear.BlockRealMatrix;
+	using SimpleRegression = mathlib.stat.regression.SimpleRegression;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Computes Pearson's product-moment correlation coefficients for pairs of arrays
@@ -202,7 +202,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// matrix must have been used to create this instance.</p>
 		/// </summary>
 		/// <returns> matrix of p-values </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MaxCountExceededException">
+		/// <exception cref="mathlib.exception.MaxCountExceededException">
 		/// if an error occurs estimating probabilities </exception>
 		/// <exception cref="NullPointerException"> if this instance was created with no data </exception>
 		public virtual RealMatrix CorrelationPValues
@@ -354,7 +354,7 @@ namespace org.apache.commons.math3.stat.correlation
 		/// <param name="matrix"> matrix to check for sufficiency </param>
 		/// <exception cref="MathIllegalArgumentException"> if there is insufficient data </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private void checkSufficientData(final org.apache.commons.math3.linear.RealMatrix matrix)
+//ORIGINAL LINE: private void checkSufficientData(final mathlib.linear.RealMatrix matrix)
 		private void checkSufficientData(RealMatrix matrix)
 		{
 			int nRows = matrix.RowDimension;

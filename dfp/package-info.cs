@@ -85,7 +85,7 @@
 /// this can be rendered invisible by a subclass.</p>
 /// 
 /// </summary>
-namespace org.apache.commons.math3.dfp
+namespace mathlib.dfp
 {
 
 }

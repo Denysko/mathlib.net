@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using Well19937c = org.apache.commons.math3.random.Well19937c;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using Well19937c = mathlib.random.Well19937c;
 
 	/// <summary>
 	/// Implementation of the triangular real distribution.
@@ -62,7 +62,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NumberIsTooLargeException"> if {@code a >= b} or if {@code c > b}. </exception>
 		/// <exception cref="NumberIsTooSmallException"> if {@code c < a}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public TriangularDistribution(double a, double c, double b) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public TriangularDistribution(double a, double c, double b) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NumberIsTooSmallException
 		public TriangularDistribution(double a, double c, double b) : this(new Well19937c(), a, c, b)
 		{
 		}
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.distribution
 		/// <exception cref="NumberIsTooSmallException"> if {@code c < a}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public TriangularDistribution(org.apache.commons.math3.random.RandomGenerator rng, double a, double c, double b) throws org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public TriangularDistribution(mathlib.random.RandomGenerator rng, double a, double c, double b) throws mathlib.exception.NumberIsTooLargeException, mathlib.exception.NumberIsTooSmallException
 		public TriangularDistribution(RandomGenerator rng, double a, double c, double b) : base(rng)
 		{
 
@@ -302,7 +302,7 @@ namespace org.apache.commons.math3.distribution
 		}
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double inverseCumulativeProbability(double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double inverseCumulativeProbability(double p) throws mathlib.exception.OutOfRangeException
 		public override double inverseCumulativeProbability(double p)
 		{
 			if (p < 0 || p > 1)

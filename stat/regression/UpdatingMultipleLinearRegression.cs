@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.regression
+namespace mathlib.stat.regression
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NoDataException = mathlib.exception.NoDataException;
 
 	/// <summary>
 	/// An interface for regression models allowing for dynamic updating of the data.
@@ -82,7 +82,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="NoDataException"> if there is not sufficient data in the model to
 		/// estimate the regression parameters </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: RegressionResults regress() throws ModelSpecificationException, org.apache.commons.math3.exception.NoDataException;
+//ORIGINAL LINE: RegressionResults regress() throws ModelSpecificationException, mathlib.exception.NoDataException;
 		RegressionResults regress();
 
 		/// <summary>
@@ -93,7 +93,7 @@ namespace org.apache.commons.math3.stat.regression
 		/// <exception cref="ModelSpecificationException"> if the model is not correctly specified </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the variablesToInclude array is null or zero length </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: RegressionResults regress(int[] variablesToInclude) throws ModelSpecificationException, org.apache.commons.math3.exception.MathIllegalArgumentException;
+//ORIGINAL LINE: RegressionResults regress(int[] variablesToInclude) throws ModelSpecificationException, mathlib.exception.MathIllegalArgumentException;
 		RegressionResults regress(int[] variablesToInclude);
 	}
 

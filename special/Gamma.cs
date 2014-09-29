@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.special
+namespace mathlib.special
 {
 
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using ContinuedFraction = org.apache.commons.math3.util.ContinuedFraction;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using ContinuedFraction = mathlib.util.ContinuedFraction;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// <p>
@@ -289,7 +289,7 @@ namespace org.apache.commons.math3.special
 			else if (x <= 8.0)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int n = (int) org.apache.commons.math3.util.FastMath.floor(x - 1.5);
+//ORIGINAL LINE: final int n = (int) mathlib.util.FastMath.floor(x - 1.5);
 				int n = (int) FastMath.floor(x - 1.5);
 				double prod = 1.0;
 				for (int i = 1; i <= n; i++)
@@ -715,7 +715,7 @@ namespace org.apache.commons.math3.special
 		/// <exception cref="NumberIsTooLargeException"> if {@code x > 1.5}.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double logGamma1p(final double x) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public static double logGamma1p(final double x) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double logGamma1p(double x)
 		{
@@ -755,7 +755,7 @@ namespace org.apache.commons.math3.special
 //ORIGINAL LINE: final double ret;
 			double ret;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double absX = org.apache.commons.math3.util.FastMath.abs(x);
+//ORIGINAL LINE: final double absX = mathlib.util.FastMath.abs(x);
 			double absX = FastMath.abs(x);
 			if (absX <= 20.0)
 			{
@@ -803,7 +803,7 @@ namespace org.apache.commons.math3.special
 //ORIGINAL LINE: final double y = absX + LANCZOS_G + 0.5;
 				double y = absX + LANCZOS_G + 0.5;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double gammaAbs = SQRT_TWO_PI / x * org.apache.commons.math3.util.FastMath.pow(y, absX + 0.5) * org.apache.commons.math3.util.FastMath.exp(-y) * lanczos(absX);
+//ORIGINAL LINE: final double gammaAbs = SQRT_TWO_PI / x * mathlib.util.FastMath.pow(y, absX + 0.5) * mathlib.util.FastMath.exp(-y) * lanczos(absX);
 				double gammaAbs = SQRT_TWO_PI / x * FastMath.pow(y, absX + 0.5) * FastMath.exp(-y) * lanczos(absX);
 				if (x > 0.0)
 				{

@@ -16,14 +16,14 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.interpolation
+namespace mathlib.analysis.interpolation
 {
 
-	using PolynomialFunctionLagrangeForm = org.apache.commons.math3.analysis.polynomials.PolynomialFunctionLagrangeForm;
-	using PolynomialFunctionNewtonForm = org.apache.commons.math3.analysis.polynomials.PolynomialFunctionNewtonForm;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NonMonotonicSequenceException = org.apache.commons.math3.exception.NonMonotonicSequenceException;
+	using PolynomialFunctionLagrangeForm = mathlib.analysis.polynomials.PolynomialFunctionLagrangeForm;
+	using PolynomialFunctionNewtonForm = mathlib.analysis.polynomials.PolynomialFunctionNewtonForm;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NonMonotonicSequenceException = mathlib.exception.NonMonotonicSequenceException;
 
 	/// <summary>
 	/// Implements the <a href="
@@ -56,7 +56,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NonMonotonicSequenceException"> if {@code x} is not sorted in
 		/// strictly increasing order. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.polynomials.PolynomialFunctionNewtonForm interpolate(double x[] , double y[]) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: public mathlib.analysis.polynomials.PolynomialFunctionNewtonForm interpolate(double x[] , double y[]) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NonMonotonicSequenceException
 		public virtual PolynomialFunctionNewtonForm interpolate(double[] x, double[] y)
 		{
 			/// <summary>
@@ -103,7 +103,7 @@ namespace org.apache.commons.math3.analysis.interpolation
 		/// <exception cref="NonMonotonicSequenceException">
 		/// if {@code x} is not sorted in strictly increasing order. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected static double[] computeDividedDifference(final double x[], final double y[]) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.NonMonotonicSequenceException
+//ORIGINAL LINE: protected static double[] computeDividedDifference(final double x[], final double y[]) throws mathlib.exception.DimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NonMonotonicSequenceException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal static double[] computeDividedDifference(double[] x, double[] y)
 		{

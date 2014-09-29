@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
 	/// <summary>
@@ -43,7 +43,7 @@ namespace org.apache.commons.math3.analysis.solvers
 	/// <seealso cref= AllowedSolution
 	/// @since 3.0
 	/// @version $Id: BracketedUnivariateSolver.java 1364387 2012-07-22 18:14:11Z tn $ </seealso>
-	public interface BracketedUnivariateSolver<FUNC> : BaseUnivariateSolver<FUNC> where FUNC : org.apache.commons.math3.analysis.UnivariateFunction
+	public interface BracketedUnivariateSolver<FUNC> : BaseUnivariateSolver<FUNC> where FUNC : mathlib.analysis.UnivariateFunction
 	{
 
 		/// <summary>
@@ -59,9 +59,9 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="allowedSolution"> The kind of solutions that the root-finding algorithm may
 		/// accept as solutions. </param>
 		/// <returns> A value where the function is zero. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MathIllegalArgumentException">
+		/// <exception cref="mathlib.exception.MathIllegalArgumentException">
 		/// if the arguments do not satisfy the requirements specified by the solver. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException"> if
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException"> if
 		/// the allowed number of evaluations is exceeded. </exception>
 		double solve(int maxEval, FUNC f, double min, double max, AllowedSolution allowedSolution);
 
@@ -79,9 +79,9 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="allowedSolution"> The kind of solutions that the root-finding algorithm may
 		/// accept as solutions. </param>
 		/// <returns> A value where the function is zero. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.MathIllegalArgumentException">
+		/// <exception cref="mathlib.exception.MathIllegalArgumentException">
 		/// if the arguments do not satisfy the requirements specified by the solver. </exception>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException"> if
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException"> if
 		/// the allowed number of evaluations is exceeded. </exception>
 		double solve(int maxEval, FUNC f, double min, double max, double startValue, AllowedSolution allowedSolution);
 

@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
+	using FastMath = mathlib.util.FastMath;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
 
 	/// <summary>
 	/// Implements the <em>Secant</em> method for root-finding (approximating a
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override protected final double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override protected final double doSolve() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NoBracketingException
 		protected internal override sealed double doSolve()
 		{
 			// Get initial solution

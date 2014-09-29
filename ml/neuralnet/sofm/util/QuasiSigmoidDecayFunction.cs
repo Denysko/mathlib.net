@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ml.neuralnet.sofm.util
+namespace mathlib.ml.neuralnet.sofm.util
 {
 
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using Logistic = org.apache.commons.math3.analysis.function.Logistic;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using Logistic = mathlib.analysis.function.Logistic;
 
 	/// <summary>
 	/// Decay function whose shape is similar to a sigmoid.

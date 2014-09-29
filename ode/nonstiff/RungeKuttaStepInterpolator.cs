@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.ode.nonstiff
+namespace mathlib.ode.nonstiff
 {
 
 
-	using AbstractStepInterpolator = org.apache.commons.math3.ode.sampling.AbstractStepInterpolator;
+	using AbstractStepInterpolator = mathlib.ode.sampling.AbstractStepInterpolator;
 
 	/// <summary>
 	/// This class represents an interpolator over the last step during an
@@ -135,7 +135,7 @@ namespace org.apache.commons.math3.ode.nonstiff
 	  /// <param name="primaryMapper"> equations mapper for the primary equations set </param>
 	  /// <param name="secondaryMappers"> equations mappers for the secondary equations sets </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public void reinitialize(final org.apache.commons.math3.ode.AbstractIntegrator rkIntegrator, final double[] y, final double[][] yDotArray, final boolean forward, final org.apache.commons.math3.ode.EquationsMapper primaryMapper, final org.apache.commons.math3.ode.EquationsMapper[] secondaryMappers)
+//ORIGINAL LINE: public void reinitialize(final mathlib.ode.AbstractIntegrator rkIntegrator, final double[] y, final double[][] yDotArray, final boolean forward, final mathlib.ode.EquationsMapper primaryMapper, final mathlib.ode.EquationsMapper[] secondaryMappers)
 	  public virtual void reinitialize(AbstractIntegrator rkIntegrator, double[] y, double[][] yDotArray, bool forward, EquationsMapper primaryMapper, EquationsMapper[] secondaryMappers)
 	  {
 		reinitialize(y, forward, primaryMapper, secondaryMappers);

@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final int n = matrix.getColumnDimension();
 			int n = matrix.ColumnDimension;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int p = org.apache.commons.math3.util.FastMath.min(m, n);
+//ORIGINAL LINE: final int p = mathlib.util.FastMath.min(m, n);
 			int p = FastMath.min(m, n);
 			householderVectors = matrix.Data;
 			main = new double[p];
@@ -374,7 +374,7 @@ namespace org.apache.commons.math3.linear
 //ORIGINAL LINE: final double[] hK = householderVectors[k];
 				double[] hK = householderVectors[k];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a = (hK[k] > 0) ? -org.apache.commons.math3.util.FastMath.sqrt(xNormSqr) : org.apache.commons.math3.util.FastMath.sqrt(xNormSqr);
+//ORIGINAL LINE: final double a = (hK[k] > 0) ? -mathlib.util.FastMath.sqrt(xNormSqr) : mathlib.util.FastMath.sqrt(xNormSqr);
 				double a = (hK[k] > 0) ? - FastMath.sqrt(xNormSqr) : FastMath.sqrt(xNormSqr);
 				main[k] = a;
 				if (a != 0.0)
@@ -413,7 +413,7 @@ namespace org.apache.commons.math3.linear
 						xNormSqr += c * c;
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double b = (hK[k + 1] > 0) ? -org.apache.commons.math3.util.FastMath.sqrt(xNormSqr) : org.apache.commons.math3.util.FastMath.sqrt(xNormSqr);
+//ORIGINAL LINE: final double b = (hK[k + 1] > 0) ? -mathlib.util.FastMath.sqrt(xNormSqr) : mathlib.util.FastMath.sqrt(xNormSqr);
 					double b = (hK[k + 1] > 0) ? - FastMath.sqrt(xNormSqr) : FastMath.sqrt(xNormSqr);
 					secondary[k] = b;
 					if (b != 0.0)
@@ -471,7 +471,7 @@ namespace org.apache.commons.math3.linear
 					xNormSqr += c * c;
 				}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a = (hK[k] > 0) ? -org.apache.commons.math3.util.FastMath.sqrt(xNormSqr) : org.apache.commons.math3.util.FastMath.sqrt(xNormSqr);
+//ORIGINAL LINE: final double a = (hK[k] > 0) ? -mathlib.util.FastMath.sqrt(xNormSqr) : mathlib.util.FastMath.sqrt(xNormSqr);
 				double a = (hK[k] > 0) ? - FastMath.sqrt(xNormSqr) : FastMath.sqrt(xNormSqr);
 				main[k] = a;
 				if (a != 0.0)
@@ -510,7 +510,7 @@ namespace org.apache.commons.math3.linear
 						xNormSqr += c * c;
 					}
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double b = (hKp1[k] > 0) ? -org.apache.commons.math3.util.FastMath.sqrt(xNormSqr) : org.apache.commons.math3.util.FastMath.sqrt(xNormSqr);
+//ORIGINAL LINE: final double b = (hKp1[k] > 0) ? -mathlib.util.FastMath.sqrt(xNormSqr) : mathlib.util.FastMath.sqrt(xNormSqr);
 					double b = (hKp1[k] > 0) ? - FastMath.sqrt(xNormSqr) : FastMath.sqrt(xNormSqr);
 					secondary[k] = b;
 					if (b != 0.0)

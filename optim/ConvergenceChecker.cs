@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optim
+namespace mathlib.optim
 {
 
 	/// <summary>
@@ -37,9 +37,9 @@ namespace org.apache.commons.math3.optim
 	/// </summary>
 	/// @param <PAIR> Type of the (point, objective value) pair.
 	/// </param>
-	/// <seealso cref= org.apache.commons.math3.optim.SimplePointChecker </seealso>
-	/// <seealso cref= org.apache.commons.math3.optim.SimpleValueChecker </seealso>
-	/// <seealso cref= org.apache.commons.math3.optim.SimpleVectorValueChecker
+	/// <seealso cref= mathlib.optim.SimplePointChecker </seealso>
+	/// <seealso cref= mathlib.optim.SimpleValueChecker </seealso>
+	/// <seealso cref= mathlib.optim.SimpleVectorValueChecker
 	/// 
 	/// @version $Id: ConvergenceChecker.java 1591835 2014-05-02 09:04:01Z tn $
 	/// @since 3.0 </seealso>

@@ -16,19 +16,19 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using Complex = org.apache.commons.math3.complex.Complex;
-	using ComplexUtils = org.apache.commons.math3.complex.ComplexUtils;
-	using PolynomialFunction = org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using Complex = mathlib.complex.Complex;
+	using ComplexUtils = mathlib.complex.ComplexUtils;
+	using PolynomialFunction = mathlib.analysis.polynomials.PolynomialFunction;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implements the <a href="http://mathworld.wolfram.com/LaguerresMethod.html">
@@ -116,7 +116,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// {@inheritDoc}
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double doSolve() throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.NumberIsTooLargeException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: @Override public double doSolve() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.NoBracketingException
 		public override double doSolve()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -199,14 +199,14 @@ namespace org.apache.commons.math3.analysis.solvers
 		public virtual double laguerre(double lo, double hi, double fLo, double fHi)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex c[] = org.apache.commons.math3.complex.ComplexUtils.convertToComplex(getCoefficients());
+//ORIGINAL LINE: final mathlib.complex.Complex c[] = mathlib.complex.ComplexUtils.convertToComplex(getCoefficients());
 			Complex[] c = ComplexUtils.convertToComplex(Coefficients);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex initial = new org.apache.commons.math3.complex.Complex(0.5 * (lo + hi), 0);
+//ORIGINAL LINE: final mathlib.complex.Complex initial = new mathlib.complex.Complex(0.5 * (lo + hi), 0);
 			Complex initial = new Complex(0.5 * (lo + hi), 0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex z = complexSolver.solve(c, initial);
+//ORIGINAL LINE: final mathlib.complex.Complex z = complexSolver.solve(c, initial);
 			Complex z = complexSolver.solve(c, initial);
 			if (complexSolver.isRoot(lo, hi, z))
 			{
@@ -238,14 +238,14 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="coefficients"> Polynomial coefficients. </param>
 		/// <param name="initial"> Start value. </param>
 		/// <returns> the point at which the function value is zero. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximum number of evaluations is exceeded. </exception>
 		/// <exception cref="NullArgumentException"> if the {@code coefficients} is
 		/// {@code null}. </exception>
 		/// <exception cref="NoDataException"> if the {@code coefficients} array is empty.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex[] solveAllComplex(double[] coefficients, double initial) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: public mathlib.complex.Complex[] solveAllComplex(double[] coefficients, double initial) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.TooManyEvaluationsException
 		public virtual Complex[] solveAllComplex(double[] coefficients, double initial)
 		{
 			setup(int.MaxValue, new PolynomialFunction(coefficients), double.NegativeInfinity, double.PositiveInfinity, initial);
@@ -261,14 +261,14 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="coefficients"> Polynomial coefficients. </param>
 		/// <param name="initial"> Start value. </param>
 		/// <returns> the point at which the function value is zero. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the maximum number of evaluations is exceeded. </exception>
 		/// <exception cref="NullArgumentException"> if the {@code coefficients} is
 		/// {@code null}. </exception>
 		/// <exception cref="NoDataException"> if the {@code coefficients} array is empty.
 		/// @since 3.1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex solveComplex(double[] coefficients, double initial) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: public mathlib.complex.Complex solveComplex(double[] coefficients, double initial) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.TooManyEvaluationsException
 		public virtual Complex solveComplex(double[] coefficients, double initial)
 		{
 			setup(int.MaxValue, new PolynomialFunction(coefficients), double.NegativeInfinity, double.PositiveInfinity, initial);
@@ -312,13 +312,13 @@ namespace org.apache.commons.math3.analysis.solvers
 			/// <param name="coefficients"> Polynomial coefficients. </param>
 			/// <param name="initial"> Start value. </param>
 			/// <returns> the point at which the function value is zero. </returns>
-			/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+			/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 			/// if the maximum number of evaluations is exceeded. </exception>
 			/// <exception cref="NullArgumentException"> if the {@code coefficients} is
 			/// {@code null}. </exception>
 			/// <exception cref="NoDataException"> if the {@code coefficients} array is empty. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex[] solveAll(org.apache.commons.math3.complex.Complex coefficients[], org.apache.commons.math3.complex.Complex initial) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: public mathlib.complex.Complex[] solveAll(mathlib.complex.Complex coefficients[], mathlib.complex.Complex initial) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.TooManyEvaluationsException
 			public virtual Complex[] solveAll(Complex[] coefficients, Complex initial)
 			{
 				if (coefficients == null)
@@ -334,7 +334,7 @@ namespace org.apache.commons.math3.analysis.solvers
 				}
 				// Coefficients for deflated polynomial.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex c[] = new org.apache.commons.math3.complex.Complex[n + 1];
+//ORIGINAL LINE: final mathlib.complex.Complex c[] = new mathlib.complex.Complex[n + 1];
 				Complex[] c = new Complex[n + 1];
 				for (int i = 0; i <= n; i++)
 				{
@@ -343,12 +343,12 @@ namespace org.apache.commons.math3.analysis.solvers
 
 				// Solve individual roots successively.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex root[] = new org.apache.commons.math3.complex.Complex[n];
+//ORIGINAL LINE: final mathlib.complex.Complex root[] = new mathlib.complex.Complex[n];
 				Complex[] root = new Complex[n];
 				for (int i = 0; i < n; i++)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex subarray[] = new org.apache.commons.math3.complex.Complex[n - i + 1];
+//ORIGINAL LINE: final mathlib.complex.Complex subarray[] = new mathlib.complex.Complex[n - i + 1];
 					Complex[] subarray = new Complex[n - i + 1];
 					Array.Copy(c, 0, subarray, 0, subarray.Length);
 					root[i] = solve(subarray, initial);
@@ -373,13 +373,13 @@ namespace org.apache.commons.math3.analysis.solvers
 			/// <param name="coefficients"> Polynomial coefficients. </param>
 			/// <param name="initial"> Start value. </param>
 			/// <returns> the point at which the function value is zero. </returns>
-			/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+			/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 			/// if the maximum number of evaluations is exceeded. </exception>
 			/// <exception cref="NullArgumentException"> if the {@code coefficients} is
 			/// {@code null}. </exception>
 			/// <exception cref="NoDataException"> if the {@code coefficients} array is empty. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.complex.Complex solve(org.apache.commons.math3.complex.Complex coefficients[] , org.apache.commons.math3.complex.Complex initial) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.TooManyEvaluationsException
+//ORIGINAL LINE: public mathlib.complex.Complex solve(mathlib.complex.Complex coefficients[] , mathlib.complex.Complex initial) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.TooManyEvaluationsException
 			public virtual Complex solve(Complex[] coefficients, Complex initial)
 			{
 				if (coefficients == null)
@@ -406,10 +406,10 @@ namespace org.apache.commons.math3.analysis.solvers
 				double functionValueAccuracy = outerInstance.FunctionValueAccuracy;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex nC = new org.apache.commons.math3.complex.Complex(n, 0);
+//ORIGINAL LINE: final mathlib.complex.Complex nC = new mathlib.complex.Complex(n, 0);
 				Complex nC = new Complex(n, 0);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex n1C = new org.apache.commons.math3.complex.Complex(n - 1, 0);
+//ORIGINAL LINE: final mathlib.complex.Complex n1C = new mathlib.complex.Complex(n - 1, 0);
 				Complex n1C = new Complex(n - 1, 0);
 
 				Complex z = initial;
@@ -431,7 +431,7 @@ namespace org.apache.commons.math3.analysis.solvers
 
 					// Check for convergence.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double tolerance = org.apache.commons.math3.util.FastMath.max(relativeAccuracy * z.abs(), absoluteAccuracy);
+//ORIGINAL LINE: final double tolerance = mathlib.util.FastMath.max(relativeAccuracy * z.abs(), absoluteAccuracy);
 					double tolerance = FastMath.max(relativeAccuracy * z.abs(), absoluteAccuracy);
 					if ((z.subtract(oldz)).abs() <= tolerance)
 					{
@@ -444,29 +444,29 @@ namespace org.apache.commons.math3.analysis.solvers
 
 					// Now pv != 0, calculate the new approximation.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex G = dv.divide(pv);
+//ORIGINAL LINE: final mathlib.complex.Complex G = dv.divide(pv);
 					Complex G = dv.divide(pv);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex G2 = G.multiply(G);
+//ORIGINAL LINE: final mathlib.complex.Complex G2 = G.multiply(G);
 					Complex G2 = G.multiply(G);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex H = G2.subtract(d2v.divide(pv));
+//ORIGINAL LINE: final mathlib.complex.Complex H = G2.subtract(d2v.divide(pv));
 					Complex H = G2.subtract(d2v.divide(pv));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex delta = n1C.multiply((nC.multiply(H)).subtract(G2));
+//ORIGINAL LINE: final mathlib.complex.Complex delta = n1C.multiply((nC.multiply(H)).subtract(G2));
 					Complex delta = n1C.multiply((nC.multiply(H)).subtract(G2));
 					// Choose a denominator larger in magnitude.
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex deltaSqrt = delta.sqrt();
+//ORIGINAL LINE: final mathlib.complex.Complex deltaSqrt = delta.sqrt();
 					Complex deltaSqrt = delta.sqrt();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex dplus = G.add(deltaSqrt);
+//ORIGINAL LINE: final mathlib.complex.Complex dplus = G.add(deltaSqrt);
 					Complex dplus = G.add(deltaSqrt);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex dminus = G.subtract(deltaSqrt);
+//ORIGINAL LINE: final mathlib.complex.Complex dminus = G.subtract(deltaSqrt);
 					Complex dminus = G.subtract(deltaSqrt);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.complex.Complex denominator = dplus.abs() > dminus.abs() ? dplus : dminus;
+//ORIGINAL LINE: final mathlib.complex.Complex denominator = dplus.abs() > dminus.abs() ? dplus : dminus;
 					Complex denominator = dplus.abs() > dminus.abs() ? dplus : dminus;
 					// Perturb z if denominator is zero, for instance,
 					// p(x) = x^3 + 1, z = 0.

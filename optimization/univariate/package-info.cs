@@ -19,7 +19,7 @@
 ///     Univariate real functions minimum finding algorithms.
 /// 
 /// </summary>
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
 }

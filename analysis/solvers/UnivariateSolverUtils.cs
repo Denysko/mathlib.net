@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.solvers
+namespace mathlib.analysis.solvers
 {
 
-	using NoBracketingException = org.apache.commons.math3.exception.NoBracketingException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NoBracketingException = mathlib.exception.NoBracketingException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Utility routines for <seealso cref="UnivariateSolver"/> objects.
@@ -50,7 +50,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// endpoints. </exception>
 		/// <exception cref="NullArgumentException"> if {@code function} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double solve(org.apache.commons.math3.analysis.UnivariateFunction function, double x0, double x1) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public static double solve(mathlib.analysis.UnivariateFunction function, double x0, double x1) throws mathlib.exception.NullArgumentException, mathlib.exception.NoBracketingException
 		public static double solve(UnivariateFunction function, double x0, double x1)
 		{
 			if (function == null)
@@ -76,7 +76,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// endpoints. </exception>
 		/// <exception cref="NullArgumentException"> if {@code function} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double solve(org.apache.commons.math3.analysis.UnivariateFunction function, double x0, double x1, double absoluteAccuracy) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public static double solve(mathlib.analysis.UnivariateFunction function, double x0, double x1, double absoluteAccuracy) throws mathlib.exception.NullArgumentException, mathlib.exception.NoBracketingException
 		public static double solve(UnivariateFunction function, double x0, double x1, double absoluteAccuracy)
 		{
 			if (function == null)
@@ -106,7 +106,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <exception cref="NoBracketingException"> if the function has the same sign at the
 		/// endpoints. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double forceSide(final int maxEval, final org.apache.commons.math3.analysis.UnivariateFunction f, final BracketedUnivariateSolver<org.apache.commons.math3.analysis.UnivariateFunction> bracketing, final double baseRoot, final double min, final double max, final AllowedSolution allowedSolution) throws org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public static double forceSide(final int maxEval, final mathlib.analysis.UnivariateFunction f, final BracketedUnivariateSolver<mathlib.analysis.UnivariateFunction> bracketing, final double baseRoot, final double min, final double max, final AllowedSolution allowedSolution) throws mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double forceSide(int maxEval, UnivariateFunction f, BracketedUnivariateSolver<UnivariateFunction> bracketing, double baseRoot, double min, double max, AllowedSolution allowedSolution)
 		{
@@ -119,7 +119,7 @@ namespace org.apache.commons.math3.analysis.solvers
 
 			// find a very small interval bracketing the root
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double step = org.apache.commons.math3.util.FastMath.max(bracketing.getAbsoluteAccuracy(), org.apache.commons.math3.util.FastMath.abs(baseRoot * bracketing.getRelativeAccuracy()));
+//ORIGINAL LINE: final double step = mathlib.util.FastMath.max(bracketing.getAbsoluteAccuracy(), mathlib.util.FastMath.abs(baseRoot * bracketing.getRelativeAccuracy()));
 			double step = FastMath.max(bracketing.AbsoluteAccuracy, FastMath.abs(baseRoot * bracketing.RelativeAccuracy));
 			double xLo = FastMath.max(min, baseRoot - step);
 			double fLo = f.value(xLo);
@@ -215,7 +215,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <exception cref="NotStrictlyPositiveException"> if {@code maximumIterations <= 0}. </exception>
 		/// <exception cref="NullArgumentException"> if {@code function} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] bracket(org.apache.commons.math3.analysis.UnivariateFunction function, double initial, double lowerBound, double upperBound) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public static double[] bracket(mathlib.analysis.UnivariateFunction function, double initial, double lowerBound, double upperBound) throws mathlib.exception.NullArgumentException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NoBracketingException
 		public static double[] bracket(UnivariateFunction function, double initial, double lowerBound, double upperBound)
 		{
 			return bracket(function, initial, lowerBound, upperBound, 1.0, 1.0, int.MaxValue);
@@ -238,7 +238,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		 /// <exception cref="NotStrictlyPositiveException"> if {@code maximumIterations <= 0}. </exception>
 		 /// <exception cref="NullArgumentException"> if {@code function} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] bracket(org.apache.commons.math3.analysis.UnivariateFunction function, double initial, double lowerBound, double upperBound, int maximumIterations) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public static double[] bracket(mathlib.analysis.UnivariateFunction function, double initial, double lowerBound, double upperBound, int maximumIterations) throws mathlib.exception.NullArgumentException, mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NoBracketingException
 		public static double[] bracket(UnivariateFunction function, double initial, double lowerBound, double upperBound, int maximumIterations)
 		{
 			return bracket(function, initial, lowerBound, upperBound, 1.0, 1.0, maximumIterations);
@@ -305,7 +305,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <returns> a two element array holding the bracketing values. </returns>
 		/// <exception cref="NoBracketingException"> if function cannot be bracketed in the search interval </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double[] bracket(final org.apache.commons.math3.analysis.UnivariateFunction function, final double initial, final double lowerBound, final double upperBound, final double q, final double r, final int maximumIterations) throws org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public static double[] bracket(final mathlib.analysis.UnivariateFunction function, final double initial, final double lowerBound, final double upperBound, final double q, final double r, final int maximumIterations) throws mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static double[] bracket(UnivariateFunction function, double initial, double lowerBound, double upperBound, double q, double r, int maximumIterations)
 		{
@@ -409,7 +409,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// given points. </returns>
 		/// <exception cref="NullArgumentException"> if {@code function} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static boolean isBracketing(org.apache.commons.math3.analysis.UnivariateFunction function, final double lower, final double upper) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static boolean isBracketing(mathlib.analysis.UnivariateFunction function, final double lower, final double upper) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static bool isBracketing(UnivariateFunction function, double lower, double upper)
 		{
@@ -447,7 +447,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <param name="upper"> Upper endpoint. </param>
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= upper}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void verifyInterval(final double lower, final double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public static void verifyInterval(final double lower, final double upper) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void verifyInterval(double lower, double upper)
 		{
@@ -466,7 +466,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// <exception cref="NumberIsTooLargeException"> if {@code lower >= initial} or
 		/// {@code initial >= upper}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void verifySequence(final double lower, final double initial, final double upper) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public static void verifySequence(final double lower, final double initial, final double upper) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void verifySequence(double lower, double initial, double upper)
 		{
@@ -485,7 +485,7 @@ namespace org.apache.commons.math3.analysis.solvers
 		/// endpoints. </exception>
 		/// <exception cref="NullArgumentException"> if {@code function} is {@code null}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void verifyBracketing(org.apache.commons.math3.analysis.UnivariateFunction function, final double lower, final double upper) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoBracketingException
+//ORIGINAL LINE: public static void verifyBracketing(mathlib.analysis.UnivariateFunction function, final double lower, final double upper) throws mathlib.exception.NullArgumentException, mathlib.exception.NoBracketingException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void verifyBracketing(UnivariateFunction function, double lower, double upper)
 		{

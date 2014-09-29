@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.genetics
+namespace mathlib.genetics
 {
 
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
 
 	/// <summary>
 	/// Stops after a fixed number of generations. Each time <seealso cref="#isSatisfied(Population)"/> is invoked, a generation
@@ -43,7 +43,7 @@ namespace org.apache.commons.math3.genetics
 		/// <param name="maxGenerations"> number of generations to evolve </param>
 		/// <exception cref="NumberIsTooSmallException"> if the number of generations is &lt; 1 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FixedGenerationCount(final int maxGenerations) throws org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public FixedGenerationCount(final int maxGenerations) throws mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public FixedGenerationCount(int maxGenerations)
 		{

@@ -18,20 +18,20 @@ using System.Text;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathUtils = mathlib.util.MathUtils;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Basic implementation of RealMatrix methods regardless of the underlying storage.
@@ -67,7 +67,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="columnDimension">  the number of columns in the new matrix </param>
 		/// <exception cref="NotStrictlyPositiveException"> if row or column dimension is not positive </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected AbstractRealMatrix(final int rowDimension, final int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: protected AbstractRealMatrix(final int rowDimension, final int columnDimension) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		protected internal AbstractRealMatrix(int rowDimension, int columnDimension)
 		{
@@ -193,7 +193,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealMatrix multiply(final RealMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public RealMatrix multiply(final RealMatrix m) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealMatrix multiply(RealMatrix m)
 		{
@@ -230,7 +230,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealMatrix preMultiply(final RealMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public RealMatrix preMultiply(final RealMatrix m) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealMatrix preMultiply(RealMatrix m)
 		{
@@ -240,7 +240,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealMatrix power(final int p) throws org.apache.commons.math3.exception.NotPositiveException, NonSquareMatrixException
+//ORIGINAL LINE: public RealMatrix power(final int p) throws mathlib.exception.NotPositiveException, NonSquareMatrixException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealMatrix power(int p)
 		{
@@ -463,7 +463,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealMatrix getSubMatrix(final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public RealMatrix getSubMatrix(final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealMatrix getSubMatrix(int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -486,7 +486,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealMatrix getSubMatrix(final int[] selectedRows, final int[] selectedColumns) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public RealMatrix getSubMatrix(final int[] selectedRows, final int[] selectedColumns) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealMatrix getSubMatrix(int[] selectedRows, int[] selectedColumns)
 		{
@@ -529,7 +529,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void copySubMatrix(final int startRow, final int endRow, final int startColumn, final int endColumn, final double[][] destination) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void copySubMatrix(final int startRow, final int endRow, final int startColumn, final int endColumn, final double[][] destination) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void copySubMatrix(int startRow, int endRow, int startColumn, int endColumn, double[][] destination)
 		{
@@ -609,7 +609,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void copySubMatrix(int[] selectedRows, int[] selectedColumns, double[][] destination) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void copySubMatrix(int[] selectedRows, int[] selectedColumns, double[][] destination) throws mathlib.exception.OutOfRangeException, mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, MatrixDimensionMismatchException
 		public virtual void copySubMatrix(int[] selectedRows, int[] selectedColumns, double[][] destination)
 		{
 			MatrixUtils.checkSubMatrixIndex(this, selectedRows, selectedColumns);
@@ -640,7 +640,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSubMatrix(final double[][] subMatrix, final int row, final int column) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public void setSubMatrix(final double[][] subMatrix, final int row, final int column) throws mathlib.exception.NoDataException, mathlib.exception.OutOfRangeException, mathlib.exception.DimensionMismatchException, mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setSubMatrix(double[][] subMatrix, int row, int column)
 		{
@@ -686,7 +686,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealMatrix getRowMatrix(final int row) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public RealMatrix getRowMatrix(final int row) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealMatrix getRowMatrix(int row)
 		{
@@ -708,7 +708,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setRowMatrix(final int row, final RealMatrix matrix) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void setRowMatrix(final int row, final RealMatrix matrix) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setRowMatrix(int row, RealMatrix matrix)
 		{
@@ -729,7 +729,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealMatrix getColumnMatrix(final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public RealMatrix getColumnMatrix(final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealMatrix getColumnMatrix(int column)
 		{
@@ -751,7 +751,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setColumnMatrix(final int column, final RealMatrix matrix) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void setColumnMatrix(final int column, final RealMatrix matrix) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setColumnMatrix(int column, RealMatrix matrix)
 		{
@@ -772,7 +772,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector getRowVector(final int row) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public RealVector getRowVector(final int row) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector getRowVector(int row)
 		{
@@ -782,7 +782,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setRowVector(final int row, final RealVector vector) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void setRowVector(final int row, final RealVector vector) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setRowVector(int row, RealVector vector)
 		{
@@ -803,7 +803,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector getColumnVector(final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public RealVector getColumnVector(final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector getColumnVector(int column)
 		{
@@ -813,7 +813,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setColumnVector(final int column, final RealVector vector) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void setColumnVector(final int column, final RealVector vector) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setColumnVector(int column, RealVector vector)
 		{
@@ -834,7 +834,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getRow(final int row) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double[] getRow(final int row) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] getRow(int row)
 		{
@@ -856,7 +856,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setRow(final int row, final double[] array) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void setRow(final int row, final double[] array) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setRow(int row, double[] array)
 		{
@@ -877,7 +877,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getColumn(final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public double[] getColumn(final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] getColumn(int column)
 		{
@@ -899,7 +899,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setColumn(final int column, final double[] array) throws org.apache.commons.math3.exception.OutOfRangeException, MatrixDimensionMismatchException
+//ORIGINAL LINE: public void setColumn(final int column, final double[] array) throws mathlib.exception.OutOfRangeException, MatrixDimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setColumn(int column, double[] array)
 		{
@@ -920,7 +920,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void addToEntry(int row, int column, double increment) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public void addToEntry(int row, int column, double increment) throws mathlib.exception.OutOfRangeException
 		public virtual void addToEntry(int row, int column, double increment)
 		{
 			MatrixUtils.checkMatrixIndex(this, row, column);
@@ -930,7 +930,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void multiplyEntry(int row, int column, double factor) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public void multiplyEntry(int row, int column, double factor) throws mathlib.exception.OutOfRangeException
 		public virtual void multiplyEntry(int row, int column, double factor)
 		{
 			MatrixUtils.checkMatrixIndex(this, row, column);
@@ -959,9 +959,9 @@ namespace org.apache.commons.math3.linear
 		{
 			private readonly AbstractRealMatrix outerInstance;
 
-			private org.apache.commons.math3.linear.RealMatrix @out;
+			private mathlib.linear.RealMatrix @out;
 
-			public DefaultRealMatrixPreservingVisitorAnonymousInnerClassHelper2(AbstractRealMatrix outerInstance, org.apache.commons.math3.linear.RealMatrix @out)
+			public DefaultRealMatrixPreservingVisitorAnonymousInnerClassHelper2(AbstractRealMatrix outerInstance, mathlib.linear.RealMatrix @out)
 			{
 				this.outerInstance = outerInstance;
 				this.@out = @out;
@@ -1031,7 +1031,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] operate(final double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double[] operate(final double[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] operate(double[] v)
 		{
@@ -1065,7 +1065,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector operate(final RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public RealVector operate(final RealVector v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector operate(RealVector v)
 		{
@@ -1106,7 +1106,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] preMultiply(final double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double[] preMultiply(final double[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] preMultiply(double[] v)
 		{
@@ -1141,7 +1141,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public RealVector preMultiply(final RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public RealVector preMultiply(final RealVector v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual RealVector preMultiply(RealVector v)
 		{
@@ -1235,7 +1235,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double walkInRowOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double walkInRowOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double walkInRowOrder(RealMatrixChangingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -1260,7 +1260,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double walkInRowOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double walkInRowOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double walkInRowOrder(RealMatrixPreservingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -1331,7 +1331,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double walkInColumnOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double walkInColumnOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double walkInColumnOrder(RealMatrixChangingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -1356,7 +1356,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double walkInColumnOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double walkInColumnOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double walkInColumnOrder(RealMatrixPreservingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -1393,7 +1393,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double walkInOptimizedOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double walkInOptimizedOrder(final RealMatrixChangingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double walkInOptimizedOrder(RealMatrixChangingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -1403,7 +1403,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double walkInOptimizedOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException
+//ORIGINAL LINE: public double walkInOptimizedOrder(final RealMatrixPreservingVisitor visitor, final int startRow, final int endRow, final int startColumn, final int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double walkInOptimizedOrder(RealMatrixPreservingVisitor visitor, int startRow, int endRow, int startColumn, int endColumn)
 		{
@@ -1502,7 +1502,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract RealMatrix createMatrix(int rowDimension, int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: public abstract RealMatrix createMatrix(int rowDimension, int columnDimension) throws mathlib.exception.NotStrictlyPositiveException;
 		public abstract RealMatrix createMatrix(int rowDimension, int columnDimension);
 
 		/// <summary>
@@ -1512,13 +1512,13 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract double getEntry(int row, int column) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: public abstract double getEntry(int row, int column) throws mathlib.exception.OutOfRangeException;
 		public abstract double getEntry(int row, int column);
 
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public abstract void setEntry(int row, int column, double value) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: public abstract void setEntry(int row, int column, double value) throws mathlib.exception.OutOfRangeException;
 		public abstract void setEntry(int row, int column, double value);
 	}
 

@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.fitting.leastsquares
+namespace mathlib.fitting.leastsquares
 {
 
-	using ArrayRealVector = org.apache.commons.math3.linear.ArrayRealVector;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using org.apache.commons.math3.optim;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using Precision = org.apache.commons.math3.util.Precision;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using ArrayRealVector = mathlib.linear.ArrayRealVector;
+	using RealMatrix = mathlib.linear.RealMatrix;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using mathlib.optim;
+	using Incrementor = mathlib.util.Incrementor;
+	using Precision = mathlib.util.Precision;
+	using FastMath = mathlib.util.FastMath;
 
 
 	/// <summary>
@@ -302,19 +302,19 @@ namespace org.apache.commons.math3.fitting.leastsquares
 			double[] currentPoint = problem.Start.toArray();
 			//counters
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Incrementor iterationCounter = problem.getIterationCounter();
+//ORIGINAL LINE: final mathlib.util.Incrementor iterationCounter = problem.getIterationCounter();
 			Incrementor iterationCounter = problem.IterationCounter;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.util.Incrementor evaluationCounter = problem.getEvaluationCounter();
+//ORIGINAL LINE: final mathlib.util.Incrementor evaluationCounter = problem.getEvaluationCounter();
 			Incrementor evaluationCounter = problem.EvaluationCounter;
 			//convergence criterion
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optim.ConvergenceChecker<org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker = problem.getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optim.ConvergenceChecker<mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation> checker = problem.getConvergenceChecker();
 			ConvergenceChecker<LeastSquaresProblem_Evaluation> checker = problem.ConvergenceChecker;
 
 			// arrays shared with the other private methods
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int solvedCols = org.apache.commons.math3.util.FastMath.min(nR, nC);
+//ORIGINAL LINE: final int solvedCols = mathlib.util.FastMath.min(nR, nC);
 			int solvedCols = FastMath.min(nR, nC);
 			/* Parameters evolution direction associated with lmPar. */
 			double[] lmDir = new double[nC];
@@ -347,7 +347,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 				iterationCounter.incrementCount();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.fitting.leastsquares.LeastSquaresProblem_Evaluation previous = current;
+//ORIGINAL LINE: final mathlib.fitting.leastsquares.LeastSquaresProblem_Evaluation previous = current;
 				LeastSquaresProblem_Evaluation previous = current;
 
 				// QR decomposition of the jacobian matrix
@@ -1038,7 +1038,7 @@ namespace org.apache.commons.math3.fitting.leastsquares
 		/// <returns> data used in other methods of this class. </returns>
 		/// <exception cref="ConvergenceException"> if the decomposition cannot be performed. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private InternalData qrDecomposition(org.apache.commons.math3.linear.RealMatrix jacobian, int solvedCols) throws org.apache.commons.math3.exception.ConvergenceException
+//ORIGINAL LINE: private InternalData qrDecomposition(mathlib.linear.RealMatrix jacobian, int solvedCols) throws mathlib.exception.ConvergenceException
 		private InternalData qrDecomposition(RealMatrix jacobian, int solvedCols)
 		{
 			// Code in this class assumes that the weighted Jacobian is -(W^(1/2) J),

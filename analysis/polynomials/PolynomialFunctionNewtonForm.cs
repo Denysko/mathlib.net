@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.analysis.polynomials
+namespace mathlib.analysis.polynomials
 {
 
-	using DerivativeStructure = org.apache.commons.math3.analysis.differentiation.DerivativeStructure;
-	using UnivariateDifferentiableFunction = org.apache.commons.math3.analysis.differentiation.UnivariateDifferentiableFunction;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using DerivativeStructure = mathlib.analysis.differentiation.DerivativeStructure;
+	using UnivariateDifferentiableFunction = mathlib.analysis.differentiation.UnivariateDifferentiableFunction;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Implements the representation of a real polynomial function in
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="DimensionMismatchException"> if the size difference between
 		/// {@code a} and {@code c} is not equal to 1. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PolynomialFunctionNewtonForm(double a[] , double c[]) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public PolynomialFunctionNewtonForm(double a[] , double c[]) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 		public PolynomialFunctionNewtonForm(double[] a, double[] c)
 		{
 
@@ -107,7 +107,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// @since 3.1
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.analysis.differentiation.DerivativeStructure value(final org.apache.commons.math3.analysis.differentiation.DerivativeStructure t)
+//ORIGINAL LINE: public mathlib.analysis.differentiation.DerivativeStructure value(final mathlib.analysis.differentiation.DerivativeStructure t)
 		public virtual DerivativeStructure value(DerivativeStructure t)
 		{
 			verifyInputArray(a, c);
@@ -200,7 +200,7 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="DimensionMismatchException"> if the size difference between
 		/// {@code a} and {@code c} is not equal to 1. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double evaluate(double a[] , double c[], double z) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.NoDataException
+//ORIGINAL LINE: public static double evaluate(double a[] , double c[], double z) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.NoDataException
 		public static double evaluate(double[] a, double[] c, double z)
 		{
 			verifyInputArray(a, c);
@@ -258,10 +258,10 @@ namespace org.apache.commons.math3.analysis.polynomials
 		/// <exception cref="NoDataException"> if any array has zero length. </exception>
 		/// <exception cref="DimensionMismatchException"> if the size difference between
 		/// {@code a} and {@code c} is not equal to 1. </exception>
-		/// <seealso cref= org.apache.commons.math3.analysis.interpolation.DividedDifferenceInterpolator#computeDividedDifference(double[],
+		/// <seealso cref= mathlib.analysis.interpolation.DividedDifferenceInterpolator#computeDividedDifference(double[],
 		/// double[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected static void verifyInputArray(double a[] , double c[]) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: protected static void verifyInputArray(double a[] , double c[]) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException, mathlib.exception.DimensionMismatchException
 		protected internal static void verifyInputArray(double[] a, double[] c)
 		{
 			MathUtils.checkNotNull(a);

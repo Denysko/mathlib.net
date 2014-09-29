@@ -16,17 +16,17 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
 
 	/// <summary>
 	/// Implementation of a diagonal matrix.
@@ -51,7 +51,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NotStrictlyPositiveException"> if the dimension is
 		/// not positive. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DiagonalMatrix(final int dimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException
+//ORIGINAL LINE: public DiagonalMatrix(final int dimension) throws mathlib.exception.NotStrictlyPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DiagonalMatrix(int dimension) : base(dimension, dimension)
 		{
@@ -84,7 +84,7 @@ namespace org.apache.commons.math3.linear
 		/// otherwise it will be referenced. </param>
 		/// <exception cref="NullArgumentException"> if d is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DiagonalMatrix(final double[] d, final boolean copyArray) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public DiagonalMatrix(final double[] d, final boolean copyArray) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public DiagonalMatrix(double[] d, bool copyArray)
 		{
@@ -97,7 +97,7 @@ namespace org.apache.commons.math3.linear
 		/// </summary>
 		/// <exception cref="DimensionMismatchException"> if the requested dimensions are not equal. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealMatrix createMatrix(final int rowDimension, final int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public RealMatrix createMatrix(final int rowDimension, final int columnDimension) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealMatrix createMatrix(int rowDimension, int columnDimension)
 		{
@@ -181,7 +181,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if
 		/// {@code columnDimension(this) != rowDimension(m)} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DiagonalMatrix multiply(final DiagonalMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public DiagonalMatrix multiply(final DiagonalMatrix m) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual DiagonalMatrix multiply(DiagonalMatrix m)
 		{
@@ -209,7 +209,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if
 		/// {@code columnDimension(this) != rowDimension(m)} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealMatrix multiply(final RealMatrix m) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public RealMatrix multiply(final RealMatrix m) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealMatrix multiply(RealMatrix m)
 		{
@@ -281,7 +281,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getEntry(final int row, final int column) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public double getEntry(final int row, final int column) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double getEntry(int row, int column)
 		{
@@ -293,7 +293,7 @@ namespace org.apache.commons.math3.linear
 		/// {@inheritDoc} </summary>
 		/// <exception cref="NumberIsTooLargeException"> if {@code row != column} and value is non-zero. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void setEntry(final int row, final int column, final double value) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override public void setEntry(final int row, final int column, final double value) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void setEntry(int row, int column, double value)
 		{
@@ -312,7 +312,7 @@ namespace org.apache.commons.math3.linear
 		/// {@inheritDoc} </summary>
 		/// <exception cref="NumberIsTooLargeException"> if {@code row != column} and increment is non-zero. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void addToEntry(final int row, final int column, final double increment) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: @Override public void addToEntry(final int row, final int column, final double increment) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void addToEntry(int row, int column, double increment)
 		{
@@ -330,7 +330,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public void multiplyEntry(final int row, final int column, final double factor) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: @Override public void multiplyEntry(final int row, final int column, final double factor) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override void multiplyEntry(int row, int column, double factor)
 		{
@@ -365,7 +365,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double[] operate(final double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double[] operate(final double[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double[] operate(double[] v)
 		{
@@ -375,7 +375,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double[] preMultiply(final double[] v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public double[] preMultiply(final double[] v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double[] preMultiply(double[] v)
 		{
@@ -385,7 +385,7 @@ namespace org.apache.commons.math3.linear
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public RealVector preMultiply(final RealVector v) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public RealVector preMultiply(final RealVector v) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override RealVector preMultiply(RealVector v)
 		{
@@ -408,7 +408,7 @@ namespace org.apache.commons.math3.linear
 		/// <param name="value"> value to check </param>
 		/// <exception cref="NumberIsTooLargeException"> if value is not zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void ensureZero(final double value) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: private void ensureZero(final double value) throws mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private void ensureZero(double value)
 		{

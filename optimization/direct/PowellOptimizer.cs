@@ -17,20 +17,20 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optimization.direct
+namespace mathlib.optimization.direct
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathArrays = org.apache.commons.math3.util.MathArrays;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using MultivariateFunction = org.apache.commons.math3.analysis.MultivariateFunction;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using org.apache.commons.math3.optimization;
-	using BracketFinder = org.apache.commons.math3.optimization.univariate.BracketFinder;
-	using BrentOptimizer = org.apache.commons.math3.optimization.univariate.BrentOptimizer;
-	using UnivariatePointValuePair = org.apache.commons.math3.optimization.univariate.UnivariatePointValuePair;
-	using SimpleUnivariateValueChecker = org.apache.commons.math3.optimization.univariate.SimpleUnivariateValueChecker;
+	using FastMath = mathlib.util.FastMath;
+	using MathArrays = mathlib.util.MathArrays;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using MultivariateFunction = mathlib.analysis.MultivariateFunction;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using mathlib.optimization;
+	using BracketFinder = mathlib.optimization.univariate.BracketFinder;
+	using BrentOptimizer = mathlib.optimization.univariate.BrentOptimizer;
+	using UnivariatePointValuePair = mathlib.optimization.univariate.UnivariatePointValuePair;
+	using SimpleUnivariateValueChecker = mathlib.optimization.univariate.SimpleUnivariateValueChecker;
 
 	/// <summary>
 	/// Powell algorithm.
@@ -149,7 +149,7 @@ namespace org.apache.commons.math3.optimization.direct
 		protected internal override PointValuePair doOptimize()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.GoalType goal = getGoalType();
+//ORIGINAL LINE: final mathlib.optimization.GoalType goal = getGoalType();
 			GoalType goal = GoalType;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] guess = getStartPoint();
@@ -169,7 +169,7 @@ namespace org.apache.commons.math3.optimization.direct
 			}
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair> checker = getConvergenceChecker();
+//ORIGINAL LINE: final mathlib.optimization.ConvergenceChecker<mathlib.optimization.PointValuePair> checker = getConvergenceChecker();
 			ConvergenceChecker<PointValuePair> checker = ConvergenceChecker;
 
 			double[] x = guess;
@@ -189,13 +189,13 @@ namespace org.apache.commons.math3.optimization.direct
 				for (int i = 0; i < n; i++)
 				{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] d = org.apache.commons.math3.util.MathArrays.copyOf(direc[i]);
+//ORIGINAL LINE: final double[] d = mathlib.util.MathArrays.copyOf(direc[i]);
 					double[] d = MathArrays.copyOf(direc[i]);
 
 					fX2 = fVal;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.univariate.UnivariatePointValuePair optimum = line.search(x, d);
+//ORIGINAL LINE: final mathlib.optimization.univariate.UnivariatePointValuePair optimum = line.search(x, d);
 					UnivariatePointValuePair optimum = line.search(x, d);
 					fVal = optimum.Value;
 					alphaMin = optimum.Point;
@@ -215,10 +215,10 @@ namespace org.apache.commons.math3.optimization.direct
 				bool stop = 2 * (fX - fVal) <= (relativeThreshold * (FastMath.abs(fX) + FastMath.abs(fVal)) + absoluteThreshold);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.PointValuePair previous = new org.apache.commons.math3.optimization.PointValuePair(x1, fX);
+//ORIGINAL LINE: final mathlib.optimization.PointValuePair previous = new mathlib.optimization.PointValuePair(x1, fX);
 				PointValuePair previous = new PointValuePair(x1, fX);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.PointValuePair current = new org.apache.commons.math3.optimization.PointValuePair(x, fVal);
+//ORIGINAL LINE: final mathlib.optimization.PointValuePair current = new mathlib.optimization.PointValuePair(x, fVal);
 				PointValuePair current = new PointValuePair(x, fVal);
 				if (!stop && checker != null)
 				{
@@ -262,7 +262,7 @@ namespace org.apache.commons.math3.optimization.direct
 					if (t < 0.0)
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.univariate.UnivariatePointValuePair optimum = line.search(x, d);
+//ORIGINAL LINE: final mathlib.optimization.univariate.UnivariatePointValuePair optimum = line.search(x, d);
 						UnivariatePointValuePair optimum = line.search(x, d);
 						fVal = optimum.Value;
 						alphaMin = optimum.Point;
@@ -359,21 +359,21 @@ namespace org.apache.commons.math3.optimization.direct
 			/// <param name="p"> Starting point. </param>
 			/// <param name="d"> Search direction. </param>
 			/// <returns> the optimum. </returns>
-			/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+			/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 			/// if the number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.optimization.univariate.UnivariatePointValuePair search(final double[] p, final double[] d)
+//ORIGINAL LINE: public mathlib.optimization.univariate.UnivariatePointValuePair search(final double[] p, final double[] d)
 			public virtual UnivariatePointValuePair search(double[] p, double[] d)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int n = p.length;
 				int n = p.Length;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.UnivariateFunction f = new org.apache.commons.math3.analysis.UnivariateFunction()
+//ORIGINAL LINE: final mathlib.analysis.UnivariateFunction f = new mathlib.analysis.UnivariateFunction()
 				UnivariateFunction f = new UnivariateFunctionAnonymousInnerClassHelper(this, p, d, n);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.optimization.GoalType goal = PowellOptimizer.this.getGoalType();
+//ORIGINAL LINE: final mathlib.optimization.GoalType goal = PowellOptimizer.this.getGoalType();
 				GoalType goal = outerInstance.GoalType;
 				bracket.search(f, goal, 0, 1);
 				// Passing "MAX_VALUE" as a dummy value because it is the enclosing

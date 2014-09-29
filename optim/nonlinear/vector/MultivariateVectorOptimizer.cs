@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.optim.nonlinear.vector
+namespace mathlib.optim.nonlinear.vector
 {
 
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MultivariateVectorFunction = org.apache.commons.math3.analysis.MultivariateVectorFunction;
-	using org.apache.commons.math3.optim;
-	using org.apache.commons.math3.optim;
-	using RealMatrix = org.apache.commons.math3.linear.RealMatrix;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MultivariateVectorFunction = mathlib.analysis.MultivariateVectorFunction;
+	using mathlib.optim;
+	using mathlib.optim;
+	using RealMatrix = mathlib.linear.RealMatrix;
 
 	/// <summary>
 	/// Base class for a multivariate vector function optimizer.
@@ -80,7 +80,7 @@ namespace org.apache.commons.math3.optim.nonlinear.vector
 		/// <exception cref="DimensionMismatchException"> if the initial guess, target, and weight
 		/// arguments have inconsistent dimensions. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public org.apache.commons.math3.optim.PointVectorValuePair optimize(org.apache.commons.math3.optim.OptimizationData... optData) throws org.apache.commons.math3.exception.TooManyEvaluationsException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: @Override public mathlib.optim.PointVectorValuePair optimize(mathlib.optim.OptimizationData... optData) throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.DimensionMismatchException
 		public override PointVectorValuePair optimize(params OptimizationData[] optData)
 		{
 			// Set up base class and perform computation.

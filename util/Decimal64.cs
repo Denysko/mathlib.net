@@ -759,7 +759,7 @@ namespace mathlib.util
 		/// @since 3.2
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Decimal64 linearCombination(final Decimal64[] a, final Decimal64[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Decimal64 linearCombination(final Decimal64[] a, final Decimal64[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Decimal64 linearCombination(Decimal64[] a, Decimal64[] b)
 		{
@@ -786,7 +786,7 @@ namespace mathlib.util
 		/// @since 3.2
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Decimal64 linearCombination(final double[] a, final Decimal64[] b) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public Decimal64 linearCombination(final double[] a, final Decimal64[] b) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual Decimal64 linearCombination(double[] a, Decimal64[] b)
 		{

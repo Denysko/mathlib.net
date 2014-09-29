@@ -16,17 +16,17 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.distribution
+namespace mathlib.distribution
 {
 
-	using MathInternalError = org.apache.commons.math3.exception.MathInternalError;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NumberIsTooLargeException = org.apache.commons.math3.exception.NumberIsTooLargeException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using RandomGenerator = org.apache.commons.math3.random.RandomGenerator;
-	using RandomDataImpl = org.apache.commons.math3.random.RandomDataImpl;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using MathInternalError = mathlib.exception.MathInternalError;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NumberIsTooLargeException = mathlib.exception.NumberIsTooLargeException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using RandomGenerator = mathlib.random.RandomGenerator;
+	using RandomDataImpl = mathlib.random.RandomDataImpl;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Base class for integer-valued discrete distributions.  Default
@@ -87,7 +87,7 @@ namespace org.apache.commons.math3.distribution
 		/// <p>{@code P(x0 < X <= x1) = P(X <= x1) - P(X <= x0)}</p>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double cumulativeProbability(int x0, int x1) throws org.apache.commons.math3.exception.NumberIsTooLargeException
+//ORIGINAL LINE: public double cumulativeProbability(int x0, int x1) throws mathlib.exception.NumberIsTooLargeException
 		public virtual double cumulativeProbability(int x0, int x1)
 		{
 			if (x1 < x0)
@@ -109,7 +109,7 @@ namespace org.apache.commons.math3.distribution
 		/// </ul>
 		/// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int inverseCumulativeProbability(final double p) throws org.apache.commons.math3.exception.OutOfRangeException
+//ORIGINAL LINE: public int inverseCumulativeProbability(final double p) throws mathlib.exception.OutOfRangeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual int inverseCumulativeProbability(double p)
 		{
@@ -148,7 +148,7 @@ namespace org.apache.commons.math3.distribution
 //ORIGINAL LINE: final double mu = getNumericalMean();
 			double mu = NumericalMean;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double sigma = org.apache.commons.math3.util.FastMath.sqrt(getNumericalVariance());
+//ORIGINAL LINE: final double sigma = mathlib.util.FastMath.sqrt(getNumericalVariance());
 			double sigma = FastMath.sqrt(NumericalVariance);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final boolean chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) || Double.isInfinite(sigma) || Double.isNaN(sigma) || sigma == 0.0);
@@ -264,7 +264,7 @@ namespace org.apache.commons.math3.distribution
 		/// <returns> the cumulative probability </returns>
 		/// <exception cref="MathInternalError"> if the cumulative probability is {@code NaN} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private double checkedCumulativeProbability(int argument) throws org.apache.commons.math3.exception.MathInternalError
+//ORIGINAL LINE: private double checkedCumulativeProbability(int argument) throws mathlib.exception.MathInternalError
 		private double checkedCumulativeProbability(int argument)
 		{
 			double result = double.NaN;

@@ -31,8 +31,8 @@ namespace mathlib.analysis.solvers
     /// or slightly larger than the actual root. Root-finding algorithms generally
     /// only guarantee that the returned solution is within the requested
     /// tolerances. In certain cases however, in particular for
-    /// <seealso cref="org.apache.commons.math3.ode.events.EventHandler state events"/> of
-    /// <seealso cref="org.apache.commons.math3.ode.ODEIntegrator ODE solvers"/>, it
+    /// <seealso cref="mathlib.ode.events.EventHandler state events"/> of
+    /// <seealso cref="mathlib.ode.ODEIntegrator ODE solvers"/>, it
     /// may be necessary to guarantee that a solution is returned that lies on a
     /// specific side the solution.</p>
     /// </summary>

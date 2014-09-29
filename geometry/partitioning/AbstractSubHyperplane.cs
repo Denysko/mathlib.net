@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.partitioning
+namespace mathlib.geometry.partitioning
 {
 
 	/// <summary>
@@ -32,7 +32,7 @@ namespace org.apache.commons.math3.geometry.partitioning
 	/// 
 	/// @version $Id: AbstractSubHyperplane.java 1555050 2014-01-03 11:22:04Z luc $
 	/// @since 3.0 </param>
-	public abstract class AbstractSubHyperplane<S, T> : SubHyperplane<S> where S : org.apache.commons.math3.geometry.Space where T : org.apache.commons.math3.geometry.Space
+	public abstract class AbstractSubHyperplane<S, T> : SubHyperplane<S> where S : mathlib.geometry.Space where T : mathlib.geometry.Space
 	{
 
 		/// <summary>

@@ -17,12 +17,12 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// <p>Computes the semivariance of a set of values with respect to a given cutoff value.
@@ -146,7 +146,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code SemiVariance} instance to copy </param>
 		/// <exception cref="NullArgumentException">  if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SemiVariance(final SemiVariance original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public SemiVariance(final SemiVariance original) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public SemiVariance(SemiVariance original)
 		{
@@ -174,7 +174,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> SemiVariance to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(final SemiVariance source, SemiVariance dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(final SemiVariance source, SemiVariance dest) throws mathlib.exception.NullArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void copy(SemiVariance source, SemiVariance dest)
 		{
@@ -199,7 +199,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		///   </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int start, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int start, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		  public override double evaluate(double[] values, int start, int length)
 		  {
@@ -218,7 +218,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		  /// <exception cref="MathIllegalArgumentException"> if values is null
 		  ///  </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, Direction direction) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, Direction direction) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		  public virtual double evaluate(double[] values, Direction direction)
 		  {
@@ -238,7 +238,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		  /// <returns> the SemiVariance </returns>
 		  /// <exception cref="MathIllegalArgumentException"> if values is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double cutoff) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double cutoff) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		  public virtual double evaluate(double[] values, double cutoff)
 		  {
@@ -258,7 +258,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		  /// <returns> the SemiVariance </returns>
 		  /// <exception cref="MathIllegalArgumentException"> if values is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double cutoff, final Direction direction) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double cutoff, final Direction direction) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		  public virtual double evaluate(double[] values, double cutoff, Direction direction)
 		  {
@@ -283,7 +283,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		 /// <exception cref="MathIllegalArgumentException"> if the parameters are not valid
 		 ///  </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double evaluate(final double[] values, final double cutoff, final Direction direction, final boolean corrected, final int start, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public double evaluate(final double[] values, final double cutoff, final Direction direction, final boolean corrected, final int start, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double evaluate(double[] values, double cutoff, Direction direction, bool corrected, int start, int length)
 		{

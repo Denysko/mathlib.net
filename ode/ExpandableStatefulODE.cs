@@ -17,12 +17,12 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.ode
+namespace mathlib.ode
 {
 
 
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
 
 
 	/// <summary>
@@ -138,7 +138,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="MaxCountExceededException"> if the number of functions evaluations is exceeded </exception>
 		/// <exception cref="DimensionMismatchException"> if arrays dimensions do not match equations settings </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void computeDerivatives(final double t, final double[] y, final double[] yDot) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void computeDerivatives(final double t, final double[] y, final double[] yDot) throws mathlib.exception.MaxCountExceededException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void computeDerivatives(double t, double[] y, double[] yDot)
 		{
@@ -246,7 +246,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if the dimension of the array does not
 		/// match the primary set </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setPrimaryState(final double[] primaryState) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setPrimaryState(final double[] primaryState) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] PrimaryState
 		{
@@ -289,7 +289,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if the dimension of the partial state does not
 		/// match the selected equations set dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSecondaryState(final int index, final double[] secondaryState) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setSecondaryState(final int index, final double[] secondaryState) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual void setSecondaryState(int index, double[] secondaryState)
 		{
@@ -338,7 +338,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if the dimension of the complete state does not
 		/// match the complete equations sets dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setCompleteState(final double[] completeState) throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public void setCompleteState(final double[] completeState) throws mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double[] CompleteState
 		{
@@ -383,7 +383,7 @@ namespace org.apache.commons.math3.ode
 		/// <exception cref="DimensionMismatchException"> if the dimension of the complete state does not
 		/// match the complete equations sets dimension </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double[] getCompleteState() throws org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double[] getCompleteState() throws mathlib.exception.DimensionMismatchException
 
 		/// <summary>
 		/// Components of the compound stateful ODE. </summary>

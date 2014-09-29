@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.spherical.oned
+namespace mathlib.geometry.spherical.oned
 {
 
-	using org.apache.commons.math3.geometry;
-	using Vector2D = org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using mathlib.geometry;
+	using Vector2D = mathlib.geometry.euclidean.twod.Vector2D;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// This class represents a point on the 1-sphere.
@@ -65,7 +65,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <param name="alpha"> azimuthal angle \( \alpha \) </param>
 		/// <param name="vector"> corresponding vector </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private S1Point(final double alpha, final org.apache.commons.math3.geometry.euclidean.twod.Vector2D vector)
+//ORIGINAL LINE: private S1Point(final double alpha, final mathlib.geometry.euclidean.twod.Vector2D vector)
 		private S1Point(double alpha, Vector2D vector)
 		{
 			this.alpha = alpha;
@@ -118,7 +118,7 @@ namespace org.apache.commons.math3.geometry.spherical.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double distance(final org.apache.commons.math3.geometry.Point<Sphere1D> point)
+//ORIGINAL LINE: public double distance(final mathlib.geometry.Point<Sphere1D> point)
 		public virtual double distance(Point<Sphere1D> point)
 		{
 			return distance(this, (S1Point) point);

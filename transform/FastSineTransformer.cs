@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.transform
+namespace mathlib.transform
 {
 
-	using FunctionUtils = org.apache.commons.math3.analysis.FunctionUtils;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
-	using Complex = org.apache.commons.math3.complex.Complex;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using ArithmeticUtils = org.apache.commons.math3.util.ArithmeticUtils;
-	using FastMath = org.apache.commons.math3.util.FastMath;
+	using FunctionUtils = mathlib.analysis.FunctionUtils;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
+	using Complex = mathlib.complex.Complex;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using ArithmeticUtils = mathlib.util.ArithmeticUtils;
+	using FastMath = mathlib.util.FastMath;
 
 	/// <summary>
 	/// Implements the Fast Sine Transform for transformation of one-dimensional real
@@ -106,7 +106,7 @@ namespace org.apache.commons.math3.transform
 			if (normalization == DstNormalization.ORTHOGONAL_DST_I)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double s = org.apache.commons.math3.util.FastMath.sqrt(2.0 / f.length);
+//ORIGINAL LINE: final double s = mathlib.util.FastMath.sqrt(2.0 / f.length);
 				double s = FastMath.sqrt(2.0 / f.Length);
 				return TransformUtils.scaleArray(fst(f), s);
 			}
@@ -125,18 +125,18 @@ namespace org.apache.commons.math3.transform
 		/// 
 		/// This implementation enforces {@code f(x) = 0.0} at {@code x = 0.0}.
 		/// </summary>
-		/// <exception cref="org.apache.commons.math3.exception.NonMonotonicSequenceException">
+		/// <exception cref="mathlib.exception.NonMonotonicSequenceException">
 		///   if the lower bound is greater than, or equal to the upper bound </exception>
-		/// <exception cref="org.apache.commons.math3.exception.NotStrictlyPositiveException">
+		/// <exception cref="mathlib.exception.NotStrictlyPositiveException">
 		///   if the number of sample points is negative </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the number of sample points is not a power of two </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public double[] transform(final org.apache.commons.math3.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
+//ORIGINAL LINE: public double[] transform(final mathlib.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
 		public virtual double[] transform(UnivariateFunction f, double min, double max, int n, TransformType type)
 		{
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] data = org.apache.commons.math3.analysis.FunctionUtils.sample(f, min, max, n);
+//ORIGINAL LINE: final double[] data = mathlib.analysis.FunctionUtils.sample(f, min, max, n);
 			double[] data = FunctionUtils.sample(f, min, max, n);
 			data[0] = 0.0;
 			return transform(data, type);
@@ -151,7 +151,7 @@ namespace org.apache.commons.math3.transform
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is
 		///   not a power of two, or the first element of the data array is not zero </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double[] fst(double[] f) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: protected double[] fst(double[] f) throws mathlib.exception.MathIllegalArgumentException
 		protected internal virtual double[] fst(double[] f)
 		{
 
@@ -185,7 +185,7 @@ namespace org.apache.commons.math3.transform
 			for (int i = 1; i < (n >> 1); i++)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double a = org.apache.commons.math3.util.FastMath.sin(i * org.apache.commons.math3.util.FastMath.PI / n) * (f[i] + f[n - i]);
+//ORIGINAL LINE: final double a = mathlib.util.FastMath.sin(i * mathlib.util.FastMath.PI / n) * (f[i] + f[n - i]);
 				double a = FastMath.sin(i * FastMath.PI / n) * (f[i] + f[n - i]);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double b = 0.5 * (f[i] - f[n - i]);

@@ -16,10 +16,10 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.geometry.enclosing
+namespace mathlib.geometry.enclosing
 {
 
-	using org.apache.commons.math3.geometry;
+	using mathlib.geometry;
 
 	/// <summary>
 	/// Interface for generating balls based on support points.
@@ -32,7 +32,7 @@ namespace org.apache.commons.math3.geometry.enclosing
 	/// @version $Id: SupportBallGenerator.java 1562220 2014-01-28 20:29:27Z luc $ </param>
 	/// <seealso cref= EnclosingBall
 	/// @since 3.3 </seealso>
-	public interface SupportBallGenerator<S, P> where S : org.apache.commons.math3.geometry.Space where P : org.apache.commons.math3.geometry.Point<S>
+	public interface SupportBallGenerator<S, P> where S : mathlib.geometry.Space where P : mathlib.geometry.Point<S>
 	{
 
 		/// <summary>

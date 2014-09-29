@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optim.nonlinear.scalar
+namespace mathlib.optim.nonlinear.scalar
 {
 
-	using UnivariateOptimizer = org.apache.commons.math3.optim.univariate.UnivariateOptimizer;
-	using BrentOptimizer = org.apache.commons.math3.optim.univariate.BrentOptimizer;
-	using BracketFinder = org.apache.commons.math3.optim.univariate.BracketFinder;
-	using UnivariatePointValuePair = org.apache.commons.math3.optim.univariate.UnivariatePointValuePair;
-	using SimpleUnivariateValueChecker = org.apache.commons.math3.optim.univariate.SimpleUnivariateValueChecker;
-	using SearchInterval = org.apache.commons.math3.optim.univariate.SearchInterval;
-	using UnivariateObjectiveFunction = org.apache.commons.math3.optim.univariate.UnivariateObjectiveFunction;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
+	using UnivariateOptimizer = mathlib.optim.univariate.UnivariateOptimizer;
+	using BrentOptimizer = mathlib.optim.univariate.BrentOptimizer;
+	using BracketFinder = mathlib.optim.univariate.BracketFinder;
+	using UnivariatePointValuePair = mathlib.optim.univariate.UnivariatePointValuePair;
+	using SimpleUnivariateValueChecker = mathlib.optim.univariate.SimpleUnivariateValueChecker;
+	using SearchInterval = mathlib.optim.univariate.SearchInterval;
+	using UnivariateObjectiveFunction = mathlib.optim.univariate.UnivariateObjectiveFunction;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
 
 	/// <summary>
 	/// Class for finding the minimum of the objective function along a given
@@ -101,17 +101,17 @@ namespace org.apache.commons.math3.optim.nonlinear.scalar
 		/// <param name="startPoint"> Starting point. </param>
 		/// <param name="direction"> Search direction. </param>
 		/// <returns> the optimum. </returns>
-		/// <exception cref="org.apache.commons.math3.exception.TooManyEvaluationsException">
+		/// <exception cref="mathlib.exception.TooManyEvaluationsException">
 		/// if the number of evaluations is exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public org.apache.commons.math3.optim.univariate.UnivariatePointValuePair search(final double[] startPoint, final double[] direction)
+//ORIGINAL LINE: public mathlib.optim.univariate.UnivariatePointValuePair search(final double[] startPoint, final double[] direction)
 		public virtual UnivariatePointValuePair search(double[] startPoint, double[] direction)
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int n = startPoint.length;
 			int n = startPoint.Length;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.analysis.UnivariateFunction f = new org.apache.commons.math3.analysis.UnivariateFunction()
+//ORIGINAL LINE: final mathlib.analysis.UnivariateFunction f = new mathlib.analysis.UnivariateFunction()
 			UnivariateFunction f = new UnivariateFunctionAnonymousInnerClassHelper(this, startPoint, direction, n);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

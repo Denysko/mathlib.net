@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive
+namespace mathlib.stat.descriptive
 {
 
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
-	using Precision = org.apache.commons.math3.util.Precision;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using MathUtils = mathlib.util.MathUtils;
+	using Precision = mathlib.util.Precision;
 
 	/// 
 	/// <summary>
@@ -55,9 +55,9 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="values"> input array </param>
 		/// <returns> the value of the statistic applied to the input array </returns>
 		/// <exception cref="MathIllegalArgumentException"> if values is null </exception>
-		/// <seealso cref= org.apache.commons.math3.stat.descriptive.UnivariateStatistic#evaluate(double[]) </seealso>
+		/// <seealso cref= mathlib.stat.descriptive.UnivariateStatistic#evaluate(double[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values)
 		{
@@ -88,9 +88,9 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="length"> the number of elements to include </param>
 		/// <returns> the value of the statistic applied to the included array entries </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the array is null or the indices are not valid </exception>
-		/// <seealso cref= org.apache.commons.math3.stat.descriptive.UnivariateStatistic#evaluate(double[], int, int) </seealso>
+		/// <seealso cref= mathlib.stat.descriptive.UnivariateStatistic#evaluate(double[], int, int) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int begin, int length)
 		{
@@ -132,9 +132,9 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// </summary>
 		/// <param name="values"> values to add </param>
 		/// <exception cref="MathIllegalArgumentException"> if values is null </exception>
-		/// <seealso cref= org.apache.commons.math3.stat.descriptive.StorelessUnivariateStatistic#incrementAll(double[]) </seealso>
+		/// <seealso cref= mathlib.stat.descriptive.StorelessUnivariateStatistic#incrementAll(double[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void incrementAll(double[] values) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void incrementAll(double[] values) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void incrementAll(double[] values)
 		{
 			if (values == null)
@@ -154,9 +154,9 @@ namespace org.apache.commons.math3.stat.descriptive
 		/// <param name="begin">   index of the first array element to add </param>
 		/// <param name="length">  number of array elements to add </param>
 		/// <exception cref="MathIllegalArgumentException"> if values is null </exception>
-		/// <seealso cref= org.apache.commons.math3.stat.descriptive.StorelessUnivariateStatistic#incrementAll(double[], int, int) </seealso>
+		/// <seealso cref= mathlib.stat.descriptive.StorelessUnivariateStatistic#incrementAll(double[], int, int) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void incrementAll(double[] values, int begin, int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: public void incrementAll(double[] values, int begin, int length) throws mathlib.exception.MathIllegalArgumentException
 		public virtual void incrementAll(double[] values, int begin, int length)
 		{
 			if (test(values, begin, length))

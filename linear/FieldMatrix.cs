@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.linear
+namespace mathlib.linear
 {
 
 
-	using org.apache.commons.math3;
-	using org.apache.commons.math3;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using NoDataException = org.apache.commons.math3.exception.NoDataException;
-	using NotPositiveException = org.apache.commons.math3.exception.NotPositiveException;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using NumberIsTooSmallException = org.apache.commons.math3.exception.NumberIsTooSmallException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
+	using mathlib;
+	using mathlib;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using NoDataException = mathlib.exception.NoDataException;
+	using NotPositiveException = mathlib.exception.NotPositiveException;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using NumberIsTooSmallException = mathlib.exception.NumberIsTooSmallException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
 
 	/// <summary>
 	/// Interface defining field-valued matrix with basic algebraic operations.
@@ -37,7 +37,7 @@ namespace org.apache.commons.math3.linear
 	/// </summary>
 	/// @param <T> the type of the field elements
 	/// @version $Id: FieldMatrix.java 1416643 2012-12-03 19:37:14Z tn $ </param>
-	public interface FieldMatrix<T> : AnyMatrix where T : org.apache.commons.math3.FieldElement<T>
+	public interface FieldMatrix<T> : AnyMatrix where T : mathlib.FieldElement<T>
 	{
 		/// <summary>
 		/// Get the type of field elements of the matrix.
@@ -56,7 +56,7 @@ namespace org.apache.commons.math3.linear
 		/// positive.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> createMatrix(final int rowDimension, final int columnDimension) throws org.apache.commons.math3.exception.NotStrictlyPositiveException;
+//ORIGINAL LINE: FieldMatrix<T> createMatrix(final int rowDimension, final int columnDimension) throws mathlib.exception.NotStrictlyPositiveException;
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		FieldMatrix<T> createMatrix(int rowDimension, int columnDimension);
 
@@ -111,7 +111,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code this} matrix is not equal to the number of rows of matrix
 		/// {@code m}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> multiply(FieldMatrix<T> m) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: FieldMatrix<T> multiply(FieldMatrix<T> m) throws mathlib.exception.DimensionMismatchException;
 		FieldMatrix<T> multiply(FieldMatrix<T> m);
 
 		/// <summary>
@@ -122,7 +122,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the number of columns of {@code m}
 		/// differs from the number of rows of {@code this} matrix. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> preMultiply(FieldMatrix<T> m) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: FieldMatrix<T> preMultiply(FieldMatrix<T> m) throws mathlib.exception.DimensionMismatchException;
 		FieldMatrix<T> preMultiply(FieldMatrix<T> m);
 
 		/// <summary>
@@ -135,7 +135,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NotPositiveException"> if {@code p < 0} </exception>
 		/// <exception cref="NonSquareMatrixException"> if {@code this matrix} is not square </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> power(final int p) throws NonSquareMatrixException, org.apache.commons.math3.exception.NotPositiveException;
+//ORIGINAL LINE: FieldMatrix<T> power(final int p) throws NonSquareMatrixException, mathlib.exception.NotPositiveException;
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		FieldMatrix<T> power(int p);
 
@@ -158,7 +158,7 @@ namespace org.apache.commons.math3.linear
 		/// {@code endColumn < startColumn}. </exception>
 		/// <exception cref="OutOfRangeException"> if the indices are not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> getSubMatrix(int startRow, int endRow, int startColumn, int endColumn) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: FieldMatrix<T> getSubMatrix(int startRow, int endRow, int startColumn, int endColumn) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException;
 	   FieldMatrix<T> getSubMatrix(int startRow, int endRow, int startColumn, int endColumn);
 
 	   /// <summary>
@@ -175,7 +175,7 @@ namespace org.apache.commons.math3.linear
 	   /// {@code selectedColumns} is {@code null}. </exception>
 	   /// <exception cref="OutOfRangeException"> if row or column selections are not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> getSubMatrix(int[] selectedRows, int[] selectedColumns) throws org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: FieldMatrix<T> getSubMatrix(int[] selectedRows, int[] selectedColumns) throws mathlib.exception.NoDataException, mathlib.exception.NullArgumentException, mathlib.exception.OutOfRangeException;
 	   FieldMatrix<T> getSubMatrix(int[] selectedRows, int[] selectedColumns);
 
 	   /// <summary>
@@ -195,7 +195,7 @@ namespace org.apache.commons.math3.linear
 	   /// <exception cref="OutOfRangeException"> if the indices are not valid. </exception>
 	   /// <exception cref="IllegalArgumentException"> if the destination array is too small. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void copySubMatrix(int startRow, int endRow, int startColumn, int endColumn, T[][] destination) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void copySubMatrix(int startRow, int endRow, int startColumn, int endColumn, T[][] destination) throws MatrixDimensionMismatchException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException;
 		void copySubMatrix(int startRow, int endRow, int startColumn, int endColumn, T[][] destination);
 
 	  /// <summary>
@@ -214,7 +214,7 @@ namespace org.apache.commons.math3.linear
 	  /// {@code selectedColumns} is {@code null}. </exception>
 	  /// <exception cref="OutOfRangeException"> if the indices are not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void copySubMatrix(int[] selectedRows, int[] selectedColumns, T[][] destination) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void copySubMatrix(int[] selectedRows, int[] selectedColumns, T[][] destination) throws MatrixDimensionMismatchException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException, mathlib.exception.OutOfRangeException;
 	  void copySubMatrix(int[] selectedRows, int[] selectedColumns, T[][] destination);
 
 		/// <summary>
@@ -252,7 +252,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="NullArgumentException"> if {@code subMatrix} is {@code null}.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setSubMatrix(T[][] subMatrix, int row, int column) throws org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NoDataException, org.apache.commons.math3.exception.NullArgumentException;
+//ORIGINAL LINE: void setSubMatrix(T[][] subMatrix, int row, int column) throws mathlib.exception.DimensionMismatchException, mathlib.exception.OutOfRangeException, mathlib.exception.NoDataException, mathlib.exception.NullArgumentException;
 		void setSubMatrix(T[][] subMatrix, int row, int column);
 
 	   /// <summary>
@@ -263,7 +263,7 @@ namespace org.apache.commons.math3.linear
 	   /// <returns> a row matrix. </returns>
 	   /// <exception cref="OutOfRangeException"> if the specified row index is invalid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> getRowMatrix(int row) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: FieldMatrix<T> getRowMatrix(int row) throws mathlib.exception.OutOfRangeException;
 	   FieldMatrix<T> getRowMatrix(int row);
 
 	   /// <summary>
@@ -277,7 +277,7 @@ namespace org.apache.commons.math3.linear
 	   /// <exception cref="MatrixDimensionMismatchException">
 	   /// if the matrix dimensions do not match one instance row. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setRowMatrix(int row, FieldMatrix<T> matrix) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void setRowMatrix(int row, FieldMatrix<T> matrix) throws MatrixDimensionMismatchException, mathlib.exception.OutOfRangeException;
 	   void setRowMatrix(int row, FieldMatrix<T> matrix);
 
 	   /// <summary>
@@ -288,7 +288,7 @@ namespace org.apache.commons.math3.linear
 	   /// <returns> a column matrix. </returns>
 	   /// <exception cref="OutOfRangeException"> if the specified column index is invalid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldMatrix<T> getColumnMatrix(int column) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: FieldMatrix<T> getColumnMatrix(int column) throws mathlib.exception.OutOfRangeException;
 	   FieldMatrix<T> getColumnMatrix(int column);
 
 	   /// <summary>
@@ -302,7 +302,7 @@ namespace org.apache.commons.math3.linear
 	   /// <exception cref="MatrixDimensionMismatchException"> if the matrix dimensions do
 	   /// not match one instance column. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setColumnMatrix(int column, FieldMatrix<T> matrix) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void setColumnMatrix(int column, FieldMatrix<T> matrix) throws MatrixDimensionMismatchException, mathlib.exception.OutOfRangeException;
 	   void setColumnMatrix(int column, FieldMatrix<T> matrix);
 
 	   /// <summary>
@@ -313,7 +313,7 @@ namespace org.apache.commons.math3.linear
 	   /// <returns> a row vector. </returns>
 	   /// <exception cref="OutOfRangeException"> if the specified row index is invalid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldVector<T> getRowVector(int row) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: FieldVector<T> getRowVector(int row) throws mathlib.exception.OutOfRangeException;
 	   FieldVector<T> getRowVector(int row);
 
 	   /// <summary>
@@ -327,7 +327,7 @@ namespace org.apache.commons.math3.linear
 	   /// <exception cref="MatrixDimensionMismatchException"> if the vector dimension does not
 	   /// match one instance row. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setRowVector(int row, FieldVector<T> vector) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void setRowVector(int row, FieldVector<T> vector) throws MatrixDimensionMismatchException, mathlib.exception.OutOfRangeException;
 	   void setRowVector(int row, FieldVector<T> vector);
 
 	   /// <summary>
@@ -338,7 +338,7 @@ namespace org.apache.commons.math3.linear
 	   /// <returns> a column vector. </returns>
 	   /// <exception cref="OutOfRangeException"> if the specified column index is invalid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldVector<T> getColumnVector(int column) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: FieldVector<T> getColumnVector(int column) throws mathlib.exception.OutOfRangeException;
 	   FieldVector<T> getColumnVector(int column);
 
 	   /// <summary>
@@ -352,7 +352,7 @@ namespace org.apache.commons.math3.linear
 	   /// <exception cref="MatrixDimensionMismatchException"> if the vector dimension does not
 	   /// match one instance column. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setColumnVector(int column, FieldVector<T> vector) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void setColumnVector(int column, FieldVector<T> vector) throws MatrixDimensionMismatchException, mathlib.exception.OutOfRangeException;
 	   void setColumnVector(int column, FieldVector<T> vector);
 
 		/// <summary>
@@ -362,7 +362,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> array of entries in the row. </returns>
 		/// <exception cref="OutOfRangeException"> if the specified row index is not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T[] getRow(int row) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: T[] getRow(int row) throws mathlib.exception.OutOfRangeException;
 		T[] getRow(int row);
 
 		/// <summary>
@@ -376,7 +376,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="MatrixDimensionMismatchException"> if the array size does not match
 		/// one instance row. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setRow(int row, T[] array) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void setRow(int row, T[] array) throws MatrixDimensionMismatchException, mathlib.exception.OutOfRangeException;
 		void setRow(int row, T[] array);
 
 		/// <summary>
@@ -386,7 +386,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> array of entries in the column </returns>
 		/// <exception cref="OutOfRangeException"> if the specified column index is not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T[] getColumn(int column) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: T[] getColumn(int column) throws mathlib.exception.OutOfRangeException;
 		T[] getColumn(int column);
 
 		/// <summary>
@@ -399,7 +399,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="MatrixDimensionMismatchException"> if the array size does not match
 		/// one instance column. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setColumn(int column, T[] array) throws MatrixDimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void setColumn(int column, T[] array) throws MatrixDimensionMismatchException, mathlib.exception.OutOfRangeException;
 		void setColumn(int column, T[] array);
 
 		/// <summary>
@@ -410,7 +410,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> matrix entry in row,column </returns>
 		/// <exception cref="OutOfRangeException"> if the row or column index is not valid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T getEntry(int row, int column) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: T getEntry(int row, int column) throws mathlib.exception.OutOfRangeException;
 		T getEntry(int row, int column);
 
 		/// <summary>
@@ -422,7 +422,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the row or column index is not valid.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void setEntry(int row, int column, T value) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void setEntry(int row, int column, T value) throws mathlib.exception.OutOfRangeException;
 		void setEntry(int row, int column, T value);
 
 		/// <summary>
@@ -435,7 +435,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the row or column index is not valid.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void addToEntry(int row, int column, T increment) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void addToEntry(int row, int column, T increment) throws mathlib.exception.OutOfRangeException;
 		void addToEntry(int row, int column, T increment);
 
 		/// <summary>
@@ -448,7 +448,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="OutOfRangeException"> if the row or column index is not valid.
 		/// @since 2.0 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: void multiplyEntry(int row, int column, T factor) throws org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: void multiplyEntry(int row, int column, T factor) throws mathlib.exception.OutOfRangeException;
 		void multiplyEntry(int row, int column, T factor);
 
 		/// <summary>
@@ -475,7 +475,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the number of columns of
 		/// {@code this} matrix is not equal to the size of the vector {@code v}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T[] operate(T[] v) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: T[] operate(T[] v) throws mathlib.exception.DimensionMismatchException;
 		T[] operate(T[] v);
 
 		/// <summary>
@@ -486,7 +486,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the number of columns of
 		/// {@code this} matrix is not equal to the size of the vector {@code v}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldVector<T> operate(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: FieldVector<T> operate(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException;
 		FieldVector<T> operate(FieldVector<T> v);
 
 		/// <summary>
@@ -498,7 +498,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the number of rows of {@code this}
 		/// matrix is not equal to the size of the vector {@code v} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T[] preMultiply(T[] v) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: T[] preMultiply(T[] v) throws mathlib.exception.DimensionMismatchException;
 		T[] preMultiply(T[] v);
 
 		/// <summary>
@@ -510,7 +510,7 @@ namespace org.apache.commons.math3.linear
 		/// <exception cref="DimensionMismatchException"> if the number of rows of {@code this}
 		/// matrix is not equal to the size of the vector {@code v} </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: FieldVector<T> preMultiply(FieldVector<T> v) throws org.apache.commons.math3.exception.DimensionMismatchException;
+//ORIGINAL LINE: FieldVector<T> preMultiply(FieldVector<T> v) throws mathlib.exception.DimensionMismatchException;
 		FieldVector<T> preMultiply(FieldVector<T> v);
 
 		/// <summary>
@@ -582,7 +582,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the value returned by <seealso cref="FieldMatrixChangingVisitor#end()"/> at the end
 		/// of the walk </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T walkInRowOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException;
+//ORIGINAL LINE: T walkInRowOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException;
 		T walkInRowOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn);
 
 		/// <summary>
@@ -612,7 +612,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the value returned by <seealso cref="FieldMatrixPreservingVisitor#end()"/> at the end
 		/// of the walk </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T walkInRowOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.NumberIsTooSmallException;
+//ORIGINAL LINE: T walkInRowOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws mathlib.exception.OutOfRangeException, mathlib.exception.NumberIsTooSmallException;
 		T walkInRowOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn);
 
 		/// <summary>
@@ -684,7 +684,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the value returned by <seealso cref="FieldMatrixChangingVisitor#end()"/> at the end
 		/// of the walk </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T walkInColumnOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: T walkInColumnOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException;
 		T walkInColumnOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn);
 
 		/// <summary>
@@ -714,7 +714,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the value returned by <seealso cref="FieldMatrixPreservingVisitor#end()"/> at the end
 		/// of the walk </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T walkInColumnOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: T walkInColumnOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException;
 		T walkInColumnOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn);
 
 		/// <summary>
@@ -783,7 +783,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the value returned by <seealso cref="FieldMatrixChangingVisitor#end()"/> at the end
 		/// of the walk </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T walkInOptimizedOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: T walkInOptimizedOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException;
 		T walkInOptimizedOrder(FieldMatrixChangingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn);
 
 		/// <summary>
@@ -812,7 +812,7 @@ namespace org.apache.commons.math3.linear
 		/// <returns> the value returned by <seealso cref="FieldMatrixPreservingVisitor#end()"/> at the end
 		/// of the walk </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T walkInOptimizedOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws org.apache.commons.math3.exception.NumberIsTooSmallException, org.apache.commons.math3.exception.OutOfRangeException;
+//ORIGINAL LINE: T walkInOptimizedOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn) throws mathlib.exception.NumberIsTooSmallException, mathlib.exception.OutOfRangeException;
 		T walkInOptimizedOrder(FieldMatrixPreservingVisitor<T> visitor, int startRow, int endRow, int startColumn, int endColumn);
 	}
 

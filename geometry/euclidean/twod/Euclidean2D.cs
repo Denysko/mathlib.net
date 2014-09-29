@@ -17,10 +17,10 @@ using System;
  * limitations under the License.
  */
 
-namespace org.apache.commons.math3.geometry.euclidean.twod
+namespace mathlib.geometry.euclidean.twod
 {
 
-	using Euclidean1D = org.apache.commons.math3.geometry.euclidean.oned.Euclidean1D;
+	using Euclidean1D = mathlib.geometry.euclidean.oned.Euclidean1D;
 
 	/// <summary>
 	/// This class implements a two-dimensional space.

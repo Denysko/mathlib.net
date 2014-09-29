@@ -16,16 +16,16 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.descriptive.moment
+namespace mathlib.stat.descriptive.moment
 {
 
-	using MathIllegalArgumentException = org.apache.commons.math3.exception.MathIllegalArgumentException;
-	using MathIllegalStateException = org.apache.commons.math3.exception.MathIllegalStateException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using SumOfLogs = org.apache.commons.math3.stat.descriptive.summary.SumOfLogs;
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using MathIllegalArgumentException = mathlib.exception.MathIllegalArgumentException;
+	using MathIllegalStateException = mathlib.exception.MathIllegalStateException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using SumOfLogs = mathlib.stat.descriptive.summary.SumOfLogs;
+	using FastMath = mathlib.util.FastMath;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Returns the <a href="http://www.xycoon.com/geometric_mean.htm">
@@ -78,7 +78,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="original"> the {@code GeometricMean} instance to copy </param>
 		/// <exception cref="NullArgumentException"> if original is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public GeometricMean(GeometricMean original) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public GeometricMean(GeometricMean original) throws mathlib.exception.NullArgumentException
 		public GeometricMean(GeometricMean original) : base()
 		{
 			copy(original, this);
@@ -155,7 +155,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalArgumentException"> if the input array is null or the array
 		/// index parameters are not valid </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws org.apache.commons.math3.exception.MathIllegalArgumentException
+//ORIGINAL LINE: @Override public double evaluate(final double[] values, final int begin, final int length) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public override double evaluate(double[] values, int begin, int length)
 		{
@@ -184,7 +184,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <exception cref="MathIllegalStateException"> if data has already been added
 		///  (i.e if n > 0) </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void setSumLogImpl(org.apache.commons.math3.stat.descriptive.StorelessUnivariateStatistic sumLogImpl) throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: public void setSumLogImpl(mathlib.stat.descriptive.StorelessUnivariateStatistic sumLogImpl) throws mathlib.exception.MathIllegalStateException
 		public virtual StorelessUnivariateStatistic SumLogImpl
 		{
 			set
@@ -207,7 +207,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// <param name="dest"> GeometricMean to copy to </param>
 		/// <exception cref="NullArgumentException"> if either source or dest is null </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void copy(GeometricMean source, GeometricMean dest) throws org.apache.commons.math3.exception.NullArgumentException
+//ORIGINAL LINE: public static void copy(GeometricMean source, GeometricMean dest) throws mathlib.exception.NullArgumentException
 		public static void copy(GeometricMean source, GeometricMean dest)
 		{
 			MathUtils.checkNotNull(source);
@@ -221,7 +221,7 @@ namespace org.apache.commons.math3.stat.descriptive.moment
 		/// Throws MathIllegalStateException if n > 0. </summary>
 		/// <exception cref="MathIllegalStateException"> if data has been added to this statistic </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private void checkEmpty() throws org.apache.commons.math3.exception.MathIllegalStateException
+//ORIGINAL LINE: private void checkEmpty() throws mathlib.exception.MathIllegalStateException
 		private void checkEmpty()
 		{
 			if (N > 0)

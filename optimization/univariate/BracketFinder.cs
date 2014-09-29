@@ -16,15 +16,15 @@ using System;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.optimization.univariate
+namespace mathlib.optimization.univariate
 {
 
-	using FastMath = org.apache.commons.math3.util.FastMath;
-	using Incrementor = org.apache.commons.math3.util.Incrementor;
-	using NotStrictlyPositiveException = org.apache.commons.math3.exception.NotStrictlyPositiveException;
-	using TooManyEvaluationsException = org.apache.commons.math3.exception.TooManyEvaluationsException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using UnivariateFunction = org.apache.commons.math3.analysis.UnivariateFunction;
+	using FastMath = mathlib.util.FastMath;
+	using Incrementor = mathlib.util.Incrementor;
+	using NotStrictlyPositiveException = mathlib.exception.NotStrictlyPositiveException;
+	using TooManyEvaluationsException = mathlib.exception.TooManyEvaluationsException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using UnivariateFunction = mathlib.analysis.UnivariateFunction;
 
 	/// <summary>
 	/// Provide an interval that brackets a local optimum of a function.
@@ -119,7 +119,7 @@ namespace org.apache.commons.math3.optimization.univariate
 		{
 			evaluations.resetCount();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean isMinim = goal == org.apache.commons.math3.optimization.GoalType.MINIMIZE;
+//ORIGINAL LINE: final boolean isMinim = goal == mathlib.optimization.GoalType.MINIMIZE;
 			bool isMinim = goal == GoalType.MINIMIZE;
 
 			double fA = eval(func, xA);

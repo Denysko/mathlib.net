@@ -16,19 +16,19 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace org.apache.commons.math3.stat.inference
+namespace mathlib.stat.inference
 {
 
 
-	using FDistribution = org.apache.commons.math3.distribution.FDistribution;
-	using ConvergenceException = org.apache.commons.math3.exception.ConvergenceException;
-	using DimensionMismatchException = org.apache.commons.math3.exception.DimensionMismatchException;
-	using MaxCountExceededException = org.apache.commons.math3.exception.MaxCountExceededException;
-	using NullArgumentException = org.apache.commons.math3.exception.NullArgumentException;
-	using OutOfRangeException = org.apache.commons.math3.exception.OutOfRangeException;
-	using LocalizedFormats = org.apache.commons.math3.exception.util.LocalizedFormats;
-	using SummaryStatistics = org.apache.commons.math3.stat.descriptive.SummaryStatistics;
-	using MathUtils = org.apache.commons.math3.util.MathUtils;
+	using FDistribution = mathlib.distribution.FDistribution;
+	using ConvergenceException = mathlib.exception.ConvergenceException;
+	using DimensionMismatchException = mathlib.exception.DimensionMismatchException;
+	using MaxCountExceededException = mathlib.exception.MaxCountExceededException;
+	using NullArgumentException = mathlib.exception.NullArgumentException;
+	using OutOfRangeException = mathlib.exception.OutOfRangeException;
+	using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
+	using SummaryStatistics = mathlib.stat.descriptive.SummaryStatistics;
+	using MathUtils = mathlib.util.MathUtils;
 
 	/// <summary>
 	/// Implements one-way ANOVA (analysis of variance) statistics.
@@ -36,9 +36,9 @@ namespace org.apache.commons.math3.stat.inference
 	/// <p> Tests for differences between two or more categories of univariate data
 	/// (for example, the body mass index of accountants, lawyers, doctors and
 	/// computer programmers).  When two categories are given, this is equivalent to
-	/// the <seealso cref="org.apache.commons.math3.stat.inference.TTest"/>.
+	/// the <seealso cref="mathlib.stat.inference.TTest"/>.
 	/// </p><p>
-	/// Uses the {@link org.apache.commons.math3.distribution.FDistribution
+	/// Uses the {@link mathlib.distribution.FDistribution
 	/// commons-math F Distribution implementation} to estimate exact p-values.</p>
 	/// <p>This implementation is based on a description at
 	/// http://faculty.vassar.edu/lowry/ch13pt1.html</p>
@@ -88,7 +88,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// array is less than 2 or a contained <code>double[]</code> array does not have
 		/// at least two values </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double anovaFValue(final java.util.Collection<double[]> categoryData) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: public double anovaFValue(final java.util.Collection<double[]> categoryData) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double anovaFValue(ICollection<double[]> categoryData)
 		{
@@ -109,7 +109,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <code>categoryData</code> collection and each of these arrays must
 		/// contain at least two values.</li></ul></p><p>
 		/// This implementation uses the
-		/// {@link org.apache.commons.math3.distribution.FDistribution
+		/// {@link mathlib.distribution.FDistribution
 		/// commons-math F Distribution implementation} to estimate the exact
 		/// p-value, using the formula<pre>
 		///   p = 1 - cumulativeProbability(F)</pre>
@@ -126,7 +126,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="ConvergenceException"> if the p-value can not be computed due to a convergence error </exception>
 		/// <exception cref="MaxCountExceededException"> if the maximum number of iterations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double anovaPValue(final java.util.Collection<double[]> categoryData) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double anovaPValue(final java.util.Collection<double[]> categoryData) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double anovaPValue(ICollection<double[]> categoryData)
 		{
@@ -148,7 +148,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <code>categoryData</code> collection and each of these statistics must
 		/// contain at least two values.</li></ul></p><p>
 		/// This implementation uses the
-		/// {@link org.apache.commons.math3.distribution.FDistribution
+		/// {@link mathlib.distribution.FDistribution
 		/// commons-math F Distribution implementation} to estimate the exact
 		/// p-value, using the formula<pre>
 		///   p = 1 - cumulativeProbability(F)</pre>
@@ -168,7 +168,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="MaxCountExceededException"> if the maximum number of iterations is exceeded
 		/// @since 3.2 </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public double anovaPValue(final java.util.Collection<org.apache.commons.math3.stat.descriptive.SummaryStatistics> categoryData, final boolean allowOneElementData) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public double anovaPValue(final java.util.Collection<mathlib.stat.descriptive.SummaryStatistics> categoryData, final boolean allowOneElementData) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual double anovaPValue(ICollection<SummaryStatistics> categoryData, bool allowOneElementData)
 		{
@@ -177,7 +177,7 @@ namespace org.apache.commons.math3.stat.inference
 //ORIGINAL LINE: final AnovaStats a = anovaStats(categoryData, allowOneElementData);
 			AnovaStats a = anovaStats(categoryData, allowOneElementData);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.distribution.FDistribution fdist = new org.apache.commons.math3.distribution.FDistribution(a.dfbg, a.dfwg);
+//ORIGINAL LINE: final mathlib.distribution.FDistribution fdist = new mathlib.distribution.FDistribution(a.dfbg, a.dfwg);
 			FDistribution fdist = new FDistribution(a.dfbg, a.dfwg);
 			return 1.0 - fdist.cumulativeProbability(a.F);
 
@@ -198,7 +198,7 @@ namespace org.apache.commons.math3.stat.inference
 		///             than 2 or a contained <code>double[]</code> array does not
 		///             contain at least two values </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private AnovaStats anovaStats(final java.util.Collection<double[]> categoryData) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private AnovaStats anovaStats(final java.util.Collection<double[]> categoryData) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private AnovaStats anovaStats(ICollection<double[]> categoryData)
 		{
@@ -206,14 +206,14 @@ namespace org.apache.commons.math3.stat.inference
 			MathUtils.checkNotNull(categoryData);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.apache.commons.math3.stat.descriptive.SummaryStatistics> categoryDataSummaryStatistics = new java.util.ArrayList<org.apache.commons.math3.stat.descriptive.SummaryStatistics>(categoryData.size());
+//ORIGINAL LINE: final java.util.Collection<mathlib.stat.descriptive.SummaryStatistics> categoryDataSummaryStatistics = new java.util.ArrayList<mathlib.stat.descriptive.SummaryStatistics>(categoryData.size());
 			ICollection<SummaryStatistics> categoryDataSummaryStatistics = new List<SummaryStatistics>(categoryData.Count);
 
 			// convert arrays to SummaryStatistics
 			foreach (double[] data in categoryData)
 			{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.apache.commons.math3.stat.descriptive.SummaryStatistics dataSummaryStatistics = new org.apache.commons.math3.stat.descriptive.SummaryStatistics();
+//ORIGINAL LINE: final mathlib.stat.descriptive.SummaryStatistics dataSummaryStatistics = new mathlib.stat.descriptive.SummaryStatistics();
 				SummaryStatistics dataSummaryStatistics = new SummaryStatistics();
 				categoryDataSummaryStatistics.Add(dataSummaryStatistics);
 				foreach (double val in data)
@@ -239,7 +239,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <li>alpha must be strictly greater than 0 and less than or equal to 0.5.
 		/// </li></ul></p><p>
 		/// This implementation uses the
-		/// {@link org.apache.commons.math3.distribution.FDistribution
+		/// {@link mathlib.distribution.FDistribution
 		/// commons-math F Distribution implementation} to estimate the exact
 		/// p-value, using the formula<pre>
 		///   p = 1 - cumulativeProbability(F)</pre>
@@ -260,7 +260,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// <exception cref="ConvergenceException"> if the p-value can not be computed due to a convergence error </exception>
 		/// <exception cref="MaxCountExceededException"> if the maximum number of iterations is exceeded </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public boolean anovaTest(final java.util.Collection<double[]> categoryData, final double alpha) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException, org.apache.commons.math3.exception.OutOfRangeException, org.apache.commons.math3.exception.ConvergenceException, org.apache.commons.math3.exception.MaxCountExceededException
+//ORIGINAL LINE: public boolean anovaTest(final java.util.Collection<double[]> categoryData, final double alpha) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException, mathlib.exception.OutOfRangeException, mathlib.exception.ConvergenceException, mathlib.exception.MaxCountExceededException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public virtual bool anovaTest(ICollection<double[]> categoryData, double alpha)
 		{
@@ -286,7 +286,7 @@ namespace org.apache.commons.math3.stat.inference
 		/// categories is less than 2 or a contained SummaryStatistics does not contain
 		/// at least two values </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private AnovaStats anovaStats(final java.util.Collection<org.apache.commons.math3.stat.descriptive.SummaryStatistics> categoryData, final boolean allowOneElementData) throws org.apache.commons.math3.exception.NullArgumentException, org.apache.commons.math3.exception.DimensionMismatchException
+//ORIGINAL LINE: private AnovaStats anovaStats(final java.util.Collection<mathlib.stat.descriptive.SummaryStatistics> categoryData, final boolean allowOneElementData) throws mathlib.exception.NullArgumentException, mathlib.exception.DimensionMismatchException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		private AnovaStats anovaStats(ICollection<SummaryStatistics> categoryData, bool allowOneElementData)
 		{
