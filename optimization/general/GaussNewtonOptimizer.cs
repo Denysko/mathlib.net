@@ -59,7 +59,7 @@ namespace mathlib.optimization.general
 		/// convergence check is set to a <seealso cref="SimpleVectorValueChecker"/>
 		/// with default tolerances. </summary>
 		/// @deprecated See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/> 
-		[Obsolete("See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/>")]
 		public GaussNewtonOptimizer() : this(true)
 		{
 		}
@@ -84,7 +84,7 @@ namespace mathlib.optimization.general
 		/// @deprecated See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/>") public GaussNewtonOptimizer(final boolean useLU)
-		[Obsolete("See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/>")]
 		public GaussNewtonOptimizer(bool useLU) : this(useLU, new SimpleVectorValueChecker())
 		{
 		}

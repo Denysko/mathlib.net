@@ -294,7 +294,7 @@ namespace mathlib.linear
 		/// @deprecated as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/>") public ArrayFieldVector(ArrayFieldVector<T> v1, ArrayFieldVector<T> v2) throws mathlib.exception.NullArgumentException
-		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/>")]
+		[Obsolete]//("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldVector)"/>")]
 		public ArrayFieldVector(ArrayFieldVector<T> v1, ArrayFieldVector<T> v2) : this((FieldVector<T>) v1, (FieldVector<T>) v2)
 		{
 		}
@@ -335,7 +335,7 @@ namespace mathlib.linear
 		/// @deprecated as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, FieldElement[])"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, mathlib.FieldElement[])"/>") public ArrayFieldVector(ArrayFieldVector<T> v1, T[] v2) throws mathlib.exception.NullArgumentException
-		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, mathlib.FieldElement[])"/>")]
+		[Obsolete]//("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldVector, mathlib.FieldElement[])"/>")]
 		public ArrayFieldVector(ArrayFieldVector<T> v1, T[] v2) : this((FieldVector<T>) v1, v2)
 		{
 		}
@@ -373,7 +373,7 @@ namespace mathlib.linear
 		/// @deprecated as of 3.2, replaced by <seealso cref="#ArrayFieldVector(FieldElement[], FieldVector)"/> 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(mathlib.FieldElement[] , FieldVector)"/>") public ArrayFieldVector(T[] v1, ArrayFieldVector<T> v2) throws mathlib.exception.NullArgumentException
-		[Obsolete("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(mathlib.FieldElement[] , FieldVector)"/>")]
+		[Obsolete]//("as of 3.2, replaced by <seealso cref="#ArrayFieldVector(mathlib.FieldElement[] , FieldVector)"/>")]
 		public ArrayFieldVector(T[] v1, ArrayFieldVector<T> v2) : this(v1, (FieldVector<T>) v2)
 		{
 		}

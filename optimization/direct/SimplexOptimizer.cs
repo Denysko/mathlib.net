@@ -94,7 +94,7 @@ namespace mathlib.optimization.direct
 		/// Constructor using a default {@link SimpleValueChecker convergence
 		/// checker}. </summary>
 		/// @deprecated See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/> 
-		[Obsolete("See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/>")]
 		public SimplexOptimizer() : this(new SimpleValueChecker())
 		{
 		}

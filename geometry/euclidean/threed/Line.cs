@@ -101,7 +101,7 @@ namespace mathlib.geometry.euclidean.threed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Line(Vector3D, Vector3D, double)"/>") public Line(final Vector3D p1, final Vector3D p2) throws mathlib.exception.MathIllegalArgumentException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("as of 3.3, replaced with <seealso cref="#Line(Vector3D, Vector3D, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#Line(Vector3D, Vector3D, double)"/>")]
 		public Line(Vector3D p1, Vector3D p2) : this(p1, p2, DEFAULT_TOLERANCE)
 		{
 		}

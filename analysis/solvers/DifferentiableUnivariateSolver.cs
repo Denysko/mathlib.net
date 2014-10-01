@@ -26,7 +26,7 @@ namespace mathlib.analysis.solvers
 	/// 
 	/// @version $Id: DifferentiableUnivariateSolver.java 1499808 2013-07-04 17:00:42Z sebb $ </summary>
 	/// @deprecated as of 3.1, replaced by <seealso cref="UnivariateDifferentiableSolver"/> 
-	[Obsolete("as of 3.1, replaced by <seealso cref="UnivariateDifferentiableSolver"/>")]
+	[Obsolete]//("as of 3.1, replaced by <seealso cref="UnivariateDifferentiableSolver"/>")]
 	public interface DifferentiableUnivariateSolver : BaseUnivariateSolver<DifferentiableUnivariateFunction>
 	{
 	}

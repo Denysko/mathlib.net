@@ -30,7 +30,7 @@ namespace mathlib.random
 	/// Random data generation utilities. </summary>
 	/// @deprecated to be removed in 4.0.  Use <seealso cref="RandomDataGenerator"/> directly
 	/// @version $Id: RandomData.java 1499808 2013-07-04 17:00:42Z sebb $ 
-	[Obsolete("to be removed in 4.0.  Use <seealso cref="RandomDataGenerator"/> directly")]
+	[Obsolete]//("to be removed in 4.0.  Use <seealso cref="RandomDataGenerator"/> directly")]
 	public interface RandomData
 	{
 		/// <summary>

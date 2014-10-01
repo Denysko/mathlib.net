@@ -70,7 +70,7 @@ namespace mathlib.optimization.general
 		/// @deprecated See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/>") public NonLinearConjugateGradientOptimizer(final ConjugateGradientFormula updateFormula)
-		[Obsolete("See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/>")]
 		public NonLinearConjugateGradientOptimizer(ConjugateGradientFormula updateFormula) : this(updateFormula, new SimpleValueChecker())
 		{
 		}

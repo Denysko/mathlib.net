@@ -132,7 +132,7 @@ namespace mathlib.geometry.euclidean.threed
 		/// <summary>
 		/// Build a polyhedrons set representing the whole real line. </summary>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolyhedronsSet(double)"/> 
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(double)"/>")]
 		public PolyhedronsSet() : this(DEFAULT_TOLERANCE)
 		{
 		}
@@ -149,7 +149,7 @@ namespace mathlib.geometry.euclidean.threed
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolyhedronsSet(BSPTree, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(mathlib.geometry.partitioning.BSPTree, double)"/>") public PolyhedronsSet(final mathlib.geometry.partitioning.BSPTree<Euclidean3D> tree)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
 		public PolyhedronsSet(BSPTree<Euclidean3D> tree) : this(tree, DEFAULT_TOLERANCE)
 		{
 		}
@@ -176,7 +176,7 @@ namespace mathlib.geometry.euclidean.threed
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolyhedronsSet(Collection, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(java.util.Collection, double)"/>") public PolyhedronsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Euclidean3D>> boundary)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(java.util.Collection, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#PolyhedronsSet(java.util.Collection, double)"/>")]
 		public PolyhedronsSet(ICollection<SubHyperplane<Euclidean3D>> boundary) : this(boundary, DEFAULT_TOLERANCE)
 		{
 		}

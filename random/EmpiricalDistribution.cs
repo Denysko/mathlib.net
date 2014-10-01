@@ -188,7 +188,7 @@ namespace mathlib.random
 		/// <param name="randomData"> random data generator (may be null, resulting in default JDK generator)
 		/// @since 3.0 </param>
 		/// @deprecated As of 3.1. Please use <seealso cref="#EmpiricalDistribution(int,RandomGenerator)"/> instead. 
-		[Obsolete("As of 3.1. Please use <seealso cref="#EmpiricalDistribution(int,RandomGenerator)"/> instead.")]
+		[Obsolete]//("As of 3.1. Please use <seealso cref="#EmpiricalDistribution(int,RandomGenerator)"/> instead.")]
 		public EmpiricalDistribution(int binCount, RandomDataImpl randomData) : this(binCount, randomData.Delegate)
 		{
 		}
@@ -200,7 +200,7 @@ namespace mathlib.random
 		/// <param name="randomData"> random data generator (may be null, resulting in default JDK generator)
 		/// @since 3.0 </param>
 		/// @deprecated As of 3.1. Please use <seealso cref="#EmpiricalDistribution(RandomGenerator)"/> instead. 
-		[Obsolete("As of 3.1. Please use <seealso cref="#EmpiricalDistribution(RandomGenerator)"/> instead.")]
+		[Obsolete]//("As of 3.1. Please use <seealso cref="#EmpiricalDistribution(RandomGenerator)"/> instead.")]
 		public EmpiricalDistribution(RandomDataImpl randomData) : this(DEFAULT_BIN_COUNT, randomData)
 		{
 		}

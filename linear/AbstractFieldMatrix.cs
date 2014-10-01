@@ -152,7 +152,7 @@ namespace mathlib.linear
 		/// @deprecated as of 3.2, replaced by <seealso cref="MathArrays#buildArray(Field, int, int)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="MathArrays#buildArray(mathlib.Field, int, int)"/>") protected static <T extends mathlib.FieldElement<T>> T[][] buildArray(final mathlib.Field<T> field, final int rows, final int columns)
-		[Obsolete("as of 3.2, replaced by <seealso cref="MathArrays#buildArray(mathlib.Field, int, int)"/>")]
+		[Obsolete]//("as of 3.2, replaced by <seealso cref="MathArrays#buildArray(mathlib.Field, int, int)"/>")]
 		protected internal static T[][] buildArray<T>(Field<T> field, int rows, int columns) where T : mathlib.FieldElement<T>
 		{
 			return MathArrays.buildArray(field, rows, columns);
@@ -170,7 +170,7 @@ namespace mathlib.linear
 		/// @deprecated as of 3.2, replaced by <seealso cref="MathArrays#buildArray(Field, int)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.2, replaced by <seealso cref="MathArrays#buildArray(mathlib.Field, int)"/>") protected static <T extends mathlib.FieldElement<T>> T[] buildArray(final mathlib.Field<T> field, final int length)
-		[Obsolete("as of 3.2, replaced by <seealso cref="MathArrays#buildArray(mathlib.Field, int)"/>")]
+		[Obsolete]//("as of 3.2, replaced by <seealso cref="MathArrays#buildArray(mathlib.Field, int)"/>")]
 		protected internal static T[] buildArray<T>(Field<T> field, int length) where T : mathlib.FieldElement<T>
 		{
 			return MathArrays.buildArray(field, length);

@@ -77,7 +77,7 @@ namespace mathlib.geometry.euclidean.twod
 		/// @deprecated as of 3.3, replaced with <seealso cref="#SubLine(Vector2D, Vector2D, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#SubLine(Vector2D, Vector2D, double)"/>") public SubLine(final Vector2D start, final Vector2D end)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#SubLine(Vector2D, Vector2D, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#SubLine(Vector2D, Vector2D, double)"/>")]
 		public SubLine(Vector2D start, Vector2D end) : this(start, end, DEFAULT_TOLERANCE)
 		{
 		}

@@ -49,7 +49,7 @@ namespace mathlib.optimization.direct
 		/// <seealso cref= BaseAbstractMultivariateOptimizer#BaseAbstractMultivariateOptimizer() </seealso>
 		/// @deprecated See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
 	{
-		[Obsolete("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
 		protected internal BaseAbstractMultivariateSimpleBoundsOptimizer()
 		{
 		}

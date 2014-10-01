@@ -74,7 +74,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// @deprecated as of 3.3, replaced with <seealso cref="#OrientedPoint(Vector1D, boolean, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#OrientedPoint(Vector1D, boolean, double)"/>") public OrientedPoint(final Vector1D location, final boolean direct)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#OrientedPoint(Vector1D, boolean, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#OrientedPoint(Vector1D, boolean, double)"/>")]
 		public OrientedPoint(Vector1D location, bool direct) : this(location, direct, DEFAULT_TOLERANCE)
 		{
 		}

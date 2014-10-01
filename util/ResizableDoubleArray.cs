@@ -88,12 +88,12 @@ namespace mathlib.util
 		/// <summary>
 		/// Additive expansion mode. </summary>
 		/// @deprecated As of 3.1. Please use <seealso cref="ExpansionMode#ADDITIVE"/> instead. 
-		[Obsolete("As of 3.1. Please use <seealso cref="ExpansionMode#ADDITIVE"/> instead.")]
+		[Obsolete]//("As of 3.1. Please use <seealso cref="ExpansionMode#ADDITIVE"/> instead.")]
 		public const int ADDITIVE_MODE = 1;
 		/// <summary>
 		/// Multiplicative expansion mode. </summary>
 		/// @deprecated As of 3.1. Please use <seealso cref="ExpansionMode#MULTIPLICATIVE"/> instead. 
-		[Obsolete("As of 3.1. Please use <seealso cref="ExpansionMode#MULTIPLICATIVE"/> instead.")]
+		[Obsolete]//("As of 3.1. Please use <seealso cref="ExpansionMode#MULTIPLICATIVE"/> instead.")]
 		public const int MULTIPLICATIVE_MODE = 0;
 		/// <summary>
 		/// Serializable version identifier. </summary>
@@ -775,7 +775,7 @@ namespace mathlib.util
 		/// <returns> the contraction criteria used to reclaim memory. </returns>
 		/// @deprecated As of 3.1. Please use <seealso cref="#getContractionCriterion()"/>
 		/// instead. 
-		[Obsolete("As of 3.1. Please use <seealso cref="#getContractionCriterion()"/>")]
+		[Obsolete]//("As of 3.1. Please use <seealso cref="#getContractionCriterion()"/>")]
 		public virtual float ContractionCriteria
 		{
 			get
@@ -871,7 +871,7 @@ namespace mathlib.util
 		/// </summary>
 		/// <returns> the expansion factor of this expandable double array </returns>
 		/// @deprecated As of 3.1. Return type will be changed to "double" in 4.0. 
-		[Obsolete("As of 3.1. Return type will be changed to "double" in 4.0.")]
+		[Obsolete]//("As of 3.1. Return type will be changed to "double" in 4.0.")]
 		public virtual float ExpansionFactor
 		{
 			get

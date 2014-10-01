@@ -62,7 +62,7 @@ namespace mathlib.optimization.univariate
 		/// <summary>
 		/// Build an instance with default thresholds. </summary>
 		/// @deprecated See <seealso cref="AbstractConvergenceChecker#AbstractConvergenceChecker()"/> 
-		[Obsolete("See <seealso cref="AbstractConvergenceChecker#AbstractConvergenceChecker()"/>")]
+		[Obsolete]//("See <seealso cref="AbstractConvergenceChecker#AbstractConvergenceChecker()"/>")]
 		public SimpleUnivariateValueChecker()
 		{
 			maxIterationCount = ITERATION_CHECK_DISABLED;

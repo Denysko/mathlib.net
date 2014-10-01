@@ -149,7 +149,7 @@ namespace mathlib.analysis
 		/// @deprecated as of 3.1 replaced by <seealso cref="#compose(UnivariateDifferentiableFunction...)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#compose(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction compose(final DifferentiableUnivariateFunction... f)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#compose(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
+		[Obsolete]//("as of 3.1 replaced by <seealso cref="#compose(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
 		public static DifferentiableUnivariateFunction compose(params DifferentiableUnivariateFunction[] f)
 		{
 			return new DifferentiableUnivariateFunctionAnonymousInnerClassHelper(f);
@@ -305,7 +305,7 @@ namespace mathlib.analysis
 		/// @deprecated as of 3.1 replaced by <seealso cref="#add(UnivariateDifferentiableFunction...)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#add(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction add(final DifferentiableUnivariateFunction... f)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#add(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
+		[Obsolete]//("as of 3.1 replaced by <seealso cref="#add(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
 		public static DifferentiableUnivariateFunction add(params DifferentiableUnivariateFunction[] f)
 		{
 			return new DifferentiableUnivariateFunctionAnonymousInnerClassHelper2(f);
@@ -457,7 +457,7 @@ namespace mathlib.analysis
 		/// @deprecated as of 3.1 replaced by <seealso cref="#multiply(UnivariateDifferentiableFunction...)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#multiply(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>") public static DifferentiableUnivariateFunction multiply(final DifferentiableUnivariateFunction... f)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#multiply(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
+		[Obsolete]//("as of 3.1 replaced by <seealso cref="#multiply(mathlib.analysis.differentiation.UnivariateDifferentiableFunction...)"/>")]
 		public static DifferentiableUnivariateFunction multiply(params DifferentiableUnivariateFunction[] f)
 		{
 			return new DifferentiableUnivariateFunctionAnonymousInnerClassHelper3(f);

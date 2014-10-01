@@ -52,7 +52,7 @@ namespace mathlib.optimization.fitting
 		/// Optimizer to use for the fitting. </summary>
 		/// @deprecated as of 3.1 replaced by <seealso cref="#optimizer"/> 
 	{
-		[Obsolete("as of 3.1 replaced by <seealso cref="#optimizer"/>")]
+		[Obsolete]//("as of 3.1 replaced by <seealso cref="#optimizer"/>")]
 		private readonly DifferentiableMultivariateVectorOptimizer oldOptimizer;
 
 		/// <summary>
@@ -69,7 +69,7 @@ namespace mathlib.optimization.fitting
 		/// @deprecated as of 3.1 replaced by <seealso cref="#CurveFitter(MultivariateDifferentiableVectorOptimizer)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.1 replaced by <seealso cref="#CurveFitter(mathlib.optimization.MultivariateDifferentiableVectorOptimizer)"/>") public CurveFitter(final mathlib.optimization.DifferentiableMultivariateVectorOptimizer optimizer)
-		[Obsolete("as of 3.1 replaced by <seealso cref="#CurveFitter(mathlib.optimization.MultivariateDifferentiableVectorOptimizer)"/>")]
+		[Obsolete]//("as of 3.1 replaced by <seealso cref="#CurveFitter(mathlib.optimization.MultivariateDifferentiableVectorOptimizer)"/>")]
 		public CurveFitter(DifferentiableMultivariateVectorOptimizer optimizer)
 		{
 			this.oldOptimizer = optimizer;

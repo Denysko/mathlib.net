@@ -305,7 +305,7 @@ namespace mathlib.linear
 		/// {@inheritDoc}
 		/// </summary>
 		/// @deprecated as of 3.1, to be removed in 4.0. Please use the <seealso cref="#toArray()"/> method instead. 
-		[Obsolete("as of 3.1, to be removed in 4.0. Please use the <seealso cref="#toArray()"/> method instead.")]
+		[Obsolete]//("as of 3.1, to be removed in 4.0. Please use the <seealso cref="#toArray()"/> method instead.")]
 		public virtual T[] Data
 		{
 			get

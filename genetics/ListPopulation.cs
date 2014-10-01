@@ -103,7 +103,7 @@ namespace mathlib.genetics
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="#addChromosomes(java.util.Collection)"/> instead") public void setChromosomes(final java.util.List<Chromosome> chromosomes) throws mathlib.exception.NullArgumentException, mathlib.exception.NumberIsTooLargeException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="#addChromosomes(java.util.Collection)"/> instead")]
+		[Obsolete]//("use <seealso cref="#addChromosomes(java.util.Collection)"/> instead")]
 		public virtual IList<Chromosome> Chromosomes
 		{
 			set

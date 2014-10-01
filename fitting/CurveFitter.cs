@@ -51,7 +51,7 @@ namespace mathlib.fitting
 	/// @since 2.0 </param>
 	/// @deprecated As of 3.3. Please use <seealso cref="AbstractCurveFitter"/> and
 	/// <seealso cref="WeightedObservedPoints"/> instead. 
-	[Obsolete("As of 3.3. Please use <seealso cref="AbstractCurveFitter"/> and")]
+	[Obsolete]//("As of 3.3. Please use <seealso cref="AbstractCurveFitter"/> and")]
 	public class CurveFitter<T> where T : mathlib.analysis.ParametricUnivariateFunction
 	{
 		/// <summary>

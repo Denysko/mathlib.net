@@ -50,7 +50,7 @@ namespace mathlib.optimization.general
 		/// {@link mathlib.optimization.SimpleValueChecker
 		/// SimpleValueChecker}. </summary>
 		/// @deprecated See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
-		[Obsolete("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
 		protected internal AbstractScalarDifferentiableOptimizer()
 		{
 		}

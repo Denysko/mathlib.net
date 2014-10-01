@@ -31,7 +31,7 @@ namespace mathlib.fitting
 	/// @since 2.0 </summary>
 	/// @deprecated As of 3.3. Please use <seealso cref="PolynomialCurveFitter"/> and
 	/// <seealso cref="WeightedObservedPoints"/> instead. 
-	[Obsolete("As of 3.3. Please use <seealso cref="PolynomialCurveFitter"/> and")]
+	[Obsolete]//("As of 3.3. Please use <seealso cref="PolynomialCurveFitter"/> and")]
 	public class PolynomialFitter : CurveFitter<PolynomialFunction.Parametric>
 	{
 		/// <summary>

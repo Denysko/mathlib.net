@@ -111,7 +111,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// <summary>
 		/// Build an intervals set representing the whole real line. </summary>
 		/// @deprecated as of 3.1 replaced with <seealso cref="#IntervalsSet(double)"/> 
-		[Obsolete("as of 3.1 replaced with <seealso cref="#IntervalsSet(double)"/>")]
+		[Obsolete]//("as of 3.1 replaced with <seealso cref="#IntervalsSet(double)"/>")]
 		public IntervalsSet() : this(DEFAULT_TOLERANCE)
 		{
 		}
@@ -169,7 +169,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// @deprecated as of 3.3, replaced with <seealso cref="#IntervalsSet(Collection, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#IntervalsSet(java.util.Collection, double)"/>") public IntervalsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Euclidean1D>> boundary)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#IntervalsSet(java.util.Collection, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#IntervalsSet(java.util.Collection, double)"/>")]
 		public IntervalsSet(ICollection<SubHyperplane<Euclidean1D>> boundary) : this(boundary, DEFAULT_TOLERANCE)
 		{
 		}

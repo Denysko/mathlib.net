@@ -104,7 +104,7 @@ namespace mathlib.optimization.general
 		/// Cost value (square root of the sum of the residuals). </summary>
 		/// @deprecated As of 3.1. Field to become "private" in 4.0.
 		/// Please use <seealso cref="#setCost(double)"/>. 
-		[Obsolete("As of 3.1. Field to become "private" in 4.0.")]
+		[Obsolete]//("As of 3.1. Field to become "private" in 4.0.")]
 		protected internal double cost;
 		/// <summary>
 		/// Objective function derivatives. </summary>
@@ -121,7 +121,7 @@ namespace mathlib.optimization.general
 		/// The convergence check is set to a {@link
 		/// mathlib.optimization.SimpleVectorValueChecker}. </summary>
 		/// @deprecated See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/> 
-		[Obsolete("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="mathlib.optimization.SimpleValueChecker#SimpleValueChecker()"/>")]
 		protected internal AbstractLeastSquaresOptimizer()
 		{
 		}
@@ -147,7 +147,7 @@ namespace mathlib.optimization.general
 		/// match problem dimension. </exception>
 		/// @deprecated As of 3.1. Please use <seealso cref="#computeWeightedJacobian(double[])"/>
 		/// instead. 
-		[Obsolete("As of 3.1. Please use <seealso cref="#computeWeightedJacobian(double[])"/>")]
+		[Obsolete]//("As of 3.1. Please use <seealso cref="#computeWeightedJacobian(double[])"/>")]
 		protected internal virtual void updateJacobian()
 		{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

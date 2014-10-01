@@ -199,7 +199,7 @@ namespace mathlib.distribution
 		/// <returns> the shape parameter </returns>
 		/// @deprecated as of version 3.1, <seealso cref="#getShape()"/> should be preferred.
 		/// This method will be removed in version 4.0. 
-		[Obsolete("as of version 3.1, <seealso cref="#getShape()"/> should be preferred.")]
+		[Obsolete]//("as of version 3.1, <seealso cref="#getShape()"/> should be preferred.")]
 		public virtual double Alpha
 		{
 			get
@@ -227,7 +227,7 @@ namespace mathlib.distribution
 		/// <returns> the scale parameter </returns>
 		/// @deprecated as of version 3.1, <seealso cref="#getScale()"/> should be preferred.
 		/// This method will be removed in version 4.0. 
-		[Obsolete("as of version 3.1, <seealso cref="#getScale()"/> should be preferred.")]
+		[Obsolete]//("as of version 3.1, <seealso cref="#getScale()"/> should be preferred.")]
 		public virtual double Beta
 		{
 			get

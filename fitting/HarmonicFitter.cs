@@ -40,7 +40,7 @@ namespace mathlib.fitting
 	/// @since 2.0 </summary>
 	/// @deprecated As of 3.3. Please use <seealso cref="HarmonicCurveFitter"/> and
 	/// <seealso cref="WeightedObservedPoints"/> instead. 
-	[Obsolete("As of 3.3. Please use <seealso cref="HarmonicCurveFitter"/> and")]
+	[Obsolete]//("As of 3.3. Please use <seealso cref="HarmonicCurveFitter"/> and")]
 	public class HarmonicFitter : CurveFitter<HarmonicOscillator.Parametric>
 	{
 		/// <summary>

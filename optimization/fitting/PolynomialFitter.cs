@@ -74,7 +74,7 @@ namespace mathlib.optimization.fitting
 		/// <exception cref="mathlib.exception.ConvergenceException">
 		/// if the algorithm failed to converge. </exception>
 		/// @deprecated Since 3.1 (to be removed in 4.0). Please use <seealso cref="#fit(double[])"/> instead. 
-		[Obsolete("Since 3.1 (to be removed in 4.0). Please use <seealso cref="#fit(double[])"/> instead.")]
+		[Obsolete]//("Since 3.1 (to be removed in 4.0). Please use <seealso cref="#fit(double[])"/> instead.")]
 		public virtual double[] fit()
 		{
 			return fit(new PolynomialFunction.Parametric(), new double[degree + 1]);

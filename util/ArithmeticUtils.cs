@@ -105,7 +105,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficient(int, int)"/>") public static long binomialCoefficient(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="CombinatoricsUtils#binomialCoefficient(int, int)"/>")]
+		[Obsolete]//("use <seealso cref="CombinatoricsUtils#binomialCoefficient(int, int)"/>")]
 		public static long binomialCoefficient(int n, int k)
 		{
 		   return CombinatoricsUtils.binomialCoefficient(n, k);
@@ -139,7 +139,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficientDouble(int, int)"/>") public static double binomialCoefficientDouble(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="CombinatoricsUtils#binomialCoefficientDouble(int, int)"/>")]
+		[Obsolete]//("use <seealso cref="CombinatoricsUtils#binomialCoefficientDouble(int, int)"/>")]
 		public static double binomialCoefficientDouble(int n, int k)
 		{
 			return CombinatoricsUtils.binomialCoefficientDouble(n, k);
@@ -169,7 +169,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#binomialCoefficientLog(int, int)"/>") public static double binomialCoefficientLog(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="CombinatoricsUtils#binomialCoefficientLog(int, int)"/>")]
+		[Obsolete]//("use <seealso cref="CombinatoricsUtils#binomialCoefficientLog(int, int)"/>")]
 		public static double binomialCoefficientLog(int n, int k)
 		{
 			return CombinatoricsUtils.binomialCoefficientLog(n, k);
@@ -202,7 +202,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorial(int)"/>") public static long factorial(final int n) throws mathlib.exception.NotPositiveException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="CombinatoricsUtils#factorial(int)"/>")]
+		[Obsolete]//("use <seealso cref="CombinatoricsUtils#factorial(int)"/>")]
 		public static long factorial(int n)
 		{
 			return CombinatoricsUtils.factorial(n);

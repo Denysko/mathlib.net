@@ -57,7 +57,7 @@ namespace mathlib.fitting
 	/// @version $Id: GaussianFitter.java 1416643 2012-12-03 19:37:14Z tn $ </summary>
 	/// @deprecated As of 3.3. Please use <seealso cref="GaussianCurveFitter"/> and
 	/// <seealso cref="WeightedObservedPoints"/> instead. 
-	[Obsolete("As of 3.3. Please use <seealso cref="GaussianCurveFitter"/> and")]
+	[Obsolete]//("As of 3.3. Please use <seealso cref="GaussianCurveFitter"/> and")]
 	public class GaussianFitter : CurveFitter<Gaussian.Parametric>
 	{
 		/// <summary>

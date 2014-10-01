@@ -172,7 +172,7 @@ namespace mathlib.geometry.euclidean.twod
 		/// <summary>
 		/// Build a polygons set representing the whole real line. </summary>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolygonsSet(double)"/> 
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolygonsSet(double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#PolygonsSet(double)"/>")]
 		public PolygonsSet() : this(DEFAULT_TOLERANCE)
 		{
 		}
@@ -189,7 +189,7 @@ namespace mathlib.geometry.euclidean.twod
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolygonsSet(BSPTree, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolygonsSet(mathlib.geometry.partitioning.BSPTree, double)"/>") public PolygonsSet(final mathlib.geometry.partitioning.BSPTree<Euclidean2D> tree)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolygonsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#PolygonsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
 		public PolygonsSet(BSPTree<Euclidean2D> tree) : this(tree, DEFAULT_TOLERANCE)
 		{
 		}
@@ -217,7 +217,7 @@ namespace mathlib.geometry.euclidean.twod
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolygonsSet(Collection, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolygonsSet(java.util.Collection, double)"/>") public PolygonsSet(final java.util.Collection<mathlib.geometry.partitioning.SubHyperplane<Euclidean2D>> boundary)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolygonsSet(java.util.Collection, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#PolygonsSet(java.util.Collection, double)"/>")]
 		public PolygonsSet(ICollection<SubHyperplane<Euclidean2D>> boundary) : this(boundary, DEFAULT_TOLERANCE)
 		{
 		}

@@ -308,7 +308,7 @@ namespace mathlib.optimization.direct
 		/// <param name="random"> Random generator. </param>
 		/// <param name="generateStatistics"> Whether statistic data is collected. </param>
 		/// @deprecated See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/> 
-		[Obsolete("See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="SimpleValueChecker#SimpleValueChecker()"/>")]
 		public CMAESOptimizer(int lambda, double[] inputSigma, int maxIterations, double stopFitness, bool isActiveCMA, int diagonalOnly, int checkFeasableCount, RandomGenerator random, bool generateStatistics) : this(lambda, inputSigma, maxIterations, stopFitness, isActiveCMA, diagonalOnly, checkFeasableCount, random, generateStatistics, new SimpleValueChecker())
 		{
 		}

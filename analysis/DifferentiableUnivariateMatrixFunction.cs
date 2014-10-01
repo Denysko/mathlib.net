@@ -25,7 +25,7 @@ namespace mathlib.analysis
 	/// @version $Id: DifferentiableUnivariateMatrixFunction.java 1499808 2013-07-04 17:00:42Z sebb $
 	/// @since 2.0 </summary>
 	/// @deprecated as of 3.1 replaced by  <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableMatrixFunction"/> 
-	[Obsolete("as of 3.1 replaced by  <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableMatrixFunction"/>")]
+	[Obsolete]//("as of 3.1 replaced by  <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableMatrixFunction"/>")]
 	public interface DifferentiableUnivariateMatrixFunction : UnivariateMatrixFunction
 	{
 

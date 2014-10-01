@@ -367,7 +367,7 @@ namespace mathlib.geometry.partitioning
 		/// @deprecated as of 3.3, replaced with <seealso cref="#getCell(Point, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#getCell(mathlib.geometry.Point, double)"/>") public BSPTree<S> getCell(final mathlib.geometry.Vector<S> point)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#getCell(mathlib.geometry.Point, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#getCell(mathlib.geometry.Point, double)"/>")]
 		public virtual BSPTree<S> getCell(Vector<S> point)
 		{
 			return getCell((Point<S>) point, 1.0e-10);

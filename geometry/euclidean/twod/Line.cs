@@ -145,7 +145,7 @@ namespace mathlib.geometry.euclidean.twod
 		/// @deprecated as of 3.3, replaced with <seealso cref="#Line(Vector2D, Vector2D, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Line(Vector2D, Vector2D, double)"/>") public Line(final Vector2D p1, final Vector2D p2)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#Line(Vector2D, Vector2D, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#Line(Vector2D, Vector2D, double)"/>")]
 		public Line(Vector2D p1, Vector2D p2) : this(p1, p2, DEFAULT_TOLERANCE)
 		{
 		}
@@ -157,7 +157,7 @@ namespace mathlib.geometry.euclidean.twod
 		/// @deprecated as of 3.3, replaced with <seealso cref="#Line(Vector2D, double, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#Line(Vector2D, double, double)"/>") public Line(final Vector2D p, final double angle)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#Line(Vector2D, double, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#Line(Vector2D, double, double)"/>")]
 		public Line(Vector2D p, double angle) : this(p, angle, DEFAULT_TOLERANCE)
 		{
 		}

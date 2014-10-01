@@ -24,7 +24,7 @@ namespace mathlib.analysis
 	/// 
 	/// @version $Id: DifferentiableUnivariateFunction.java 1383845 2012-09-12 08:34:10Z luc $ </summary>
 	/// @deprecated as of 3.1 replaced by <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableFunction"/> 
-	[Obsolete("as of 3.1 replaced by <seealso cref="mathlib.analysis.differentiation.UnivariateDifferentiableFunction"/>")]
+	[System.Obsolete("as of 3.1 replaced by <seealso cref=mathlib.analysis.differentiation.UnivariateDifferentiableFunction")]
 	public interface DifferentiableUnivariateFunction : UnivariateFunction
 	{
 

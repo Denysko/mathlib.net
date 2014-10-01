@@ -64,7 +64,7 @@ namespace mathlib.optimization
 		/// <summary>
 		/// Build an instance with default threshold. </summary>
 		/// @deprecated See <seealso cref="AbstractConvergenceChecker#AbstractConvergenceChecker()"/> 
-		[Obsolete("See <seealso cref="AbstractConvergenceChecker#AbstractConvergenceChecker()"/>")]
+		[Obsolete]//("See <seealso cref="AbstractConvergenceChecker#AbstractConvergenceChecker()"/>")]
 		public SimplePointChecker()
 		{
 			maxIterationCount = ITERATION_CHECK_DISABLED;

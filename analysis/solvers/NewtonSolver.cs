@@ -31,7 +31,7 @@ namespace mathlib.analysis.solvers
 	/// </summary>
 	/// @deprecated as of 3.1, replaced by <seealso cref="NewtonRaphsonSolver"/>
 	/// @version $Id: NewtonSolver.java 1395937 2012-10-09 10:04:36Z luc $ 
-	[Obsolete("as of 3.1, replaced by <seealso cref="NewtonRaphsonSolver"/>")]
+	[Obsolete]//("as of 3.1, replaced by <seealso cref="NewtonRaphsonSolver"/>")]
 	public class NewtonSolver : AbstractDifferentiableUnivariateSolver
 	{
 		/// <summary>

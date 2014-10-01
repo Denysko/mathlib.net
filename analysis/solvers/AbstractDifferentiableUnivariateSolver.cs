@@ -29,7 +29,7 @@ namespace mathlib.analysis.solvers
 	/// @since 3.0
 	/// @version $Id: AbstractDifferentiableUnivariateSolver.java 1455194 2013-03-11 15:45:54Z luc $ </summary>
 	/// @deprecated as of 3.1, replaced by <seealso cref="AbstractUnivariateDifferentiableSolver"/> 
-	[Obsolete("as of 3.1, replaced by <seealso cref="AbstractUnivariateDifferentiableSolver"/>")]
+	[Obsolete]//("as of 3.1, replaced by <seealso cref="AbstractUnivariateDifferentiableSolver"/>")]
 	public abstract class AbstractDifferentiableUnivariateSolver : BaseAbstractUnivariateSolver<DifferentiableUnivariateFunction>, DifferentiableUnivariateSolver
 	{
 		/// <summary>

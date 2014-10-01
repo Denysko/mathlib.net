@@ -72,7 +72,7 @@ namespace mathlib.optimization.direct
 		/// Simple constructor with default settings.
 		/// The convergence check is set to a <seealso cref="SimpleVectorValueChecker"/>. </summary>
 		/// @deprecated See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/> 
-		[Obsolete("See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/>")]
+		[Obsolete]//("See <seealso cref="SimpleVectorValueChecker#SimpleVectorValueChecker()"/>")]
 		protected internal BaseAbstractMultivariateVectorOptimizer() : this(new SimpleVectorValueChecker())
 		{
 		}

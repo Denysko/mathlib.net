@@ -66,7 +66,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// Get the lower bound of the interval. </summary>
 		/// <returns> lower bound of the interval </returns>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#getInf()"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#getInf()"/>")]
+		[Obsolete]//("as of 3.1, replaced by <seealso cref="#getInf()"/>")]
 		public virtual double Lower
 		{
 			get
@@ -91,7 +91,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// Get the upper bound of the interval. </summary>
 		/// <returns> upper bound of the interval </returns>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#getSup()"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#getSup()"/>")]
+		[Obsolete]//("as of 3.1, replaced by <seealso cref="#getSup()"/>")]
 		public virtual double Upper
 		{
 			get
@@ -116,7 +116,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// Get the length of the interval. </summary>
 		/// <returns> length of the interval </returns>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#getSize()"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#getSize()"/>")]
+		[Obsolete]//("as of 3.1, replaced by <seealso cref="#getSize()"/>")]
 		public virtual double Length
 		{
 			get
@@ -141,7 +141,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// Get the midpoint of the interval. </summary>
 		/// <returns> midpoint of the interval </returns>
 		/// @deprecated as of 3.1, replaced by <seealso cref="#getBarycenter()"/> 
-		[Obsolete("as of 3.1, replaced by <seealso cref="#getBarycenter()"/>")]
+		[Obsolete]//("as of 3.1, replaced by <seealso cref="#getBarycenter()"/>")]
 		public virtual double MidPoint
 		{
 			get

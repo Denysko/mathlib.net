@@ -93,7 +93,7 @@ namespace mathlib.random
 	/// </p> </summary>
 	/// @deprecated to be removed in 4.0.  Use <seealso cref="RandomDataGenerator"/> instead
 	/// @version $Id: RandomDataImpl.java 1499808 2013-07-04 17:00:42Z sebb $ 
-	[Obsolete("to be removed in 4.0.  Use <seealso cref="RandomDataGenerator"/> instead"), Serializable]
+	[Obsolete]//("to be removed in 4.0.  Use <seealso cref="RandomDataGenerator"/> instead"), Serializable]
 	public class RandomDataImpl : RandomData
 	{
 

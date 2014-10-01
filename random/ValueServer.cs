@@ -118,7 +118,7 @@ namespace mathlib.random
 		/// <param name="randomData"> the RandomDataImpl instance used to source random data
 		/// @since 3.0 </param>
 		/// @deprecated use <seealso cref="#ValueServer(RandomGenerator)"/> 
-		[Obsolete("use <seealso cref="#ValueServer(RandomGenerator)"/>")]
+		[Obsolete]//("use <seealso cref="#ValueServer(RandomGenerator)"/>")]
 		public ValueServer(RandomDataImpl randomData)
 		{
 			this.randomData = randomData;

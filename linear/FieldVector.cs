@@ -206,7 +206,7 @@ namespace mathlib.linear
 		/// Returns vector entries as a T array. </summary>
 		/// <returns> T array of entries </returns>
 		/// @deprecated as of 3.1, to be removed in 4.0. Please use the <seealso cref="#toArray()"/> method instead. 
-		[Obsolete("as of 3.1, to be removed in 4.0. Please use the <seealso cref="#toArray()"/> method instead.")]
+		[Obsolete]//("as of 3.1, to be removed in 4.0. Please use the <seealso cref="#toArray()"/> method instead.")]
 		T[] Data {get;}
 
 		/// <summary>

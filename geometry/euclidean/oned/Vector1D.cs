@@ -296,7 +296,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// <summary>
 		/// {@inheritDoc} </summary>
 		/// @deprecated as of 3.3, replaced with <seealso cref="#distance(Point)"/> 
-		[Obsolete("as of 3.3, replaced with <seealso cref="#distance(mathlib.geometry.Point)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#distance(mathlib.geometry.Point)"/>")]
 		public virtual double distance(Vector<Euclidean1D> p)
 		{
 			return distance((Point<Euclidean1D>) p);

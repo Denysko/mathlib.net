@@ -3296,7 +3296,7 @@ namespace mathlib.dfp
 		///  <returns> integer base 10 logarithm </returns>
 		///  @deprecated as of 3.2, replaced by <seealso cref="#intLog10()"/>, in 4.0 the return type
 		///  will be changed to Dfp 
-		[Obsolete("as of 3.2, replaced by <seealso cref="#intLog10()"/>, in 4.0 the return type")]
+		[Obsolete]//("as of 3.2, replaced by <seealso cref="#intLog10()"/>, in 4.0 the return type")]
 		public virtual int log10()
 		{
 			return intLog10();
