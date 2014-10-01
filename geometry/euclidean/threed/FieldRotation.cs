@@ -44,7 +44,7 @@ namespace mathlib.geometry.euclidean.threed
 
 		/// <summary>
 		/// Serializable version identifier </summary>
-		private const long serialVersionUID = 20130224l;
+		private const long serialVersionUID = 20130224L;
 
 		/// <summary>
 		/// Scalar coordinate of the quaternion. </summary>

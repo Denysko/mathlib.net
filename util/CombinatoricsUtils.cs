@@ -36,7 +36,7 @@ namespace mathlib.util
 
 		/// <summary>
 		/// All long-representable factorials </summary>
-		internal static readonly long[] FACTORIALS = new long[] {1l, 1l, 2l, 6l, 24l, 120l, 720l, 5040l, 40320l, 362880l, 3628800l, 39916800l, 479001600l, 6227020800l, 87178291200l, 1307674368000l, 20922789888000l, 355687428096000l, 6402373705728000l, 121645100408832000l, 2432902008176640000l};
+		internal static readonly long[] FACTORIALS = new long[] {1L, 1L, 2L, 6L, 24L, 120L, 720L, 5040L, 40320L, 362880L, 3628800L, 39916800L, 479001600L, 6227020800L, 87178291200L, 1307674368000L, 20922789888000L, 355687428096000L, 6402373705728000L, 121645100408832000L, 2432902008176640000L};
 
 		/// <summary>
 		/// Stirling numbers of the second kind. </summary>
@@ -419,7 +419,7 @@ namespace mathlib.util
 				// we must stop computation at row 26
 				const int maxIndex = 26;
 				stirlingS2 = new long[maxIndex][];
-				stirlingS2[0] = new long[] {1l};
+				stirlingS2[0] = new long[] {1L};
 				for (int i = 1; i < stirlingS2.Length; ++i)
 				{
 					stirlingS2[i] = new long[i + 1];
@@ -455,7 +455,7 @@ namespace mathlib.util
 				}
 				else if (k == 2)
 				{
-					return (1l << (n - 1)) - 1l;
+					return (1L << (n - 1)) - 1L;
 				}
 				else if (k == n - 1)
 				{

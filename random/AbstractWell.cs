@@ -153,7 +153,7 @@ namespace mathlib.random
 		/// <param name="seed"> the initial seed (64 bits integer) </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: protected AbstractWell(final int k, final int m1, final int m2, final int m3, final long seed)
-		protected internal AbstractWell(int k, int m1, int m2, int m3, long seed) : this(k, m1, m2, m3, new int[] {(int)((long)((ulong)seed >> 32)), (int)(seed & 0xffffffffl)})
+		protected internal AbstractWell(int k, int m1, int m2, int m3, long seed) : this(k, m1, m2, m3, new int[] {(int)((long)((ulong)seed >> 32)), (int)(seed & 0xffffffffL)})
 		{
 		}
 
@@ -200,7 +200,7 @@ namespace mathlib.random
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 	//ORIGINAL LINE: final long l = v[i - value.length];
 						long l = v[i - value.Length];
-						v[i] = (int)((1812433253l * (l ^ (l >> 30)) + i) & 0xffffffffL);
+						v[i] = (int)((1812433253L * (l ^ (l >> 30)) + i) & 0xffffffffL);
 					}
 				}
     
@@ -220,7 +220,7 @@ namespace mathlib.random
 		{
 			set
 			{
-				Seed = new int[] {(int)((long)((ulong)value >> 32)), (int)(value & 0xffffffffl)};
+				Seed = new int[] {(int)((long)((ulong)value >> 32)), (int)(value & 0xffffffffL)};
 			}
 		}
 

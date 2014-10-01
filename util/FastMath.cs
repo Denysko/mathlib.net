@@ -202,7 +202,7 @@ namespace mathlib.util
 
 		/// <summary>
 		/// Mask used to clear the non-sign part of a long. </summary>
-		private const long MASK_NON_SIGN_LONG = 0x7fffffffffffffffl;
+		private const long MASK_NON_SIGN_LONG = 0x7fffffffffffffffL;
 
 		/// <summary>
 		/// 2^52 - double numbers this large must be integral (no fraction) or NaN or Infinite </summary>

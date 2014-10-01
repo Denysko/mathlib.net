@@ -50,7 +50,7 @@ namespace mathlib.stat.regression
 		private const int ADJRSQ_IDX = 4;
 		/// <summary>
 		/// UID </summary>
-		private const long serialVersionUID = 1l;
+		private const long serialVersionUID = 1L;
 		/// <summary>
 		/// regression slope parameters </summary>
 		private readonly double[] parameters;

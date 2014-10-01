@@ -56,7 +56,7 @@ namespace mathlib.util
 
         /// <summary>
         /// Exponent offset in IEEE754 representation. </summary>
-        private const long EXPONENT_OFFSET = 1023l;
+        private const long EXPONENT_OFFSET = 1023L;
 
         /// <summary>
         /// Offset to order signed double numbers lexicographically. </summary>
@@ -75,14 +75,14 @@ namespace mathlib.util
              *  However, OpenJDK (Sparc Solaris) cannot handle such small
              *  constants: MATH-721
              */
-            EPSILON = double.longBitsToDouble((EXPONENT_OFFSET - 53l) << 52);
+            EPSILON = double.longBitsToDouble((EXPONENT_OFFSET - 53L) << 52);
 
             /*
              * This was previously expressed as = 0x1.0p-1022;
              * However, OpenJDK (Sparc Solaris) cannot handle such small
              * constants: MATH-721
              */
-            SAFE_MIN = double.longBitsToDouble((EXPONENT_OFFSET - 1022l) << 52);
+            SAFE_MIN = double.longBitsToDouble((EXPONENT_OFFSET - 1022L) << 52);
         }
 
         /// <summary>
