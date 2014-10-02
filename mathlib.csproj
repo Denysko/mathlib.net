@@ -635,6 +635,7 @@
     <Compile Include="optim\linear\package-info.cs" />
     <Compile Include="optim\linear\PivotSelectionRule.cs" />
     <Compile Include="optim\linear\Relationship.cs" />
+    <Compile Include="optim\linear\RelationshipEnum.cs" />
     <Compile Include="optim\linear\SimplexSolver.cs" />
     <Compile Include="optim\linear\SimplexTableau.cs" />
     <Compile Include="optim\linear\SolutionCallback.cs" />

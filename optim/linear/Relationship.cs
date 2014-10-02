@@ -16,67 +16,46 @@
  */
 namespace mathlib.optim.linear
 {
+    /// <summary>
+    /// Types of relationships between two cells in a Solver <seealso cref="LinearConstraint"/>.
+    /// </summary>
+    public static class Relationship
+    {
+        /// <summary>
+        /// Display string for the relationship. 
+        /// </summary>
+        private static string stringValue;
 
-	/// <summary>
-	/// Types of relationships between two cells in a Solver <seealso cref="LinearConstraint"/>.
-	/// 
-	/// @version $Id: Relationship.java 1435539 2013-01-19 13:27:24Z tn $
-	/// @since 2.0
-	/// </summary>
-	public enum Relationship
-	{
-		/// <summary>
-		/// Equality relationship. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enum values cannot be strings in .NET:
-		EQ("="),
-		/// <summary>
-		/// Lesser than or equal relationship. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enum values cannot be strings in .NET:
-		LEQ("<="),
-		/// <summary>
-		/// Greater than or equal relationship. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enum values cannot be strings in .NET:
-		GEQ(">=");
-
-		/// <summary>
-		/// Display string for the relationship. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enums cannot contain fields in .NET:
-//		private final String stringValue;
-
-		/// <summary>
-		/// Simple constructor.
-		/// </summary>
-		/// <param name="stringValue"> Display string for the relationship. </param>
-//JAVA TO C# CONVERTER TODO TASK: Enums cannot contain methods in .NET:
-//		private Relationship(String stringValue)
-	//	{
-	//		this.stringValue = stringValue;
-	//	}
+        /// <summary>
+        /// Simple constructor.
+        /// </summary>
+        /// <param name="stringValue"> Display string for the relationship. </param>
+        Relationship(string Value)
+        {
+            stringValue = Value;
+        }
 
 
-		/// <summary>
-		/// Gets the relationship obtained when multiplying all coefficients by -1.
-		/// </summary>
-		/// <returns> the opposite relationship. </returns>
-	}
-	public static partial class EnumExtensionMethods
-	{
-		public override static string ToString(this Relationship instance)
-		{
-			return stringValue;
-		}
-		public static Relationship oppositeRelationship(this Relationship instance)
-		{
-			switch (instance)
-			{
-			case LEQ :
-				return GEQ;
-			case GEQ :
-				return LEQ;
-			default :
-				return EQ;
-			}
-		}
-	}
+        public override static string ToString()
+        {
+            return stringValue;
+        }
 
+        /// <summary>
+        /// Gets the relationship obtained when multiplying all coefficients by -1.
+        /// </summary>
+        /// <returns> the opposite relationship. </returns>
+        public static EnumRelationship oppositeRelationship(EnumRelationship instance)
+        {
+            switch (instance)
+            {
+                case EnumRelationship.LEQ:
+                    return EnumRelationship.GEQ;
+                case EnumRelationship.GEQ:
+                    return EnumRelationship.LEQ;
+                default:
+                    return EnumRelationship.EQ;
+            }
+        }
+    }
 }
