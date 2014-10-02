@@ -55,10 +55,10 @@ namespace mathlib.linear
 	{
 		/// <summary>
 		/// Relative threshold for small singular values. </summary>
-		private static readonly double EPS = 0x1.0p - 52;
+		private static readonly double EPS = 2.220446049250313E-16;
 		/// <summary>
 		/// Absolute threshold for small singular values. </summary>
-		private static readonly double TINY = 0x1.0p - 966;
+		private static readonly double TINY = 1.60333468800717820e-291;
 		/// <summary>
 		/// Computed singular values. </summary>
 		private readonly double[] singularValues;

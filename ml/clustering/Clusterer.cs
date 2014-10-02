@@ -63,7 +63,7 @@ namespace mathlib.ml.clustering
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: public abstract java.util.List<? extends Cluster<T>> cluster(java.util.Collection<T> points) throws mathlib.exception.MathIllegalArgumentException, mathlib.exception.ConvergenceException;
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
-		public abstract IList<?> cluster(ICollection<T> points) where ? : Cluster<T>;
+		public abstract IList<T> cluster(ICollection<T> points) where T : Cluster<T>;
 
 		/// <summary>
 		/// Returns the <seealso cref="DistanceMeasure"/> instance used by this clusterer.

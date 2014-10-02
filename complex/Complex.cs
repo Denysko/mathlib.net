@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -17,6 +14,8 @@ using System.Collections.Generic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+using System;
+using System.Collections.Generic;
 
 namespace mathlib.complex
 {
@@ -29,11 +28,6 @@ namespace mathlib.complex
     using FastMath = mathlib.util.FastMath;
     using MathUtils = mathlib.util.MathUtils;
     using Precision = mathlib.util.Precision;
-
-    /** <remark>
-     “ут додаЇмо коментар опис про клас
-    </remark>
-    */
 
 
     /// <summary>
@@ -66,39 +60,48 @@ namespace mathlib.complex
     public class Complex : FieldElement<Complex>
     {
         /// <summary>
-        /// The square root of -1. A number representing "0.0 + 1.0i" </summary>
+        /// The square root of -1. A number representing "0.0 + 1.0i"
+        /// </summary>
         public static readonly Complex I = new Complex(0.0, 1.0);
         // CHECKSTYLE: stop ConstantName
         /// <summary>
-        /// A complex number representing "NaN + NaNi" </summary>
+        /// A complex number representing "NaN + NaNi"
+        /// </summary>
         public static readonly Complex NaN_Renamed = new Complex(double.NaN, double.NaN);
         // CHECKSTYLE: resume ConstantName
         /// <summary>
-        /// A complex number representing "+INF + INFi" </summary>
+        /// A complex number representing "+INF + INFi"
+        /// </summary>
         public static readonly Complex INF = new Complex(double.PositiveInfinity, double.PositiveInfinity);
         /// <summary>
-        /// A complex number representing "1.0 + 0.0i" </summary>
-        public static readonly Complex ONE = new Complex(1.0, 0.0);
+        /// A complex number representing "1.0 + 0.0i"
+        /// </summary>
+        public static readonly Complex ONE = new Complex(1d, 0d);
         /// <summary>
-        /// A complex number representing "0.0 + 0.0i" </summary>
-        public static readonly Complex ZERO = new Complex(0.0, 0.0);
+        /// A complex number representing "0.0 + 0.0i"
+        /// </summary>
+        public static readonly Complex ZERO = new Complex(0d, 0d);
 
         /// <summary>
         /// Serializable version identifier </summary>
         private const long SerialVersionUid = -6195664516687396620L;
 
         /// <summary>
-        /// The imaginary part. </summary>
+        /// The imaginary part. 
+        /// </summary>
         private readonly double imaginary;
         /// <summary>
-        /// The real part. </summary>
+        /// The real part.
+        /// </summary>
         private readonly double real;
         /// <summary>
-        /// Record whether this complex number is equal to NaN. </summary>
+        /// Record whether this complex number is equal to NaN.
+        /// </summary>
         [NonSerialized]
         private readonly bool isNaN;
         /// <summary>
-        /// Record whether this complex number is infinite. </summary>
+        /// Record whether this complex number is infinite.
+        /// </summary>
         [NonSerialized]
         private readonly bool isInfinite;
 
@@ -107,7 +110,7 @@ namespace mathlib.complex
         /// </summary>
         /// <param name="real"> Real part. </param>
         public Complex(double real)
-            : this(real, 0.0)
+            : this(real, 0d)
         {
         }
 
@@ -182,7 +185,7 @@ namespace mathlib.complex
         /// <exception cref="NullArgumentException"> if {@code addend} is {@code null}. </exception>
         public virtual Complex Add(Complex addend)
         {
-            MathUtils.checkNotNull(addend);
+            MathUtils.CheckNotNull(addend);
             if (isNaN || addend.isNaN)
             {
                 return NaN_Renamed;
@@ -274,7 +277,7 @@ namespace mathlib.complex
         /// <exception cref="NullArgumentException"> if {@code divisor} is {@code null}. </exception>
         public virtual Complex Divide(Complex divisor)
         {
-            MathUtils.checkNotNull(divisor);
+            MathUtils.CheckNotNull(divisor);
             if (isNaN || divisor.isNaN)
             {
                 return NaN_Renamed;
@@ -389,7 +392,8 @@ namespace mathlib.complex
         /// <param name="other"> Object to test for equality with this instance. </param>
         /// <returns> {@code true} if the objects are equal, {@code false} if object
         /// is {@code null}, not an instance of {@code Complex}, or not equal to
-        /// this instance. </returns>
+        /// this instance. 
+        /// </returns>
         public override bool Equals(object other)
         {
             if (this == other)
@@ -496,7 +500,7 @@ namespace mathlib.complex
             {
                 return 7;
             }
-            return 37 * (17 * MathUtils.hash(imaginary) + MathUtils.hash(real));
+            return 37 * (17 * MathUtils.Hash(imaginary) + MathUtils.Hash(real));
         }
 
         /// <summary>
@@ -544,7 +548,8 @@ namespace mathlib.complex
         /// is {@code NaN}.
         /// </summary>
         /// <returns> true if one or both parts of this complex number are infinite
-        /// and neither part is {@code NaN}. </returns>
+        /// and neither part is {@code NaN}.
+        /// </returns>
         public virtual bool Infinite
         {
             get
@@ -578,7 +583,7 @@ namespace mathlib.complex
         /// <exception cref="NullArgumentException"> if {@code factor} is {@code null}. </exception>
         public virtual Complex Multiply(Complex factor)
         {
-            MathUtils.checkNotNull(factor);
+            MathUtils.CheckNotNull(factor);
             if (isNaN || factor.isNaN)
             {
                 return NaN_Renamed;
@@ -598,8 +603,6 @@ namespace mathlib.complex
         /// <param name="factor"> value to be multiplied by this {@code Complex}. </param>
         /// <returns> {@code this * factor}. </returns>
         /// <seealso cref= #multiply(Complex) </seealso>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-        //ORIGINAL LINE: public Complex multiply(final int factor)
         public virtual Complex Multiply(int factor)
         {
             if (isNaN)
@@ -669,7 +672,7 @@ namespace mathlib.complex
         /// <exception cref="NullArgumentException"> if {@code subtrahend} is {@code null}. </exception>
         public virtual Complex Subtract(Complex subtrahend)
         {
-            MathUtils.checkNotNull(subtrahend);
+            MathUtils.CheckNotNull(subtrahend);
             if (isNaN || subtrahend.isNaN)
             {
                 return NaN_Renamed;
@@ -807,7 +810,7 @@ namespace mathlib.complex
                 return NaN_Renamed;
             }
 
-            return CreateComplex(FastMath.Cos(real) * FastMath.Cosh(imaginary), -FastMath.Sin(real) * FastMath.Sinh(imaginary));
+            return CreateComplex(FastMath.cos(real) * FastMath.cosh(imaginary), -FastMath.sin(real) * FastMath.sinh(imaginary));
         }
 
         /// <summary>
@@ -889,7 +892,7 @@ namespace mathlib.complex
             }
 
             double expReal = FastMath.exp(real);
-            return CreateComplex(expReal * FastMath.Cos(imaginary), expReal * FastMath.Sin(imaginary));
+            return CreateComplex(expReal * FastMath.cos(imaginary), expReal * FastMath.sin(imaginary));
         }
 
         /// <summary>
@@ -933,7 +936,7 @@ namespace mathlib.complex
                 return NaN_Renamed;
             }
 
-            return CreateComplex(FastMath.Log(Abs()), FastMath.Atan2(imaginary, real));
+            return CreateComplex(FastMath.log(Abs()), FastMath.atan2(imaginary, real));
         }
 
         /// <summary>
@@ -957,7 +960,7 @@ namespace mathlib.complex
         /// @since 1.2 </exception>
         public virtual Complex Pow(Complex x)
         {
-            MathUtils.checkNotNull(x);
+            MathUtils.CheckNotNull(x);
             return this.Log().Multiply(x).Exp();
         }
 
@@ -1098,7 +1101,7 @@ namespace mathlib.complex
                 return CreateComplex(0.0, 0.0);
             }
 
-            double t = FastMath.sqrt((FastMath.abs(real) + abs()) / 2.0);
+            double t = FastMath.sqrt((FastMath.abs(real) + Abs()) / 2.0);
             if (real >= 0.0)
             {
                 return CreateComplex(t, imaginary / (2.0 * t));
@@ -1127,7 +1130,7 @@ namespace mathlib.complex
         /// @since 1.2 </returns>
         public virtual Complex Sqrt1z()
         {
-            return CreateComplex(1.0, 0.0).Subtract(this.Multiply(this)).sqrt();
+            return CreateComplex(1.0, 0.0).Subtract(this.Multiply(this)).Sqrt();
         }
 
         /// <summary>
@@ -1308,7 +1311,7 @@ namespace mathlib.complex
             // nth root of abs -- faster / more accurate to use a solver here?
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
             //ORIGINAL LINE: final double nthRootOfAbs = mathlib.util.FastMath.pow(abs(), 1.0 / n);
-            double nthRootOfAbs = FastMath.pow(abs(), 1.0 / n);
+            double nthRootOfAbs = FastMath.pow(Abs(), 1.0 / n);
 
             // Compute nth roots of complex number with k = 0, 1, ... n-1
             //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

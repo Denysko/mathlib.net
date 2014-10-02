@@ -939,7 +939,7 @@ namespace mathlib.util
 		/// </summary>
 		/// <returns> the length of the internal storage array. </returns>
 		/// @deprecated As of 3.1. Please use <seealso cref="#getCapacity()"/> instead. 
-		[Obsolete("As of 3.1. Please use <seealso cref="#getCapacity()"/> instead.")]
+		[Obsolete]//("As of 3.1. Please use <seealso cref="#getCapacity()"/> instead.")]
 		internal virtual int InternalLength
 		{
 			get
@@ -1170,7 +1170,7 @@ namespace mathlib.util
 		/// </summary>
 		/// <param name="expansionMode"> Expansion mode to use for resizing the array. </param>
 		/// @deprecated As of 3.1 (to be removed in 4.0 as field will become "final"). 
-		[Obsolete("As of 3.1 (to be removed in 4.0 as field will become "final").")]
+		[Obsolete]//("As of 3.1 (to be removed in 4.0 as field will become "final").")]
 		public virtual ExpansionMode ExpansionMode
 		{
 			set

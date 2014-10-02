@@ -65,14 +65,46 @@ namespace mathlib.transform
 		/// {@code exp(- 2 * i * pi / n)}:
 		/// {@code W_SUB_N_R[i] = cos(2 * pi/ n)}, where {@code n = 2^i}.
 		/// </summary>
-		private static readonly double[] W_SUB_N_R = new double[] {0x1.0p0, -0x1.0p0, 0x1.1a62633145c07p - 54, 0x1.6a09e667f3bcdp - 1, 0x1.d906bcf328d46p - 1, 0x1.f6297cff75cbp - 1, 0x1.fd88da3d12526p - 1, 0x1.ff621e3796d7ep - 1, 0x1.ffd886084cd0dp - 1, 0x1.fff62169b92dbp - 1, 0x1.fffd8858e8a92p - 1, 0x1.ffff621621d02p - 1, 0x1.ffffd88586ee6p - 1, 0x1.fffff62161a34p - 1, 0x1.fffffd8858675p - 1, 0x1.ffffff621619cp - 1, 0x1.ffffffd885867p - 1, 0x1.fffffff62161ap - 1, 0x1.fffffffd88586p - 1, 0x1.ffffffff62162p - 1, 0x1.ffffffffd8858p - 1, 0x1.fffffffff6216p - 1, 0x1.fffffffffd886p - 1, 0x1.ffffffffff621p - 1, 0x1.ffffffffffd88p - 1, 0x1.fffffffffff62p - 1, 0x1.fffffffffffd9p - 1, 0x1.ffffffffffff6p - 1, 0x1.ffffffffffffep - 1, 0x1.fffffffffffffp - 1, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0, 0x1.0p0};
+		private static readonly double[] W_SUB_N_R = new double[] {
+1d, -1d, 6,12323399573676600e-17, 0,707106781186547600, 
+		0,923879532511286700, 0,980785280403230400, 0,995184726672196900, 0,998795456205172400, 
+		0,999698818696204200, 0,999924701839144500, 0,999981175282601100, 0,999995293809576200, 
+		0,999998823451701900, 0,999999705862882200, 0,999999926465717900, 0,999999981616429300, 
+		0,999999995404107300, 0,999999998851026900, 0,999999999712756700, 0,999999999928189200, 
+		0,999999999982047200, 0,999999999995511800, 0,999999999998878000, 0,999999999999719400, 
+		0,999999999999929800, 0,999999999999982500, 0,999999999999995700, 0,999999999999998900, 
+		0,999999999999999800, 0,999999999999999900, 1d, 1d, 
+		1d, 1d, 1d, 1d, 
+		1d, 1d, 1d, 1d, 
+		1d, 1d, 1d, 1d, 
+		1d, 1d, 1d, 1d, 
+		1d, 1d, 1d, 1d, 
+		1d, 1d, 1d, 1d, 
+		1d, 1d, 1d, 1d, 
+		1d, 1d, 1d};
 
 		/// <summary>
 		/// {@code W_SUB_N_I[i]} is the imaginary part of
 		/// {@code exp(- 2 * i * pi / n)}:
 		/// {@code W_SUB_N_I[i] = -sin(2 * pi/ n)}, where {@code n = 2^i}.
 		/// </summary>
-		private static readonly double[] W_SUB_N_I = new double[] {0x1.1a62633145c07p - 52, -0x1.1a62633145c07p - 53, -0x1.0p0, -0x1.6a09e667f3bccp - 1, -0x1.87de2a6aea963p - 2, -0x1.8f8b83c69a60ap - 3, -0x1.917a6bc29b42cp - 4, -0x1.91f65f10dd814p - 5, -0x1.92155f7a3667ep - 6, -0x1.921d1fcdec784p - 7, -0x1.921f0fe670071p - 8, -0x1.921f8becca4bap - 9, -0x1.921faaee6472dp - 10, -0x1.921fb2aecb36p - 11, -0x1.921fb49ee4ea6p - 12, -0x1.921fb51aeb57bp - 13, -0x1.921fb539ecf31p - 14, -0x1.921fb541ad59ep - 15, -0x1.921fb5439d73ap - 16, -0x1.921fb544197ap - 17, -0x1.921fb544387bap - 18, -0x1.921fb544403c1p - 19, -0x1.921fb544422c2p - 20, -0x1.921fb54442a83p - 21, -0x1.921fb54442c73p - 22, -0x1.921fb54442cefp - 23, -0x1.921fb54442d0ep - 24, -0x1.921fb54442d15p - 25, -0x1.921fb54442d17p - 26, -0x1.921fb54442d18p - 27, -0x1.921fb54442d18p - 28, -0x1.921fb54442d18p - 29, -0x1.921fb54442d18p - 30, -0x1.921fb54442d18p - 31, -0x1.921fb54442d18p - 32, -0x1.921fb54442d18p - 33, -0x1.921fb54442d18p - 34, -0x1.921fb54442d18p - 35, -0x1.921fb54442d18p - 36, -0x1.921fb54442d18p - 37, -0x1.921fb54442d18p - 38, -0x1.921fb54442d18p - 39, -0x1.921fb54442d18p - 40, -0x1.921fb54442d18p - 41, -0x1.921fb54442d18p - 42, -0x1.921fb54442d18p - 43, -0x1.921fb54442d18p - 44, -0x1.921fb54442d18p - 45, -0x1.921fb54442d18p - 46, -0x1.921fb54442d18p - 47, -0x1.921fb54442d18p - 48, -0x1.921fb54442d18p - 49, -0x1.921fb54442d18p - 50, -0x1.921fb54442d18p - 51, -0x1.921fb54442d18p - 52, -0x1.921fb54442d18p - 53, -0x1.921fb54442d18p - 54, -0x1.921fb54442d18p - 55, -0x1.921fb54442d18p - 56, -0x1.921fb54442d18p - 57, -0x1.921fb54442d18p - 58, -0x1.921fb54442d18p - 59, -0x1.921fb54442d18p - 60};
+		private static readonly double[] W_SUB_N_I = new double[] {
+2,44929359829470640e-16, -1,22464679914735320e-16, -1d, -0,707106781186547500,
+		-0,382683432365089800, -0,195090322016128250, -0,0980171403295606000, -0,0490676743274180150,
+		-0,0245412285229122880, -0,0122715382857199250, -0,00613588464915447500, -0,00306795676296597600,
+		-0,00153398018628476550, -0,000766990318742704500, -0,000383495187571395560, -0,000191747597310703300,
+		-9,58737990959773400e-05, -4,79368996030668800e-05, -2,39684498084182200e-05, -1,19842249050697050e-05,
+		-5,99211245264242750e-06, -2,99605622633466100e-06, -1,49802811316901110e-06, -7,49014056584715700e-07,
+		-3,74507028292384130e-07, -1,87253514146195350e-07, -9,36267570730980800e-08, -4,68133785365490900e-08,
+		-2,34066892682745500e-08, -1,17033446341372770e-08, -5,85167231706863850e-09, -2,92583615853431920e-09,
+		-1,46291807926715960e-09, -7,31459039633579800e-10, -3,65729519816789900e-10, -1,82864759908394950e-10,
+		-9,14323799541974800e-11, -4,57161899770987400e-11, -2,28580949885493700e-11, -1,14290474942746850e-11,
+		-5,71452374713734200e-12, -2,85726187356867100e-12, -1,42863093678433560e-12, -7,14315468392167800e-13,
+		-3,57157734196083900e-13, -1,78578867098041950e-13, -8,92894335490209700e-14, -4,46447167745104870e-14,
+		-2,23223583872552430e-14, -1,11611791936276220e-14, -5,58058959681381100e-15, -2,79029479840690540e-15,
+		-1,39514739920345270e-15, -6,97573699601726400e-16, -3,48786849800863200e-16, -1,74393424900431600e-16,
+		-8,71967124502158000e-17, -4,35983562251079000e-17, -2,17991781125539500e-17, -1,08995890562769740e-17,
+		-5,44979452813848700e-18, -2,72489726406924360e-18, -1,36244863203462180e-18};
 
 		/// <summary>
 		/// The type of DFT to be performed. </summary>
@@ -84,8 +116,6 @@ namespace mathlib.transform
 		/// </summary>
 		/// <param name="normalization"> the type of normalization to be applied to the
 		/// transformed data </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public FastFourierTransformer(final DftNormalization normalization)
 		public FastFourierTransformer(DftNormalization normalization)
 		{
 			this.normalization = normalization;
@@ -102,12 +132,12 @@ namespace mathlib.transform
 		/// <param name="b"> the second array to be shuffled </param>
 		private static void bitReversalShuffle2(double[] a, double[] b)
 		{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int n = a.length;
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final int n = a.length;
 			int n = a.Length;
 			Debug.Assert(b.Length == n);
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int halfOfN = n >> 1;
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final int halfOfN = n >> 1;
 			int halfOfN = n >> 1;
 
 			int j = 0;
@@ -141,19 +171,19 @@ namespace mathlib.transform
 		/// <param name="dataRI"> the unscaled transformed data </param>
 		/// <param name="normalization"> the normalization to be applied </param>
 		/// <param name="type"> the type of transform (forward, inverse) which resulted in the specified data </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: private static void normalizeTransformedData(final double[][] dataRI, final DftNormalization normalization, final TransformType type)
+		//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
+		//ORIGINAL LINE: private static void normalizeTransformedData(final double[][] dataRI, final DftNormalization normalization, final TransformType type)
 		private static void normalizeTransformedData(double[][] dataRI, DftNormalization normalization, TransformType type)
 		{
 
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] dataR = dataRI[0];
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final double[] dataR = dataRI[0];
 			double[] dataR = dataRI[0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] dataI = dataRI[1];
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final double[] dataI = dataRI[1];
 			double[] dataI = dataRI[1];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int n = dataR.length;
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final int n = dataR.length;
 			int n = dataR.Length;
 			Debug.Assert(dataI.Length == n);
 
@@ -162,9 +192,9 @@ namespace mathlib.transform
 				case mathlib.transform.DftNormalization.STANDARD:
 					if (type == TransformType.INVERSE)
 					{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double scaleFactor = 1.0 / ((double) n);
-						double scaleFactor = 1.0 / ((double) n);
+						//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+						//ORIGINAL LINE: final double scaleFactor = 1.0 / ((double) n);
+						double scaleFactor = 1d / ((double)n);
 						for (int i = 0; i < n; i++)
 						{
 							dataR[i] *= scaleFactor;
@@ -173,8 +203,6 @@ namespace mathlib.transform
 					}
 					break;
 				case mathlib.transform.DftNormalization.UNITARY:
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double scaleFactor = 1.0 / mathlib.util.FastMath.sqrt(n);
 					double scaleFactor = 1.0 / FastMath.sqrt(n);
 					for (int i = 0; i < n; i++)
 					{
@@ -208,8 +236,8 @@ namespace mathlib.transform
 		///   array is not two, or the array is not rectangular </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the number of data points is not
 		///   a power of two </exception>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public static void transformInPlace(final double[][] dataRI, final DftNormalization normalization, final TransformType type)
+		//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
+		//ORIGINAL LINE: public static void transformInPlace(final double[][] dataRI, final DftNormalization normalization, final TransformType type)
 		public static void transformInPlace(double[][] dataRI, DftNormalization normalization, TransformType type)
 		{
 
@@ -217,19 +245,19 @@ namespace mathlib.transform
 			{
 				throw new DimensionMismatchException(dataRI.Length, 2);
 			}
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] dataR = dataRI[0];
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final double[] dataR = dataRI[0];
 			double[] dataR = dataRI[0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] dataI = dataRI[1];
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final double[] dataI = dataRI[1];
 			double[] dataI = dataRI[1];
 			if (dataR.Length != dataI.Length)
 			{
 				throw new DimensionMismatchException(dataI.Length, dataR.Length);
 			}
 
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int n = dataR.length;
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final int n = dataR.length;
 			int n = dataR.Length;
 			if (!ArithmeticUtils.isPowerOfTwo(n))
 			{
@@ -242,17 +270,17 @@ namespace mathlib.transform
 			}
 			else if (n == 2)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR0 = dataR[0];
+				//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+				//ORIGINAL LINE: final double srcR0 = dataR[0];
 				double srcR0 = dataR[0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI0 = dataI[0];
+				//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+				//ORIGINAL LINE: final double srcI0 = dataI[0];
 				double srcI0 = dataI[0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR1 = dataR[1];
+				//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+				//ORIGINAL LINE: final double srcR1 = dataR[1];
 				double srcR1 = dataR[1];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI1 = dataI[1];
+				//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+				//ORIGINAL LINE: final double srcI1 = dataI[1];
 				double srcI1 = dataI[1];
 
 				// X_0 = x_0 + x_1
@@ -273,39 +301,39 @@ namespace mathlib.transform
 			{
 				for (int i0 = 0; i0 < n; i0 += 4)
 				{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int i1 = i0 + 1;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final int i1 = i0 + 1;
 					int i1 = i0 + 1;
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int i2 = i0 + 2;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final int i2 = i0 + 2;
 					int i2 = i0 + 2;
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int i3 = i0 + 3;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final int i3 = i0 + 3;
 					int i3 = i0 + 3;
 
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR0 = dataR[i0];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR0 = dataR[i0];
 					double srcR0 = dataR[i0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI0 = dataI[i0];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI0 = dataI[i0];
 					double srcI0 = dataI[i0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR1 = dataR[i2];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR1 = dataR[i2];
 					double srcR1 = dataR[i2];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI1 = dataI[i2];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI1 = dataI[i2];
 					double srcI1 = dataI[i2];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR2 = dataR[i1];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR2 = dataR[i1];
 					double srcR2 = dataR[i1];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI2 = dataI[i1];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI2 = dataI[i1];
 					double srcI2 = dataI[i1];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR3 = dataR[i3];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR3 = dataR[i3];
 					double srcR3 = dataR[i3];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI3 = dataI[i3];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI3 = dataI[i3];
 					double srcI3 = dataI[i3];
 
 					// 4-term DFT
@@ -327,39 +355,39 @@ namespace mathlib.transform
 			{
 				for (int i0 = 0; i0 < n; i0 += 4)
 				{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int i1 = i0 + 1;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final int i1 = i0 + 1;
 					int i1 = i0 + 1;
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int i2 = i0 + 2;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final int i2 = i0 + 2;
 					int i2 = i0 + 2;
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int i3 = i0 + 3;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final int i3 = i0 + 3;
 					int i3 = i0 + 3;
 
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR0 = dataR[i0];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR0 = dataR[i0];
 					double srcR0 = dataR[i0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI0 = dataI[i0];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI0 = dataI[i0];
 					double srcI0 = dataI[i0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR1 = dataR[i2];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR1 = dataR[i2];
 					double srcR1 = dataR[i2];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI1 = dataI[i2];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI1 = dataI[i2];
 					double srcI1 = dataI[i2];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR2 = dataR[i1];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR2 = dataR[i1];
 					double srcR2 = dataR[i1];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI2 = dataI[i1];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI2 = dataI[i1];
 					double srcI2 = dataI[i1];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcR3 = dataR[i3];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcR3 = dataR[i3];
 					double srcR3 = dataR[i3];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double srcI3 = dataI[i3];
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final double srcI3 = dataI[i3];
 					double srcI3 = dataI[i3];
 
 					// 4-term DFT
@@ -435,13 +463,13 @@ namespace mathlib.transform
 		/// <param name="type"> the type of transform (forward, inverse) to be performed </param>
 		/// <returns> the complex transformed array </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is not a power of two </exception>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final double[] f, final TransformType type)
+		//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
+		//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final double[] f, final TransformType type)
 		public virtual Complex[] transform(double[] f, TransformType type)
 		{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[][] dataRI = new double[][] { mathlib.util.MathArrays.copyOf(f, f.length), new double[f.length] };
-			double[][] dataRI = new double[][] {MathArrays.copyOf(f, f.Length), new double[f.Length]};
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final double[][] dataRI = new double[][] { mathlib.util.MathArrays.copyOf(f, f.length), new double[f.length] };
+			double[][] dataRI = new double[][] { MathArrays.copyOf(f, f.Length), new double[f.Length] };
 
 			transformInPlace(dataRI, normalization, type);
 
@@ -464,13 +492,13 @@ namespace mathlib.transform
 		///   if the number of sample points {@code n} is negative </exception>
 		/// <exception cref="MathIllegalArgumentException"> if the number of sample points
 		///   {@code n} is not a power of two </exception>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final mathlib.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
+		//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
+		//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final mathlib.analysis.UnivariateFunction f, final double min, final double max, final int n, final TransformType type)
 		public virtual Complex[] transform(UnivariateFunction f, double min, double max, int n, TransformType type)
 		{
 
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[] data = mathlib.analysis.FunctionUtils.sample(f, min, max, n);
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final double[] data = mathlib.analysis.FunctionUtils.sample(f, min, max, n);
 			double[] data = FunctionUtils.sample(f, min, max, n);
 			return transform(data, type);
 		}
@@ -482,12 +510,12 @@ namespace mathlib.transform
 		/// <param name="type"> the type of transform (forward, inverse) to be performed </param>
 		/// <returns> the complex transformed array </returns>
 		/// <exception cref="MathIllegalArgumentException"> if the length of the data array is not a power of two </exception>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final mathlib.complex.Complex[] f, final TransformType type)
+		//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
+		//ORIGINAL LINE: public mathlib.complex.Complex[] transform(final mathlib.complex.Complex[] f, final TransformType type)
 		public virtual Complex[] transform(Complex[] f, TransformType type)
 		{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double[][] dataRI = TransformUtils.createRealImaginaryArray(f);
+			//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+			//ORIGINAL LINE: final double[][] dataRI = TransformUtils.createRealImaginaryArray(f);
 			double[][] dataRI = TransformUtils.createRealImaginaryArray(f);
 
 			transformInPlace(dataRI, normalization, type);
@@ -512,7 +540,7 @@ namespace mathlib.transform
 		[Obsolete("see MATH-736")]
 		public virtual object mdfft(object mdca, TransformType type)
 		{
-			MultiDimensionalComplexMatrix mdcm = (MultiDimensionalComplexMatrix) (new MultiDimensionalComplexMatrix(mdca)).clone();
+			MultiDimensionalComplexMatrix mdcm = (MultiDimensionalComplexMatrix)(new MultiDimensionalComplexMatrix(mdca)).clone();
 			int[] dimensionSize = mdcm.DimensionSizes;
 			//cycle through each dimension
 			for (int i = 0; i < dimensionSize.Length; i++)
@@ -609,11 +637,11 @@ namespace mathlib.transform
 
 				// count dimensions
 				int numOfDimensions = 0;
-				for (object lastDimension = multiDimensionalComplexArray; lastDimension is object[];)
+				for (object lastDimension = multiDimensionalComplexArray; lastDimension is object[]; )
 				{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Object[] array = (Object[]) lastDimension;
-					object[] array = (object[]) lastDimension;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final Object[] array = (Object[]) lastDimension;
+					object[] array = (object[])lastDimension;
 					numOfDimensions++;
 					lastDimension = array[0];
 				}
@@ -623,11 +651,11 @@ namespace mathlib.transform
 
 				// fill array
 				numOfDimensions = 0;
-				for (object lastDimension = multiDimensionalComplexArray; lastDimension is object[];)
+				for (object lastDimension = multiDimensionalComplexArray; lastDimension is object[]; )
 				{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Object[] array = (Object[]) lastDimension;
-					object[] array = (object[]) lastDimension;
+					//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
+					//ORIGINAL LINE: final Object[] array = (Object[]) lastDimension;
+					object[] array = (object[])lastDimension;
 					dimensionSize[numOfDimensions++] = array.Length;
 					lastDimension = array[0];
 				}
@@ -640,8 +668,8 @@ namespace mathlib.transform
 			/// <param name="vector"> indices of the element </param>
 			/// <returns> matrix element </returns>
 			/// <exception cref="DimensionMismatchException"> if dimensions do not match </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public mathlib.complex.Complex get(int... vector) throws mathlib.exception.DimensionMismatchException
+			//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
+			//ORIGINAL LINE: public mathlib.complex.Complex get(int... vector) throws mathlib.exception.DimensionMismatchException
 			public virtual Complex get(params int[] vector)
 			{
 
@@ -662,9 +690,9 @@ namespace mathlib.transform
 
 				for (int i = 0; i < dimensionSize.Length; i++)
 				{
-					lastDimension = ((object[]) lastDimension)[vector[i]];
+					lastDimension = ((object[])lastDimension)[vector[i]];
 				}
-				return (Complex) lastDimension;
+				return (Complex)lastDimension;
 			}
 
 			/// <summary>
@@ -674,8 +702,8 @@ namespace mathlib.transform
 			/// <param name="vector"> indices of the element </param>
 			/// <returns> the previous value </returns>
 			/// <exception cref="DimensionMismatchException"> if dimensions do not match </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public mathlib.complex.Complex set(mathlib.complex.Complex magnitude, int... vector) throws mathlib.exception.DimensionMismatchException
+			//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
+			//ORIGINAL LINE: public mathlib.complex.Complex set(mathlib.complex.Complex magnitude, int... vector) throws mathlib.exception.DimensionMismatchException
 			public virtual Complex set(Complex magnitude, params int[] vector)
 			{
 
@@ -692,13 +720,13 @@ namespace mathlib.transform
 					throw new DimensionMismatchException(vector.Length, dimensionSize.Length);
 				}
 
-				object[] lastDimension = (object[]) multiDimensionalComplexArray;
+				object[] lastDimension = (object[])multiDimensionalComplexArray;
 				for (int i = 0; i < dimensionSize.Length - 1; i++)
 				{
-					lastDimension = (object[]) lastDimension[vector[i]];
+					lastDimension = (object[])lastDimension[vector[i]];
 				}
 
-				Complex lastValue = (Complex) lastDimension[vector[dimensionSize.Length - 1]];
+				Complex lastValue = (Complex)lastDimension[vector[dimensionSize.Length - 1]];
 				lastDimension[vector[dimensionSize.Length - 1]] = magnitude;
 
 				return lastValue;
@@ -750,8 +778,8 @@ namespace mathlib.transform
 				{
 					size *= dimensionSize[i];
 				}
-//JAVA TO C# CONVERTER NOTE: The following call to the 'RectangularArrays' helper class reproduces the rectangular array initialization that is automatic in Java:
-//ORIGINAL LINE: int[][] vectorList = new int[size][dimensionSize.Length];
+				//JAVA TO C# CONVERTER NOTE: The following call to the 'RectangularArrays' helper class reproduces the rectangular array initialization that is automatic in Java:
+				//ORIGINAL LINE: int[][] vectorList = new int[size][dimensionSize.Length];
 				int[][] vectorList = RectangularArrays.ReturnRectangularIntArray(size, dimensionSize.Length);
 				foreach (int[] nextVector in vectorList)
 				{

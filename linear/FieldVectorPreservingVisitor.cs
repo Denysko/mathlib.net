@@ -29,7 +29,7 @@ namespace mathlib.linear
 	/// @since 3.3 </param>
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
 //ORIGINAL LINE: public interface FieldVectorPreservingVisitor<T extends mathlib.FieldElement<?>>
-	public interface FieldVectorPreservingVisitor<T> where T : mathlib.FieldElement<?>
+	public interface FieldVectorPreservingVisitor<T> where T : mathlib.FieldElement<T>
 	{
 		/// <summary>
 		/// Start visiting a vector. This method is called once, before any entry

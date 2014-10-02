@@ -17,39 +17,40 @@
 namespace mathlib.exception
 {
 
-	using Localizable = mathlib.exception.util.Localizable;
+    using Localizable = mathlib.exception.util.Localizable;
     using LocalizedFormats = mathlib.exception.util.LocalizedFormats;
 
-	/// <summary>
-	/// Error thrown when a numerical computation can not be performed because the
-	/// numerical result failed to converge to a finite value.
-	/// 
-	/// @since 2.2
-	/// @version $Id: ConvergenceException.java 1364378 2012-07-22 17:42:38Z tn $
-	/// </summary>
-	public class ConvergenceException : MathIllegalStateException
-	{
-		/// <summary>
-		/// Serializable version Id. </summary>
-		private const long SerialVersionUID = 4330003017885151975L;
+    /// <summary>
+    /// Error thrown when a numerical computation can not be performed because the
+    /// numerical result failed to converge to a finite value.
+    /// 
+    /// @since 2.2
+    /// @version $Id: ConvergenceException.java 1364378 2012-07-22 17:42:38Z tn $
+    /// </summary>
+    public class ConvergenceException : MathIllegalStateException
+    {
+        /// <summary>
+        /// Serializable version Id. </summary>
+        private const long SerialVersionUID = 4330003017885151975L;
 
-		/// <summary>
-		/// Construct the exception.
-		/// </summary>
-		public ConvergenceException() : this(LocalizedFormats.CONVERGENCE_FAILED)
-		{
-		}
+        /// <summary>
+        /// Construct the exception.
+        /// </summary>
+        public ConvergenceException()
+            : this(LocalizedFormats.CONVERGENCE_FAILED)
+        {
+        }
 
-		/// <summary>
-		/// Construct the exception with a specific context and arguments.
-		/// </summary>
-		/// <param name="pattern"> Message pattern providing the specific context of
-		/// the error. </param>
-		/// <param name="args"> Arguments. </param>
-		public ConvergenceException(Localizable pattern, params object[] args)
-		{
-			Context.addMessage(pattern, args);
-		}
-	}
+        /// <summary>
+        /// Construct the exception with a specific context and arguments.
+        /// </summary>
+        /// <param name="pattern"> Message pattern providing the specific context of
+        /// the error. </param>
+        /// <param name="args"> Arguments. </param>
+        public ConvergenceException(Localizable pattern, params object[] args)
+        {
+            Context.addMessage(pattern, args);
+        }
+    }
 
 }

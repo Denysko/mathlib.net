@@ -48,7 +48,7 @@ namespace mathlib.util
 	{
 		/// <summary>
 		/// Factor used for splitting double numbers: n = 2^27 + 1 (i.e. {@value}). </summary>
-		private const int SPLIT_FACTOR = 0x8000001;
+		private const int SPLIT_FACTOR = 134217729;
 
 		/// <summary>
 		/// Private constructor.
@@ -350,14 +350,10 @@ namespace mathlib.util
 		public static bool isMonotonic<T>(T[] val, OrderDirection dir, bool strict) where T : Comparable<? base T>
 		{
 			T previous = val[0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int max = val.length;
-			int max = val.Length;
+			readonly int max = val.Length;
 			for (int i = 1; i < max; i++)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int comp;
-				int comp;
+				readonly int comp;
 				switch (dir)
 				{
 				case mathlib.util.MathArrays.OrderDirection.INCREASING:
@@ -431,9 +427,7 @@ namespace mathlib.util
 		public static bool checkOrder(double[] val, OrderDirection dir, bool strict, bool abort)
 		{
 			double previous = val[0];
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int max = val.length;
-			int max = val.Length;
+			readonly int max = val.Length;
 
 			int index;
 			for (index = 1; index < max; index++)

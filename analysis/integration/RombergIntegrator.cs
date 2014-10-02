@@ -41,11 +41,13 @@ namespace mathlib.analysis.integration
     {
 
         /// <summary>
-        /// Maximal number of iterations for Romberg. </summary>
+        /// Maximal number of iterations for Romberg. 
+        /// </summary>
         public const int ROMBERG_MAX_ITERATIONS_COUNT = 32;
 
         /// <summary>
-        /// Build a Romberg integrator with given accuracies and iterations counts. </summary>
+        /// Build a Romberg integrator with given accuracies and iterations counts. 
+        /// </summary>
         /// <param name="relativeAccuracy"> relative accuracy of the result </param>
         /// <param name="absoluteAccuracy"> absolute accuracy of the result </param>
         /// <param name="minimalIterationCount"> minimum number of iterations </param>
@@ -57,9 +59,6 @@ namespace mathlib.analysis.integration
         /// is lesser than or equal to the minimal number of iterations </exception>
         /// <exception cref="NumberIsTooLargeException"> if maximal number of iterations
         /// is greater than <seealso cref="#ROMBERG_MAX_ITERATIONS_COUNT"/> </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public RombergIntegrator(final double relativeAccuracy, final double absoluteAccuracy, final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NumberIsTooLargeException
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public RombergIntegrator(double relativeAccuracy, double absoluteAccuracy, int minimalIterationCount, int maximalIterationCount)
             : base(relativeAccuracy, absoluteAccuracy, minimalIterationCount, maximalIterationCount)
         {
@@ -80,9 +79,6 @@ namespace mathlib.analysis.integration
         /// is lesser than or equal to the minimal number of iterations </exception>
         /// <exception cref="NumberIsTooLargeException"> if maximal number of iterations
         /// is greater than <seealso cref="#ROMBERG_MAX_ITERATIONS_COUNT"/> </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public RombergIntegrator(final int minimalIterationCount, final int maximalIterationCount) throws mathlib.exception.NotStrictlyPositiveException, mathlib.exception.NumberIsTooSmallException, mathlib.exception.NumberIsTooLargeException
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
         public RombergIntegrator(int minimalIterationCount, int maximalIterationCount)
             : base(minimalIterationCount, maximalIterationCount)
         {
@@ -102,14 +98,10 @@ namespace mathlib.analysis.integration
         }
 
         /// <summary>
-        /// {@inheritDoc} </summary>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected double doIntegrate() throws mathlib.exception.TooManyEvaluationsException, mathlib.exception.MaxCountExceededException
+        /// {@inheritDoc} 
+        /// </summary>
         protected internal override double doIntegrate()
         {
-
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final int m = iterations.getMaximalCount() + 1;
             int m = iterations.MaximalCount + 1;
             double[] previousRow = new double[m];
             double[] currentRow = new double[m];
@@ -120,14 +112,9 @@ namespace mathlib.analysis.integration
             double olds = currentRow[0];
             while (true)
             {
-
-                //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final int i = iterations.getCount();
                 int i = iterations.Count;
 
                 // switch rows
-                //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double[] tmpRow = previousRow;
                 double[] tmpRow = previousRow;
                 previousRow = currentRow;
                 currentRow = tmpRow;
@@ -137,24 +124,14 @@ namespace mathlib.analysis.integration
                 for (int j = 1; j <= i; j++)
                 {
                     // Richardson extrapolation coefficient
-                    //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double r = (1L << (2 * j)) - 1;
                     double r = (1L << (2 * j)) - 1;
-                    //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double tIJm1 = currentRow[j - 1];
                     double tIJm1 = currentRow[j - 1];
                     currentRow[j] = tIJm1 + (tIJm1 - previousRow[j - 1]) / r;
                 }
-                //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final double s = currentRow[i];
                 double s = currentRow[i];
                 if (i >= MinimalIterationCount)
                 {
-                    //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double delta = mathlib.util.FastMath.abs(s - olds);
                     double delta = FastMath.abs(s - olds);
-                    //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                    //ORIGINAL LINE: final double rLimit = getRelativeAccuracy() * (mathlib.util.FastMath.abs(olds) + mathlib.util.FastMath.abs(s)) * 0.5;
                     double rLimit = RelativeAccuracy * (FastMath.abs(olds) + FastMath.abs(s)) * 0.5;
                     if ((delta <= rLimit) || (delta <= AbsoluteAccuracy))
                     {

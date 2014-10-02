@@ -224,7 +224,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorialDouble(int)"/>") public static double factorialDouble(final int n) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="CombinatoricsUtils#factorialDouble(int)"/>")]
+		[Obsolete]//("use <seealso cref="CombinatoricsUtils#factorialDouble(int)"/>")]
 		public static double factorialDouble(int n)
 		{
 			 return CombinatoricsUtils.factorialDouble(n);
@@ -240,7 +240,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#factorialLog(int)"/>") public static double factorialLog(final int n) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="CombinatoricsUtils#factorialLog(int)"/>")]
+		[Obsolete]//("use <seealso cref="CombinatoricsUtils#factorialLog(int)"/>")]
 		public static double factorialLog(int n)
 		{
 			return CombinatoricsUtils.factorialLog(n);
@@ -797,7 +797,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("As of 3.3. Please use <seealso cref="#pow(int,int)"/> instead.") public static int pow(final int k, long e) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("As of 3.3. Please use <seealso cref="#pow(int,int)"/> instead.")]
+		[Obsolete]//("As of 3.3. Please use <seealso cref="#pow(int,int)"/> instead.")]
 		public static int pow(int k, long e)
 		{
 			if (e < 0)
@@ -884,7 +884,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("As of 3.3. Please use <seealso cref="#pow(long,int)"/> instead.") public static long pow(final long k, long e) throws mathlib.exception.NotPositiveException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("As of 3.3. Please use <seealso cref="#pow(long,int)"/> instead.")]
+		[Obsolete]//("As of 3.3. Please use <seealso cref="#pow(long,int)"/> instead.")]
 		public static long pow(long k, long e)
 		{
 			if (e < 0)
@@ -892,7 +892,7 @@ namespace mathlib.util
 				throw new NotPositiveException(LocalizedFormats.EXPONENT, e);
 			}
 
-			long result = 1l;
+			long result = 1L;
 			long k2p = k;
 			while (e != 0)
 			{
@@ -1014,7 +1014,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 //ORIGINAL LINE: @Deprecated("use <seealso cref="CombinatoricsUtils#stirlingS2(int, int)"/>") public static long stirlingS2(final int n, final int k) throws mathlib.exception.NotPositiveException, mathlib.exception.NumberIsTooLargeException, mathlib.exception.MathArithmeticException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-		[Obsolete("use <seealso cref="CombinatoricsUtils#stirlingS2(int, int)"/>")]
+		[Obsolete]//("use <seealso cref="CombinatoricsUtils#stirlingS2(int, int)"/>")]
 		public static long stirlingS2(int n, int k)
 		{
 			return CombinatoricsUtils.stirlingS2(n, k);

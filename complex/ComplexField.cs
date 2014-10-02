@@ -21,94 +21,95 @@ namespace mathlib.complex
 {
 
     using mathlib;
-    using mathlib;
 
-	/// <summary>
-	/// Representation of the complex numbers field.
-	/// <p>
-	/// This class is a singleton.
-	/// </p> </summary>
-	/// <seealso cref= Complex
-	/// @version $Id: ComplexField.java 1416643 2012-12-03 19:37:14Z tn $
-	/// @since 2.0 </seealso>
-	[Serializable]
-	public class ComplexField : Field<Complex>
-	{
+    /// <summary>
+    /// Representation of the complex numbers field.
+    /// <p>
+    /// This class is a singleton.
+    /// </p> </summary>
+    /// <seealso cref= Complex
+    /// @version $Id: ComplexField.java 1416643 2012-12-03 19:37:14Z tn $
+    /// @since 2.0 </seealso>
+    [Serializable]
+    public class ComplexField : Field<Complex>
+    {
 
-		/// <summary>
-		/// Serializable version identifier. </summary>
-		private const long serialVersionUID = -6130362688700788798L;
+        /// <summary>
+        /// Serializable version identifier. </summary>
+        private const long serialVersionUID = -6130362688700788798L;
 
-		/// <summary>
-		/// Private constructor for the singleton.
-		/// </summary>
-		private ComplexField()
-		{
-		}
+        /// <summary>
+        /// Private constructor for the singleton.
+        /// </summary>
+        private ComplexField()
+        {
+        }
 
-		/// <summary>
-		/// Get the unique instance. </summary>
-		/// <returns> the unique instance </returns>
-		public static ComplexField Instance
-		{
-			get
-			{
-				return LazyHolder.INSTANCE;
-			}
-		}
+        /// <summary>
+        /// Get the unique instance. </summary>
+        /// <returns> the unique instance </returns>
+        public static ComplexField Instance
+        {
+            get
+            {
+                return LazyHolder.INSTANCE;
+            }
+        }
 
-		/// <summary>
-		/// {@inheritDoc} </summary>
-		public virtual Complex One
-		{
-			get
-			{
-				return Complex.ONE;
-			}
-		}
+        /// <summary>
+        /// {@inheritDoc} 
+        /// </summary>
+        public virtual Complex One
+        {
+            get
+            {
+                return Complex.ONE;
+            }
+        }
 
-		/// <summary>
-		/// {@inheritDoc} </summary>
-		public virtual Complex Zero
-		{
-			get
-			{
-				return Complex.ZERO;
-			}
-		}
+        /// <summary>
+        /// {@inheritDoc} 
+        /// </summary>
+        public virtual Complex Zero
+        {
+            get
+            {
+                return Complex.ZERO;
+            }
+        }
 
-		/// <summary>
-		/// {@inheritDoc} </summary>
-		public virtual Type RuntimeClass
-		{
-			get
-			{
-				return typeof(Complex);
-			}
-		}
+        /// <summary>
+        /// {@inheritDoc} </summary>
+        public virtual Type RuntimeClass
+        {
+            get
+            {
+                return typeof(Complex);
+            }
+        }
 
-		// CHECKSTYLE: stop HideUtilityClassConstructor
-		/// <summary>
-		/// Holder for the instance.
-		/// <p>We use here the Initialization On Demand Holder Idiom.</p>
-		/// </summary>
-		private class LazyHolder
-		{
-			/// <summary>
-			/// Cached field instance. </summary>
-			internal static readonly ComplexField INSTANCE = new ComplexField();
-		}
-		// CHECKSTYLE: resume HideUtilityClassConstructor
+        // CHECKSTYLE: stop HideUtilityClassConstructor
+        /// <summary>
+        /// Holder for the instance.
+        /// <p>We use here the Initialization On Demand Holder Idiom.</p>
+        /// </summary>
+        private class LazyHolder
+        {
+            /// <summary>
+            /// Cached field instance. </summary>
+            internal static readonly ComplexField INSTANCE = new ComplexField();
+        }
+        // CHECKSTYLE: resume HideUtilityClassConstructor
 
-		/// <summary>
-		/// Handle deserialization of the singleton. </summary>
-		/// <returns> the singleton instance </returns>
-		private object ReadResolve()
-		{
-			// return the singleton instance
-			return LazyHolder.INSTANCE;
-		}
+        /// <summary>
+        /// Handle deserialization of the singleton. </summary>
+        /// <returns> the singleton instance </returns>
+        private object ReadResolve()
+        {
+            // return the singleton instance
+            return LazyHolder.INSTANCE;
+        }
 
-	}
+    }
 
 }

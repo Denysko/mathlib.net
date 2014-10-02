@@ -18,42 +18,42 @@
 namespace mathlib.linear
 {
 
-	using mathlib;
+    using mathlib;
 
-	/// <summary>
-	/// Interface defining a visitor for matrix entries.
-	/// </summary>
-	/// @param <T> the type of the field elements
-	/// @version $Id: FieldMatrixChangingVisitor.java 1416643 2012-12-03 19:37:14Z tn $
-	/// @since 2.0 </param>
-//JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
-//ORIGINAL LINE: public interface FieldMatrixChangingVisitor<T extends mathlib.FieldElement<?>>
-	public interface FieldMatrixChangingVisitor<T> where T : mathlib.FieldElement<?>
-	{
-		/// <summary>
-		/// Start visiting a matrix.
-		/// <p>This method is called once before any entry of the matrix is visited.</p> </summary>
-		/// <param name="rows"> number of rows of the matrix </param>
-		/// <param name="columns"> number of columns of the matrix </param>
-		/// <param name="startRow"> Initial row index </param>
-		/// <param name="endRow"> Final row index (inclusive) </param>
-		/// <param name="startColumn"> Initial column index </param>
-		/// <param name="endColumn"> Final column index (inclusive) </param>
-		void start(int rows, int columns, int startRow, int endRow, int startColumn, int endColumn);
+    /// <summary>
+    /// Interface defining a visitor for matrix entries.
+    /// </summary>
+    /// @param <T> the type of the field elements
+    /// @version $Id: FieldMatrixChangingVisitor.java 1416643 2012-12-03 19:37:14Z tn $
+    /// @since 2.0 </param>
+    //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
+    //ORIGINAL LINE: public interface FieldMatrixChangingVisitor<T extends mathlib.FieldElement<?>>
+    public interface FieldMatrixChangingVisitor<T> where T : mathlib.FieldElement<T>
+    {
+        /// <summary>
+        /// Start visiting a matrix.
+        /// <p>This method is called once before any entry of the matrix is visited.</p> </summary>
+        /// <param name="rows"> number of rows of the matrix </param>
+        /// <param name="columns"> number of columns of the matrix </param>
+        /// <param name="startRow"> Initial row index </param>
+        /// <param name="endRow"> Final row index (inclusive) </param>
+        /// <param name="startColumn"> Initial column index </param>
+        /// <param name="endColumn"> Final column index (inclusive) </param>
+        void start(int rows, int columns, int startRow, int endRow, int startColumn, int endColumn);
 
-		/// <summary>
-		/// Visit one matrix entry. </summary>
-		/// <param name="row"> row index of the entry </param>
-		/// <param name="column"> column index of the entry </param>
-		/// <param name="value"> current value of the entry </param>
-		/// <returns> the new value to be set for the entry </returns>
-		T visit(int row, int column, T value);
+        /// <summary>
+        /// Visit one matrix entry. </summary>
+        /// <param name="row"> row index of the entry </param>
+        /// <param name="column"> column index of the entry </param>
+        /// <param name="value"> current value of the entry </param>
+        /// <returns> the new value to be set for the entry </returns>
+        T visit(int row, int column, T value);
 
-		/// <summary>
-		/// End visiting a matrix.
-		/// <p>This method is called once after all entries of the matrix have been visited.</p> </summary>
-		/// <returns> the value that the <code>walkInXxxOrder</code> must return </returns>
-		T end();
-	}
+        /// <summary>
+        /// End visiting a matrix.
+        /// <p>This method is called once after all entries of the matrix have been visited.</p> </summary>
+        /// <returns> the value that the <code>walkInXxxOrder</code> must return </returns>
+        T end();
+    }
 
 }

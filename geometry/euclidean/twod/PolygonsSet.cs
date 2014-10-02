@@ -231,7 +231,7 @@ namespace mathlib.geometry.euclidean.twod
 		/// @deprecated as of 3.3, replaced with <seealso cref="#PolygonsSet(double, double, double, double, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#PolygonsSet(double, double, double, double, double)"/>") public PolygonsSet(final double xMin, final double xMax, final double yMin, final double yMax)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#PolygonsSet(double, double, double, double, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#PolygonsSet(double, double, double, double, double)"/>")]
 		public PolygonsSet(double xMin, double xMax, double yMin, double yMax) : this(xMin, xMax, yMin, yMax, DEFAULT_TOLERANCE)
 		{
 		}

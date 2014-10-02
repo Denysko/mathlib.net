@@ -125,7 +125,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// @deprecated as of 3.3 replaced with <seealso cref="#IntervalsSet(double, double, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3 replaced with <seealso cref="#IntervalsSet(double, double, double)"/>") public IntervalsSet(final double lower, final double upper)
-		[Obsolete("as of 3.3 replaced with <seealso cref="#IntervalsSet(double, double, double)"/>")]
+		[Obsolete]//("as of 3.3 replaced with <seealso cref="#IntervalsSet(double, double, double)"/>")]
 		public IntervalsSet(double lower, double upper) : this(lower, upper, DEFAULT_TOLERANCE)
 		{
 		}
@@ -142,7 +142,7 @@ namespace mathlib.geometry.euclidean.oned
 		/// @deprecated as of 3.3, replaced with <seealso cref="#IntervalsSet(BSPTree, double)"/> 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Deprecated("as of 3.3, replaced with <seealso cref="#IntervalsSet(mathlib.geometry.partitioning.BSPTree, double)"/>") public IntervalsSet(final mathlib.geometry.partitioning.BSPTree<Euclidean1D> tree)
-		[Obsolete("as of 3.3, replaced with <seealso cref="#IntervalsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
+		[Obsolete]//("as of 3.3, replaced with <seealso cref="#IntervalsSet(mathlib.geometry.partitioning.BSPTree, double)"/>")]
 		public IntervalsSet(BSPTree<Euclidean1D> tree) : this(tree, DEFAULT_TOLERANCE)
 		{
 		}
