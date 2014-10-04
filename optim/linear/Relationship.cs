@@ -45,7 +45,7 @@ namespace mathlib.optim.linear
         /// Gets the relationship obtained when multiplying all coefficients by -1.
         /// </summary>
         /// <returns> the opposite relationship. </returns>
-        public static EnumRelationship oppositeRelationship(EnumRelationship instance)
+        public static RelationshipEnum oppositeRelationship(RelationshipEnum instance)
         {
             switch (instance)
             {
