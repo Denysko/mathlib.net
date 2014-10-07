@@ -18,87 +18,88 @@
 namespace mathlib.ode.sampling
 {
 
-	/// <summary>
-	/// <seealso cref="StepNormalizer Step normalizer"/> bounds settings. They influence
-	/// whether the underlying fixed step size step handler is called for the first
-	/// and last points. Note that if the last point coincides with a normalized
-	/// point, then the underlying fixed step size step handler is always called,
-	/// regardless of these settings. </summary>
-	/// <seealso cref= StepNormalizer </seealso>
-	/// <seealso cref= StepNormalizerMode
-	/// @version $Id: StepNormalizerBounds.java 1416643 2012-12-03 19:37:14Z tn $
-	/// @since 3.0 </seealso>
-	public enum StepNormalizerBounds
-	{
-		/// <summary>
-		/// Do not include the first and last points. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-		NEITHER(false, false),
+    /// <summary>
+    /// <seealso cref="StepNormalizer Step normalizer"/> bounds settings. They influence
+    /// whether the underlying fixed step size step handler is called for the first
+    /// and last points. Note that if the last point coincides with a normalized
+    /// point, then the underlying fixed step size step handler is always called,
+    /// regardless of these settings. </summary>
+    /// <seealso cref= StepNormalizer </seealso>
+    /// <seealso cref= StepNormalizerMode
+    /// @version $Id: StepNormalizerBounds.java 1416643 2012-12-03 19:37:14Z tn $
+    /// @since 3.0 </seealso>
 
-		/// <summary>
-		/// Include the first point, but not the last point. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-		FIRST(true, false),
+    public static class StepNormalizerBounds
+    {
 
-		/// <summary>
-		/// Include the last point, but not the first point. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-		LAST(false, true),
+        private bool first;
+        private bool last;
 
-		/// <summary>
-		/// Include both the first and last points. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-		BOTH(true, true);
+        /// <summary>
+        /// Simple constructor. 
+        ///</summary>
+        /// <param name="first"> Whether the first point should be passed to the
+        /// underlying fixed step size step handler. </param>
+        /// <param name="last"> Whether the last point should be passed to the
+        /// underlying fixed step size step handler. </param>
+        private StepNormalizerBounds(bool first, bool last)
+        {
+            /// <summary>
+            /// Whether the first point should be passed to the underlying fixed
+            /// step size step handler.
+            /// </summary>	
+            this.first = first;
 
-		/// <summary>
-		/// Whether the first point should be passed to the underlying fixed
-		/// step size step handler.
-		/// </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enums cannot contain fields in .NET:
-//		private final boolean first;
+            /// <summary>
+            /// Whether the last point should be passed to the underlying fixed
+            /// step size step handler.
+            /// </summary>		
+            this.last = last;
+        }
+        public StepNormalizerBounds(StepNormalizerBoundsEnum instance)
+        {
+            if (instance == StepNormalizerBoundsEnum.NEITHER)
+            {
+                this.first = false;
+                this.last = false;
+            }
+            if (instance == StepNormalizerBoundsEnum.FIRST)
+            {
+                this.first = true;
+                this.last = false;
+            }
+            if (instance == StepNormalizerBoundsEnum.LAST)
+            {
+                this.first = false;
+                this.last = true;
+            }
+            if (instance == StepNormalizerBoundsEnum.BOTH)
+            {
+                this.first = true;
+                this.last = true;
+            }
+        }
 
-		/// <summary>
-		/// Whether the last point should be passed to the underlying fixed
-		/// step size step handler.
-		/// </summary>
-//JAVA TO C# CONVERTER TODO TASK: Enums cannot contain fields in .NET:
-//		private final boolean last;
+        ///<summary>
+        /// Returns a value indicating whether the first point should be passed
+        /// to the underlying fixed step size step handler.
+        /// @return value indicating whether the first point should be passed
+        /// to the underlying fixed step size step handler.
+        ///</summary>	
+        public bool firstIncluded()
+        {
+            return first;
+        }
 
-		/// <summary>
-		/// Simple constructor. </summary>
-		/// <param name="first"> Whether the first point should be passed to the
-		/// underlying fixed step size step handler. </param>
-		/// <param name="last"> Whether the last point should be passed to the
-		/// underlying fixed step size step handler. </param>
-//JAVA TO C# CONVERTER TODO TASK: Enums cannot contain methods in .NET:
-//		private StepNormalizerBounds(final boolean first, final boolean last)
-	//	{
-	//		this.first = first;
-	//		this.last = last;
-	//	}
-
-		/// <summary>
-		/// Returns a value indicating whether the first point should be passed
-		/// to the underlying fixed step size step handler. </summary>
-		/// <returns> value indicating whether the first point should be passed
-		/// to the underlying fixed step size step handler. </returns>
-
-		/// <summary>
-		/// Returns a value indicating whether the last point should be passed
-		/// to the underlying fixed step size step handler. </summary>
-		/// <returns> value indicating whether the last point should be passed
-		/// to the underlying fixed step size step handler. </returns>
-	}
-	public static partial class EnumExtensionMethods
-	{
-		public static bool firstIncluded(this StepNormalizerBounds instance)
-		{
-			return first;
-		}
-		public static bool lastIncluded(this StepNormalizerBounds instance)
-		{
-			return last;
-		}
-	}
-
+        ///<summary>
+        /// Returns a value indicating whether the last point should be passed
+        /// to the underlying fixed step size step handler.
+        /// @return value indicating whether the last point should be passed
+        /// to the underlying fixed step size step handler.
+        ///</summary>	
+        public bool lastIncluded()
+        {
+            return last;
+        }
+    }
 }
