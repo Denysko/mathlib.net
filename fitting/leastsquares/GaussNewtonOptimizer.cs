@@ -66,15 +66,12 @@ namespace mathlib.fitting.leastsquares
 //JAVA TO C# CONVERTER TODO TASK: The following line could not be converted:
 			LU
 			{
-				protected mathlib.linear.RealVector solve(final mathlib.linear.RealMatrix jacobian,
-//JAVA TO C# CONVERTER TODO TASK: The following line could not be converted:
-										   final mathlib.linear.RealVector residuals)
+				protected RealVector solve(RealMatrix jacobian, RealVector residuals)
 										   {
-//JAVA TO C# CONVERTER TODO TASK: The following line could not be converted:
 					try
 					{
 //JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-						final mathlib.util.Pair<mathlib.linear.RealMatrix, mathlib.linear.RealVector> normalEquation = computeNormalMatrix(jacobian, residuals);
+						final mathlib.util.Pair<RealMatrix, RealVector> normalEquation = computeNormalMatrix(jacobian, residuals);
 //JAVA TO C# CONVERTER TODO TASK: Enums cannot contain fields in .NET:
 //						final mathlib.linear.RealMatrix normal = normalEquation.getFirst();
 //JAVA TO C# CONVERTER TODO TASK: Enums cannot contain fields in .NET:
@@ -85,7 +82,7 @@ namespace mathlib.fitting.leastsquares
 					catch (mathlib.linear.SingularMatrixException e)
 					{
 //JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-						throw new mathlib.exception.ConvergenceException(mathlib.exception.util.LocalizedFormats.UNABLE_TO_SOLVE_SINGULAR_PROBLEM, e);
+						throw new mathlib.exception.ConvergenceException(LocalizedFormats.UNABLE_TO_SOLVE_SINGULAR_PROBLEM, e);
 					}
 										   }
 			},
@@ -135,7 +132,7 @@ namespace mathlib.fitting.leastsquares
 			/// <exception cref="ConvergenceException"> if the matrix properties (e.g. singular) do not
 			///                              permit a solution. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Enum values must be single integer values in .NET:
-			protected abstract mathlib.linear.RealVector solve(mathlib.linear.RealMatrix jacobian, mathlib.linear.RealVector residuals);
+			protected abstract RealVector solve(RealMatrix jacobian, RealVector residuals);
 		}
 
 		/// <summary>
