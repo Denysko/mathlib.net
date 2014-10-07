@@ -14,6 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace mathlib.exception.util
 {
 
@@ -21,10 +25,9 @@ namespace mathlib.exception.util
     /// <summary>
     /// Interface for localizable strings.
     /// 
-    /// @version $Id: Localizable.java 1416643 2012-12-03 19:37:14Z tn $
-    /// @since 2.2
     /// </summary>
-    public interface Localizable : Serializable
+    [Serializable]
+    public interface Localizable
     {
         /// <summary>
         /// Gets the source (non-localized) string.

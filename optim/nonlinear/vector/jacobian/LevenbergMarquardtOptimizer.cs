@@ -277,7 +277,7 @@ namespace mathlib.optim.nonlinear.vector.jacobian
 		/// of a column vector is smaller or equal to this threshold during QR
 		/// decomposition, it is considered to be a zero vector and hence the rank
 		/// of the matrix is reduced. </param>
-		public LevenbergMarquardtOptimizer(double initialStepBoundFactor, double costRelativeTolerance, double parRelativeTolerance, double orthoTolerance, double threshold) : base(null); / / No custom convergence criterion.
+		public LevenbergMarquardtOptimizer(double initialStepBoundFactor, double costRelativeTolerance, double parRelativeTolerance, double orthoTolerance, double threshold) : base(null) // No custom convergence criterion.
 		{
 			this.initialStepBoundFactor = initialStepBoundFactor;
 			this.costRelativeTolerance = costRelativeTolerance;
@@ -822,7 +822,7 @@ namespace mathlib.optim.nonlinear.vector.jacobian
 				double dpj = diag[pj];
 				if (dpj != 0)
 				{
-					Arrays.fill(lmDiag, j + 1, lmDiag.Length, 0);
+					System.Array.fill(lmDiag, j + 1, lmDiag.Length, 0);
 				}
 				lmDiag[j] = dpj;
 

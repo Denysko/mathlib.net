@@ -347,17 +347,17 @@ namespace mathlib.util
 		/// <returns> {@code true} if sorted, {@code false} otherwise. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
 //ORIGINAL LINE: public static <T extends Comparable<? base T>> boolean isMonotonic(T[] val, OrderDirection dir, boolean strict)
-		public static bool isMonotonic<T>(T[] val, OrderDirection dir, bool strict) where T : Comparable<? base T>
+		public static bool isMonotonic<T>(T[] val, OrderDirection dir, bool strict) where T : IComparable<T>
 		{
 			T previous = val[0];
-			readonly int max = val.Length;
+			int max = val.Length;
 			for (int i = 1; i < max; i++)
 			{
-				readonly int comp;
+				int comp;
 				switch (dir)
 				{
 				case mathlib.util.MathArrays.OrderDirection.INCREASING:
-					comp = previous.compareTo(val[i]);
+					comp = previous.CompareTo(val[i]);
 					if (strict)
 					{
 						if (comp >= 0)
@@ -374,7 +374,7 @@ namespace mathlib.util
 					}
 					break;
 				case mathlib.util.MathArrays.OrderDirection.DECREASING:
-					comp = val[i].compareTo(previous);
+					comp = val[i].CompareTo(previous);
 					if (strict)
 					{
 						if (comp >= 0)
@@ -427,7 +427,7 @@ namespace mathlib.util
 		public static bool checkOrder(double[] val, OrderDirection dir, bool strict, bool abort)
 		{
 			double previous = val[0];
-			readonly int max = val.Length;
+			int max = val.Length;
 
 			int index;
 			for (index = 1; index < max; index++)
@@ -533,7 +533,7 @@ namespace mathlib.util
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 		public static void checkRectangular(long[][] @in)
 		{
-			MathUtils.checkNotNull(@in);
+			MathUtils.CheckNotNull(@in);
 			for (int i = 1; i < @in.Length; i++)
 			{
 				if (@in[i].Length != @in[0].Length)
@@ -1802,8 +1802,8 @@ namespace mathlib.util
 //ORIGINAL LINE: public static double[] convolve(double[] x, double[] h) throws mathlib.exception.NullArgumentException, mathlib.exception.NoDataException
 		public static double[] convolve(double[] x, double[] h)
 		{
-			MathUtils.checkNotNull(x);
-			MathUtils.checkNotNull(h);
+			MathUtils.CheckNotNull(x);
+			MathUtils.CheckNotNull(h);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int xLen = x.length;
