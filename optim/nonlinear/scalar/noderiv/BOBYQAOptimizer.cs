@@ -217,7 +217,7 @@ namespace mathlib.optim.nonlinear.scalar.noderiv
 		/// Choices that exceed {@code 2n+1} are not recommended. </param>
 		/// <param name="initialTrustRegionRadius"> Initial trust region radius. </param>
 		/// <param name="stoppingTrustRegionRadius"> Stopping trust region radius. </param>
-		public BOBYQAOptimizer(int numberOfInterpolationPoints, double initialTrustRegionRadius, double stoppingTrustRegionRadius) : base(null); / / No custom convergence criterion.
+		public BOBYQAOptimizer(int numberOfInterpolationPoints, double initialTrustRegionRadius, double stoppingTrustRegionRadius) : base(null) // No custom convergence criterion.
 		{
 			this.numberOfInterpolationPoints = numberOfInterpolationPoints;
 			this.initialTrustRegionRadius = initialTrustRegionRadius;
@@ -1052,8 +1052,6 @@ namespace mathlib.optim.nonlinear.scalar.noderiv
 						throw new MathIllegalStateException(LocalizedFormats.TRUST_REGION_STEP_FAILED, vquad);
 					}
 					ratio = (f - fopt) / vquad;
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final double hDelta = HALF * delta;
 					double hDelta = HALF * delta;
 					if (ratio <= ONE_OVER_TEN)
 					{

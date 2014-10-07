@@ -41,7 +41,7 @@ namespace mathlib.optim
 	/// @since 3.0 </param>
 //JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
 //ORIGINAL LINE: public class SimplePointChecker<PAIR extends mathlib.util.Pair<double[] , ? extends Object>> extends AbstractConvergenceChecker<PAIR>
-	public class SimplePointChecker<PAIR> : AbstractConvergenceChecker<PAIR> where PAIR : mathlib.util.Pair<double[] , ? extends Object>
+	public class SimplePointChecker<PAIR> : AbstractConvergenceChecker<PAIR> where PAIR : Pair<double[], PAIR : System.Object>
 	{
 		/// <summary>
 		/// If <seealso cref="#maxIterationCount"/> is set to this value, the number of
@@ -83,8 +83,6 @@ namespace mathlib.optim
 		/// <exception cref="NotStrictlyPositiveException"> if {@code maxIter <= 0}.
 		/// 
 		/// @since 3.1 </exception>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
-//ORIGINAL LINE: public SimplePointChecker(final double relativeThreshold, final double absoluteThreshold, final int maxIter)
 		public SimplePointChecker(double relativeThreshold, double absoluteThreshold, int maxIter) : base(relativeThreshold, absoluteThreshold)
 		{
 

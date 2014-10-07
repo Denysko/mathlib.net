@@ -48,7 +48,7 @@ namespace mathlib.ml.clustering.evaluation
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are not allowed in .NET:
 //ORIGINAL LINE: @Override public double score(final java.util.List<? extends mathlib.ml.clustering.Cluster<T>> clusters)
-		public override double score<T1>(IList<T1> clusters) where T1 : mathlib.ml.clustering.Cluster<T>
+		public override double score<T1>(IList<T1> clusters) where T1 : Cluster<T>
 		{
 			double varianceSum = 0.0;
 			foreach (Cluster<T> cluster in clusters)

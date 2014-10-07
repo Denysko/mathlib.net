@@ -612,6 +612,7 @@
     <Compile Include="ode\sampling\package-info.cs" />
     <Compile Include="ode\sampling\StepHandler.cs" />
     <Compile Include="ode\sampling\StepInterpolator.cs" />
+    <Compile Include="ode\sampling\StepNormalizeBoundsEnum.cs" />
     <Compile Include="ode\sampling\StepNormalizer.cs" />
     <Compile Include="ode\sampling\StepNormalizerBounds.cs" />
     <Compile Include="ode\sampling\StepNormalizerMode.cs" />
